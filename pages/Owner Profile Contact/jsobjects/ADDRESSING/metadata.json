@@ -1,0 +1,52 @@
+{
+  "gitSyncId": "67b5ec528c4cb21215539a06_54c5e745-1548-432f-8ac5-a1294232792d",
+  "id": "Owner Profile Contact_ADDRESSING",
+  "unpublishedCollection": {
+    "name": "ADDRESSING",
+    "pageId": "Owner Profile Contact",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "DEFAULT_ENTITY",
+        "value": "Default_OwnerProfileContact"
+      },
+      {
+        "name": "PROVINCE_PROP_NAME",
+        "value": "\"OWNER_CONTACT_PROVINCE_TH\""
+      },
+      {
+        "name": "DISTRICT_PROP_NAME",
+        "value": "\"OWNER_CONTACT_DISTRICT_TH\""
+      },
+      {
+        "name": "SUB_DISTRICT_PROP_NAME",
+        "value": "\"OWNER_CONTACT_SUB_DISTRICT_TH\""
+      },
+      {
+        "name": "DISTRICT_STORE_NAME",
+        "value": "[{\n  key: \"\",\n  value: \"\"\n}]"
+      },
+      {
+        "name": "SUB_DISTRICT_STORE_NAME",
+        "value": "[{\n  key: \"\",\n  value: \"\"\n}]"
+      },
+      {
+        "name": "PROVINCE_WIDGET",
+        "value": "{\n  ...OWNER_CONTACT_PROVINCE_TH,\n  setDisabled: async value => {\n    await OWNER_CONTACT_PROVINCE_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "DISTRICT_WIDGET",
+        "value": "{\n  ...OWNER_CONTACT_DISTRICT_TH,\n  setDisabled: async value => {\n    await OWNER_CONTACT_DISTRICT_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "SUB_DISTRICT_WIDGET",
+        "value": "{\n  ...OWNER_CONTACT_SUB_DISTRICT_TH,\n  setDisabled: async value => {\n    await OWNER_CONTACT_SUB_DISTRICT_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "POSTAL_CODE_WIDGET",
+        "value": "OWNER_CONTACT_POSTAL_CODE"
+      }
+    ]
+  }
+}

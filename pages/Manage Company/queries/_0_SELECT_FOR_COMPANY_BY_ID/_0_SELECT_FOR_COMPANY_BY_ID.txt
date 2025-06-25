@@ -1,0 +1,2 @@
+EXECUTE [dbo].[SELECT_FOR_COMPANY_BY_ID] 
+   @pCOMPANY_ID ={{appsmith.URL.queryParams[Configs.editCompanyFlag]}}

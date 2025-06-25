@@ -1,0 +1,96 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_4f212b7d-dbcb-4355-85b5-836d51c5718b",
+  "id": "Manage Company_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "editCompanyFlag",
+        "value": "\"editCompany\""
+      },
+      {
+        "name": "editCompanyContactFlag",
+        "value": "\"editContacePerson\""
+      },
+      {
+        "name": "fromCompany",
+        "value": "\"fromCompany\""
+      },
+      {
+        "name": "newCompanyTempFlag",
+        "value": "\"newCompanyTempFlag\""
+      },
+      {
+        "name": "editCompanyProfileFlag",
+        "value": "\"editCompanyProfileFlag\""
+      },
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"COPAV\",\n  EDIT: \"COPAE\"\n}"
+      },
+      {
+        "name": "forceKick",
+        "value": "false"
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "errorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"Manage Company\""
+      },
+      {
+        "name": "ROFRInventoryItem",
+        "value": "[]"
+      },
+      {
+        "name": "defaultTap",
+        "value": "\"Company Contact\""
+      },
+      {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
+      },
+      {
+        "name": "startBody",
+        "value": "\"LOADING\""
+      },
+      {
+        "name": "showCompanyContact",
+        "value": "[]"
+      },
+      {
+        "name": "dateFormat",
+        "value": "\"D MMMM YYYY\""
+      },
+      {
+        "name": "contactPageState",
+        "value": "{\n  ManageContact: 0,\n  AddContactTo: 1,\n  EditContactOf: 2,\n  NewContactAndBack: 3,\n  CurrentState: 0\n}"
+      },
+      {
+        "name": "companyPageState",
+        "value": "{\n  THIRD_PARTY: 1,\n  COMPANY: 0\n}"
+      },
+      {
+        "name": "IS_THIRD_PARTY",
+        "value": "Boolean(_0_SELECT_FOR_COMPANY_BY_ID.data ? _0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY : appsmith.store.IS_THIRD_PARTY == 0 ? false : true || false)"
+      }
+    ]
+  }
+}

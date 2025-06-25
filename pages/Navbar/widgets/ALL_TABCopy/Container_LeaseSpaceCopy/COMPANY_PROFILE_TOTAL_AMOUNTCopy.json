@@ -1,0 +1,61 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 35,
+  "boxShadow": "none",
+  "defaultText": "{{PMS_COMPANY_PROFILE_LM.tableData.reduce((accumulator, currentValue) => {\n  return accumulator + currentValue.UNIT;\n}, 0).toString();}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "nwk391w658",
+  "label": "Total Amount (Lease Space unit)",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "",
+  "labelTextSize": "1rem",
+  "labelWidth": "16",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "originalBottomRow": 35,
+  "originalTopRow": 31,
+  "parentColumnSpace": 19.5,
+  "parentId": "ka7ye1v9vt",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 26,
+  "shouldScrollContents": true,
+  "showStepArrows": false,
+  "topRow": 31,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "4b9r4zwx7g",
+  "widgetName": "COMPANY_PROFILE_TOTAL_AMOUNTCopy"
+}

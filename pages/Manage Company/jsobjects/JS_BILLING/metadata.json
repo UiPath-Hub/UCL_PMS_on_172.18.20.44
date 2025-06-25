@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_899bf27e-5ead-493a-9786-041647971bfd",
+  "id": "Manage Company_JS_BILLING",
+  "unpublishedCollection": {
+    "name": "JS_BILLING",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

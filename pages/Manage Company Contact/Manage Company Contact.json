@@ -1,0 +1,32 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_31c4d132-1f30-4d65-ae75-0e4d4300fd87",
+  "unpublishedPage": {
+    "isHidden": true,
+    "layouts": [
+      {
+        "dsl": {
+          "backgroundColor": "none",
+          "bottomRow": 1250.0,
+          "canExtend": true,
+          "containerStyle": "none",
+          "detachFromLayout": true,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0.0,
+          "minHeight": 780.0,
+          "parentColumnSpace": 1.0,
+          "parentRowSpace": 1.0,
+          "rightColumn": 1224.0,
+          "snapColumns": 64.0,
+          "snapRows": 76.0,
+          "topRow": 0.0,
+          "type": "CANVAS_WIDGET",
+          "version": 92.0,
+          "widgetId": "0",
+          "widgetName": "MainContainer"
+        }
+      }
+    ],
+    "name": "Manage Company Contact",
+    "slug": "manage-company-contact"
+  }
+}

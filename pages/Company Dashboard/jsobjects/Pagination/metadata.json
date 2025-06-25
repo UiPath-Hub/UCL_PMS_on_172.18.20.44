@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_173a16e6-6d25-4a8b-b9b5-8fb6574d859d",
+  "id": "Company Dashboard_Pagination",
+  "unpublishedCollection": {
+    "name": "Pagination",
+    "pageId": "Company Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "pageSize",
+        "value": "10"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_842a5938-9b83-4fa5-894e-eb083e53a8ee",
+  "id": "Manage Company_Pagination",
+  "unpublishedCollection": {
+    "name": "Pagination",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PageSize",
+        "value": "5"
+      },
+      {
+        "name": "ProfileSpacePageSize",
+        "value": "5"
+      },
+      {
+        "name": "ProfileServicePageSize",
+        "value": "5"
+      },
+      {
+        "name": "InventorySearchPageSize",
+        "value": "3"
+      }
+    ]
+  }
+}

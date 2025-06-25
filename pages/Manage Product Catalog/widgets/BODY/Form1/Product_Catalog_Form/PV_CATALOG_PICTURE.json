@@ -1,0 +1,44 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 58,
+  "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "defaultImage": "https://assets.appsmith.com/widgets/default.png",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "image"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": true,
+  "enableRotation": true,
+  "flexVerticalAlignment": "start",
+  "image": "{{FP_CATALOG_PICTURE.files.length>0?FP_CATALOG_PICTURE.files.length>0?FP_CATALOG_PICTURE.files[0].data:\"\":Default_ProductCatalog.IMAGE.data}}",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "n3p92vxx36",
+  "leftColumn": 35,
+  "maxZoomLevel": 16,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 37,
+  "mobileRightColumn": 49,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "objectFit": "contain",
+  "originalBottomRow": 58,
+  "originalTopRow": 11,
+  "parentColumnSpace": 15.828125,
+  "parentId": "dhkjjujsed",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 61,
+  "topRow": 11,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "lilsefvsus",
+  "widgetName": "PV_CATALOG_PICTURE"
+}

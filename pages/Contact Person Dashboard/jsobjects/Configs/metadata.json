@@ -1,0 +1,36 @@
+{
+  "gitSyncId": "67b5e1c38c4cb2121553976a_75a53158-1eca-4237-9145-925b7604ce33",
+  "id": "Contact Person Dashboard_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Contact Person Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"COPSV\",\n  EDIT: \"COPSE\"\n}"
+      },
+      {
+        "name": "forceKick",
+        "value": "false"
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "errorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "editContacePerson",
+        "value": "\"editContacePerson\""
+      }
+    ]
+  }
+}

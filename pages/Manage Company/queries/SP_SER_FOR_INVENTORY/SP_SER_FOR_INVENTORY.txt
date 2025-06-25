@@ -1,0 +1,13 @@
+EXECUTE  [dbo].[SER_SEARCH_FOR_PRODUCT_INVENTORY] 
+   @pFloorNo = null
+  ,@pInventoryName = {{INVENTORY_NAME.text=="" || INVENTORY_NAME.text == undefined?null:INVENTORY_NAME.text}}
+  ,@pProductType ={{INVENTORY_TYPE.selectedOptionValue==""||INVENTORY_TYPE.selectedOptionValue==undefined?null:INVENTORY_TYPE.selectedOptionValue}}
+  ,@pInventoryStatus = 'Active'
+	,@SHOW_FREESPACE = 0
+	,@IS_SERVING = null
+	,@READY_FOR_SERVE = 1
+	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@SERVING_FOR_COMPANY = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}
+	
+
+

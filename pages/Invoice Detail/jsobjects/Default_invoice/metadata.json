@@ -1,0 +1,256 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_32790129-e32f-473a-88ff-88ae7a72d7ac",
+  "id": "Invoice Detail_Default_invoice",
+  "unpublishedCollection": {
+    "name": "Default_invoice",
+    "pageId": "Invoice Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "INVOICE_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "QUOTATION_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "QUOTATION_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "BRANCH_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "BRANCH_NUMBER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "TAX_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_DOCUMENT_BOOK",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REFERENCE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_PROJECT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_AMOUNT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_TOTALAMOUNT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_COMPANY_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_BUILDING_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_BUILDING_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_FLOOR",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_ADD_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_MOO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_SOI_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_SOI_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_ROAD_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_ROAD_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_SUB_DISTRICT_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_SUB_DISTRICT_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_DISTRICT_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_DISTRICT_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_PROVINCE_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_PROVINCE_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_POSTAL_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_PERSON",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "OTHER_CONTACT_PERSON",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "DISCOUNT_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "DISCOUNT_BAHT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "DISCOUNT_PERCENT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "SUB_AMOUNT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "VAT_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "VAT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "TOTAL_AMOUNT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_CODE_AUTOFLIGHT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REMARK",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "DELETE_FLAG",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "CREATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "DUE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "EXPIRE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "UPDATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "USER_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_FIRST_NAME_EN",
+        "value": "SELECT_CONTACT_PERSON.data.filter(ele => ele.COMPANY_CONTACT_ID == SELECT_INVOICE.data[0].COMPANY_CONTACT_ID)[0].COMPANY_CONTACT_FIRST_NAME_EN"
+      },
+      {
+        "name": "COMPANY_CONTACT_FIRST_NAME_TH",
+        "value": "SELECT_CONTACT_PERSON.data.filter(ele => ele.COMPANY_CONTACT_ID == SELECT_INVOICE.data[0].COMPANY_CONTACT_ID)[0].COMPANY_CONTACT_FIRST_NAME_TH"
+      },
+      {
+        "name": "COMPANY_CONTACT_SUR_NAME_EN",
+        "value": "SELECT_CONTACT_PERSON.data.filter(ele => ele.COMPANY_CONTACT_ID == SELECT_INVOICE.data[0].COMPANY_CONTACT_ID)[0].COMPANY_CONTACT_SUR_NAME_EN"
+      },
+      {
+        "name": "COMPANY_CONTACT_SUR_NAME_TH",
+        "value": "SELECT_CONTACT_PERSON.data.filter(ele => ele.COMPANY_CONTACT_ID == SELECT_INVOICE.data[0].COMPANY_CONTACT_ID)[0].COMPANY_CONTACT_SUR_NAME_TH"
+      },
+      {
+        "name": "COMPANY_NAME",
+        "value": "{\n  data: Default_invoice.COMPANY_NAME_TH.data || Default_invoice.COMPANY_NAME_EN.data,\n  regex: \"\",\n  required: Default_invoice.COMPANY_NAME_TH.required || Default_invoice.COMPANY_NAME_EN.required\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT",
+        "value": "{\n  data: Default_invoice.COMPANY_CONTACT_ID.data,\n  regex: \"\",\n  required: Default_invoice.COMPANY_CONTACT_ID.required\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_EMAIL",
+        "value": "{\n  data: !COMPANY_CONTACT.selectedOptionValue ? \"\" : SELECT_CONTACT_PERSON.data.filter(ele => ele.COMPANY_CONTACT_ID == COMPANY_CONTACT.selectedOptionValue)[0].COMPANY_CONTACT_EMAIL,\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_TELEPHONE",
+        "value": "{\n  data: !COMPANY_CONTACT.selectedOptionValue ? \"\" : SELECT_CONTACT_PERSON.data.filter(ele => ele.COMPANY_CONTACT_ID == COMPANY_CONTACT.selectedOptionValue)[0].COMPANY_CONTACT_TELEPHONE,\n  regex: \"\",\n  required: false\n}"
+      }
+    ]
+  }
+}

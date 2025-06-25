@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67bc192d8c4cb21215539fca_c2367b15-d650-499a-b834-cb68dcfff338",
+  "id": "Owner Profile_GlobalFunctions",
+  "unpublishedCollection": {
+    "name": "GlobalFunctions",
+    "pageId": "Owner Profile",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "V",
+        "value": "1"
+      },
+      {
+        "name": "LastChanged",
+        "value": "\"\""
+      }
+    ]
+  }
+}

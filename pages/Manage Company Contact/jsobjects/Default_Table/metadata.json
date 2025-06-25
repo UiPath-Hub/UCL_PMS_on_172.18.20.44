@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "6814334a5165473495a8dbd7_19bbd7b7-3748-409e-8bdb-9d2d9869c098",
+  "id": "Manage Company Contact_Default_Table",
+  "unpublishedCollection": {
+    "name": "Default_Table",
+    "pageId": "Manage Company Contact",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "SELECT_COMPANYS_OF_CONTACT",
+        "value": "[{\n  \"Company Name\": null,\n  \"Create Date\": null,\n  \"TOTAL_RECORDS\": 0\n}]"
+      },
+      {
+        "name": "Table_SearchResults_Contact",
+        "value": "[{\n  \"First Name\": \"\",\n  \"Surname\": \"\",\n  \"Mobile\": \"\",\n  \"TOTAL_RECORDS\": 0\n}]"
+      }
+    ]
+  }
+}

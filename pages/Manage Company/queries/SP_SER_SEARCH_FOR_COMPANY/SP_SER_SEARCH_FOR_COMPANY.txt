@@ -1,0 +1,11 @@
+
+EXECUTE [dbo].[SER_SEARCH_FOR_COMPANY] 
+   @pCompanyNo = null
+,@pCompanyName = {{this.params.CompanyName}}
+,@pCompanyContact = null
+,@pMobile = null
+,@pBusinessType = null
+,@pSTATUS = null
+
+  ,@pPageSize = 5
+  ,@pPageIndex = 1

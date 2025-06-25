@@ -1,0 +1,56 @@
+{
+  "gitSyncId": "6807363c166b1720655bf4bd_7bcda018-6871-40f4-b211-4b104ffc38e8",
+  "id": "Manage Company_ADDRESSING_BILLING",
+  "unpublishedCollection": {
+    "name": "ADDRESSING_BILLING",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "DEFAULT_ENTITY",
+        "value": "Default_COMPANY_BILLING"
+      },
+      {
+        "name": "PROVINCE_PROP_NAME",
+        "value": "\"BILLING_COMPANY_PROVINCE_TH\""
+      },
+      {
+        "name": "DISTRICT_PROP_NAME",
+        "value": "\"BILLING_COMPANY_DISTRICT_TH\""
+      },
+      {
+        "name": "SUB_DISTRICT_PROP_NAME",
+        "value": "\"BILLING_COMPANY_SUB_DISTRICT_TH\""
+      },
+      {
+        "name": "PROVINCE",
+        "value": "\"PROVINCE\""
+      },
+      {
+        "name": "DISTRICT_STORE_NAME",
+        "value": "\"BILLING_DISTRICT\""
+      },
+      {
+        "name": "SUB_DISTRICT_STORE_NAME",
+        "value": "\"BILLING_SUBDISTRICT\""
+      },
+      {
+        "name": "PROVINCE_WIDGET",
+        "value": "{\n  ...BILLING_PROVINCE_TH,\n  setDisabled: async value => {\n    await BILLING_PROVINCE_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "DISTRICT_WIDGET",
+        "value": "{\n  ...BILLING_DISTRICT_TH,\n  setDisabled: async value => {\n    await BILLING_DISTRICT_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "SUB_DISTRICT_WIDGET",
+        "value": "{\n  ...BILLING_SUB_DISTRICT_TH,\n  setDisabled: async value => {\n    await BILLING_SUB_DISTRICT_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "POSTAL_CODE_WIDGET",
+        "value": "BILLING_POSTAL_CODE"
+      }
+    ]
+  }
+}

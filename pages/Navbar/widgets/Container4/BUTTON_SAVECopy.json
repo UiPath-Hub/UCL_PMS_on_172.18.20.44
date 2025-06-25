@@ -1,0 +1,45 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "buttonColor": "green",
+  "buttonVariant": "PRIMARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "floppy-disk",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "sjcapm6fvo",
+  "leftColumn": 60,
+  "minWidth": 50,
+  "mobileBottomRow": 93,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 39,
+  "mobileTopRow": 89,
+  "needsErrorInfo": false,
+  "onClick": "",
+  "originalBottomRow": 68,
+  "originalTopRow": 64,
+  "parentColumnSpace": 19.8125,
+  "parentId": "yn6zen3tzp",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "tooltip": "Save",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "i3lw1yrnu9",
+  "widgetName": "BUTTON_SAVECopy"
+}

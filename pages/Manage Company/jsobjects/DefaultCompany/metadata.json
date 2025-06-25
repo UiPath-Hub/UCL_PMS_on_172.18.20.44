@@ -1,0 +1,188 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_3df990a5-c3e8-42ad-b5b5-c50f19b3789c",
+  "id": "Manage Company_DefaultCompany",
+  "unpublishedCollection": {
+    "name": "DefaultCompany",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "COMPANY_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_TYPE_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "SHOP_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_BUSINESS_TYPE_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_BUSINESS_TYPE_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "TAX_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  data: \"Active\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "TELEPHONE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "CONTACT_EMAIL",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "FAX",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "WEBSITE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_BUILDING_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_ADD_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_MOO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_SOI_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_ROAD_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_PROVINCE_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_DISTRICT_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_SUB_DISTRICT_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_PROVINCE_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_DISTRICT_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_SUB_DISTRICT_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_BUILDING_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_FLOOR",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_SOI_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_ROAD_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_POSTAL_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "TITLE_PREFIX",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "TITLE_PREFIX_OTHER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "SUFFIX",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_BRANCH_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_BRANCH_NUMBER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "OVERWRITE_BILLING_ADDRESS",
+        "value": "{\n  data: \"false\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_BUSINESS_DETAIL_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_BUSINESS_DETAIL_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PROVINCE_TH",
+        "value": "{\n  data: DefaultCompany.COMPANY_PROVINCE_TH.data,\n  regex: \"\",\n  required: DefaultCompany.COMPANY_PROVINCE_EN.required || DefaultCompany.COMPANY_PROVINCE_TH.required,\n  color: DefaultCompany.COMPANY_PROVINCE_EN.color == Configs.requiredColorAlert || DefaultCompany.COMPANY_PROVINCE_TH.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
+      },
+      {
+        "name": "DISTRICT_TH",
+        "value": "{\n  data: DefaultCompany.COMPANY_DISTRICT_TH.data,\n  regex: \"\",\n  required: DefaultCompany.COMPANY_DISTRICT_EN.required || DefaultCompany.COMPANY_DISTRICT_TH.required,\n  color: DefaultCompany.COMPANY_DISTRICT_EN.color == Configs.requiredColorAlert || DefaultCompany.COMPANY_DISTRICT_TH.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
+      },
+      {
+        "name": "SUB_DISTRICT_TH",
+        "value": "{\n  data: DefaultCompany.COMPANY_SUB_DISTRICT_TH.data,\n  regex: \"\",\n  required: DefaultCompany.COMPANY_SUB_DISTRICT_EN.required || DefaultCompany.COMPANY_SUB_DISTRICT_TH.required,\n  color: DefaultCompany.COMPANY_SUB_DISTRICT_EN.color == Configs.requiredColorAlert || DefaultCompany.COMPANY_SUB_DISTRICT_TH.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
+      },
+      {
+        "name": "COMPANY_BUSINESS_TYPE",
+        "value": "{\n  data: _.trim((DefaultCompany.COMPANY_BUSINESS_TYPE_TH.data || \"\") + \"/\" + (DefaultCompany.COMPANY_BUSINESS_TYPE_EN.data || \"\"), \"/\"),\n  regex: \"\",\n  required: DefaultCompany.COMPANY_BUSINESS_TYPE_TH.required || DefaultCompany.COMPANY_BUSINESS_TYPE_EN.required,\n  color: DefaultCompany.COMPANY_BUSINESS_TYPE_TH.color == Configs.requiredColorAlert || DefaultCompany.COMPANY_BUSINESS_TYPE_EN.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
+      },
+      {
+        "name": "POSTAL_CODE",
+        "value": "{\n  data: DefaultCompany.COMPANY_POSTAL_CODE.data,\n  regex: DefaultCompany.COMPANY_POSTAL_CODE.regex,\n  required: DefaultCompany.COMPANY_POSTAL_CODE.required,\n  color: DefaultCompany.COMPANY_POSTAL_CODE.color\n}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+EXECUTE  [dbo].[SELECT_ALL_COMPANY_PROFILE_BY_COMID] 
+   @pCOMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}
+	 ,@pTYPE = 'SPACE'
+,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

@@ -1,0 +1,52 @@
+{
+  "gitSyncId": "67b5ec528c4cb21215539a06_0c695324-0fde-45e7-8786-104ea5c0b27d",
+  "id": "Owner Profile_ADDRESSING",
+  "unpublishedCollection": {
+    "name": "ADDRESSING",
+    "pageId": "Owner Profile",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "DEFAULT_ENTITY",
+        "value": "Default_OwnerProfile"
+      },
+      {
+        "name": "PROVINCE_PROP_NAME",
+        "value": "\"OWNER_PROVINCE_TH\""
+      },
+      {
+        "name": "DISTRICT_PROP_NAME",
+        "value": "\"OWNER_DISTRICT_TH\""
+      },
+      {
+        "name": "SUB_DISTRICT_PROP_NAME",
+        "value": "\"OWNER_SUB_DISTRICT_TH\""
+      },
+      {
+        "name": "DISTRICT_STORE_NAME",
+        "value": "\"DISTRICT\""
+      },
+      {
+        "name": "SUB_DISTRICT_STORE_NAME",
+        "value": "\"SUBDISTRICT\""
+      },
+      {
+        "name": "PROVINCE_WIDGET",
+        "value": "{\n  ...PROVINCE_TH,\n  setDisabled: async value => {\n    await PROVINCE_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "DISTRICT_WIDGET",
+        "value": "{\n  ...DISTRICT_TH,\n  setDisabled: async value => {\n    await DISTRICT_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "SUB_DISTRICT_WIDGET",
+        "value": "{\n  ...SUB_DISTRICT_TH,\n  setDisabled: async value => {\n    await SUB_DISTRICT_TH.setDisabled(value);\n  }\n}"
+      },
+      {
+        "name": "POSTAL_CODE_WIDGET",
+        "value": "POSTAL_CODE"
+      }
+    ]
+  }
+}

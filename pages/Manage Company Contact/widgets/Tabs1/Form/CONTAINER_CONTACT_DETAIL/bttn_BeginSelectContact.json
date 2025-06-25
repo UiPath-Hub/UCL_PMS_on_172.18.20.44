@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "1.5rem",
+  "bottomRow": 18,
+  "bottomRowBeforeCollapse": 18,
+  "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "search",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{Configs.pageState.CurrentState==Configs.pageState.AddContactTo}}",
+  "key": "5bmrnw168x",
+  "leftColumn": 30,
+  "minWidth": 50,
+  "mobileBottomRow": 18,
+  "mobileLeftColumn": 30,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 14,
+  "needsErrorInfo": false,
+  "onClick": "{{JS.onClick_Bttn_BeginSelectContact()}}",
+  "originalBottomRow": 18,
+  "originalTopRow": 14,
+  "parentColumnSpace": 19.1875,
+  "parentId": "0s2qm3vbhm",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 33,
+  "topRow": 14,
+  "topRowBeforeCollapse": 14,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "ku6fupadwb",
+  "widgetName": "bttn_BeginSelectContact"
+}

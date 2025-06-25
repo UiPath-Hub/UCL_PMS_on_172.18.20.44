@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_079f5e84-5f4b-4590-b7e8-f425511db2ee",
+  "id": "Manage Company_Inventory",
+  "unpublishedCollection": {
+    "name": "Inventory",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "SpaceType",
+        "value": "\"พื้นที่เช่า\""
+      }
+    ]
+  }
+}

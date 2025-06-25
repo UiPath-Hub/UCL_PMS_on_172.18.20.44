@@ -1,0 +1,28 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_ea8e0525-5000-4bcb-abf3-c1f32da32838",
+  "id": "Manage Product Inventory_GlobalFunctions",
+  "unpublishedCollection": {
+    "name": "GlobalFunctions",
+    "pageId": "Manage Product Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "V",
+        "value": "4"
+      },
+      {
+        "name": "LastChanged",
+        "value": "\"new function is form change\""
+      },
+      {
+        "name": "defaultFormEntiry",
+        "value": "DefaultInventory"
+      },
+      {
+        "name": "widgetMap",
+        "value": "ProductInventoryWidget"
+      }
+    ]
+  }
+}

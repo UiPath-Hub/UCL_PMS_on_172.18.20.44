@@ -1,0 +1,75 @@
+DECLARE @ResultCode NVARCHAR(10),
+			@ResultMessages NVARCHAR(MAX);
+
+IF @@TRANCOUNT = 0
+BEGIN TRANSACTION;
+	IF({{this.params.ASSIGN_TO_COMPANY?1:0}}=1)
+	BEGIN
+		execute dbo.[UPDATE_CONTACT_PERSON_DETAIL]
+			@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}
+		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}
+		,@COMPANY_CONTACT_ROLE  = {{COMPANY_CONTACT_ROLE.selectedOptionValue}}
+		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+		,@IS_INSERT = 1
+		,@ResultCode=@ResultCode OUTPUT
+		,@ResultMessages=@ResultMessages OUTPUT
+	END
+	IF @ResultCode <> 'DONE' GOTO RETURN_RESULT;
+	
+	IF({{this.params.UPDATE_ASSIGNED?1:0}}=1)
+	BEGIN
+			execute dbo.[UPDATE_CONTACT_PERSON_DETAIL]
+			@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}
+		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}
+		,@COMPANY_CONTACT_ROLE  = {{COMPANY_CONTACT_ROLE.selectedOptionValue}}
+		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+		,@IS_UPDATE = 1
+		,@ResultCode=@ResultCode OUTPUT
+		,@ResultMessages=@ResultMessages OUTPUT
+	END
+	IF @ResultCode <> 'DONE' GOTO RETURN_RESULT;
+
+		EXECUTE [dbo].[UPDATE_PMS_COMPANY_CONTACT_LM] 
+   @pTitleName = {{TITLE_NAME.selectedOptionValue}}
+  ,@pFirstNameEN = {{COMPANY_CONTACT_FIRST_NAME_EN.text}}
+  ,@pFirstNameTH = {{COMPANY_CONTACT_FIRST_NAME_TH.text}}
+  ,@pSURNameEN = {{COMPANY_CONTACT_SUR_NAME_EN.text}}
+  ,@pSURNameTH = {{COMPANY_CONTACT_SUR_NAME_TH.text}}
+  ,@pTelephone = {{COMPANY_CONTACT_TELEPHONE.text}}
+  ,@pEXT = {{COMPANY_CONTACT_EXT.text}}
+  ,@pMoblie = {{COMPANY_CONTACT_TELEPHONE.text}}
+  ,@pEmail= {{COMPANY_CONTACT_EMAIL.text}}
+  ,@pRole= {{this.params.ASSIGN_TO_COMPANY||this.params.UPDATE_ASSIGNED?null: COMPANY_CONTACT_ROLE.selectedOptionValue}}
+  ,@pAddNo= {{COMPANY_CONTACT_ADD_NO.text}}
+	,@pCOMPANY_CONTACT_FLOOR = {{COMPANY_CONTACT_FLOOR.text}}
+  ,@pMoo= {{COMPANY_CONTACT_MOO.text}}
+  ,@pSoiEN= {{COMPANY_CONTACT_SOI_EN.text}}
+  ,@pSoiTH= {{COMPANY_CONTACT_SOI_TH.text}}
+  ,@pRoadEN= {{COMPANY_CONTACT_ROAD_EN.text}}
+  ,@pRoadTH= {{COMPANY_CONTACT_ROAD_TH.text}}
+  ,@pSubdistrictEN= {{SUB_DISTRICT_TH.selectedOptionValue}}
+  ,@pSubdistrictTH= {{SUB_DISTRICT_TH.selectedOptionValue}}
+  ,@pDistrictEN= {{DISTRICT_TH.selectedOptionValue}}
+  ,@pDistrictTH= {{DISTRICT_TH.selectedOptionValue}}
+  ,@pProvinceEN= {{PROVINCE_TH.selectedOptionValue}}
+  ,@pProvinceTH= {{PROVINCE_TH.selectedOptionValue}}
+  ,@pPostalCode= {{POSTAL_CODE.text}}
+  ,@pStatus= {{STATUS.selectedOptionValue}}
+	,@OTHER = {{OTHER.text}}
+	
+	,@pCOMPANY_CONTACT_ID = {{COMPANY_CONTACT_ID.text}}
+	,@INSERT_IF_NOT_EXIST = 0
+	,@UPDATE_NULL = {{this.params.UPDATE_NULL?this.params.UPDATE_NULL:1}}
+	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@ResultCode=@ResultCode OUTPUT
+	,@ResultMessages=@ResultMessages OUTPUT
+
+IF @ResultCode <> 'DONE' GOTO RETURN_RESULT;
+
+RETURN_RESULT:
+SELECT @ResultCode AS [RESULT_CODE],
+       @ResultMessages AS [RESULT_MESSAGES]
+
+IF @ResultCode = 'DONE'
+COMMIT TRANSACTION;
+ELSE ROLLBACK TRANSACTION;

@@ -1,0 +1,20 @@
+SET NOCOUNT ON;
+DECLARE @OUTPUT_TABLE table(ID int,PROVINCE nvarchar(50),DISTRICT nvarchar(50),SUBDISTRICT nvarchar(50),POSTAL_CODE nvarchar(50));
+
+INSERT INTO @OUTPUT_TABLE
+SELECT * FROM dbo.TH_ADDRESSES 
+WHERE 
+(1={{this.params.POSTAL_CODE== undefined?1:0}} or POSTAL_CODE={{this.params.POSTAL_CODE}}) AND
+(1={{this.params.PROVINCE== undefined?1:0}} or PROVINCE={{this.params.PROVINCE}}) AND
+(1={{this.params.DISTRICT== undefined?1:0}} or DISTRICT={{this.params.DISTRICT}}) AND
+(1={{this.params.SUBDISTRICT== undefined?1:0}} or SUBDISTRICT={{this.params.SUBDISTRICT}})
+ORDER BY PROVINCE ASC 
+
+IF {{this.params.DISTINCT||null}} IS NULL
+SELECT * FROM @OUTPUT_TABLE
+IF {{this.params.DISTINCT||null}} = 'PROVINCE'
+SELECT DISTINCT PROVINCE FROM @OUTPUT_TABLE
+IF {{this.params.DISTINCT||null}} = 'DISTRICT'
+SELECT DISTINCT DISTRICT FROM @OUTPUT_TABLE
+IF {{this.params.DISTINCT||null}} = 'SUBDISTRICT'
+SELECT DISTINCT SUBDISTRICT FROM @OUTPUT_TABLE

@@ -1,0 +1,204 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_5124abc2-eba0-43ef-ab2e-88b63b7ba53f",
+  "id": "Manage Company_Default_COMPANY_BILLING",
+  "unpublishedCollection": {
+    "name": "Default_COMPANY_BILLING",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "BILLING_INFORMATION_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_INFORMATION_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_TYPE_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_TITLE_PREFIX",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_TITLE_PREFIX_OTHER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_SUFFIX",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_BRANCH_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_BRANCH_NUMBER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_SHOP_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_TELEPHONE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_CONTACT_EMAIL",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUSINESS_TYPE_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUSINESS_TYPE_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_FAX",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_TAX_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_WEBSITE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUILDING_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUILDING_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_FLOOR",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_ADD_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_MOO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_SOI_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_SOI_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_ROAD_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_ROAD_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_SUB_DISTRICT_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_SUB_DISTRICT_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_DISTRICT_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_DISTRICT_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_PROVINCE_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_PROVINCE_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_POSTAL_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREDIT_TERM",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "REMARK_OF_INVOICE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "REMARK_OF_RECEIPT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  data: \"Active\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREDIT_DAY",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BILLING_SUB_DISTRICT_TH",
+        "value": "{\n  data: Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_TH.data,\n  regex: Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_TH.regex,\n  required: Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_TH.required || Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_EN.required,\n  color: Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_TH.color == Configs.requiredColorAlert || Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_EN.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
+      },
+      {
+        "name": "BILLING_DISTRICT_TH",
+        "value": "{\n  data: Default_COMPANY_BILLING.BILLING_COMPANY_DISTRICT_TH.data,\n  regex: Default_COMPANY_BILLING.BILLING_COMPANY_DISTRICT_TH.regex,\n  required: Default_COMPANY_BILLING.BILLING_COMPANY_DISTRICT_TH.required || Default_COMPANY_BILLING.BILLING_COMPANY_DISTRICT_EN.required,\n  color: Default_COMPANY_BILLING.BILLING_COMPANY_DISTRICT_TH.color == Configs.requiredColorAlert || Default_COMPANY_BILLING.BILLING_COMPANY_DISTRICT_EN.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
+      },
+      {
+        "name": "BILLING_PROVINCE_TH",
+        "value": "{\n  data: Default_COMPANY_BILLING.BILLING_COMPANY_PROVINCE_TH.data,\n  regex: Default_COMPANY_BILLING.BILLING_COMPANY_PROVINCE_TH.regex,\n  required: Default_COMPANY_BILLING.BILLING_COMPANY_PROVINCE_TH.required || Default_COMPANY_BILLING.BILLING_COMPANY_PROVINCE_EN.required,\n  color: Default_COMPANY_BILLING.BILLING_COMPANY_PROVINCE_TH.color == Configs.requiredColorAlert || Default_COMPANY_BILLING.BILLING_COMPANY_PROVINCE_EN.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
+      },
+      {
+        "name": "BILLING_POSTAL_CODE",
+        "value": "{\n  data: Default_COMPANY_BILLING.BILLING_COMPANY_POSTAL_CODE.data,\n  regex: Default_COMPANY_BILLING.BILLING_COMPANY_POSTAL_CODE.regex,\n  required: Default_COMPANY_BILLING.BILLING_COMPANY_POSTAL_CODE.required,\n  color: Default_COMPANY_BILLING.BILLING_COMPANY_POSTAL_CODE.color\n}"
+      },
+      {
+        "name": "BCOMPANY_BUILDING_NAME_EN",
+        "value": "{\n  data: Default_COMPANY_BILLING.BILLING_COMPANY_BUILDING_NAME_EN.data,\n  regex: Default_COMPANY_BILLING.BILLING_COMPANY_BUILDING_NAME_EN.regex,\n  required: Default_COMPANY_BILLING.BILLING_COMPANY_BUILDING_NAME_EN.required,\n  color: Default_COMPANY_BILLING.BILLING_COMPANY_BUILDING_NAME_EN.color\n}"
+      },
+      {
+        "name": "BCOMPANY_BUILDING_NAME_TH",
+        "value": "{\n  data: Default_COMPANY_BILLING.BILLING_COMPANY_BUILDING_NAME_TH.data,\n  regex: Default_COMPANY_BILLING.BILLING_COMPANY_BUILDING_NAME_TH.regex,\n  required: Default_COMPANY_BILLING.BILLING_COMPANY_BUILDING_NAME_TH.required,\n  color: Default_COMPANY_BILLING.BILLING_COMPANY_BUILDING_NAME_TH.color\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUSINESS_TYPE",
+        "value": "{\n  data: _.trim((Default_COMPANY_BILLING.BILLING_COMPANY_BUSINESS_TYPE_TH.data || \"\") + \"/\" + (Default_COMPANY_BILLING.BILLING_COMPANY_BUSINESS_TYPE_EN.data || \"\"), \"/\"),\n  regex: \"\",\n  required: Default_COMPANY_BILLING.BILLING_COMPANY_BUSINESS_TYPE_TH.required || Default_COMPANY_BILLING.BILLING_COMPANY_BUSINESS_TYPE_EN.required,\n  color: Default_COMPANY_BILLING.BILLING_COMPANY_BUSINESS_TYPE_TH.color == Configs.requiredColorAlert || Default_COMPANY_BILLING.BILLING_COMPANY_BUSINESS_TYPE_EN.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
+      }
+    ]
+  }
+}

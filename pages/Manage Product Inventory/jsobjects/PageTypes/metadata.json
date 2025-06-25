@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_46bd4f93-cedf-4184-8f7d-4248ab68472e",
+  "id": "Manage Product Inventory_PageTypes",
+  "unpublishedCollection": {
+    "name": "PageTypes",
+    "pageId": "Manage Product Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "Meter",
+        "value": "0"
+      },
+      {
+        "name": "Space",
+        "value": "1"
+      }
+    ]
+  }
+}

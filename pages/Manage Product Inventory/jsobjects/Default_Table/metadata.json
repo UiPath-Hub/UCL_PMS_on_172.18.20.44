@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_e556d4bb-e3c8-4d06-aa55-fa33efd60f9c",
+  "id": "Manage Product Inventory_Default_Table",
+  "unpublishedCollection": {
+    "name": "Default_Table",
+    "pageId": "Manage Product Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "catalogSearchResult",
+        "value": "[{\n  \"PRODUCT_ID\": \"\",\n  \"PRODUCT_TYPE\": \"\",\n  \"PRODUCT_NAME\": \"\",\n  \"STATUS\": \"\",\n  \"AVAILABLE_UNIT\": 0,\n  \"TOTAL_UNIT\": 0,\n  \"FLOOR_NO\": \"\",\n  \"TOTAL_RECORDS\": 0\n}]"
+      },
+      {
+        "name": "parentMeters",
+        "value": "[{\n  \"INVENTORY_ID\": null,\n  \"INVENTORY_NAME\": null,\n  \"TOTAL_RECORDS\": 0\n}]"
+      }
+    ]
+  }
+}

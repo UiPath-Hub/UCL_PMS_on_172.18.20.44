@@ -1,0 +1,45 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "#71717a",
+  "buttonVariant": "PRIMARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "cross",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "sjcapm6fvo",
+  "leftColumn": 59,
+  "minWidth": 50,
+  "mobileBottomRow": 93,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 39,
+  "mobileTopRow": 89,
+  "needsErrorInfo": false,
+  "onClick": "{{closeModal(MODAL_ADD_COMPANY_PROFILE.name);}}",
+  "originalBottomRow": 136,
+  "originalTopRow": 132,
+  "parentColumnSpace": 19.8125,
+  "parentId": "uql4tzl9vd",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "tooltip": "Close",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "hduw4o36jq",
+  "widgetName": "BUTTON_ADD_CANCEL"
+}

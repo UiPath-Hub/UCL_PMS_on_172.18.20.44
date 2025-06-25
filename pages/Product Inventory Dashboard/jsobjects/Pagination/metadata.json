@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_ce79f85b-23ea-4de2-8432-c56141280be6",
+  "id": "Product Inventory Dashboard_Pagination",
+  "unpublishedCollection": {
+    "name": "Pagination",
+    "pageId": "Product Inventory Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "pageSize",
+        "value": "10"
+      }
+    ]
+  }
+}

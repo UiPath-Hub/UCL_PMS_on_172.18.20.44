@@ -1,0 +1,96 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_52c09d01-e192-41ef-94b8-50cd716745c9",
+  "id": "Manage Product Catalog_Default_ProductCatalog",
+  "unpublishedCollection": {
+    "name": "Default_ProductCatalog",
+    "pageId": "Manage Product Catalog",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PRODUCT_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "OWNER_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "FLOOR_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "UNIT_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "UNIT_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "TOTAL_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "AVAILABLE_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  data: \"Active\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_DETAIL",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "DELETE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "ACCOUNT_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "CATALOG_PICTURE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "IMAGE",
+        "value": "{\n  data: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE",
+        "value": "{\n  regex: `${Default_ProductCatalog.PRODUCT_TYPE_TH.regex}|${Default_ProductCatalog.PRODUCT_TYPE_EN.regex}`,\n  required: Default_ProductCatalog.PRODUCT_TYPE_EN.required || Default_ProductCatalog.PRODUCT_TYPE_TH.required,\n  color: \"\"\n}"
+      },
+      {
+        "name": "UNIT",
+        "value": "{\n  regex: `${Default_ProductCatalog.UNIT_EN.regex}|${Default_ProductCatalog.UNIT_TH.regex}`,\n  required: Default_ProductCatalog.UNIT_EN.required || Default_ProductCatalog.UNIT_TH.required,\n  color: \"\"\n}"
+      }
+    ]
+  }
+}

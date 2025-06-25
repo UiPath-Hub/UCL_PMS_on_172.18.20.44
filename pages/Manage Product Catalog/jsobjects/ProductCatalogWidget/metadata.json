@@ -1,0 +1,68 @@
+{
+  "gitSyncId": "67e2786a166b1720655be9d3_fbc29528-1f21-46dd-a0dc-c1c3f125ff1a",
+  "id": "Manage Product Catalog_ProductCatalogWidget",
+  "unpublishedCollection": {
+    "name": "ProductCatalogWidget",
+    "pageId": "Manage Product Catalog",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PRODUCT_ID",
+        "value": "{\n  ...PRODUCT_ID,\n  data: PRODUCT_ID.text\n}"
+      },
+      {
+        "name": "PRODUCT_NAME_EN",
+        "value": "{\n  ...PRODUCT_NAME_EN,\n  data: PRODUCT_NAME_EN.text\n}"
+      },
+      {
+        "name": "PRODUCT_NAME_TH",
+        "value": "{\n  ...PRODUCT_NAME_TH,\n  data: PRODUCT_NAME_TH.text\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE_EN",
+        "value": "{\n  ...PRODUCT_TYPE,\n  data: PRODUCT_TYPE.selectedOptionValue.split(\"/\")[1] || \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE_TH",
+        "value": "{\n  ...PRODUCT_TYPE,\n  data: PRODUCT_TYPE.selectedOptionValue.split(\"/\")[0] || \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_CODE",
+        "value": "{\n  ...PRODUCT_CODE,\n  data: PRODUCT_CODE.text\n}"
+      },
+      {
+        "name": "FLOOR_NO",
+        "value": "{\n  ...FLOOR_NO,\n  data: FLOOR_NO.selectedOptionValue\n}"
+      },
+      {
+        "name": "UNIT_EN",
+        "value": "{\n  ...UNIT,\n  data: UNIT.selectedOptionValue.split(\"/\")[1] || \"\"\n}"
+      },
+      {
+        "name": "UNIT_TH",
+        "value": "{\n  ...UNIT,\n  data: UNIT.selectedOptionValue.split(\"/\")[0] || \"\"\n}"
+      },
+      {
+        "name": "TOTAL_UNIT",
+        "value": "{\n  ...TOTAL_UNIT,\n  data: TOTAL_UNIT.text\n}"
+      },
+      {
+        "name": "AVAILABLE_UNIT",
+        "value": "{\n  ...AVAILABLE_UNIT,\n  data: AVAILABLE_UNIT.text\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  ...STATUS,\n  data: STATUS.selectedOptionValue\n}"
+      },
+      {
+        "name": "PRODUCT_DETAIL",
+        "value": "{\n  ...PRODUCT_DETAIL,\n  data: PRODUCT_DETAIL.text\n}"
+      },
+      {
+        "name": "ACCOUNT_CODE",
+        "value": "{\n  ...ACCOUNT_CODE,\n  data: ACCOUNT_CODE.text\n}"
+      }
+    ]
+  }
+}

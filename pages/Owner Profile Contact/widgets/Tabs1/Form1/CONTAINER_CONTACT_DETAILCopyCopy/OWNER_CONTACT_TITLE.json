@@ -1,0 +1,80 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( _.trim(`${Default_OwnerProfileContact.\nOWNER_CONTACT_TITLE_TH\n.data}/${Default_OwnerProfileContact.\nOWNER_CONTACT_TITLE_EN\n.data}`,\"/\")))(OWNER_CONTACT_TITLE.options, OWNER_CONTACT_TITLE.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": "{{Default_OwnerProfileContact.\nOWNER_CONTACT_TITLE_EN\n.required||Default_OwnerProfileContact.\nOWNER_CONTACT_TITLE_TH\n.required}}",
+  "isVisible": true,
+  "key": "72xnnx6qo8",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Title",
+  "labelTextColor": "{{Default_OwnerProfileContact.\nOWNER_CONTACT_TITLE_TH\n.color||\nDefault_OwnerProfileContact.\nOWNER_CONTACT_TITLE_EN\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 26,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 19,
+  "needsErrorInfo": false,
+  "optionLabel": "FIXED_VALUE",
+  "optionValue": "SYSTEM_VALUE",
+  "originalBottomRow": 22,
+  "originalTopRow": 18,
+  "parentColumnSpace": 19.5,
+  "parentId": "mv4l3ww359",
+  "parentRowSpace": 10,
+  "placeholderText": "",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "serverSideFiltering": false,
+  "sourceData": "{{SP_DD_TITLE.data}}",
+  "topRow": 10,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "l6qn4xyjbq",
+  "widgetName": "OWNER_CONTACT_TITLE"
+}

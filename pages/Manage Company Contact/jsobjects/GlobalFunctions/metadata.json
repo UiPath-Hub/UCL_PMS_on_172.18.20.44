@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "67b5ec528c4cb21215539a06_b2cf82ae-f671-4b43-a6a1-75463a0808fa",
+  "id": "Manage Company Contact_GlobalFunctions",
+  "unpublishedCollection": {
+    "name": "GlobalFunctions",
+    "pageId": "Manage Company Contact",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "V",
+        "value": "4"
+      },
+      {
+        "name": "LastChanged",
+        "value": "\"manualValidateV2 : get rid of widgetName for searching color, use keystr instead\""
+      }
+    ]
+  }
+}

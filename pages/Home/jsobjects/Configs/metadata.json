@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_51a63207-b732-4f7f-887f-f1269eb57fd1",
+  "id": "Home_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Home",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      }
+    ]
+  }
+}

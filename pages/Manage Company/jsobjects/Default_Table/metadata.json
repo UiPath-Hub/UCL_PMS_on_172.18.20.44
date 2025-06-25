@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_4c7ce62d-c856-4b50-b9f3-e63315f5d6ce",
+  "id": "Manage Company_Default_Table",
+  "unpublishedCollection": {
+    "name": "Default_Table",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "TABLE_CONTACT",
+        "value": "[{\n  \"Contact ID\": null,\n  \"Contact Name\": null,\n  \"Telephone\": null,\n  \"Email\": null,\n  \"TOTAL_RECORDS\": 0\n}]"
+      },
+      {
+        "name": "TABLE_PROFILE",
+        "value": "[{\n  \"COMPANY_PROFILE_ID\": '',\n  \"COMPANY_PROFILE_AGREEMENT_NO\": '',\n  \"COMPANY_PROFILE_PERIOD_START\": '',\n  \"COMPANY_PROFILE_PERIOD_END\": '',\n  \"STATUS\": '',\n  \"CREATE_DATE\": '',\n  \"PRICE_PER_UNIT\": '',\n  \"FLOOR_NO\": '',\n  \"UNIT\": '',\n  \"INVENTORY_NAME\": '',\n  \"PRODUCT_TYPE_TH\": '',\n  \"PRODUCT_NAME_TH\": '',\n  \"TOTAL_RECORDS\": 0\n}]"
+      },
+      {
+        "name": "TABLE_INVENT",
+        "value": "[{\n  \"FLOOR_NO\": \"\",\n  \"PRODUCT_TYPE_TH\": \"\",\n  \"INVENTORY_NAME\": \"\",\n  \"ZONE\": \"\",\n  \"METER_ID\": \"\",\n  \"QUANTITY\": \"\",\n  \"STATUS\": \"Active\",\n  \"INVENTORY_ID\": \"\",\n  \"PRODUCT_ID\": \"\",\n  \"PRICE_PER_UNIT\": \"\",\n  \"START_DATE\": \"\",\n  \"END_DATE\": \"\",\n  \"TOTAL_RECORDS\": 0\n}]"
+      }
+    ]
+  }
+}

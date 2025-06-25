@@ -1,0 +1,79 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 69,
+  "boxShadow": "none",
+  "defaultText": "{{DefaultInventory.PRODUCT_DESCRIPTION.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "MULTI_LINE_TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{DefaultInventory.\nPRODUCT_DESCRIPTION.required}}",
+  "isVisible": true,
+  "key": "nwk391w658",
+  "label": "Product Description",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{DefaultInventory.PRODUCT_DESCRIPTION\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "8",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "originalBottomRow": 69,
+  "originalTopRow": 61,
+  "parentColumnSpace": 19.5,
+  "parentId": "qpfi71lfb7",
+  "parentRowSpace": 10,
+  "regex": "{{DefaultInventory.PRODUCT_DESCRIPTION.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 29,
+  "shouldAllowAutofill": false,
+  "showStepArrows": false,
+  "topRow": 61,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "dehed2l1il",
+  "widgetName": "PRODUCT_DESCRIPTION"
+}

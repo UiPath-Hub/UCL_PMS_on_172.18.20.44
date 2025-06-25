@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_470d9d3c-1147-4822-92c5-2d2e644f2bc8",
+  "id": "Contact Person Dashboard_Default_Table",
+  "unpublishedCollection": {
+    "name": "Default_Table",
+    "pageId": "Contact Person Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PMS_COMPANY_CONTACT_LM",
+        "value": "[{\n  \"Contact Person Number\": \"\",\n  \"Contact Person Name\": \"\",\n  \"Company Name\": \"\",\n  \"Telephone\": \"\",\n  \"Status\": \"\",\n  \"TOTAL_RECORDS\": 0\n}]"
+      }
+    ]
+  }
+}

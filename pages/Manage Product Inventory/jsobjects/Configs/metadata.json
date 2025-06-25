@@ -1,0 +1,64 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_a7306eaa-7b96-4e5a-9a46-55d3f436c816",
+  "id": "Manage Product Inventory_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Manage Product Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"PINVV\",\n  EDIT: \"PINVE\"\n}"
+      },
+      {
+        "name": "forceKick",
+        "value": "false"
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "errorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"Manage Product Inventory\""
+      },
+      {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
+      },
+      {
+        "name": "startBody",
+        "value": "\"LOADING\""
+      },
+      {
+        "name": "EditInventory",
+        "value": "\"EditInventory\""
+      },
+      {
+        "name": "PageType",
+        "value": "\"PageType\""
+      },
+      {
+        "name": "dateFormat",
+        "value": "\"D MMMM YYYY\""
+      },
+      {
+        "name": "ShowOptionalDetail",
+        "value": "appsmith.store[Configs.PageType] === PageTypes.Meter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_ae9ac587-b75c-4cad-88da-c2ec3aa3b7d4",
+  "id": "Invoice Dashboard_JS",
+  "unpublishedCollection": {
+    "name": "JS",
+    "pageId": "Invoice Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

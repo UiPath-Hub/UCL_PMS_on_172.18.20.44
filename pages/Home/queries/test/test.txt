@@ -1,0 +1,28 @@
+DECLARE @RC int, @pResultOut nvarchar(50);
+
+EXECUTE [dbo].[INSERT_PMS_COMPANY_LM] 
+   @pCOMPANY_TYPE = null
+  ,@pCOMPANY_NAME_TH= null
+  ,@pCOMPANY_NAME_EN= null
+  ,@pSHOP_NAME= null
+  ,@pTELEPHONE= null
+  ,@pSTATUS= null
+  ,@pCONTACT_EMAIL= null
+  ,@pCOMPANY_BUSINESS_TYPE= null
+  ,@pFAX= null
+  ,@pTAX_ID= null
+  ,@pWEBSITE= null
+  ,@pCOMPANY_BUILDING_NAME_TH= null
+  ,@pCOMPANY_BUILDING_NAME_EN= null
+  ,@pCOMPANY_FLOOR= null
+  ,@pCOMPANY_ADD_NO= null
+  ,@pCOMPANY_MOO= null
+  ,@pCOMPANY_SOI_TH= null
+  ,@pCOMPANY_SOI_EN= null
+  ,@pCOMPANY_ROAD_TH= null
+  ,@pCOMPANY_ROAD_EN= null
+  ,@pCOMPANY_SUB_DISTRICT= null
+  ,@pCOMPANY_DISTRICT= null
+  ,@pCOMPANY_PROVINCE= null
+  ,@pCOMPANY_POSTAL_CODE= null
+  ,@pUSER_ID= null

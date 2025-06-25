@@ -1,0 +1,59 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 40,
+  "boxShadow": "none",
+  "buttonColor": "#3b82f6",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{!Boolean(TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow.INVENTORY_ID)}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "6fgfm4o8oh",
+  "leftColumn": 25,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{JS_Profile.onBttn_selectProfile_T1();}}",
+  "originalBottomRow": 40,
+  "originalTopRow": 36,
+  "parentId": "18f43u779c",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 38,
+  "text": "Select",
+  "topRow": 36,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "en39lleswg",
+  "widgetName": "Bttn_submitProfile_T1"
+}

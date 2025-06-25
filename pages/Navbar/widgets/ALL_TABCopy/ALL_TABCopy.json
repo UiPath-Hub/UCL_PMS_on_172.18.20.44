@@ -1,0 +1,464 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": false,
+  "backgroundColor": "#FFFFFF",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": 1,
+  "bottomRow": 68,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 370,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": true,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isDisabled": false,
+      "isLoading": false,
+      "isVisible": true,
+      "key": "1qa5tbqmww",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 150,
+      "minWidth": 450,
+      "mobileBottomRow": 150,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 146.1015625,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qm7ul67glb",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 146.1015625,
+      "shouldScrollContents": false,
+      "tabId": "tab1",
+      "tabName": "Company Contact",
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "hyqoc0zwfz",
+      "widgetName": "Canvas5Copy"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 720,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "1saq1tmopt",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 390,
+      "minWidth": 450,
+      "mobileBottomRow": 391,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1168.8125,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qm7ul67glb",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1168.8125,
+      "tabId": "taby20jjg0trx",
+      "tabName": "Profile",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "47plsuqf32",
+      "widgetName": "Canvas133Copy"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 370,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "940wlua2wx",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 410,
+      "minWidth": 450,
+      "mobileBottomRow": 411,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1168.8125,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qm7ul67glb",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1168.8125,
+      "tabId": "tabtgfj7n70ac",
+      "tabName": "Inquiry",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "ifix3yvxel",
+      "widgetName": "Canvas147CopyCopy"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 370,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "940wlua2wx",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 410,
+      "minWidth": 450,
+      "mobileBottomRow": 411,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1168.8125,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qm7ul67glb",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1168.8125,
+      "tabId": "tab43uonj9wcq",
+      "tabName": "Letter of Offer",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "cw9ks943cr",
+      "widgetName": "Canvas148Copy"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 720,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "940wlua2wx",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 410,
+      "minWidth": 450,
+      "mobileBottomRow": 411,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1168.8125,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qm7ul67glb",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1168.8125,
+      "tabId": "tabrgu6gjjzcy",
+      "tabName": "Agreement",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "0aucu23v6m",
+      "widgetName": "Canvas149Copy"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 370,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "940wlua2wx",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 410,
+      "minWidth": 450,
+      "mobileBottomRow": 411,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1168.8125,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qm7ul67glb",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1168.8125,
+      "tabId": "tab4tfy4dvrqc",
+      "tabName": "Quotation",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "ux9lvke8dz",
+      "widgetName": "Canvas150Copy"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 1080,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "940wlua2wx",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 410,
+      "minWidth": 450,
+      "mobileBottomRow": 411,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1168.8125,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "qm7ul67glb",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1168.8125,
+      "tabId": "tabdm6v2sdeuu",
+      "tabName": "Billing Information",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "ejpauq2xsj",
+      "widgetName": "Canvas151Copy"
+    }
+  ],
+  "defaultTab": "{{Configs.defaultTap}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tabsObj.taby20jjg0trx.isVisible"
+    },
+    {
+      "key": "tabsObj.tabtgfj7n70ac.isVisible"
+    },
+    {
+      "key": "tabsObj.tab43uonj9wcq.isVisible"
+    },
+    {
+      "key": "tabsObj.tabrgu6gjjzcy.isVisible"
+    },
+    {
+      "key": "tabsObj.tab4tfy4dvrqc.isVisible"
+    },
+    {
+      "key": "defaultTab"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "tabsObj.taby20jjg0trx.isVisible"
+    },
+    {
+      "key": "tabsObj.tabtgfj7n70ac.isVisible"
+    },
+    {
+      "key": "tabsObj.tab43uonj9wcq.isVisible"
+    },
+    {
+      "key": "tabsObj.tabrgu6gjjzcy.isVisible"
+    },
+    {
+      "key": "tabsObj.tab4tfy4dvrqc.isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTabSelected"
+    }
+  ],
+  "flexVerticalAlignment": "stretch",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": false,
+  "key": "s4zwemai0i",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 10,
+  "minWidth": 450,
+  "mobileBottomRow": 16,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 8,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "onTabSelected": "{{JS_TAB.onTapChange();}}",
+  "originalBottomRow": 68,
+  "originalTopRow": 27,
+  "parentColumnSpace": 18.2626953125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "shouldShowTabs": true,
+  "tabsObj": {
+    "tab1": {
+      "id": "tab1",
+      "index": 0,
+      "isDuplicateLabel": false,
+      "isVisible": true,
+      "label": "Company Contact",
+      "positioning": "vertical",
+      "widgetId": "hyqoc0zwfz"
+    },
+    "tab43uonj9wcq": {
+      "id": "tab43uonj9wcq",
+      "index": 3,
+      "isVisible": "{{appsmith.store[ Configs.editCompanyFlag] !== undefined && appsmith.store[ Configs.editCompanyFlag].COMPANY_ID != undefined}}",
+      "label": "Letter of Offer",
+      "widgetId": "cw9ks943cr"
+    },
+    "tab4tfy4dvrqc": {
+      "id": "tab4tfy4dvrqc",
+      "index": 5,
+      "isVisible": "{{appsmith.store[ Configs.editCompanyFlag] !== undefined && appsmith.store[ Configs.editCompanyFlag].COMPANY_ID != undefined}}",
+      "label": "Quotation",
+      "widgetId": "ux9lvke8dz"
+    },
+    "tabdm6v2sdeuu": {
+      "id": "tabdm6v2sdeuu",
+      "index": 6,
+      "isVisible": true,
+      "label": "Billing Information",
+      "widgetId": "ejpauq2xsj"
+    },
+    "tabrgu6gjjzcy": {
+      "id": "tabrgu6gjjzcy",
+      "index": 4,
+      "isVisible": "{{appsmith.store[ Configs.editCompanyFlag] !== undefined && appsmith.store[ Configs.editCompanyFlag].COMPANY_ID != undefined}}",
+      "label": "Agreement",
+      "widgetId": "0aucu23v6m"
+    },
+    "tabtgfj7n70ac": {
+      "id": "tabtgfj7n70ac",
+      "index": 2,
+      "isVisible": "{{appsmith.store[ Configs.editCompanyFlag] !== undefined && appsmith.store[ Configs.editCompanyFlag].COMPANY_ID != undefined}}",
+      "label": "Inquiry",
+      "widgetId": "ifix3yvxel"
+    },
+    "taby20jjg0trx": {
+      "id": "taby20jjg0trx",
+      "index": 1,
+      "isVisible": "{{appsmith.store[ Configs.editCompanyFlag] !== undefined && appsmith.store[ Configs.editCompanyFlag].COMPANY_ID != undefined}}",
+      "label": "Profile",
+      "widgetId": "47plsuqf32"
+    }
+  },
+  "topRow": 27,
+  "type": "TABS_WIDGET",
+  "version": 3,
+  "widgetId": "qm7ul67glb",
+  "widgetName": "ALL_TABCopy"
+}

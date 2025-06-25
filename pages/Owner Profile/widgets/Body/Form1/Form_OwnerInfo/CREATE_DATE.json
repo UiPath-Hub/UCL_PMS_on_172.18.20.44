@@ -1,0 +1,78 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "boxShadow": "none",
+  "defaultText": "{{moment( Default_OwnerProfile.\nCREATE_DATE.data).format(\"DD/MM/YYYY\")!=\"Invalid date\"?moment( Default_OwnerProfile.\nCREATE_DATE.data).format(\"DD/MM/YYYY\"):moment().format(\"DD/MM/YYYY\")}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "regex"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": true,
+  "isLoading": false,
+  "isRequired": "{{Default_OwnerProfile.CREATE_DATE.required}}",
+  "isVisible": true,
+  "key": "sedoj0qsss",
+  "label": "Create Date",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{Default_OwnerProfile.CREATE_DATE\n.color}}",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "10",
+  "leftColumn": 34,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 39,
+  "mobileLeftColumn": 34,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 32,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 15.828125,
+  "parentId": "v7uehrq8j2",
+  "parentRowSpace": 10,
+  "placeholderText": "auto",
+  "regex": "{{Default_OwnerProfile.CREATE_DATE\n.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "showStepArrows": false,
+  "tooltip": "",
+  "topRow": 12,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "e5xw7yqqsc",
+  "widgetName": "CREATE_DATE"
+}

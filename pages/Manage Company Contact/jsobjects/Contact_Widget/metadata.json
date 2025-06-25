@@ -1,0 +1,116 @@
+{
+  "gitSyncId": "6814334a5165473495a8dbd7_d1223db9-da99-430b-bd05-45a5a302b8cf",
+  "id": "Manage Company Contact_Contact_Widget",
+  "unpublishedCollection": {
+    "name": "Contact_Widget",
+    "pageId": "Manage Company Contact",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "TITLE_NAME",
+        "value": "{\n  ...TITLE_NAME,\n  data: TITLE_NAME.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_FIRST_NAME_EN",
+        "value": "{\n  ...COMPANY_CONTACT_FIRST_NAME_EN,\n  data: COMPANY_CONTACT_FIRST_NAME_EN.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_FIRST_NAME_TH",
+        "value": "{\n  ...COMPANY_CONTACT_FIRST_NAME_TH,\n  data: COMPANY_CONTACT_FIRST_NAME_TH.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_SUR_NAME_EN",
+        "value": "{\n  ...COMPANY_CONTACT_SUR_NAME_EN,\n  data: COMPANY_CONTACT_SUR_NAME_EN.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_SUR_NAME_TH",
+        "value": "{\n  ...COMPANY_CONTACT_SUR_NAME_TH,\n  data: COMPANY_CONTACT_SUR_NAME_TH.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_TELEPHONE",
+        "value": "{\n  ...COMPANY_CONTACT_TELEPHONE,\n  data: COMPANY_CONTACT_TELEPHONE.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_EXT",
+        "value": "{\n  ...COMPANY_CONTACT_EXT,\n  data: COMPANY_CONTACT_EXT.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_MOBILE",
+        "value": "{\n  ...COMPANY_CONTACT_MOBILE,\n  data: COMPANY_CONTACT_MOBILE.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_EMAIL",
+        "value": "{\n  ...COMPANY_CONTACT_EMAIL,\n  data: COMPANY_CONTACT_EMAIL.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_ROLE",
+        "value": "{\n  ...COMPANY_CONTACT_ROLE,\n  data: COMPANY_CONTACT_ROLE.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_ADD_NO",
+        "value": "{\n  ...COMPANY_CONTACT_ADD_NO,\n  data: COMPANY_CONTACT_ADD_NO.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_MOO",
+        "value": "{\n  ...COMPANY_CONTACT_MOO,\n  data: COMPANY_CONTACT_MOO.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_SOI_EN",
+        "value": "{\n  ...COMPANY_CONTACT_SOI_EN,\n  data: COMPANY_CONTACT_SOI_EN.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_SOI_TH",
+        "value": "{\n  ...COMPANY_CONTACT_SOI_TH,\n  data: COMPANY_CONTACT_SOI_TH.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_ROAD_EN",
+        "value": "{\n  ...COMPANY_CONTACT_ROAD_EN,\n  data: COMPANY_CONTACT_ROAD_EN.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_ROAD_TH",
+        "value": "{\n  ...COMPANY_CONTACT_ROAD_TH,\n  data: COMPANY_CONTACT_ROAD_TH.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_SDISTRICT_EN",
+        "value": "{\n  ...SUB_DISTRICT_TH,\n  data: SUB_DISTRICT_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_SDISTRICT_TH",
+        "value": "{\n  ...SUB_DISTRICT_TH,\n  data: SUB_DISTRICT_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_DISTRICT_EN",
+        "value": "{\n  ...DISTRICT_TH,\n  data: DISTRICT_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_DISTRICT_TH",
+        "value": "{\n  ...DISTRICT_TH,\n  data: DISTRICT_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_PROVINCE_EN",
+        "value": "{\n  ...PROVINCE_TH,\n  data: PROVINCE_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_PROVINCE_TH",
+        "value": "{\n  ...PROVINCE_TH,\n  data: PROVINCE_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_POSTAL_CODE",
+        "value": "{\n  ...POSTAL_CODE,\n  data: POSTAL_CODE.text\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  ...STATUS,\n  data: STATUS.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_FLOOR",
+        "value": "{\n  ...COMPANY_CONTACT_FLOOR,\n  data: COMPANY_CONTACT_FLOOR.text\n}"
+      },
+      {
+        "name": "OTHER",
+        "value": "{\n  ...OTHER,\n  data: OTHER.text\n}"
+      }
+    ]
+  }
+}

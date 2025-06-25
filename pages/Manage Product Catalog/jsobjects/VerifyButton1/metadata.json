@@ -1,0 +1,40 @@
+{
+  "gitSyncId": "67e2786a166b1720655be9d3_1e7b30c5-0647-423c-86a5-781449e6a851",
+  "id": "Manage Product Catalog_VerifyButton1",
+  "unpublishedCollection": {
+    "name": "VerifyButton1",
+    "pageId": "Manage Product Catalog",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "InputBox",
+        "value": "{\n  ...PRODUCT_NAME_TH\n}"
+      },
+      {
+        "name": "passColor",
+        "value": "\"#15803d\""
+      },
+      {
+        "name": "invalidColor",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "initColor",
+        "value": "\"#71717a\""
+      },
+      {
+        "name": "Button",
+        "value": "{\n  ...Bttn_verify1,\n  \"setLabel\": async text => {\n    await Bttn_verify1.setLabel(text);\n  },\n  \"setColor\": async color => {\n    await Bttn_verify1.setColor(color);\n  }\n}"
+      },
+      {
+        "name": "DefaultEntity",
+        "value": "Default_ProductCatalog"
+      },
+      {
+        "name": "PropName",
+        "value": "\"PRODUCT_NAME_TH\""
+      }
+    ]
+  }
+}

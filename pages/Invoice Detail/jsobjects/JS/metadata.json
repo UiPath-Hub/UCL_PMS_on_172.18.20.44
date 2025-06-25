@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_72e9c532-fc2a-4fa5-9bf7-6aa261763e5d",
+  "id": "Invoice Detail_JS",
+  "unpublishedCollection": {
+    "name": "JS",
+    "pageId": "Invoice Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

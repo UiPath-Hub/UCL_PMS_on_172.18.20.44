@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_aa63ffe6-d7fb-4ec2-8c67-a5cdfda14cd0",
+  "id": "Third Party Dashboard_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Third Party Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", \"YYYY-MM-DD\")"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_914e21df-0124-4bfc-8a5c-d001da9592aa",
+  "id": "Owner Profile Contact_JS",
+  "unpublishedCollection": {
+    "name": "JS",
+    "pageId": "Owner Profile Contact",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "DELETE",
+        "value": "{\n  requestToDelete: async () => {\n    if (!GlobalFunctions.permissionsCheck(Configs.permissions.EDIT, true)) return;\n    showModal(MODAL_DELETE.name);\n  },\n  confirmToDelete: async () => {\n    await JS.deleteContact();\n  }\n}"
+      },
+      {
+        "name": "SAVE",
+        "value": "{\n  requestToSave: async () => {\n    if (!GlobalFunctions.permissionsCheck(Configs.permissions.EDIT, true)) return;\n    let alertWidget = await GlobalFunctions.manualValidateV2(Default_OwnerProfileContact, Widget_OwnerProfileContact);\n    if (alertWidget.length > 0) {\n      showAlert(`Some field is required or invalid.`);\n    } else showModal(MODAL_SAVE.name);\n  },\n  confirmToSave: async () => {\n    if (Configs.PageState.Current == Configs.PageState.NEW) {\n      await JS.insertContact();\n    } else if (Configs.PageState.Current == Configs.PageState.EDIT) {\n      await JS.updateContact();\n    }\n  }\n}"
+      }
+    ]
+  }
+}

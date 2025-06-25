@@ -1,0 +1,62 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "buttonColor": "#15803d",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "floppy-disk",
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{Bttn_verify1.text != \"Pass\" || Bttn_verify2.text != \"Pass\"}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "st8tsne4v5",
+  "leftColumn": 0,
+  "minWidth": 120,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "onClick": "{{JS.onSaveClick();}}",
+  "originalBottomRow": 61,
+  "originalTopRow": 57,
+  "parentColumnSpace": 19.5,
+  "parentId": "3s19dfhw3q",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 7,
+  "text": "Save",
+  "topRow": 10,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "wmig0rdp3z",
+  "widgetName": "BUTTON_SAVE"
+}

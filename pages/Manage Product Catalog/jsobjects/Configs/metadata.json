@@ -1,0 +1,52 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_90db78ca-ac9f-497e-90d6-8a7db13844af",
+  "id": "Manage Product Catalog_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Manage Product Catalog",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"PCATV\",\n  EDIT: \"PCATE\"\n}"
+      },
+      {
+        "name": "forceKick",
+        "value": "false"
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "errorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "editProductCatalog",
+        "value": "\"editProductCatalog\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"Manage Product Catalog\""
+      },
+      {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
+      },
+      {
+        "name": "startBody",
+        "value": "\"LOADING\""
+      }
+    ]
+  }
+}

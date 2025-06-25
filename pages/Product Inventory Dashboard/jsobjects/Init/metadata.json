@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_62c354a9-e2f3-4257-a057-0d71efff300f",
+  "id": "Product Inventory Dashboard_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Product Inventory Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", \"YYYY-MM-DD\")"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{DefaultCompany.OVERWRITE_BILLING_ADDRESS.data.toString()}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": "{{DefaultCompany.OVERWRITE_BILLING_ADDRESS.required}}",
+  "isVisible": true,
+  "key": "pogrmydn41",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelTextSize": "1rem",
+  "labelWidth": "0",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 149,
+  "mobileLeftColumn": 15,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 143,
+  "needsErrorInfo": false,
+  "options": [
+    {
+      "label": "Use same Company Address",
+      "value": "false"
+    },
+    {
+      "label": "Use Billing Address",
+      "value": "true"
+    }
+  ],
+  "originalBottomRow": 73,
+  "originalTopRow": 69,
+  "parentColumnSpace": 19.8125,
+  "parentId": "ejpauq2xsj",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 29,
+  "topRow": 1,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "3nlhglmtbp",
+  "widgetName": "OVERWRITE_BILLING_ADDRESSCopy"
+}

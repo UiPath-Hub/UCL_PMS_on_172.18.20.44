@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "67b5ec528c4cb21215539a06_b8a04ab8-15f4-4ed1-8b6d-24858eb41c3a",
+  "id": "Manage Company_JS_TAB",
+  "unpublishedCollection": {
+    "name": "JS_TAB",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "Profile",
+        "value": "{\n  LeadData: [],\n  ServiceData: []\n}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 57,
+  "defaultCheckedState": "{{DefaultInventory.SHARED\n.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "defaultCheckedState"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "defaultCheckedState"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "{{!_.toLower( PRODUCT_TYPE.text).includes(\"shared\")}}",
+  "isLoading": false,
+  "isRequired": "{{DefaultInventory.SHARED\n.required}}",
+  "isVisible": true,
+  "key": "n2rj4ngxy8",
+  "label": "Product Shared",
+  "labelPosition": "Left",
+  "labelTextColor": "{{DefaultInventory.SHARED\n.color}}",
+  "labelTextSize": "1rem",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 120,
+  "mobileLeftColumn": 8,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 116,
+  "needsErrorInfo": false,
+  "originalBottomRow": 57,
+  "originalTopRow": 49,
+  "parentColumnSpace": 20.09375,
+  "parentId": "qpfi71lfb7",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 11,
+  "topRow": 49,
+  "type": "CHECKBOX_WIDGET",
+  "version": 1,
+  "widgetId": "ux587c39r8",
+  "widgetName": "SHARED"
+}

@@ -1,0 +1,56 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_5ecc0e2a-d399-412d-8dd3-9f66074903c6",
+  "id": "Manage Product Inventory_SelectedProduct",
+  "unpublishedCollection": {
+    "name": "SelectedProduct",
+    "pageId": "Manage Product Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PRODUCT_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "AVAILABLE_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "FLOOR_NO",
+        "value": "{\n  data: DefaultInventory.FLOOR_NO.data,\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "FREE_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "FLOOR_NO_VIEW",
+        "value": "{\n  data: SelectedProduct.FLOOR_NO.data || DefaultInventory.FLOOR_NO.data,\n  regex: SelectedProduct.FLOOR_NO.regex,\n  required: SelectedProduct.FLOOR_NO.required,\n  color: SelectedProduct.FLOOR_NO.color\n}"
+      },
+      {
+        "name": "PRODUCT_NAME",
+        "value": "{\n  data: `${SelectedProduct.PRODUCT_NAME_TH.data}/${SelectedProduct.PRODUCT_NAME_EN.data}`,\n  regex: `${SelectedProduct.PRODUCT_NAME_EN.regex}|${SelectedProduct.PRODUCT_NAME_TH.regex}`,\n  required: SelectedProduct.PRODUCT_NAME_EN.required || SelectedProduct.PRODUCT_NAME_EN.required,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE",
+        "value": "{\n  data: `${SelectedProduct.PRODUCT_TYPE_TH.data}/${SelectedProduct.PRODUCT_TYPE_EN.data}`,\n  regex: `${SelectedProduct.PRODUCT_TYPE_EN.regex}|${SelectedProduct.PRODUCT_TYPE_TH.regex}`,\n  required: SelectedProduct.PRODUCT_TYPE_EN.required || SelectedProduct.PRODUCT_TYPE_EN.required,\n  color: \"\"\n}"
+      }
+    ]
+  }
+}

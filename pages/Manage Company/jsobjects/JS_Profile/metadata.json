@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_c863c3ca-e156-4dd8-9cba-ec897500b65b",
+  "id": "Manage Company_JS_Profile",
+  "unpublishedCollection": {
+    "name": "JS_Profile",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "AddCompanyPipeline",
+        "value": "\"T1\""
+      },
+      {
+        "name": "Container_Confirm_Meter_Visible",
+        "value": "Default_InvenForProfile.METER_ID.data != \"\""
+      }
+    ]
+  }
+}

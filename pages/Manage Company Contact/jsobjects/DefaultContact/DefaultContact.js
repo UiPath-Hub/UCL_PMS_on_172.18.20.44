@@ -1,0 +1,30 @@
+export default {
+	COMPANY_CONTACT_ID:{data:"",regex:"",required:false,color:""}
+,TITLE_NAME:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_FIRST_NAME_EN:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_FIRST_NAME_TH:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_SUR_NAME_EN:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_SUR_NAME_TH:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_TELEPHONE:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_EXT:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_MOBILE:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_EMAIL:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_ROLE:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_ADD_NO:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_MOO:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_SOI_EN:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_SOI_TH:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_ROAD_EN:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_ROAD_TH:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_SDISTRICT_EN:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_SDISTRICT_TH:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_DISTRICT_EN:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_DISTRICT_TH:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_PROVINCE_EN:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_PROVINCE_TH:{data:"",regex:"",required:false,color:""}
+,COMPANY_CONTACT_POSTAL_CODE:{data:"",regex:"",required:false,color:""}
+,STATUS:{data:"Active",regex:"",required:false,color:""}
+	,CREATE_DATE:{data:"",regex:"",required:false,color:""}
+	,COMPANY_CONTACT_FLOOR:{data:"",regex:"",required:false,color:""},
+	OTHER:{data:"",regex:"",required:false,color:""}
+}

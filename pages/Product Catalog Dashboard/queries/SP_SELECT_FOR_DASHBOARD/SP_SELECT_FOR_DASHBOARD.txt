@@ -1,0 +1,4 @@
+DECLARE @OWNER_ID dbo.NEW_ID = dbo.fn_getPAIRED_OWNER_IDByToken({{appsmith.store[Configs.userSession].TOKEN}})
+
+SELECT *
+  FROM [dbo].[PMS_PRODUCT_CATALOG_DASHBOARD] WHERE OWNER_ID = @OWNER_ID;

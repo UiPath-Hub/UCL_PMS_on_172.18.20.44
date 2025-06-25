@@ -1,0 +1,232 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_4f3727e5-371b-49b0-aa60-5beb108e54f2",
+  "id": "Meter Record Detail_Default_METER",
+  "unpublishedCollection": {
+    "name": "Default_METER",
+    "pageId": "Meter Record Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "METER_REC_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "COMPANY_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "COMPANY_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "COMPANY_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "COMPANY_PROFILE_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "FORMULA_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "INVENTORY_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "INVENTORY_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "PRODUCT_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "PRODUCT_NAME_TH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "PRODUCT_NAME_EN",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "PRODUCT_TYPE_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_TYPE_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_TYPE_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "CT_SIZE1",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "CT_SIZE2",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "CT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "FLOOR_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "MIN_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "AVERAGE_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "MAX_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "DIGIT_LENGTH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "TOTAL_VALUE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "TOTAL_MONTH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "START_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "END_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_REC_PREVIOUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_REC_CURRENT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_REC_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_REC_TOTAL_USAGE_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_REC_UNIT_TOTAL_FEE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "PRICE_PER_UNIT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_AMOUNT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_TAX",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_AMOUNT_TOTAL",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_INVOICE_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_INVOICE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "METER_PICTURE_LINK",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "VALIDATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "VALIDATE_REMARK",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "INVOICE_REMARK",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "BUILDING_CONFIRMATION",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "ACCOUNTING_CONFIRMATION",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "CONFIRM_BY",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "RECORD_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "DELETE_FLAG",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "CREATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "UPDATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "USER_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "INVOICE_NUMBER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "INVOICE_CREATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false\n}"
+      },
+      {
+        "name": "COMPANY_NAME",
+        "value": "{\n  data: Default_METER.COMPANY_NAME_TH.data || Default_METER.COMPANY_NAME_EN.data,\n  regex: \"\",\n  required: false\n}"
+      }
+    ]
+  }
+}

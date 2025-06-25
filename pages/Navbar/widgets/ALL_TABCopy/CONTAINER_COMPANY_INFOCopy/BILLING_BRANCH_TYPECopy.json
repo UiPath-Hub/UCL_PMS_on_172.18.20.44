@@ -1,0 +1,72 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 20,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{Default_COMPANY_BILLING.BILLING_BRANCH_TYPE\n.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "options"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "options"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": "{{Default_COMPANY_BILLING.BILLING_BRANCH_TYPE\n.required}}",
+  "isVisible": true,
+  "key": "pogrmydn41",
+  "label": "Branch Type",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelTextColor": "{{Default_COMPANY_BILLING.BILLING_BRANCH_TYPE\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "7",
+  "leftColumn": 33,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 149,
+  "mobileLeftColumn": 15,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 143,
+  "needsErrorInfo": false,
+  "options": "{{SP_DD_BRANCH.data.map((ele)=>({label: ele.FIXED_VALUE,value:ele.SYSTEM_VALUE}))}}",
+  "originalBottomRow": 20,
+  "originalTopRow": 16,
+  "parentColumnSpace": 19.8125,
+  "parentId": "3m6myr8q69",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 56,
+  "topRow": 16,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "bwgw5tayw7",
+  "widgetName": "BILLING_BRANCH_TYPECopy"
+}

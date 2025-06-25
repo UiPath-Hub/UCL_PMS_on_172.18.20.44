@@ -1,0 +1,32 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_568898c0-b179-4427-95fd-55d83c6533fe",
+  "unpublishedPage": {
+    "isHidden": false,
+    "layouts": [
+      {
+        "dsl": {
+          "backgroundColor": "none",
+          "bottomRow": 1110.0,
+          "canExtend": true,
+          "containerStyle": "none",
+          "detachFromLayout": true,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0.0,
+          "minHeight": 780.0,
+          "parentColumnSpace": 1.0,
+          "parentRowSpace": 1.0,
+          "rightColumn": 1224.0,
+          "snapColumns": 64.0,
+          "snapRows": 76.0,
+          "topRow": 0.0,
+          "type": "CANVAS_WIDGET",
+          "version": 92.0,
+          "widgetId": "0",
+          "widgetName": "MainContainer"
+        }
+      }
+    ],
+    "name": "Third Party Dashboard",
+    "slug": "third-party-dashboard"
+  }
+}

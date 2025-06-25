@@ -1,0 +1,86 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 26,
+  "boxShadow": "none",
+  "defaultText": "{{DefaultContact.COMPANY_CONTACT_SUR_NAME_EN.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": "{{(Configs.pageState.CurrentState==Configs.pageState.AddContactTo||Configs.pageState.CurrentState==Configs.pageState.EditContactOf)}}",
+  "isLoading": false,
+  "isRequired": "{{DefaultContact.COMPANY_CONTACT_SUR_NAME_EN.required}}",
+  "isVisible": true,
+  "key": "nwk391w658",
+  "label": "Surname (EN)",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{DefaultContact.COMPANY_CONTACT_SUR_NAME_EN\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 34,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "originalBottomRow": 26,
+  "originalTopRow": 22,
+  "parentColumnSpace": 19.5,
+  "parentId": "0s2qm3vbhm",
+  "parentRowSpace": 10,
+  "regex": "{{DefaultContact.COMPANY_CONTACT_SUR_NAME_EN.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldAllowAutofill": false,
+  "showStepArrows": false,
+  "tooltip": "กรอกข้อความที่ต้องการแสดงบนเอกสารภาษาอังกฤษ",
+  "topRow": 22,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "xgyxk4p12i",
+  "widgetName": "COMPANY_CONTACT_SUR_NAME_EN"
+}

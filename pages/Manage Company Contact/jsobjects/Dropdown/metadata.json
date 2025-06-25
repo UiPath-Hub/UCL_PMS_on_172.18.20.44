@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_c5be3015-f083-4ec3-be77-de97495a80ea",
+  "id": "Manage Company Contact_Dropdown",
+  "unpublishedCollection": {
+    "name": "Dropdown",
+    "pageId": "Manage Company Contact",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "COMPANY_CONTACT_ROLE",
+        "value": "\"COMPANY_CONTACT_ROLE\""
+      },
+      {
+        "name": "TITLE_NAME",
+        "value": "\"TITLE_NAME\""
+      },
+      {
+        "name": "STATUS",
+        "value": "\"STATUS\""
+      }
+    ]
+  }
+}

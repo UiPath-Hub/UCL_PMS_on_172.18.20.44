@@ -1,0 +1,96 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 24,
+  "boxShadow": "none",
+  "closeOnSelection": true,
+  "dateFormat": "{{Configs.dateFormat}}",
+  "datePickerType": "DATE_PICKER",
+  "defaultDate": "{{Default_Profile.COMPANY_PROFILE_PERIOD_START.data?moment(Default_Profile.COMPANY_PROFILE_PERIOD_START.data).toString():moment().toString()}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "dateFormat"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "dateFormat"
+    },
+    {
+      "key": "onDateSelected"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onDateSelected"
+    }
+  ],
+  "firstDayOfWeek": "0",
+  "isDisabled": "{{AGREEMENT_ID.selectedOptionValue!=\"\"}}",
+  "isLoading": false,
+  "isRequired": "{{Default_Profile.COMPANY_PROFILE_PERIOD_START.required}}",
+  "isVisible": true,
+  "key": "2w0301iyoz",
+  "label": "Start Date",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelTextColor": "{{Default_Profile.COMPANY_PROFILE_PERIOD_START.color}}",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "11",
+  "leftColumn": 0,
+  "maxDate": "2121-12-31T18:29:00.000Z",
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 15,
+  "needsErrorInfo": false,
+  "onDateSelected": "{{COMPANY_PROFILE_PERIOD_END.setValue(COMPANY_PROFILE_PERIOD_START.selectedDate)}}",
+  "parentColumnSpace": 12.5,
+  "parentId": "uk4994gix9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 28,
+  "shortcuts": false,
+  "timePrecision": "None",
+  "topRow": 17,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 2,
+  "widgetId": "xg18qrpbek",
+  "widgetName": "COMPANY_PROFILE_PERIOD_START"
+}

@@ -1,0 +1,8 @@
+EXEC [dbo].[SER_SEARCH_FOR_PRODUCT_CATALOG]
+		@pProductCatalogNo = null,
+		@pProductName = {{INPUT_CatalogName.text!== ""?`${INPUT_CatalogName.text}`:null}},
+		@pProductType = null,
+		@pProductCatalogStatus = 'Active',
+		@pAvailableUnit = null,
+		@pTotalUnit = null,
+		@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

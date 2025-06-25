@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "67b5e1c38c4cb2121553976a_68b1261a-baaa-4dcd-87e9-2dce5690400d",
+  "id": "Contact Person Dashboard_Paginatation",
+  "unpublishedCollection": {
+    "name": "Paginatation",
+    "pageId": "Contact Person Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "pageSize",
+        "value": "10"
+      }
+    ]
+  }
+}

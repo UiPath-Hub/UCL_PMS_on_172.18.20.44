@@ -1,0 +1,4 @@
+EXECUTE [dbo].[USER_SESSION_HANDLER] 
+   @EMAIL = {{appsmith.user.email}}
+  ,@TOKEN = {{appsmith.store[Configs.userSession]?appsmith.store[Configs.userSession].TOKEN:""}}
+	,@RENEW = 0

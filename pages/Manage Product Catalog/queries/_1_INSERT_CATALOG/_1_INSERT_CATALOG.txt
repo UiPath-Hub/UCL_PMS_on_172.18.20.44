@@ -1,0 +1,49 @@
+DECLARE @ResultCode nvarchar(10)
+	,@ResultMessages NVARCHAR(MAX)
+	,@IMAGE_ID nvarchar(20)=NULL;
+IF @@TRANCOUNT = 0
+BEGIN TRANSACTION;
+
+if {{this.params.IMAGE_DATA?0:1}} = 0 
+EXECUTE [dbo].[UPDATE_IMAGE] 
+   @BASE64 = {{this.params.IMAGE_DATA}}
+  ,@TABLE_NAME = 'PMS_CATALOG_PICTURE'
+  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+  ,@DELETE =0
+  ,@INSERT_IF_NOT_EXIST = 1
+  ,@IMAGE_ID = @IMAGE_ID OUTPUT
+		,@ResultCode=@ResultCode OUTPUT
+		,@ResultMessages=@ResultMessages OUTPUT
+
+
+if @ResultCode <> 'DONE'
+GOTO OUTPUT;
+
+EXEC	[dbo].[UPDATE_PMS_PRODUCT_CATALOG_LM]
+		@pType = {{PRODUCT_TYPE.selectedOptionValue.toString()}},
+		@pNameEN = {{PRODUCT_NAME_EN.text}},
+		@pNameTH = {{PRODUCT_NAME_TH.text}},
+		@pUnit = {{UNIT.selectedOptionValue.toString()}},
+		@pAvaliableUnit ={{AVAILABLE_UNIT.text}},
+		@pTotalUnit = {{TOTAL_UNIT.text}},
+		@pFloor ={{FLOOR_NO.selectedOptionValue.toString()}},
+		@pStatus = {{STATUS.selectedOptionValue.toString()}},
+		@pProductCatalogDetail = {{PRODUCT_DETAIL.text}},
+		@PRODUCT_CODE = {{PRODUCT_CODE.text}},
+		@ACCOUNT_CODE = {{ACCOUNT_CODE.text}},
+		@IMAGE_ID = @IMAGE_ID
+		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+		,@INSERT_IF_NOT_EXIST = 1
+		,@PRODUCT_ID = NULL
+		,@ResultCode=@ResultCode OUTPUT
+		,@ResultMessages=@ResultMessages OUTPUT
+		
+if @ResultCode <> 'DONE'
+GOTO OUTPUT;
+		
+OUTPUT:
+if @ResultCode <> 'DONE'
+ROLLBACK TRANSACTION;
+else
+COMMIT TRANSACTION;
+SELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES

@@ -1,0 +1,79 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 52,
+  "boxShadow": "none",
+  "defaultText": "{{DefaultContact.COMPANY_CONTACT_FLOOR.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{DefaultContact.COMPANY_CONTACT_FLOOR.required}}",
+  "isVisible": true,
+  "key": "nwk391w658",
+  "label": "Floor",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{DefaultContact.COMPANY_CONTACT_FLOOR\n.color}}",
+  "labelTextSize": "0.875rem",
+  "labelWidth": "3",
+  "leftColumn": 20,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "originalBottomRow": 51,
+  "originalTopRow": 47,
+  "parentColumnSpace": 19.5,
+  "parentId": "0s2qm3vbhm",
+  "parentRowSpace": 10,
+  "regex": "{{DefaultContact.COMPANY_CONTACT_FLOOR.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "shouldAllowAutofill": false,
+  "showStepArrows": false,
+  "topRow": 47,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "0umidv3n86",
+  "widgetName": "COMPANY_CONTACT_FLOOR"
+}

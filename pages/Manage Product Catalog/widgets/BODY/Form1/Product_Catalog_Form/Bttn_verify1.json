@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 18,
+  "bottomRowBeforeCollapse": 18,
+  "boxShadow": "none",
+  "buttonColor": "#71717a",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "2i009elia0",
+  "leftColumn": 28,
+  "minWidth": 120,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 21,
+  "mobileRightColumn": 37,
+  "mobileTopRow": 11,
+  "needsErrorInfo": false,
+  "onClick": "{{VerifyButton1.onClick();}}",
+  "originalBottomRow": 18,
+  "originalTopRow": 14,
+  "parentColumnSpace": 16.453125,
+  "parentId": "dhkjjujsed",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 32,
+  "text": "Verify",
+  "tooltip": "Verify duplicate name",
+  "topRow": 14,
+  "topRowBeforeCollapse": 14,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "gq2ljcvplx",
+  "widgetName": "Bttn_verify1"
+}

@@ -1,0 +1,48 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_6d1d716f-d58f-4433-a6d5-2596dbeab339",
+  "id": "Invoice Detail_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Invoice Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"A01\",\n  EDIT: \"A02\"\n}"
+      },
+      {
+        "name": "forceKick",
+        "value": "false"
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "errorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"\""
+      },
+      {
+        "name": "selectedInvoice",
+        "value": "\"selectedInvoice\""
+      },
+      {
+        "name": "Invoice_type",
+        "value": "{\n  NON_VAT: \"Non-VAT\",\n  VAT: \"VAT\",\n  currentType: \"\"\n}"
+      },
+      {
+        "name": "invoice_items",
+        "value": "[]"
+      }
+    ]
+  }
+}

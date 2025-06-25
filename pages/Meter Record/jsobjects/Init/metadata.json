@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_c5cd15aa-9aad-4a0a-b766-89a4dbb170a4",
+  "id": "Meter Record_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Meter Record",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", \"YYYY-MM-DD\")"
+      }
+    ]
+  }
+}

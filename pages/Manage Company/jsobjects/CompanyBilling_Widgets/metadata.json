@@ -1,0 +1,148 @@
+{
+  "gitSyncId": "6814334a5165473495a8dbd7_8a088f5b-992c-4db9-8774-c0d71559d99e",
+  "id": "Manage Company_CompanyBilling_Widgets",
+  "unpublishedCollection": {
+    "name": "CompanyBilling_Widgets",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "BILLING_COMPANY_TYPE_NAME",
+        "value": "{\n  ...BILLING_COMPANY_TYPE_NAME,\n  data: BILLING_COMPANY_TYPE_NAME.selectedOptionValue\n}"
+      },
+      {
+        "name": "BILLING_TITLE_PREFIX",
+        "value": "{\n  ...BILLING_TITLE_PREFIX,\n  data: BILLING_TITLE_PREFIX.selectedOptionValue\n}"
+      },
+      {
+        "name": "BILLING_TITLE_PREFIX_OTHER",
+        "value": "{\n  ...BILLING_TITLE_PREFIX_OTHER,\n  data: BILLING_TITLE_PREFIX_OTHER.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_NAME_EN",
+        "value": "{\n  ...BILLING_COMPANY_NAME_EN,\n  data: BILLING_COMPANY_NAME_EN.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_NAME_TH",
+        "value": "{\n  ...BILLING_COMPANY_NAME_TH,\n  data: BILLING_COMPANY_NAME_TH.text\n}"
+      },
+      {
+        "name": "BILLING_SUFFIX",
+        "value": "{\n  ...BILLING_SUFFIX,\n  data: BILLING_SUFFIX.selectedOptionValue\n}"
+      },
+      {
+        "name": "BILLING_BRANCH_TYPE",
+        "value": "{\n  ...BILLING_BRANCH_TYPE,\n  data: BILLING_BRANCH_TYPE.selectedOptionValue\n}"
+      },
+      {
+        "name": "BILLING_BRANCH_NUMBER",
+        "value": "{\n  ...BILLING_BRANCH_NUMBER,\n  data: BILLING_BRANCH_NUMBER.text\n}"
+      },
+      {
+        "name": "BILLING_SHOP_NAME",
+        "value": "{\n  ...BILLING_SHOP_NAME,\n  data: BILLING_SHOP_NAME.text\n}"
+      },
+      {
+        "name": "BILLING_TELEPHONE",
+        "value": "{\n  ...BILLING_TELEPHONE,\n  data: BILLING_TELEPHONE.text\n}"
+      },
+      {
+        "name": "BILLING_CONTACT_EMAIL",
+        "value": "{\n  ...BILLING_CONTACT_EMAIL,\n  data: BILLING_CONTACT_EMAIL.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUSINESS_TYPE_EN",
+        "value": "{\n  ...BILLING_COMPANY_BUSINESS_TYPE,\n  data: BILLING_COMPANY_BUSINESS_TYPE.selectedOptionValue.split(\"/\")[1] || \"\"\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUSINESS_TYPE_TH",
+        "value": "{\n  ...BILLING_COMPANY_BUSINESS_TYPE,\n  data: BILLING_COMPANY_BUSINESS_TYPE.selectedOptionValue.split(\"/\")[0] || \"\"\n}"
+      },
+      {
+        "name": "BILLING_FAX",
+        "value": "{\n  ...BILLING_FAX,\n  data: BILLING_FAX.text\n}"
+      },
+      {
+        "name": "BILLING_TAX_ID",
+        "value": "{\n  ...BILLING_TAX_ID,\n  data: BILLING_TAX_ID.text\n}"
+      },
+      {
+        "name": "BILLING_WEBSITE",
+        "value": "{\n  ...BILLING_WEBSITE,\n  data: BILLING_WEBSITE.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUILDING_NAME_EN",
+        "value": "{\n  ...BILLING_COMPANY_NAME_EN,\n  data: BILLING_COMPANY_NAME_EN.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_BUILDING_NAME_TH",
+        "value": "{\n  ...BILLING_COMPANY_NAME_TH,\n  data: BILLING_COMPANY_NAME_TH.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_FLOOR",
+        "value": "{\n  ...BILLING_COMPANY_FLOOR,\n  data: BILLING_COMPANY_FLOOR.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_ADD_NO",
+        "value": "{\n  ...BILLING_COMPANY_ADD_NO,\n  data: BILLING_COMPANY_ADD_NO.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_MOO",
+        "value": "{\n  ...BILLING_COMPANY_MOO,\n  data: BILLING_COMPANY_MOO.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_SOI_EN",
+        "value": "{\n  ...BILLING_COMPANY_SOI_EN,\n  data: BILLING_COMPANY_SOI_EN.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_SOI_TH",
+        "value": "{\n  ...BILLING_COMPANY_SOI_TH,\n  data: BILLING_COMPANY_SOI_TH.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_ROAD_EN",
+        "value": "{\n  ...BILLING_COMPANY_ROAD_EN,\n  data: BILLING_COMPANY_ROAD_EN.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_ROAD_TH",
+        "value": "{\n  ...BILLING_COMPANY_ROAD_TH,\n  data: BILLING_COMPANY_ROAD_TH.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_SUB_DISTRICT_TH",
+        "value": "{\n  ...BILLING_DISTRICT_TH,\n  data: BILLING_DISTRICT_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_DISTRICT_TH",
+        "value": "{\n  ...BILLING_DISTRICT_TH,\n  data: BILLING_DISTRICT_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_PROVINCE_TH",
+        "value": "{\n  ...BILLING_PROVINCE_TH,\n  data: BILLING_PROVINCE_TH.selectedOptionValue\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_POSTAL_CODE",
+        "value": "{\n  ...BILLING_POSTAL_CODE,\n  data: BILLING_POSTAL_CODE.text\n}"
+      },
+      {
+        "name": "BILLING_COMPANY_CODE",
+        "value": "{\n  ...BILLING_COMPANY_CODE,\n  data: BILLING_COMPANY_CODE.text\n}"
+      },
+      {
+        "name": "CREDIT_TERM",
+        "value": "{\n  ...CREDIT_TERM,\n  data: CREDIT_TERM.selectedOptionValue\n}"
+      },
+      {
+        "name": "CREDIT_DAY",
+        "value": "{\n  ...CREDIT_DAY,\n  data: CREDIT_DAY.text\n}"
+      },
+      {
+        "name": "REMARK_OF_INVOICE",
+        "value": "{\n  ...REMARK_OF_INVOICE,\n  data: REMARK_OF_INVOICE.text\n}"
+      },
+      {
+        "name": "REMARK_OF_RECEIPT",
+        "value": "{\n  ...REMARK_OF_RECEIPT,\n  data: REMARK_OF_RECEIPT.text\n}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 63,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultContact.COMPANY_CONTACT_PROVINCE_TH.data))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": "{{DefaultContact.COMPANY_CONTACT_PROVINCE_TH.required}}",
+  "isVisible": true,
+  "key": "3g1kiq79ra",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Province",
+  "labelTextColor": "{{DefaultContact.COMPANY_CONTACT_PROVINCE_TH\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 34,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{ADDRESSING.onSelectedProvice(PROVINCE_TH.selectedOptionValue);}}",
+  "optionLabel": "PROVINCE",
+  "optionValue": "PROVINCE",
+  "originalBottomRow": 63,
+  "originalTopRow": 59,
+  "parentColumnSpace": 11.4375,
+  "parentId": "0s2qm3vbhm",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "serverSideFiltering": false,
+  "sourceData": "{{SELECT_PROVINCEs.data||[{ PROVINCE: \"\"}]}}",
+  "topRow": 59,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "f5fxertnyq",
+  "widgetName": "PROVINCE_TH"
+}

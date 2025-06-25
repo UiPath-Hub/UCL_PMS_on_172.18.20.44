@@ -1,0 +1,13 @@
+
+EXECUTE [dbo].[SER_SEARCH_FOR_METER]
+    @PRODUCT_TYPE_NAME = {{PRODUCT_TYPE_NAME.selectedOptionValue == "" || PRODUCT_TYPE_NAME.selectedOptionValue == undefined ? null : PRODUCT_TYPE_NAME.selectedOptionValue}}
+	,@COMPANY_NAME = {{COMPANY_NAME.text == "" || COMPANY_NAME.text == undefined ? null : COMPANY_NAME.text}}
+   ,@METER_ID = {{METER_ID.text == "" || METER_ID.text == undefined ? null : METER_ID.text}}
+   ,@METER_STATUS = {{METER_STATUS.selectedOptionValue == "" || METER_STATUS.selectedOptionValue == undefined ? null : METER_STATUS.selectedOptionValue}}
+	,@INVENTORY_NAME = {{INVENTORY_NAME.text == "" || INVENTORY_NAME.text == undefined ? null : INVENTORY_NAME.text}}
+	,@DATE_FROM = {{DATE_FROM.formattedDate == "" || DATE_FROM.formattedDate == undefined ? null : DATE_FROM.formattedDate}}
+	,@DATE_TO = {{DATE_TO.formattedDate == "" || DATE_TO.formattedDate == undefined ? null : DATE_TO.formattedDate}}
+  
+
+  ,@pPageSize = {{Pagination.pageSize}}
+  ,@pPageIndex = {{Table_PMS_METER_REC_DETAIL_LM.pageNo}}

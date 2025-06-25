@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_431af107-8544-47ec-89dc-fda050d446a6",
+  "id": "Manage Product Catalog_GlobalFunctions",
+  "unpublishedCollection": {
+    "name": "GlobalFunctions",
+    "pageId": "Manage Product Catalog",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "V",
+        "value": "3"
+      },
+      {
+        "name": "LastChanged",
+        "value": "\"definded comment : InitializationDataList = [{ENTITY:Appsmith JS Object, DATA: {propName:any}}]\""
+      }
+    ]
+  }
+}

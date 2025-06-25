@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "67b5e1c38c4cb2121553976a_c9a93f44-0541-47a0-842f-2617edfa866e",
+  "id": "Contact Person Dashboard_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Contact Person Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", \"YYYY-MM-DD\")"
+      }
+    ]
+  }
+}

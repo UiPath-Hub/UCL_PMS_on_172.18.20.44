@@ -1,0 +1,52 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_c0d230a3-0855-4443-bb99-c3c71d03588f",
+  "id": "Third Party Dashboard_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Third Party Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "editFlag",
+        "value": "\"editCompany\""
+      },
+      {
+        "name": "newCompanyTempFlag",
+        "value": "\"newCompanyTempFlag\""
+      },
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"THPAV\",\n  EDIT: \"THPAE\"\n}"
+      },
+      {
+        "name": "forceKick",
+        "value": "false"
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "errorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"\""
+      },
+      {
+        "name": "companyPageState",
+        "value": "{\n  THIRD_PARTY: 1,\n  COMPANY: 0\n}"
+      },
+      {
+        "name": "IS_THIRD_PARTY",
+        "value": "\"IS_THIRD_PARTY\""
+      }
+    ]
+  }
+}

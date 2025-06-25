@@ -1,0 +1,40 @@
+{
+  "gitSyncId": "67e2786a166b1720655be9d3_d8fabbf1-2f5c-4b01-beed-da6faefc2179",
+  "id": "Manage Product Inventory_VerifyButton1",
+  "unpublishedCollection": {
+    "name": "VerifyButton1",
+    "pageId": "Manage Product Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "InputBox",
+        "value": "{\n  ...INVENTORY_NAME\n}"
+      },
+      {
+        "name": "passColor",
+        "value": "\"#15803d\""
+      },
+      {
+        "name": "invalidColor",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "initColor",
+        "value": "\"#71717a\""
+      },
+      {
+        "name": "Button",
+        "value": "{\n  ...Bttn_verify1,\n  \"setLabel\": async text => {\n    await Bttn_verify1.setLabel(text);\n  },\n  \"setColor\": async color => {\n    await Bttn_verify1.setColor(color);\n  }\n}"
+      },
+      {
+        "name": "DefaultEntity",
+        "value": "DefaultInventory"
+      },
+      {
+        "name": "PropName",
+        "value": "INVENTORY_NAME.widgetName"
+      }
+    ]
+  }
+}

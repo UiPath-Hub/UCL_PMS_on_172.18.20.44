@@ -1,0 +1,66 @@
+export default {
+	COMPANY_ID:{data:"",regex:"",required:false,color:""}
+	,COMPANY_TYPE_NAME:{data:"",regex:"",required:false,color:""}
+	,COMPANY_NAME_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_NAME_EN:{data:"",regex:"",required:false,color:""}
+	,SHOP_NAME:{data:"",regex:"",required:false,color:""}
+	,COMPANY_BUSINESS_TYPE_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_BUSINESS_TYPE_EN:{data:"",regex:"",required:false,color:""}
+	,TAX_ID:{data:"",regex:"",required:false,color:""}
+	,STATUS:{data:"Active",regex:"",required:false,color:""}
+	,CREATE_DATE:{data:"",regex:"",required:false,color:""}
+	,TELEPHONE:{data:"",regex:"",required:false,color:""}
+	,CONTACT_EMAIL:{data:"",regex:"",required:false,color:""}
+	,FAX:{data:"",regex:"",required:false,color:""}
+	,WEBSITE:{data:"",regex:"",required:false,color:""}
+	,COMPANY_CODE:{data:"",regex:"",required:false,color:""}
+	,COMPANY_BUILDING_NAME_EN:{data:"",regex:"",required:false,color:""}
+	,COMPANY_ADD_NO:{data:"",regex:"",required:false,color:""}
+	,COMPANY_MOO:{data:"",regex:"",required:false,color:""}
+	,COMPANY_SOI_EN:{data:"",regex:"",required:false,color:""}
+	,COMPANY_ROAD_EN:{data:"",regex:"",required:false,color:""}
+	,COMPANY_PROVINCE_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_DISTRICT_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_SUB_DISTRICT_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_PROVINCE_EN:{data:"",regex:"",required:false,color:""}
+	,COMPANY_DISTRICT_EN:{data:"",regex:"",required:false,color:""}
+	,COMPANY_SUB_DISTRICT_EN:{data:"",regex:"",required:false,color:""}
+	,COMPANY_BUILDING_NAME_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_FLOOR:{data:"",regex:"",required:false,color:""}
+	,COMPANY_SOI_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_ROAD_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_POSTAL_CODE:{data:"",regex:"",required:false,color:""}
+	//,OTHER:{data:"",regex:"",required:false}
+	,TITLE_PREFIX:{data:"",regex:"",required:false,color:""}
+	,TITLE_PREFIX_OTHER:{data:"",regex:"",required:false,color:""}
+	,SUFFIX:{data:"",regex:"",required:false,color:""}
+	,COMPANY_BRANCH_TYPE:{data:"",regex:"",required:false,color:""}
+	,COMPANY_BRANCH_NUMBER:{data:"",regex:"",required:false,color:""}
+	,OVERWRITE_BILLING_ADDRESS:{data:"false",regex:"",required:false,color:""}
+	,COMPANY_BUSINESS_DETAIL_TH:{data:"",regex:"",required:false,color:""}
+	,COMPANY_BUSINESS_DETAIL_EN:{data:"",regex:"",required:false,color:""}
+	
+	//interface
+	,PROVINCE_TH:{data:this.COMPANY_PROVINCE_TH.data,
+								regex:"",
+								required:this.COMPANY_PROVINCE_EN.required||this.COMPANY_PROVINCE_TH.required,
+								color:(this.COMPANY_PROVINCE_EN.color==Configs.requiredColorAlert||this.COMPANY_PROVINCE_TH.color==Configs.requiredColorAlert)?Configs.requiredColorAlert:Configs.requiredColorPass}
+	,DISTRICT_TH:{data:this.COMPANY_DISTRICT_TH.data,
+								regex:"",
+								required:this.COMPANY_DISTRICT_EN.required||this.COMPANY_DISTRICT_TH.required,
+								color:(this.COMPANY_DISTRICT_EN.color==Configs.requiredColorAlert||this.COMPANY_DISTRICT_TH.color==Configs.requiredColorAlert)?Configs.requiredColorAlert:Configs.requiredColorPass}
+	,SUB_DISTRICT_TH:{data:this.COMPANY_SUB_DISTRICT_TH.data,
+								regex:"",
+								required:this.COMPANY_SUB_DISTRICT_EN.required||this.COMPANY_SUB_DISTRICT_TH.required,
+										color:(this.COMPANY_SUB_DISTRICT_EN.color==Configs.requiredColorAlert||this.COMPANY_SUB_DISTRICT_TH.color==Configs.requiredColorAlert)?Configs.requiredColorAlert:Configs.requiredColorPass}
+	,COMPANY_BUSINESS_TYPE:{data: //this.COMPANY_BUSINESS_TYPE_TH.data.toString(),
+													_.trim((this.COMPANY_BUSINESS_TYPE_TH.data||"")+"/"+(this.COMPANY_BUSINESS_TYPE_EN.data||""),"/"),
+								regex:"",
+								required:this.COMPANY_BUSINESS_TYPE_TH.required||this.COMPANY_BUSINESS_TYPE_EN.required,
+								color:(this.COMPANY_BUSINESS_TYPE_TH.color==Configs.requiredColorAlert||this.COMPANY_BUSINESS_TYPE_EN.color==Configs.requiredColorAlert)?Configs.requiredColorAlert:Configs.requiredColorPass}
+	,POSTAL_CODE:{data:this.COMPANY_POSTAL_CODE.data,
+								regex:this.COMPANY_POSTAL_CODE.regex,
+								required:this.COMPANY_POSTAL_CODE.required,
+								color:this.COMPANY_POSTAL_CODE.color}
+
+}

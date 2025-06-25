@@ -1,0 +1,87 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "bottomRowBeforeCollapse": 12,
+  "boxShadow": "none",
+  "defaultText": "{{Default_OwnerProfile.OWNER_TITLE_PREFIX_OTHER.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": "{{!OWNER_TITLE_PREFIX.selectedOptionValue.includes(\"อื่นๆ\")}}",
+  "isLoading": false,
+  "isRequired": "{{OWNER_TITLE_PREFIX.selectedOptionValue.includes(\"อื่นๆ\")||Default_OwnerProfile.OWNER_TITLE_PREFIX_OTHER.required}}",
+  "isVisible": true,
+  "key": "nwk391w658",
+  "label": "อื่นๆ / Other",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{Default_OwnerProfile.OWNER_TITLE_PREFIX_OTHER.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 34,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "originalBottomRow": 12,
+  "originalTopRow": 8,
+  "parentColumnSpace": 19.5,
+  "parentId": "v7uehrq8j2",
+  "parentRowSpace": 10,
+  "regex": "{{Default_OwnerProfile.OWNER_TITLE_PREFIX_OTHER.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldAllowAutofill": false,
+  "showStepArrows": false,
+  "topRow": 8,
+  "topRowBeforeCollapse": 8,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "9le5sj9alx",
+  "widgetName": "OWNER_TITLE_PREFIX_OTHER"
+}

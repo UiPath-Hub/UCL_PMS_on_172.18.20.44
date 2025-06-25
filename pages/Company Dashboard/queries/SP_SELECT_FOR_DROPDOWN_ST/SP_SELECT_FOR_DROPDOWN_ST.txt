@@ -1,0 +1,4 @@
+EXECUTE [dbo].[SELECT_FOR_DROPDOWN] 
+   @pDropdowntypename='STATUS'
+
+

@@ -1,0 +1,9 @@
+EXEC [dbo].[SER_SEARCH_FOR_PRODUCT_CATALOG]
+		@pProductCatalogNo = {{PRODUCT_CATALOG_NUMBER.text!== ""?`${PRODUCT_CATALOG_NUMBER.text}`:null}},
+		@pProductName = {{PRODUCT_NAME.text!== ""?`${PRODUCT_NAME.text}`:null}},
+		@pProductType = {{TYPE.selectedOptionValue!== ""?`${TYPE.selectedOptionValue}`:null}},
+		@pProductCatalogStatus = {{STATUS.selectedOptionValue!== ""?`${STATUS.selectedOptionValue}`:null}},
+		@pAvailableUnit = {{AVAILABLE_UNIT.text !== ""?AVAILABLE_UNIT.text:null}},
+		@pTotalUnit = {{TOTAL_UNIT.text !== ""?TOTAL_UNIT.text:null}},
+		@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+

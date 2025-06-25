@@ -1,0 +1,39 @@
+DECLARE @ResultCode nvarchar(10)
+	,@ResultMessages NVARCHAR(MAX)
+	,@Image_IDtoDelete nvarchar(20)
+IF @@TRANCOUNT = 0 
+BEGIN TRANSACTION;	
+
+	--delete image
+	Select @Image_IDtoDelete = CATALOG_PICTURE FROM dbo.PMS_PRODUCT_CATALOG_LM 
+	WHERE DELETE_FLAG=0 and PRODUCT_ID = {{PRODUCT_ID.text}}
+			if @Image_IDtoDelete is not NULL
+			begin
+			EXECUTE [dbo].[UPDATE_IMAGE] 
+			  @TABLE_NAME = 'PMS_CATALOG_PICTURE'
+			  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+			  ,@DELETE =1
+			  ,@IMAGE_ID = @Image_IDtoDelete
+			  ,@ResultCode = @ResultCode OUTPUT
+			  ,@ResultMessages = @ResultMessages OUTPUT
+				if @ResultCode<>'DONE'
+				GOTO OUTPUT;
+				
+			end
+
+EXEC	[dbo].[UPDATE_PMS_PRODUCT_CATALOG_LM]
+   @PRODUCT_ID = {{PRODUCT_ID.text}}
+	,@DELETE_FLAG = 1
+  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@ResultCode=@ResultCode OUTPUT
+	,@ResultMessages=@ResultMessages  OUTPUT
+
+if @ResultCode <> 'DONE'
+GOTO OUTPUT;
+		
+OUTPUT:
+if @ResultCode <> 'DONE'
+ROLLBACK TRANSACTION;
+else
+COMMIT TRANSACTION;
+SELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES

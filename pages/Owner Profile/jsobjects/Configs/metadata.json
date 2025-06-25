@@ -1,0 +1,52 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_021e2866-a439-4548-a1b8-4883a84c6eaf",
+  "id": "Owner Profile_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Owner Profile",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"OWPV\",\n  EDIT: \"OWPE\"\n}"
+      },
+      {
+        "name": "forceKick",
+        "value": "false"
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "errorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "editOwnerProfileContact",
+        "value": "\"editOwnerProfileContact\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"Owner Profile\""
+      },
+      {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
+      },
+      {
+        "name": "startBody",
+        "value": "\"LOADING\""
+      }
+    ]
+  }
+}

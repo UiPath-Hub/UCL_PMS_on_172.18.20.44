@@ -1,0 +1,40 @@
+{
+  "gitSyncId": "6807363c166b1720655bf4bd_32e43b5f-58eb-4386-aca2-121eede45708",
+  "id": "Manage Company_VerifyButton3",
+  "unpublishedCollection": {
+    "name": "VerifyButton3",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "InputBox",
+        "value": "{\n  ...TAX_ID\n}"
+      },
+      {
+        "name": "passColor",
+        "value": "\"#15803d\""
+      },
+      {
+        "name": "invalidColor",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "initColor",
+        "value": "\"#71717a\""
+      },
+      {
+        "name": "Button",
+        "value": "{\n  ...Bttn_verify3,\n  \"setLabel\": async text => {\n    await Bttn_verify3.setLabel(text);\n  },\n  \"setColor\": async color => {\n    await Bttn_verify3.setColor(color);\n  }\n}"
+      },
+      {
+        "name": "DefaultEntity",
+        "value": "DefaultCompany"
+      },
+      {
+        "name": "PropName",
+        "value": "TAX_ID.widgetName"
+      }
+    ]
+  }
+}

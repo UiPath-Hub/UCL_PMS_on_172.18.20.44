@@ -1,0 +1,68 @@
+{
+  "allowedFileTypes": [
+    "image/*"
+  ],
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 10,
+  "boxShadow": "none",
+  "buttonColor": "{{Default_ProductCatalog.CATALOG_PICTURE.color==\"\"? appsmith.theme.colors.primaryColor:Default_ProductCatalog.CATALOG_PICTURE.color}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isRequired"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onFilesSelected"
+    }
+  ],
+  "dynamicTyping": true,
+  "fileDataType": "Base64",
+  "files": [],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{Default_ProductCatalog.CATALOG_PICTURE.required}}",
+  "isVisible": true,
+  "key": "uq5pnhbpyy",
+  "label": "Upload Picture",
+  "leftColumn": 35,
+  "maxFileSize": "5",
+  "maxNumFiles": "1",
+  "minWidth": 120,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 37,
+  "mobileRightColumn": 53,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onFilesSelected": "{{resetWidget(\"PV_CATALOG_PICTURE\", false);}}",
+  "originalBottomRow": 10,
+  "originalTopRow": 6,
+  "parentColumnSpace": 15.828125,
+  "parentId": "dhkjjujsed",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 48,
+  "selectedFiles": [],
+  "topRow": 6,
+  "type": "FILE_PICKER_WIDGET_V2",
+  "version": 1,
+  "widgetId": "1d4lsdavts",
+  "widgetName": "FP_CATALOG_PICTURE"
+}

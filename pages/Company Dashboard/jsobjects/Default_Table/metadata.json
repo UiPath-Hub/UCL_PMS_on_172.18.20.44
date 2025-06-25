@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_b6816bfd-c638-42da-90ff-8493e8c65955",
+  "id": "Company Dashboard_Default_Table",
+  "unpublishedCollection": {
+    "name": "Default_Table",
+    "pageId": "Company Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "resultTable",
+        "value": "[{\n  \"COMPANY_ID\": null,\n  \"COMPANY_BUSINESS_TYPE_EN\": null,\n  \"COMPANY_BUSINESS_TYPE_TH\": null,\n  \"COMPANY_NAME_EN\": null,\n  \"COMPANY_NAME_TH\": null,\n  \"CONTACT_NAME_TH\": null,\n  \"CONTACT_NAME_EN\": null,\n  \"COMPANY_CONTACT_TELEPHONE\": null,\n  \"ROLE\": null,\n  \"TOTAL_RECORDS\": 0\n}]"
+      }
+    ]
+  }
+}

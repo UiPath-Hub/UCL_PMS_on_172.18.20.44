@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_b2c9e2fd-5de0-48ea-85ee-544b75fc72fc",
+  "id": "Manage Company Contact_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Manage Company Contact",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

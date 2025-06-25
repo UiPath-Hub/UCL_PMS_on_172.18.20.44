@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_af6512f6-22ff-42b4-9d24-6b2de2652a3a",
+  "id": "Third Party Dashboard_Pagination",
+  "unpublishedCollection": {
+    "name": "Pagination",
+    "pageId": "Third Party Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "pageSize",
+        "value": "10"
+      }
+    ]
+  }
+}

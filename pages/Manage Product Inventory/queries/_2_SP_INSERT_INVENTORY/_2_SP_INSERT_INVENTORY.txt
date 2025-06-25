@@ -1,0 +1,53 @@
+declare @ResultCode nvarchar(10)
+	,@ResultMessages NVARCHAR(MAX)
+	,@IMAGE_ID nvarchar(20)={{DefaultInventory.INVENTORY_PICTURE.data||null}};
+IF @@TRANCOUNT = 0
+BEGIN TRANSACTION;
+
+if {{this.params.IMAGE_DATA?0:1}} = 0 
+EXECUTE [dbo].[UPDATE_IMAGE] 
+   @BASE64 = {{this.params.IMAGE_DATA}}
+  ,@TABLE_NAME = 'PMS_INVENTORY_PICTURE'
+  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+  ,@DELETE =0
+  ,@INSERT_IF_NOT_EXIST = 1
+  ,@IMAGE_ID = @IMAGE_ID OUTPUT
+		,@ResultCode=@ResultCode OUTPUT
+		,@ResultMessages=@ResultMessages OUTPUT
+
+
+if @ResultCode <> 'DONE'
+GOTO OUTPUT;
+ 
+EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY]
+   @PRODUCT_ID = {{SelectedProduct.PRODUCT_ID.data}}
+  ,@INVENTORY_NAME = {{INVENTORY_NAME.text}}
+  ,@METER_ID = {{METER_ID.text}}
+  ,@FLOOR_NO = {{FLOOR_NO.selectedOptionValue.toString()}}
+  ,@PRODUCT_DESCRIPTION = {{PRODUCT_DESCRIPTION.text}}
+  ,@ZONE = {{ZONE.selectedOptionValue}}
+  ,@QUANTITY = {{QUANTITY.text}}
+  ,@CT = {{CT.selectedOptionValue}}
+  ,@START_UNIT = {{START_UNIT.text}}
+  ,@DIGIT_LENGTH = {{DIGIT_LENGTH.text}}
+  ,@DECIMAL_POINT = {{DECIMAL_POINT.text}}
+  ,@PRICE_PER_UNIT = {{PRICE_PER_UNIT.value}}
+  ,@STATUS = {{STATUS.selectedOptionValue}}
+	,@START_DATE={{START_DATE.formattedDate?moment(START_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined}}
+	,@END_DATE={{END_DATE.formattedDate?moment(END_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined}}
+	,@PERCENTAGE={{PERCENTAGE.text}}
+	,@SHARED={{SHARED.isChecked}}
+	,@ACCOUNTING_DESCRIPTION = {{ACCOUNTING_DESCRIPTION.text}}
+	,@SUBMETER_ID= {{SUBMETER_ID.text||null}}
+	,@INVENTORY_PICTURE= @IMAGE_ID
+  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@IS_INSERT = 1
+	,@ResultCode = @ResultCode OUTPUT
+	,@ResultMessages = @ResultMessages OUTPUT
+
+OUTPUT:
+if @ResultCode <> 'DONE'
+ROLLBACK TRANSACTION;
+else
+COMMIT TRANSACTION;
+SELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES

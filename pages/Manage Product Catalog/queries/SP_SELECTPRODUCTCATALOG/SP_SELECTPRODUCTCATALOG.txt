@@ -1,0 +1,5 @@
+EXECUTE [dbo].[SELECT_FOR_PRODUCT_CATALOG] 
+   @PRODUCT_ID = {{appsmith.store[Configs.editProductCatalog]===undefined?"":appsmith.store[Configs.editProductCatalog].PRODUCT_ID}},
+	 @USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+
+

@@ -1,0 +1,94 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 45,
+  "boxShadow": "none",
+  "closeOnSelection": true,
+  "dateFormat": "{{Configs.dateFormat}}",
+  "datePickerType": "DATE_PICKER",
+  "defaultDate": "{{(moment( DefaultInventory.START_DATE\n.data).format()==\"Invalid date\"?moment().format():moment( DefaultInventory.START_DATE\n.data).format())}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "dateFormat"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "onDateSelected"
+    },
+    {
+      "key": "dateFormat"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onDateSelected"
+    }
+  ],
+  "firstDayOfWeek": "0",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{DefaultInventory.START_DATE\n.required}}",
+  "isVisible": true,
+  "key": "tcbyt2u9e6",
+  "label": "Start Date",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{DefaultInventory.START_DATE\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "8",
+  "leftColumn": 1,
+  "maxDate": "2121-12-31T18:29:00.000Z",
+  "maxDynamicHeight": 9000,
+  "minDate": "1920-12-31T18:30:00.000Z",
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onDateSelected": "{{END_DATE.setValue(\"\")}}",
+  "originalBottomRow": 45,
+  "originalTopRow": 41,
+  "parentColumnSpace": 16.7841796875,
+  "parentId": "qpfi71lfb7",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 29,
+  "shortcuts": false,
+  "timePrecision": "None",
+  "topRow": 41,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 2,
+  "widgetId": "ujdvqoevz3",
+  "widgetName": "START_DATE"
+}

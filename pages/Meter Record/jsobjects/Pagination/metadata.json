@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_d712e8ff-758e-42e6-994e-7bc97d8b914c",
+  "id": "Meter Record_Pagination",
+  "unpublishedCollection": {
+    "name": "Pagination",
+    "pageId": "Meter Record",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "pageSize",
+        "value": "10"
+      }
+    ]
+  }
+}

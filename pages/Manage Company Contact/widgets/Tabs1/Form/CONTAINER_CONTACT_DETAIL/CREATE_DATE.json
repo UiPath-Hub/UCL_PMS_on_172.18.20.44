@@ -1,0 +1,81 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 18,
+  "bottomRowBeforeCollapse": 34,
+  "boxShadow": "none",
+  "defaultText": "{{moment( DefaultContact.CREATE_DATE.data).format(\"DD MMMM YYYY\")==\"Invalid date\"?moment().format(\"DD MMMM YYYY\"):moment( DefaultContact.CREATE_DATE.data).format(\"DD MMMM YYYY\")}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": true,
+  "isLoading": false,
+  "isRequired": "{{DefaultContact.CREATE_DATE.required}}",
+  "isVisible": true,
+  "key": "24c157x1t2",
+  "label": "Create Date",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{DefaultContact.CREATE_DATE\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 34,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 34,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 12,
+  "needsErrorInfo": false,
+  "originalBottomRow": 18,
+  "originalTopRow": 14,
+  "parentColumnSpace": 19.1875,
+  "parentId": "0s2qm3vbhm",
+  "parentRowSpace": 10,
+  "placeholderText": "auto",
+  "regex": "{{DefaultContact.CREATE_DATE.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "showStepArrows": false,
+  "topRow": 14,
+  "topRowBeforeCollapse": 30,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "zlzcedir62",
+  "widgetName": "CREATE_DATE"
+}

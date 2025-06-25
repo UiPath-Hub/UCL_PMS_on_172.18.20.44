@@ -1,0 +1,12 @@
+
+EXECUTE [dbo].[SER_SEARCH_FOR_COMPANY]
+   @pCompanyNo = {{COMPANY_ID.text == "" || COMPANY_ID.text == undefined ? null : COMPANY_ID.text}}
+,@pCompanyName = {{COMPANY_NAME.text == "" || COMPANY_NAME.text == undefined ? null : COMPANY_NAME.text}}
+,@pCompanyContact = {{COMPANY_CONTACT_NAME.text == "" || COMPANY_CONTACT_NAME.text == undefined ? null : COMPANY_CONTACT_NAME.text}}
+,@COMPANY_CONTACT_TELEPHONE = {{COMPANY_CONTACT_TELEPHONE.text == "" || COMPANY_CONTACT_TELEPHONE.text == undefined ? null : COMPANY_CONTACT_TELEPHONE.text}}
+,@pBusinessType = {{COMPANY_BUSINESS_TYPE.selectedOptionValue == "" || COMPANY_BUSINESS_TYPE.selectedOptionValue == undefined ? null : COMPANY_BUSINESS_TYPE.selectedOptionValue}}
+,@pSTATUS = {{COMPANY_STATUS.selectedOptionValue == "" || COMPANY_STATUS.selectedOptionValue == undefined ? null : COMPANY_STATUS.selectedOptionValue}}
+,@IS_THIRD_PARTY = 0
+,@USER_TOKEN = {{appsmith.store.userSession.TOKEN}}
+  ,@pPageSize = {{Pagination.pageSize}}
+  ,@pPageIndex = {{PMS_COMPANY_LM.pageNo}}

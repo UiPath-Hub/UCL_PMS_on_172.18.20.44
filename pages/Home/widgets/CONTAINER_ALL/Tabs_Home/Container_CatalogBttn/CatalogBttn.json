@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "boxShadow": "none",
+  "buttonColor": "#3b82f6",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "iconName"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "manual",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "6ood26hglq",
+  "leftColumn": 0,
+  "minWidth": 50,
+  "mobileBottomRow": 57,
+  "mobileLeftColumn": 26,
+  "mobileRightColumn": 30,
+  "mobileTopRow": 53,
+  "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Product Catalog Dashboard', {}, 'SAME_WINDOW');}}",
+  "originalBottomRow": 61,
+  "originalTopRow": 49,
+  "parentColumnSpace": 19.8125,
+  "parentId": "toq7flxsld",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "tooltip": "",
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "sfc3ml9k5y",
+  "widgetName": "CatalogBttn"
+}

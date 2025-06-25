@@ -1,0 +1,40 @@
+{
+  "gitSyncId": "6807363c166b1720655bf4bd_84ff7c6e-09f2-4c1e-b7bf-591e993c4663",
+  "id": "Manage Company_VerifyButton1",
+  "unpublishedCollection": {
+    "name": "VerifyButton1",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "InputBox",
+        "value": "{\n  ...COMPANY_NAME_TH\n}"
+      },
+      {
+        "name": "passColor",
+        "value": "\"#15803d\""
+      },
+      {
+        "name": "invalidColor",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "initColor",
+        "value": "\"#71717a\""
+      },
+      {
+        "name": "Button",
+        "value": "{\n  ...Bttn_verify1,\n  \"setLabel\": async text => {\n    await Bttn_verify1.setLabel(text);\n  },\n  \"setColor\": async color => {\n    await Bttn_verify1.setColor(color);\n  }\n}"
+      },
+      {
+        "name": "DefaultEntity",
+        "value": "DefaultCompany"
+      },
+      {
+        "name": "PropName",
+        "value": "COMPANY_NAME_TH.widgetName"
+      }
+    ]
+  }
+}

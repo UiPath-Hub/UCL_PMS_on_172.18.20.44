@@ -1,0 +1,1 @@
+UPDATE dbo.PMS_METER_REC_DETAIL_LM SET DELETE_FLAG=1 WHERE METER_REC_ID = {{appsmith.store.editMeter}}

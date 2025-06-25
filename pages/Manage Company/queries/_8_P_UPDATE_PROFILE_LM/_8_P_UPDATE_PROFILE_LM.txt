@@ -1,0 +1,26 @@
+DECLARE @ResultCode NVARCHAR(10) ,
+    @ResultMessages NVARCHAR(MAX);
+IF @@TRANCOUNT = 0
+BEGIN TRANSACTION;
+EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM]
+	@COMPANY_PROFILE_ID = {{this.params.COMPANY_PROFILE_ID}}
+  ,@pCOMPANY_PROFILE_AGREEMENT_NO = {{this.params.AGREEMENT_ID}}
+  ,@pFORMULA_ID = {{this.params.FORMULA}}
+  ,@pINVENTORY_ID = {{this.params.INVENTORY_ID}}
+  ,@pPROFILE_FLOOR_MODIFIER = {{this.params.COMPANY_PROFILE_FLOOR_NO}}
+  ,@pPROFILE_PP_UNIT_MODIFIER = {{this.params.PRICE_PER_UNIT}}
+	,@COMPANY_PROFILE_PERIOD_START = {{this.params.COMPANY_PROFILE_PERIOD_START}} 
+	,@COMPANY_PROFILE_PERIOD_END = {{this.params.COMPANY_PROFILE_PERIOD_END}} 
+	,@QUANTITY = {{this.params.QUANTITY}}
+	,@IS_UPDATE = 1
+  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@ResultCode =@ResultCode OUTPUT
+	,@ResultMessages =@ResultMessages OUTPUT
+	
+RETURN_RESULT:
+SELECT @ResultCode AS [RESULT_CODE],
+       @ResultMessages AS [RESULT_MESSAGES]
+
+IF @ResultCode = 'DONE'
+COMMIT TRANSACTION;
+ELSE ROLLBACK TRANSACTION;

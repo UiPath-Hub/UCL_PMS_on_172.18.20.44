@@ -1,0 +1,32 @@
+declare @ResultCode nvarchar(10)
+	,@ResultMessages NVARCHAR(MAX)
+	,@IMAGE_ID nvarchar(20)={{DefaultInventory.INVENTORY_PICTURE.data||null}};
+IF @@TRANCOUNT = 0
+BEGIN TRANSACTION;
+
+if @IMAGE_ID is not NULL
+EXECUTE [dbo].[UPDATE_IMAGE] 
+  @TABLE_NAME = 'PMS_INVENTORY_PICTURE'
+  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+  ,@DELETE =1
+  ,@IMAGE_ID = @IMAGE_ID
+		,@ResultCode=@ResultCode OUTPUT
+		,@ResultMessages=@ResultMessages OUTPUT
+
+
+if @ResultCode <> 'DONE'
+GOTO OUTPUT;
+ 
+EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY]
+	@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@IS_DELETE = 1
+	,@INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:""}}
+	,@ResultCode = @ResultCode OUTPUT
+	,@ResultMessages = @ResultMessages OUTPUT
+
+OUTPUT:
+if @ResultCode <> 'DONE'
+ROLLBACK TRANSACTION;
+else
+COMMIT TRANSACTION;
+SELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES

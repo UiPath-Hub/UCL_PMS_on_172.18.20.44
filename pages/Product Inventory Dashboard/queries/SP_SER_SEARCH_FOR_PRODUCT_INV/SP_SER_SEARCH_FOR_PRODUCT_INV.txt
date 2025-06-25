@@ -1,0 +1,14 @@
+
+EXECUTE [dbo].[SER_SEARCH_FOR_PRODUCT_INVENTORY] 
+   @pFloorNo = {{FLOOR.selectedOptionValue!== ""?`${FLOOR.selectedOptionValue}`:null}}
+  ,@pInventoryName ={{INVENTORY_NAME.text   !== ""?`${INVENTORY_NAME.text}`:null}}
+  ,@pProductType ={{PRODUCT_TYPE.selectedOptionValue   !== ""?`${PRODUCT_TYPE.selectedOptionValue}`:null}}
+  ,@pMeterID ={{METER_ID.text   !== ""?`${METER_ID.text}`:null}}
+  ,@QUANTITY = {{QUANTITY.text   !== ""? QUANTITY.text:null}}
+  ,@pInventoryStatus ={{STATUS.selectedOptionValue   !== ""?`${STATUS.selectedOptionValue}`:null}}
+  ,@pZone ={{ZONE.selectedOptionValue   !== ""?`${ZONE.selectedOptionValue}`:null}}
+	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+  ,@pPageSize = {{Pagination.pageSize}}
+  ,@pPageIndex = {{PMS_PRODUCT_INVENTORY_LM.pageNo!==undefined?PMS_PRODUCT_INVENTORY_LM.pageNo:1}}
+  ,@DATE_FROM = {{DATE_FROM.formattedDate !== ""?DATE_FROM.formattedDate:null}}
+  ,@DATE_TO = {{DATE_TO.formattedDate !== ""?DATE_TO.formattedDate:null}}

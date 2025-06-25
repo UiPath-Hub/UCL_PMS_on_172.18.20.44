@@ -1,0 +1,28 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_5bd963b6-bc36-415e-90c5-8fa6f71e7d6e",
+  "id": "Manage Company_Dropdown",
+  "unpublishedCollection": {
+    "name": "Dropdown",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "BUSINESS_TYPE",
+        "value": "\"COMPANY_BUSINESS_TYPE\""
+      },
+      {
+        "name": "COMPANY_TYPE",
+        "value": "Configs.IS_THIRD_PARTY ? \"THIRD_PARTY_TYPE_NAME\" : \"COMPANY_TYPE\""
+      },
+      {
+        "name": "STATUS",
+        "value": "\"STATUS\""
+      },
+      {
+        "name": "DIRECTION",
+        "value": "\"DIRECTION\""
+      }
+    ]
+  }
+}

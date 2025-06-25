@@ -1,0 +1,4 @@
+EXEC [dbo].[SER_SEARCH_FOR_CONTACT_PERSON_BY_NAME]
+	@COMPANY_CONTACT_NAME = {{Inp_ContactPersonName.text!== ""?`${Inp_ContactPersonName.text}`:null}}
+	,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]!="TEMP"?appsmith.URL.queryParams[Configs.editCompany]:null}}
+	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

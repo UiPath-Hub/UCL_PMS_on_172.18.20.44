@@ -1,0 +1,88 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 70,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultContact.COMPANY_CONTACT_DISTRICT_TH.data))(DISTRICT_TH.options, DISTRICT_TH.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": "{{DefaultContact.COMPANY_CONTACT_DISTRICT_TH.required}}",
+  "isVisible": true,
+  "key": "eeyagt6yon",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "District",
+  "labelTextColor": "{{DefaultContact.COMPANY_CONTACT_DISTRICT_TH\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 81,
+  "mobileLeftColumn": 34,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 74,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue);}}",
+  "optionLabel": "key",
+  "optionValue": "value",
+  "originalBottomRow": 69,
+  "originalTopRow": 63,
+  "parentColumnSpace": 19.46875,
+  "parentId": "0s2qm3vbhm",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "serverSideFiltering": false,
+  "sourceData": "{{appsmith.store[ADDRESSING.DISTRICT_STORE_NAME]}}",
+  "topRow": 64,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "68mmhnw6sk",
+  "widgetName": "DISTRICT_TH"
+}

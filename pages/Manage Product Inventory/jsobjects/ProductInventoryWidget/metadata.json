@@ -1,0 +1,100 @@
+{
+  "gitSyncId": "67e2786a166b1720655be9d3_79b3b7a6-bd9e-48da-a777-363849c2ca28",
+  "id": "Manage Product Inventory_ProductInventoryWidget",
+  "unpublishedCollection": {
+    "name": "ProductInventoryWidget",
+    "pageId": "Manage Product Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "INVENTORY_ID",
+        "value": "{\n  ...INVENTORY_ID,\n  data: INVENTORY_ID.text\n}"
+      },
+      {
+        "name": "INVENTORY_NAME",
+        "value": "{\n  ...INVENTORY_NAME,\n  data: INVENTORY_NAME.text\n}"
+      },
+      {
+        "name": "METER_ID",
+        "value": "{\n  ...METER_ID,\n  data: METER_ID.text\n}"
+      },
+      {
+        "name": "FLOOR_NO",
+        "value": "{\n  ...FLOOR_NO,\n  data: FLOOR_NO.selectedOptionValue\n}"
+      },
+      {
+        "name": "PRODUCT_DESCRIPTION",
+        "value": "{\n  ...PRODUCT_DESCRIPTION,\n  data: PRODUCT_DESCRIPTION.text\n}"
+      },
+      {
+        "name": "ZONE",
+        "value": "{\n  ...ZONE,\n  data: ZONE.selectedOptionValue\n}"
+      },
+      {
+        "name": "QUANTITY",
+        "value": "{\n  ...QUANTITY,\n  data: QUANTITY.text\n}"
+      },
+      {
+        "name": "CT",
+        "value": "{\n  ...CT,\n  data: CT.selectedOptionValue\n}"
+      },
+      {
+        "name": "START_UNIT",
+        "value": "{\n  ...START_UNIT,\n  data: START_UNIT.text\n}"
+      },
+      {
+        "name": "DIGIT_LENGTH",
+        "value": "{\n  ...DIGIT_LENGTH,\n  data: DIGIT_LENGTH.text\n}"
+      },
+      {
+        "name": "DECIMAL_POINT",
+        "value": "{\n  ...DECIMAL_POINT,\n  data: DECIMAL_POINT.text\n}"
+      },
+      {
+        "name": "MINIMUM_UNIT",
+        "value": "{\n  ...MINIMUM_UNIT,\n  data: MINIMUM_UNIT.text\n}"
+      },
+      {
+        "name": "MAXIMUM_UNIT",
+        "value": "{\n  ...MAXIMUM_UNIT,\n  data: MAXIMUM_UNIT.text\n}"
+      },
+      {
+        "name": "AVERAGE_UNIT",
+        "value": "{\n  ...AVERAGE_UNIT,\n  data: AVERAGE_UNIT.text\n}"
+      },
+      {
+        "name": "PRICE_PER_UNIT",
+        "value": "{\n  ...PRICE_PER_UNIT,\n  data: PRICE_PER_UNIT.value\n}"
+      },
+      {
+        "name": "START_DATE",
+        "value": "{\n  ...START_DATE,\n  data: START_DATE.selectedDate\n}"
+      },
+      {
+        "name": "END_DATE",
+        "value": "{\n  ...END_DATE,\n  data: END_DATE.selectedDate\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  ...STATUS,\n  data: STATUS.selectedOptionValue\n}"
+      },
+      {
+        "name": "SHARED",
+        "value": "{\n  ...SHARED,\n  data: SHARED.isChecked\n}"
+      },
+      {
+        "name": "PERCENTAGE",
+        "value": "{\n  ...PERCENTAGE,\n  data: PERCENTAGE.text\n}"
+      },
+      {
+        "name": "ACCOUNTING_DESCRIPTION",
+        "value": "{\n  ...ACCOUNTING_DESCRIPTION,\n  data: ACCOUNTING_DESCRIPTION.text\n}"
+      },
+      {
+        "name": "SUBMETER_ID",
+        "value": "{\n  ...SUBMETER_ID,\n  data: SUBMETER_ID.text\n}"
+      }
+    ]
+  }
+}

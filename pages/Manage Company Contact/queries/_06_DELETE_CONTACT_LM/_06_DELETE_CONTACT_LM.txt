@@ -1,0 +1,21 @@
+DECLARE @ResultCode NVARCHAR(10),
+			@ResultMessages NVARCHAR(MAX);
+
+IF @@TRANCOUNT = 0
+BEGIN TRANSACTION;
+		EXECUTE [dbo].[UPDATE_PMS_COMPANY_CONTACT_LM] 
+	@pCOMPANY_CONTACT_ID = {{COMPANY_CONTACT_ID.text}}
+	,@DELETE_FLAG = 1
+	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@ResultCode=@ResultCode OUTPUT
+	,@ResultMessages=@ResultMessages OUTPUT;
+
+IF @ResultCode <> 'DONE' GOTO RETURN_RESULT;
+
+RETURN_RESULT:
+SELECT @ResultCode AS [RESULT_CODE],
+       @ResultMessages AS [RESULT_MESSAGES]
+
+IF @ResultCode = 'DONE'
+COMMIT TRANSACTION;
+ELSE ROLLBACK TRANSACTION;

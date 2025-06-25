@@ -1,0 +1,9 @@
+EXEC [dbo].[SER_SEARCH_FOR_CONTACT_PERSON]
+   @COMPANY_CONTACT_ID = {{COMPANY_CONTACT_ID.text!== ""?`${COMPANY_CONTACT_ID.text}`:null}}
+  ,@COMPANY_CONTACT_NAME = {{COMPANY_CONTACT_NAME.text!== ""?`${COMPANY_CONTACT_NAME.text}`:null}}
+  ,@STATUS = {{STATUS.selectedOptionValue!== ""?`${STATUS.selectedOptionValue}`:null}}
+  ,@COMPANY_CONTACT_TELEPHONE = {{COMPANY_CONTACT_TELEPHONE.text!== ""?`${COMPANY_CONTACT_TELEPHONE.text}`:null}}
+  ,@COMPANY_NAME = {{COMPANY_NAME.text!== ""?`${COMPANY_NAME.text}`:null}}
+	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+
+

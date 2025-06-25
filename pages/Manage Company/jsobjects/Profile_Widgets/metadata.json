@@ -1,0 +1,44 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_025cbd22-b01c-4d89-83c4-13fa216491c1",
+  "id": "Manage Company_Profile_Widgets",
+  "unpublishedCollection": {
+    "name": "Profile_Widgets",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "COMPANY_ID",
+        "value": "{\n  ...COMPANY_ID,\n  data: COMPANY_ID.text\n}"
+      },
+      {
+        "name": "COMPANY_PROFILE_AGREEMENT_NO",
+        "value": "{\n  ...AGREEMENT_ID,\n  data: AGREEMENT_ID.selectedOptionValue\n}"
+      },
+      {
+        "name": "COMPANY_PROFILE_PERIOD_START",
+        "value": "{\n  ...COMPANY_PROFILE_PERIOD_START,\n  data: COMPANY_PROFILE_PERIOD_START.selectedDate\n}"
+      },
+      {
+        "name": "COMPANY_PROFILE_PERIOD_END",
+        "value": "{\n  ...COMPANY_PROFILE_PERIOD_END,\n  data: COMPANY_PROFILE_PERIOD_END.selectedDate\n}"
+      },
+      {
+        "name": "FORMULA_ID",
+        "value": "{\n  ...FORMULA,\n  data: FORMULA.selectedOptionValue\n}"
+      },
+      {
+        "name": "PROFILE_FLOOR_MODIFIER",
+        "value": "{\n  ...COMPANY_PROFILE_FLOOR_NO,\n  data: COMPANY_PROFILE_FLOOR_NO.text\n}"
+      },
+      {
+        "name": "PROFILE_PP_UNIT_MODIFIER",
+        "value": "{\n  ...PRICE_PER_UNIT,\n  data: PRICE_PER_UNIT.value\n}"
+      },
+      {
+        "name": "QUANTITY",
+        "value": "{\n  ...QUANTITY,\n  data: QUANTITY.text\n}"
+      }
+    ]
+  }
+}

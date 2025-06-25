@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_a1adc088-06a2-483f-a224-19ea05a54358",
+  "id": "Product Inventory Dashboard_Default_Table",
+  "unpublishedCollection": {
+    "name": "Default_Table",
+    "pageId": "Product Inventory Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "invent",
+        "value": "[{\n  \"FLOOR_NO\": null,\n  \"PRODUCT_TYPE_TH\": null,\n  \"INVENTORY_NAME\": null,\n  \"ZONE\": null,\n  \"METER_ID\": null,\n  \"QUANTITY\": null,\n  \"STATUS\": null,\n  \"INVENTORY_ID\": null,\n  \"PRODUCT_ID\": null,\n  \"PRICE_PER_UNIT\": null,\n  \"START_DATE\": null,\n  \"END_DATE\": null,\n  \"TOTAL_RECORDS\": 0\n}]"
+      }
+    ]
+  }
+}
