@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "SP_HANDLE_TOKEN",
     "pageId": "Invoice Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

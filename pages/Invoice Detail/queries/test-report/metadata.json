@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "test.report",
     "name": "report",
     "pageId": "Invoice Detail",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

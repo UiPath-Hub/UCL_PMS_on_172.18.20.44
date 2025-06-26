@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "SELECT_CONTACT_PERSON",
     "pageId": "Invoice Detail",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

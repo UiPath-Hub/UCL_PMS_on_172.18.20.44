@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "SP_SER_SEARCH_FOR_COMPANY",
     "pageId": "Company Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

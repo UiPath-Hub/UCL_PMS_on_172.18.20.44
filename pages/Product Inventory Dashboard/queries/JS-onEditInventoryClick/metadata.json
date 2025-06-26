@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onEditInventoryClick",
     "name": "onEditInventoryClick",
     "pageId": "Product Inventory Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

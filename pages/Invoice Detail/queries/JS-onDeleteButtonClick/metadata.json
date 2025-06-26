@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onDeleteButtonClick",
     "name": "onDeleteButtonClick",
     "pageId": "Invoice Detail",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

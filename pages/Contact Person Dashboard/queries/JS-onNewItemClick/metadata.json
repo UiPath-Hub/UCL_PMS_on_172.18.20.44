@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onNewItemClick",
     "name": "onNewItemClick",
     "pageId": "Contact Person Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

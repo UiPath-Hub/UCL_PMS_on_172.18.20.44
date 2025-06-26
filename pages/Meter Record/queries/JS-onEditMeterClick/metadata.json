@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onEditMeterClick",
     "name": "onEditMeterClick",
     "pageId": "Meter Record",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

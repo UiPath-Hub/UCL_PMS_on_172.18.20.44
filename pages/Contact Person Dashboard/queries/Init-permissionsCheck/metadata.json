@@ -29,10 +29,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "Init.permissionsCheck",
     "name": "permissionsCheck",
     "pageId": "Contact Person Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

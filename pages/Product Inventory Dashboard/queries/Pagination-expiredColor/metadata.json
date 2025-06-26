@@ -26,10 +26,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "Pagination.expiredColor",
     "name": "expiredColor",
     "pageId": "Product Inventory Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

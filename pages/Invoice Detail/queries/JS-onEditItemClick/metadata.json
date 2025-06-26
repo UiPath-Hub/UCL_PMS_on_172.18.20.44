@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onEditItemClick",
     "name": "onEditItemClick",
     "pageId": "Invoice Detail",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
