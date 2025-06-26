@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "VerifyButton2.countCheck",
     "name": "countCheck",
     "pageId": "Manage Product Catalog",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

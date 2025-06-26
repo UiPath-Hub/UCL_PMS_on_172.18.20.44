@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "ADDRESSING.initAddress",
     "name": "initAddress",
     "pageId": "Manage Company",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

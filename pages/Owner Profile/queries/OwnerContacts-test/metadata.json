@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "OwnerContacts.test",
     "name": "test",
     "pageId": "Owner Profile",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

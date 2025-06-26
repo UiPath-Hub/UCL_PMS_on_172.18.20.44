@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.updateContact",
     "name": "updateContact",
     "pageId": "Owner Profile Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

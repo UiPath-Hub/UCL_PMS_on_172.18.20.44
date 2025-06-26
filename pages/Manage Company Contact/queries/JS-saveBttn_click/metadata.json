@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.saveBttn_click",
     "name": "saveBttn_click",
     "pageId": "Manage Company Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

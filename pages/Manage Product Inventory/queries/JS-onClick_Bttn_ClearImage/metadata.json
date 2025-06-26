@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onClick_Bttn_ClearImage",
     "name": "onClick_Bttn_ClearImage",
     "pageId": "Manage Product Inventory",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

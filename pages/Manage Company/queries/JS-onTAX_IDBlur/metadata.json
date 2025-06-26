@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onTAX_IDBlur",
     "name": "onTAX_IDBlur",
     "pageId": "Manage Company",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

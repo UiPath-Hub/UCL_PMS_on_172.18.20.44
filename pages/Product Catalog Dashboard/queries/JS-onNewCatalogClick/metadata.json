@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onNewCatalogClick",
     "name": "onNewCatalogClick",
     "pageId": "Product Catalog Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

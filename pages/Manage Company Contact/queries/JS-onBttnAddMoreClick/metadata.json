@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onBttnAddMoreClick",
     "name": "onBttnAddMoreClick",
     "pageId": "Manage Company Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

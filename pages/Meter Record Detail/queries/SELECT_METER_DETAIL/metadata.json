@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "SELECT_METER_DETAIL",
     "pageId": "Meter Record Detail",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "Init.on_ModalPermissionDeniedClose",
     "name": "on_ModalPermissionDeniedClose",
     "pageId": "Receipt Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

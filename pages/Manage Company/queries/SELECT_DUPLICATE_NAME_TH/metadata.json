@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "SELECT_DUPLICATE_NAME_TH",
     "pageId": "Manage Company",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

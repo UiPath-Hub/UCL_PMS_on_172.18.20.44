@@ -29,10 +29,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "ADDRESSING.fetchAndStoreAddress",
     "name": "fetchAndStoreAddress",
     "pageId": "Manage Company",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

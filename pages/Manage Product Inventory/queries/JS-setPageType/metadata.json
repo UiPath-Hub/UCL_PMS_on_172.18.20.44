@@ -26,10 +26,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.setPageType",
     "name": "setPageType",
     "pageId": "Manage Product Inventory",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

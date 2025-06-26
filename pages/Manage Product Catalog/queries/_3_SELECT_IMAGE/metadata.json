@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "_3_SELECT_IMAGE",
     "pageId": "Manage Product Catalog",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

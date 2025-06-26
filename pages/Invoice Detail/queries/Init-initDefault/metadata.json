@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "Init.initDefault",
     "name": "initDefault",
     "pageId": "Invoice Detail",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

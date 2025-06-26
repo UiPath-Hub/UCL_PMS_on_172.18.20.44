@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onSort",
     "name": "onSort",
     "pageId": "Contact Person Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -23,9 +23,9 @@
       "pluginId": "mssql-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": false,
     "name": "SELECT_INQUIRY",
     "pageId": "Manage Company",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

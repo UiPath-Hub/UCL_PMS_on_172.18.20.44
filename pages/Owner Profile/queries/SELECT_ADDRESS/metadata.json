@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "SELECT_ADDRESS",
     "pageId": "Owner Profile",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

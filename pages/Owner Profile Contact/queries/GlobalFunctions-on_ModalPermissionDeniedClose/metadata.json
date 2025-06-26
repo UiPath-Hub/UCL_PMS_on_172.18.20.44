@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "GlobalFunctions.on_ModalPermissionDeniedClose",
     "name": "on_ModalPermissionDeniedClose",
     "pageId": "Owner Profile Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

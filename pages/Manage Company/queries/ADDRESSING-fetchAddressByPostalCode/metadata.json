@@ -44,10 +44,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "ADDRESSING.fetchAddressByPostalCode",
     "name": "fetchAddressByPostalCode",
     "pageId": "Manage Company",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onClick_Bttn_ClearSubMeter",
     "name": "onClick_Bttn_ClearSubMeter",
     "pageId": "Manage Product Inventory",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

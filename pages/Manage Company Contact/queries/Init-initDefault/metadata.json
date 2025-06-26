@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "Init.initDefault",
     "name": "initDefault",
     "pageId": "Manage Company Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "_2_SP_INSERT_INVENTORY",
     "pageId": "Manage Product Inventory",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

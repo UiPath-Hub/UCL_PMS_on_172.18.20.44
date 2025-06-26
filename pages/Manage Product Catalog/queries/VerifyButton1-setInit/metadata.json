@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "VerifyButton1.setInit",
     "name": "setInit",
     "pageId": "Manage Product Catalog",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

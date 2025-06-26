@@ -96,9 +96,9 @@
       "pluginId": "mongo-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
     "name": "LOGO",
     "pageId": "Product Inventory Dashboard",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

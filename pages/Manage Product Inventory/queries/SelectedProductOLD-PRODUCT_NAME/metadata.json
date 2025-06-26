@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "SelectedProductOLD.PRODUCT_NAME",
     "name": "PRODUCT_NAME",
     "pageId": "Manage Product Inventory",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

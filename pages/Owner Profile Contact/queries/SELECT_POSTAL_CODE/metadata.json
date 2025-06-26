@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "SELECT_POSTAL_CODE",
     "pageId": "Owner Profile Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

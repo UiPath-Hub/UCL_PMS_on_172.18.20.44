@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "GlobalFunctions.sessionCheck",
     "name": "sessionCheck",
     "pageId": "Manage Company Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

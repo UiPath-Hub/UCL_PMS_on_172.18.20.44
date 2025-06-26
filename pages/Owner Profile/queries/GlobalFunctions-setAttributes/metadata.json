@@ -32,10 +32,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "GlobalFunctions.setAttributes",
     "name": "setAttributes",
     "pageId": "Owner Profile",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

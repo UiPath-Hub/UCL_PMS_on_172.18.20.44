@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "UPDATE_DELETE_METER",
     "pageId": "Meter Record Detail",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

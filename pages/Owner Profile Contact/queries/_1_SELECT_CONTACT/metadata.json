@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "_1_SELECT_CONTACT",
     "pageId": "Owner Profile Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onConfirmDeleteClick",
     "name": "onConfirmDeleteClick",
     "pageId": "Manage Product Catalog",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

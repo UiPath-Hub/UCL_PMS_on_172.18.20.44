@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "name": "SP_SER_SEARCH_FOR_METER",
     "pageId": "Meter Record",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

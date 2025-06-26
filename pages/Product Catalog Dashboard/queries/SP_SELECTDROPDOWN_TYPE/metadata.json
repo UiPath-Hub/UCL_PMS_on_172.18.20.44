@@ -23,9 +23,9 @@
       "pluginId": "mssql-plugin"
     },
     "dynamicBindingPathList": [],
-    "executeOnLoad": true,
     "name": "SP_SELECTDROPDOWN_TYPE",
     "pageId": "Product Catalog Dashboard",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

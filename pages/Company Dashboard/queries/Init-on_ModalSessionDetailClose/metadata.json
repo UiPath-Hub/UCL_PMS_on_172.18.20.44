@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "Init.on_ModalSessionDetailClose",
     "name": "on_ModalSessionDetailClose",
     "pageId": "Company Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

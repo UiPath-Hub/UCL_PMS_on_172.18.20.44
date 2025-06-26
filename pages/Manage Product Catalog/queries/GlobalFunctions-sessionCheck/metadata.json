@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "GlobalFunctions.sessionCheck",
     "name": "sessionCheck",
     "pageId": "Manage Product Catalog",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

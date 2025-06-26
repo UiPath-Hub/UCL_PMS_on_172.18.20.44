@@ -22,10 +22,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "JS.onBUTTON_EDITClick",
     "name": "onBUTTON_EDITClick",
     "pageId": "Third Party Dashboard",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -26,10 +26,10 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": false,
     "fullyQualifiedName": "GlobalFunctions.initDefault",
     "name": "initDefault",
     "pageId": "Owner Profile Contact",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
