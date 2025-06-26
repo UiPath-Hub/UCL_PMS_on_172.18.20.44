@@ -54,7 +54,7 @@
   ],
   "errorMessage": "No Available Unit or Invalid number(0.00*)",
   "iconAlign": "left",
-  "inputType": "TEXT",
+  "inputType": "NUMBER",
   "isDisabled": "{{appsmith.store[Configs.PageType] === PageTypes.Meter}}",
   "isLoading": false,
   "isRequired": "{{DefaultInventory.\nQUANTITY.required}}",
