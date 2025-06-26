@@ -420,7 +420,7 @@
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
+      "horizontalAlignment": "RIGHT",
       "id": "QUANTITY",
       "index": 5,
       "isCellEditable": false,
