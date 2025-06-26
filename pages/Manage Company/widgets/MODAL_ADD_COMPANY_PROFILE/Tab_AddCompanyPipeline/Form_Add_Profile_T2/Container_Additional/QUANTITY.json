@@ -32,7 +32,7 @@
     }
   ],
   "iconAlign": "left",
-  "inputType": "TEXT",
+  "inputType": "NUMBER",
   "isDisabled": "{{TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow.PRODUCT_TYPE_TH==\"พื้นที่เช่า\"}}",
   "isLoading": false,
   "isRequired": false,
@@ -61,6 +61,7 @@
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 28,
+  "shouldAllowAutofill": false,
   "showStepArrows": false,
   "topRow": 13,
   "type": "INPUT_WIDGET_V2",
