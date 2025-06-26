@@ -242,7 +242,7 @@ export default {
 		if(SP_SELECT_FOR_INVENTORY.data != undefined && SP_SELECT_FOR_INVENTORY.data.length != 0){
 			let inventory = SP_SELECT_FOR_INVENTORY.data[0]
 			await Promise.all( Object.keys(Default_InvenForProfile).map((fieldKey)=>{
-				if( inventory[fieldKey.toString()] != undefined && Default_InvenForProfile[fieldKey.toString()].data != undefined){
+				if( inventory[fieldKey.toString()] !== undefined && Default_InvenForProfile[fieldKey.toString()].data !== undefined){
 					Default_InvenForProfile[fieldKey.toString()].data = inventory[fieldKey.toString()]
 				}
 			}))
@@ -259,7 +259,7 @@ export default {
 		resetWidget("Container_Additional",true).then(()=>{
 			this.onInventorySelected();
 		});*/
-		await Promise.all([this.getInvenForProfile(),JS_Profile.onInventorySelected()]);
+		await Promise.all([this.getInvenForProfile(),this.onInventorySelected()]);
 		JS_Profile.AddCompanyPipeline = "T3";	
 
 	},
