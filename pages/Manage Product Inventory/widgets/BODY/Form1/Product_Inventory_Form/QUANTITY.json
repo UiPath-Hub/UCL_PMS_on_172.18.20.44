@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 33,
   "boxShadow": "none",
-  "defaultText": "{{DefaultInventory.QUANTITY.data}}",
+  "defaultText": "{{DefaultInventory.QUANTITY.data?parseFloat(DefaultInventory.QUANTITY.data).toFixed(2).toString():\"0.00\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -42,9 +42,16 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "onBlur"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onBlur"
+    }
+  ],
   "errorMessage": "No Available Unit or Invalid number(0.00*)",
   "iconAlign": "left",
   "inputType": "TEXT",
@@ -71,6 +78,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "onBlur": "{{QUANTITY.isValid?QUANTITY.setValue( QUANTITY.text?parseFloat(QUANTITY.text).toFixed(2):\"0.00\"):\"\"}}",
   "originalBottomRow": 33,
   "originalTopRow": 29,
   "parentColumnSpace": 19.5,

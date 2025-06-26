@@ -33,7 +33,7 @@
       },
       {
         "name": "PROFILE_PP_UNIT_MODIFIER",
-        "value": "{\n  ...PRICE_PER_UNIT,\n  data: PRICE_PER_UNIT.value\n}"
+        "value": "{\n  ...PRICE_PER_UNIT,\n  data: (PRICE_PER_UNIT.value != undefined ? PRICE_PER_UNIT.value : \"\").toString()\n}"
       },
       {
         "name": "QUANTITY",

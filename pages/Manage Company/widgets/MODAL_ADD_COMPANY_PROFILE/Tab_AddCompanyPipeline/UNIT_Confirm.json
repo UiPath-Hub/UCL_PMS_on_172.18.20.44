@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 16,
   "boxShadow": "none",
-  "defaultText": "{{Default_InvenForProfile.QUANTITY.data}}",
+  "defaultText": "{{Default_InvenForProfile.QUANTITY.data?parseFloat(Default_InvenForProfile.QUANTITY.data).toFixed(2):\"0.00\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

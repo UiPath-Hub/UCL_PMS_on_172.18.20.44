@@ -13,7 +13,7 @@
       },
       {
         "name": "permissions",
-        "value": "{\n  VIEW: \"A01\",\n  EDIT: \"A02\"\n}"
+        "value": "{\n  VIEW: \"INVV\",\n  EDIT: \"INVE\"\n}"
       },
       {
         "name": "forceKick",

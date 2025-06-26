@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 36,
+  "bottomRow": 35,
   "boxShadow": "none",
-  "defaultText": "{{PMS_COMPANY_PROFILE_LM.tableData.reduce((accumulator, currentValue) => {\n\tif(!accumulator.id.includes(currentValue.INVENTORY_ID)){\n\t\taccumulator.id.push(currentValue.INVENTORY_ID)\n\t\taccumulator.sum+=currentValue.QUANTITY\n\t}\n  return accumulator;\n}, {id:[],sum:0}).sum}}",
+  "defaultText": "{{JS_Profile.LeadTotalAmount}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

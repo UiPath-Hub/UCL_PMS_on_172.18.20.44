@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 69,
+  "bottomRow": 65,
   "boxShadow": "none",
   "defaultText": "{{DefaultInventory.PRODUCT_DESCRIPTION.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 29,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 61,
+  "topRow": 57,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "dehed2l1il",

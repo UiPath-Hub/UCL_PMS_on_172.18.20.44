@@ -1,6 +1,6 @@
 export default {
 	userSession:"userSession",
-	permissions:{VIEW:"A01",EDIT:"A02"},
+	permissions:{VIEW:"INVV",EDIT:"INVE"},
 	forceKick:false,
 	forceLogin:false,
 	errorAlert:"",

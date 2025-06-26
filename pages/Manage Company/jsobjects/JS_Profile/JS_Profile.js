@@ -1,4 +1,12 @@
 export default {
+	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.tableData.reduce((accumulator, currentValue) => {  
+			if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
+				accumulator.id.push(currentValue.INVENTORY_ID)
+				accumulator.sum+=parseFloat( currentValue.QUANTITY)
+			}
+			return accumulator; 
+		}, {id:[],sum:0}).sum).toFixed(2).toString()
+	,
 	AddCompanyPipeline:"T1",
 	//GrantROFRTable:[],
 	onModalManageProfileClose:async()=>{
@@ -48,9 +56,11 @@ export default {
 		let reference = [{LinkTableColumn:"PRICE_PER_UNIT",ProfileProp:"PROFILE_PP_UNIT_MODIFIER", Widget: PRICE_PER_UNIT},
 										 {LinkTableColumn:"FLOOR_NO",ProfileProp:"PROFILE_FLOOR_MODIFIER", Widget:COMPANY_PROFILE_FLOOR_NO}
 										];
-		await reference.filter((Ref)=>Ref.LinkTableColumn===LinkTableColumn).map(async (Ref)=>{
+		reference = await reference.filter((Ref)=>Ref.LinkTableColumn===LinkTableColumn);
+		await Promise.all( reference.map(async (Ref)=>{
 			if(Ref.Widget.isDisabled === true){
 				Default_Profile[Ref.ProfileProp].data = "";
+				Ref.Widget.setDisabled(false);
 			}else{
 				if( Default_InvenForProfile[Ref.LinkTableColumn] != undefined && _.trim(Default_InvenForProfile[Ref.LinkTableColumn].data) != ""){
 					Default_Profile[Ref.ProfileProp].data = Default_InvenForProfile[Ref.LinkTableColumn].data;
@@ -59,9 +69,10 @@ export default {
 					await showAlert("this inventory does not have default value.","error");
 					return;
 				}
+				Ref.Widget.setDisabled(true);
 			}
-			await Ref.Widget.setDisabled(!Ref.Widget.isDisabled)
-		})[0]
+			//await Ref.Widget.setDisabled(!Ref.Widget.isDisabled)
+		}))
 	},
 	onInventorySelected:async ()=>{
 

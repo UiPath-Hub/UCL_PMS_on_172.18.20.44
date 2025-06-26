@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 17,
   "boxShadow": "none",
-  "defaultText": "{{SelectedProduct.FREE_UNIT.data}}",
+  "defaultText": "{{SelectedProduct.FREE_UNIT.data?parseFloat(SelectedProduct.FREE_UNIT.data).toFixed(2):\"0.00\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -28,7 +28,7 @@
   ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "inputType": "NUMBER",
+  "inputType": "TEXT",
   "isDisabled": true,
   "isLoading": false,
   "isRequired": "{{SelectedProduct.AVAILABLE_UNIT\n.required}}",
