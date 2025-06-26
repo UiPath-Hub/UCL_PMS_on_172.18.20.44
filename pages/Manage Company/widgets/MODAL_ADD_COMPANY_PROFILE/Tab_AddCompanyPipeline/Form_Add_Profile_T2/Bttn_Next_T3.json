@@ -42,7 +42,7 @@
   "mobileTopRow": 18,
   "needsErrorInfo": false,
   "onClick": "{{JS_Profile.onBttn_NextPipeline_T3_Click()}}",
-  "originalBottomRow": 26,
+  "originalBottomRow": 30,
   "originalTopRow": 26,
   "parentId": "ca0c48yime",
   "placement": "CENTER",

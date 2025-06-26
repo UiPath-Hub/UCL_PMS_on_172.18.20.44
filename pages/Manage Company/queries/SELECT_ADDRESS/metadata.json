@@ -30,6 +30,6 @@
     "name": "SELECT_ADDRESS",
     "pageId": "Manage Company",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

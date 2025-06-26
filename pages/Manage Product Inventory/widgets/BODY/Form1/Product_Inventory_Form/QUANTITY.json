@@ -93,7 +93,7 @@
   "showStepArrows": false,
   "topRow": 29,
   "type": "INPUT_WIDGET_V2",
-  "validation": "{{parseFloat(QUANTITY.text||0)<=(parseFloat(AVAILABLE_UNIT.text||0)+parseFloat(DefaultInventory.QUANTITY.data||0))}}",
+  "validation": "{{(parseFloat(QUANTITY.text||0)<=(parseFloat(AVAILABLE_UNIT.text||0)+parseFloat(DefaultInventory.QUANTITY.data||0)))&&(parseFloat(QUANTITY.text).toFixed(2)==parseFloat(QUANTITY.text))}}",
   "version": 2,
   "widgetId": "d50enjyae0",
   "widgetName": "QUANTITY"

@@ -30,6 +30,6 @@
     "name": "_0_SELECT_FOR_COMPANY_BY_ID",
     "pageId": "Manage Company",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

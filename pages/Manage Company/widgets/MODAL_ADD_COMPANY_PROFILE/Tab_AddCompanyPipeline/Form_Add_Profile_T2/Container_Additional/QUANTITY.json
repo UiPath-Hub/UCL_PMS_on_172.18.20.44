@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 17,
   "boxShadow": "none",
-  "defaultText": "{{Default_Profile.QUANTITY.data||Default_InvenForProfile.QUANTITY.data}}",
+  "defaultText": "{{(Default_Profile.QUANTITY.data||Default_InvenForProfile.QUANTITY.data)?parseFloat(Default_Profile.QUANTITY.data||Default_InvenForProfile.QUANTITY.data).toFixed(2):\"0.00\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -22,9 +22,6 @@
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
-    {
-      "key": "onTextChanged"
-    },
     {
       "key": "isDisabled"
     }
@@ -56,7 +53,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onTextChanged": "{{UNIT_Confirm.setValue(Default_InvenForProfile.QUANTITY.data)}}",
+  "onTextChanged": "",
   "parentColumnSpace": 13.125,
   "parentId": "uk4994gix9",
   "parentRowSpace": 10,

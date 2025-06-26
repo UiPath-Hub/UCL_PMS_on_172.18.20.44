@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 38,
   "boxShadow": "none",
-  "defaultText": "{{Default_ProductCatalog.\nTOTAL_UNIT.data}}",
+  "defaultText": "{{Default_ProductCatalog.\nTOTAL_UNIT.data?parseFloat(Default_ProductCatalog.\nTOTAL_UNIT.data).toFixed(2).toString():\"0.00\" }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -24,6 +24,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "validation"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -33,9 +36,17 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onBlur"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onBlur"
+    }
+  ],
+  "errorMessage": "0.00*",
   "iconAlign": "left",
   "inputType": "NUMBER",
   "isDisabled": false,
@@ -61,6 +72,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "onBlur": "{{TOTAL_UNIT.isValid?TOTAL_UNIT.setValue( parseFloat(TOTAL_UNIT.text).toFixed(2)):\"\"}}",
   "originalBottomRow": 38,
   "originalTopRow": 34,
   "parentColumnSpace": 19.5,
@@ -75,6 +87,7 @@
   "showStepArrows": false,
   "topRow": 34,
   "type": "INPUT_WIDGET_V2",
+  "validation": "{{parseFloat(TOTAL_UNIT.text).toFixed(2)==parseFloat(TOTAL_UNIT.text)}}",
   "version": 2,
   "widgetId": "ym7j624tyw",
   "widgetName": "TOTAL_UNIT"

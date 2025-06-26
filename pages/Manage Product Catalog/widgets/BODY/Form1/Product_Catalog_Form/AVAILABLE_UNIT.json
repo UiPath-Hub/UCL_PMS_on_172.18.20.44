@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 34,
   "boxShadow": "none",
-  "defaultText": "{{Number(Default_ProductCatalog.\nAVAILABLE_UNIT.data)+(Number(TOTAL_UNIT.text)-Number(Default_ProductCatalog.\nTOTAL_UNIT.data))}}",
+  "defaultText": "{{parseFloat(Number(Default_ProductCatalog.\nAVAILABLE_UNIT.data||0)+(Number(TOTAL_UNIT.text||0)-Number(Default_ProductCatalog.\nTOTAL_UNIT.data||0))).toFixed(2)}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -37,7 +37,7 @@
   ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "inputType": "NUMBER",
+  "inputType": "TEXT",
   "isDisabled": true,
   "isLoading": false,
   "isRequired": "{{Default_ProductCatalog.\nAVAILABLE_UNIT.required}}",
