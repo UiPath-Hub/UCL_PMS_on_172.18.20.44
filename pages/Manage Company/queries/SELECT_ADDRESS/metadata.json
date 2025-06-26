@@ -29,7 +29,7 @@
     ],
     "name": "SELECT_ADDRESS",
     "pageId": "Manage Company",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
