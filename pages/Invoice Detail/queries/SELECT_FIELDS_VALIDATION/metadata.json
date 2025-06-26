@@ -29,7 +29,7 @@
     ],
     "name": "SELECT_FIELDS_VALIDATION",
     "pageId": "Invoice Detail",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
