@@ -588,7 +588,7 @@
       "enableFilter": true,
       "enableSort": true,
       "fontStyle": "",
-      "horizontalAlignment": "RIGHT",
+      "horizontalAlignment": "CENTER",
       "id": "QUANTITY",
       "index": 12,
       "isCellEditable": false,
