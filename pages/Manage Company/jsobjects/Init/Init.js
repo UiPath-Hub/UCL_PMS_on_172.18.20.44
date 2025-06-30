@@ -13,10 +13,8 @@ export default {
 		await JS_BILLING.initDefault();
 		await ADDRESSING.initAddress();
 		await ADDRESSING_BILLING.initAddress();
-		if(appsmith.URL.queryParams.NEWBRANCH=== undefined){
-			//NEWBRANCH:moment().format("DDMMYYYYmmss").toString()
-			storeValue("test",moment.now().toString(),false);
-			showAlert(appsmith.store.test);
+		if(appsmith.URL.queryParams.NEWBRANCH === undefined){
+			storeValue("NEWBRANCH",moment.now().toString(),false);
 		}
 
 		if(appsmith.URL.queryParams[ Configs.editCompanyFlag] !== undefined){

@@ -115,7 +115,7 @@ export default {
 			//Go back to Manage Company
 			let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
 					editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
-			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.URL.queryParams.NEWBRANCH}, 'SAME_WINDOW');
+			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}, 'SAME_WINDOW');
 
 		}else if(Configs.pageState.CurrentState==Configs.pageState.EditContactOf){
 			//Update Assigned role of Company/Third Party
@@ -134,7 +134,7 @@ export default {
 			//Go back to Manage Company
 			let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
 					editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
-			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.URL.queryParams.NEWBRANCH}, 'SAME_WINDOW');
+			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}, 'SAME_WINDOW');
 
 		}else showAlert("Missing save method. Please,Contact admin.");
 	},
@@ -171,7 +171,7 @@ export default {
 					//Go back to Manage Company
 					let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
 							editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
-					navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.URL.queryParams.NEWBRANCH}, 'SAME_WINDOW');					
+					navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}, 'SAME_WINDOW');					
 				}
 				else{
 					showAlert("Delete failed."+_07_UNASSIGN_CONTACT.data[0]["RESULT_MESSAGES"],"error");
@@ -203,7 +203,7 @@ export default {
 		editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
 		if(Configs.pageState.CurrentState==Configs.pageState.AddContactTo || Configs.pageState.CurrentState==Configs.pageState.EditContactOf)
 		{
-			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.URL.queryParams.NEWBRANCH}  , 'SAME_WINDOW');
+			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}  , 'SAME_WINDOW');
 
 		}else if(Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack)
 		{

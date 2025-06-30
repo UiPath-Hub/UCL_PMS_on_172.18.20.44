@@ -152,8 +152,8 @@ export default {
 	goToManageCompany:(preferState,editContactID)=>{
 		let NEWBRANCH = "NEWBRANCH"
 		let params = {AS:preferState,[Configs.editCompanyFlag]:_.trim(COMPANY_ID.text)||"TEMP",[Configs.editCompanyContactFlag]:editContactID}
-		if(appsmith.URL.queryParams[NEWBRANCH])
-			params = {...params,[NEWBRANCH]:appsmith.URL.queryParams[NEWBRANCH]}
+		if(appsmith.store[NEWBRANCH])
+			params = {...params,[NEWBRANCH]:appsmith.store[NEWBRANCH]}
 		navigateTo('Manage Company Contact', 
 												 params, 
 												 'SAME_WINDOW');

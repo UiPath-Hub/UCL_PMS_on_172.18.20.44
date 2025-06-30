@@ -8,7 +8,7 @@ BEGIN TRANSACTION;
 		@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}
 		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}
 		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
-		,@NEWBRANCH = {{appsmith.URL.queryParams.NEWBRANCH}}
+		,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}
 		,@IS_DELETE = 1
 		,@ResultCode=@ResultCode OUTPUT
 		,@ResultMessages=@ResultMessages OUTPUT
