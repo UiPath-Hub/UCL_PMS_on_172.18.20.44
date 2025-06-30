@@ -29,6 +29,7 @@ EXECUTE [dbo].[UPDATE_PMS_COMPANY_LM]
   ,@pCOMPANY_PROVINCE = {{PROVINCE_TH.selectedOptionValue}}
   ,@pCOMPANY_POSTAL_CODE = {{POSTAL_CODE.text}}
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@NEWBRANCH = {{appsmith.URL.queryParams.NEWBRANCH}}
 	
 	,@TITLE_PREFIX = {{TITLE_PREFIX.selectedOptionValue}}
 	,@TITLE_PREFIX_OTHER ={{TITLE_PREFIX_OTHER.text}}

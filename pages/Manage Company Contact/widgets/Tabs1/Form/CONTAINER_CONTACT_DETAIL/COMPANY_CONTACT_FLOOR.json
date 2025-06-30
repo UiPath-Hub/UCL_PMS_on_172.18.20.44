@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 52,
+  "bottomRow": 51,
   "boxShadow": "none",
   "defaultText": "{{DefaultContact.COMPANY_CONTACT_FLOOR.data}}",
   "dynamicBindingPathList": [
@@ -59,7 +59,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 51,
+  "originalBottomRow": 52,
   "originalTopRow": 47,
   "parentColumnSpace": 19.5,
   "parentId": "0s2qm3vbhm",
