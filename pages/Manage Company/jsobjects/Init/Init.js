@@ -15,6 +15,8 @@ export default {
 		await ADDRESSING_BILLING.initAddress();
 		if(appsmith.URL.queryParams.NEWBRANCH=== undefined){
 			//NEWBRANCH:moment().format("DDMMYYYYmmss").toString()
+			storeValue("test",moment.now().toString(),false);
+			showAlert(appsmith.store.test);
 		}
 
 		if(appsmith.URL.queryParams[ Configs.editCompanyFlag] !== undefined){
