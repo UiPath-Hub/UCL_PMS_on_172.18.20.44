@@ -8,7 +8,7 @@ AND PAIRED_CONTACT_ID={{appsmith.URL.queryParams[Configs.editContacePerson]}}
 if ((SELECT COUNT(*) FROM @CONTACT_DETAIL)=0)
 insert into @CONTACT_DETAIL
 SELECT TOP(1) COMPANY_CONTACT_ROLE FROM dbo.PMS_CONTACT_PERSON_DETAIL_TEMP WHERE 
-SESSION_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+SESSION_TOKEN = {{appsmith.store[Configs.userSession].TOKEN+appsmith.URL.queryParams.NEWBRANCH}}
 AND PAIRED_CONTACT_ID={{appsmith.URL.queryParams[Configs.editContacePerson]}};
 
 SELECT * FROM @CONTACT_DETAIL

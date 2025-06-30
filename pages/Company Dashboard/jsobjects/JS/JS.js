@@ -7,7 +7,7 @@ export default {
 		//await removeValue(Configs.editFlag);
 		await removeValue(Configs.newCompanyTempFlag);
 		await storeValue(Configs.IS_THIRD_PARTY,Configs.companyPageState.COMPANY,true);
-		navigateTo('Manage Company', {}, 'SAME_WINDOW');
+		navigateTo('Manage Company', {NEWBRANCH:moment().format("DDMMYYYYmmss").toString()}, 'SAME_WINDOW');
 	},
 	onBUTTON_EDITClick:async()=>{
 		//await storeValue(Configs.editFlag, PMS_COMPANY_LM.selectedRow)

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SET NOCOUNT ON;\nDECLARE @CONTACT_DETAIL table(COMPANY_CONTACT_ROLE nvarchar(MAX));\n\ninsert into @CONTACT_DETAIL\nSELECT TOP(1) COMPANY_CONTACT_ROLE FROM dbo.PMS_CONTACT_PERSON_DETAIL_LM WHERE PAIRED_COMPANY_ID={{appsmith.URL.queryParams[Configs.editCompany]}} \nAND PAIRED_CONTACT_ID={{appsmith.URL.queryParams[Configs.editContacePerson]}}\n\nif ((SELECT COUNT(*) FROM @CONTACT_DETAIL)=0)\ninsert into @CONTACT_DETAIL\nSELECT TOP(1) COMPANY_CONTACT_ROLE FROM dbo.PMS_CONTACT_PERSON_DETAIL_TEMP WHERE \nSESSION_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\nAND PAIRED_CONTACT_ID={{appsmith.URL.queryParams[Configs.editContacePerson]}};\n\nSELECT * FROM @CONTACT_DETAIL",
+      "body": "SET NOCOUNT ON;\nDECLARE @CONTACT_DETAIL table(COMPANY_CONTACT_ROLE nvarchar(MAX));\n\ninsert into @CONTACT_DETAIL\nSELECT TOP(1) COMPANY_CONTACT_ROLE FROM dbo.PMS_CONTACT_PERSON_DETAIL_LM WHERE PAIRED_COMPANY_ID={{appsmith.URL.queryParams[Configs.editCompany]}} \nAND PAIRED_CONTACT_ID={{appsmith.URL.queryParams[Configs.editContacePerson]}}\n\nif ((SELECT COUNT(*) FROM @CONTACT_DETAIL)=0)\ninsert into @CONTACT_DETAIL\nSELECT TOP(1) COMPANY_CONTACT_ROLE FROM dbo.PMS_CONTACT_PERSON_DETAIL_TEMP WHERE \nSESSION_TOKEN = {{appsmith.store[Configs.userSession].TOKEN+appsmith.URL.queryParams.NEWBRANCH}}\nAND PAIRED_CONTACT_ID={{appsmith.URL.queryParams[Configs.editContacePerson]}};\n\nSELECT * FROM @CONTACT_DETAIL",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "_01_SELECT_CONTACT_PERSON_DE",
     "pageId": "Manage Company Contact",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }

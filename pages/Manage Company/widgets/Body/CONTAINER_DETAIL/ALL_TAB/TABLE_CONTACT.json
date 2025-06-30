@@ -274,7 +274,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{(_5_SELECT_ALL_C_CONTACT_TEMP.data!=undefined?_5_SELECT_ALL_C_CONTACT_TEMP.data:_6_SELECT_FOR_CONTACT_BY_COMID.data!=undefined?_6_SELECT_FOR_CONTACT_BY_COMID.data:Default_Table.TABLE_CONTACT).filter(row=>row.TOTAL_RECORDS!=0)}}",
+  "tableData": "{{(appsmith.URL.queryParams[Configs.editCompanyFlag]==undefined?_5_SELECT_ALL_C_CONTACT_TEMP.data:_6_SELECT_FOR_CONTACT_BY_COMID.data!=undefined?_6_SELECT_FOR_CONTACT_BY_COMID.data:Default_Table.TABLE_CONTACT).filter(row=>row.TOTAL_RECORDS!=0)}}",
   "textSize": "0.875rem",
   "topRow": 7,
   "totalRecordsCount": 0,

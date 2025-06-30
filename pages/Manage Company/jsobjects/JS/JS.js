@@ -150,9 +150,12 @@ export default {
 		return false;
 	},
 	goToManageCompany:(preferState,editContactID)=>{
-		
+		let NEWBRANCH = "NEWBRANCH"
+		let params = {AS:preferState,[Configs.editCompanyFlag]:_.trim(COMPANY_ID.text)||"TEMP",[Configs.editCompanyContactFlag]:editContactID}
+		if(appsmith.URL.queryParams[NEWBRANCH])
+			params = {...params,[NEWBRANCH]:appsmith.URL.queryParams[NEWBRANCH]}
 		navigateTo('Manage Company Contact', 
-												 {AS:preferState,[Configs.editCompanyFlag]:_.trim(COMPANY_ID.text)||"TEMP",[Configs.editCompanyContactFlag]:editContactID}, 
+												 params, 
 												 'SAME_WINDOW');
 	},
 	onNewContactClick:async()=>{
