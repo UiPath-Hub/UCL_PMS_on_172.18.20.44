@@ -9,6 +9,7 @@ BEGIN TRANSACTION;
 			@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}
 		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}
 		,@COMPANY_CONTACT_ROLE  = {{COMPANY_CONTACT_ROLE.selectedOptionValue}}
+		,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}
 		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 		,@IS_INSERT = 1
 		,@ResultCode=@ResultCode OUTPUT
@@ -23,6 +24,7 @@ BEGIN TRANSACTION;
 		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}
 		,@COMPANY_CONTACT_ROLE  = {{COMPANY_CONTACT_ROLE.selectedOptionValue}}
 		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+		,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}
 		,@IS_UPDATE = 1
 		,@ResultCode=@ResultCode OUTPUT
 		,@ResultMessages=@ResultMessages OUTPUT

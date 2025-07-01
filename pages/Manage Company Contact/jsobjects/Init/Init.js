@@ -11,16 +11,24 @@ export default {
 		if(!await GlobalFunctions.sessionCheck())navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true)) navigateTo('Login', {}, 'SAME_WINDOW');
 
-
+		if(appsmith.URL.queryParams.NEWBRANCH){
+			storeValue("NEWBRANCH",appsmith.URL.queryParams.NEWBRANCH,false);
+		}else if(appsmith.URL.queryParams.editCompany == "TEMP"){
+			Configs.errorAlert =  "Conflict parameters: Unknown new company branch's number for pairing a contact.";
+			Configs.forceKick = true;
+			showModal(Modal_ErrorAlert.name);
+		}
 		let preferState=appsmith.URL.queryParams.AS;
-		if(preferState){
+		if(preferState!== undefined){
 			if(preferState==Configs.pageState.AddContactTo && appsmith.URL.queryParams.editCompany)
 				Configs.pageState.CurrentState=Configs.pageState.AddContactTo;
 			else if(preferState==Configs.pageState.EditContactOf && appsmith.URL.queryParams.editCompany){
 				Configs.pageState.CurrentState=Configs.pageState.EditContactOf;
-				
 			}else if(preferState==Configs.pageState.NewContactAndBack && Configs.pageState.CurrentState == Configs.pageState.AddContactTo && appsmith.URL.queryParams.editCompany)
 				Configs.pageState.CurrentState=Configs.pageState.NewContactAndBack;
+			else{
+				
+			}
 		}
 		if(!appsmith.URL.queryParams[Configs.editContacePerson]){
 			let key = await Object.keys(DefaultContact);

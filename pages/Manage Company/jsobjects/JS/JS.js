@@ -150,9 +150,12 @@ export default {
 		return false;
 	},
 	goToManageCompany:(preferState,editContactID)=>{
-		
+		let NEWBRANCH = "NEWBRANCH"
+		let params = {AS:preferState,[Configs.editCompanyFlag]:_.trim(COMPANY_ID.text)||"TEMP",[Configs.editCompanyContactFlag]:editContactID}
+		if(appsmith.store[NEWBRANCH])
+			params = {...params,[NEWBRANCH]:appsmith.store[NEWBRANCH]}
 		navigateTo('Manage Company Contact', 
-												 {AS:preferState,[Configs.editCompanyFlag]:_.trim(COMPANY_ID.text)||"TEMP",[Configs.editCompanyContactFlag]:editContactID}, 
+												 params, 
 												 'SAME_WINDOW');
 	},
 	onNewContactClick:async()=>{
@@ -193,16 +196,7 @@ export default {
 				}
 			}else showAlert( "Unknown result code","error");
 		}
-	}
-	,
-	totalRecords:()=>{
-		let LM= _6_SELECT_FOR_CONTACT_BY_COMID.data==undefined?undefined: _6_SELECT_FOR_CONTACT_BY_COMID.data[0];
-		let TEMP = _5_SELECT_ALL_C_CONTACT_TEMP.data==undefined?undefined: _5_SELECT_ALL_C_CONTACT_TEMP.data[0];
-		if(LM != undefined && LM["TOTAL_RECORDS"] != undefined) return LM["TOTAL_RECORDS"];
-		else if(TEMP != undefined && TEMP["TOTAL_RECORDS"] != undefined) return TEMP["TOTAL_RECORDS"];
-		else return 0;
-	}
-	,
+	},
 	test:()=>{
 		return appsmith.store[Configs.editCompanyFlag]
 	}

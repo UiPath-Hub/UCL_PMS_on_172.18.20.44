@@ -13,6 +13,11 @@ export default {
 		await JS_BILLING.initDefault();
 		await ADDRESSING.initAddress();
 		await ADDRESSING_BILLING.initAddress();
+		
+		if(appsmith.URL.queryParams.NEWBRANCH === undefined){
+			await storeValue("NEWBRANCH",moment.now().toString(),false);
+			_5_SELECT_ALL_C_CONTACT_TEMP.run();
+		}
 
 		if(appsmith.URL.queryParams[ Configs.editCompanyFlag] !== undefined){
 			await Promise.all([VerifyButton1.onClick(),VerifyButton2.onClick(),VerifyButton3.onClick()])			

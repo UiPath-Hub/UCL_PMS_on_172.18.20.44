@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXEC [dbo].[SER_SEARCH_FOR_CONTACT_PERSON_BY_NAME]\n\t@COMPANY_CONTACT_NAME = {{Inp_ContactPersonName.text!== \"\"?`${Inp_ContactPersonName.text}`:null}}\n\t,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]!=\"TEMP\"?appsmith.URL.queryParams[Configs.editCompany]:null}}\n\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n",
+      "body": "EXEC [dbo].[SER_SEARCH_FOR_CONTACT_PERSON_BY_NAME]\n\t@COMPANY_CONTACT_NAME = {{Inp_ContactPersonName.text!== \"\"?`${Inp_ContactPersonName.text}`:null}}\n\t,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]!=\"TEMP\"?appsmith.URL.queryParams[Configs.editCompany]:null}}\n\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t,@SESSION_TOKEN = {{appsmith.store[Configs.userSession].TOKEN+appsmith.URL.queryParams.NEWBRANCH}}\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

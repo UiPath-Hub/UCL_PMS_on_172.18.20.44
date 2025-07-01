@@ -1,2 +1,2 @@
 delete dbo.PMS_CONTACT_PERSON_DETAIL_TEMP 
-					where [SESSION_TOKEN] = {{appsmith.store[Configs.userSession].TOKEN}};
+					where [USER_TOKEN] = {{appsmith.store[Configs.userSession].TOKEN}};
