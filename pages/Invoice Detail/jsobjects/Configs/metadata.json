@@ -32,6 +32,10 @@
         "value": "\"\""
       },
       {
+        "name": "BodyInit",
+        "value": "\"VIEW\""
+      },
+      {
         "name": "selectedInvoice",
         "value": "\"selectedInvoice\""
       },
@@ -41,7 +45,15 @@
       },
       {
         "name": "invoice_items",
-        "value": "[]"
+        "value": "[{\n  \"Description\": \"-\",\n  \"Quantity\": \"-\",\n  \"Unit Price\": \"-\",\n  \"Amount\": \"-\"\n}]"
+      },
+      {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
       }
     ]
   }

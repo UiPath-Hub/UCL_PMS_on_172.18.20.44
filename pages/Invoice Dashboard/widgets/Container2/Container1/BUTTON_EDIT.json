@@ -23,7 +23,7 @@
       "key": "onClick"
     }
   ],
-  "iconName": "search-template",
+  "iconName": "edit",
   "isDisabled": "{{Table_PMS_INVOICE_LM.selectedRow===undefined||Table_PMS_INVOICE_LM.selectedRow.INVOICE_ID===\"\"||Table_PMS_INVOICE_LM.selectedRow.INVOICE_ID==undefined}}",
   "isLoading": false,
   "isVisible": true,
@@ -43,7 +43,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 59,
+  "rightColumn": 43,
   "tooltip": "More detail",
   "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",

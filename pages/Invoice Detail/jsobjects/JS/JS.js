@@ -1,4 +1,7 @@
 export default {
+	onClick_Close:()=>{
+		navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
+	},
 	onEditItemClick:()=>{
 		showModal(Modal_ManageItem.name);
 		

@@ -1,2 +1,1 @@
-EXEC	[dbo].[SELECT_FOR_DASHBOARD]
-		  @pDashboardName = N'Invoice Dashboard'
+select * from dbo.[PMS_INVOICE_DASHBOARD]

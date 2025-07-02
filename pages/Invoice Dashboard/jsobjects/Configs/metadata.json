@@ -28,6 +28,10 @@
         "value": "\"\""
       },
       {
+        "name": "dateFormat",
+        "value": "\"D MMMM YYYY\""
+      },
+      {
         "name": "pageName",
         "value": "\"\""
       },

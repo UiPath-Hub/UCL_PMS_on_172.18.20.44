@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXEC\t[dbo].[SELECT_FOR_DASHBOARD]\n\t\t  @pDashboardName = N'Invoice Dashboard'",
+      "body": "select * from dbo.[PMS_INVOICE_DASHBOARD]",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "SP_SELECT_FOR_DASHBOARD",
     "pageId": "Invoice Dashboard",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

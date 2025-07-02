@@ -30,6 +30,6 @@
     "name": "SP_HANDLE_TOKEN",
     "pageId": "Invoice Detail",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

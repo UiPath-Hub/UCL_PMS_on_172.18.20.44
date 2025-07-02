@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 24,
+  "boxShadow": "none",
+  "buttonColor": "#ef4444",
+  "buttonVariant": "PRIMARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "trash",
+  "isDisabled": "{{Table_PMS_INVOICE_DETAIL_LM.selectedRow===undefined||Table_PMS_INVOICE_DETAIL_LM.selectedRow.INVOICE_DETAIL_ID===\"\"||Table_PMS_INVOICE_DETAIL_LM.selectedRow.INVOICE_DETAIL_ID==undefined}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "sjcapm6fvo",
+  "leftColumn": 60,
+  "minWidth": 50,
+  "mobileBottomRow": 93,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 39,
+  "mobileTopRow": 89,
+  "needsErrorInfo": false,
+  "onClick": "{{JS.onDeleteItemClick();}}",
+  "originalBottomRow": 24,
+  "originalTopRow": 20,
+  "parentColumnSpace": 19.8125,
+  "parentId": "oqb6w185n5",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "tooltip": "Cancel",
+  "topRow": 20,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "sggb515m8x",
+  "widgetName": "ICON_BUTTON_DELETE"
+}

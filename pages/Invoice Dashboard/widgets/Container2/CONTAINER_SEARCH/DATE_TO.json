@@ -5,21 +5,23 @@
   "bottomRow": 16,
   "boxShadow": "none",
   "closeOnSelection": true,
-  "dateFormat": "YYYY-MM-DD",
+  "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "dateFormat"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
-      "key": "defaultDate"
+      "key": "dateFormat"
     }
   ],
   "dynamicTriggerPathList": [],
