@@ -2,13 +2,13 @@ export default {
 	V:4,
 	LastChanged:"if(!SELECT_FIELDS_VALIDATION.data) before run in init()",
 
-	manualValidateV2:async (defaultEntities,widgetsMap)=>{
+	manualValidate:async (defaultEntities,widgetsMap)=>{
 		let alert = [];
 		await Promise.all( Object.keys(defaultEntities).map(async (key)=>{
 			let keystr = key.toString();
 			if(!widgetsMap[keystr]) return;
 			if(!widgetsMap[keystr].widgetName)return;
-			
+
 			let data = widgetsMap[keystr].data||"";
 			const log = {};
 			log.key = keystr;
@@ -18,7 +18,7 @@ export default {
 			log.data = data;
 			console.log(log); 
 			//find widget of the field by get from widget name of widgetMap
-			let widgetName = widgetsMap[keystr].widgetName;
+			//let widgetName = widgetsMap[keystr].widgetName;
 			defaultEntities[keystr].data = data
 			if (!widgetsMap[keystr].isValid && !widgetsMap[keystr].isDisabled && widgetsMap[keystr].isVisible) {
 				if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
@@ -30,35 +30,9 @@ export default {
 					defaultEntities[keystr].color = Configs.requiredColorPass;
 				}
 			}
-			
+
 		}))
 		console.log(alert)
-		return alert;
-	},
-	manualValidate:async (defaultEntities,widgetsGroupForm)=>{
-		let alert = [];
-		await Promise.all( Object.keys(defaultEntities).map(async (key)=>{
-			let keystr = key.toString();
-			let data = widgetsGroupForm.data[keystr];
-			if (data !== null && data !== undefined) {
-				const element = defaultEntities[keystr];
-				const trimmedData = _.trim(data);
-				const regex = _.trim(element.regex);
-				if ((element.required && trimmedData === "") || 
-						(regex !== "" && !RegExp(regex).test(trimmedData))) {
-					if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
-							defaultEntities[keystr].data = data
-							defaultEntities[keystr].color = Configs.requiredColorAlert;							
-					}
-					alert.push(keystr);
-				} else {
-					if(defaultEntities[keystr].color!=Configs.requiredColorPass){
-						defaultEntities[keystr].data = data
-						defaultEntities[keystr].color = Configs.requiredColorPass;
-					}
-				}
-			}
-		}))
 		return alert;
 	},
 	setAttributes:async (DefaultEntity,defaultData,attributeType)=>{
@@ -70,7 +44,7 @@ export default {
 			}}))
 	},
 	//InitializationDataList = [{ENTITY:Appsmith JS Object, DATA: {propName:any}}]
-		initDefaultV2:async(InitializationDataList)=>{
+	initDefault:async(InitializationDataList)=>{
 		//run all default data query before calling
 		//load validation
 		if(!SELECT_FIELDS_VALIDATION || !Configs.pageName)return showAlert("SELECT_FIELDS_VALIDATION or Configs.pageName not found.","error");
@@ -84,7 +58,7 @@ export default {
 				required[ele.FIELD_NAME] = ele.REQUIRED;
 			}))
 		}
-		
+
 		await Promise.all(InitializationDataList.map(async (InitializationData)=>{
 			if(!InitializationData.DATA || !InitializationData.ENTITY) return console.error("Invalid InitializationData.");
 			await Promise.all([this.setAttributes(InitializationData.ENTITY,InitializationData.DATA,"data"),

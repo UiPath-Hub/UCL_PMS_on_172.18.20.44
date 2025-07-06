@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
   "boxShadow": "none",
-  "defaultText": "{{Default_invoice.INVOICE_NO\n.data}}",
+  "defaultText": "{{PMS_INVOICE_LM.INVOICE_NO.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -15,24 +15,43 @@
     },
     {
       "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "regex"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{PMS_INVOICE_LM.INVOICE_NO.regex}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Invoice No.",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{PMS_INVOICE_LM.INVOICE_NO.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "10",
   "leftColumn": 2,
+  "maxChars": "20",
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -47,6 +66,7 @@
   "parentId": "azwh2urt7h",
   "parentRowSpace": 10,
   "placeholderText": "",
+  "regex": "{{PMS_INVOICE_LM.INVOICE_NO.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

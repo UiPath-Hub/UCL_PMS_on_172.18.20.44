@@ -6,4 +6,5 @@ EXECUTE [dbo].[SER_SEARCH_FOR_INVOICE]
    ,@INVOICE_TYPE = {{INVOICE_TYPE.selectedOptionValue == "" || INVOICE_TYPE.selectedOptionValue == undefined ? null : INVOICE_TYPE.selectedOptionValue}}
 	,@DATE_FROM = {{DATE_FROM.selectedDate == "" || DATE_FROM.selectedDate == undefined ? null : moment(DATE_FROM.formattedDate,Configs.dateFormat).format("YYYY-MM-DD")+" 00:00"}}
 	,@DATE_TO = {{DATE_TO.selectedDate == "" || DATE_TO.selectedDate == undefined ? null : moment(DATE_TO.formattedDate,Configs.dateFormat).format("YYYY-MM-DD")+" 23:59"}} 
+	,@CONTACT_PERSON = {{CONTACT_PERSON.text == "" || CONTACT_PERSON.text == undefined ? null : CONTACT_PERSON.text}}
 	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

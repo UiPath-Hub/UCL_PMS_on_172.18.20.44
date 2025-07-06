@@ -29,15 +29,31 @@
       },
       {
         "name": "pageName",
-        "value": "\"\""
+        "value": "\"Invoice Detail\""
       },
       {
         "name": "BodyInit",
         "value": "\"VIEW\""
       },
       {
-        "name": "selectedInvoice",
-        "value": "\"selectedInvoice\""
+        "name": "dateFormat",
+        "value": "\"DD MMMM YYYY\""
+      },
+      {
+        "name": "INVOICE_ID",
+        "value": "\"INVOICE_ID\""
+      },
+      {
+        "name": "COMPANY_ID",
+        "value": "\"COMPANY_ID\""
+      },
+      {
+        "name": "COMPANY_CONTACT_ID",
+        "value": "\"COMPANY_CONTACT_ID\""
+      },
+      {
+        "name": "BILLING_INFORMATION_ID",
+        "value": "\"BILLING_INFORMATION_ID\""
       },
       {
         "name": "Invoice_type",

@@ -1,4 +1,7 @@
 export default {
+	onDocReviewVisible:()=>{
+		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?SELECT_INVOICE.data[0].UPDATE_PDF_DRAFT_STATUS == true:false
+	},
 	onClick_Close:()=>{
 		navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
 	},
@@ -6,38 +9,34 @@ export default {
 		showModal(Modal_ManageItem.name);
 		
 	},
-	onConfirmEditItem: async()=>{
-		let i = 0;
-		while(i< Configs.invoice_items.length){
-			let ele= Configs.invoice_items[i];
-			if(ele.INVOICE_DETAIL_ID==Table_PMS_INVOICE_DETAIL_LM.selectedRow.INVOICE_DETAIL_ID){
-				//console.log(ele.DETAIL_REMARK);
-				ele.DETAIL_REMARK = DETAIL_REMARK.text;
-				break;
-			}
-			i++;
-		}
-		await resetWidget("Table_PMS_INVOICE_DETAIL_LM",false);
+	onConfirmEditItem: async(newDescription)=>{
+		let editID = Table_PMS_INVOICE_DETAIL_LM.selectedRows.map(ele=>ele.INVOICE_DETAIL_ID);
+		Configs.invoice_items = Configs.invoice_items.map(ele=>{
+			 if(editID.includes(ele.INVOICE_DETAIL_ID))
+			 return {...ele,PRODUCT_DESCRIPTION:newDescription}
+			 else return ele;
+		 })
+		await resetWidget(Table_PMS_INVOICE_DETAIL_LM.widgetName,false);
 		closeModal(Modal_ManageItem.name);
 	},
 	onDeleteButtonClick:async ()=>{
-		if(await Init.permissionsCheck(Configs.permissions.EDIT,false)){
+		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
 			showModal(MODAL_DELETE.name);
 		}
 	},
 	onDeleteConfirmClick:async()=>{
-		if(await Init.permissionsCheck(Configs.permissions.EDIT,false)){
+		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
 			await UPDATE_DELETE_INVOICE.run();
 			await closeModal(MODAL_DELETE.name);
 			navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
 		}		
 	},
 	onDeleteItemClick:async()=>{
-		let i = 0;
-				Configs.invoice_items = Configs.invoice_items.filter((ele)=>ele.INVOICE_DETAIL_ID!=Table_PMS_INVOICE_DETAIL_LM.selectedRow.INVOICE_DETAIL_ID);
-
-
-		await resetWidget("Table_PMS_INVOICE_DETAIL_LM",false);
+		let editID = Table_PMS_INVOICE_DETAIL_LM.selectedRows.map(ele=>ele.INVOICE_DETAIL_ID);
+		if(editID.length != Configs.invoice_items.length)
+		Configs.invoice_items = Configs.invoice_items.filter(ele=>editID.includes(ele.INVOICE_DETAIL_ID));
+		else Configs.invoice_items = []
+		await resetWidget(Table_PMS_INVOICE_DETAIL_LM.widgetName,false);
 	},
 	onAddNewItem:async ()=>{
 		showModal(Modal_Add.name)

@@ -1,0 +1,1 @@
+SELECT * FROM dbo.PMS_COMPANY_CONTACT_LM where company_contact_id = {{appsmith.store.INIT[Configs.COMPANY_CONTACT_ID]}}

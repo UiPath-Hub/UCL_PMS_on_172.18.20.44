@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 32,
   "boxShadow": "none",
-  "defaultText": "{{Default_invoice.COMPANY_CONTACT_TELEPHONE\n.data}}",
+  "defaultText": "{{PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_TELEPHONE.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -15,24 +15,43 @@
     },
     {
       "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "inputType": "NUMBER",
+  "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_TELEPHONE.required}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Telephone",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_TELEPHONE.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "10",
   "leftColumn": 2,
+  "maxChars": "500",
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -46,13 +65,14 @@
   "parentColumnSpace": 19.5,
   "parentId": "ccweqe1x5o",
   "parentRowSpace": 10,
+  "regex": "{{PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_TELEPHONE.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 29,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 8,
+  "topRow": 28,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "fsprvwboat",

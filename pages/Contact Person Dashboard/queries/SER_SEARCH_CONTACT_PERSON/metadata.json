@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXEC [dbo].[SER_SEARCH_FOR_CONTACT_PERSON]\n   @COMPANY_CONTACT_ID = {{COMPANY_CONTACT_ID.text!== \"\"?`${COMPANY_CONTACT_ID.text}`:null}}\n  ,@COMPANY_CONTACT_NAME = {{COMPANY_CONTACT_NAME.text!== \"\"?`${COMPANY_CONTACT_NAME.text}`:null}}\n  ,@STATUS = {{STATUS.selectedOptionValue!== \"\"?`${STATUS.selectedOptionValue}`:null}}\n  ,@COMPANY_CONTACT_TELEPHONE = {{COMPANY_CONTACT_TELEPHONE.text!== \"\"?`${COMPANY_CONTACT_TELEPHONE.text}`:null}}\n  ,@COMPANY_NAME = {{COMPANY_NAME.text!== \"\"?`${COMPANY_NAME.text}`:null}}\n\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\n\n",
+      "body": "set NOCOUNT ON\n\nEXEC [dbo].[SER_SEARCH_FOR_CONTACT_PERSON]\n   @COMPANY_CONTACT_ID = {{COMPANY_CONTACT_ID.text!== \"\"?`${COMPANY_CONTACT_ID.text}`:null}}\n  ,@COMPANY_CONTACT_NAME = {{COMPANY_CONTACT_NAME.text!== \"\"?`${COMPANY_CONTACT_NAME.text}`:null}}\n  ,@STATUS = {{STATUS.selectedOptionValue!== \"\"?`${STATUS.selectedOptionValue}`:null}}\n  ,@COMPANY_CONTACT_TELEPHONE = {{COMPANY_CONTACT_TELEPHONE.text!== \"\"?`${COMPANY_CONTACT_TELEPHONE.text}`:null}}\n  ,@COMPANY_NAME = {{COMPANY_NAME.text!== \"\"?`${COMPANY_NAME.text}`:null}}\n\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

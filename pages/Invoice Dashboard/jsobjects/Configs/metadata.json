@@ -36,8 +36,20 @@
         "value": "\"\""
       },
       {
-        "name": "selectedInvoice",
-        "value": "\"selectedInvoice\""
+        "name": "INVOICE_ID",
+        "value": "\"INVOICE_ID\""
+      },
+      {
+        "name": "COMPANY_ID",
+        "value": "\"COMPANY_ID\""
+      },
+      {
+        "name": "COMPANY_CONTACT_ID",
+        "value": "\"COMPANY_CONTACT_ID\""
+      },
+      {
+        "name": "BILLING_INFORMATION_ID",
+        "value": "\"BILLING_INFORMATION_ID\""
       }
     ]
   }

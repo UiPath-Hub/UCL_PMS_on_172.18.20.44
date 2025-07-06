@@ -1,0 +1,80 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "boxShadow": "none",
+  "defaultText": "{{PMS_INVOICE_LM.COMPANY_ROAD.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{PMS_INVOICE_LM.COMPANY_ROAD.required}}",
+  "isVisible": true,
+  "key": "nwk391w658",
+  "label": "Road",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{PMS_INVOICE_LM.COMPANY_ROAD.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 34,
+  "maxChars": "50",
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "originalBottomRow": 142,
+  "originalTopRow": 138,
+  "parentColumnSpace": 19.5,
+  "parentId": "ccweqe1x5o",
+  "parentRowSpace": 10,
+  "regex": "{{PMS_INVOICE_LM.COMPANY_ROAD.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "shouldAllowAutofill": false,
+  "showStepArrows": false,
+  "topRow": 4,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "e0qadonsx8",
+  "widgetName": "COMPANY_ROAD"
+}

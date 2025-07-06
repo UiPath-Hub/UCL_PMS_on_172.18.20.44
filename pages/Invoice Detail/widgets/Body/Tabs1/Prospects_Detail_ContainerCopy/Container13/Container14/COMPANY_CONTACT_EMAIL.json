@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 28,
   "boxShadow": "none",
-  "defaultText": "{{Default_invoice.COMPANY_CONTACT_EMAIL\n.data}}",
+  "defaultText": "{{PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_EMAIL.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -15,25 +15,43 @@
     },
     {
       "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "EMAIL",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_EMAIL.required}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Email Contact",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_EMAIL.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "10",
   "leftColumn": 34,
+  "maxChars": "50",
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -47,13 +65,14 @@
   "parentColumnSpace": 19.5,
   "parentId": "ccweqe1x5o",
   "parentRowSpace": 10,
+  "regex": "{{PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_EMAIL.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 61,
   "shouldAllowAutofill": true,
   "showStepArrows": false,
-  "topRow": 0,
+  "topRow": 24,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "iofmfkgk29",

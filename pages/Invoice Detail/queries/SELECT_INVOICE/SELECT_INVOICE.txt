@@ -1,2 +1,2 @@
 SELECT TOP 1 PMS_INVOICE_LM.* FROM dbo.PMS_INVOICE_LM
-WHERE {{appsmith.store[Configs.selectedInvoice].INVOICE_ID}} = INVOICE_ID
+WHERE {{appsmith.store.INIT[Configs.INVOICE_ID]}} = INVOICE_ID
