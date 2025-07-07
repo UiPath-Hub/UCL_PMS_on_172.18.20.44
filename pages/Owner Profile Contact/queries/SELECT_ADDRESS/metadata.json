@@ -29,7 +29,7 @@
     ],
     "name": "SELECT_ADDRESS",
     "pageId": "Owner Profile Contact",
-    "runBehaviour": "ON_PAGE_LOAD",
-    "userSetOnLoad": false
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": true
   }
 }
