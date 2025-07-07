@@ -10,5 +10,5 @@ EXECUTE [dbo].[SER_SEARCH_FOR_PRODUCT_INVENTORY]
 	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
   ,@pPageSize = {{Pagination.pageSize}}
   ,@pPageIndex = {{PMS_PRODUCT_INVENTORY_LM.pageNo!==undefined?PMS_PRODUCT_INVENTORY_LM.pageNo:1}}
-  ,@DATE_FROM = {{DATE_FROM.formattedDate !== ""?DATE_FROM.formattedDate:null}}
-  ,@DATE_TO = {{DATE_TO.formattedDate !== ""?DATE_TO.formattedDate:null}}
+  ,@DATE_FROM = {{DATE_FROM.formattedDate !== ""?moment(DATE_FROM.formattedDate,Configs.dateFormat).format(Configs.dateFormat)+" 00:00":null}}
+  ,@DATE_TO = {{DATE_TO.formattedDate !== ""?moment(DATE_TO.formattedDate,Configs.dateFormat).format(Configs.dateFormat)+" 23:59":null}}

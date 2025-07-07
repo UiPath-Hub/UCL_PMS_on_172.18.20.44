@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "68580a14ebb7f73fffd54ad7_4791bf25-46b2-4432-8929-c8ee032cf187",
-  "id": "Manage Company Contact__00_SP_SELECT_FOR_CONTACT",
+  "gitSyncId": "6863a3d155eda7018e8bf53f_88376aea-ad07-413f-a3d5-684cdc7df42c",
+  "id": "Manage Product Inventory__6_SELECT_BIND_COMPANY",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[SELECT_COMPANY_CONTACT_BY_ID] \n   @COMPANY_CONTACT_ID = {{this.params.COMPANY_CONTACT_ID}}\n\n\n",
+      "body": "set NOCOUNT ON;\n\nEXECUTE [dbo].[SELECT_COMPANY_NAME_BY_INVENTORY_ID]\n   @INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:\"\"}}\n  ,@TOP = NULL\n  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,8 +27,8 @@
         "key": "body"
       }
     ],
-    "name": "_00_SP_SELECT_FOR_CONTACT",
-    "pageId": "Manage Company Contact",
+    "name": "_6_SELECT_BIND_COMPANY",
+    "pageId": "Manage Product Inventory",
     "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }

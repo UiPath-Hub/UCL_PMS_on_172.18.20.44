@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 54,
+  "bottomRow": 53,
   "boxShadow": "none",
   "defaultText": "{{Default_OwnerProfile.OWNER_FLOOR.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 29,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 50,
+  "topRow": 49,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "tdi48jtosw",

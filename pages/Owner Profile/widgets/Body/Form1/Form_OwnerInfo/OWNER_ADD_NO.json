@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 54,
+  "bottomRow": 53,
   "boxShadow": "none",
   "defaultText": "{{Default_OwnerProfile.OWNER_ADD_NO.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 18,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 50,
+  "topRow": 49,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "9gr43gnrdm",

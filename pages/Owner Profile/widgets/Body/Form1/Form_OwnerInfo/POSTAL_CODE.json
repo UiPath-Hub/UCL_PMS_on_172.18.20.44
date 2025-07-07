@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 66,
+  "bottomRow": 65,
   "boxShadow": "none",
   "defaultText": "{{Default_OwnerProfile.OWNER_POSTAL_CODE.data}}",
   "dynamicBindingPathList": [
@@ -78,7 +78,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 29,
   "showStepArrows": false,
-  "topRow": 62,
+  "topRow": 61,
   "type": "INPUT_WIDGET_V2",
   "validation": "",
   "version": 2,

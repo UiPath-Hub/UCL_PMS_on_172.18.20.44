@@ -1,0 +1,7 @@
+set NOCOUNT ON;
+
+EXECUTE [dbo].[SELECT_COMPANY_NAME_BY_INVENTORY_ID]
+   @INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:""}}
+  ,@TOP = NULL
+  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+

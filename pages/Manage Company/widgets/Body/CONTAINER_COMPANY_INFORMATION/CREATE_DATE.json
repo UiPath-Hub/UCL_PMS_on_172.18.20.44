@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 12,
   "boxShadow": "none",
-  "defaultText": "{{moment( DefaultCompany.CREATE_DATE.data).toString()==\"Invalid date\"?moment().format(\"D/MM/YYYY\"):moment( DefaultCompany.CREATE_DATE.data).format(\"D/MM/YYYY\")}}",
+  "defaultText": "{{moment( DefaultCompany.CREATE_DATE.data).toString()==\"Invalid date\"?moment().format(Configs.dateFormat):moment( DefaultCompany.CREATE_DATE.data).subtract(7,'hour').format(Configs.dateFormat)}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

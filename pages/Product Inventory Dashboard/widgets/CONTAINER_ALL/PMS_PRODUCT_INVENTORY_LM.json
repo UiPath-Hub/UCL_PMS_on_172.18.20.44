@@ -44,9 +44,10 @@
     "PRODUCT_ID",
     "PRICE_PER_UNIT",
     "START_DATE",
-    "TOTAL_RECORDS"
+    "TOTAL_RECORDS",
+    "COMPANY_PROFILE"
   ],
-  "columnUpdatedAt": 1748576323570,
+  "columnUpdatedAt": 1751876258240,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -116,6 +117,9 @@
     },
     {
       "key": "primaryColumns.END_DATE.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.COMPANY_PROFILE.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -161,13 +165,47 @@
   "parentRowSpace": 10,
   "primaryColumnId": "INVENTORY_ID",
   "primaryColumns": {
+    "COMPANY_PROFILE": {
+      "alias": "COMPANY_PROFILE",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = PMS_PRODUCT_INVENTORY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"COMPANY_PROFILE\"])) : COMPANY_PROFILE })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "COMPANY_PROFILE",
+      "index": 12,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "As profile of",
+      "notation": "standard",
+      "originalId": "COMPANY_PROFILE",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "END_DATE": {
       "alias": "END_DATE",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "{{(() => { const tableData = PMS_PRODUCT_INVENTORY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Pagination.expiredColor(currentRow[\"END_DATE\"]))) : Pagination.expiredColor(currentRow[\"END_DATE\"]) })()}}",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = PMS_PRODUCT_INVENTORY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"END_DATE\"]?moment(currentRow[\"END_DATE\"]).format(\"DD-MMMM-YYYY\"):\"\")) : currentRow[\"END_DATE\"]?moment(currentRow[\"END_DATE\"]).format(\"DD-MMMM-YYYY\"):\"\" })()}}",
+      "computedValue": "{{(() => { const tableData = PMS_PRODUCT_INVENTORY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"END_DATE\"]?moment(currentRow[\"END_DATE\"]).subtract(7,'hour').format(Configs.dateFormat):\"\")) : currentRow[\"END_DATE\"]?moment(currentRow[\"END_DATE\"]).subtract(7,'hour').format(Configs.dateFormat):\"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -383,6 +421,7 @@
       "alias": "PRODUCT_TYPE_TH",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = PMS_PRODUCT_INVENTORY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow[\"PRODUCT_TYPE_TH\"])) :  currentRow[\"PRODUCT_TYPE_TH\"] })()}}",
       "currencyCode": "USD",

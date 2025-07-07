@@ -16,6 +16,10 @@
         "value": "{\n  VIEW: \"OWPV\",\n  EDIT: \"OWPE\"\n}"
       },
       {
+        "name": "dateFormat",
+        "value": "\"DD MMMM YYYY\""
+      },
+      {
         "name": "forceKick",
         "value": "false"
       },
