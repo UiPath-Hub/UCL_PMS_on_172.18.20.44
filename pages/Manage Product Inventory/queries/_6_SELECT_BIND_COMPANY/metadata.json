@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "set NOCOUNT ON;\n\nEXECUTE [dbo].[SELECT_COMPANY_NAME_BY_INVENTORY_ID]\n   @INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:\"\"}}\n  ,@TOP = NULL\n  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\n",
+      "body": "set NOCOUNT ON;\n\nEXECUTE [dbo].[SELECT_COMPANY_NAME_BY_INVENTORY_ID]\n   @INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:\"\"}}\n  ,@TOP = NULL\n  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
