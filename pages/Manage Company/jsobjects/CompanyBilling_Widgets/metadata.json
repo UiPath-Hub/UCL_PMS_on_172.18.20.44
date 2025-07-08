@@ -128,10 +128,6 @@
         "value": "{\n  ...BILLING_COMPANY_CODE,\n  data: BILLING_COMPANY_CODE.text\n}"
       },
       {
-        "name": "CREDIT_TERM",
-        "value": "{\n  ...CREDIT_TERM,\n  data: CREDIT_TERM.selectedOptionValue\n}"
-      },
-      {
         "name": "CREDIT_DAY",
         "value": "{\n  ...CREDIT_DAY,\n  data: CREDIT_DAY.text\n}"
       },

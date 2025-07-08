@@ -1,6 +1,6 @@
 {
   "gitSyncId": "66de956ac05adf72589749ca_d4f62b2e-3346-4154-870e-edb7bc0a4b54",
-  "id": "Manage Company_SP_DD_CREDIT",
+  "id": "Manage Company_delete_SP_DD_CREDIT",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
@@ -23,9 +23,9 @@
       "pluginId": "mssql-plugin"
     },
     "dynamicBindingPathList": [],
-    "name": "SP_DD_CREDIT",
+    "name": "delete_SP_DD_CREDIT",
     "pageId": "Manage Company",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
