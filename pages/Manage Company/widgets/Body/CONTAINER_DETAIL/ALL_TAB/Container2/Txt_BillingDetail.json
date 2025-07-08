@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 81,
+  "bottomRow": 74,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,6 +11,7 @@
     }
   ],
   "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "fontFamily": "Inter",
   "fontSize": "1.25rem",
@@ -27,11 +28,11 @@
   "mobileRightColumn": 5,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "originalBottomRow": 81,
-  "originalTopRow": 77,
+  "originalBottomRow": 74,
+  "originalTopRow": 70,
   "overflow": "NONE",
   "parentColumnSpace": 19.1875,
-  "parentId": "2drur99dtb",
+  "parentId": "n4gxx97f6o",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
@@ -40,7 +41,7 @@
   "text": "Billing Detail",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 77,
+  "topRow": 70,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

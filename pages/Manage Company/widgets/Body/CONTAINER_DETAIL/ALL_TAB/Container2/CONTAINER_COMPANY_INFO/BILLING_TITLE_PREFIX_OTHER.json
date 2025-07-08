@@ -3,9 +3,10 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 62,
+  "bottomRow": 8,
+  "bottomRowBeforeCollapse": 8,
   "boxShadow": "none",
-  "defaultText": "{{Default_COMPANY_BILLING.BILLING_POSTAL_CODE.data}}",
+  "defaultText": "{{Default_COMPANY_BILLING.\nBILLING_TITLE_PREFIX_OTHER.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -23,6 +24,9 @@
       "key": "regex"
     },
     {
+      "key": "isVisible"
+    },
+    {
       "key": "labelTextColor"
     }
   ],
@@ -32,56 +36,52 @@
       "key": "isRequired"
     },
     {
-      "key": "labelTextColor"
+      "key": "isVisible"
     },
     {
-      "key": "onTextChanged"
+      "key": "labelTextColor"
     }
   ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onTextChanged"
-    }
-  ],
+  "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{Default_COMPANY_BILLING.BILLING_POSTAL_CODE.required}}",
-  "isVisible": true,
-  "key": "6swxt70hj3",
-  "label": "Postal Code",
+  "isRequired": "{{Default_COMPANY_BILLING.\nBILLING_TITLE_PREFIX_OTHER.required}}",
+  "isVisible": "{{BILLING_TITLE_PREFIX.selectedOptionValue.includes(\"อื่นๆ\")}}",
+  "key": "nwk391w658",
+  "label": "อื่นๆ / Other",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{Default_COMPANY_BILLING.BILLING_POSTAL_CODE.color}}",
+  "labelTextColor": "{{Default_COMPANY_BILLING.\nBILLING_TITLE_PREFIX_OTHER.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "10",
-  "leftColumn": 2,
+  "leftColumn": 33,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 14,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 20,
-  "mobileTopRow": 7,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "onTextChanged": "{{ADDRESSING_BILLING.onChange_POSTAL_CODE();}}",
-  "originalBottomRow": 70,
-  "originalTopRow": 66,
-  "parentColumnSpace": 11.4375,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 19.5,
   "parentId": "er6o2xr4lq",
   "parentRowSpace": 10,
-  "regex": "{{Default_COMPANY_BILLING.BILLING_POSTAL_CODE.regex}}",
+  "regex": "{{Default_COMPANY_BILLING.\nBILLING_TITLE_PREFIX_OTHER.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 63,
+  "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 58,
+  "topRow": 4,
+  "topRowBeforeCollapse": 4,
   "type": "INPUT_WIDGET_V2",
-  "validation": "",
   "version": 2,
-  "widgetId": "f3lor44a4m",
-  "widgetName": "BILLING_POSTAL_CODE"
+  "widgetId": "x9wv0d2vpz",
+  "widgetName": "BILLING_TITLE_PREFIX_OTHER"
 }
