@@ -5,7 +5,7 @@ export default {
 	forceLogin:false,
 	errorAlert:"",
 	pageName:"Invoice Detail",
-	BodyInit:"VIEW",
+	BodyInit:"LOADING",
 	dateFormat:"DD MMMM YYYY",
 	INVOICE_ID:"INVOICE_ID",
 	COMPANY_ID:"COMPANY_ID",

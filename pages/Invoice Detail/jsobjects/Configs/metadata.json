@@ -33,7 +33,7 @@
       },
       {
         "name": "BodyInit",
-        "value": "\"VIEW\""
+        "value": "\"LOADING\""
       },
       {
         "name": "dateFormat",
