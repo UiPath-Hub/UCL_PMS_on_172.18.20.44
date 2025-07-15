@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 13,
   "boxShadow": "none",
   "defaultText": "{{DefaultCompany.COMPANY_ID.data}}",
   "dynamicBindingPathList": [
@@ -73,7 +73,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "",
-  "topRow": 4,
+  "topRow": 9,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "kdms67cym9",

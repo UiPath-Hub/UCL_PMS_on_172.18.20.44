@@ -138,6 +138,10 @@
       {
         "name": "COMPANY_BUSINESS_DETAIL_EN",
         "value": "{\n  ...COMPANY_BUSINESS_DETAIL_EN,\n  data: COMPANY_BUSINESS_DETAIL_EN.text\n}"
+      },
+      {
+        "name": "COMPANY_LANGUAGE_TYPE",
+        "value": "{\n  ...COMPANY_LANGUAGE_TYPE,\n  data: COMPANY_LANGUAGE_TYPE.selectedOptionValue\n}"
       }
     ]
   }

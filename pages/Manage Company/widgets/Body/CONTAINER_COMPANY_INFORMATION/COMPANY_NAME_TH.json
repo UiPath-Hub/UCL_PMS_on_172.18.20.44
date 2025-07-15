@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 24,
+  "bottomRow": 29,
   "boxShadow": "none",
   "defaultText": "{{DefaultCompany.COMPANY_NAME_TH.data}}",
   "dynamicBindingPathList": [
@@ -84,7 +84,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "กรอกข้อความที่ต้องการแสดงบนเอกสารภาษาไทย",
-  "topRow": 20,
+  "topRow": 25,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "alpkbnrzo4",

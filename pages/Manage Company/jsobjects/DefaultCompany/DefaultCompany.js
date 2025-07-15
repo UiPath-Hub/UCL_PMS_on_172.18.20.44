@@ -39,6 +39,7 @@ export default {
 	,OVERWRITE_BILLING_ADDRESS:{data:"false",regex:"",required:false,color:""}
 	,COMPANY_BUSINESS_DETAIL_TH:{data:"",regex:"",required:false,color:""}
 	,COMPANY_BUSINESS_DETAIL_EN:{data:"",regex:"",required:false,color:""}
+	,COMPANY_LANGUAGE_TYPE:{data:"TH",regex:"",required:false,color:""}
 	
 	//interface
 	,PROVINCE_TH:{data:this.COMPANY_PROVINCE_TH.data,

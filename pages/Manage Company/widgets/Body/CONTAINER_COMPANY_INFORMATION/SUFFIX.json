@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 25,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany. SUFFIX.data))(SUFFIX.options, SUFFIX.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -72,7 +72,7 @@
   "rightColumn": 29,
   "serverSideFiltering": false,
   "sourceData": "{{SP_DD_SUFFIX.data}}",
-  "topRow": 16,
+  "topRow": 21,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "ucnlnv5que",
