@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "defaultText": "{{moment( DefaultCompany.CREATE_DATE.data).toString()==\"Invalid date\"?moment().format(\"D/MM/YYYY\"):moment( DefaultCompany.CREATE_DATE.data).format(\"D/MM/YYYY\")}}",
+  "defaultText": "{{moment( DefaultCompany.CREATE_DATE.data).toString()==\"Invalid date\"?moment().format(Configs.dateFormat):moment( DefaultCompany.CREATE_DATE.data).subtract(7,'hour').format(Configs.dateFormat)}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -70,7 +70,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 62,
   "showStepArrows": false,
-  "topRow": 8,
+  "topRow": 13,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "xqz1kbdfru",

@@ -30,6 +30,6 @@
     "name": "SELECT_ADDRESS",
     "pageId": "Owner Profile Contact",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

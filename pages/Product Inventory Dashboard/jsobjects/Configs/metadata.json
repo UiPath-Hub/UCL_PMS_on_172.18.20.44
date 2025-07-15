@@ -8,6 +8,10 @@
     "pluginType": "JS",
     "variables": [
       {
+        "name": "dateFormat",
+        "value": "\"D MMMM YYYY\""
+      },
+      {
         "name": "userSession",
         "value": "\"userSession\""
       },

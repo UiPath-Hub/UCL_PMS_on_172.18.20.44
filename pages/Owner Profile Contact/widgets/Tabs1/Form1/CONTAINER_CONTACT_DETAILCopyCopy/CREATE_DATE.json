@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dataFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{Default_OwnerProfileContact.\nCREATE_DATE\n.data||moment().format()}}",
+  "defaultDate": "{{moment(Default_OwnerProfileContact.\nCREATE_DATE\n.data).subtract(7,'hour').format(Configs.dataFormat)||moment().format(Configs.dataFormat)}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

@@ -6,7 +6,7 @@
   "bottomRow": 18,
   "bottomRowBeforeCollapse": 34,
   "boxShadow": "none",
-  "defaultText": "{{moment( DefaultContact.CREATE_DATE.data).format(\"DD MMMM YYYY\")==\"Invalid date\"?moment().format(\"DD MMMM YYYY\"):moment( DefaultContact.CREATE_DATE.data).format(\"DD MMMM YYYY\")}}",
+  "defaultText": "{{moment( DefaultContact.CREATE_DATE.data).format()==\"Invalid date\"?moment().format(Configs.dateFormat):moment( DefaultContact.CREATE_DATE.data).subtract(7,'hour').format(Configs.dateFormat)}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

@@ -1,6 +1,7 @@
 export default {
 	userSession:"userSession",
 	permissions:{VIEW:"OWPV",EDIT:"OWPE"},
+	dateFormat:"DD MMMM YYYY",
 	forceKick:false,
 	forceLogin:false,
 	errorAlert:"",

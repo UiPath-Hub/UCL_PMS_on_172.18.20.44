@@ -30,6 +30,6 @@
     "name": "SELECT_FIELDS_VALIDATION",
     "pageId": "Invoice Detail",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

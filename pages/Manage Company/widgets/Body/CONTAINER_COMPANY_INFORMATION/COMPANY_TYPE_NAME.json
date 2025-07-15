@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 17,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany.COMPANY_TYPE_NAME.data.toString()))(COMPANY_TYPE_NAME.options, COMPANY_TYPE_NAME.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -75,7 +75,7 @@
   "rightColumn": 29,
   "serverSideFiltering": false,
   "sourceData": "{{SP_DD_CT.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
-  "topRow": 8,
+  "topRow": 13,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "xunwhaoy5e",

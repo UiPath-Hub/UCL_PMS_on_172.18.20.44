@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 58,
+  "bottomRow": 57,
   "boxShadow": "none",
   "defaultText": "{{Default_OwnerProfile.OWNER_SOI_TH.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 62,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 54,
+  "topRow": 53,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "qibss07l41",

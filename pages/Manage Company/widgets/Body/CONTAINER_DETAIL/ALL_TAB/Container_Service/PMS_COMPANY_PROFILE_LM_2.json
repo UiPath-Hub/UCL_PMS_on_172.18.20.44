@@ -49,10 +49,12 @@
     "INVENTORY_ID",
     "FORMULA"
   ],
-  "columnUpdatedAt": 1749534433568,
+  "columnUpdatedAt": 1751860668040,
   "columnWidthMap": {
     "Base_on": 562,
     "By": 196,
+    "COMPANY_PROFILE_PERIOD_END": 233,
+    "COMPANY_PROFILE_PERIOD_START": 242,
     "CompanyName": 373,
     "Detail": 278,
     "Email": 229,
@@ -138,9 +140,6 @@
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
-    },
-    {
-      "key": "onPageChange"
     }
   ],
   "dynamicTriggerPathList": [
@@ -246,7 +245,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "#ffffff",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = PMS_COMPANY_PROFILE_LM_2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"COMPANY_PROFILE_PERIOD_END\"]?moment(currentRow[\"COMPANY_PROFILE_PERIOD_END\"]).format(Configs.dateFormat):\"\")) : currentRow[\"COMPANY_PROFILE_PERIOD_END\"]?moment(currentRow[\"COMPANY_PROFILE_PERIOD_END\"]).format(Configs.dateFormat):\"\" })()}}",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_PROFILE_LM_2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"COMPANY_PROFILE_PERIOD_END\"]?moment(currentRow[\"COMPANY_PROFILE_PERIOD_END\"]).subtract(7,'hour').format(Configs.dateFormat):\"\")) : currentRow[\"COMPANY_PROFILE_PERIOD_END\"]?moment(currentRow[\"COMPANY_PROFILE_PERIOD_END\"]).subtract(7,'hour').format(Configs.dateFormat):\"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -278,7 +277,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "#ffffff",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = PMS_COMPANY_PROFILE_LM_2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"COMPANY_PROFILE_PERIOD_START\"]?moment(currentRow[\"COMPANY_PROFILE_PERIOD_START\"]).format(Configs.dateFormat):\"\")) : currentRow[\"COMPANY_PROFILE_PERIOD_START\"]?moment(currentRow[\"COMPANY_PROFILE_PERIOD_START\"]).format(Configs.dateFormat):\"\" })()}}",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_PROFILE_LM_2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"COMPANY_PROFILE_PERIOD_START\"]?moment(currentRow[\"COMPANY_PROFILE_PERIOD_START\"]).subtract(7,'hour').format(Configs.dateFormat):\"\")) : currentRow[\"COMPANY_PROFILE_PERIOD_START\"]?moment(currentRow[\"COMPANY_PROFILE_PERIOD_START\"]).subtract(7,'hour').format(Configs.dateFormat):\"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,

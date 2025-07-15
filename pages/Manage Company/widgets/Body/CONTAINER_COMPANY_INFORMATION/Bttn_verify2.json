@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 28,
+  "bottomRow": 33,
   "boxShadow": "none",
   "buttonColor": "#71717a",
   "buttonVariant": "PRIMARY",
@@ -47,7 +47,7 @@
   "rightColumn": 29,
   "text": "Verify",
   "tooltip": "Verify duplicate name",
-  "topRow": 24,
+  "topRow": 29,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "8fc15lha5v",

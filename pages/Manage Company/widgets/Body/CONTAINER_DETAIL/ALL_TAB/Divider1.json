@@ -1,0 +1,39 @@
+{
+  "animateLoading": true,
+  "bottomRow": 113,
+  "capSide": 0,
+  "capType": "nc",
+  "dividerColor": "{{appsmith.theme.colors.backgroundColor}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "dividerColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "key": "3dyglmyr7y",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 221,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 217,
+  "needsErrorInfo": false,
+  "orientation": "horizontal",
+  "originalBottomRow": 113,
+  "originalTopRow": 109,
+  "parentColumnSpace": 19.9375,
+  "parentId": "2drur99dtb",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "strokeStyle": "solid",
+  "thickness": 2,
+  "topRow": 109,
+  "type": "DIVIDER_WIDGET",
+  "version": 1,
+  "widgetId": "uvh6aph9xp",
+  "widgetName": "Divider1"
+}

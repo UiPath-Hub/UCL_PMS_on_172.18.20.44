@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{(moment( DefaultInventory.START_DATE\n.data).format()==\"Invalid date\"?moment().format():moment( DefaultInventory.START_DATE\n.data).format())}}",
+  "defaultDate": "{{(moment( DefaultInventory.START_DATE\n.data).format()==\"Invalid date\"?moment().format(Configs.dateFormat):moment( DefaultInventory.START_DATE\n.data).subtract(7,'hour').format(Configs.dateFormat))}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

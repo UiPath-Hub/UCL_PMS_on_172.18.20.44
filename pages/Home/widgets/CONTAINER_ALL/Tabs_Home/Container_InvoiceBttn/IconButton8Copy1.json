@@ -18,9 +18,13 @@
       "key": "iconName"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconName": "document-open",
-  "isDisabled": true,
+  "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "hbeb2o0ekl",
@@ -31,6 +35,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 2.12109375,
   "parentId": "2ub29ynda0",
   "parentRowSpace": 10,

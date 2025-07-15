@@ -30,6 +30,6 @@
     "name": "SP_HANDLE_TOKEN",
     "pageId": "Owner Profile Contact",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "userSetOnLoad": true
   }
 }

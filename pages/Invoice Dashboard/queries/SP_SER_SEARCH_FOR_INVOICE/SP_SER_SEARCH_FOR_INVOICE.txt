@@ -2,12 +2,9 @@
 EXECUTE [dbo].[SER_SEARCH_FOR_INVOICE]
     @INVOICE_NO = {{INVOICE_NO.text == "" || INVOICE_NO.text == undefined ? null : INVOICE_NO.text}}
 	,@COMPANY_NAME = {{COMPANY_NAME.text == "" || COMPANY_NAME.text == undefined ? null : COMPANY_NAME.text}}
-   ,@INVOICE_STATUS = {{INVOICE_STATUS.selectedOptionValue == "" || INVOICE_STATUS.selectedOptionValue == undefined ? null : INVOICE_STATUS.selectedOptionValue}}
+   ,@STATUS = {{STATUS.selectedOptionValue == "" || STATUS.selectedOptionValue == undefined ? null : STATUS.selectedOptionValue}}
    ,@INVOICE_TYPE = {{INVOICE_TYPE.selectedOptionValue == "" || INVOICE_TYPE.selectedOptionValue == undefined ? null : INVOICE_TYPE.selectedOptionValue}}
-	,@SUB_INVOICE_TYPE = {{SUB_INVOICE_TYPE.selectedOptionValue == "" || SUB_INVOICE_TYPE.selectedOptionValue == undefined ? null : SUB_INVOICE_TYPE.selectedOptionValue}}
-	,@DATE_FROM = {{DATE_FROM.formattedDate == "" || DATE_FROM.formattedDate == undefined ? null : DATE_FROM.formattedDate}}
-	,@DATE_TO = {{DATE_TO.formattedDate == "" || DATE_TO.formattedDate == undefined ? null : DATE_TO.formattedDate}}
-  
-
-  ,@pPageSize = {{Pagination.pageSize}}
-  ,@pPageIndex = {{Table_PMS_INVOICE_LM.pageNo}}
+	,@DATE_FROM = {{DATE_FROM.selectedDate == "" || DATE_FROM.selectedDate == undefined ? null : moment(DATE_FROM.formattedDate,Configs.dateFormat).format("YYYY-MM-DD")+" 00:00"}}
+	,@DATE_TO = {{DATE_TO.selectedDate == "" || DATE_TO.selectedDate == undefined ? null : moment(DATE_TO.formattedDate,Configs.dateFormat).format("YYYY-MM-DD")+" 23:59"}} 
+	,@CONTACT_PERSON = {{CONTACT_PERSON.text == "" || CONTACT_PERSON.text == undefined ? null : CONTACT_PERSON.text}}
+	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

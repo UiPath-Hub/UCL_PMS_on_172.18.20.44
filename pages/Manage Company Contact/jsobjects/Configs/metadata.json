@@ -24,6 +24,10 @@
         "value": "\"DEFAULT_COMPANY\""
       },
       {
+        "name": "dateFormat",
+        "value": "\"D MMMM YYYY\""
+      },
+      {
         "name": "startBody",
         "value": "\"LOADING\""
       },

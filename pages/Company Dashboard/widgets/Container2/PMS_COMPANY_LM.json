@@ -34,19 +34,21 @@
   "columnOrder": [
     "COMPANY_ID",
     "COMPANY_BUSINESS_TYPE_EN",
+    "COMPANY_NAME_TH",
     "COMPANY_BUSINESS_TYPE_TH",
     "COMPANY_NAME_EN",
-    "COMPANY_NAME_TH",
     "CONTACT_NAME_TH",
     "CONTACT_NAME_EN",
     "customColumn1",
     "COMPANY_CONTACT_TELEPHONE",
     "COMPANY_CONTACT_ROLE",
-    "TOTAL_RECORDS"
+    "TOTAL_RECORDS",
+    "COMPANY_LANGUAGE_TYPE"
   ],
-  "columnUpdatedAt": 1747630668908,
+  "columnUpdatedAt": 1752554136323,
   "columnWidthMap": {
     "COMPANY_BUSINESS_TYPE_TH": 381,
+    "COMPANY_NAME_TH": 301,
     "customColumn2": 161
   },
   "customIsLoading": false,
@@ -102,6 +104,9 @@
     },
     {
       "key": "primaryColumns.customColumn1.computedValue"
+    },
+    {
+      "key": "primaryColumns.COMPANY_LANGUAGE_TYPE.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -296,6 +301,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "COMPANY_LANGUAGE_TYPE": {
+      "alias": "COMPANY_LANGUAGE_TYPE",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"COMPANY_LANGUAGE_TYPE\"])) : COMPANY_LANGUAGE_TYPE })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "COMPANY_LANGUAGE_TYPE",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "COMPANY_LANGUAGE_TYPE",
+      "notation": "standard",
+      "originalId": "COMPANY_LANGUAGE_TYPE",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "COMPANY_NAME_EN": {
       "alias": "COMPANY_NAME_EN",
       "allowCellWrapping": false,
@@ -332,7 +371,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = PMS_COMPANY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"COMPANY_NAME_TH\"]||currentRow[\"COMPANY_NAME_EN\"])) : currentRow[\"COMPANY_NAME_TH\"]||currentRow[\"COMPANY_NAME_EN\"] })()}}",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"COMPANY_LANGUAGE_TYPE\"]==\"TH\"? currentRow[\"COMPANY_NAME_TH\"]||currentRow[\"COMPANY_NAME_EN\"]:currentRow[\"COMPANY_NAME_EN\"]||currentRow[\"COMPANY_NAME_TH\"])) : currentRow[\"COMPANY_LANGUAGE_TYPE\"]==\"TH\"? currentRow[\"COMPANY_NAME_TH\"]||currentRow[\"COMPANY_NAME_EN\"]:currentRow[\"COMPANY_NAME_EN\"]||currentRow[\"COMPANY_NAME_TH\"] })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,

@@ -145,7 +145,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table_AllPairedCompany.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Create Date\"]?moment( currentRow[\"Create Date\"]).format(\"D MMMM YYYY\"):\"\")) : currentRow[\"Create Date\"]?moment( currentRow[\"Create Date\"]).format(\"D MMMM YYYY\"):\"\" })()}}",
+      "computedValue": "{{(() => { const tableData = Table_AllPairedCompany.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Create Date\"]?moment( currentRow[\"Create Date\"]).subtract(7,'hour').format(Configs.dateFormat):\"\")) : currentRow[\"Create Date\"]?moment( currentRow[\"Create Date\"]).subtract(7,'hour').format(Configs.dateFormat):\"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,

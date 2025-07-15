@@ -164,6 +164,10 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
       {
+        "name": "COMPANY_LANGUAGE_TYPE",
+        "value": "{\n  data: \"TH\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
         "name": "PROVINCE_TH",
         "value": "{\n  data: DefaultCompany.COMPANY_PROVINCE_TH.data,\n  regex: \"\",\n  required: DefaultCompany.COMPANY_PROVINCE_EN.required || DefaultCompany.COMPANY_PROVINCE_TH.required,\n  color: DefaultCompany.COMPANY_PROVINCE_EN.color == Configs.requiredColorAlert || DefaultCompany.COMPANY_PROVINCE_TH.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
       },

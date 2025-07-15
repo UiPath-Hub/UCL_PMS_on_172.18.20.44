@@ -29,11 +29,31 @@
       },
       {
         "name": "pageName",
-        "value": "\"\""
+        "value": "\"Invoice Detail\""
       },
       {
-        "name": "selectedInvoice",
-        "value": "\"selectedInvoice\""
+        "name": "BodyInit",
+        "value": "\"LOADING\""
+      },
+      {
+        "name": "dateFormat",
+        "value": "\"DD MMMM YYYY\""
+      },
+      {
+        "name": "INVOICE_ID",
+        "value": "\"INVOICE_ID\""
+      },
+      {
+        "name": "COMPANY_ID",
+        "value": "\"COMPANY_ID\""
+      },
+      {
+        "name": "COMPANY_CONTACT_ID",
+        "value": "\"COMPANY_CONTACT_ID\""
+      },
+      {
+        "name": "BILLING_INFORMATION_ID",
+        "value": "\"BILLING_INFORMATION_ID\""
       },
       {
         "name": "Invoice_type",
@@ -41,7 +61,15 @@
       },
       {
         "name": "invoice_items",
-        "value": "[]"
+        "value": "[{\n  \"Description\": \"-\",\n  \"Quantity\": \"-\",\n  \"Unit Price\": \"-\",\n  \"Amount\": \"-\"\n}]"
+      },
+      {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
       }
     ]
   }

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 29,
+  "bottomRow": 28,
   "boxShadow": "none",
   "defaultText": "{{Default_OwnerProfile.OWNER_SHOPNAME.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 29,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 25,
+  "topRow": 24,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "dvjkgesszj",

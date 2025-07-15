@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 66,
+  "bottomRow": 65,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_OwnerProfile.OWNER_PROVINCE_TH.data.toString()))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -80,7 +80,7 @@
   "rightColumn": 62,
   "serverSideFiltering": false,
   "sourceData": "{{SELECT_PROVINCEs.data}}",
-  "topRow": 62,
+  "topRow": 61,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "6ewd3faa23",

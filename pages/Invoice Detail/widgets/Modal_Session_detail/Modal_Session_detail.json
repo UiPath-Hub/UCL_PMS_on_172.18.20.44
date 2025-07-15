@@ -57,6 +57,11 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClose"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClose"
@@ -75,7 +80,7 @@
   "mobileRightColumn": 15,
   "mobileTopRow": 24,
   "needsErrorInfo": false,
-  "onClose": "{{Init.on_ModalSessionDetailClose();}}",
+  "onClose": "{{GlobalFunctions.on_ModalSessionDetailClose();}}",
   "parentColumnSpace": 19.46875,
   "parentId": "0",
   "parentRowSpace": 10,

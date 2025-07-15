@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 16,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_OwnerProfile.OWNER_SUFFIX.data))(OWNER_SUFFIX.options, OWNER_SUFFIX.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -72,7 +72,7 @@
   "rightColumn": 29,
   "serverSideFiltering": false,
   "sourceData": "{{SP_DD_SUFFIX.data}}",
-  "topRow": 13,
+  "topRow": 12,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "dc5f9buh7z",
