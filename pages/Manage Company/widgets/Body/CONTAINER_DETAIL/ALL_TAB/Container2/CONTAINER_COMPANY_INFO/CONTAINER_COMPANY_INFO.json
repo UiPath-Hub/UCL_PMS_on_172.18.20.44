@@ -56,15 +56,22 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{OVERWRITE_BILLING_ADDRESS.selectedOptionValue==\"true\"}}",
   "key": "emcmwjt3cx",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
