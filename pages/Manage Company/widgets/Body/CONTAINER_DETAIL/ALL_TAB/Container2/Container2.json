@@ -51,22 +51,14 @@
     }
   ],
   "containerStyle": "card",
-  "dynamicBindingPathList": [
-    {
-      "key": "isVisible"
-    }
-  ],
+  "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "isVisible"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": "{{OVERWRITE_BILLING_ADDRESS.selectedOptionValue==\"true\"}}",
+  "isVisible": true,
   "key": "r78y8wkn3z",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
