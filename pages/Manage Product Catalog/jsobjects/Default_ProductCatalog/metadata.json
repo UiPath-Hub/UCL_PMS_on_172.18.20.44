@@ -32,10 +32,6 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
       {
-        "name": "PRODUCT_CODE",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
-      },
-      {
         "name": "FLOOR_NO",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
@@ -77,6 +73,14 @@
       },
       {
         "name": "CATALOG_PICTURE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "VAT_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_TYPE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
       {

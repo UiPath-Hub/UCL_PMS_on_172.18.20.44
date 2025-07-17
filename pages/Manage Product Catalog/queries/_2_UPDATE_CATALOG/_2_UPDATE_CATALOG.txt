@@ -36,8 +36,9 @@ EXEC	[dbo].[UPDATE_PMS_PRODUCT_CATALOG_LM]
 		@pFloor ={{FLOOR_NO.selectedOptionValue.toString()}},
 		@pStatus = {{STATUS.selectedOptionValue.toString()}},
 		@pProductCatalogDetail = {{PRODUCT_DETAIL.text}},
-		@PRODUCT_CODE = {{PRODUCT_CODE.text}},
 		@ACCOUNT_CODE = {{ACCOUNT_CODE.text}},
+		@VAT_TYPE = {{VAT_TYPE.selectedOptionValue}},
+		@INVOICE_TYPE = {{INVOICE_TYPE.selectedOptionValue}},
 		@IMAGE_ID = @IMAGE_ID,
 		@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 		,@PRODUCT_ID = {{PRODUCT_ID.text}}
