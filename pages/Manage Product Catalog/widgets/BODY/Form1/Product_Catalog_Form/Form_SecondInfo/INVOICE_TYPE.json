@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 12,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_ProductCatalog.\nINVOICE_TYPE.data||\"\"))(INVOICE_TYPE.options, INVOICE_TYPE.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_ProductCatalog.\nINVOICE_TYPE.data))(INVOICE_TYPE.options, INVOICE_TYPE.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

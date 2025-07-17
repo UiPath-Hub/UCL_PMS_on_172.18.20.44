@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 8,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_ProductCatalog.\nVAT_TYPE.data||\"\"))(VAT_TYPE.options, VAT_TYPE.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_ProductCatalog.\nVAT_TYPE.data))(VAT_TYPE.options, VAT_TYPE.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
