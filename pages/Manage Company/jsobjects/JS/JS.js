@@ -1,13 +1,6 @@
 export default {
 	AddressBackup :"AddressBackup",
 	hasChange:"hasChange",
-	SubdistrictChange:(type)=>{
-		if(ADDRESSING.POSTAL_CODE_WIDGET.text.length!=5 && type == 'MAIN')
-			ADDRESSING.onSelectedDistrict( PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue)
-		else if(ADDRESSING_BILLING.POSTAL_CODE_WIDGET.text.length!=5 && type == 'BILL')
-			ADDRESSING_BILLING.onSelectedDistrict( BILLING_PROVINCE_TH.selectedOptionValue, BILLING_DISTRICT_TH.selectedOptionValue)
-		else if(type != 'MAIN' && type != 'BILL')showAlert("Sub district input is working incorrectly.","warning");
-	},
 	onChangeAddress:()=>{
 		if(!appsmith.store[this.AddressBackup])return;
 		storeValue(this.AddressBackup,{...appsmith.store[this.AddressBackup],[this.hasChange]:true},false);
@@ -36,6 +29,12 @@ export default {
 		
 		storeValue(this.AddressBackup,backup,false);
 		
+		ADDRESSING.PROVINCE_PROP_NAME= (COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:"TH") == "TH"? "COMPANY_PROVINCE_TH":"COMPANY_PROVINCE_EN"
+		ADDRESSING.DISTRICT_PROP_NAME= (COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:"TH") == "TH"?"COMPANY_DISTRICT_TH":"COMPANY_DISTRICT_EN"
+		ADDRESSING.SUB_DISTRICT_PROP_NAME=(COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:"TH") == "TH"?"COMPANY_SUB_DISTRICT_TH":"COMPANY_SUB_DISTRICT_EN"
+		ADDRESSING_BILLING.PROVINCE_PROP_NAME= (COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:"TH") == "TH"? "BILLING_COMPANY_PROVINCE_TH":"BILLING_COMPANY_PROVINCE_EN"
+		ADDRESSING_BILLING.DISTRICT_PROP_NAME= (COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:"TH") == "TH"?"BILLING_COMPANY_DISTRICT_TH":"BILLING_COMPANY_DISTRICT_EN"
+		ADDRESSING_BILLING.SUB_DISTRICT_PROP_NAME=(COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:"TH") == "TH"?"BILLING_COMPANY_SUB_DISTRICT_TH":"BILLING_COMPANY_SUB_DISTRICT_EN"
 		ADDRESSING.DISTRICT_STORE_NAME = [];
 		ADDRESSING.SUB_DISTRICT_STORE_NAME = [];
 		ADDRESSING_BILLING.DISTRICT_STORE_NAME = [];
