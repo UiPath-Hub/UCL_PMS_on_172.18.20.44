@@ -29,7 +29,7 @@
     ],
     "name": "_5_SELECT_IMAGE",
     "pageId": "Manage Product Inventory",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
