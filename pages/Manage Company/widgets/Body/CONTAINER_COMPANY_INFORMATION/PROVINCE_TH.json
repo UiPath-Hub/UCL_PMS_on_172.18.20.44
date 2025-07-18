@@ -34,9 +34,6 @@
       "key": "isRequired"
     },
     {
-      "key": "onOptionChange"
-    },
-    {
       "key": "labelTextColor"
     }
   ],
@@ -66,7 +63,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING.onSelectedProvice(PROVINCE_TH.selectedOptionValue);}}",
+  "onOptionChange": "{{ADDRESSING.onSelectedProvice(PROVINCE_TH.selectedOptionValue);\nJS.onChangeAddress();}}",
   "optionLabel": "PROVINCE",
   "optionValue": "PROVINCE",
   "originalBottomRow": 75,
@@ -79,7 +76,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 62,
   "serverSideFiltering": false,
-  "sourceData": "{{SELECT_PROVINCEs.data||[{ PROVINCE: \"\"}]}}",
+  "sourceData": "{{((COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:\"TH\") == \"TH\"?SELECT_PROVINCEs.data:SELECT_PROVINCEsEN.data)||[{ PROVINCE: \"\"}]}}",
   "topRow": 71,
   "type": "SELECT_WIDGET",
   "version": 1,

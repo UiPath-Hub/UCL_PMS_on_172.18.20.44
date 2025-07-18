@@ -35,9 +35,6 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
@@ -66,7 +63,7 @@
   "mobileRightColumn": 60,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING_BILLING.POSTAL_CODE_WIDGET.text.length!=5?ADDRESSING_BILLING.onSelectedDistrict( BILLING_PROVINCE_TH.selectedOptionValue, BILLING_DISTRICT_TH.selectedOptionValue):\"\"}}}",
+  "onOptionChange": "{{JS.onChangeAddress();}}",
   "optionLabel": "key",
   "optionValue": "value",
   "originalBottomRow": 68,

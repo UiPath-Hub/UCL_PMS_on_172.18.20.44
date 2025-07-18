@@ -35,9 +35,6 @@
     },
     {
       "key": "isRequired"
-    },
-    {
-      "key": "onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
@@ -66,7 +63,7 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 74,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue);}}",
+  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue);\nJS.onChangeAddress();}}",
   "optionLabel": "key",
   "optionValue": "value",
   "originalBottomRow": 81,

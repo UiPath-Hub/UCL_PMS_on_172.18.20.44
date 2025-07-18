@@ -12,7 +12,7 @@ export default {
 	PROVINCE_WIDGET: {...PROVINCE_TH,setDisabled:async(value)=>{await PROVINCE_TH.setDisabled(value)}},
 	DISTRICT_WIDGET:{...DISTRICT_TH,setDisabled:async(value)=>{await DISTRICT_TH.setDisabled(value)}},
 	SUB_DISTRICT_WIDGET:{...SUB_DISTRICT_TH,setDisabled:async(value)=>{await SUB_DISTRICT_TH.setDisabled(value)}},
-	POSTAL_CODE_WIDGET:POSTAL_CODE,
+	POSTAL_CODE_WIDGET:{...POSTAL_CODE ,setValue:async (value)=>{await POSTAL_CODE.setValue(value)}},
 
 	fetchAddressByPostalCode:async function (postalCode,DefaultEntity,provinePropName,districtPropName,subDistrictPropName, districtStoreName, subDistrictStoreName) {
 		if (!postalCode || postalCode.length !== 5) return;
@@ -121,6 +121,15 @@ export default {
 		storeValue(this.SUB_DISTRICT_STORE_NAME,array,false);
 		//SELECT_ADDRESS.clear()
 	},
+	onSelectedSubDistrict:async (selectedSUBDISTRICT,selectedPROVINCE,selectedDISTRICT)=>{
+		if(this.POSTAL_CODE_WIDGET.text.length!=5)
+		{
+			await SELECT_ADDRESS.run({SUBDISTRICT:selectedSUBDISTRICT,DISTRICT:selectedDISTRICT,PROVINCE:selectedPROVINCE})
+			if(SELECT_ADDRESS.data?SELECT_ADDRESS.data.length==1:false){
+				this.POSTAL_CODE_WIDGET.setValue(SELECT_ADDRESS.data[0].POSTAL_CODE)
+			}
+		}
+	},
 	fetchAndStoreAddress: async (province, district)=> {
 		if (!province || !district) return { districts: [], subdistricts: [] };
 
@@ -153,7 +162,9 @@ export default {
 
 		if(SELECT_PROVINCEs.data == undefined && !SELECT_PROVINCEs.isLoading)
 		await SELECT_PROVINCEs.run();
-		console.log("SELECT_PROVINCEs");
+		if(SELECT_PROVINCEsEN.data == undefined && !SELECT_PROVINCEsEN.isLoading)
+		await SELECT_PROVINCEsEN.run();
+		//console.log("SELECT_PROVINCEs");
 
 		const initCompanyAddress = async ()=>{
 			let { districts, subdistricts } = await this.fetchAndStoreAddress(

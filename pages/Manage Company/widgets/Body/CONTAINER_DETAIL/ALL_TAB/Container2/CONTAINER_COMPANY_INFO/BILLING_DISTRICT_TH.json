@@ -35,9 +35,6 @@
     },
     {
       "key": "isRequired"
-    },
-    {
-      "key": "onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
@@ -66,7 +63,7 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 74,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING_BILLING.onSelectedDistrict(BILLING_PROVINCE_TH.selectedOptionValue, BILLING_DISTRICT_TH.selectedOptionValue);}}",
+  "onOptionChange": "{{ADDRESSING_BILLING.onSelectedDistrict(BILLING_PROVINCE_TH.selectedOptionValue, BILLING_DISTRICT_TH.selectedOptionValue);\nJS.onChangeAddress();}}",
   "optionLabel": "key",
   "optionValue": "value",
   "originalBottomRow": 68,

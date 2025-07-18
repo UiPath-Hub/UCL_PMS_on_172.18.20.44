@@ -6,6 +6,15 @@
     "pageId": "Manage Company",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": []
+    "variables": [
+      {
+        "name": "AddressBackup",
+        "value": "\"AddressBackup\""
+      },
+      {
+        "name": "hasChange",
+        "value": "\"hasChange\""
+      }
+    ]
   }
 }

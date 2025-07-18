@@ -7,7 +7,18 @@ WHERE
 (1={{this.params.POSTAL_CODE== undefined?1:0}} or POSTAL_CODE={{this.params.POSTAL_CODE}}) AND
 (1={{this.params.PROVINCE== undefined?1:0}} or PROVINCE={{this.params.PROVINCE}}) AND
 (1={{this.params.DISTRICT== undefined?1:0}} or DISTRICT={{this.params.DISTRICT}}) AND
-(1={{this.params.SUBDISTRICT== undefined?1:0}} or SUBDISTRICT={{this.params.SUBDISTRICT}})
+(1={{this.params.SUBDISTRICT== undefined?1:0}} or SUBDISTRICT={{this.params.SUBDISTRICT}}) AND
+{{COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:"TH"}} = 'TH'
+ORDER BY PROVINCE ASC 
+
+INSERT INTO @OUTPUT_TABLE
+SELECT * FROM dbo.EN_ADDRESSES 
+WHERE 
+(1={{this.params.POSTAL_CODE== undefined?1:0}} or POSTAL_CODE={{this.params.POSTAL_CODE}}) AND
+(1={{this.params.PROVINCE== undefined?1:0}} or PROVINCE={{this.params.PROVINCE}}) AND
+(1={{this.params.DISTRICT== undefined?1:0}} or DISTRICT={{this.params.DISTRICT}}) AND
+(1={{this.params.SUBDISTRICT== undefined?1:0}} or SUBDISTRICT={{this.params.SUBDISTRICT}}) AND
+{{COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:"TH"}} = 'EN'
 ORDER BY PROVINCE ASC 
 
 IF {{this.params.DISTINCT||null}} IS NULL

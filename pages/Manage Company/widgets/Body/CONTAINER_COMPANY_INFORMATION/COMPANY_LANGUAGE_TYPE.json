@@ -28,7 +28,11 @@
       "key": "labelTextColor"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSelectionChange"
+    }
+  ],
   "flexVerticalAlignment": "start",
   "isDisabled": false,
   "isInline": true,
@@ -50,6 +54,7 @@
   "mobileRightColumn": 40,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
+  "onSelectionChange": "{{JS.onChangeLanguang();}}",
   "options": [
     {
       "label": "TH",

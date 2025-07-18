@@ -49,7 +49,7 @@
       },
       {
         "name": "POSTAL_CODE_WIDGET",
-        "value": "POSTAL_CODE"
+        "value": "{\n  ...POSTAL_CODE,\n  setValue: async value => {\n    await POSTAL_CODE.setValue(value);\n  }\n}"
       }
     ]
   }

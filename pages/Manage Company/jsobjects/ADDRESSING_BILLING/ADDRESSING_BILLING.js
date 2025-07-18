@@ -152,7 +152,9 @@ export default {
 
 		if(SELECT_PROVINCEs.data == undefined && !SELECT_PROVINCEs.isLoading)
 		await SELECT_PROVINCEs.run();
-		console.log("SELECT_PROVINCEs");
+		if(SELECT_PROVINCEsEN.data == undefined && !SELECT_PROVINCEsEN.isLoading)
+		await SELECT_PROVINCEsEN.run();
+		//console.log("SELECT_PROVINCEs");
 
 		const initCompanyAddress = async ()=>{
 			let { districts, subdistricts } = await this.fetchAndStoreAddress(

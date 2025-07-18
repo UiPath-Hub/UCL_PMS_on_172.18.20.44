@@ -1,4 +1,46 @@
 export default {
+	AddressBackup :"AddressBackup",
+	hasChange:"hasChange",
+	SubdistrictChange:(type)=>{
+		if(ADDRESSING.POSTAL_CODE_WIDGET.text.length!=5 && type == 'MAIN')
+			ADDRESSING.onSelectedDistrict( PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue)
+		else if(ADDRESSING_BILLING.POSTAL_CODE_WIDGET.text.length!=5 && type == 'BILL')
+			ADDRESSING_BILLING.onSelectedDistrict( BILLING_PROVINCE_TH.selectedOptionValue, BILLING_DISTRICT_TH.selectedOptionValue)
+		else if(type != 'MAIN' && type != 'BILL')showAlert("Sub district input is working incorrectly.","warning");
+	},
+	onChangeAddress:()=>{
+		if(!appsmith.store[this.AddressBackup])return;
+		storeValue(this.AddressBackup,{...appsmith.store[this.AddressBackup],[this.hasChange]:true},false);
+	},
+	onChangeLanguang:()=>{
+		let DISTRICT_STORE_NAME ="DISTRICT_STORE_NAME";
+		let SUB_DISTRICT_STORE_NAME ="SUB_DISTRICT_STORE_NAME"
+		let DISTRICT_STORE_NAMEBILL ="DISTRICT_STORE_NAMEBILL"
+		let SUB_DISTRICT_STORE_NAMEBILL="SUB_DISTRICT_STORE_NAMEBILL"
+
+		if(appsmith.store[this.AddressBackup]?!appsmith.store[this.AddressBackup][this.hasChange]:false){
+			ADDRESSING.DISTRICT_STORE_NAME = appsmith.store.AddressBackup[DISTRICT_STORE_NAME];
+			ADDRESSING.SUB_DISTRICT_STORE_NAME = appsmith.store.AddressBackup[SUB_DISTRICT_STORE_NAME];
+			ADDRESSING_BILLING.DISTRICT_STORE_NAME = appsmith.store.AddressBackup[DISTRICT_STORE_NAMEBILL];
+			ADDRESSING_BILLING.SUB_DISTRICT_STORE_NAME = appsmith.store.AddressBackup[SUB_DISTRICT_STORE_NAMEBILL];
+			removeValue(this.AddressBackup);
+			return;
+		}
+		let backup = {
+									[DISTRICT_STORE_NAME]:ADDRESSING.DISTRICT_STORE_NAME,
+									[SUB_DISTRICT_STORE_NAME]:ADDRESSING.SUB_DISTRICT_STORE_NAME,
+								  [DISTRICT_STORE_NAMEBILL]:ADDRESSING_BILLING.DISTRICT_STORE_NAME,
+									[SUB_DISTRICT_STORE_NAMEBILL]:ADDRESSING_BILLING.SUB_DISTRICT_STORE_NAME,
+									[this.hasChange]:false
+								 }
+		
+		storeValue(this.AddressBackup,backup,false);
+		
+		ADDRESSING.DISTRICT_STORE_NAME = [];
+		ADDRESSING.SUB_DISTRICT_STORE_NAME = [];
+		ADDRESSING_BILLING.DISTRICT_STORE_NAME = [];
+		ADDRESSING_BILLING.SUB_DISTRICT_STORE_NAME = [];
+	},
 	onClick_ButtonCancel:async ()=>{
 		if(!Configs.IS_THIRD_PARTY)
 			navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
