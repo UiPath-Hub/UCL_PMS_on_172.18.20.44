@@ -24,9 +24,12 @@ EXECUTE [dbo].[UPDATE_PMS_COMPANY_LM]
   ,@pCOMPANY_SOI_EN = {{COMPANY_SOI_EN.text}}
   ,@pCOMPANY_ROAD_TH = {{COMPANY_ROAD_TH.text}}
   ,@pCOMPANY_ROAD_EN = {{COMPANY_ROAD_EN.text}}
-  ,@pCOMPANY_SUB_DISTRICT = {{SUB_DISTRICT_TH.selectedOptionValue}}
-  ,@pCOMPANY_DISTRICT = {{DISTRICT_TH.selectedOptionValue}}
-  ,@pCOMPANY_PROVINCE = {{PROVINCE_TH.selectedOptionValue}}
+  ,@pCOMPANY_SUB_DISTRICT = {{COMPANY_LANGUAGE_TYPE.selectedOptionValue!="EN"? SUB_DISTRICT_TH.selectedOptionValue:null}}
+	,@pCOMPANY_SUB_DISTRICT_EN = {{COMPANY_LANGUAGE_TYPE.selectedOptionValue!="TH"?SUB_DISTRICT_TH.selectedOptionValue:null}}
+  ,@pCOMPANY_DISTRICT = {{COMPANY_LANGUAGE_TYPE.selectedOptionValue!="EN"?DISTRICT_TH.selectedOptionValue:null}}
+	,@pCOMPANY_DISTRICT_EN = {{COMPANY_LANGUAGE_TYPE.selectedOptionValue!="TH"?DISTRICT_TH.selectedOptionValue:null}}
+  ,@pCOMPANY_PROVINCE = {{COMPANY_LANGUAGE_TYPE.selectedOptionValue!="EN"?PROVINCE_TH.selectedOptionValue:null}}
+	,@pCOMPANY_PROVINCE_EN = {{COMPANY_LANGUAGE_TYPE.selectedOptionValue!="TH"?PROVINCE_TH.selectedOptionValue:null}}
   ,@pCOMPANY_POSTAL_CODE = {{POSTAL_CODE.text}}
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}

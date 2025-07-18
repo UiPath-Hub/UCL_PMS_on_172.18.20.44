@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 75,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany.COMPANY_PROVINCE_TH.data))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( (COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:\"TH\") == \"TH\"?DefaultCompany.COMPANY_PROVINCE_TH.data:DefaultCompany.COMPANY_PROVINCE_EN.data))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

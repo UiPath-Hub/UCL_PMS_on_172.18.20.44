@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 81,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany.COMPANY_SUB_DISTRICT_TH.data.toString()))(SUB_DISTRICT_TH.options, SUB_DISTRICT_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( (COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:\"TH\") == \"TH\"? DefaultCompany.COMPANY_SUB_DISTRICT_TH.data:DefaultCompany.COMPANY_SUB_DISTRICT_EN.data))(SUB_DISTRICT_TH.options, SUB_DISTRICT_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -63,7 +63,7 @@
   "mobileRightColumn": 60,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{JS.onChangeAddress();\nADDRESSING.onSelectedSubDistrict(SUB_DISTRICT_TH.selectedOptionValue, PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue);}}",
+  "onOptionChange": "{{ADDRESSING.onSelectedSubDistrict(SUB_DISTRICT_TH.selectedOptionValue, PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue);}}",
   "optionLabel": "key",
   "optionValue": "value",
   "originalBottomRow": 81,

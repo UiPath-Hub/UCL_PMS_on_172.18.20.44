@@ -13,15 +13,15 @@
       },
       {
         "name": "PROVINCE_PROP_NAME",
-        "value": "\"COMPANY_PROVINCE_TH\""
+        "value": "(COMPANY_LANGUAGE_TYPE.selectedOptionValue ? COMPANY_LANGUAGE_TYPE.selectedOptionValue : \"TH\") == \"TH\" ? \"COMPANY_PROVINCE_TH\" : \"COMPANY_PROVINCE_EN\""
       },
       {
         "name": "DISTRICT_PROP_NAME",
-        "value": "\"COMPANY_DISTRICT_TH\""
+        "value": "(COMPANY_LANGUAGE_TYPE.selectedOptionValue ? COMPANY_LANGUAGE_TYPE.selectedOptionValue : \"TH\") == \"TH\" ? \"COMPANY_DISTRICT_TH\" : \"COMPANY_DISTRICT_EN\""
       },
       {
         "name": "SUB_DISTRICT_PROP_NAME",
-        "value": "\"COMPANY_SUB_DISTRICT_TH\""
+        "value": "(COMPANY_LANGUAGE_TYPE.selectedOptionValue ? COMPANY_LANGUAGE_TYPE.selectedOptionValue : \"TH\") == \"TH\" ? \"COMPANY_SUB_DISTRICT_TH\" : \"COMPANY_SUB_DISTRICT_EN\""
       },
       {
         "name": "PROVINCE",
