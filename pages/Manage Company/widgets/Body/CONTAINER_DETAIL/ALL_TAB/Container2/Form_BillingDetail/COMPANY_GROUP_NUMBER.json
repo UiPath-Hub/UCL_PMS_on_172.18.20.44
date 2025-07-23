@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 50,
+  "bottomRow": 6,
   "boxShadow": "none",
-  "defaultText": "{{Default_ProductCatalog.\nACCOUNT_CODE.data}}",
+  "defaultText": "{{Default_COMPANY_BILLING.COMPANY_GROUP_NUMBER.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -26,7 +26,7 @@
       "key": "labelTextColor"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "isRequired"
@@ -40,17 +40,17 @@
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{Default_ProductCatalog.\nACCOUNT_CODE.required}}",
+  "isRequired": "{{Default_COMPANY_BILLING.COMPANY_GROUP_NUMBER.required}}",
   "isVisible": true,
   "key": "nwk391w658",
-  "label": "Account Code",
+  "label": "Company Group No.",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{Default_ProductCatalog.ACCOUNT_CODE\n.color}}",
+  "labelTextColor": "{{Default_COMPANY_BILLING.COMPANY_GROUP_NUMBER.color}}",
   "labelTextSize": "1rem",
-  "labelWidth": "11",
-  "leftColumn": 2,
+  "labelWidth": "10",
+  "leftColumn": 33,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -59,21 +59,21 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 50,
-  "originalTopRow": 46,
+  "originalBottomRow": 18,
+  "originalTopRow": 10,
   "parentColumnSpace": 19.5,
-  "parentId": "dhkjjujsed",
+  "parentId": "mljr28tpi4",
   "parentRowSpace": 10,
-  "regex": "{{Default_ProductCatalog.\nACCOUNT_CODE.regex}}",
+  "regex": "{{Default_COMPANY_BILLING.COMPANY_GROUP_NUMBER.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 32,
+  "rightColumn": 61,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 46,
+  "topRow": 2,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "0hfp9kembk",
-  "widgetName": "ACCOUNT_CODE"
+  "widgetId": "9lly1qfxc2",
+  "widgetName": "COMPANY_GROUP_NUMBER"
 }

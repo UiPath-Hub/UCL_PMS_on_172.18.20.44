@@ -1,0 +1,80 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_ProductCatalog.\nINVOICE_TYPE.data))(INVOICE_TYPE.options, INVOICE_TYPE.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": "{{Default_ProductCatalog.\nINVOICE_TYPE.required}}",
+  "isVisible": true,
+  "key": "72xnnx6qo8",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Invoice Type",
+  "labelTextColor": "{{Default_ProductCatalog.INVOICE_TYPE\n.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "22",
+  "leftColumn": 3,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 26,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 19,
+  "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 42,
+  "originalTopRow": 38,
+  "parentColumnSpace": 19.5,
+  "parentId": "moailr50dh",
+  "parentRowSpace": 10,
+  "placeholderText": "ประเภทของใบแจ้งหนี้",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "serverSideFiltering": false,
+  "sourceData": "{{SP_DD_INVOICE_TYPE.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
+  "topRow": 8,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "0x2776evi0",
+  "widgetName": "INVOICE_TYPE"
+}

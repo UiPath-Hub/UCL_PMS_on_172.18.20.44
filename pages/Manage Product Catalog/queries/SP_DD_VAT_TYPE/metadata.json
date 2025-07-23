@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "68580a14ebb7f73fffd54ad7_4791bf25-46b2-4432-8929-c8ee032cf187",
-  "id": "Manage Company Contact__00_SP_SELECT_FOR_CONTACT",
+  "gitSyncId": "6878798655eda7018e8bfe9a_ab262de8-e0eb-420b-a938-44b67caf80ee",
+  "id": "Manage Product Catalog_SP_DD_VAT_TYPE",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[SELECT_COMPANY_CONTACT_BY_ID] \n   @COMPANY_CONTACT_ID = {{this.params.COMPANY_CONTACT_ID}}\n\n\n",
+      "body": "EXECUTE [dbo].[SELECT_FOR_DROPDOWN] \n   @pDropdowntypename = \"VAT_TYPE\"",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,14 +22,10 @@
       "name": "UCL_PMS",
       "pluginId": "mssql-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "_00_SP_SELECT_FOR_CONTACT",
-    "pageId": "Manage Company Contact",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "dynamicBindingPathList": [],
+    "name": "SP_DD_VAT_TYPE",
+    "pageId": "Manage Product Catalog",
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

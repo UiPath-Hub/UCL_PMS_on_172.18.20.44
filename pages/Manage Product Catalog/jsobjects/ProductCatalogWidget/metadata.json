@@ -28,10 +28,6 @@
         "value": "{\n  ...PRODUCT_TYPE,\n  data: PRODUCT_TYPE.selectedOptionValue.split(\"/\")[0] || \"\"\n}"
       },
       {
-        "name": "PRODUCT_CODE",
-        "value": "{\n  ...PRODUCT_CODE,\n  data: PRODUCT_CODE.text\n}"
-      },
-      {
         "name": "FLOOR_NO",
         "value": "{\n  ...FLOOR_NO,\n  data: FLOOR_NO.selectedOptionValue\n}"
       },
@@ -62,6 +58,14 @@
       {
         "name": "ACCOUNT_CODE",
         "value": "{\n  ...ACCOUNT_CODE,\n  data: ACCOUNT_CODE.text\n}"
+      },
+      {
+        "name": "VAT_TYPE",
+        "value": "{\n  ...VAT_TYPE,\n  data: VAT_TYPE.selectedOptionValue\n}"
+      },
+      {
+        "name": "INVOICE_TYPE",
+        "value": "{\n  ...INVOICE_TYPE,\n  data: INVOICE_TYPE.selectedOptionValue\n}"
       }
     ]
   }

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_ccfe8848-fcaf-4419-a3c3-ba1d3dbb3d75",
-  "id": "Invoice Dashboard_SP_HANDLE_TOKEN",
+  "gitSyncId": "6878798655eda7018e8bfe9a_af2a5330-9d61-474b-b9f3-4ce0eaf5d991",
+  "id": "Manage Product Catalog_SP_DD_INVOICE_TYPE",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[USER_SESSION_HANDLER] \n   @EMAIL = {{appsmith.user.email}}\n  ,@TOKEN = {{appsmith.store.userSession?appsmith.store.userSession.TOKEN:\"\"}}\n\t,@RENEW = 0",
+      "body": "EXECUTE [dbo].[SELECT_FOR_DROPDOWN] \n   @pDropdowntypename = \"INVOICE_TYPE\"",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,14 +22,10 @@
       "name": "UCL_PMS",
       "pluginId": "mssql-plugin"
     },
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
-    "name": "SP_HANDLE_TOKEN",
-    "pageId": "Invoice Dashboard",
-    "runBehaviour": "MANUAL",
+    "dynamicBindingPathList": [],
+    "name": "SP_DD_INVOICE_TYPE",
+    "pageId": "Manage Product Catalog",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": false
   }
 }
