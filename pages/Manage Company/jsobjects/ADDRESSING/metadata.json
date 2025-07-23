@@ -8,6 +8,18 @@
     "pluginType": "JS",
     "variables": [
       {
+        "name": "LanguageControl",
+        "value": "\"TH\""
+      },
+      {
+        "name": "Language_PROP_NAME",
+        "value": "\"COMPANY_LANGUAGE_TYPE\""
+      },
+      {
+        "name": "Language_WIDGET",
+        "value": "{\n  ...COMPANY_LANGUAGE_TYPE,\n  data: COMPANY_LANGUAGE_TYPE.selectedOptionValue\n}"
+      },
+      {
         "name": "DEFAULT_ENTITY",
         "value": "DefaultCompany"
       },

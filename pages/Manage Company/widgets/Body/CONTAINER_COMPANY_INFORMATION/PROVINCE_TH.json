@@ -41,9 +41,6 @@
     },
     {
       "key": "optionLabel"
-    },
-    {
-      "key": "onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
@@ -72,8 +69,8 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING.onSelectedProvice(PROVINCE_TH.selectedOptionLabel);}}",
-  "optionLabel": "{{PROVINCE_TH.sourceData.map((item) => ((COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:\"TH\")==\"TH\"? \"PROVINCE_TH\":\"PROVINCE_EN\"))}}",
+  "onOptionChange": "{{ADDRESSING.onSelectedProvice(ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue));}}",
+  "optionLabel": "{{PROVINCE_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"PROVINCE_TH\":\"PROVINCE_EN\"))}}",
   "optionValue": "ID",
   "originalBottomRow": 75,
   "originalTopRow": 71,

@@ -40,9 +40,6 @@
       "key": "isRequired"
     },
     {
-      "key": "onOptionChange"
-    },
-    {
       "key": "optionLabel"
     }
   ],
@@ -72,8 +69,8 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 74,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue);}}",
-  "optionLabel": "{{DISTRICT_TH.sourceData.map((item) => ((COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:\"TH\")==\"TH\"? \"DISTRICT_TH\":\"DISTRICT_EN\"))}}",
+  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue), ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionValue));}}",
+  "optionLabel": "{{DISTRICT_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"DISTRICT_TH\":\"DISTRICT_EN\"))}}",
   "optionValue": "ID",
   "originalBottomRow": 81,
   "originalTopRow": 75,

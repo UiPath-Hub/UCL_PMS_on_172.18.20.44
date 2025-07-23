@@ -1,4 +1,7 @@
 export default {
+	LanguageControl:"TH",
+	Language_PROP_NAME:"COMPANY_LANGUAGE_TYPE",
+	Language_WIDGET:{...COMPANY_LANGUAGE_TYPE,data:COMPANY_LANGUAGE_TYPE.selectedOptionValue},
 	//default prop
 	DEFAULT_ENTITY: DefaultCompany,	
 	PROVINCE_PROP_NAME:"COMPANY_PROVINCE_TH",
@@ -26,7 +29,7 @@ export default {
 			subdistricts,
 			provinces
 		} = await this.fetchAndStoreAddress({POSTAL_CODE:postalCode});
-		showAlert(JSON.stringify( districts));
+		//showAlert(JSON.stringify( districts));
 		/*await Promise.all(
 			SELECT_ADDRESS.data.map(async (row) => {
 				if (row.POSTAL_CODE !== postalCode) return;
@@ -209,8 +212,8 @@ export default {
 	},
 	subdistrict_ConvertToTH:(ID)=>{
 		let store = appsmith.store[this.SUB_DISTRICT_STORE_NAME];
-		showAlert(ID)
-		showAlert(JSON.stringify(store.find((item)=>item.ID==ID)));
+		//showAlert(ID)
+		//showAlert(JSON.stringify(store.find((item)=>item.ID==ID)));
 		return store.find((item)=>item.ID==ID)?.SUBDISTRICT_TH ||""
 	},
 	
@@ -226,12 +229,13 @@ export default {
 		return store.find((item)=>item.ID==ID)?.SUBDISTRICT_EN ||""
 	},
 	
-	onChangedLanguage:()=>{
-		//console.log(`${this.PROVINCE_WIDGET.selectedOptionValue} ${this.DISTRICT_WIDGET.selectedOptionValue} ${this.SUB_DISTRICT_WIDGET.selectedOptionValue}`)
-		//this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data = this.province_ConvertToTH (this.PROVINCE_WIDGET.selectedOptionValue)
-		//this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = this.district_ConvertToTH (this.DISTRICT_WIDGET.selectedOptionValue)
-		//this.DEFAULT_ENTITY[this.SUB_DISTRICT_PROP_NAME].data = this.subdistrict_ConvertToTH (this.SUB_DISTRICT_WIDGET.selectedOptionValue)
-		showAlert(JSON.stringify([this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data ,this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data,SUB_DISTRICT_TH.selectedOptionValue]))
+	onChangedLanguage:async(provinceID,districtID,subdistrictID)=>{
+		showAlert(JSON.stringify([provinceID,districtID,subdistrictID]));
+		this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data =await this.province_ConvertToTH (provinceID)
+		this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = await this.district_ConvertToTH (districtID)
+		this.DEFAULT_ENTITY[this.SUB_DISTRICT_PROP_NAME].data = await this.subdistrict_ConvertToTH (subdistrictID)
+		this.LanguageControl = this.Language_WIDGET.data;
+		//showAlert(JSON.stringify([this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data ,this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data,this.DEFAULT_ENTITY[this.SUB_DISTRICT_PROP_NAME].data]))
 	},
 	initAddress:async ()=>{
 		//let PROVINCE = [{key:"",value:""}];
@@ -250,7 +254,8 @@ export default {
 			let findID = districts.find((d)=>d[this.DISTRICT_PROP_NAME]==this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data);
 			this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = (findID?findID.ID:undefined)||this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data;
 			storeValue(this.DISTRICT_STORE_NAME, districts.length ? districts : INIT_DISTRICT);
-			storeValue(this.SUB_DISTRICT_STORE_NAME, subdistricts.length ? subdistricts : INIT_SUBDISTRICT);			
+			storeValue(this.SUB_DISTRICT_STORE_NAME, subdistricts.length ? subdistricts : INIT_SUBDISTRICT);
+			this.LanguageControl = this.DEFAULT_ENTITY[this.Language_PROP_NAME].data
 		}
 
 		await Promise.all([initCompanyAddress()])

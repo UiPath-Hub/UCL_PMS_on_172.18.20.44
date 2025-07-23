@@ -57,7 +57,7 @@
   "mobileRightColumn": 40,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "onSelectionChange": "{{ADDRESSING.onChangedLanguage();}}",
+  "onSelectionChange": "{{ADDRESSING.onChangedLanguage(PROVINCE_TH.selectedOptionValue,DISTRICT_TH.selectedOptionValue,SUB_DISTRICT_TH.selectedOptionValue);}}",
   "options": [
     {
       "label": "TH",
