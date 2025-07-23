@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 75,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany.COMPANY_PROVINCE_TH.data))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.province_ConvertToID( DefaultCompany.COMPANY_PROVINCE_TH.data)))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -23,6 +23,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -34,10 +37,13 @@
       "key": "isRequired"
     },
     {
-      "key": "onOptionChange"
+      "key": "labelTextColor"
     },
     {
-      "key": "labelTextColor"
+      "key": "optionLabel"
+    },
+    {
+      "key": "onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
@@ -66,9 +72,9 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING.onSelectedProvice(PROVINCE_TH.selectedOptionValue);}}",
-  "optionLabel": "PROVINCE",
-  "optionValue": "PROVINCE",
+  "onOptionChange": "{{ADDRESSING.onSelectedProvice(PROVINCE_TH.selectedOptionLabel);}}",
+  "optionLabel": "{{PROVINCE_TH.sourceData.map((item) => ((COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:\"TH\")==\"TH\"? \"PROVINCE_TH\":\"PROVINCE_EN\"))}}",
+  "optionValue": "ID",
   "originalBottomRow": 75,
   "originalTopRow": 71,
   "parentColumnSpace": 11.4375,
@@ -79,7 +85,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 62,
   "serverSideFiltering": false,
-  "sourceData": "{{SELECT_PROVINCEs.data||[{ PROVINCE: \"\"}]}}",
+  "sourceData": "{{SELECT_PROVINCEs.data}}",
   "topRow": 71,
   "type": "SELECT_WIDGET",
   "version": 1,

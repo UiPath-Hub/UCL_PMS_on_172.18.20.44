@@ -18,13 +18,13 @@ export default {
 			log.data = data;
 			console.log(log); 
 			//find widget of the field by get from widget name of widgetMap
-			let widgetName = widgetsMap[keystr].widgetName;
+			//let widgetName = widgetsMap[keystr].widgetName;
 			defaultEntities[keystr].data = data
 			if (!widgetsMap[keystr].isValid && !widgetsMap[keystr].isDisabled && widgetsMap[keystr].isVisible) {
 				if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
 					defaultEntities[keystr].color = Configs.requiredColorAlert;
 				}
-				alert.push(keystr);
+				alert.push(widgetsMap[keystr].label||keystr);
 			} else {
 				if(defaultEntities[keystr].color!=Configs.requiredColorPass){
 					defaultEntities[keystr].color = Configs.requiredColorPass;
@@ -32,7 +32,7 @@ export default {
 			}
 			
 		}))
-		console.log(alert)
+		//console.log(alert)
 		return alert;
 	},
 	manualValidate:async (defaultEntities,widgetsGroupForm)=>{

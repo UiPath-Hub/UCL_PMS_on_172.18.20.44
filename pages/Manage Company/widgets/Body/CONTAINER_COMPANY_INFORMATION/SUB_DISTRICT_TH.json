@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 81,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany.COMPANY_SUB_DISTRICT_TH.data.toString()))(SUB_DISTRICT_TH.options, SUB_DISTRICT_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.subdistrict_ConvertToID(DefaultCompany.COMPANY_SUB_DISTRICT_TH.data)))(SUB_DISTRICT_TH.options, SUB_DISTRICT_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -23,6 +23,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -38,6 +41,9 @@
     },
     {
       "key": "onOptionChange"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicTriggerPathList": [
@@ -67,8 +73,8 @@
   "mobileTopRow": 0,
   "needsErrorInfo": false,
   "onOptionChange": "{{ADDRESSING.POSTAL_CODE_WIDGET.text.length!=5?ADDRESSING.onSelectedDistrict( PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue):\"\"}}}",
-  "optionLabel": "key",
-  "optionValue": "value",
+  "optionLabel": "{{SUB_DISTRICT_TH.sourceData.map((item) => ((COMPANY_LANGUAGE_TYPE.selectedOptionValue?COMPANY_LANGUAGE_TYPE.selectedOptionValue:\"TH\")==\"TH\"? \"SUBDISTRICT_TH\":\"SUBDISTRICT_EN\"))}}",
+  "optionValue": "ID",
   "originalBottomRow": 81,
   "originalTopRow": 75,
   "parentColumnSpace": 11.4375,

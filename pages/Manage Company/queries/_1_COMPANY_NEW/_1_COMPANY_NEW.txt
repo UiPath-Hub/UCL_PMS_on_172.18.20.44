@@ -24,9 +24,14 @@ EXECUTE [dbo].[UPDATE_PMS_COMPANY_LM]
   ,@pCOMPANY_SOI_EN = {{COMPANY_SOI_EN.text}}
   ,@pCOMPANY_ROAD_TH = {{COMPANY_ROAD_TH.text}}
   ,@pCOMPANY_ROAD_EN = {{COMPANY_ROAD_EN.text}}
-  ,@pCOMPANY_SUB_DISTRICT = {{SUB_DISTRICT_TH.selectedOptionValue}}
-  ,@pCOMPANY_DISTRICT = {{DISTRICT_TH.selectedOptionValue}}
-  ,@pCOMPANY_PROVINCE = {{PROVINCE_TH.selectedOptionValue}}
+	
+  ,@pCOMPANY_SUB_DISTRICT = {{ADDRESSING.subdistrict_ConvertToTH(SUB_DISTRICT_TH.selectedOptionValue)}}
+  ,@pCOMPANY_DISTRICT = {{ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionValue)}}
+  ,@pCOMPANY_PROVINCE = {{ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue)}}
+	
+	,@pCOMPANY_SUB_DISTRICT_EN = {{ADDRESSING.subdistrict_ConvertToEN (SUB_DISTRICT_TH.selectedOptionValue)}}
+  ,@pCOMPANY_DISTRICT_EN = {{ADDRESSING.district_ConvertToEN(DISTRICT_TH.selectedOptionValue)}}
+  ,@pCOMPANY_PROVINCE_EN = {{ADDRESSING.province_ConvertToEN(PROVINCE_TH.selectedOptionValue)}}
   ,@pCOMPANY_POSTAL_CODE = {{POSTAL_CODE.text}}
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}

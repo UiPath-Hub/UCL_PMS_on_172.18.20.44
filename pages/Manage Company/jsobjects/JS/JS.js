@@ -1,4 +1,7 @@
 export default {
+	onChangedLanguage:async()=>{
+		DefaultCompany[ADDRESSING.PROVINCE_PROP_NAME].data = ADDRESSING.PROVINCE_WIDGET.selectedOptionValue
+	},
 	onClick_ButtonCancel:async ()=>{
 		if(!Configs.IS_THIRD_PARTY)
 			navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
@@ -26,12 +29,12 @@ export default {
 				//let datastr = "data"
 				alertBilling = await GlobalFunctions.manualValidateV2(Default_COMPANY_BILLING,CompanyBilling_Widgets);
 				if(alertBilling.length > 0){
-					showAlert(`Some field on billing information is required or invalid.`)
+					showAlert(`Some field on billing information is required or invalid. ${JSON.stringify(alertBilling)}`)
 					//alertWidget = [...alertWidget,...alertBilling]
 				}
 			}
 			if(alertWidget.length > 0){
-				showAlert(`Some field on company information is required or invalid.`)
+				showAlert(`Some field on company information is required or invalid. ${JSON.stringify(alertWidget)}`)
 			}
 			if(alertWidget.length == 0 && alertBilling.length == 0)
 			showModal(MODAL_SAVE.name);

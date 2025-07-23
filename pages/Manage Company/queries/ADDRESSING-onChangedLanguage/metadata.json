@@ -1,17 +1,12 @@
 {
-  "gitSyncId": "67bc192d8c4cb21215539fca_94262435-134b-4b27-a7c6-39509791cabe",
-  "id": "Manage Company_ADDRESSING.fetchAndStoreAddress",
+  "gitSyncId": "687dd50855eda7018e8c06b2_337c9d03-791a-49e1-b14a-b0c8fbf3235a",
+  "id": "Manage Company_ADDRESSING.onChangedLanguage",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [
-        {
-          "name": "",
-          "value": "{{{}}}"
-        }
-      ],
+      "jsArguments": [],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -27,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "ADDRESSING.fetchAndStoreAddress",
-    "name": "fetchAndStoreAddress",
+    "fullyQualifiedName": "ADDRESSING.onChangedLanguage",
+    "name": "onChangedLanguage",
     "pageId": "Manage Company",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

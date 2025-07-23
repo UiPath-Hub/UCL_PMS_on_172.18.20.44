@@ -24,6 +24,10 @@
         "value": "\"COMPANY_SUB_DISTRICT_TH\""
       },
       {
+        "name": "POSTAL_CODE_PROP_NAME",
+        "value": "\"COMPANY_POSTAL_CODE\""
+      },
+      {
         "name": "PROVINCE",
         "value": "\"PROVINCE\""
       },
