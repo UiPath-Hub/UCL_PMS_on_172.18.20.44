@@ -259,7 +259,7 @@ export default {
 			storeValue(this.DISTRICT_STORE_NAME, districts.length ? districts : INIT_DISTRICT);
 			storeValue(this.SUB_DISTRICT_STORE_NAME, subdistricts.length ? subdistricts : INIT_SUBDISTRICT);
 			if(this.DEFAULT_ENTITY[this.Language_PROP_NAME])
-			this.LanguageControl = this.DEFAULT_ENTITY[this.Language_PROP_NAME].data
+			this.LanguageControl = this.DEFAULT_ENTITY[this.Language_PROP_NAME].data||this.LanguageControl
 		}
 
 		await Promise.all([initCompanyAddress()])

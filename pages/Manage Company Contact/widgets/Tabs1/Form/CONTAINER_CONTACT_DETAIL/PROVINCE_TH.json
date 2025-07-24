@@ -2,9 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 63,
+  "bottomRow": 62,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultContact.COMPANY_CONTACT_PROVINCE_TH.data))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.province_ConvertToID(DefaultContact.COMPANY_CONTACT_PROVINCE_TH.data)))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -23,6 +23,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -38,6 +41,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicTriggerPathList": [
@@ -66,11 +72,11 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING.onSelectedProvice(PROVINCE_TH.selectedOptionValue);}}",
-  "optionLabel": "PROVINCE",
-  "optionValue": "PROVINCE",
-  "originalBottomRow": 63,
-  "originalTopRow": 59,
+  "onOptionChange": "{{ADDRESSING.onSelectedProvice(ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue));}}",
+  "optionLabel": "{{PROVINCE_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"PROVINCE_TH\":\"PROVINCE_EN\"))}}",
+  "optionValue": "ID",
+  "originalBottomRow": 66,
+  "originalTopRow": 62,
   "parentColumnSpace": 11.4375,
   "parentId": "0s2qm3vbhm",
   "parentRowSpace": 10,
@@ -79,8 +85,8 @@
   "responsiveBehavior": "fill",
   "rightColumn": 62,
   "serverSideFiltering": false,
-  "sourceData": "{{SELECT_PROVINCEs.data||[{ PROVINCE: \"\"}]}}",
-  "topRow": 59,
+  "sourceData": "{{SELECT_PROVINCEs.data}}",
+  "topRow": 58,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "f5fxertnyq",

@@ -16,7 +16,7 @@ export default {
 			log.disable = widgetsMap[keystr].isDisabled;
 			log.visible = widgetsMap[keystr].isVisible;
 			log.data = data;
-			console.log(log); 
+			//console.log(log); 
 			//find widget of the field by get from widget name of widgetMap
 			//let widgetName = widgetsMap[keystr].widgetName;
 			defaultEntities[keystr].data = data
@@ -24,7 +24,7 @@ export default {
 				if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
 					defaultEntities[keystr].color = Configs.requiredColorAlert;
 				}
-				alert.push(widgetsMap[keystr].label||keystr);
+				alert.push(widgetsMap[keystr].label??keystr);
 			} else {
 				if(defaultEntities[keystr].color!=Configs.requiredColorPass){
 					defaultEntities[keystr].color = Configs.requiredColorPass;

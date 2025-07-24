@@ -32,22 +32,8 @@ export default {
 		let DefaultAddress={};
 		if(appsmith.store[Configs.newCompanyTempFlag]){
 			DefaultAddress = appsmith.store[Configs.newCompanyTempFlag]
-		}else if(appsmith.store[Configs.DEFAULT_COMPANY]){
-			DefaultAddress = appsmith.store[Configs.DEFAULT_COMPANY]
 		}
-		/*await Promise.all([
-			COMPANY_CONTACT_ADD_NO.setValue(DefaultAddress.COMPANY_ADD_NO||""),
-			COMPANY_CONTACT_FLOOR.setValue(DefaultAddress.COMPANY_FLOOR||""),
-			COMPANY_CONTACT_MOO.setValue(DefaultAddress.COMPANY_MOO||""),
-			COMPANY_CONTACT_SOI_EN.setValue(DefaultAddress.COMPANY_SOI_EN||""),
-			COMPANY_CONTACT_SOI_TH.setValue(DefaultAddress.COMPANY_SOI_TH||""),
-			COMPANY_CONTACT_ROAD_EN.setValue(DefaultAddress.COMPANY_ROAD_EN||""),
-			COMPANY_CONTACT_ROAD_TH.setValue(DefaultAddress.COMPANY_ROAD_TH||""),
-			POSTAL_CODE.setValue(DefaultAddress.POSTAL_CODE||""),
-			PROVINCE_TH.setSelectedOption(DefaultAddress.PROVINCE_TH||""),
-			DISTRICT_TH.setSelectedOption(DefaultAddress.DISTRICT_TH||""),
-			SUB_DISTRICT_TH.setSelectedOption(DefaultAddress.SUB_DISTRICT_TH||"") 	
-		])*/
+
 		DefaultContact.COMPANY_CONTACT_ADD_NO.data=DefaultAddress.COMPANY_ADD_NO||""
 		DefaultContact.COMPANY_CONTACT_FLOOR.data=DefaultAddress.COMPANY_FLOOR||""
 		DefaultContact.COMPANY_CONTACT_MOO.data=DefaultAddress.COMPANY_MOO||""
@@ -56,7 +42,7 @@ export default {
 		DefaultContact.COMPANY_CONTACT_ROAD_EN.data=DefaultAddress.COMPANY_ROAD_EN||""
 		DefaultContact.COMPANY_CONTACT_ROAD_TH.data=DefaultAddress.COMPANY_ROAD_TH||""
 		DefaultContact.COMPANY_CONTACT_POSTAL_CODE.data=DefaultAddress.COMPANY_POSTAL_CODE||""
-		DefaultContact.COMPANY_CONTACT_SDISTRICT_TH.data =DefaultAddress.COMPANY_SUB_DISTRICT_TH||""
+		DefaultContact.COMPANY_CONTACT_SDISTRICT_TH.data = DefaultAddress.COMPANY_SUB_DISTRICT_TH||""
 		DefaultContact.COMPANY_CONTACT_DISTRICT_TH.data=DefaultAddress.COMPANY_DISTRICT_TH||""
 		DefaultContact.COMPANY_CONTACT_PROVINCE_TH.data=DefaultAddress.COMPANY_PROVINCE_TH||""
 		await ADDRESSING.initAddress();

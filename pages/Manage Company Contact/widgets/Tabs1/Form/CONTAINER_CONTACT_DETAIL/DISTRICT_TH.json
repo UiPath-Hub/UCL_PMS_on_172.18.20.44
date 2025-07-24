@@ -2,9 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 69,
+  "bottomRow": 68,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultContact.COMPANY_CONTACT_DISTRICT_TH.data))(DISTRICT_TH.options, DISTRICT_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.district_ConvertToID(DefaultContact.COMPANY_CONTACT_DISTRICT_TH.data)))(DISTRICT_TH.options, DISTRICT_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -23,6 +23,9 @@
     },
     {
       "key": "isRequired"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -38,6 +41,9 @@
     },
     {
       "key": "onOptionChange"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicTriggerPathList": [
@@ -66,11 +72,11 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 74,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue);}}",
-  "optionLabel": "key",
-  "optionValue": "value",
-  "originalBottomRow": 70,
-  "originalTopRow": 64,
+  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue), ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionValue));}}",
+  "optionLabel": "{{DISTRICT_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"DISTRICT_TH\":\"DISTRICT_EN\"))}}",
+  "optionValue": "ID",
+  "originalBottomRow": 72,
+  "originalTopRow": 66,
   "parentColumnSpace": 19.46875,
   "parentId": "0s2qm3vbhm",
   "parentRowSpace": 10,
@@ -80,7 +86,7 @@
   "rightColumn": 30,
   "serverSideFiltering": false,
   "sourceData": "{{appsmith.store[ADDRESSING.DISTRICT_STORE_NAME]}}",
-  "topRow": 63,
+  "topRow": 62,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "68mmhnw6sk",

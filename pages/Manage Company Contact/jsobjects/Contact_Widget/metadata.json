@@ -36,10 +36,6 @@
         "value": "{\n  ...COMPANY_CONTACT_EXT,\n  data: COMPANY_CONTACT_EXT.text\n}"
       },
       {
-        "name": "COMPANY_CONTACT_MOBILE",
-        "value": "{\n  ...COMPANY_CONTACT_MOBILE,\n  data: COMPANY_CONTACT_MOBILE.text\n}"
-      },
-      {
         "name": "COMPANY_CONTACT_EMAIL",
         "value": "{\n  ...COMPANY_CONTACT_EMAIL,\n  data: COMPANY_CONTACT_EMAIL.text\n}"
       },
@@ -73,27 +69,27 @@
       },
       {
         "name": "COMPANY_CONTACT_SDISTRICT_EN",
-        "value": "{\n  ...SUB_DISTRICT_TH,\n  data: SUB_DISTRICT_TH.selectedOptionValue\n}"
+        "value": "{\n  ...SUB_DISTRICT_TH,\n  data: ADDRESSING.subdistrict_ConvertToEN(SUB_DISTRICT_TH.selectedOptionValue)\n}"
       },
       {
         "name": "COMPANY_CONTACT_SDISTRICT_TH",
-        "value": "{\n  ...SUB_DISTRICT_TH,\n  data: SUB_DISTRICT_TH.selectedOptionValue\n}"
+        "value": "{\n  ...SUB_DISTRICT_TH,\n  data: ADDRESSING.subdistrict_ConvertToTH(SUB_DISTRICT_TH.selectedOptionValue)\n}"
       },
       {
         "name": "COMPANY_CONTACT_DISTRICT_EN",
-        "value": "{\n  ...DISTRICT_TH,\n  data: DISTRICT_TH.selectedOptionValue\n}"
+        "value": "{\n  ...DISTRICT_TH,\n  data: ADDRESSING.district_ConvertToEN(DISTRICT_TH.selectedOptionValue)\n}"
       },
       {
         "name": "COMPANY_CONTACT_DISTRICT_TH",
-        "value": "{\n  ...DISTRICT_TH,\n  data: DISTRICT_TH.selectedOptionValue\n}"
+        "value": "{\n  ...DISTRICT_TH,\n  data: ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionValue)\n}"
       },
       {
         "name": "COMPANY_CONTACT_PROVINCE_EN",
-        "value": "{\n  ...PROVINCE_TH,\n  data: PROVINCE_TH.selectedOptionValue\n}"
+        "value": "{\n  ...PROVINCE_TH,\n  data: ADDRESSING.province_ConvertToEN(PROVINCE_TH.selectedOptionValue)\n}"
       },
       {
         "name": "COMPANY_CONTACT_PROVINCE_TH",
-        "value": "{\n  ...PROVINCE_TH,\n  data: PROVINCE_TH.selectedOptionValue\n}"
+        "value": "{\n  ...PROVINCE_TH,\n  data: ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue)\n}"
       },
       {
         "name": "COMPANY_CONTACT_POSTAL_CODE",
@@ -110,6 +106,10 @@
       {
         "name": "OTHER",
         "value": "{\n  ...OTHER,\n  data: OTHER.text\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_LANGUAGE_TYPE",
+        "value": "{\n  ...COMPANY_CONTACT_LANGUAGE_TYPE,\n  data: COMPANY_CONTACT_LANGUAGE_TYPE.selectedOptionValue\n}"
       }
     ]
   }

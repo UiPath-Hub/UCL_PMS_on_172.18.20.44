@@ -21,15 +21,18 @@ BEGIN TRANSACTION;
   ,@pSoiTH= {{COMPANY_CONTACT_SOI_TH.text}}
   ,@pRoadEN= {{COMPANY_CONTACT_ROAD_EN.text}}
   ,@pRoadTH= {{COMPANY_CONTACT_ROAD_TH.text}}
-  ,@pSubdistrictEN= {{SUB_DISTRICT_TH.selectedOptionValue}}
-  ,@pSubdistrictTH= {{SUB_DISTRICT_TH.selectedOptionValue}}
-  ,@pDistrictEN= {{DISTRICT_TH.selectedOptionValue}}
-  ,@pDistrictTH= {{DISTRICT_TH.selectedOptionValue}}
-  ,@pProvinceEN= {{PROVINCE_TH.selectedOptionValue}}
-  ,@pProvinceTH= {{PROVINCE_TH.selectedOptionValue}}
+	
+  ,@pSubdistrictEN= {{ADDRESSING.subdistrict_ConvertToEN (SUB_DISTRICT_TH.selectedOptionValue)}}
+  ,@pSubdistrictTH= {{ADDRESSING.subdistrict_ConvertToTH(SUB_DISTRICT_TH.selectedOptionValue)}}
+  ,@pDistrictEN= {{ADDRESSING.district_ConvertToEN(DISTRICT_TH.selectedOptionValue)}}
+  ,@pDistrictTH= {{ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionValue)}}
+  ,@pProvinceEN= {{ADDRESSING.province_ConvertToEN(PROVINCE_TH.selectedOptionValue)}}
+  ,@pProvinceTH= {{ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue)}}
+	
   ,@pPostalCode= {{POSTAL_CODE.text}}
   ,@pStatus= {{STATUS.selectedOptionValue}}
 	,@OTHER = {{OTHER.text}}
+	,@COMPANY_CONTACT_LANGUAGE_TYPE = {{COMPANY_CONTACT_LANGUAGE_TYPE.selectedOptionValue}}
 	
 	,@pCOMPANY_CONTACT_ID = {{COMPANY_CONTACT_ID.text}}
 	,@COMPANY_ID = {{null /*appsmith.store[Configs.fromCompany].COMPANY_ID*/}}
