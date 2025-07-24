@@ -229,8 +229,11 @@ export default {
 		return store.find((item)=>item.ID==ID)?.SUBDISTRICT_EN ||""
 	},
 	
-	onChangedLanguage:async(provinceID,districtID,subdistrictID)=>{
-		showAlert(JSON.stringify([provinceID,districtID,subdistrictID]));
+	onChangedLanguage:async()=>{
+		let provinceID= this.PROVINCE_WIDGET.selectedOptionValue
+		let districtID = this.DISTRICT_WIDGET.selectedOptionValue
+		let subdistrictID = this.SUB_DISTRICT_WIDGET.selectedOptionValue
+		//showAlert(JSON.stringify([provinceID,districtID,subdistrictID]));
 		this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data =await this.province_ConvertToTH (provinceID)
 		this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = await this.district_ConvertToTH (districtID)
 		this.DEFAULT_ENTITY[this.SUB_DISTRICT_PROP_NAME].data = await this.subdistrict_ConvertToTH (subdistrictID)
@@ -255,6 +258,7 @@ export default {
 			this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = (findID?findID.ID:undefined)||this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data;
 			storeValue(this.DISTRICT_STORE_NAME, districts.length ? districts : INIT_DISTRICT);
 			storeValue(this.SUB_DISTRICT_STORE_NAME, subdistricts.length ? subdistricts : INIT_SUBDISTRICT);
+			if(this.DEFAULT_ENTITY[this.Language_PROP_NAME])
 			this.LanguageControl = this.DEFAULT_ENTITY[this.Language_PROP_NAME].data
 		}
 

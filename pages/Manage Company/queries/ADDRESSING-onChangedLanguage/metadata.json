@@ -6,17 +6,7 @@
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [
-        {
-          "name": "provinceID"
-        },
-        {
-          "name": "districtID"
-        },
-        {
-          "name": "subdistrictID"
-        }
-      ],
+      "jsArguments": [],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },

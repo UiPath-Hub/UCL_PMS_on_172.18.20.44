@@ -1,17 +1,12 @@
 {
-  "gitSyncId": "6807363c166b1720655bf4bd_3ba8993c-8954-4d99-acf5-7eb662345f51",
-  "id": "Manage Company_ADDRESSING_BILLING.fetchAndStoreAddress",
+  "gitSyncId": "687dd50855eda7018e8c06b2_a954f117-675b-4412-8762-bbbd48c405f2",
+  "id": "Manage Company_ADDRESSING_BILLING.onChangedLanguage",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [
-        {
-          "name": "",
-          "value": "{{{}}}"
-        }
-      ],
+      "jsArguments": [],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -27,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "ADDRESSING_BILLING.fetchAndStoreAddress",
-    "name": "fetchAndStoreAddress",
+    "fullyQualifiedName": "ADDRESSING_BILLING.onChangedLanguage",
+    "name": "onChangedLanguage",
     "pageId": "Manage Company",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

@@ -41,6 +41,7 @@ STATUS:{data:"Active",regex:"",required:"",color:""},
 CREATE_DATE:{data:"",regex:"",required:"",color:""},
 CREDIT_DAY:{data:"",regex:"",required:"",color:""},
 	COMPANY_GROUP_NUMBER:{data:"",regex:"",required:"",color:""},
+	COMPANY_LANGUAGE_TYPE:{data:"",regex:"",required:"",color:""},
 	
 	//interface
 BILLING_SUB_DISTRICT_TH:{data:this.BILLING_COMPANY_SUB_DISTRICT_TH.data,

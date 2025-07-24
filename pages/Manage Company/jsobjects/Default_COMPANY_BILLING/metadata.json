@@ -176,6 +176,10 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
+        "name": "COMPANY_LANGUAGE_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
         "name": "BILLING_SUB_DISTRICT_TH",
         "value": "{\n  data: Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_TH.data,\n  regex: Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_TH.regex,\n  required: Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_TH.required || Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_EN.required,\n  color: Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_TH.color == Configs.requiredColorAlert || Default_COMPANY_BILLING.BILLING_COMPANY_SUB_DISTRICT_EN.color == Configs.requiredColorAlert ? Configs.requiredColorAlert : Configs.requiredColorPass\n}"
       },
