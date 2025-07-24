@@ -1,6 +1,6 @@
 export default {
 	LanguageControl:"TH",
-	Language_INIT_VALUE:"COMPANY_LANGUAGE_TYPE",
+	Language_PROP_NAME:"COMPANY_LANGUAGE_TYPE",
 	Language_WIDGET:{...COMPANY_LANGUAGE_TYPE,data:COMPANY_LANGUAGE_TYPE.selectedOptionValue},
 	//default prop
 	DEFAULT_ENTITY: Default_COMPANY_BILLING,	
@@ -232,13 +232,13 @@ export default {
 		let provinceID= this.PROVINCE_WIDGET.selectedOptionValue
 		let districtID = this.DISTRICT_WIDGET.selectedOptionValue
 		let subdistrictID = this.SUB_DISTRICT_WIDGET.selectedOptionValue
-		showAlert(JSON.stringify(await this.subdistrict_ConvertToTH (subdistrictID)));
+		//showAlert(JSON.stringify(await this.subdistrict_ConvertToTH (subdistrictID)));
 		
 		this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data =await this.province_ConvertToTH (provinceID)
 		this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = await this.district_ConvertToTH (districtID)
 		this.DEFAULT_ENTITY[this.SUB_DISTRICT_PROP_NAME].data = await this.subdistrict_ConvertToTH (subdistrictID)
 		this.LanguageControl = this.Language_WIDGET.data;
-		showAlert(JSON.stringify(this.DEFAULT_ENTITY[this.SUB_DISTRICT_PROP_NAME].data))
+		//showAlert(JSON.stringify(this.DEFAULT_ENTITY[this.SUB_DISTRICT_PROP_NAME].data))
 	},
 	initAddress:async ()=>{
 		//let PROVINCE = [{key:"",value:""}];

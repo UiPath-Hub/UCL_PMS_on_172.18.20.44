@@ -6,10 +6,10 @@ export default {
 		let alert = [];
 		await Promise.all( Object.keys(defaultEntities).map(async (key)=>{
 			let keystr = key.toString();
-			if(!widgetsMap[keystr]) return;
-			if(!widgetsMap[keystr].widgetName)return;
+			if(widgetsMap[keystr]===undefined) return;
+			if(widgetsMap[keystr].widgetName===undefined)return;
 			
-			let data = widgetsMap[keystr].data||"";
+			let data = widgetsMap[keystr].data=== undefined?"":widgetsMap[keystr].data;
 			const log = {};
 			log.key = keystr;
 			log.valid = widgetsMap[keystr].isValid;

@@ -109,15 +109,15 @@
       },
       {
         "name": "BILLING_COMPANY_SUB_DISTRICT_TH",
-        "value": "{\n  ...BILLING_DISTRICT_TH,\n  data: BILLING_DISTRICT_TH.selectedOptionValue\n}"
+        "value": "{\n  ...BILLING_SUB_DISTRICT_TH,\n  data: ADDRESSING_BILLING.subdistrict_ConvertToTH(BILLING_SUB_DISTRICT_TH.selectedOptionValue)\n}"
       },
       {
         "name": "BILLING_COMPANY_DISTRICT_TH",
-        "value": "{\n  ...BILLING_DISTRICT_TH,\n  data: BILLING_DISTRICT_TH.selectedOptionValue\n}"
+        "value": "{\n  ...BILLING_DISTRICT_TH,\n  data: ADDRESSING_BILLING.district_ConvertToTH(BILLING_DISTRICT_TH.selectedOptionValue)\n}"
       },
       {
         "name": "BILLING_COMPANY_PROVINCE_TH",
-        "value": "{\n  ...BILLING_PROVINCE_TH,\n  data: BILLING_PROVINCE_TH.selectedOptionValue\n}"
+        "value": "{\n  ...BILLING_PROVINCE_TH,\n  data: ADDRESSING_BILLING.province_ConvertToTH(BILLING_PROVINCE_TH.selectedOptionValue)\n}"
       },
       {
         "name": "BILLING_COMPANY_POSTAL_CODE",

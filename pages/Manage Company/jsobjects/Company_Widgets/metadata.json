@@ -93,11 +93,11 @@
       },
       {
         "name": "COMPANY_DISTRICT_TH",
-        "value": "{\n  ...DISTRICT_TH,\n  data: ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionLabel)\n}"
+        "value": "{\n  ...DISTRICT_TH,\n  data: ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionValue)\n}"
       },
       {
         "name": "COMPANY_SUB_DISTRICT_TH",
-        "value": "{\n  ...SUB_DISTRICT_TH,\n  data: ADDRESSING.subdistrict_ConvertToTH(SUB_DISTRICT_TH.selectedOptionLabel)\n}"
+        "value": "{\n  ...SUB_DISTRICT_TH,\n  data: ADDRESSING.subdistrict_ConvertToTH(SUB_DISTRICT_TH.selectedOptionValue)\n}"
       },
       {
         "name": "COMPANY_BUILDING_NAME_TH",
