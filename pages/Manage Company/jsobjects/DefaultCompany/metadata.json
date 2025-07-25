@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "COMPANY_ID",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\",\n  lebel: \"id\"\n}"
       },
       {
         "name": "COMPANY_TYPE_NAME",

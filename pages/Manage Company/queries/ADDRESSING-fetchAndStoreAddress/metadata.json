@@ -8,10 +8,8 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "province"
-        },
-        {
-          "name": "district"
+          "name": "",
+          "value": "{{{}}}"
         }
       ],
       "paginationType": "NONE",

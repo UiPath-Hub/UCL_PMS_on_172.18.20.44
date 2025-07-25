@@ -1,1 +1,1 @@
-SELECT TOP(1) * FROM dbo.PMS_COMPANY_BILLING_INFORMATION WHERE COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}
+SELECT TOP(1) b.*,c.COMPANY_LANGUAGE_TYPE FROM dbo.PMS_COMPANY_BILLING_INFORMATION b join dbo.PMS_COMPANY_LM c on b.COMPANY_ID = c.COMPANY_ID WHERE b.COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}

@@ -1,20 +1,87 @@
 SET NOCOUNT ON;
-DECLARE @OUTPUT_TABLE table(ID int,PROVINCE nvarchar(50),DISTRICT nvarchar(50),SUBDISTRICT nvarchar(50),POSTAL_CODE nvarchar(50));
+DECLARE @OUTPUT_TABLE table(ID int,
+														PROVINCE_TH nvarchar(50),
+														PROVINCE_EN nvarchar(50),
+														DISTRICT_TH nvarchar(50),
+														DISTRICT_EN nvarchar(50),
+														SUBDISTRICT_TH nvarchar(50),
+														SUBDISTRICT_EN nvarchar(50),
+														POSTAL_CODE nvarchar(50));
 
 INSERT INTO @OUTPUT_TABLE
-SELECT * FROM dbo.TH_ADDRESSES 
+SELECT 
+    T.ID,
+    T.PROVINCE      AS PROVINCE_TH,
+    E.PROVINCE      AS PROVINCE_EN,
+    T.DISTRICT      AS DISTRICT_TH,
+    E.DISTRICT      AS DISTRICT_EN,
+    T.SUBDISTRICT   AS SUBDISTRICT_TH,
+    E.SUBDISTRICT   AS SUBDISTRICT_EN,
+    T.POSTAL_CODE
+FROM dbo.TH_ADDRESSES AS T
+LEFT JOIN dbo.EN_ADDRESSES AS E ON T.ID = E.ID
 WHERE 
-(1={{this.params.POSTAL_CODE== undefined?1:0}} or POSTAL_CODE={{this.params.POSTAL_CODE}}) AND
-(1={{this.params.PROVINCE== undefined?1:0}} or PROVINCE={{this.params.PROVINCE}}) AND
-(1={{this.params.DISTRICT== undefined?1:0}} or DISTRICT={{this.params.DISTRICT}}) AND
-(1={{this.params.SUBDISTRICT== undefined?1:0}} or SUBDISTRICT={{this.params.SUBDISTRICT}})
-ORDER BY PROVINCE ASC 
+    (1 = {{this.params.ID == undefined ? 1 : 0}} OR T.ID = {{this.params.ID}}) AND
+    (1 = {{this.params.POSTAL_CODE == undefined ? 1 : 0}} OR T.POSTAL_CODE = {{this.params.POSTAL_CODE}}) AND
+    (1 = {{this.params.PROVINCE == undefined ? 1 : 0}} OR T.PROVINCE = {{this.params.PROVINCE}}) AND
+    (1 = {{this.params.DISTRICT == undefined ? 1 : 0}} OR T.DISTRICT = {{this.params.DISTRICT}}) AND
+    (1 = {{this.params.SUBDISTRICT == undefined ? 1 : 0}} OR T.SUBDISTRICT = {{this.params.SUBDISTRICT}})
+ORDER BY T.ID ASC;
 
-IF {{this.params.DISTINCT||null}} IS NULL
-SELECT * FROM @OUTPUT_TABLE
-IF {{this.params.DISTINCT||null}} = 'PROVINCE'
-SELECT DISTINCT PROVINCE FROM @OUTPUT_TABLE
-IF {{this.params.DISTINCT||null}} = 'DISTRICT'
-SELECT DISTINCT DISTRICT FROM @OUTPUT_TABLE
-IF {{this.params.DISTINCT||null}} = 'SUBDISTRICT'
-SELECT DISTINCT SUBDISTRICT FROM @OUTPUT_TABLE
+-- แสดงทั้งหมดถ้าไม่มี DISTINCT
+IF {{this.params.DISTINCT || null}} IS NULL
+    SELECT * FROM @OUTPUT_TABLE;
+
+-- กรณี DISTINCT = 'PROVINCE'
+ELSE IF {{this.params.DISTINCT || null}} = 'PROVINCE'
+    SELECT 
+        a.ID,
+        i.PROVINCE_TH,
+        i.PROVINCE_EN
+    FROM (
+        SELECT DISTINCT PROVINCE_TH, PROVINCE_EN
+        FROM @OUTPUT_TABLE
+    ) AS i
+    CROSS APPLY (
+        SELECT TOP 1 ID
+        FROM @OUTPUT_TABLE o
+        WHERE o.PROVINCE_TH = i.PROVINCE_TH
+          AND o.PROVINCE_EN = i.PROVINCE_EN
+        ORDER BY o.ID ASC
+    ) AS a;
+
+-- กรณี DISTINCT = 'DISTRICT'
+ELSE IF {{this.params.DISTINCT || null}} = 'DISTRICT'
+    SELECT 
+        a.ID,
+        i.DISTRICT_TH,
+        i.DISTRICT_EN
+    FROM (
+        SELECT DISTINCT DISTRICT_TH, DISTRICT_EN
+        FROM @OUTPUT_TABLE
+    ) AS i
+    CROSS APPLY (
+        SELECT TOP 1 ID
+        FROM @OUTPUT_TABLE o
+        WHERE o.DISTRICT_TH = i.DISTRICT_TH
+          AND o.DISTRICT_EN = i.DISTRICT_EN
+        ORDER BY o.ID ASC
+    ) AS a;
+
+-- กรณี DISTINCT = 'SUBDISTRICT'
+ELSE IF {{this.params.DISTINCT || null}} = 'SUBDISTRICT'
+    SELECT 
+        a.ID,a.DISTRICT_TH,a.DISTRICT_EN,
+        i.SUBDISTRICT_TH,
+        i.SUBDISTRICT_EN
+    FROM (
+        SELECT DISTINCT SUBDISTRICT_TH, SUBDISTRICT_EN
+        FROM @OUTPUT_TABLE
+    ) AS i
+    CROSS APPLY (
+        SELECT TOP 1 o.ID,o.DISTRICT_TH,o.DISTRICT_EN
+        FROM @OUTPUT_TABLE o
+        WHERE o.SUBDISTRICT_TH = i.SUBDISTRICT_TH
+          AND o.SUBDISTRICT_EN = i.SUBDISTRICT_EN
+        ORDER BY o.ID ASC
+    ) AS a;

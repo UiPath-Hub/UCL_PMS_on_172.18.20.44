@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 81,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany.COMPANY_DISTRICT_TH.data))(DISTRICT_TH.options, DISTRICT_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.district_ConvertToID(DefaultCompany.COMPANY_DISTRICT_TH.data)))(DISTRICT_TH.options, DISTRICT_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -23,6 +23,9 @@
     },
     {
       "key": "isRequired"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -35,6 +38,9 @@
     },
     {
       "key": "isRequired"
+    },
+    {
+      "key": "optionLabel"
     },
     {
       "key": "onOptionChange"
@@ -66,9 +72,9 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 74,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(PROVINCE_TH.selectedOptionValue, DISTRICT_TH.selectedOptionValue);}}",
-  "optionLabel": "key",
-  "optionValue": "value",
+  "onOptionChange": "{{ADDRESSING.onSelectedDistrict(ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue), ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionValue));}}",
+  "optionLabel": "{{DISTRICT_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"DISTRICT_TH\":\"DISTRICT_EN\"))}}",
+  "optionValue": "ID",
   "originalBottomRow": 81,
   "originalTopRow": 75,
   "parentColumnSpace": 19.46875,

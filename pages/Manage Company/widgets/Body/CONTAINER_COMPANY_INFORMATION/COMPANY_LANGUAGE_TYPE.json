@@ -26,9 +26,16 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onSelectionChange"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSelectionChange"
+    }
+  ],
   "flexVerticalAlignment": "start",
   "isDisabled": false,
   "isInline": true,
@@ -50,6 +57,7 @@
   "mobileRightColumn": 40,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
+  "onSelectionChange": "{{ADDRESSING.onChangedLanguage();\nADDRESSING_BILLING.onChangedLanguage();}}",
   "options": [
     {
       "label": "TH",

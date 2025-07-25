@@ -1,4 +1,7 @@
 export default {
+	onChangedLanguage:async()=>{
+		DefaultCompany[ADDRESSING.PROVINCE_PROP_NAME].data = ADDRESSING.PROVINCE_WIDGET.selectedOptionValue
+	},
 	onClick_ButtonCancel:async ()=>{
 		if(!Configs.IS_THIRD_PARTY)
 			navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
@@ -26,12 +29,12 @@ export default {
 				//let datastr = "data"
 				alertBilling = await GlobalFunctions.manualValidateV2(Default_COMPANY_BILLING,CompanyBilling_Widgets);
 				if(alertBilling.length > 0){
-					showAlert(`Some field on billing information is required or invalid.`)
+					showAlert(`Billing information is required or invalid. : ${alertBilling.join(',')}`)
 					//alertWidget = [...alertWidget,...alertBilling]
 				}
 			}
 			if(alertWidget.length > 0){
-				showAlert(`Some field on company information is required or invalid.`)
+				showAlert(`Company information is required or invalid. : ${ alertWidget.join(',')}`)
 			}
 			if(alertWidget.length == 0 && alertBilling.length == 0)
 			showModal(MODAL_SAVE.name);
@@ -92,7 +95,7 @@ export default {
 		}
 	},
 	keepChange:async ()=>{
-		let datastr="data";
+		/*let datastr="data";
 		let changedData = {
 			...CONTAINER_COMPANY_INFORMATION[datastr],
 			...CONTAINER_COMPANY_INFO[datastr],
@@ -113,7 +116,11 @@ export default {
 			"BILLING_COMPANY_BUILDING_NAME_TH":BCOMPANY_BUILDING_NAME_TH.text,
 			"BILLING_COMPANY_BUSINESS_TYPE_TH":await BILLING_COMPANY_BUSINESS_TYPE.selectedOptionValue.split("/")[0]||"",
 			"BILLING_COMPANY_BUSINESS_TYPE_EN":await BILLING_COMPANY_BUSINESS_TYPE.selectedOptionValue.split("/")[1]||""
-		}
+		}*/
+		let changedData = Object.fromEntries(
+			Object.entries({...Company_Widgets,...CompanyBilling_Widgets}).map(([key, value]) => [key, value.data])
+		);
+		
 		await storeValue(Configs.newCompanyTempFlag,changedData,true);
 	},
 	onContactPageIndexChange:async ()=>{

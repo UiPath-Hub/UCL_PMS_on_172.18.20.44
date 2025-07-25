@@ -6,25 +6,25 @@ export default {
 		let alert = [];
 		await Promise.all( Object.keys(defaultEntities).map(async (key)=>{
 			let keystr = key.toString();
-			if(!widgetsMap[keystr]) return;
-			if(!widgetsMap[keystr].widgetName)return;
+			if(widgetsMap[keystr]===undefined) return;
+			if(widgetsMap[keystr].widgetName===undefined)return;
 			
-			let data = widgetsMap[keystr].data||"";
+			let data = widgetsMap[keystr].data=== undefined?"":widgetsMap[keystr].data;
 			const log = {};
 			log.key = keystr;
 			log.valid = widgetsMap[keystr].isValid;
 			log.disable = widgetsMap[keystr].isDisabled;
 			log.visible = widgetsMap[keystr].isVisible;
 			log.data = data;
-			console.log(log); 
+			//console.log(log); 
 			//find widget of the field by get from widget name of widgetMap
-			let widgetName = widgetsMap[keystr].widgetName;
+			//let widgetName = widgetsMap[keystr].widgetName;
 			defaultEntities[keystr].data = data
 			if (!widgetsMap[keystr].isValid && !widgetsMap[keystr].isDisabled && widgetsMap[keystr].isVisible) {
 				if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
 					defaultEntities[keystr].color = Configs.requiredColorAlert;
 				}
-				alert.push(keystr);
+				alert.push(widgetsMap[keystr].label??keystr);
 			} else {
 				if(defaultEntities[keystr].color!=Configs.requiredColorPass){
 					defaultEntities[keystr].color = Configs.requiredColorPass;
@@ -32,7 +32,7 @@ export default {
 			}
 			
 		}))
-		console.log(alert)
+		//console.log(alert)
 		return alert;
 	},
 	manualValidate:async (defaultEntities,widgetsGroupForm)=>{
