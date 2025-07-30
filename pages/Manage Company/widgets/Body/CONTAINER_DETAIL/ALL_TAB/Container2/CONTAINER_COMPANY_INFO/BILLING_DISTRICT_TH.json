@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 68,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_COMPANY_BILLING.BILLING_DISTRICT_TH.data))(BILLING_DISTRICT_TH.options, BILLING_DISTRICT_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING_BILLING.district_ConvertToID(Default_COMPANY_BILLING.BILLING_DISTRICT_TH.data)))(BILLING_DISTRICT_TH.options, BILLING_DISTRICT_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -23,6 +23,9 @@
     },
     {
       "key": "isRequired"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -38,6 +41,9 @@
     },
     {
       "key": "onOptionChange"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicTriggerPathList": [
@@ -66,9 +72,9 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 74,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING_BILLING.onSelectedDistrict(BILLING_PROVINCE_TH.selectedOptionValue, BILLING_DISTRICT_TH.selectedOptionValue);}}",
-  "optionLabel": "key",
-  "optionValue": "value",
+  "onOptionChange": "{{ADDRESSING_BILLING.onSelectedDistrict(ADDRESSING_BILLING.province_ConvertToTH(BILLING_PROVINCE_TH.selectedOptionValue), ADDRESSING_BILLING.district_ConvertToTH(BILLING_DISTRICT_TH.selectedOptionValue));}}",
+  "optionLabel": "{{BILLING_DISTRICT_TH.sourceData.map((item) => (ADDRESSING_BILLING.LanguageControl==\"TH\"? \"DISTRICT_TH\":\"DISTRICT_EN\"))}}",
+  "optionValue": "ID",
   "originalBottomRow": 68,
   "originalTopRow": 62,
   "parentColumnSpace": 19.46875,

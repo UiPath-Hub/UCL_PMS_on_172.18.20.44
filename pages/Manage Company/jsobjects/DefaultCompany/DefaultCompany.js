@@ -1,5 +1,5 @@
 export default {
-	COMPANY_ID:{data:"",regex:"",required:false,color:""}
+	COMPANY_ID:{data:"",regex:"",required:false,color:"",lebel:"id"}
 	,COMPANY_TYPE_NAME:{data:"",regex:"",required:false,color:""}
 	,COMPANY_NAME_TH:{data:"",regex:"",required:false,color:""}
 	,COMPANY_NAME_EN:{data:"",regex:"",required:false,color:""}

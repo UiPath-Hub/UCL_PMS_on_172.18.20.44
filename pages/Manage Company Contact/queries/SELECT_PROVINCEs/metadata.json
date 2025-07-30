@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT DISTINCT PROVINCE FROM dbo.TH_ADDRESSES ORDER BY PROVINCE ASC",
+      "body": "SELECT \n    (SELECT TOP(1) ID FROM dbo.TH_ADDRESSES tt WHERE DistinctProvinces.PROVINCE_TH = tt.PROVINCE) as ID,\n    PROVINCE_TH,\n\t\tPROVINCE_EN\nFROM (\n    SELECT DISTINCT t.PROVINCE as PROVINCE_TH,e.PROVINCE as PROVINCE_EN\n    FROM dbo.TH_ADDRESSES t join dbo.EN_ADDRESSES e on t.ID = e.ID \n) AS DistinctProvinces\nORDER BY PROVINCE_TH ASC;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

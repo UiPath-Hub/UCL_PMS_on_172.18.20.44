@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 62,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_COMPANY_BILLING.BILLING_PROVINCE_TH.data))(BILLING_PROVINCE_TH.options, BILLING_PROVINCE_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING_BILLING.province_ConvertToID(Default_COMPANY_BILLING.BILLING_PROVINCE_TH.data)))(BILLING_PROVINCE_TH.options, BILLING_PROVINCE_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -23,6 +23,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -38,6 +41,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
     }
   ],
   "dynamicTriggerPathList": [
@@ -66,9 +72,9 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{ADDRESSING_BILLING.onSelectedProvice(BILLING_PROVINCE_TH.selectedOptionValue);}}",
-  "optionLabel": "PROVINCE",
-  "optionValue": "PROVINCE",
+  "onOptionChange": "{{ADDRESSING_BILLING.onSelectedProvice(ADDRESSING_BILLING.province_ConvertToTH(BILLING_PROVINCE_TH.selectedOptionValue));}}",
+  "optionLabel": "{{BILLING_PROVINCE_TH.sourceData.map((item) => (ADDRESSING_BILLING.LanguageControl==\"TH\"? \"PROVINCE_TH\":\"PROVINCE_EN\"))}}",
+  "optionValue": "ID",
   "originalBottomRow": 62,
   "originalTopRow": 58,
   "parentColumnSpace": 11.4375,
@@ -79,7 +85,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "serverSideFiltering": false,
-  "sourceData": "{{SELECT_PROVINCEs.data||[{ PROVINCE: \"\"}]}}",
+  "sourceData": "{{SELECT_PROVINCEs.data}}",
   "topRow": 58,
   "type": "SELECT_WIDGET",
   "version": 1,

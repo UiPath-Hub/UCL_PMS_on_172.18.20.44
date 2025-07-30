@@ -118,6 +118,10 @@
       {
         "name": "OTHER",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_LANGUAGE_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       }
     ]
   }

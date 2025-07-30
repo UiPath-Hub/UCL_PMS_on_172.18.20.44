@@ -29,5 +29,5 @@ export default {
 						dd:appsmith.store.IS_THIRD_PARTY
 					 }
 	}
-	,test:()=>Default_COMPANY_BILLING
+	,test:()=>BILLING_CONTACT_EMAIL.label
 }
