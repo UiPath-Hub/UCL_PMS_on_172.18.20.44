@@ -12,7 +12,7 @@ export default {
 	COMPANY_CONTACT_ID:"COMPANY_CONTACT_ID",
 	BILLING_INFORMATION_ID:"BILLING_INFORMATION_ID",
 	Invoice_type:{NON_VAT:"Non-VAT",VAT:"VAT",currentType: ""},
-	invoice_items:[{"Description":"-","Quantity":"-","Unit Price":"-","Amount":"-"}],
+	invoice_items:null,
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
 }

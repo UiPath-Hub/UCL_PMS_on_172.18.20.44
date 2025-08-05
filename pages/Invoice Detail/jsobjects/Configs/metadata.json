@@ -61,7 +61,7 @@
       },
       {
         "name": "invoice_items",
-        "value": "[{\n  \"Description\": \"-\",\n  \"Quantity\": \"-\",\n  \"Unit Price\": \"-\",\n  \"Amount\": \"-\"\n}]"
+        "value": "null"
       },
       {
         "name": "requiredColorAlert",
