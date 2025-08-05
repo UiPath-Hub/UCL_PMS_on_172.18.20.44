@@ -11,20 +11,21 @@ export default {
 		await Promise.all([
 			SELECT_INVOICE.run(),
 			SELECT_INVOICE_ITEM.run(),
-			SELECT_COMPANY.run(),
-			SELECT_COMPANY_CONTACT.run(),
-			SELECT_BILLING.run()])
+			//SELECT_COMPANY.run(),
+			//SELECT_COMPANY_CONTACT.run(),
+			//SELECT_BILLING.run()
+		])
 		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
 		console.log(SELECT_INVOICE.data);
-		let InitializationEntityList = [{ENTITY:PMS_INVOICE_LM,DATA: SELECT_INVOICE.data},
-																			{ENTITY:PMS_COMPANY_LM,DATA: SELECT_COMPANY.data},
-																			{ENTITY:PMS_COMPANY_CONTACT_LM,DATA: SELECT_COMPANY_CONTACT.data},
-																			{ENTITY:PMS_COMPANY_BILLING,DATA: SELECT_BILLING.data}
+		let InitializationEntityList = [{ENTITY:PMS_INVOICE_LM,DATA: SELECT_INVOICE.data[0]},
+																			//{ENTITY:PMS_COMPANY_LM,DATA: SELECT_COMPANY.data},
+																			//{ENTITY:PMS_COMPANY_CONTACT_LM,DATA: SELECT_COMPANY_CONTACT.data},
+																			//{ENTITY:PMS_COMPANY_BILLING,DATA: SELECT_BILLING.data}
 																		];
 		await GlobalFunctions.initDefault(InitializationEntityList);		
 		
 		//manipulate field data		
-		if(SELECT_COMPANY.data && SELECT_COMPANY.data[0] && SELECT_COMPANY.data[0].OVERWRITE_BILLING_ADDRESS){
+		/*if(SELECT_COMPANY.data && SELECT_COMPANY.data[0] && SELECT_COMPANY.data[0].OVERWRITE_BILLING_ADDRESS){
 			//mapping billing to company
 			PMS_COMPANY_LM.COMPANY_ADD_NO.data=			PMS_COMPANY_BILLING.BILLING_COMPANY_ADD_NO.data
 			PMS_COMPANY_LM.COMPANY_FLOOR.data=			PMS_COMPANY_BILLING.BILLING_COMPANY_FLOOR.data
@@ -38,7 +39,7 @@ export default {
 		}
 
 		PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_FIRST_NAME_TH.data = PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_FIRST_NAME_TH.data + " " + PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_SUR_NAME_TH.data
-		resetWidget(Body.widgetName,true);
+		*/
 	},
 	pageLoad	:async ()=>{
 		Configs.forceKick=false;

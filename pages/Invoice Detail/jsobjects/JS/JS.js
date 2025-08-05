@@ -1,6 +1,6 @@
 export default {
 	onDocReviewVisible:()=>{
-		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?SELECT_INVOICE.data[0].UPDATE_PDF_DRAFT_STATUS == true:false
+		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?(SELECT_INVOICE.data[0].FILE_DRAFT??SELECT_INVOICE.data[0].FILE_ORIGINAL)!=null:false
 	},
 	onClick_Close:()=>{
 		navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
@@ -38,10 +38,10 @@ export default {
 		else Configs.invoice_items = []
 		await resetWidget(Table_PMS_INVOICE_DETAIL_LM.widgetName,false);
 	},
-	onAddNewItem:async ()=>{
+	/*onAddNewItem:async ()=>{
 		showModal(Modal_Add.name)
-	},
-	onAddNewItemConfirm:async ()=>{
+	},*/
+	/*onAddNewItemConfirm:async ()=>{
 		let i = 0;
 		let ids=Configs.invoice_items.map((ele)=>ele.INVOICE_DETAIL_ID);
 		if(ids.includes(SELECT_NEW_ITEM.selectedOptionValue)){
@@ -60,5 +60,5 @@ export default {
 		}
 		await resetWidget("Table_PMS_INVOICE_DETAIL_LM",false);		
 		closeModal(Modal_Add.name)
-	}
+	}*/
 }

@@ -1,17 +1,23 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowCurrencyChange": "false",
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 4,
   "boxShadow": "none",
-  "defaultText": "{{PMS_INVOICE_LM.COMPANY_SOI.data}}",
+  "decimals": 2,
+  "defaultCurrencyCode": "THB",
+  "defaultText": "{{(PMS_INVOICE_LM.INVOICE_AMOUNT.data||0)}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
     },
     {
       "key": "isRequired"
@@ -21,13 +27,13 @@
     },
     {
       "key": "labelTextColor"
-    },
-    {
-      "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
+    {
+      "key": "allowCurrencyChange"
+    },
     {
       "key": "isRequired"
     },
@@ -37,44 +43,41 @@
   ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{PMS_INVOICE_LM.COMPANY_SOI.required}}",
+  "isRequired": "{{PMS_INVOICE_LM.INVOICE_AMOUNT.required}}",
   "isVisible": true,
-  "key": "nwk391w658",
-  "label": "Soi",
+  "key": "xhej12u7lf",
+  "label": "Sub Amount",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{PMS_INVOICE_LM.COMPANY_SOI.color}}",
-  "labelTextSize": "1rem",
+  "labelTextColor": "{{PMS_INVOICE_LM.INVOICE_AMOUNT.color}}",
+  "labelTextSize": "",
   "labelWidth": "10",
-  "leftColumn": 34,
-  "maxChars": "50",
+  "leftColumn": 35,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 11,
-  "mobileLeftColumn": 2,
-  "mobileRightColumn": 22,
-  "mobileTopRow": 4,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 34,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 36,
   "needsErrorInfo": false,
-  "originalBottomRow": 142,
-  "originalTopRow": 138,
-  "parentColumnSpace": 19.5,
-  "parentId": "ccweqe1x5o",
+  "originalBottomRow": 141,
+  "originalTopRow": 137,
+  "parentColumnSpace": 17.669921875,
+  "parentId": "sw22mqvfq7",
   "parentRowSpace": 10,
-  "regex": "{{PMS_INVOICE_LM.COMPANY_SOI.regex}}",
+  "regex": "{{PMS_INVOICE_LM.INVOICE_AMOUNT.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 61,
-  "shouldAllowAutofill": false,
+  "rightColumn": 64,
   "showStepArrows": false,
-  "topRow": 4,
-  "type": "INPUT_WIDGET_V2",
-  "version": 2,
-  "widgetId": "usb366e8vi",
-  "widgetName": "COMPANY_SOI"
+  "topRow": 0,
+  "type": "CURRENCY_INPUT_WIDGET",
+  "version": 1,
+  "widgetId": "3ljrfb80v5",
+  "widgetName": "INVOICE_AMOUNT"
 }
