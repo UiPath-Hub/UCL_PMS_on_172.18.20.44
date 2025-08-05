@@ -43,7 +43,7 @@
   "isRequired": "{{PMS_INVOICE_LM.VAT_TYPE.required}}",
   "isVisible": true,
   "key": "nwk391w658",
-  "label": "Tax",
+  "label": "Vat",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
