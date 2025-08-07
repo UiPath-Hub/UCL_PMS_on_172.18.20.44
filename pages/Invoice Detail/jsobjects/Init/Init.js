@@ -2,11 +2,15 @@ export default {
 	dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangkok").format("yyyy-mm-dd"),
 	initDefault:async ()=>{
 
-		if(appsmith.store.INIT===undefined){
+		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams.InvoiceNumber){
 			Configs.forceKick = true;
 			Configs.errorAlert = "Conflict parameter: Unknown selected invoice.";
 			showModal(Modal_ErrorAlert.name);
 			return;
+		}else{
+			if(appsmith.URL.queryParams.InvoiceNumber){
+				storeValue("INIT",{INVOICE_NO:appsmith.URL.queryParams.InvoiceNumber});
+			}
 		}
 		await Promise.all([
 			SELECT_INVOICE.run(),
