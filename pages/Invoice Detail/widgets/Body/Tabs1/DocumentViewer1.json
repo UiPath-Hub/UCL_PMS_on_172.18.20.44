@@ -2,7 +2,7 @@
   "animateLoading": true,
   "bottomRow": 89,
   "bottomRowBeforeCollapse": 89,
-  "docUrl": "{{SELECT_INVOICE.data[0].FILE_DRAFT||SELECT_INVOICE.data[0].FILE_ORIGINAL}}",
+  "docUrl": "{{SELECT_INVOICE.data[0].FILE_ORIGINAL||SELECT_INVOICE.data[0].FILE_DRAFT}}",
   "dynamicBindingPathList": [
     {
       "key": "isVisible"
