@@ -9,16 +9,11 @@ export default {
 			return;
 		}else{
 			if(appsmith.URL.queryParams.InvoiceNumber){
-				storeValue("INIT",{INVOICE_NO:appsmith.URL.queryParams.InvoiceNumber});
+				await storeValue("INIT",{INVOICE_NO:appsmith.URL.queryParams.InvoiceNumber});
 			}
 		}
-		await Promise.all([
-			SELECT_INVOICE.run(),
-			SELECT_INVOICE_ITEM.run(),
-			//SELECT_COMPANY.run(),
-			//SELECT_COMPANY_CONTACT.run(),
-			//SELECT_BILLING.run()
-		])
+		await SELECT_INVOICE.run()
+		await SELECT_INVOICE_ITEM.run(),
 		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
 		console.log(SELECT_INVOICE.data);
 		let InitializationEntityList = [{ENTITY:PMS_INVOICE_LM,DATA: SELECT_INVOICE.data[0]},
