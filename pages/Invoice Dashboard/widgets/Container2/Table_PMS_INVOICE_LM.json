@@ -239,7 +239,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "#f4f4f5",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow[\"CREATE_DATE\"]?moment(currentRow[\"CREATE_DATE\"]).subtract(7,'hour').format(Configs.dateFormat):\"\")) :  currentRow[\"CREATE_DATE\"]?moment(currentRow[\"CREATE_DATE\"]).subtract(7,'hour').format(Configs.dateFormat):\"\" })()}}",
+      "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( currentRow[\"CREATE_DATE\"]?moment(currentRow[\"CREATE_DATE\"]).format(Configs.dateFormat):\"\")) :  currentRow[\"CREATE_DATE\"]?moment(currentRow[\"CREATE_DATE\"]).format(Configs.dateFormat):\"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
