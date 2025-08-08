@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 4,
   "boxShadow": "none",
-  "defaultText": "{{PMS_INVOICE_LM.CREATE_DATE.data?moment(PMS_INVOICE_LM.CREATE_DATE.data).subtract(7,\"hour\").format(Configs.dateFormat):\"\"}}",
+  "defaultText": "{{PMS_INVOICE_LM.CREATE_DATE.data?moment(PMS_INVOICE_LM.CREATE_DATE.data).format(Configs.dateFormat):\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
