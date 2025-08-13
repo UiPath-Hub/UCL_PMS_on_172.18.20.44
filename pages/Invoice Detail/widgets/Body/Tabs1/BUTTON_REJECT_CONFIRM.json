@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 93,
+  "bottomRow": 96,
   "boxShadow": "none",
   "buttonColor": "#ef4444",
   "buttonVariant": "PRIMARY",
@@ -11,12 +11,12 @@
       "key": "borderRadius"
     },
     {
-      "key": "isDisabled"
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
-      "key": "isDisabled"
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -25,9 +25,9 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": "{{!JS.onDocReviewVisible()}}",
+  "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{JS.onDocReviewVisible()}}",
   "key": "njmdz4xkxz",
   "leftColumn": 51,
   "minWidth": 120,
@@ -49,7 +49,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 61,
   "text": "Reject",
-  "topRow": 89,
+  "topRow": 92,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "mrrigg4dkw",
