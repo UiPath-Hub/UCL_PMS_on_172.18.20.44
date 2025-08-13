@@ -2,6 +2,10 @@ export default {
 	onDocReviewVisible:()=>{
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?(SELECT_INVOICE.data[0].FILE_DRAFT??SELECT_INVOICE.data[0].FILE_ORIGINAL)!=null:false
 	},
+	onBttn_ChangeStatusDisable:()=>{
+		let disableStatus = ["Approve","Waiting for Payment","Over Due","Canceled","Payment Completed","Rejected"];
+		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?disableStatus.includes(SELECT_INVOICE.data[0].STATUS):true
+	},
 	onClick_Close:()=>{
 		navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
 	},

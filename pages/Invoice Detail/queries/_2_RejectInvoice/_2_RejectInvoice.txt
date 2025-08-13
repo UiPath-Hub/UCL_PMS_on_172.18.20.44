@@ -2,26 +2,18 @@ SET NOCOUNT ON;
 IF @@TRANCOUNT = 0 
 BEGIN TRANSACTION;
 
-declare @stampStatus nvarchar(MAX) = N'Rejected', @statusBeforeApproved nvarchar(MAX) = 'Waiting for Approval'
+declare @stampStatus nvarchar(MAX) = N'Rejected';
 if (select COUNT(DISTINCT SYSTEM_VALUE) from dbo.PMS_MASTER_LIST 
-		where TYPE_NAME = 'INVOICE_STATUS' and 
-		(@stampStatus = SYSTEM_VALUE or
-		@statusBeforeApproved= SYSTEM_VALUE)) <> 2
+		where TYPE_NAME = 'INVOICE_STATUS' and @stampStatus = SYSTEM_VALUE) <> 1
 BEGIN
 ROLLBACK TRANSACTION;
 THROW 71000, 'Referenced status conflict with master list, Could not update the invoice''s status.', 1;
 END
 
-if {{SELECT_INVOICE.data[0].STATUS}} = @statusBeforeApproved
-begin
 update dbo.PMS_INVOICE_LM 
-set STATUS = @stampStatus
+set STATUS = @stampStatus,
+CREDIT_NOTE = {{CREDIT_NOTE_INPUT.text}}
 where INVOICE_ID = {{SELECT_INVOICE.data[0].INVOICE_ID}} and DELETE_FLAG=0
-end
-else
-BEGIN
-ROLLBACK TRANSACTION;
-THROW 71001, 'Status conflict with use case scenario, Could not update the invoice''s status.', 1;
-end
+
 
 COMMIT TRANSACTION;

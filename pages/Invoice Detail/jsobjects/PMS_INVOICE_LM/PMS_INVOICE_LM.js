@@ -48,5 +48,5 @@ COMPANY_CODE:{data:"",regex:"",required:"",color:""},
 PDF_DRAFT_STATUS:{data:"",regex:"",required:"",color:""},
 PDF_APPROVE_STATUS:{data:"",regex:"",required:"",color:""},
 PDF_SEND_FINISH_STATUS:{data:"",regex:"",required:"",color:""},
-
+CREDIT_NOTE:{data:"",regex:"",required:"",color:""},
 }

@@ -202,6 +202,10 @@
       {
         "name": "PDF_SEND_FINISH_STATUS",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREDIT_NOTE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       }
     ]
   }
