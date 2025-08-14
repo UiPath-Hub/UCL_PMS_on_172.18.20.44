@@ -1,6 +1,13 @@
 export default {
 	dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangkok").format("yyyy-mm-dd"),
 	initDefault:async ()=>{
+		closeModal(MODAL_APPROVE_CONFIRM.name);
+		closeModal(Modal_ErrorAlert.name);
+		closeModal(MODAL_DELETE.name);
+		closeModal(Modal_ManageItem.name);
+		closeModal(MODAL_REJECT_CONFIRM.name);
+		closeModal(Modal_SendToRobot.name);
+		closeModal(Modal_Session_detail.name);
 
 		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams.InvoiceNumber){
 			Configs.forceKick = true;
