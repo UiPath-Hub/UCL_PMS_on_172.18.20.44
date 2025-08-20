@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 14,
   "boxShadow": "none",
   "defaultText": "",
   "dynamicBindingPathList": [
@@ -14,16 +14,16 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "inputType": "TEXT",
+  "inputType": "MULTI_LINE_TEXT",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": true,
   "isVisible": true,
   "key": "0xq8grjc0h",
-  "label": "Credit Note Number",
+  "label": "Remark for Reject",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
@@ -38,6 +38,8 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
+  "originalBottomRow": 14,
+  "originalTopRow": 6,
   "parentColumnSpace": 9.96875,
   "parentId": "n00ddq3jsm",
   "parentRowSpace": 10,
@@ -45,11 +47,12 @@
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 53,
+  "shouldAllowAutofill": false,
   "shouldScrollContents": true,
   "showStepArrows": false,
   "topRow": 6,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "gg39td5885",
-  "widgetName": "CREDIT_NOTE_INPUT"
+  "widgetName": "REMARK_FOR_REJECT_INPUT"
 }

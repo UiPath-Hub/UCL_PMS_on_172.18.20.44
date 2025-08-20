@@ -1,9 +1,9 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 96,
+  "bottomRow": 19,
   "boxShadow": "none",
-  "buttonColor": "green",
+  "buttonColor": "#ef4444",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
@@ -12,17 +12,11 @@
     },
     {
       "key": "isDisabled"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -31,33 +25,33 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": "{{JS.onBttn_ChangeStatusDisable()}}",
+  "isDisabled": "{{!(_.trim(CREDIT_NOTE_INPUT.text))}}",
   "isLoading": false,
-  "isVisible": "{{JS.onDocReviewVisible()}}",
+  "isVisible": true,
   "key": "njmdz4xkxz",
-  "leftColumn": 37,
+  "leftColumn": 8,
   "minWidth": 120,
   "mobileBottomRow": 14,
   "mobileLeftColumn": 6,
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(MODAL_APPROVE_CONFIRM.name);}}",
-  "originalBottomRow": 93,
-  "originalTopRow": 89,
+  "onClick": "{{_3_CNInvoice.run().then(() => {\n  closeModal(MODAL_CN.name);\n  navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');\n}).catch(() => {\n  showAlert(_3_CNInvoice.data, 'error');\n});}}",
+  "originalBottomRow": 16,
+  "originalTopRow": 12,
   "parentColumnSpace": 9.4375,
-  "parentId": "pvz3dvvsxz",
+  "parentId": "iss63f1vdk",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 47,
-  "text": "Approve",
-  "topRow": 92,
+  "rightColumn": 24,
+  "text": "Yes",
+  "topRow": 15,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "o92awbnwm1",
-  "widgetName": "BUTTON_APPROVE_CONFIRM"
+  "widgetId": "50i5g7m0r0",
+  "widgetName": "BTTN_CONFIRM_CN"
 }

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 96,
+  "bottomRow": 6,
   "boxShadow": "none",
   "buttonColor": "#ef4444",
   "buttonVariant": "PRIMARY",
@@ -11,12 +11,12 @@
       "key": "borderRadius"
     },
     {
-      "key": "isVisible"
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
     {
-      "key": "isVisible"
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -25,33 +25,33 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{JS.onBttn_ChangeStatusCanceledDisable()}}",
   "isLoading": false,
-  "isVisible": "{{JS.onDocReviewVisible()}}",
+  "isVisible": true,
   "key": "njmdz4xkxz",
-  "leftColumn": 51,
+  "leftColumn": 37,
   "minWidth": 120,
   "mobileBottomRow": 14,
   "mobileLeftColumn": 6,
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(MODAL_REJECT_CONFIRM.name);}}",
+  "onClick": "{{showModal(MODAL_CN.name);}}",
   "originalBottomRow": 93,
   "originalTopRow": 89,
-  "parentColumnSpace": 9.4375,
-  "parentId": "pvz3dvvsxz",
+  "parentColumnSpace": 7.30078125,
+  "parentId": "sd7cwvvonh",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 61,
-  "text": "Reject",
-  "topRow": 92,
+  "rightColumn": 62,
+  "text": "Cancel",
+  "topRow": 2,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "mrrigg4dkw",
-  "widgetName": "BUTTON_REJECT_CONFIRM"
+  "widgetId": "uunflitaz4",
+  "widgetName": "BUTTON_CANCEL_INVOICE"
 }
