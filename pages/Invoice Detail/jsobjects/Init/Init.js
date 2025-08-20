@@ -19,6 +19,9 @@ export default {
 				await storeValue("INIT",{INVOICE_NO:appsmith.URL.queryParams.InvoiceNumber});
 			}
 		}
+		if(!appsmith.store.INIT.INVOICE_NO){
+			Configs.INVOICE_ID = "INVOICE_ID"
+		}
 		await SELECT_INVOICE.run()
 		await SELECT_INVOICE_ITEM.run(),
 		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
