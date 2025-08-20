@@ -13,7 +13,7 @@
       },
       {
         "name": "permissions",
-        "value": "{\n  VIEW: \"INVV\",\n  EDIT: \"INVE\"\n}"
+        "value": "{\n  VIEW: \"INVV\",\n  EDIT: \"INVE\",\n  SHOW_INVOICE_EXECUTE: \"INEX\",\n  SHOW_INVONCE_CN: \"INCN\"\n}"
       },
       {
         "name": "forceKick",

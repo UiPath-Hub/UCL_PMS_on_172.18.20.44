@@ -49,4 +49,5 @@ PDF_DRAFT_STATUS:{data:"",regex:"",required:"",color:""},
 PDF_APPROVE_STATUS:{data:"",regex:"",required:"",color:""},
 PDF_SEND_FINISH_STATUS:{data:"",regex:"",required:"",color:""},
 CREDIT_NOTE:{data:"",regex:"",required:"",color:""},
+	REMARK_FOR_REJECT:{data:"",regex:"",required:"",color:""},
 }

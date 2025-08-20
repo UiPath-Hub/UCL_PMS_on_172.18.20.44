@@ -2,7 +2,7 @@ SET NOCOUNT ON;
 IF @@TRANCOUNT = 0 
 BEGIN TRANSACTION;
 
-declare @stampStatus nvarchar(MAX) = N'Rejected';
+declare @stampStatus nvarchar(MAX) = N'Canceled';
 if (select COUNT(DISTINCT SYSTEM_VALUE) from dbo.PMS_MASTER_LIST 
 		where TYPE_NAME = 'INVOICE_STATUS' and @stampStatus = SYSTEM_VALUE) <> 1
 BEGIN
@@ -12,7 +12,7 @@ END
 
 update dbo.PMS_INVOICE_LM 
 set STATUS = @stampStatus,
-REMARK_FOR_REJECT = {{REMARK_FOR_REJECT_INPUT.text}}
+CREDIT_NOTE = {{CREDIT_NOTE_INPUT.text}}
 where INVOICE_ID = {{SELECT_INVOICE.data[0].INVOICE_ID}} and DELETE_FLAG=0
 
 

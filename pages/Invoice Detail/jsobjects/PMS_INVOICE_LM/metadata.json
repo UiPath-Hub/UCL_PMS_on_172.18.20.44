@@ -206,6 +206,10 @@
       {
         "name": "CREDIT_NOTE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "REMARK_FOR_REJECT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       }
     ]
   }
