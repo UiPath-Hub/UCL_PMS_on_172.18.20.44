@@ -7,7 +7,7 @@ export default {
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?disableStatus.includes(SELECT_INVOICE.data[0].STATUS):true
 	},
 	onBttn_ChangeStatus_RejectDisable:()=>{
-		let disableStatus = ["Rejected","Canceled"];
+		let disableStatus = ["Rejected","Canceled","Waiting for Payment"];
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?disableStatus.includes(SELECT_INVOICE.data[0].STATUS):true
 	},
 	onBttn_ChangeStatus_CanceledDisable:()=>{
