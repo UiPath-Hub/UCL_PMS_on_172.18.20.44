@@ -1,6 +1,6 @@
 {
   "gitSyncId": "68917a8455eda7018e8c1560_1cfd20e9-e17e-4e5e-9626-a2bbdbb77a46",
-  "id": "Invoice Detail_JS.onBttn_ChangeStatusRejectDisable",
+  "id": "Invoice Detail_JS.onBttn_ChangeStatus_RejectDisable",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "JS.onBttn_ChangeStatusRejectDisable",
-    "name": "onBttn_ChangeStatusRejectDisable",
+    "fullyQualifiedName": "JS.onBttn_ChangeStatus_RejectDisable",
+    "name": "onBttn_ChangeStatus_RejectDisable",
     "pageId": "Invoice Detail",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
