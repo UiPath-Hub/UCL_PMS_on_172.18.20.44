@@ -120,7 +120,7 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
       {
-        "name": "SUBMETER_ID",
+        "name": "SUB_INVENTORY",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
       {

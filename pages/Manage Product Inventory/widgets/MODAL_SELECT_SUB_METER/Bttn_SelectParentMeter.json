@@ -40,7 +40,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(MODAL_SELECT_SUB_METER.name);\nJS.onClick_SelectParentMeter(TABLE_SearchForParentMeter.selectedRow.INVENTORY_ID);}}",
+  "onClick": "{{closeModal(MODAL_SELECT_SUB_METER.name);\nJS.onClick_SelectParentMeter(TABLE_SearchForParentMeter.selectedRow.INVENTORY_ID)}}",
   "originalBottomRow": 56,
   "originalTopRow": 52,
   "parentId": "tnqz951xjp",

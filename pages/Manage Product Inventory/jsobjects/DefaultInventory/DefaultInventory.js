@@ -27,6 +27,6 @@ export default {
 	,PERCENTAGE:{data:"",regex:"",required:false,color:""}
 	,INVENTORY_PICTURE:{data:"",regex:"",required:false,color:""}
 	,ACCOUNTING_DESCRIPTION:{data:"",regex:"",required:false,color:""}
-	,SUBMETER_ID:{data:"",regex:"",required:false,color:""}
+	,SUB_INVENTORY:{data:"",regex:"",required:false,color:""}
 	,IMAGE:{data:""},
 }

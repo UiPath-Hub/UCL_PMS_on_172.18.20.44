@@ -93,7 +93,7 @@
       },
       {
         "name": "SUBMETER_ID",
-        "value": "{\n  ...SUBMETER_ID,\n  data: SUBMETER_ID.text\n}"
+        "value": "{\n  ...SUB_INVENTORY,\n  data: SUB_INVENTORY.text\n}"
       }
     ]
   }
