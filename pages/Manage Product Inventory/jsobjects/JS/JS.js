@@ -25,7 +25,8 @@ export default {
 		DefaultInventory.SUB_INVENTORY.data = INVENTORY_ID;
 		let detail =_1_SP_SEARCH_FOR_PARENT_METER.data.filter((row)=>row.INVENTORY_ID===INVENTORY_ID);
 		if(detail.length>0)
-			SUB_INVENT_DETAIL.setValue(detail[0]?.INVENTORY_NAME);
+			//SUB_INVENT_DETAIL.setValue(detail[0]?.INVENTORY_NAME);
+			DefaultInventory.SUB_INVENT_DETAIL.data = detail[0]?.INVENTORY_NAME;
 		else
 			SUB_INVENT_DETAIL.setValue("");
 	},

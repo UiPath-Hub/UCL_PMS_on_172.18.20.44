@@ -126,6 +126,10 @@
       {
         "name": "IMAGE",
         "value": "{\n  data: \"\"\n}"
+      },
+      {
+        "name": "SUB_INVENT_DETAIL",
+        "value": "{\n  data: \"\"\n}"
       }
     ]
   }

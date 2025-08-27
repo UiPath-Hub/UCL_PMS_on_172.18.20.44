@@ -4,6 +4,7 @@
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 17,
+  "bottomRowBeforeCollapse": 17,
   "boxShadow": "none",
   "defaultText": "{{DefaultInventory.SUB_INVENTORY.data}}",
   "dynamicBindingPathList": [
@@ -15,17 +16,10 @@
     },
     {
       "key": "defaultText"
-    },
-    {
-      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [
-    {
-      "key": "labelTextColor"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onTextChanged"
@@ -42,7 +36,7 @@
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{DefaultInventory.SUBMETER_ID.required}}",
+  "labelTextColor": "",
   "labelTextSize": "1rem",
   "labelWidth": "8",
   "leftColumn": 9,
@@ -55,8 +49,8 @@
   "mobileTopRow": 4,
   "needsErrorInfo": false,
   "onTextChanged": "",
-  "originalBottomRow": 11,
-  "originalTopRow": 5,
+  "originalBottomRow": 17,
+  "originalTopRow": 11,
   "parentColumnSpace": 19.5,
   "parentId": "lkgwy1endz",
   "parentRowSpace": 10,
@@ -67,6 +61,7 @@
   "showStepArrows": false,
   "tooltip": "",
   "topRow": 11,
+  "topRowBeforeCollapse": 11,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "s176gmmtic",

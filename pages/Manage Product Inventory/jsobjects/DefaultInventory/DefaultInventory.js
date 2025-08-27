@@ -28,5 +28,6 @@ export default {
 	,INVENTORY_PICTURE:{data:"",regex:"",required:false,color:""}
 	,ACCOUNTING_DESCRIPTION:{data:"",regex:"",required:false,color:""}
 	,SUB_INVENTORY:{data:"",regex:"",required:false,color:""}
-	,IMAGE:{data:""},
+	,IMAGE:{data:""}
+	,SUB_INVENT_DETAIL:{data:""}
 }

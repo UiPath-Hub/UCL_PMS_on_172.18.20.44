@@ -3,11 +3,11 @@ export default {
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?(SELECT_INVOICE.data[0].FILE_DRAFT??SELECT_INVOICE.data[0].FILE_ORIGINAL)!=null:false
 	},
 	onBttn_ChangeStatus_ApproveDisable:()=>{
-		let disableStatus = ["Approve","Waiting for Payment","Over Due","Canceled","Payment Completed","Rejected"];
+		let disableStatus = ["Approved","Waiting for Payment","Over Due","Canceled","Payment Completed","Rejected"];
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?disableStatus.includes(SELECT_INVOICE.data[0].STATUS):true
 	},
 	onBttn_ChangeStatus_RejectDisable:()=>{
-		let disableStatus = ["Rejected","Canceled","Waiting for Payment"];
+		let disableStatus = ["Approved","Rejected","Canceled","Waiting for Payment"];
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?disableStatus.includes(SELECT_INVOICE.data[0].STATUS):true
 	},
 	onBttn_ChangeStatus_CanceledDisable:()=>{
