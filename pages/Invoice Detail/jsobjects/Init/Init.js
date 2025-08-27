@@ -1,13 +1,13 @@
 export default {
 	dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangkok").format("yyyy-mm-dd"),
 	initDefault:async ()=>{
-		closeModal(MODAL_APPROVE_CONFIRM.name);
-		closeModal(Modal_ErrorAlert.name);
-		closeModal(MODAL_DELETE.name);
-		closeModal(Modal_ManageItem.name);
-		closeModal(MODAL_REJECT_CONFIRM.name);
-		closeModal(Modal_SendToRobot.name);
-		closeModal(Modal_Session_detail.name);
+		await closeModal(MODAL_APPROVE_CONFIRM.name);
+		await closeModal(Modal_ErrorAlert.name);
+		await closeModal(MODAL_DELETE.name);
+		await closeModal(Modal_ManageItem.name);
+		await closeModal(MODAL_REJECT_CONFIRM.name);
+		await closeModal(Modal_SendToRobot.name);
+		await closeModal(Modal_Session_detail.name);
 
 		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams.InvoiceNumber){
 			Configs.forceKick = true;
@@ -23,7 +23,7 @@ export default {
 			Configs.INVOICE_ID = "INVOICE_ID"
 		}
 		await SELECT_INVOICE.run()
-		await SELECT_INVOICE_ITEM.run(),
+		await SELECT_INVOICE_ITEM.run()
 		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
 		console.log(SELECT_INVOICE.data);
 		let InitializationEntityList = [{ENTITY:PMS_INVOICE_LM,DATA: SELECT_INVOICE.data[0]},

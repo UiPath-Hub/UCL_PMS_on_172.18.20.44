@@ -120,11 +120,15 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
       {
-        "name": "SUBMETER_ID",
+        "name": "SUB_INVENTORY",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
       {
         "name": "IMAGE",
+        "value": "{\n  data: \"\"\n}"
+      },
+      {
+        "name": "SUB_INVENT_DETAIL",
         "value": "{\n  data: \"\"\n}"
       }
     ]

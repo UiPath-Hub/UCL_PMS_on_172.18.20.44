@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[SER_SEARCH_FOR_PARENT_METER] \n  @pInventoryName ={{Search_SUBMETER_NAME.text !== \"\" && Search_SUBMETER_NAME.text != INVENTORY_NAME.text?Search_SUBMETER_NAME.text:null}}\n  ,@pProductType ={{Master_List_METER_TYPE.selectedOptionValue   !== \"\"?Master_List_METER_TYPE.selectedOptionValue:null}}\n\t,@CHILE_METER_ID = {{INVENTORY_ID.text}}\n\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n  ,@pPageSize = {{Pagination.pageSize_SUBMETER_SearchResult}}\n  ,@pPageIndex = {{TABLE_SearchForParentMeter.pageNo!==undefined?TABLE_SearchForParentMeter.pageNo:1}}",
+      "body": "EXECUTE [dbo].[SER_SEARCH_FOR_PARENT_METER] \n  @pInventoryName ={{Search_SUBMETER_NAME.text !== \"\" && Search_SUBMETER_NAME.text != INVENTORY_NAME.text?Search_SUBMETER_NAME.text:null}}\n  ,@pProductType ={{Master_List_METER_TYPE.selectedOptionValue   !== \"\"?Master_List_METER_TYPE.selectedOptionValue:null}}\n\t,@CHILE_INVENTORY_ID = {{INVENTORY_ID.text}}\n\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n  ,@pPageSize = {{Pagination.pageSize_SUBMETER_SearchResult}}\n  ,@pPageIndex = {{TABLE_SearchForParentMeter.pageNo!==undefined?TABLE_SearchForParentMeter.pageNo:1}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

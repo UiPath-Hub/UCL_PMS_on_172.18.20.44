@@ -49,7 +49,8 @@
   ],
   "columnUpdatedAt": 1751876258240,
   "columnWidthMap": {
-    "COMPANY_PROFILE": 177
+    "COMPANY_PROFILE": 177,
+    "END_DATE": 215
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
