@@ -32,7 +32,7 @@
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "BOLD",
-  "labelText": "Meter Type",
+  "labelText": "Inventory Type",
   "labelTextSize": "1rem",
   "labelWidth": "11",
   "leftColumn": 0,

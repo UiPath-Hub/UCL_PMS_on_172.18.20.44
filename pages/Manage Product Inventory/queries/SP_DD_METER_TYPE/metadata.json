@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[SELECT_FOR_DROPDOWN] \n   @pDropdowntypename = \"METER_TYPE\"",
+      "body": "EXECUTE [dbo].[SELECT_FOR_DROPDOWN] \n   @pDropdowntypename = \"PRODUCT_TYPE\"",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
