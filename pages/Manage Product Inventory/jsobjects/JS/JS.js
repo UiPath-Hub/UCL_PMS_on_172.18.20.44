@@ -5,6 +5,7 @@ export default {
 	},
 	onClick_BUTTON_ADD_SUB_METER:async()=>{
 		await resetWidget(TABLE_SearchForParentMeter.widgetName);
+		await Master_List_METER_TYPE.setSelectedOption(SelectedProduct.PRODUCT_TYPE.data);
 		_1_SP_SEARCH_FOR_PARENT_METER.run();
 		showModal(MODAL_SELECT_SUB_METER.name);
 	},
