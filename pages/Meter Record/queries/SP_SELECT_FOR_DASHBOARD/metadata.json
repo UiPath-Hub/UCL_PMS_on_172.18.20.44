@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXEC\t[dbo].[SELECT_FOR_DASHBOARD]\n\t\t  @pDashboardName = N'Meter Record Dashboard'",
+      "body": "select * from PMS_METER_REC_DETAIL_LM_DASHBOARD",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
