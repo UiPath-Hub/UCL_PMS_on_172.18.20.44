@@ -1,0 +1,19 @@
+declare @newID dbo.NEW_ID = NULL;
+execute [dbo].[UPSERT_INVOICE_DUPLICATE]
+	@INVOICE_ID = {{PMS_INVOICE_LM_Widgets.INVOICE_ID.data}}
+	@COMPANY_ID  = {{COMPANY_ID.text}},
+	@INVOICE_AMOUNT decimal(13,2) = {{PMS_INVOICE_LM_Widgets.INVOICE_AMOUNT.data}},
+	@INVOICE_REF1 = NULL,
+	@INVOICE_REF2 = NULL,
+	@INVOICE_REF3 = NULL,
+	@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}},
+	--@INVOICE_DETAIL_ID nvarchar(20) = NULL,
+	--@INVOICE_QUANTITY_DETAIL nvarchar(20) = NULL,
+	--@PRODUCT_DESCRIPTION_DETAIL nvarchar(70) = NULL,
+	--@PRICE_PER_UNIT_DETAIL INT = NULL,
+	--@TOTAL_PRICE_DETAIL decimal(13,2) = NULL,
+	--@DELETE_FLAG_DETAIL BIT = 0,
+	@TYPE = 'SD' --'SD' 'SF'
+	@NEW_INVOICE_ID = @newID
+
+select @newID as INVOICE_ID

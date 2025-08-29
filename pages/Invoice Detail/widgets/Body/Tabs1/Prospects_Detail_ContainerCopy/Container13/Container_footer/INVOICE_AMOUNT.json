@@ -53,7 +53,7 @@
   "labelPosition": "Left",
   "labelStyle": "",
   "labelTextColor": "{{PMS_INVOICE_LM.INVOICE_AMOUNT.color}}",
-  "labelTextSize": "",
+  "labelTextSize": "1rem",
   "labelWidth": "10",
   "leftColumn": 35,
   "maxDynamicHeight": 9000,

@@ -28,6 +28,10 @@
         "value": "\"\""
       },
       {
+        "name": "invoiceIDParameterName",
+        "value": "\"InvoiceNumber\""
+      },
+      {
         "name": "pageName",
         "value": "\"Invoice Detail\""
       },
@@ -70,6 +74,10 @@
       {
         "name": "requiredColorPass",
         "value": "\"\""
+      },
+      {
+        "name": "is_draft",
+        "value": "SELECT_INVOICE.data[0]?.STATUS === \"Draft Invoice\""
       }
     ]
   }

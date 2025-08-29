@@ -4,6 +4,7 @@ export default {
 	forceKick:false,
 	forceLogin:false,
 	errorAlert:"",
+	invoiceIDParameterName:"InvoiceNumber",
 	pageName:"Invoice Detail",
 	BodyInit:"LOADING",
 	dateFormat:"DD MMMM YYYY",
@@ -15,4 +16,5 @@ export default {
 	invoice_items:null,
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
+	is_draft:SELECT_INVOICE.data[0]?.STATUS === "Draft Invoice",
 }

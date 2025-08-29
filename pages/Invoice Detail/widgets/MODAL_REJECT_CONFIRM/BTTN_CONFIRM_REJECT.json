@@ -36,7 +36,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{_2_RejectInvoice.run().then(() => {\n  closeModal(MODAL_REJECT_CONFIRM.name);\n  navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');\n}).catch(() => {\n  showAlert(_2_RejectInvoice.data, 'error');\n});}}",
+  "onClick": "{{JS.onBttn_REJECT_CONFIRM(true);}}",
   "originalBottomRow": 20,
   "originalTopRow": 16,
   "parentColumnSpace": 9.4375,

@@ -9,16 +9,23 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": true,
+  "isDisabled": "{{!JS.onBttn_ChangeStatus_DuplicateInvoiceEnable()}}",
   "isLoading": false,
   "isVisible": true,
   "key": "njmdz4xkxz",
@@ -29,7 +36,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "",
+  "onClick": "{{JS.onBttn_DUPLICATE_INVOICE();}}",
   "originalBottomRow": 93,
   "originalTopRow": 89,
   "parentColumnSpace": 7.30078125,

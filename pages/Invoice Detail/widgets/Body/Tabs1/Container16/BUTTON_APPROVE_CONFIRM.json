@@ -36,7 +36,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{showModal(MODAL_APPROVE_CONFIRM.name);}}",
+  "onClick": "{{JS.onBttn_APPROVE_INVOICE();}}",
   "originalBottomRow": 93,
   "originalTopRow": 89,
   "parentColumnSpace": 7.30078125,

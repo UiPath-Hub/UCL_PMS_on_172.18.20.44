@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 73,
+  "bottomRow": 79,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -56,7 +56,7 @@
   "columnWidthMap": {
     "INVOICE_QUANTITY": 259,
     "PRICE_PER_UNIT": 240,
-    "PRODUCT_DESCRIPTION": 413
+    "PRODUCT_DESCRIPTION": 528
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -163,8 +163,8 @@
   "mobileTopRow": 45,
   "multiRowSelection": true,
   "needsErrorInfo": false,
-  "originalBottomRow": 73,
-  "originalTopRow": 45,
+  "originalBottomRow": 79,
+  "originalTopRow": 51,
   "parentColumnSpace": 19,
   "parentId": "oqb6w185n5",
   "parentRowSpace": 10,
@@ -766,7 +766,7 @@
   "searchKey": "",
   "tableData": "{{Configs.invoice_items}}",
   "textSize": "1rem",
-  "topRow": 45,
+  "topRow": 51,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

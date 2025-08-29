@@ -8,21 +8,24 @@ export default {
 		await closeModal(MODAL_REJECT_CONFIRM.name);
 		await closeModal(Modal_SendToRobot.name);
 		await closeModal(Modal_Session_detail.name);
+		await closeModal(MODAL_DUPLICATE_CONFIRM.name);
+		
 
-		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams.InvoiceNumber){
+		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams[Configs.invoiceIDParameterName]){
 			Configs.forceKick = true;
 			Configs.errorAlert = "Conflict parameter: Unknown selected invoice.";
 			showModal(Modal_ErrorAlert.name);
 			return;
 		}else{
-			if(appsmith.URL.queryParams.InvoiceNumber){
-				await storeValue("INIT",{INVOICE_NO:appsmith.URL.queryParams.InvoiceNumber});
+			if(appsmith.URL.queryParams[Configs.invoiceIDParameterName]){
+				await storeValue("INIT",{INVOICE_NO:appsmith.URL.queryParams[Configs.invoiceIDParameterName]});
 			}
 		}
 		if(!appsmith.store.INIT.INVOICE_NO){
 			Configs.INVOICE_ID = "INVOICE_ID"
 		}
-		await SELECT_INVOICE.run()
+		await SELECT_INVOICE.run();
+		await _6_IS_SAVE_FINAL.run();
 		await SELECT_INVOICE_ITEM.run()
 		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
 		console.log(SELECT_INVOICE.data);
