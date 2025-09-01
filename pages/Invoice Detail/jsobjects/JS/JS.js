@@ -44,7 +44,8 @@ export default {
 				await closeModal(MODAL_CN.name);
 				await showAlert("Cancel success.","success");
 				//navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
-				navigateTo(appsmith.URL.fullPath,{},"SAME_WINDOWS");
+				//navigateTo(appsmith.URL.fullPath,{},"SAME_WINDOWS");
+				Init.pageLoad();
 			}).catch(() => {
 				showAlert(_3_CNInvoice.data, 'error');
 			});
@@ -60,10 +61,12 @@ export default {
 				if(SELECT_INVOICE.data[0]?.INVOICE_NO){
 					await closeModal(MODAL_DUPLICATE_CONFIRM.name);
 					await storeValue("INIT",{INVOICE_ID:_4_DraftInvoice.data[0]?.INVOICE_ID});
+					console.log(appsmith.store.INIT);
 					navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"SAME_WINDOWS");
+					Init.pageLoad();
 				}
 			}).catch(() => {
-				showAlert(_2_RejectInvoice.data, 'error');
+				showAlert(_4_DraftInvoice.data, 'error');
 			});
 		}else{
 			await showModal(MODAL_DUPLICATE_CONFIRM.name);

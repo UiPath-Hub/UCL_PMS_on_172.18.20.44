@@ -1,17 +1,7 @@
 export default {
 	dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangkok").format("yyyy-mm-dd"),
 	initDefault:async ()=>{
-		await closeModal(MODAL_APPROVE_CONFIRM.name);
-		await closeModal(Modal_ErrorAlert.name);
-		await closeModal(MODAL_DELETE.name);
-		await closeModal(Modal_ManageItem.name);
-		await closeModal(MODAL_REJECT_CONFIRM.name);
-		await closeModal(Modal_SendToRobot.name);
-		await closeModal(Modal_Session_detail.name);
-		await closeModal(MODAL_DUPLICATE_CONFIRM.name);
-		
-
-		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams[Configs.invoiceIDParameterName]){
+	if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams[Configs.invoiceIDParameterName]){
 			Configs.forceKick = true;
 			Configs.errorAlert = "Conflict parameter: Unknown selected invoice.";
 			showModal(Modal_ErrorAlert.name);
@@ -56,8 +46,14 @@ export default {
 	pageLoad	:async ()=>{
 		Configs.forceKick=false;
 		Configs.forceLogin=false;
-		closeModal(Modal_Session_detail.name);
-		closeModal(Modal_ErrorAlert.name);
+		await Promise.all([ closeModal(Modal_Session_detail.name),
+		closeModal(Modal_ErrorAlert.name),
+		  closeModal(MODAL_APPROVE_CONFIRM.name),
+		  closeModal(MODAL_DELETE.name),
+		  closeModal(Modal_ManageItem.name),
+		  closeModal(MODAL_REJECT_CONFIRM.name),
+		  closeModal(Modal_SendToRobot.name),
+		  closeModal(MODAL_DUPLICATE_CONFIRM.name)])
 		if(!await GlobalFunctions.sessionCheck()) return navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true)) return;
 		await this.initDefault();

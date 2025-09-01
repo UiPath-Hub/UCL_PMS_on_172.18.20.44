@@ -81,7 +81,7 @@
       },
       {
         "name": "INVOICE_AMOUNT",
-        "value": "{\n  ...INVOICE_AMOUNT,\n  data: INVOICE_AMOUNT.text\n}"
+        "value": "{\n  ...INVOICE_AMOUNT,\n  data: INVOICE_AMOUNT.value\n}"
       },
       {
         "name": "VAT_TYPE",

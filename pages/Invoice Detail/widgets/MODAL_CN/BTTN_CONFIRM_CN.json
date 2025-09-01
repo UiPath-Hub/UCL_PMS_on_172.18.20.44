@@ -39,7 +39,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onBttn_CANCEL_INVOICE(true);\nnavigateTo('Invoice Detail', {}, 'SAME_WINDOW');}}",
+  "onClick": "{{JS.onBttn_CANCEL_INVOICE(true);}}",
   "originalBottomRow": 16,
   "originalTopRow": 12,
   "parentColumnSpace": 9.4375,
