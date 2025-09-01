@@ -101,10 +101,13 @@
       "widgetName": "Canvas154"
     }
   ],
-  "defaultTab": "Preview",
+  "defaultTab": "{{JS.onDocReviewVisible()?\"Preview\":\"Invoice Detail\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
+    },
+    {
+      "key": "defaultTab"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -123,7 +126,7 @@
   "mobileRightColumn": 9,
   "mobileTopRow": 139,
   "needsErrorInfo": false,
-  "originalBottomRow": 132,
+  "originalBottomRow": 160,
   "originalTopRow": 14,
   "parentColumnSpace": 20.25,
   "parentId": "9q6q5ooy24",

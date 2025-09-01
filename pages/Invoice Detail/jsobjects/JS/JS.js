@@ -60,9 +60,10 @@ export default {
 				await closeModal(MODAL_DUPLICATE_CONFIRM.name);
 				if(SELECT_INVOICE.data[0]?.INVOICE_NO){
 					await closeModal(MODAL_DUPLICATE_CONFIRM.name);
-					await storeValue("INIT",{INVOICE_ID:_4_DraftInvoice.data[0]?.INVOICE_ID});
+					await removeValue("INIT");
+					await storeValue("INIT",{INVOICE_ID:_4_DraftInvoice.data[0]?.INVOICE_ID},true);
 					console.log(appsmith.store.INIT);
-					navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"SAME_WINDOWS");
+					navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"NEW_WINDOW");
 					Init.pageLoad();
 				}
 			}).catch(() => {
@@ -140,15 +141,15 @@ export default {
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?(SELECT_INVOICE.data[0].FILE_DRAFT??SELECT_INVOICE.data[0].FILE_ORIGINAL)!=null:false
 	},
 	onBttn_ChangeStatus_ApproveDisable:()=>{
-		let disableStatus = ["Approved","Waiting for Payment","Over Due","Canceled","Payment Completed","Rejected"];
+		let disableStatus = ["Draft Invoice","Approved","Waiting for Payment","Over Due","Canceled","Payment Completed","Rejected"];
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?disableStatus.includes(SELECT_INVOICE.data[0].STATUS):true
 	},
 	onBttn_ChangeStatus_RejectDisable:()=>{
-		let disableStatus = ["Approved","Rejected","Canceled","Waiting for Payment"];
+		let disableStatus = ["Draft Invoice","Approved","Rejected","Canceled","Waiting for Payment"];
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?disableStatus.includes(SELECT_INVOICE.data[0].STATUS):true
 	},
 	onBttn_ChangeStatus_CanceledDisable:()=>{
-		let disableStatus = ["Canceled"];
+		let disableStatus = ["Draft Invoice","Canceled"];
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?disableStatus.includes(SELECT_INVOICE.data[0].STATUS):true
 	},
 	onBttn_ChangeStatus_DuplicateInvoiceEnable:()=>{

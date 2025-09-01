@@ -39,7 +39,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onBttn_DUPLICATE_INVOICE();}}",
+  "onClick": "{{JS.onBttn_DUPLICATE_INVOICE();\n}}",
   "originalBottomRow": 93,
   "originalTopRow": 89,
   "parentColumnSpace": 7.30078125,
