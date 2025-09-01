@@ -68,7 +68,6 @@ export default {
 	onSaveClick:async()=>{
 		if(GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
 			let alertWidget = await GlobalFunctions.manualValidateV2(DefaultInventory,ProductInventoryWidget);
-			console.log(alertWidget)
 			let isImageValid = await this.isValid_PICTURE();
 			if(alertWidget.length > 0 || !isImageValid){
 				showAlert(`Some field is required or invalid.`)
@@ -131,7 +130,8 @@ export default {
 				}// finallyDone();
 			}
 
-		}else{
+		}
+		else{
 			//edit
 			let setup = {}
 			if(FP_INVENTORY_PICTURE.files.length>0)

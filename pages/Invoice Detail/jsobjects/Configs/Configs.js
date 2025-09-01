@@ -17,4 +17,5 @@ export default {
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
 	is_draft:SELECT_INVOICE.data[0]?.STATUS === "Draft Invoice",
+	edit_item:false
 }

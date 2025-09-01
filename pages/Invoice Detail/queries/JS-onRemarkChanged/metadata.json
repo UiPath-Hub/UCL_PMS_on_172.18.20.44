@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_26583955-60c9-42ae-b963-c630f4831992",
-  "id": "Invoice Detail_JS.onEditItemClick",
+  "gitSyncId": "68ad481155eda7018e8c1d6a_bf640ee1-7f29-4738-a3ee-daf5278a3629",
+  "id": "Invoice Detail_JS.onRemarkChanged",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,7 +8,10 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "confirm"
+          "name": "currentText"
+        },
+        {
+          "name": "next"
         }
       ],
       "paginationType": "NONE",
@@ -26,8 +29,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "JS.onEditItemClick",
-    "name": "onEditItemClick",
+    "fullyQualifiedName": "JS.onRemarkChanged",
+    "name": "onRemarkChanged",
     "pageId": "Invoice Detail",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

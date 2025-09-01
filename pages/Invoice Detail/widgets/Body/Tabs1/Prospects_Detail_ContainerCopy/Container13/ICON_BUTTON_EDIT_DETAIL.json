@@ -5,15 +5,23 @@
   "boxShadow": "none",
   "buttonColor": "#3b82f6",
   "buttonVariant": "PRIMARY",
-  "dynamicBindingPathList": [],
-  "dynamicPropertyPathList": [],
+  "dynamicBindingPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
     }
   ],
   "iconName": "edit",
-  "isDisabled": true,
+  "isDisabled": "{{Table_PMS_INVOICE_DETAIL_LM.selectedRows.length!==1}}",
   "isLoading": false,
   "isVisible": true,
   "key": "sjcapm6fvo",

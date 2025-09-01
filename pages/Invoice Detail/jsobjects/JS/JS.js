@@ -1,4 +1,9 @@
 export default {
+	onRemarkChanged:(currentText,next)=>{
+		if(currentText){
+			
+		}
+	},
 	onBttn_SELECT_COMPANY:async(confirm)=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
 		if(confirm){
@@ -150,9 +155,14 @@ export default {
 	onClick_Close:()=>{
 		navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
 	},
-	onEditItemClick:()=>{
-		showModal(Modal_ManageItem.name);
-
+	onEditItemClick:async (confirm)=>{
+		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
+			if(!confirm)
+				showModal(Modal_ManageItem.name);
+			else{
+				
+			}
+		}
 	},
 	onConfirmEditItem: async(newDescription)=>{
 		let editID = Table_PMS_INVOICE_DETAIL_LM.selectedRows.map(ele=>ele.INVOICE_DETAIL_ID);

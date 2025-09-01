@@ -50,13 +50,14 @@
     "DELETE_FLAG",
     "CREATE_DATE",
     "UPDATE_DATE",
-    "USER_ID"
+    "USER_ID",
+    "EditActions1"
   ],
-  "columnUpdatedAt": 1754379178179,
+  "columnUpdatedAt": 1756718046748,
   "columnWidthMap": {
     "INVOICE_QUANTITY": 259,
     "PRICE_PER_UNIT": 240,
-    "PRODUCT_DESCRIPTION": 528
+    "PRODUCT_DESCRIPTION": 511
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -133,11 +134,56 @@
     },
     {
       "key": "primaryColumns.USER_ID.computedValue"
+    },
+    {
+      "key": "primaryColumns.EditActions1.saveButtonColor"
+    },
+    {
+      "key": "primaryColumns.EditActions1.saveBorderRadius"
+    },
+    {
+      "key": "primaryColumns.EditActions1.discardBorderRadius"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "primaryColumns.PRODUCT_DESCRIPTION.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.INVOICE_QUANTITY.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.PRICE_PER_UNIT.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.TOTAL_PRICE.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isCellVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isDiscardDisabled"
+    },
+    {
+      "key": "primaryColumns.PRODUCT_DESCRIPTION.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.INVOICE_QUANTITY.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.PRICE_PER_UNIT.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.TOTAL_PRICE.isCellEditable"
+    },
+    {
+      "key": "primaryColumns.EditActions1.isCellVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -294,6 +340,46 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "EditActions1": {
+      "alias": "EditActions1",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "editActions",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "discardActionLabel": "Discard",
+      "discardBorderRadius": "{{Table_PMS_INVOICE_DETAIL_LM.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "discardButtonColor": "#F22B2B",
+      "discardButtonVariant": "TERTIARY",
+      "discardIconAlign": "left",
+      "enableFilter": true,
+      "enableSort": true,
+      "id": "EditActions1",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Configs.is_draft)) : Configs.is_draft })()}}",
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardDisabled": "{{Table_PMS_INVOICE_DETAIL_LM.processedTableData.map((currentRow, currentIndex) => ( !Table_PMS_INVOICE_DETAIL_LM.updatedRowIndices.includes(currentIndex)))}}",
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveDisabled": false,
+      "isSaveVisible": false,
+      "isVisible": true,
+      "label": "Save / Discard",
+      "notation": "standard",
+      "originalId": "EditActions1",
+      "saveActionLabel": "Save",
+      "saveBorderRadius": "{{Table_PMS_INVOICE_DETAIL_LM.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "saveButtonColor": "{{Table_PMS_INVOICE_DETAIL_LM.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "saveIconAlign": "left",
+      "sticky": "right",
+      "thousandSeparator": true,
+      "validation": {},
+      "width": 150
+    },
     "INVENTORY_ID": {
       "alias": "INVENTORY_ID",
       "allowCellWrapping": false,
@@ -431,7 +517,7 @@
       "horizontalAlignment": "CENTER",
       "id": "INVOICE_QUANTITY",
       "index": 5,
-      "isCellEditable": false,
+      "isCellEditable": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Configs.is_draft)) : Configs.is_draft })()}}",
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
@@ -524,7 +610,7 @@
       "horizontalAlignment": "CENTER",
       "id": "PRICE_PER_UNIT",
       "index": 7,
-      "isCellEditable": false,
+      "isCellEditable": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Configs.is_draft)) : Configs.is_draft })()}}",
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
@@ -555,12 +641,12 @@
       "horizontalAlignment": "CENTER",
       "id": "PRODUCT_DESCRIPTION",
       "index": 6,
-      "isCellEditable": false,
+      "isCellEditable": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Configs.is_draft)) : Configs.is_draft })()}}",
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
       "isVisible": true,
       "label": "Description",
@@ -648,7 +734,7 @@
       "horizontalAlignment": "CENTER",
       "id": "TOTAL_PRICE",
       "index": 8,
-      "isCellEditable": false,
+      "isCellEditable": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Configs.is_draft)) : Configs.is_draft })()}}",
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
@@ -764,6 +850,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
+  "showInlineEditingOptionDropdown": true,
   "tableData": "{{Configs.invoice_items}}",
   "textSize": "1rem",
   "topRow": 51,
