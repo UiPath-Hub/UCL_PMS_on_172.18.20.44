@@ -14,7 +14,7 @@ export default {
 		if(!appsmith.store.INIT.INVOICE_NO){
 			Configs.INVOICE_ID = "INVOICE_ID"
 		}
-		showAlert(appsmith.store.INIT);
+		showAlert(JSON.stringify( appsmith.store.INIT));
 		await SELECT_INVOICE.run();
 		await _6_IS_SAVE_FINAL.run();
 		await SELECT_INVOICE_ITEM.run()
