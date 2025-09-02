@@ -1,5 +1,5 @@
 export default {
 		report:()=>{
-		return appsmith.store.INIT
+		return Table_PMS_INVOICE_DETAIL_Edit.updatedRows[0]
 	},
 }

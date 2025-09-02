@@ -1,9 +1,4 @@
 export default {
-	onRemarkChanged:(currentText,next)=>{
-		if(currentText){
-			
-		}
-	},
 	onBttn_SELECT_COMPANY:async(confirm)=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
 		if(confirm){
@@ -63,7 +58,8 @@ export default {
 					await removeValue("INIT");
 					await storeValue("INIT",{INVOICE_ID:_4_DraftInvoice.data[0]?.INVOICE_ID},true);
 					console.log(appsmith.store.INIT);
-					navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"NEW_WINDOW");
+					navigateTo(appsmith.URL.fullPath, {[Configs.invoiceIDParameterName]:""}, 'SAME_WINDOW')
+					//navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"NEW_WINDOW");
 					Init.pageLoad();
 				}
 			}).catch(() => {
@@ -101,29 +97,57 @@ export default {
 
 
 	},
-	onBttn_SAVE_FINAL:async(confirm)=>{
+	onBttn_SAVE_DRAFT:async(confirm,final)=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
 		if(confirm){
-			await _5_SaveFinal.run();
-			if(_4_DraftInvoice.responseMeta.isExecutionSuccess)
-				await showAlert("Save success.","success");
-			await closeModal(MODAL_SAVEDRAFT_CONFIRM.name);
-			navigateTo('Invoice Dashboard',{},"SAME_WINDOWS");
-		}else{
-			await showModal(MODAL_SAVEDRAFT_CONFIRM.name);
-		}
+			let i= 0;
+			let err="";
+			let params={};
+			do{
 
-	},
-	onBttn_SAVE_DRAFT:async(confirm)=>{
-		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
-		if(confirm){
-			await _4_DraftInvoice.run();
-			if(_4_DraftInvoice.responseMeta.isExecutionSuccess)
+				if(Table_PMS_INVOICE_DETAIL_Edit.updatedRows[i]?.INVOICE_DETAIL_ID){
+					params = {
+						TOTAL_PRICE_DETAIL:Table_PMS_INVOICE_DETAIL_Edit.updatedRows[i].updatedFields.TOTAL_PRICE,
+						PRICE_PER_UNIT_DETAIL:Table_PMS_INVOICE_DETAIL_Edit.updatedRows[i].updatedFields.PRICE_PER_UNIT,
+						PRODUCT_DESCRIPTION_DETAIL:Table_PMS_INVOICE_DETAIL_Edit.updatedRows[i].updatedFields.PRODUCT_DESCRIPTION,
+						INVOICE_QUANTITY_DETAIL:Table_PMS_INVOICE_DETAIL_Edit.updatedRows[i].updatedFields.INVOICE_QUANTITY,
+						INVOICE_DETAIL_ID:Table_PMS_INVOICE_DETAIL_Edit.updatedRows[i].INVOICE_DETAIL_ID
+					}
+				}else{
+					params = {};
+				}
+				if(final===true && i==Table_PMS_INVOICE_DETAIL_Edit.updatedRows.length)params.SF=true;
+				else params.SF=false;
+				
+					
+				await _4_DraftInvoice.run(params);
+				if(!_4_DraftInvoice.responseMeta.isExecutionSuccess)
+					err = "1";
+				i++;
+			}while(i<Table_PMS_INVOICE_DETAIL_Edit.updatedRows.length && err==="");
+			if(final===true){
+					await _5_SaveFinal.run();
+				if(!_5_SaveFinal.responseMeta.isExecutionSuccess){
+					err = "1";
+				}
+			}
+			if(err===""){
 				await showAlert("Save success.","success");
-			await closeModal(MODAL_SAVEDRAFT_CONFIRM.name);
-			navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"SAME_WINDOWS");
+				
+				if(final===true){
+					await closeModal( MODAL_SAVEFINAL_CONFIRM.name);
+					navigateTo('Invoice Dashboard',{},"SAME_WINDOWS");
+				}
+				else{
+					await closeModal(MODAL_SAVEDRAFT_CONFIRM.name);
+					navigateTo(appsmith.URL.fullPath,{},"SAME_WINDOWS");
+					Init.pageLoad();
+				} 
+				
+			}
 		}else{
-			await showModal(MODAL_SAVEDRAFT_CONFIRM.name);
+			if(final===true) await showModal( MODAL_SAVEFINAL_CONFIRM.name);
+			else await showModal(MODAL_SAVEDRAFT_CONFIRM.name);
 		}
 
 	},
@@ -131,7 +155,7 @@ export default {
 		let is_saveFinal = false;
 		let is_draft = Configs.is_draft;
 
-		if(_6_IS_SAVE_FINAL.data){
+		if(_6_IS_SAVE_FINAL.data && _6_IS_SAVE_FINAL.data.length>0){
 			is_saveFinal = true;
 		}
 
@@ -164,7 +188,7 @@ export default {
 			if(!confirm)
 				showModal(Modal_ManageItem.name);
 			else{
-				
+
 			}
 		}
 	},

@@ -65,9 +65,12 @@ export default {
 		if(!attributeType) attributeType="data";
 		await Promise.all( Object.keys(DefaultEntity).map(async(key)=>{
 			let keystr= key.toString();
-			if(defaultData[keystr] !== undefined && DefaultEntity[keystr][attributeType] !== undefined && defaultData[keystr] !== null){	
+			if(defaultData[keystr] !== undefined && DefaultEntity[keystr][attributeType] !== undefined && defaultData[keystr] !== null){
 				DefaultEntity[keystr][attributeType] = defaultData[keystr];
-			}}))
+			}else if(DefaultEntity[keystr][attributeType] !== undefined && attributeType==="data"){
+				DefaultEntity[keystr][attributeType]="";
+			}
+		}))
 	},
 	//InitializationDataList = [{ENTITY:Appsmith JS Object, DATA: {propName:any}}]
 		initDefaultV2:async(InitializationDataList)=>{

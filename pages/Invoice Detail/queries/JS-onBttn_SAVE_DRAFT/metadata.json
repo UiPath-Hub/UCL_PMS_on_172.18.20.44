@@ -9,6 +9,9 @@
       "jsArguments": [
         {
           "name": "confirm"
+        },
+        {
+          "name": "final"
         }
       ],
       "paginationType": "NONE",

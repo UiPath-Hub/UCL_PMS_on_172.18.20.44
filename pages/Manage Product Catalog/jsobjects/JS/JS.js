@@ -12,25 +12,24 @@ export default {
 			return false;
 		}
 	},
-	onSaveClick:async()=>{
+	onSaveClick:async(confirm)=>{
 		if(GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
-			let alertWidget = await GlobalFunctions.manualValidateV2(Default_ProductCatalog,ProductCatalogWidget);
-			console.log(alertWidget)
-			let isImageValid = await this.isValid_CATALOG_PICTURE();
-			if(alertWidget.length > 0 || !isImageValid){
-				showAlert(`Some field is required or invalid.`)
+			if(!confirm){
+				let alertWidget = await GlobalFunctions.manualValidateV2(Default_ProductCatalog,ProductCatalogWidget);
+				console.log(alertWidget)
+				let isImageValid = await this.isValid_CATALOG_PICTURE();
+				if(alertWidget.length > 0 || !isImageValid){
+					showAlert(`Some field is required or invalid.`)
+				}else{
+					showModal(Modal_SAVE.name);
+				}
 			}else{
-				showModal(Modal_SAVE.name);
-			}
-		}
-	},
-	onSaveConfirmClick:async()=>{
-		if(GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
-			if( (await this.submitData())==0){
-				closeModal(Modal_SAVE.name);
-				await removeValue(Configs.editProductCatalog);
-				navigateTo('Product Catalog Dashboard', {}, 'SAME_WINDOW')
+				if( (await this.submitData())==0){
+					closeModal(Modal_SAVE.name);
+					await removeValue(Configs.editProductCatalog);
+					//navigateTo('Product Catalog Dashboard', {}, 'SAME_WINDOW')
 
+				}
 			}
 
 		}
@@ -93,7 +92,7 @@ export default {
 		else{
 			//edit
 			console.log("editting")
-						let setup = {}
+			let setup = {}
 			if(FP_CATALOG_PICTURE.files.length>0)
 				setup.IMAGE_DATA = FP_CATALOG_PICTURE.files[0].data;
 			if(Default_ProductCatalog.IMAGE.data == "" && Default_ProductCatalog.CATALOG_PICTURE.data != ""){

@@ -17,6 +17,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
+    },
+    {
+      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -36,7 +39,7 @@
   "mobileRightColumn": 30,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onBttn_SELECT_COMPANY();}}",
+  "onClick": "{{JS.onBttn_SELECT_COMPANY();\nJS.onClick_BUTTON_SEARCH();}}",
   "originalBottomRow": 4,
   "originalTopRow": 0,
   "parentColumnSpace": 18.6875,

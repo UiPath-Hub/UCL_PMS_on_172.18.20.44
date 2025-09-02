@@ -15,7 +15,11 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onSubmit"
