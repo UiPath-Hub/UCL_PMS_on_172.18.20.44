@@ -58,6 +58,7 @@
     "InventoryNumber": 191,
     "Inventory_Name": 176,
     "Inventory_Number": 198,
+    "METER_TYPE_NAME": 231,
     "ProductName": 322,
     "RegistalationNumber": 209,
     "Registalation_Number": 217,
@@ -87,9 +88,6 @@
     },
     {
       "key": "cellBackground"
-    },
-    {
-      "key": "totalRecordsCount"
     },
     {
       "key": "tableData"
@@ -155,7 +153,7 @@
   "mobileRightColumn": 19,
   "mobileTopRow": 79,
   "needsErrorInfo": false,
-  "onPageChange": "{{\nSP_SER_SEARCH_FOR_METER.run();}}",
+  "onPageChange": "",
   "onPageSizeChange": "",
   "originalBottomRow": 109,
   "originalTopRow": 60,
@@ -204,7 +202,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "#f4f4f5",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table_PMS_METER_REC_DETAIL_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( moment(currentRow[\"CREATE_DATE\"]).format(\"YYYY-MM-DD\")==\"Invalid date\"?\"\":moment(currentRow[\"CREATE_DATE\"]).format(\"YYYY-MM-DD\"))) :  moment(currentRow[\"CREATE_DATE\"]).format(\"YYYY-MM-DD\")==\"Invalid date\"?\"\":moment(currentRow[\"CREATE_DATE\"]).format(\"YYYY-MM-DD\") })()}}",
+      "computedValue": "{{(() => { const tableData = Table_PMS_METER_REC_DETAIL_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( moment(currentRow[\"CREATE_DATE\"]).format(\"YYYY-MM-DD\")==\"Invalid date\"?\"\":moment(currentRow[\"CREATE_DATE\"]).subtract(7,'hour').format(Configs.dateFormat))) :  moment(currentRow[\"CREATE_DATE\"]).format(\"YYYY-MM-DD\")==\"Invalid date\"?\"\":moment(currentRow[\"CREATE_DATE\"]).subtract(7,'hour').format(Configs.dateFormat) })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -475,11 +473,11 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "serverSidePaginationEnabled": true,
+  "serverSidePaginationEnabled": false,
   "tableData": "{{SP_SER_SEARCH_FOR_METER.data?SP_SER_SEARCH_FOR_METER.data.filter((ele)=>ele.TOTAL_RECORDS!= 0):[]}}",
   "textSize": "1rem",
   "topRow": 60,
-  "totalRecordsCount": "{{((SP_SER_SEARCH_FOR_METER.data !== undefined) && (SP_SER_SEARCH_FOR_METER.data.length !== 0) && (SP_SER_SEARCH_FOR_METER.data[0][\"TOTAL_RECORDS\"] !== undefined))?SP_SER_SEARCH_FOR_METER.data[0][\"TOTAL_RECORDS\"]:0}}",
+  "totalRecordsCount": "",
   "type": "TABLE_WIDGET_V2",
   "variant": "DEFAULT",
   "version": 2,

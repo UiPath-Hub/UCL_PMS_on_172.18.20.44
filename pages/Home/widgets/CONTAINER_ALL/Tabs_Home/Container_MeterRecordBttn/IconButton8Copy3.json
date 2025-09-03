@@ -18,9 +18,13 @@
       "key": "iconName"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconName": "array-timestamp",
-  "isDisabled": true,
+  "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "hbeb2o0ekl",
@@ -31,12 +35,13 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Meter Record', {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 2.12109375,
   "parentId": "g409mbdqcb",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 63,
+  "rightColumn": 64,
   "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
