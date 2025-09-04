@@ -43,6 +43,7 @@
   "columnUpdatedAt": 1756462569092,
   "columnWidthMap": {
     "COMPANY_CONTACT_TELEPHONE": 178,
+    "COMPANY_NAME": 271,
     "PRODUCT_NAME": 263
   },
   "defaultPageSize": 0,

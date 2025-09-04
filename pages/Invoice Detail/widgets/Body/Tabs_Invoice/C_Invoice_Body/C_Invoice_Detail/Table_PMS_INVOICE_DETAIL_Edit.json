@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 107,
+  "bottomRow": 112,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -50,9 +50,10 @@
     "DELETE_FLAG",
     "CREATE_DATE",
     "UPDATE_DATE",
-    "USER_ID"
+    "USER_ID",
+    "customColumn1"
   ],
-  "columnUpdatedAt": 1756801993480,
+  "columnUpdatedAt": 1756969358873,
   "columnWidthMap": {
     "EditActions1": 101,
     "INVOICE_QUANTITY": 222,
@@ -75,9 +76,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
     },
     {
       "key": "primaryColumns.INVOICE_DETAIL_ID.computedValue"
@@ -138,6 +136,18 @@
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
@@ -146,9 +156,16 @@
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "primaryColumns.PRODUCT_DESCRIPTION.onSubmit"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.PRODUCT_DESCRIPTION.onSubmit"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -171,8 +188,8 @@
   "mobileTopRow": 45,
   "multiRowSelection": true,
   "needsErrorInfo": false,
-  "originalBottomRow": 107,
-  "originalTopRow": 79,
+  "originalBottomRow": 112,
+  "originalTopRow": 84,
   "parentColumnSpace": 19,
   "parentId": "oqb6w185n5",
   "parentRowSpace": 10,
@@ -555,7 +572,7 @@
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"PRODUCT_DESCRIPTION\"])) : PRODUCT_DESCRIPTION })()}}",
+      "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"PRODUCT_DESCRIPTION\"])) : currentRow[\"PRODUCT_DESCRIPTION\"] })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -573,6 +590,7 @@
       "isVisible": true,
       "label": "Description",
       "notation": "standard",
+      "onSubmit": "",
       "originalId": "PRODUCT_DESCRIPTION",
       "sticky": "left",
       "textSize": "1rem",
@@ -768,6 +786,44 @@
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
+    },
+    "customColumn1": {
+      "alias": "customColumn1",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "undo",
+      "id": "customColumn1",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "customColumn1",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "originalId": "customColumn1",
+      "sticky": "",
+      "textSize": "1rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
     }
   },
   "renderMode": "CANVAS",
@@ -775,9 +831,9 @@
   "rightColumn": 64,
   "searchKey": "",
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{Configs.invoice_items}}",
+  "tableData": "{{Configs.invoice_items\n?.filter(item=>!Configs.removeDetails_INVOICE_DETAIL_ID.includes(item.INVOICE_DETAIL_ID))||[]}}",
   "textSize": "1rem",
-  "topRow": 79,
+  "topRow": 84,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

@@ -7,7 +7,7 @@ export default {
 	invoiceIDParameterName:"InvoiceNumber",
 	pageName:"Invoice Detail",
 	BodyInit:"LOADING",
-	dateFormat:"DD MMMM YYYY",
+	dateFormat:"D MMM YYYY",
 	INVOICE_ID:"INVOICE_NO",
 	COMPANY_ID:"COMPANY_ID",
 	COMPANY_CONTACT_ID:"COMPANY_CONTACT_ID",
@@ -17,5 +17,8 @@ export default {
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
 	is_draft:SELECT_INVOICE.data[0]?.STATUS === "Draft Invoice",
-	edit_item:false
+	edit_item:false,
+	removeDetails_Indices:[],
+	editDetails_Indices:[],
+	undo_stack:{data:[],type:{"remove":0,"edit":1}}
 }

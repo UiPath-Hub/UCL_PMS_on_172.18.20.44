@@ -41,7 +41,7 @@
       },
       {
         "name": "dateFormat",
-        "value": "\"DD MMMM YYYY\""
+        "value": "\"D MMM YYYY\""
       },
       {
         "name": "INVOICE_ID",
@@ -82,6 +82,18 @@
       {
         "name": "edit_item",
         "value": "false"
+      },
+      {
+        "name": "removeDetails_Indices",
+        "value": "[]"
+      },
+      {
+        "name": "editDetails_Indices",
+        "value": "[]"
+      },
+      {
+        "name": "undo_stack",
+        "value": "{\n  data: [],\n  type: {\n    \"remove\": 0,\n    \"edit\": 1\n  }\n}"
       }
     ]
   }
