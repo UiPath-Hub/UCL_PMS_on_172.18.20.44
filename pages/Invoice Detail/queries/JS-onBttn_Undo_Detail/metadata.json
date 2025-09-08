@@ -1,6 +1,6 @@
 {
   "gitSyncId": "68ad481155eda7018e8c1d6a_8a4fc160-84e3-4857-a6a2-d52cc6559925",
-  "id": "Invoice Detail_JS.onBttn_UndoDelete_Detail",
+  "id": "Invoice Detail_JS.onBttn_Undo_Detail",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "JS.onBttn_UndoDelete_Detail",
-    "name": "onBttn_UndoDelete_Detail",
+    "fullyQualifiedName": "JS.onBttn_Undo_Detail",
+    "name": "onBttn_Undo_Detail",
     "pageId": "Invoice Detail",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

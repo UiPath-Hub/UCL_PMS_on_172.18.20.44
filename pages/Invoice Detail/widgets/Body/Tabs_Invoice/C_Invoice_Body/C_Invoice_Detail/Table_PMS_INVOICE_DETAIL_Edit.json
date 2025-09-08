@@ -4,7 +4,8 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 112,
+  "bottomRow": 110,
+  "bottomRowBeforeCollapse": 110,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -36,30 +37,15 @@
     "INVOICE_QUANTITY",
     "PRICE_PER_UNIT",
     "TOTAL_PRICE",
-    "INVOICE_DETAIL_ID",
-    "INVOICE_ID",
-    "PRODUCT_ID",
-    "INVENTORY_ID",
-    "INVENTORY_NAME",
-    "CHARGE_TYPE",
-    "ACCOUNT_CODE",
-    "INVOICE_REMARK_FORM_API",
-    "MD5",
-    "UOM",
-    "STATUS",
-    "DELETE_FLAG",
-    "CREATE_DATE",
-    "UPDATE_DATE",
-    "USER_ID",
     "customColumn1"
   ],
-  "columnUpdatedAt": 1756969358873,
+  "columnUpdatedAt": 1757311294151,
   "columnWidthMap": {
     "EditActions1": 101,
-    "INVOICE_QUANTITY": 222,
-    "PRICE_PER_UNIT": 211,
+    "INVOICE_QUANTITY": 204.00000000000003,
+    "PRICE_PER_UNIT": 195,
     "PRODUCT_DESCRIPTION": 511,
-    "TOTAL_PRICE": 142
+    "TOTAL_PRICE": 192
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -141,6 +127,9 @@
       "key": "tableData"
     },
     {
+      "key": "primaryColumns.customColumn1.computedValue"
+    },
+    {
       "key": "primaryColumns.customColumn1.buttonColor"
     },
     {
@@ -159,11 +148,29 @@
     },
     {
       "key": "primaryColumns.PRODUCT_DESCRIPTION.onSubmit"
+    },
+    {
+      "key": "primaryColumns.INVOICE_QUANTITY.onSubmit"
+    },
+    {
+      "key": "primaryColumns.PRICE_PER_UNIT.onSubmit"
+    },
+    {
+      "key": "primaryColumns.TOTAL_PRICE.onSubmit"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "primaryColumns.PRODUCT_DESCRIPTION.onSubmit"
+    },
+    {
+      "key": "primaryColumns.INVOICE_QUANTITY.onSubmit"
+    },
+    {
+      "key": "primaryColumns.PRICE_PER_UNIT.onSubmit"
+    },
+    {
+      "key": "primaryColumns.TOTAL_PRICE.onSubmit"
     }
   ],
   "enableClientSideSearch": true,
@@ -188,8 +195,8 @@
   "mobileTopRow": 45,
   "multiRowSelection": true,
   "needsErrorInfo": false,
-  "originalBottomRow": 112,
-  "originalTopRow": 84,
+  "originalBottomRow": 110,
+  "originalTopRow": 80,
   "parentColumnSpace": 19,
   "parentId": "oqb6w185n5",
   "parentRowSpace": 10,
@@ -466,8 +473,9 @@
       "isVisible": true,
       "label": "Quantity",
       "notation": "standard",
+      "onSubmit": "{{JS.onSubmitEditDetail();}}",
       "originalId": "INVOICE_QUANTITY",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "1rem",
       "thousandSeparator": true,
       "validation": {},
@@ -559,8 +567,9 @@
       "isVisible": true,
       "label": "Unit Price",
       "notation": "standard",
+      "onSubmit": "{{JS.onSubmitEditDetail();}}",
       "originalId": "PRICE_PER_UNIT",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "1rem",
       "thousandSeparator": true,
       "validation": {},
@@ -590,9 +599,9 @@
       "isVisible": true,
       "label": "Description",
       "notation": "standard",
-      "onSubmit": "",
+      "onSubmit": "{{JS.onSubmitEditDetail();}}",
       "originalId": "PRODUCT_DESCRIPTION",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "1rem",
       "thousandSeparator": true,
       "validation": {
@@ -686,8 +695,9 @@
       "isVisible": true,
       "label": "Total Price",
       "notation": "standard",
+      "onSubmit": "{{JS.onSubmitEditDetail();}}",
       "originalId": "TOTAL_PRICE",
-      "sticky": "left",
+      "sticky": "",
       "textSize": "1rem",
       "thousandSeparator": true,
       "validation": {},
@@ -788,22 +798,23 @@
       "width": 150
     },
     "customColumn1": {
-      "alias": "customColumn1",
+      "alias": "Has changed",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "borderRadius": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
       "boxShadow": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
       "buttonColor": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "TERTIARY",
       "columnType": "iconButton",
-      "computedValue": "",
+      "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('i')) : 'i' })()}}",
       "currencyCode": "USD",
       "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "iconName": "undo",
+      "iconName": "dot",
       "id": "customColumn1",
       "index": 10,
       "isCellEditable": false,
@@ -814,7 +825,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "customColumn1",
+      "label": "Has changed",
       "labelColor": "#FFFFFF",
       "notation": "standard",
       "originalId": "customColumn1",
@@ -831,9 +842,10 @@
   "rightColumn": 64,
   "searchKey": "",
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{Configs.invoice_items\n?.filter(item=>!Configs.removeDetails_INVOICE_DETAIL_ID.includes(item.INVOICE_DETAIL_ID))||[]}}",
+  "tableData": "{{Configs.invoice_items\n?.filter(item=>!Configs.undo_stack.data.filter(i=>i.type===Configs.undo_stack.type.remove).map(i=>i.INVOICE_DETAIL_ID).includes(item.INVOICE_DETAIL_ID))||[]}}",
   "textSize": "1rem",
-  "topRow": 84,
+  "topRow": 80,
+  "topRowBeforeCollapse": 80,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

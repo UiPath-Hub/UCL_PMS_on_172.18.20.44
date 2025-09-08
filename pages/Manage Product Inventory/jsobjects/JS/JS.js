@@ -1,7 +1,9 @@
 export default {
 	onClick_Bttn_ClearSubMeter:()=>{
 		DefaultInventory.SUB_INVENTORY.data = "";
-		SUB_INVENT_DETAIL.setValue("")
+		DefaultInventory.SUB_INVENT_DETAIL.data = "";
+		DefaultInventory.SUB_INVENT_DETAIL2.data = "";
+		resetWidget(Form_SubMeterDetail.widgetName,true);
 	},
 	onClick_BUTTON_ADD_SUB_METER:async()=>{
 		await resetWidget(TABLE_SearchForParentMeter.widgetName);
@@ -21,13 +23,15 @@ export default {
 	},
 	onClick_SelectParentMeter:async(INVENTORY_ID)=>{
 		if(!_1_SP_SEARCH_FOR_PARENT_METER.data)
-			await _1_SP_SEARCH_FOR_PARENT_METER.run();
+			await _1_SP_SEARCH_FOR_PARENT_METER.run({INVENTORY_ID:INVENTORY_ID});
 		console.log(INVENTORY_ID)
 		DefaultInventory.SUB_INVENTORY.data = INVENTORY_ID;
 		let detail =_1_SP_SEARCH_FOR_PARENT_METER.data.filter((row)=>row.INVENTORY_ID===INVENTORY_ID);
 		if(detail.length>0)
-			//SUB_INVENT_DETAIL.setValue(detail[0]?.INVENTORY_NAME);
-			DefaultInventory.SUB_INVENT_DETAIL.data = detail[0]?.INVENTORY_NAME;
+		{	//SUB_INVENT_DETAIL.setValue(detail[0]?.INVENTORY_NAME);
+			DefaultInventory.SUB_INVENT_DETAIL.data = detail[0]?.INVENTORY_NAME??"";
+			DefaultInventory.SUB_INVENT_DETAIL2.data = detail[0]?.PRICE_PER_UNIT??"";
+		}
 		else
 			SUB_INVENT_DETAIL.setValue("");
 	},
@@ -141,7 +145,7 @@ export default {
 				DefaultInventory.INVENTORY_PICTURE.data = null;
 			}
 			await _3_SP_UPDATE_INVENTORY.run(setup);
-			
+
 			if(_3_SP_UPDATE_INVENTORY.data !== undefined && _3_SP_UPDATE_INVENTORY.data.length === 1){
 				if( _3_SP_UPDATE_INVENTORY.data[0].RESULT_CODE === "ERROR"){
 					await showAlert( _3_SP_UPDATE_INVENTORY.data[0].RESULT_MESSAGES,"error");

@@ -1,7 +1,7 @@
 export default {
 	dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangkok").format("yyyy-mm-dd"),
 	initDefault:async ()=>{
-	if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams[Configs.invoiceIDParameterName]){
+		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams[Configs.invoiceIDParameterName]){
 			Configs.forceKick = true;
 			Configs.errorAlert = "Conflict parameter: Unknown selected invoice.";
 			showModal(Modal_ErrorAlert.name);
@@ -21,12 +21,12 @@ export default {
 		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
 		console.log(SELECT_INVOICE.data);
 		let InitializationEntityList = [{ENTITY:PMS_INVOICE_LM,DATA: SELECT_INVOICE.data[0]},
-																			//{ENTITY:PMS_COMPANY_LM,DATA: SELECT_COMPANY.data},
-																			//{ENTITY:PMS_COMPANY_CONTACT_LM,DATA: SELECT_COMPANY_CONTACT.data},
-																			//{ENTITY:PMS_COMPANY_BILLING,DATA: SELECT_BILLING.data}
-																		];
+																		//{ENTITY:PMS_COMPANY_LM,DATA: SELECT_COMPANY.data},
+																		//{ENTITY:PMS_COMPANY_CONTACT_LM,DATA: SELECT_COMPANY_CONTACT.data},
+																		//{ENTITY:PMS_COMPANY_BILLING,DATA: SELECT_BILLING.data}
+																	 ];
 		await GlobalFunctions.initDefault(InitializationEntityList);		
-		
+
 		//manipulate field data		
 		/*if(SELECT_COMPANY.data && SELECT_COMPANY.data[0] && SELECT_COMPANY.data[0].OVERWRITE_BILLING_ADDRESS){
 			//mapping billing to company
@@ -48,13 +48,13 @@ export default {
 		Configs.forceKick=false;
 		Configs.forceLogin=false;
 		await Promise.all([ closeModal(Modal_Session_detail.name),
-		closeModal(Modal_ErrorAlert.name),
-		  closeModal(MODAL_APPROVE_CONFIRM.name),
-		  closeModal(MODAL_DELETE.name),
-		  closeModal(Modal_ManageItem.name),
-		  closeModal(MODAL_REJECT_CONFIRM.name),
-		  closeModal(Modal_SendToRobot.name),
-		  closeModal(MODAL_DUPLICATE_CONFIRM.name)])
+											 closeModal(Modal_ErrorAlert.name),
+											 closeModal(MODAL_APPROVE_CONFIRM.name),
+											 closeModal(MODAL_DELETE.name),
+											 closeModal(Modal_ManageItem.name),
+											 closeModal(MODAL_REJECT_CONFIRM.name),
+											 closeModal(Modal_SendToRobot.name),
+											 closeModal(MODAL_DUPLICATE_CONFIRM.name)])
 		if(!await GlobalFunctions.sessionCheck()) return navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true)) return;
 		await this.initDefault();

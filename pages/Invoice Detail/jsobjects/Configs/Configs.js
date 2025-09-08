@@ -18,7 +18,7 @@ export default {
 	requiredColorPass:"",
 	is_draft:SELECT_INVOICE.data[0]?.STATUS === "Draft Invoice",
 	edit_item:false,
-	removeDetails_Indices:[],
-	editDetails_Indices:[],
+	removeDetails_ID:[],
+	editDetails_ID:[],
 	undo_stack:{data:[],type:{"remove":0,"edit":1}}
 }

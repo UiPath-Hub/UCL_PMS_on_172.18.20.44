@@ -1,29 +1,41 @@
 export default {
-	onBttn_Delete_Detail:async(rowsIndices)=>{
+
+	onBttn_Delete_Detail:async()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
-		let INVOICE_DETAIL_ID;
-		if (Array.isArray(rowsIndices)){
-			INVOICE_DETAIL_ID = rowsIndices.map(index=>Table_PMS_INVOICE_DETAIL_Edit.tableData[index]).filter(item=>item!==undefined);
-			Configs.removeDetails_Indices.push(...INVOICE_DETAIL_ID);
-			const undoqueue = rowsIndices.map((i)=>({index:i,type:Configs.undo_stack.type.remove}));
+		const selectedRows=Table_PMS_INVOICE_DETAIL_Edit.selectedRows;
+		if(selectedRows.length==0)return;
+		if (Array.isArray(selectedRows)){
+			const undoqueue = selectedRows.map((i)=>({INVOICE_DETAIL_ID:i.INVOICE_DETAIL_ID,type:Configs.undo_stack.type.remove}));
 			Configs.undo_stack.data.push(...undoqueue);
-		} else {
-			INVOICE_DETAIL_ID = Table_PMS_INVOICE_DETAIL_Edit.tableData[rowsIndices].INVOICE_DETAIL_ID;
-			Configs.removeDetails_Indices.push(INVOICE_DETAIL_ID);
-			Configs.undo_stack.data.push({index:rowsIndices,type:Configs.undo_stack.type.remove});
 		}
 	},
-	onBttn_UndoDelete_Detail:async()=>{
+	onBttn_Undo_Detail:async()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
 		const lastActivity = Configs.undo_stack.data.pop();
 		if(lastActivity.type === Configs.undo_stack.type.remove){
-			Configs.removeDetails_Indices = Configs.removeDetails_Indices.filter(i=>i!==lastActivity.index);
+			//no data change.
 		}else if(lastActivity.type === Configs.undo_stack.type.edit){
-			
+			Configs.invoice_items = Configs.invoice_items.map((item)=>{
+				if(item.INVOICE_DETAIL_ID === lastActivity.INVOICE_DETAIL_ID){
+					return lastActivity.backup;
+				}else{
+					return item;
+				}
+			});
 		}
 	},
-	onSubmitEditDetail:async (rowIndices)=>{
-		Configs.undo_stack.data.push({index:rowIndices,type:Configs.undo_stack.type.edit});
+	onSubmitEditDetail:async ()=>{
+		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
+		const id = Table_PMS_INVOICE_DETAIL_Edit.updatedRow.INVOICE_DETAIL_ID;
+		const backup = Table_PMS_INVOICE_DETAIL_Edit.tableData.find(i=>i.INVOICE_DETAIL_ID===id);
+		Configs.undo_stack.data.push({INVOICE_DETAIL_ID:id,type:Configs.undo_stack.type.edit,backup:backup});
+		Configs.invoice_items = Configs.invoice_items.map((item)=>{
+			if(item.INVOICE_DETAIL_ID === id){
+				return Table_PMS_INVOICE_DETAIL_Edit.updatedRow;
+			}else{
+				return item;
+			}
+		});
 	},
 	onBttn_SELECT_COMPANY:async(confirm)=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
@@ -125,29 +137,37 @@ export default {
 	},
 	onBttn_SAVE_DRAFT:async(confirm,final)=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
+
 		if(confirm){
+			let errorPoint = "";
 			let hasError = false;
 
 			//update detail
-			for (const row of Table_PMS_INVOICE_DETAIL_Edit.updatedRows) {
-				if (row?.INVOICE_DETAIL_ID) {
-					const params = {
-						TOTAL_PRICE_DETAIL: row.updatedFields.TOTAL_PRICE,
-						PRICE_PER_UNIT_DETAIL: row.updatedFields.PRICE_PER_UNIT,
-						PRODUCT_DESCRIPTION_DETAIL: row.updatedFields.PRODUCT_DESCRIPTION,
-						INVOICE_QUANTITY_DETAIL: row.updatedFields.INVOICE_QUANTITY,
-						INVOICE_DETAIL_ID: row.INVOICE_DETAIL_ID
-					};
-
-					await _4_DraftInvoice.run(params);
-
-					if (!_4_DraftInvoice.responseMeta.isExecutionSuccess) {
+			const uniqueChanged_Detail_ID_Array = Array.from(new Set(Configs.undo_stack.data.map((i)=>i.INVOICE_DETAIL_ID)));
+			const uniqueRemoved_Detail_ID_Array = Array.from(new Set(Configs.undo_stack.data.filter(i=>i.type===Configs.undo_stack.type.remove).map((edited)=>edited.INVOICE_DETAIL_ID)));
+			for (const row of Configs.invoice_items.filter(item=>uniqueChanged_Detail_ID_Array.includes(item.INVOICE_DETAIL_ID))){
+	
+				if (row.INVOICE_DETAIL_ID){
+					let params = {};
+					if(uniqueRemoved_Detail_ID_Array.includes(row.INVOICE_DETAIL_ID)){
+						params = {INVOICE_DETAIL_ID: row.INVOICE_DETAIL_ID,DELETE_FLAG_DETAIL:1}
+					}else{
+						params = {
+							TOTAL_PRICE_DETAIL: row.TOTAL_PRICE,
+							PRICE_PER_UNIT_DETAIL: row.PRICE_PER_UNIT,
+							PRODUCT_DESCRIPTION_DETAIL: row.PRODUCT_DESCRIPTION,
+							INVOICE_QUANTITY_DETAIL: row.INVOICE_QUANTITY,
+							INVOICE_DETAIL_ID: row.INVOICE_DETAIL_ID
+						}
+					}
+					await _7_DraftInvoiceDetail.run(params);
+					if (!_7_DraftInvoiceDetail.responseMeta.isExecutionSuccess) {
 						hasError = true;
+						errorPoint = 'Detail: '+JSON.stringify(params);
 						break; // Exit the loop on the first error
 					}
 				}
 			}
-
 			//update header
 			const params2 = {};
 			if(final===true){
@@ -156,12 +176,16 @@ export default {
 			await _4_DraftInvoice.run(params2);
 
 			if(_4_DraftInvoice.responseMeta.isExecutionSuccess){
-				await _5_SaveFinal.run();
-				if(!_5_SaveFinal.responseMeta.isExecutionSuccess){
-					hasError = true;
+				if(final===true){
+					await _5_SaveFinal.run();
+					if(!_5_SaveFinal.responseMeta.isExecutionSuccess){
+						hasError = true;
+						errorPoint = 'SaveFinal: '+JSON.stringify(params2);
+					}
 				}
 			}else{
 				hasError = true;
+				errorPoint = 'Header: '+JSON.stringify(params2);
 			}
 
 			if(!hasError){
@@ -177,6 +201,8 @@ export default {
 					//Init.pageLoad();
 				}
 
+			}else{
+				showAlert("Save Failure; "+errorPoint,"error");
 			}
 		}else{
 			if(final===true) await showModal( MODAL_SAVEFINAL_CONFIRM.name);
@@ -242,9 +268,9 @@ export default {
 	},
 	onDeleteConfirmClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
-			await UPDATE_DELETE_INVOICE.run();
-			await closeModal(MODAL_DELETE.name);
-			navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
+			//await UPDATE_DELETE_INVOICE.run();
+			//await closeModal(MODAL_DELETE.name);
+			//navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
 		}		
 	},
 	onDeleteItemClick:async()=>{

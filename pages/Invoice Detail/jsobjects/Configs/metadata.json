@@ -84,11 +84,11 @@
         "value": "false"
       },
       {
-        "name": "removeDetails_Indices",
+        "name": "removeDetails_ID",
         "value": "[]"
       },
       {
-        "name": "editDetails_Indices",
+        "name": "editDetails_ID",
         "value": "[]"
       },
       {

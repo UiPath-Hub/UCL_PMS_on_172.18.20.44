@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
   "boxShadow": "none",
-  "defaultText": "{{DefaultInventory.SUB_INVENT_DETAIL.data}}",
+  "defaultText": "{{DefaultInventory.SUB_INVENT_DETAIL2.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,23 +14,11 @@
       "key": "borderRadius"
     },
     {
-      "key": "isRequired"
-    },
-    {
-      "key": "labelTextColor"
-    },
-    {
       "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
-    {
-      "key": "isRequired"
-    },
-    {
-      "key": "labelTextColor"
-    },
     {
       "key": "onTextChanged"
     }
@@ -44,17 +32,17 @@
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{DefaultInventory.SUB_INVENTORY.required}}",
+  "isRequired": false,
   "isVisible": true,
   "key": "nwk391w658",
-  "label": "Main Inventory",
+  "label": "Price Per Unit",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{DefaultInventory.SUB_INVENTORY.required}}",
+  "labelTextColor": "",
   "labelTextSize": "1rem",
   "labelWidth": "8",
-  "leftColumn": 9,
+  "leftColumn": 37,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -63,7 +51,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "onTextChanged": "{{resetWidget(SUB_INVENT_DETAIL.widgetName,false);}}",
+  "onTextChanged": "{{resetWidget(SUB_INVENT_DETAIL2.widgetName,false);}}",
   "originalBottomRow": 11,
   "originalTopRow": 5,
   "parentColumnSpace": 19.5,
@@ -72,12 +60,12 @@
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 33,
+  "rightColumn": 63,
   "showStepArrows": false,
-  "tooltip": "คือ Inventory หลักที่ไปผูกด้วย",
+  "tooltip": "",
   "topRow": 5,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "zpll2gil2b",
-  "widgetName": "SUB_INVENT_DETAIL"
+  "widgetId": "opdj3mv03c",
+  "widgetName": "SUB_INVENT_DETAIL2"
 }
