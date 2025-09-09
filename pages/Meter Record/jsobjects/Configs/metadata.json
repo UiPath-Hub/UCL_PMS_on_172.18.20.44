@@ -13,7 +13,7 @@
       },
       {
         "name": "permissions",
-        "value": "{\n  VIEW: \"A01\",\n  EDIT: \"A02\"\n}"
+        "value": "{\n  VIEW: \"MRDV\",\n  EDIT: \"MRDE\"\n}"
       },
       {
         "name": "forceKick",
@@ -34,6 +34,10 @@
       {
         "name": "editMeter",
         "value": "\"editMeter\""
+      },
+      {
+        "name": "dateFormat",
+        "value": "\"D MMM YYYY\""
       }
     ]
   }

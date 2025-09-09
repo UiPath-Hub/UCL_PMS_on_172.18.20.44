@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 13,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -19,7 +19,7 @@
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "0.875rem",
+  "fontSize": "1rem",
   "fontStyle": "",
   "isLoading": false,
   "isVisible": true,
@@ -41,7 +41,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldTruncate": false,
-  "text": "Are you sure you want to delete this record?\n\nMeter ID: {{`${METER_ID.text}`}}\nRecord on: {{CREATE_DATE.text}}",
+  "text": "Are you sure you want to delete this record?\n\nMeter ID: {{`${METER_ID.text}`}}\nRecord on: {{moment( Default_METER.CREATE_DATE.data).format(\"YYYY-MM-DD\")==\"Invalid date\"?\"\":moment( Default_METER.CREATE_DATE.data).subtract(7,'hour').format(Configs.dateFormat)}}",
   "textAlign": "LEFT",
   "textColor": "#3f3f46",
   "topRow": 4,
