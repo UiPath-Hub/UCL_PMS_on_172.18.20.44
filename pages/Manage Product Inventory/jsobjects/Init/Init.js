@@ -5,6 +5,8 @@ export default {
 		Configs.startBody = "LOADING"
 		closeModal(Modal_Session_detail.name);
 		closeModal(Modal_ErrorAlert.name);
+		closeModal(Modal_SAVE.name);
+		closeModal(Modal_ADD_NEXT.name);
 		if(!await GlobalFunctions.sessionCheck())return navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true))return;
 		

@@ -36,11 +36,12 @@
     "INVENTORY_NAME",
     "PRODUCT_TYPE_TH",
     "FLOOR_NO",
-    "TOTAL_RECORDS"
+    "TOTAL_RECORDS",
+    "PRICE_PER_UNIT"
   ],
-  "columnUpdatedAt": 1756286810633,
+  "columnUpdatedAt": 1757315109063,
   "columnWidthMap": {
-    "INVENTORY_NAME": 386
+    "INVENTORY_NAME": 315
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -77,6 +78,9 @@
     },
     {
       "key": "primaryColumns.FLOOR_NO.computedValue"
+    },
+    {
+      "key": "primaryColumns.PRICE_PER_UNIT.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -203,6 +207,40 @@
       "notation": "standard",
       "originalId": "INVENTORY_NAME",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "PRICE_PER_UNIT": {
+      "alias": "PRICE_PER_UNIT",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TABLE_SearchForParentMeter.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"PRICE_PER_UNIT\"])) : PRICE_PER_UNIT })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "PRICE_PER_UNIT",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Price per unit",
+      "notation": "standard",
+      "originalId": "PRICE_PER_UNIT",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

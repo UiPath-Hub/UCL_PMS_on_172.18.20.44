@@ -50,7 +50,8 @@
   "columnUpdatedAt": 1751876258240,
   "columnWidthMap": {
     "COMPANY_PROFILE": 177,
-    "END_DATE": 215
+    "END_DATE": 215,
+    "INVENTORY_NAME": 328
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",

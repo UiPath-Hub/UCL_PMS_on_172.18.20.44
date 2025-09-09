@@ -1,0 +1,88 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 34,
+  "boxShadow": "none",
+  "defaultText": "{{PMS_INVOICE_LM.INVOICE_CONTACT_PERSON.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{PMS_INVOICE_LM.INVOICE_CONTACT_PERSON.required}}",
+  "isVisible": true,
+  "key": "nwk391w658",
+  "label": "Contact Person",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{PMS_INVOICE_LM.INVOICE_CONTACT_PERSON.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 2,
+  "maxChars": "",
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget(INVOICE_CONTACT_PERSON .widgetName)}}",
+  "originalBottomRow": 34,
+  "originalTopRow": 30,
+  "parentColumnSpace": 19.5,
+  "parentId": "ccweqe1x5o",
+  "parentRowSpace": 10,
+  "regex": "{{PMS_INVOICE_LM.INVOICE_CONTACT_PERSON.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 29,
+  "shouldAllowAutofill": false,
+  "showStepArrows": false,
+  "topRow": 30,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "fc8rdsvm0h",
+  "widgetName": "INVOICE_CONTACT_PERSON"
+}

@@ -1,0 +1,9 @@
+declare @invoice_id nvarchar(20) = {{SELECT_INVOICE.data[0]?.INVOICE_ID}}
+SET NOCOUNT ON;
+
+declare @userID int = dbo.fn_getUserIDByToken({{appsmith.store[Configs.userSession].TOKEN}})
+delete dbo.PMS_INVOICE_EXTENSION where INVOICE_ID = @invoice_id;
+
+insert into dbo.PMS_INVOICE_EXTENSION(INVOICE_ID,IS_SAVE_FINAL,UPDATE_DATE,UPDATE_BY) values 
+(@invoice_id,1,getdate(),@userID)
+

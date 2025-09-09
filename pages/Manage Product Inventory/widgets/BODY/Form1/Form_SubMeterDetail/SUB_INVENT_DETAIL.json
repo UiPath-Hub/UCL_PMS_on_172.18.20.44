@@ -30,12 +30,19 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
-  "isDisabled": true,
+  "isDisabled": false,
   "isLoading": false,
   "isRequired": "{{DefaultInventory.SUB_INVENTORY.required}}",
   "isVisible": true,
@@ -56,6 +63,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget(SUB_INVENT_DETAIL.widgetName,false);}}",
   "originalBottomRow": 11,
   "originalTopRow": 5,
   "parentColumnSpace": 19.5,
@@ -64,7 +72,7 @@
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 29,
+  "rightColumn": 33,
   "showStepArrows": false,
   "tooltip": "คือ Inventory หลักที่ไปผูกด้วย",
   "topRow": 5,

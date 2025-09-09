@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT TOP 1 dbo.PMS_INVOICE_LM.*,\npdf.PDF_INVOICE_DRAFT_FILE as FILE_DRAFT,\npdf.PDF_INVOICE_FILE as FILE_ORIGINAL \nFROM dbo.PMS_INVOICE_LM\nLEFT JOIN dbo.PMS_INVOICE_FILE pdf on dbo.PMS_INVOICE_LM.INVOICE_ID = pdf.INVOICE_ID\nWHERE \n({{Configs.INVOICE_ID == \"INVOICE_NO\"?1:0}} = 0 or\n{{appsmith.store.INIT[Configs.INVOICE_ID]}} = dbo.PMS_INVOICE_LM.INVOICE_NO) AND\n({{Configs.INVOICE_ID == \"INVOICE_ID\"?1:0}} = 0 or\n{{appsmith.store.INIT[Configs.INVOICE_ID]}} = dbo.PMS_INVOICE_LM.INVOICE_ID)\n",
+      "body": "SELECT TOP 1 invoice.*,\npdf.PDF_INVOICE_DRAFT_FILE as FILE_DRAFT,\npdf.PDF_INVOICE_FILE as FILE_ORIGINAL \nFROM dbo.PMS_INVOICE_QAS invoice\nLEFT JOIN dbo.PMS_INVOICE_FILE pdf on invoice.INVOICE_ID = pdf.INVOICE_ID\nWHERE \n({{Configs.INVOICE_ID == \"INVOICE_NO\"?1:0}} = 0 or\n{{appsmith.store.INIT[Configs.INVOICE_ID]}} = invoice.INVOICE_NO) AND\n({{Configs.INVOICE_ID == \"INVOICE_ID\"?1:0}} = 0 or\n{{appsmith.store.INIT[Configs.INVOICE_ID]}} = invoice.INVOICE_ID)\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

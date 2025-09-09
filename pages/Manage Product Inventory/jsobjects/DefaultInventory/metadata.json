@@ -130,6 +130,10 @@
       {
         "name": "SUB_INVENT_DETAIL",
         "value": "{\n  data: \"\"\n}"
+      },
+      {
+        "name": "SUB_INVENT_DETAIL2",
+        "value": "{\n  data: \"\"\n}"
       }
     ]
   }
