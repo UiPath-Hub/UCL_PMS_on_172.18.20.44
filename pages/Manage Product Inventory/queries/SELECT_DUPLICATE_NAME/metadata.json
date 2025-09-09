@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "DECLARE @USER_TOKEN nvarchar(50) = {{appsmith.store[Configs.userSession].TOKEN}}\nDECLARE @PAIRED_OWNER_ID dbo.NEW_ID = [dbo].fn_getPAIRED_OWNER_IDByToken(@USER_TOKEN)\nDECLARE @FREE_SPACE NVARCHAR(10) = COALESCE((SELECT TOP(1) FREE_SPACE FROM SQL_GLOBAL_VARIABLES), 'FREE_SPACE')\n\nif @FREE_SPACE = {{INVENTORY_NAME.text}} \nSELECT 2 as COUNT\nelse\nBEGIN\nSELECT COUNT(*) AS COUNT  FROM dbo.PMS_PRODUCT_INVENTORY_LM WHERE INVENTORY_NAME = {{INVENTORY_NAME.text}} AND DELETE_FLAG = 0 AND OWNER_ID = @PAIRED_OWNER_ID\nend",
+      "body": "DECLARE @USER_TOKEN nvarchar(50) = {{appsmith.store[Configs.userSession].TOKEN}}\nDECLARE @PAIRED_OWNER_ID dbo.NEW_ID = [dbo].fn_getPAIRED_OWNER_IDByToken(@USER_TOKEN)\nDECLARE @FREE_SPACE NVARCHAR(10) = COALESCE((SELECT TOP(1) FREE_SPACE FROM SQL_GLOBAL_VARIABLES), 'FREE_SPACE')\n\nif @FREE_SPACE = {{INVENTORY_NAME.text}} \nSELECT 2 as COUNT\nelse\nBEGIN\nSELECT COUNT(*) AS COUNT  FROM dbo.PMS_PRODUCT_INVENTORY_QAS WHERE INVENTORY_NAME = {{INVENTORY_NAME.text}} AND DELETE_FLAG = 0 AND OWNER_ID = @PAIRED_OWNER_ID\nend",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

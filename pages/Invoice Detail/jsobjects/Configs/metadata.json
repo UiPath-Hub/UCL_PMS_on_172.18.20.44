@@ -13,7 +13,7 @@
       },
       {
         "name": "permissions",
-        "value": "{\n  VIEW: \"INVV\",\n  EDIT: \"INVE\"\n}"
+        "value": "{\n  VIEW: \"INVV\",\n  EDIT: \"INVE\",\n  SHOW_INVOICE_EXECUTE: \"INEX\",\n  SHOW_INVONCE_CN: \"INCN\"\n}"
       },
       {
         "name": "forceKick",
@@ -41,7 +41,7 @@
       },
       {
         "name": "INVOICE_ID",
-        "value": "\"INVOICE_ID\""
+        "value": "\"INVOICE_NO\""
       },
       {
         "name": "COMPANY_ID",
@@ -61,7 +61,7 @@
       },
       {
         "name": "invoice_items",
-        "value": "[{\n  \"Description\": \"-\",\n  \"Quantity\": \"-\",\n  \"Unit Price\": \"-\",\n  \"Amount\": \"-\"\n}]"
+        "value": "null"
       },
       {
         "name": "requiredColorAlert",

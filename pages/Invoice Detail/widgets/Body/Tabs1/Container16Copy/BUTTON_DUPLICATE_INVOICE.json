@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 6,
+  "boxShadow": "none",
+  "buttonColor": "#71717a",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": true,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "njmdz4xkxz",
+  "leftColumn": 2,
+  "minWidth": 120,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 6,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "onClick": "",
+  "originalBottomRow": 93,
+  "originalTopRow": 89,
+  "parentColumnSpace": 7.30078125,
+  "parentId": "sd7cwvvonh",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 27,
+  "text": "Duplicate Invoice",
+  "topRow": 2,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "7sbpw8l0jf",
+  "widgetName": "BUTTON_DUPLICATE_INVOICE"
+}

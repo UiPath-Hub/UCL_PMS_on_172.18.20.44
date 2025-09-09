@@ -1,2 +1,2 @@
 EXECUTE [dbo].[SELECT_FOR_DROPDOWN] 
-   @pDropdowntypename = "METER_TYPE"
+   @pDropdowntypename = "PRODUCT_TYPE"

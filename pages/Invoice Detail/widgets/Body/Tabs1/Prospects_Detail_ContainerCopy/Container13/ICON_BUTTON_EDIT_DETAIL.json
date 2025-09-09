@@ -5,27 +5,19 @@
   "boxShadow": "none",
   "buttonColor": "#3b82f6",
   "buttonVariant": "PRIMARY",
-  "dynamicBindingPathList": [
-    {
-      "key": "isDisabled"
-    }
-  ],
-  "dynamicPropertyPathList": [
-    {
-      "key": "isDisabled"
-    }
-  ],
+  "dynamicBindingPathList": [],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
     }
   ],
   "iconName": "edit",
-  "isDisabled": "{{Table_PMS_INVOICE_DETAIL_LM.selectedRows==undefined||Table_PMS_INVOICE_DETAIL_LM.selectedRows.length==0}}",
+  "isDisabled": true,
   "isLoading": false,
   "isVisible": true,
   "key": "sjcapm6fvo",
-  "leftColumn": 55,
+  "leftColumn": 60,
   "minWidth": 50,
   "mobileBottomRow": 93,
   "mobileLeftColumn": 35,
@@ -40,7 +32,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 58,
+  "rightColumn": 63,
   "tooltip": "Edit",
   "topRow": 40,
   "type": "ICON_BUTTON_WIDGET",

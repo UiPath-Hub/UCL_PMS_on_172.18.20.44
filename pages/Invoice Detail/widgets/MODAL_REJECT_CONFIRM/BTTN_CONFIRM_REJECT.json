@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 20,
+  "boxShadow": "none",
+  "buttonColor": "#e15615",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{!(_.trim(REMARK_FOR_REJECT_INPUT.text))}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "njmdz4xkxz",
+  "leftColumn": 8,
+  "minWidth": 120,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 6,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "onClick": "{{_2_RejectInvoice.run().then(() => {\n  closeModal(MODAL_REJECT_CONFIRM.name);\n  navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');\n}).catch(() => {\n  showAlert(_2_RejectInvoice.data, 'error');\n});}}",
+  "originalBottomRow": 20,
+  "originalTopRow": 16,
+  "parentColumnSpace": 9.4375,
+  "parentId": "n00ddq3jsm",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 24,
+  "text": "Yes",
+  "topRow": 16,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "o8h8nk4p59",
+  "widgetName": "BTTN_CONFIRM_REJECT"
+}

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SET NOCOUNT ON;\nIF @@TRANCOUNT = 0 \nBEGIN TRANSACTION;\n\ndeclare @stampStatus nvarchar(MAX) = N'Rejected', @statusBeforeApproved nvarchar(MAX) = 'Waiting for Approval'\nif (select COUNT(DISTINCT SYSTEM_VALUE) from dbo.PMS_MASTER_LIST \n\t\twhere TYPE_NAME = 'INVOICE_STATUS' and \n\t\t(@stampStatus = SYSTEM_VALUE or\n\t\t@statusBeforeApproved= SYSTEM_VALUE)) <> 2\nBEGIN\nROLLBACK TRANSACTION;\nTHROW 71000, 'Referenced status conflict with master list, Could not update the invoice''s status.', 1;\nEND\n\nif {{SELECT_INVOICE.data[0].STATUS}} = @statusBeforeApproved\nbegin\nupdate dbo.PMS_INVOICE_LM \nset STATUS = @stampStatus\nwhere INVOICE_ID = {{SELECT_INVOICE.data[0].INVOICE_ID}} and DELETE_FLAG=0\nend\nelse\nBEGIN\nROLLBACK TRANSACTION;\nTHROW 71001, 'Status conflict with use case scenario, Could not update the invoice''s status.', 1;\nend\n\nCOMMIT TRANSACTION;",
+      "body": "SET NOCOUNT ON;\nIF @@TRANCOUNT = 0 \nBEGIN TRANSACTION;\n\ndeclare @stampStatus nvarchar(MAX) = N'Rejected';\nif (select COUNT(DISTINCT SYSTEM_VALUE) from dbo.PMS_MASTER_LIST \n\t\twhere TYPE_NAME = 'INVOICE_STATUS' and @stampStatus = SYSTEM_VALUE) <> 1\nBEGIN\nROLLBACK TRANSACTION;\nTHROW 71000, 'Referenced status conflict with master list, Could not update the invoice''s status.', 1;\nEND\n\nupdate dbo.PMS_INVOICE_LM \nset STATUS = @stampStatus,\nREMARK_FOR_REJECT = {{REMARK_FOR_REJECT_INPUT.text}}\nwhere INVOICE_ID = {{SELECT_INVOICE.data[0].INVOICE_ID}} and DELETE_FLAG=0\n\n\nCOMMIT TRANSACTION;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

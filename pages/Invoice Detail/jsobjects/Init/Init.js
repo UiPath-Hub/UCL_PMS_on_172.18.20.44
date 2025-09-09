@@ -1,30 +1,40 @@
 export default {
 	dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangkok").format("yyyy-mm-dd"),
 	initDefault:async ()=>{
+		await closeModal(MODAL_APPROVE_CONFIRM.name);
+		await closeModal(Modal_ErrorAlert.name);
+		await closeModal(MODAL_DELETE.name);
+		await closeModal(Modal_ManageItem.name);
+		await closeModal(MODAL_REJECT_CONFIRM.name);
+		await closeModal(Modal_SendToRobot.name);
+		await closeModal(Modal_Session_detail.name);
 
-		if(appsmith.store.INIT===undefined){
+		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams.InvoiceNumber){
 			Configs.forceKick = true;
 			Configs.errorAlert = "Conflict parameter: Unknown selected invoice.";
 			showModal(Modal_ErrorAlert.name);
 			return;
+		}else{
+			if(appsmith.URL.queryParams.InvoiceNumber){
+				await storeValue("INIT",{INVOICE_NO:appsmith.URL.queryParams.InvoiceNumber});
+			}
 		}
-		await Promise.all([
-			SELECT_INVOICE.run(),
-			SELECT_INVOICE_ITEM.run(),
-			SELECT_COMPANY.run(),
-			SELECT_COMPANY_CONTACT.run(),
-			SELECT_BILLING.run()])
+		if(!appsmith.store.INIT.INVOICE_NO){
+			Configs.INVOICE_ID = "INVOICE_ID"
+		}
+		await SELECT_INVOICE.run()
+		await SELECT_INVOICE_ITEM.run()
 		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
 		console.log(SELECT_INVOICE.data);
-		let InitializationEntityList = [{ENTITY:PMS_INVOICE_LM,DATA: SELECT_INVOICE.data},
-																			{ENTITY:PMS_COMPANY_LM,DATA: SELECT_COMPANY.data},
-																			{ENTITY:PMS_COMPANY_CONTACT_LM,DATA: SELECT_COMPANY_CONTACT.data},
-																			{ENTITY:PMS_COMPANY_BILLING,DATA: SELECT_BILLING.data}
+		let InitializationEntityList = [{ENTITY:PMS_INVOICE_LM,DATA: SELECT_INVOICE.data[0]},
+																			//{ENTITY:PMS_COMPANY_LM,DATA: SELECT_COMPANY.data},
+																			//{ENTITY:PMS_COMPANY_CONTACT_LM,DATA: SELECT_COMPANY_CONTACT.data},
+																			//{ENTITY:PMS_COMPANY_BILLING,DATA: SELECT_BILLING.data}
 																		];
 		await GlobalFunctions.initDefault(InitializationEntityList);		
 		
 		//manipulate field data		
-		if(SELECT_COMPANY.data && SELECT_COMPANY.data[0] && SELECT_COMPANY.data[0].OVERWRITE_BILLING_ADDRESS){
+		/*if(SELECT_COMPANY.data && SELECT_COMPANY.data[0] && SELECT_COMPANY.data[0].OVERWRITE_BILLING_ADDRESS){
 			//mapping billing to company
 			PMS_COMPANY_LM.COMPANY_ADD_NO.data=			PMS_COMPANY_BILLING.BILLING_COMPANY_ADD_NO.data
 			PMS_COMPANY_LM.COMPANY_FLOOR.data=			PMS_COMPANY_BILLING.BILLING_COMPANY_FLOOR.data
@@ -38,7 +48,7 @@ export default {
 		}
 
 		PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_FIRST_NAME_TH.data = PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_FIRST_NAME_TH.data + " " + PMS_COMPANY_CONTACT_LM.COMPANY_CONTACT_SUR_NAME_TH.data
-		resetWidget(Body.widgetName,true);
+		*/
 	},
 	pageLoad	:async ()=>{
 		Configs.forceKick=false;

@@ -29,6 +29,7 @@ export default {
 				if(_5_SELECT_IMAGE.data && _5_SELECT_IMAGE.data.length>0){
 					DefaultInventory.IMAGE.data = _5_SELECT_IMAGE.data[0].PICTURE_INVENTORY_FILE
 				}
+				JS.onClick_SelectParentMeter(DefaultInventory.SUB_INVENTORY.data);
 				Configs.startBody="VIEW"
 			}
 

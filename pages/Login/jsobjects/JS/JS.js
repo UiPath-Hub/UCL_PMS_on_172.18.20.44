@@ -7,9 +7,10 @@ export default {
 				showAlert("Create session error.");
 			}else{
 				SESSION.TOKEN = SP_HANDLE_TOKEN.data[0].TOKEN;
+				SESSION.START_PAGE = SP_HANDLE_TOKEN.data[0].START_PAGE;
 				SESSION.PERMISSIONS = SP_HANDLE_TOKEN.data.map((ele)=>ele.PERMISSION_ID);
 				storeValue(Configs.userSession,SESSION);
-				navigateTo('Home', {}, 'SAME_WINDOW');
+				navigateTo(SESSION.START_PAGE, {}, 'SAME_WINDOW');
 			}
 				
 		}else{

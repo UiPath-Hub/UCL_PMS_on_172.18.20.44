@@ -20,11 +20,15 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "OWNER_AUTOFLIGHT_BRANCH",
+        "name": "OWNER_ERP_BRANCH",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
         "name": "COMPANY_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_NAME",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
@@ -64,7 +68,23 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
+        "name": "TAX_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
         "name": "COMPANY_CONTACT_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_PERSON",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_TELEPHONE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_EMAIL",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
@@ -76,14 +96,6 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "COMPANY_NAME_EN",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
-        "name": "COMPANY_NAME_TH",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
         "name": "BRANCH_TYPE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
@@ -92,19 +104,7 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "TAX_ID",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
         "name": "INVOICE_TYPE",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
-        "name": "SUB_INVOICE_TYPE",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
-        "name": "INVOICE_DOCUMENT_BOOK",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
@@ -120,10 +120,6 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "INVOICE_TOTALAMOUNT",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
         "name": "VAT_TYPE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
@@ -132,23 +128,43 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "TOTAL_AMOUNT",
+        "name": "INVOICE_TOTALAMOUNT",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "SUB_AMOUNT",
+        "name": "CREDIT_DAY",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "INVOICE_REMARK",
+        "name": "DOCUMENT_DATE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "UPDATE_PDF_DRAFT_STATUS",
+        "name": "CREDIT_START_DATE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "INVOICE_PICTURE",
+        "name": "DUE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REMARK_FORM_API",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REF1",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REF2",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REF3",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REF4",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
@@ -164,19 +180,35 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "DUE_DATE",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
-        "name": "EXPIRE_DATE",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
         "name": "UPDATE_DATE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
         "name": "USER_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "PDF_DRAFT_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "PDF_APPROVE_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "PDF_SEND_FINISH_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREDIT_NOTE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "REMARK_FOR_REJECT",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       }
     ]

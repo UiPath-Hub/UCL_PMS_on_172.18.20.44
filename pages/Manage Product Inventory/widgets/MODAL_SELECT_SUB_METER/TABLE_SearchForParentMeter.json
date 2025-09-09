@@ -34,10 +34,14 @@
   "columnOrder": [
     "INVENTORY_ID",
     "INVENTORY_NAME",
+    "PRODUCT_TYPE_TH",
+    "FLOOR_NO",
     "TOTAL_RECORDS"
   ],
-  "columnUpdatedAt": 1747210755301,
-  "columnWidthMap": {},
+  "columnUpdatedAt": 1756286810633,
+  "columnWidthMap": {
+    "INVENTORY_NAME": 386
+  },
   "customIsLoading": false,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
@@ -67,6 +71,12 @@
     },
     {
       "key": "primaryColumns.TOTAL_RECORDS.computedValue"
+    },
+    {
+      "key": "primaryColumns.PRODUCT_TYPE_TH.computedValue"
+    },
+    {
+      "key": "primaryColumns.FLOOR_NO.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -103,6 +113,40 @@
   "parentRowSpace": 10,
   "primaryColumnId": "INVENTORY_ID",
   "primaryColumns": {
+    "FLOOR_NO": {
+      "alias": "FLOOR_NO",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TABLE_SearchForParentMeter.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"FLOOR_NO\"])) : FLOOR_NO })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "FLOOR_NO",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Floor",
+      "notation": "standard",
+      "originalId": "FLOOR_NO",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "INVENTORY_ID": {
       "alias": "INVENTORY_ID",
       "allowCellWrapping": false,
@@ -159,6 +203,40 @@
       "notation": "standard",
       "originalId": "INVENTORY_NAME",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "PRODUCT_TYPE_TH": {
+      "alias": "PRODUCT_TYPE_TH",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TABLE_SearchForParentMeter.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"PRODUCT_TYPE_TH\"])) : PRODUCT_TYPE_TH })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "PRODUCT_TYPE_TH",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Type",
+      "notation": "standard",
+      "originalId": "PRODUCT_TYPE_TH",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
