@@ -35,6 +35,7 @@
   "columnOrder": [
     "PRODUCT_DESCRIPTION",
     "INVOICE_QUANTITY",
+    "UOM",
     "PRICE_PER_UNIT",
     "TOTAL_PRICE",
     "INVOICE_DETAIL_ID",
@@ -46,7 +47,6 @@
     "ACCOUNT_CODE",
     "INVOICE_REMARK_FORM_API",
     "MD5",
-    "UOM",
     "STATUS",
     "DELETE_FLAG",
     "CREATE_DATE",
@@ -54,11 +54,12 @@
     "USER_ID",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1756968614807,
+  "columnUpdatedAt": 1757388147214,
   "columnWidthMap": {
-    "INVOICE_QUANTITY": 259,
-    "PRICE_PER_UNIT": 240,
-    "PRODUCT_DESCRIPTION": 511
+    "INVOICE_QUANTITY": 198,
+    "PRICE_PER_UNIT": 190,
+    "PRODUCT_DESCRIPTION": 511,
+    "UOM": 94
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -755,7 +756,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "UOM",
       "notation": "standard",
       "originalId": "UOM",

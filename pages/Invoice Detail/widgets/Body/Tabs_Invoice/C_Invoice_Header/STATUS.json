@@ -33,9 +33,16 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -60,6 +67,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget(STATUS .widgetName)}}",
   "originalBottomRow": 12,
   "originalTopRow": 8,
   "parentColumnSpace": 19.5,

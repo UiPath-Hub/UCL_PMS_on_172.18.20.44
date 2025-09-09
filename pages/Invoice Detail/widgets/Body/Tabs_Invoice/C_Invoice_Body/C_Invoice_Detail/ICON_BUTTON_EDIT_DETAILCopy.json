@@ -28,7 +28,7 @@
     }
   ],
   "iconName": "trash",
-  "isDisabled": "{{Table_PMS_INVOICE_DETAIL_Edit.selectedRows.length === 0 }}",
+  "isDisabled": "{{Table_PMS_INVOICE_DETAIL_Edit.selectedRows.length === 0 || Table_PMS_INVOICE_DETAIL_Edit.processedTableData.length<=1}}",
   "isLoading": false,
   "isVisible": "{{Table_PMS_INVOICE_DETAIL_Edit.isVisible}}",
   "key": "sjcapm6fvo",

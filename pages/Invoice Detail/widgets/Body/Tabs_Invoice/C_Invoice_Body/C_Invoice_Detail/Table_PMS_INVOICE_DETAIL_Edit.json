@@ -9,6 +9,7 @@
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
+  "cellBackground": "",
   "childStylesheet": {
     "button": {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -35,17 +36,33 @@
   "columnOrder": [
     "PRODUCT_DESCRIPTION",
     "INVOICE_QUANTITY",
+    "UOM",
     "PRICE_PER_UNIT",
     "TOTAL_PRICE",
-    "customColumn1"
+    "INVOICE_DETAIL_ID",
+    "INVOICE_ID",
+    "PRODUCT_ID",
+    "INVENTORY_ID",
+    "INVENTORY_NAME",
+    "CHARGE_TYPE",
+    "ACCOUNT_CODE",
+    "INVOICE_REMARK_FORM_API",
+    "MD5",
+    "STATUS",
+    "DELETE_FLAG",
+    "CREATE_DATE",
+    "UPDATE_DATE",
+    "customColumn1",
+    "USER_ID"
   ],
-  "columnUpdatedAt": 1757311294151,
+  "columnUpdatedAt": 1757409900419,
   "columnWidthMap": {
     "EditActions1": 101,
-    "INVOICE_QUANTITY": 204.00000000000003,
-    "PRICE_PER_UNIT": 195,
-    "PRODUCT_DESCRIPTION": 511,
-    "TOTAL_PRICE": 192
+    "INVOICE_QUANTITY": 365,
+    "PRICE_PER_UNIT": 352,
+    "PRODUCT_DESCRIPTION": 469,
+    "TOTAL_PRICE": 373.99999999999994,
+    "UOM": 185
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -125,18 +142,6 @@
     },
     {
       "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.customColumn1.computedValue"
-    },
-    {
-      "key": "primaryColumns.customColumn1.buttonColor"
-    },
-    {
-      "key": "primaryColumns.customColumn1.borderRadius"
-    },
-    {
-      "key": "primaryColumns.customColumn1.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
@@ -157,6 +162,9 @@
     },
     {
       "key": "primaryColumns.TOTAL_PRICE.onSubmit"
+    },
+    {
+      "key": "primaryColumns.UOM.onSubmit"
     }
   ],
   "dynamicTriggerPathList": [
@@ -171,6 +179,9 @@
     },
     {
       "key": "primaryColumns.TOTAL_PRICE.onSubmit"
+    },
+    {
+      "key": "primaryColumns.UOM.onSubmit"
     }
   ],
   "enableClientSideSearch": true,
@@ -206,6 +217,7 @@
       "alias": "ACCOUNT_CODE",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ACCOUNT_CODE\"])) : ACCOUNT_CODE })()}}",
       "currencyCode": "USD",
@@ -237,6 +249,7 @@
       "alias": "CHARGE_TYPE",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"CHARGE_TYPE\"])) : CHARGE_TYPE })()}}",
       "currencyCode": "USD",
@@ -268,6 +281,7 @@
       "alias": "CREATE_DATE",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"CREATE_DATE\"])) : CREATE_DATE })()}}",
       "currencyCode": "USD",
@@ -299,6 +313,7 @@
       "alias": "DELETE_FLAG",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "checkbox",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"DELETE_FLAG\"])) : DELETE_FLAG })()}}",
       "currencyCode": "USD",
@@ -330,6 +345,7 @@
       "alias": "INVENTORY_ID",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"INVENTORY_ID\"])) : INVENTORY_ID })()}}",
       "currencyCode": "USD",
@@ -361,6 +377,7 @@
       "alias": "INVENTORY_NAME",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"INVENTORY_NAME\"])) : INVENTORY_NAME })()}}",
       "currencyCode": "USD",
@@ -392,6 +409,7 @@
       "alias": "INVOICE_DETAIL_ID",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"INVOICE_DETAIL_ID\"])) : INVOICE_DETAIL_ID })()}}",
       "currencyCode": "USD",
@@ -423,6 +441,7 @@
       "alias": "INVOICE_ID",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"INVOICE_ID\"])) : INVOICE_ID })()}}",
       "currencyCode": "USD",
@@ -454,6 +473,7 @@
       "alias": "INVOICE_QUANTITY",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (parseFloat(currentRow[\"INVOICE_QUANTITY\"]||0).toFixed(2))) : parseFloat(currentRow[\"INVOICE_QUANTITY\"]||0).toFixed(2) })()}}",
       "currencyCode": "USD",
@@ -486,6 +506,7 @@
       "alias": "INVOICE_REMARK_FORM_API",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"INVOICE_REMARK_FORM_API\"])) : INVOICE_REMARK_FORM_API })()}}",
       "currencyCode": "USD",
@@ -517,6 +538,7 @@
       "alias": "MD5",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"MD5\"])) : MD5 })()}}",
       "currencyCode": "USD",
@@ -548,6 +570,7 @@
       "alias": "PRICE_PER_UNIT",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (parseFloat(currentRow[\"PRICE_PER_UNIT\"]||0).toFixed(2))) : parseFloat(currentRow[\"PRICE_PER_UNIT\"]||0).toFixed(2) })()}}",
       "currencyCode": "USD",
@@ -580,6 +603,7 @@
       "alias": "PRODUCT_DESCRIPTION",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"PRODUCT_DESCRIPTION\"])) : currentRow[\"PRODUCT_DESCRIPTION\"] })()}}",
       "currencyCode": "USD",
@@ -614,6 +638,7 @@
       "alias": "PRODUCT_ID",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"PRODUCT_ID\"])) : PRODUCT_ID })()}}",
       "currencyCode": "USD",
@@ -645,6 +670,7 @@
       "alias": "STATUS",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"STATUS\"])) : STATUS })()}}",
       "currencyCode": "USD",
@@ -676,6 +702,7 @@
       "alias": "TOTAL_PRICE",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "number",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (parseFloat(currentRow[\"TOTAL_PRICE\"]||0).toFixed(2))) : parseFloat(currentRow[\"TOTAL_PRICE\"]||0).toFixed(2) })()}}",
       "currencyCode": "USD",
@@ -708,6 +735,7 @@
       "alias": "UOM",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"UOM\"])) : UOM })()}}",
       "currencyCode": "USD",
@@ -717,16 +745,17 @@
       "horizontalAlignment": "CENTER",
       "id": "UOM",
       "index": 13,
-      "isCellEditable": false,
+      "isCellEditable": true,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
-      "isEditable": false,
+      "isEditable": true,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "UOM",
       "notation": "standard",
+      "onSubmit": "{{JS.onSubmitEditDetail();}}",
       "originalId": "UOM",
       "sticky": "",
       "textSize": "1rem",
@@ -739,6 +768,7 @@
       "alias": "UPDATE_DATE",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"UPDATE_DATE\"])) : UPDATE_DATE })()}}",
       "currencyCode": "USD",
@@ -770,6 +800,7 @@
       "alias": "USER_ID",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"USER_ID\"])) : USER_ID })()}}",
       "currencyCode": "USD",
@@ -798,23 +829,18 @@
       "width": 150
     },
     "customColumn1": {
-      "alias": "Has changed",
+      "alias": " ",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "borderRadius": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
-      "boxShadow": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
-      "buttonColor": "{{Table_PMS_INVOICE_DETAIL_Edit.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
       "buttonStyle": "rgb(3, 179, 101)",
-      "buttonVariant": "TERTIARY",
-      "columnType": "iconButton",
-      "computedValue": "{{(() => { const tableData = Table_PMS_INVOICE_DETAIL_Edit.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('i')) : 'i' })()}}",
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "",
       "currencyCode": "USD",
-      "customAlias": "",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "iconName": "dot",
+      "horizontalAlignment": "CENTER",
       "id": "customColumn1",
       "index": 10,
       "isCellEditable": false,
@@ -825,7 +851,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Has changed",
+      "label": "",
       "labelColor": "#FFFFFF",
       "notation": "standard",
       "originalId": "customColumn1",
@@ -842,7 +868,7 @@
   "rightColumn": 64,
   "searchKey": "",
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{Configs.invoice_items\n?.filter(item=>!Configs.undo_stack.data.filter(i=>i.type===Configs.undo_stack.type.remove).map(i=>i.INVOICE_DETAIL_ID).includes(item.INVOICE_DETAIL_ID))||[]}}",
+  "tableData": "{{Configs.invoice_items.filter((i)=>!(Configs.undo_stack.data.filter(j=>j.type===Configs.undo_stack.type.remove).map(k=>k.INVOICE_DETAIL_ID).includes(i.INVOICE_DETAIL_ID)))\n}}",
   "textSize": "1rem",
   "topRow": 80,
   "topRowBeforeCollapse": 80,

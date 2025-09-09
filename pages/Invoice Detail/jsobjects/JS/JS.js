@@ -1,5 +1,10 @@
 export default {
-
+	onBttn_ManageRevisedInvoice:async()=>{
+		if(SELECT_INVOICE.data[0]?.DUPLICATED_ID){
+			await storeValue("INIT",{INVOICE_ID:SELECT_INVOICE.data[0].DUPLICATED_ID},true);
+			navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"SAME_WINDOW");
+		}
+	},
 	onBttn_Delete_Detail:async()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
 		const selectedRows=Table_PMS_INVOICE_DETAIL_Edit.selectedRows;
@@ -12,6 +17,7 @@ export default {
 	onBttn_Undo_Detail:async()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
 		const lastActivity = Configs.undo_stack.data.pop();
+		if(!lastActivity)return;
 		if(lastActivity.type === Configs.undo_stack.type.remove){
 			//no data change.
 		}else if(lastActivity.type === Configs.undo_stack.type.edit){
@@ -95,7 +101,7 @@ export default {
 					await closeModal(MODAL_DUPLICATE_CONFIRM.name);
 					await removeValue("INIT");
 					await storeValue("INIT",{INVOICE_ID:_4_DraftInvoice.data[0]?.INVOICE_ID},true);
-					console.log(appsmith.store.INIT);
+					//console.log(appsmith.store.INIT);
 					//navigateTo(appsmith.URL.fullPath, {[Configs.invoiceIDParameterName]:""}, 'SAME_WINDOW')
 					navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"SAME_WINDOW");
 					//Init.pageLoad();
@@ -146,20 +152,28 @@ export default {
 			const uniqueChanged_Detail_ID_Array = Array.from(new Set(Configs.undo_stack.data.map((i)=>i.INVOICE_DETAIL_ID)));
 			const uniqueRemoved_Detail_ID_Array = Array.from(new Set(Configs.undo_stack.data.filter(i=>i.type===Configs.undo_stack.type.remove).map((edited)=>edited.INVOICE_DETAIL_ID)));
 			for (const row of Configs.invoice_items.filter(item=>uniqueChanged_Detail_ID_Array.includes(item.INVOICE_DETAIL_ID))){
-	
 				if (row.INVOICE_DETAIL_ID){
 					let params = {};
 					if(uniqueRemoved_Detail_ID_Array.includes(row.INVOICE_DETAIL_ID)){
-						params = {INVOICE_DETAIL_ID: row.INVOICE_DETAIL_ID,DELETE_FLAG_DETAIL:1}
+						params = {INVOICE_DETAIL_ID: row.INVOICE_DETAIL_ID,
+											DELETE_FLAG_DETAIL:1,
+											TOTAL_PRICE_DETAIL: row.TOTAL_PRICE,
+											PRICE_PER_UNIT_DETAIL: row.PRICE_PER_UNIT,
+											PRODUCT_DESCRIPTION_DETAIL: row.PRODUCT_DESCRIPTION,
+											INVOICE_QUANTITY_DETAIL: row.INVOICE_QUANTITY,
+											UOM : row.UOM
+										 }
 					}else{
 						params = {
 							TOTAL_PRICE_DETAIL: row.TOTAL_PRICE,
 							PRICE_PER_UNIT_DETAIL: row.PRICE_PER_UNIT,
 							PRODUCT_DESCRIPTION_DETAIL: row.PRODUCT_DESCRIPTION,
 							INVOICE_QUANTITY_DETAIL: row.INVOICE_QUANTITY,
-							INVOICE_DETAIL_ID: row.INVOICE_DETAIL_ID
+							INVOICE_DETAIL_ID: row.INVOICE_DETAIL_ID,
+							UOM : row.UOM
 						}
 					}
+					console.log(JSON.stringify(params));
 					await _7_DraftInvoiceDetail.run(params);
 					if (!_7_DraftInvoiceDetail.responseMeta.isExecutionSuccess) {
 						hasError = true;
@@ -168,24 +182,25 @@ export default {
 					}
 				}
 			}
+			Configs.undo_stack.data = [];
 			//update header
-			const params2 = {};
+			await _4_DraftInvoice.run();
 			if(final===true){
-				params2.SF = true;
+				await _4_DraftInvoice.run({SF:true});
 			}
-			await _4_DraftInvoice.run(params2);
+
 
 			if(_4_DraftInvoice.responseMeta.isExecutionSuccess){
 				if(final===true){
 					await _5_SaveFinal.run();
 					if(!_5_SaveFinal.responseMeta.isExecutionSuccess){
 						hasError = true;
-						errorPoint = 'SaveFinal: '+JSON.stringify(params2);
+						errorPoint = 'SaveFinal';
 					}
 				}
 			}else{
 				hasError = true;
-				errorPoint = 'Header: '+JSON.stringify(params2);
+				errorPoint = 'Header';
 			}
 
 			if(!hasError){

@@ -18,7 +18,16 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "MULTI_LINE_TEXT",
   "isDisabled": false,
@@ -41,6 +50,7 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget(REMARK_FOR_REJECT .widgetName)}}",
   "originalBottomRow": 20,
   "originalTopRow": 12,
   "parentColumnSpace": 9.96875,

@@ -36,9 +36,16 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "isDisabled": false,
   "isLoading": false,
@@ -61,6 +68,7 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 36,
   "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget(INVOICE_TOTALAMOUNT .widgetName)}}",
   "originalBottomRow": 12,
   "originalTopRow": 8,
   "parentColumnSpace": 17.669921875,

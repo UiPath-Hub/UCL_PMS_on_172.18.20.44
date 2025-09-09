@@ -33,9 +33,16 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "NUMBER",
   "isDisabled": false,
@@ -59,6 +66,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 7,
   "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget( TAX_ID.widgetName)}}",
   "originalBottomRow": 9,
   "originalTopRow": 5,
   "parentColumnSpace": 11.4375,

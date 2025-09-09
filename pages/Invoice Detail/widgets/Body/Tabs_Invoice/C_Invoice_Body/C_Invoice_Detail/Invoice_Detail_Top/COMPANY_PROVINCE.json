@@ -33,9 +33,16 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -60,6 +67,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 7,
   "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget(COMPANY_PROVINCE .widgetName)}}",
   "originalBottomRow": 25,
   "originalTopRow": 21,
   "parentColumnSpace": 11.4375,

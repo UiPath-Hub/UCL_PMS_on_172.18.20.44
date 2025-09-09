@@ -1,4 +1,5 @@
 declare @newID dbo.NEW_ID = NULL;
+declare @date datetime = NULL;
 execute [dbo].[UPSERT_INVOICE_DUPLICATE]
 	@INVOICE_ID = {{PMS_INVOICE_LM_Widgets.INVOICE_ID.data}},
 	@COMPANY_ID  = {{COMPANY_ID.text}},
@@ -7,15 +8,9 @@ execute [dbo].[UPSERT_INVOICE_DUPLICATE]
 	@INVOICE_REF2 = {{INVOICE_REMARK.model.REF2}},
 	@INVOICE_REF3 = {{INVOICE_REMARK.model.REF3}},
 	@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}},
-	
-	@INVOICE_DETAIL_ID = {{this.params.INVOICE_DETAIL_ID||null}},
-	@INVOICE_QUANTITY_DETAIL = {{this.params.INVOICE_QUANTITY_DETAIL||null}},
-	@PRODUCT_DESCRIPTION_DETAIL = {{this.params.PRODUCT_DESCRIPTION_DETAIL||null}},
-	@PRICE_PER_UNIT_DETAIL = {{this.params.PRICE_PER_UNIT_DETAIL||null}},
-	@TOTAL_PRICE_DETAIL = {{this.params.TOTAL_PRICE_DETAIL||null}},
-	@DELETE_FLAG_DETAIL = {{this.params.DELETE_FLAG_DETAIL||0}},
+
 	
 	@TYPE = {{this.params.SF?'SF':'SD'}},
 	@NEW_INVOICE_ID = @newID output
 
-select @newID as INVOICE_ID
+select @newID as INVOICE_ID, @date;

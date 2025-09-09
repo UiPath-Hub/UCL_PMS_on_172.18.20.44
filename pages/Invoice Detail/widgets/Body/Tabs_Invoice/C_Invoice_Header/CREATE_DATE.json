@@ -27,9 +27,16 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -53,6 +60,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget(CREATE_DATE .widgetName)}}",
   "originalBottomRow": 4,
   "originalTopRow": 0,
   "parentColumnSpace": 19.5,

@@ -55,7 +55,7 @@
   "isLoading": false,
   "isVisible": "{{JS.onDocReviewVisible()&& [appsmith.store.userSession.PERMISSIONS][0].includes(Configs.permissions.SHOW_INVONCE_CN)}}",
   "key": "5yy64stunv",
-  "leftColumn": 37,
+  "leftColumn": 23,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,

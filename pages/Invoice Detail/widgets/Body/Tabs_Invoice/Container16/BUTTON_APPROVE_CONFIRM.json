@@ -17,6 +17,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -29,7 +32,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "njmdz4xkxz",
-  "leftColumn": 2,
+  "leftColumn": 28,
   "minWidth": 120,
   "mobileBottomRow": 14,
   "mobileLeftColumn": 6,
@@ -47,7 +50,7 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 27,
+  "rightColumn": 44,
   "text": "Approve",
   "topRow": 2,
   "type": "BUTTON_WIDGET",

@@ -30,9 +30,16 @@
     },
     {
       "key": "isRequired"
+    },
+    {
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -56,6 +63,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
+  "onTextChanged": "{{resetWidget(QUOTATION_NO .widgetName)}}",
   "originalBottomRow": 8,
   "originalTopRow": 4,
   "parentColumnSpace": 19.5,
