@@ -29,7 +29,7 @@
     ],
     "name": "SP_HANDLE_TOKEN",
     "pageId": "Meter Record Detail",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
