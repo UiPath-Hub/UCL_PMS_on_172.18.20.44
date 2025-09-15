@@ -31,6 +31,5 @@ export default {
 					 }
 	}
 	,test:()=>{
-		return JS.isFormChanges()
 	}
 }
