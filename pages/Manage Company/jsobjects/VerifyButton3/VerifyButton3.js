@@ -26,6 +26,7 @@ export default {
 			return;
 		}
 		let count = await this.countCheck();
+		console.log("1")
 		if(count&&count.length>0){
 			if(count[0].COUNT>1 || (count[0].COUNT===1 && this.DefaultEntity[this.PropName].data != this.InputBox.text)){
 				await this.setState("X",this.invalidColor);		

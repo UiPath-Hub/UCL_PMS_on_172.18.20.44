@@ -26,7 +26,7 @@ export default {
 			await Promise.all([VerifyButton1.onClick(),VerifyButton2.onClick(),VerifyButton3.onClick()])			
 		}
 
-		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0){
+		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0 && appsmith.URL.queryParams[ Configs.editCompanyFlag] !== undefined){
 			Configs.errorAlert = 'Editing company/third-party data without a valid priority contact person will cause data lost while saving. Please add at least one contact person before editing.'
 			showModal(Modal_ErrorAlert.name);
 		}

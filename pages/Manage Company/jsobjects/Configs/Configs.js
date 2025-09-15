@@ -31,5 +31,6 @@ export default {
 					 }
 	}
 	,test:()=>{
+		return (Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).find(i=>i["Contact ID"]=== Configs.PRIORITY_CONTACT_ID))
 	}
 }

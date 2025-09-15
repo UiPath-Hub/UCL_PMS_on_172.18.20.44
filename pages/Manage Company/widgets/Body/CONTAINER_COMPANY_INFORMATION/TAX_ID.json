@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 43,
   "boxShadow": "none",
-  "defaultText": "{{DefaultCompany.TAX_ID.data}}",
+  "defaultText": "{{_.trim(DefaultCompany.TAX_ID.data)}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -17,13 +17,13 @@
       "key": "defaultText"
     },
     {
-      "key": "regex"
-    },
-    {
       "key": "isRequired"
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "regex"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -46,6 +46,7 @@
       "key": "onBlur"
     }
   ],
+  "errorMessage": "err",
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,

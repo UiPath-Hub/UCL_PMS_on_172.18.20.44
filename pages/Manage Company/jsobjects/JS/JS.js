@@ -30,7 +30,7 @@ export default {
 	},
 	onClick_Save:async ()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
-			if((Configs.PRIORITY_CONTACT_ID == "" || Configs.PRIORITY_CONTACT_ID == undefined) && Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length>0){
+			if(!(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).find(i=>i["Contact ID"]=== Configs.PRIORITY_CONTACT_ID)) && Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length>0){
 				showModal(Modal_NeedPriorityContact.name);
 				return;
 			}
@@ -175,7 +175,7 @@ export default {
 		if(Object.keys(Company_Widgets).find((key)=>{
 			if(DefaultCompany[key] && DefaultCompany[key].data !== undefined){
 				const widgetData = Company_Widgets[key].data===undefined||Company_Widgets[key].data===null?"":Company_Widgets[key].data.toString();
-				const defaultData = _0_SELECT_FOR_COMPANY_BY_ID.data[0][key]===undefined||_0_SELECT_FOR_COMPANY_BY_ID.data[0][key].data===null?
+				const defaultData = _0_SELECT_FOR_COMPANY_BY_ID.data[0][key]===undefined||_0_SELECT_FOR_COMPANY_BY_ID.data[0][key]===null?
 							"":_0_SELECT_FOR_COMPANY_BY_ID.data[0][key].toString();
 				if(defaultData != widgetData && Company_Widgets[key].isVisible && !Company_Widgets[key].isDisable){
 					console.log(key)
@@ -199,7 +199,7 @@ export default {
 		
 		console.log("pass3")
 		let priorityContactID = Configs.showCompanyContact.find(i=>i["Contact ID"]===Configs.PRIORITY_CONTACT_ID);
-		let priorityContactChange = priorityContactID?priorityContactID.ID!==DefaultCompany.PRIORITY_CONTACT.data:DefaultCompany.PRIORITY_CONTACT.data==="";
+		let priorityContactChange = priorityContactID?priorityContactID.ID!==DefaultCompany.PRIORITY_CONTACT.data:DefaultCompany.PRIORITY_CONTACT.data!=="";
 		if(priorityContactChange) return true;
 		return false;
 	},

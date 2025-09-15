@@ -37,11 +37,11 @@
     "Role",
     "Email",
     "TOTAL_RECORDS",
-    "ID",
     "Telephone",
+    "ID",
     "customColumn1"
   ],
-  "columnUpdatedAt": 1757934422969,
+  "columnUpdatedAt": 1757954819616,
   "columnWidthMap": {
     "Contact_Name": 310,
     "Email": 227,
@@ -100,10 +100,10 @@
       "key": "primaryColumns.customColumn1.buttonColor"
     },
     {
-      "key": "primaryColumns.ID.computedValue"
+      "key": "primaryColumns.Telephone.computedValue"
     },
     {
-      "key": "primaryColumns.Telephone.computedValue"
+      "key": "primaryColumns.ID.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -265,7 +265,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "ID",
       "notation": "standard",
       "originalId": "ID",
