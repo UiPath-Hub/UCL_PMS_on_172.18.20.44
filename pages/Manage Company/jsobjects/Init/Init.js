@@ -74,19 +74,19 @@ export default {
 				if(_6_SELECT_FOR_CONTACT_BY_COMID.data != undefined)
 				{
 					Configs.showCompanyContact =_6_SELECT_FOR_CONTACT_BY_COMID.data;
-					const PRIORITY_CONTACT_ID = Configs.showCompanyContact.find((i)=> i.ID === _0_SELECT_FOR_COMPANY_BY_ID.data[0].PRIORITY_CONTACT);
-					if(PRIORITY_CONTACT_ID!==undefined){
-						Configs.PRIORITY_CONTACT_ID = PRIORITY_CONTACT_ID["Contact ID"];
-						JS.sortPriorityContact()
-					}else{
-						Configs.PRIORITY_CONTACT_ID=""
-					}
 					return;
 				}else Configs.showCompanyContact=[]
 
 			}
 
 			await Promise.all([initDefault(),initExistContact(),_4_CONTACT_TEMP_DELETE.run()])
+			const PRIORITY_CONTACT_ID = Configs.showCompanyContact.find((i)=> i.ID === _0_SELECT_FOR_COMPANY_BY_ID.data[0].PRIORITY_CONTACT);
+			if(PRIORITY_CONTACT_ID!==undefined){
+				Configs.PRIORITY_CONTACT_ID = PRIORITY_CONTACT_ID["Contact ID"];
+				JS.sortPriorityContact()
+			}else{
+				Configs.PRIORITY_CONTACT_ID=""
+			}
 			console.log("init LM")
 		}else{
 			//New
