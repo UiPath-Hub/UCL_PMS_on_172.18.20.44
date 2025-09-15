@@ -8,7 +8,7 @@ export default {
   COMPANY_BUSINESS_TYPE_EN: { ...COMPANY_BUSINESS_TYPE, data: COMPANY_BUSINESS_TYPE.selectedOptionValue.split("/")[1]||""},
   TAX_ID: { ...TAX_ID, data: TAX_ID.text  },
   STATUS: { ...STATUS, data: STATUS.selectedOptionValue },
-  CREATE_DATE: { ...CREATE_DATE, data: CREATE_DATE.text },
+  //CREATE_DATE: { ...CREATE_DATE, data: CREATE_DATE.text },
   TELEPHONE: { ...TELEPHONE, data: TELEPHONE.text },
   CONTACT_EMAIL: { ...CONTACT_EMAIL, data: CONTACT_EMAIL.text },
   FAX: { ...FAX, data: FAX.text },

@@ -36,9 +36,6 @@
     },
     {
       "key": "onTextChanged"
-    },
-    {
-      "key": "onBlur"
     }
   ],
   "dynamicTriggerPathList": [
@@ -75,7 +72,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "onBlur": "{{JS.onTAX_IDBlur();}}",
+  "onBlur": "",
   "onTextChanged": "{{VerifyButton3.setInit();}}",
   "originalBottomRow": 43,
   "originalTopRow": 39,

@@ -17,9 +17,6 @@
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
-    },
-    {
-      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -39,7 +36,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onBttn_DUPLICATE_INVOICE();\n}}",
+  "onClick": "{{JS.onBttn_DUPLICATE_INVOICE(false);}}",
   "originalBottomRow": 93,
   "originalTopRow": 89,
   "parentColumnSpace": 7.30078125,

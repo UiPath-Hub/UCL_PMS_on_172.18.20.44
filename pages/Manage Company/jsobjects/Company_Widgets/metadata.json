@@ -44,10 +44,6 @@
         "value": "{\n  ...STATUS,\n  data: STATUS.selectedOptionValue\n}"
       },
       {
-        "name": "CREATE_DATE",
-        "value": "{\n  ...CREATE_DATE,\n  data: CREATE_DATE.text\n}"
-      },
-      {
         "name": "TELEPHONE",
         "value": "{\n  ...TELEPHONE,\n  data: TELEPHONE.text\n}"
       },

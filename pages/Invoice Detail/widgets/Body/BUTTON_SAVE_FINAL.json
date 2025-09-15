@@ -4,7 +4,7 @@
   "bottomRow": 14,
   "bottomRowBeforeCollapse": 14,
   "boxShadow": "none",
-  "buttonColor": "#ffd333",
+  "buttonColor": "#15803d",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
@@ -44,7 +44,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onBttn_SAVE_DRAFT(false, true);}}",
+  "onClick": "{{JS.onBttn_SAVE_DRAFT(false, false);}}",
   "originalBottomRow": 14,
   "originalTopRow": 10,
   "parentColumnSpace": 19.5,

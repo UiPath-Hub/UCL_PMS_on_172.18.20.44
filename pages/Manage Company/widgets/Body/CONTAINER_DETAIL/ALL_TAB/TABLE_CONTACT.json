@@ -36,12 +36,17 @@
     "Contact_Name",
     "Role",
     "Email",
+    "TOTAL_RECORDS",
+    "ID",
     "Telephone",
-    "TOTAL_RECORDS"
+    "customColumn1"
   ],
-  "columnUpdatedAt": 1757328740862,
+  "columnUpdatedAt": 1757934422969,
   "columnWidthMap": {
-    "Email": 227
+    "Contact_Name": 310,
+    "Email": 227,
+    "Role": 252,
+    "Telephone": 182
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -77,18 +82,46 @@
       "key": "primaryColumns.TOTAL_RECORDS.computedValue"
     },
     {
-      "key": "primaryColumns.Telephone.computedValue"
+      "key": "primaryColumns.Role.computedValue"
     },
     {
-      "key": "primaryColumns.Role.computedValue"
+      "key": "primaryColumns.customColumn1.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn1.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonColor"
+    },
+    {
+      "key": "primaryColumns.ID.computedValue"
+    },
+    {
+      "key": "primaryColumns.Telephone.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.customColumn1.iconName"
+    },
+    {
+      "key": "primaryColumns.customColumn1.buttonColor"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    }
+  ],
   "enableClientSideSearch": true,
   "endOfData": false,
   "flexVerticalAlignment": "start",
@@ -110,6 +143,8 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 36,
   "needsErrorInfo": false,
+  "originalBottomRow": 44,
+  "originalTopRow": 7,
   "parentColumnSpace": 19.1875,
   "parentId": "f8i0l29x3k",
   "parentRowSpace": 10,
@@ -208,6 +243,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "ID": {
+      "alias": "ID",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TABLE_CONTACT.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ID\"])) : ID })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ID",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "ID",
+      "notation": "standard",
+      "originalId": "ID",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "Role": {
       "alias": "Role",
       "allowCellWrapping": false,
@@ -279,7 +348,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = TABLE_CONTACT.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Telephone\"])) : currentRow[\"Telephone\"] })()}}",
+      "computedValue": "{{(() => { const tableData = TABLE_CONTACT.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Telephone\"])) : Telephone })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -287,7 +356,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "Telephone",
-      "index": 2,
+      "index": 4,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -306,13 +375,53 @@
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
+    },
+    "customColumn1": {
+      "alias": "Priority Contact ",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{TABLE_CONTACT.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{TABLE_CONTACT.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{(() => { const tableData = TABLE_CONTACT.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Configs.PRIORITY_CONTACT_ID!==currentRow[\"Contact ID\"]?\"#3b82f6\":\"#e15615\")) : Configs.PRIORITY_CONTACT_ID!==currentRow[\"Contact ID\"]?\"#3b82f6\":\"#e15615\" })()}}",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "TERTIARY",
+      "columnType": "iconButton",
+      "computedValue": "{{(() => { const tableData = TABLE_CONTACT.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ('')) : '' })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "iconName": "{{(() => { const tableData = TABLE_CONTACT.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Configs.PRIORITY_CONTACT_ID!==currentRow[\"Contact ID\"]?\"key-shift\":\"pin\")) : Configs.PRIORITY_CONTACT_ID!==currentRow[\"Contact ID\"]?\"key-shift\":\"pin\" })()}}",
+      "id": "customColumn1",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Priority Contact ",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{JS.setPriorityContact(TABLE_CONTACT.triggeredRow);}}",
+      "originalId": "customColumn1",
+      "sticky": "right",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
     }
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{(appsmith.URL.queryParams[Configs.editCompanyFlag]==undefined?_5_SELECT_ALL_C_CONTACT_TEMP.data:_6_SELECT_FOR_CONTACT_BY_COMID.data!=undefined?_6_SELECT_FOR_CONTACT_BY_COMID.data:Default_Table.TABLE_CONTACT).filter(row=>row.TOTAL_RECORDS!=0)}}",
+  "tableData": "{{Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0)}}",
   "textSize": "0.875rem",
   "topRow": 7,
   "totalRecordsCount": 0,

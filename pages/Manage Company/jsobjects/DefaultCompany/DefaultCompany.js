@@ -40,7 +40,7 @@ export default {
 	,COMPANY_BUSINESS_DETAIL_TH:{data:"",regex:"",required:false,color:""}
 	,COMPANY_BUSINESS_DETAIL_EN:{data:"",regex:"",required:false,color:""}
 	,COMPANY_LANGUAGE_TYPE:{data:"TH",regex:"",required:false,color:""}
-	
+	,PRIORITY_CONTACT:{data:"",regex:"",required:false,color:""}
 	//interface
 	,PROVINCE_TH:{data:this.COMPANY_PROVINCE_TH.data,
 								regex:"",
@@ -63,5 +63,4 @@ export default {
 								regex:this.COMPANY_POSTAL_CODE.regex,
 								required:this.COMPANY_POSTAL_CODE.required,
 								color:this.COMPANY_POSTAL_CODE.color}
-
 }

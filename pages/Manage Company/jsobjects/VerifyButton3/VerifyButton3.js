@@ -27,7 +27,7 @@ export default {
 		}
 		let count = await this.countCheck();
 		if(count&&count.length>0){
-			if(count[0].COUNT>0 && this.DefaultEntity[this.PropName].data != this.InputBox.text){
+			if(count[0].COUNT>1 || (count[0].COUNT===1 && this.DefaultEntity[this.PropName].data != this.InputBox.text)){
 				await this.setState("X",this.invalidColor);		
 				console.log("X");
 			}else{
