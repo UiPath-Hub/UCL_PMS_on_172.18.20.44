@@ -77,7 +77,7 @@
       },
       {
         "name": "is_draft",
-        "value": "SELECT_INVOICE.data[0]?.STATUS === \"Draft Invoice\""
+        "value": "false"
       },
       {
         "name": "edit_item",

@@ -18,8 +18,9 @@ export default {
 		await SELECT_INVOICE.run();
 		await _6_IS_SAVE_FINAL.run();
 		await SELECT_INVOICE_ITEM.run();
+		Configs.is_draft = SELECT_INVOICE.data[0]?.STATUS === "Draft Invoice";
 		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
-		console.log(SELECT_INVOICE.data);
+		//console.log(SELECT_INVOICE.data);
 		let InitializationEntityList = [{ENTITY:PMS_INVOICE_LM,DATA: SELECT_INVOICE.data[0]},
 																		//{ENTITY:PMS_COMPANY_LM,DATA: SELECT_COMPANY.data},
 																		//{ENTITY:PMS_COMPANY_CONTACT_LM,DATA: SELECT_COMPANY_CONTACT.data},

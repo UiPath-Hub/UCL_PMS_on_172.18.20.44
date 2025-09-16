@@ -3,11 +3,14 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 5,
   "boxShadow": "none",
-  "buttonColor": "#3b82f6",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "buttonColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -25,7 +28,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "7n5cmonjh5",
-  "leftColumn": 0,
+  "leftColumn": 32,
   "minWidth": 50,
   "mobileBottomRow": 43,
   "mobileLeftColumn": 54,
@@ -38,7 +41,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 32,
+  "rightColumn": 44,
   "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,

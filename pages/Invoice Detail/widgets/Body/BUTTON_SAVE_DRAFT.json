@@ -4,7 +4,7 @@
   "bottomRow": 14,
   "bottomRowBeforeCollapse": 14,
   "boxShadow": "none",
-  "buttonColor": "#15803d",
+  "buttonColor": "#ffd333",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
@@ -24,9 +24,6 @@
     },
     {
       "key": "isVisible"
-    },
-    {
-      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -48,7 +45,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onBttn_SAVE_DRAFT();}}",
+  "onClick": "{{JS.onBttn_SAVE_DRAFT(false, false);}}",
   "originalBottomRow": 14,
   "originalTopRow": 10,
   "parentColumnSpace": 19.5,

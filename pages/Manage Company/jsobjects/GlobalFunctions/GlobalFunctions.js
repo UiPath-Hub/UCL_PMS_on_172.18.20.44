@@ -24,7 +24,7 @@ export default {
 				if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
 					defaultEntities[keystr].color = Configs.requiredColorAlert;
 				}
-				alert.push(widgetsMap[keystr].label??keystr);
+				alert.push(widgetsMap[keystr].label||_.toLower( widgetsMap[keystr].widgetName).replaceAll("_"," "));
 			} else {
 				if(defaultEntities[keystr].color!=Configs.requiredColorPass){
 					defaultEntities[keystr].color = Configs.requiredColorPass;
@@ -65,6 +65,7 @@ export default {
 		if(!attributeType) attributeType="data";
 		await Promise.all( Object.keys(DefaultEntity).map(async(key)=>{
 			let keystr= key.toString();
+			
 			if(defaultData[keystr] !== undefined && DefaultEntity[keystr][attributeType] !== undefined && defaultData[keystr] !== null){
 				DefaultEntity[keystr][attributeType] = defaultData[keystr];
 			}else if(DefaultEntity[keystr][attributeType] !== undefined && attributeType==="data"){

@@ -29,7 +29,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onBttn_SAVE_DRAFT(true);}}",
+  "onClick": "{{JS.onBttn_SAVE_DRAFT(true, false);}}",
   "parentColumnSpace": 9.4375,
   "parentId": "mmovf4a0gz",
   "parentRowSpace": 10,
