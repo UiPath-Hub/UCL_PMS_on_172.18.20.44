@@ -226,14 +226,8 @@ export default {
 
 	},
 	onBttn_DisableSave:()=>{
-		let is_saveFinal = false;
-		let is_draft = Configs.is_draft;
-
-		if(_6_IS_SAVE_FINAL.data && _6_IS_SAVE_FINAL.data.length>0){
-			is_saveFinal = true;
-		}
-
-		return is_saveFinal||!is_draft
+		let is_draft = Configs.is_draft??false;
+		return !is_draft
 	},
 	onDocReviewVisible:()=>{
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?(SELECT_INVOICE.data[0].FILE_DRAFT??SELECT_INVOICE.data[0].FILE_ORIGINAL)!=null:false

@@ -16,7 +16,7 @@ export default {
 	invoice_items:null,
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
-	is_draft:SELECT_INVOICE.data[0]?.STATUS === "Draft Invoice",
+	is_draft:false,
 	edit_item:false,
 	removeDetails_ID:[],
 	editDetails_ID:[],
