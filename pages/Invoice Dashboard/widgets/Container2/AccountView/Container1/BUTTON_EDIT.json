@@ -13,9 +13,6 @@
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
-    },
-    {
-      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -28,26 +25,26 @@
   "isLoading": false,
   "isVisible": true,
   "key": "sjcapm6fvo",
-  "leftColumn": 23,
+  "leftColumn": 21,
   "minWidth": 50,
   "mobileBottomRow": 93,
   "mobileLeftColumn": 35,
   "mobileRightColumn": 39,
   "mobileTopRow": 89,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onEditItemClick();}}",
+  "onClick": "{{JS.onEditItemClick(Table_PMS_INVOICE_LM.selectedRow);}}",
   "originalBottomRow": 59,
   "originalTopRow": 55,
   "parentColumnSpace": 19.8125,
-  "parentId": "y1lfthw0b0",
+  "parentId": "91kh1ptr03",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 41,
+  "rightColumn": 60,
   "tooltip": "More detail",
   "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "l75c7hbgry",
+  "widgetId": "xiffab2op5",
   "widgetName": "BUTTON_EDIT"
 }

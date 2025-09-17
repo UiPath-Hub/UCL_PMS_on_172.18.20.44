@@ -1,10 +1,11 @@
 export default {
-dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangkok").format("yyyy-mm-dd"),
+dataDisplayStartTime:moment("2021-01-01",Configs.dateFormat), //moment.tz("Asia/Bangkok").format("yyyy-mm-dd"),
   pageLoad	:async ()=>{
 		Configs.forceKick=false;
 		Configs.forceLogin=false;
 		closeModal(Modal_Session_detail.name);
 		closeModal(Modal_ErrorAlert.name);
+		closeModal(MODAL_APPROVE_CONFIRM.name)
 		if(await this.sessionCheck()){
 			if(await this.permissionsCheck(Configs.permissions.VIEW,true)){
 				SP_SELECT_FOR_DASHBOARD.run();

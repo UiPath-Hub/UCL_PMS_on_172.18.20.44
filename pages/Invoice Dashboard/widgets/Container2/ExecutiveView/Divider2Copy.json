@@ -1,0 +1,39 @@
+{
+  "animateLoading": true,
+  "bottomRow": 5,
+  "capSide": 0,
+  "capType": "nc",
+  "dividerColor": "{{appsmith.theme.colors.backgroundColor}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "dividerColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isLoading": false,
+  "isVisible": true,
+  "key": "oaw313yh00",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 58,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 7,
+  "mobileTopRow": 54,
+  "needsErrorInfo": false,
+  "orientation": "horizontal",
+  "originalBottomRow": 62,
+  "originalTopRow": 58,
+  "parentColumnSpace": 4.375,
+  "parentId": "vjelpe9byy",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 47,
+  "strokeStyle": "solid",
+  "thickness": 2,
+  "topRow": 0,
+  "type": "DIVIDER_WIDGET",
+  "version": 1,
+  "widgetId": "7l0oh7sgj2",
+  "widgetName": "Divider2Copy"
+}

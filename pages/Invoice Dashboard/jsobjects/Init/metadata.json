@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "dataDisplayStartTime",
-        "value": "moment(\"2021-01-01\", \"YYYY-MM-DD\")"
+        "value": "moment(\"2021-01-01\", Configs.dateFormat)"
       }
     ]
   }

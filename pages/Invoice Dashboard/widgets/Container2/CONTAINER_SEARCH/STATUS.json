@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 10,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( [appsmith.store.userSession.PERMISSIONS][0].includes(Configs.permissions.SHOW_INVOICE_EXECUTE)?\"Waiting for Approval\":\"\"))(STATUS.options, STATUS.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,6 +14,9 @@
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -22,7 +25,11 @@
       "key": "sourceData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
@@ -44,6 +51,7 @@
   "mobileRightColumn": 55,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
+  "onOptionChange": "",
   "optionLabel": "label",
   "optionValue": "value",
   "originalBottomRow": 29,
