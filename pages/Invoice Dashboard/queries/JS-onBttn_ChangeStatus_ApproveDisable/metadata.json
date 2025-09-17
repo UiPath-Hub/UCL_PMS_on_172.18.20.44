@@ -1,16 +1,12 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_0b68b953-d966-4c59-a9f4-caca1c85368b",
-  "id": "Invoice Dashboard_JS.onEditItemClick",
+  "gitSyncId": "68c9249355eda7018e8c2bb8_9019f81a-a117-491b-a4af-cb3c317430f5",
+  "id": "Invoice Dashboard_JS.onBttn_ChangeStatus_ApproveDisable",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [
-        {
-          "name": "selectedRow"
-        }
-      ],
+      "jsArguments": [],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -26,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "JS.onEditItemClick",
-    "name": "onEditItemClick",
+    "fullyQualifiedName": "JS.onBttn_ChangeStatus_ApproveDisable",
+    "name": "onBttn_ChangeStatus_ApproveDisable",
     "pageId": "Invoice Dashboard",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

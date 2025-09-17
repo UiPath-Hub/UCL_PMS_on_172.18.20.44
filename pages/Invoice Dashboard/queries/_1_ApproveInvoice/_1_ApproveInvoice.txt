@@ -1,0 +1,32 @@
+SET NOCOUNT ON;
+IF @@TRANCOUNT = 0 
+BEGIN TRANSACTION;
+
+DECLARE @UpdateSeries TABLE (INVOICE_ID dbo.NEW_ID);
+INSERT INTO @UpdateSeries
+SELECT TRIM(value)
+FROM STRING_SPLIT({{_.join(this.params.INVOICE_IDs??[],",")}}, ',')
+WHERE value <> '' OR TRIM(value) <> '';
+
+DECLARE @stampStatus NVARCHAR(MAX) = N'Approved';
+
+IF (
+    SELECT COUNT(DISTINCT SYSTEM_VALUE)
+    FROM dbo.PMS_MASTER_LIST 
+    WHERE TYPE_NAME = 'INVOICE_STATUS' 
+      AND @stampStatus = SYSTEM_VALUE
+) <> 1
+BEGIN
+    IF @@TRANCOUNT > 0
+        ROLLBACK TRANSACTION;
+    THROW 71000, 'Referenced status conflict with master list, Could not update the invoice''s status.', 1;
+END;
+
+-- update แบบ set-based (ทีเดียวทุก record)
+UPDATE dbo.PMS_INVOICE_LM
+SET STATUS = @stampStatus
+WHERE INVOICE_ID IN (SELECT INVOICE_ID FROM @UpdateSeries)
+  AND DELETE_FLAG = 0;
+
+IF @@TRANCOUNT > 0
+    COMMIT TRANSACTION;

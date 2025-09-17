@@ -29,7 +29,7 @@
       },
       {
         "name": "dateFormat",
-        "value": "\"D MMMM YYYY\""
+        "value": "\"D MMM YYYY\""
       },
       {
         "name": "pageName",
@@ -50,6 +50,10 @@
       {
         "name": "BILLING_INFORMATION_ID",
         "value": "\"BILLING_INFORMATION_ID\""
+      },
+      {
+        "name": "bttnAPPROVE_disableStatus",
+        "value": "[\"Draft Invoice\", \"Approved\", \"Waiting for Payment\", \"Over Due\", \"Canceled\", \"Payment Completed\", \"Rejected\"]"
       }
     ]
   }

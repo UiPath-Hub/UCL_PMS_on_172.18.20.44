@@ -94,11 +94,11 @@
       "isDefault": false
     },
     {
-      "id": "Receipt Dashboard",
+      "id": "Invoice Detail",
       "isDefault": false
     },
     {
-      "id": "Invoice Detail",
+      "id": "Receipt Dashboard",
       "isDefault": false
     },
     {
