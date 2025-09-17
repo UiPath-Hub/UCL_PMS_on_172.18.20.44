@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "--get Owner ID \nDECLARE @PAIRED_OWNER_ID nvarchar(20) = dbo.fn_getPAIRED_OWNER_IDByToken({{appsmith.store.userSession.TOKEN}});\nSELECT COUNT(*) AS COUNT FROM dbo.PMS_COMPANY_LM WHERE COMPANY_NAME_TH={{COMPANY_NAME_TH.text}} AND DELETE_FLAG=0 AND OWNER_ID =@PAIRED_OWNER_ID AND IS_THIRD_PARTY={{Configs.IS_THIRD_PARTY==true?1:0}}",
+      "body": "--get Owner ID \nDECLARE @PAIRED_OWNER_ID nvarchar(20) = dbo.fn_getPAIRED_OWNER_IDByToken({{appsmith.store.userSession.TOKEN}});\nSELECT COUNT(*) AS COUNT FROM dbo.PMS_COMPANY_LM WHERE COMPANY_NAME_TH={{COMPANY_NAME_TH.text}} AND DELETE_FLAG=0 AND OWNER_ID =@PAIRED_OWNER_ID \nAND \n(({{Configs.IS_THIRD_PARTY==true?1:0}}= 1 AND (IS_THIRD_PARTY=1 or IS_THIRD_PARTY IS NULL))\nor\n({{Configs.IS_THIRD_PARTY==true?1:0}}= 0 AND IS_THIRD_PARTY=0))",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

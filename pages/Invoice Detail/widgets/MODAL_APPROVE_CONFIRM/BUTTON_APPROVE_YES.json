@@ -29,7 +29,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{_1_ApproveInvoice.run().then(() => {\n  navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');\n}).catch(() => {\n  showAlert(_1_ApproveInvoice.data, 'error');\n});}}",
+  "onClick": "{{JS.onBttn_APPROVE_INVOICE(true);}}",
   "parentColumnSpace": 9.4375,
   "parentId": "6rdzanhuje",
   "parentRowSpace": 10,

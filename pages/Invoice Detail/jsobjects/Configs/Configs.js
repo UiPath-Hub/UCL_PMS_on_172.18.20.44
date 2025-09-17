@@ -4,9 +4,10 @@ export default {
 	forceKick:false,
 	forceLogin:false,
 	errorAlert:"",
+	invoiceIDParameterName:"InvoiceNumber",
 	pageName:"Invoice Detail",
 	BodyInit:"LOADING",
-	dateFormat:"DD MMMM YYYY",
+	dateFormat:"D MMM YYYY",
 	INVOICE_ID:"INVOICE_NO",
 	COMPANY_ID:"COMPANY_ID",
 	COMPANY_CONTACT_ID:"COMPANY_CONTACT_ID",
@@ -15,4 +16,9 @@ export default {
 	invoice_items:null,
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
+	is_draft:false,
+	edit_item:false,
+	removeDetails_ID:[],
+	editDetails_ID:[],
+	undo_stack:{data:[],type:{"remove":0,"edit":1}}
 }

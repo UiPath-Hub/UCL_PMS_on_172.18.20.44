@@ -2,6 +2,7 @@ EXECUTE [dbo].[SER_SEARCH_FOR_PARENT_INVENTORY]
   @pInventoryName ={{Search_SUBMETER_NAME.text !== "" && Search_SUBMETER_NAME.text != INVENTORY_NAME.text?Search_SUBMETER_NAME.text:null}}
   ,@pProductType ={{Master_List_METER_TYPE.selectedOptionValue   !== ""?Master_List_METER_TYPE.selectedOptionValue:null}}
 	,@CHILE_INVENTORY_ID = {{INVENTORY_ID.text}}
+	,@INVENTORY_ID = {{this.params.INVENTORY_ID??null}}
 	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
   ,@pPageSize = {{Pagination.pageSize_SUBMETER_SearchResult}}
   ,@pPageIndex = {{TABLE_SearchForParentMeter.pageNo!==undefined?TABLE_SearchForParentMeter.pageNo:1}}

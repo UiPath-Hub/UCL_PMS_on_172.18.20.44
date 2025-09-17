@@ -1,43 +1,65 @@
 export default {
+	sortPriorityContact:()=>{
+		Configs.showCompanyContact = Configs.showCompanyContact.sort((a, b) => (b["Contact ID"]===Configs.PRIORITY_CONTACT_ID?1:0) - (a["Contact ID"]===Configs.PRIORITY_CONTACT_ID?1:0));
+	},
+	setPriorityContact:async (triggeredRow)=>{
+		Configs.PRIORITY_CONTACT_ID = triggeredRow["Contact ID"];
+		this.sortPriorityContact();
+	},
 	onChangedLanguage:async()=>{
 		DefaultCompany[ADDRESSING.PROVINCE_PROP_NAME].data = ADDRESSING.PROVINCE_WIDGET.selectedOptionValue
 	},
 	onClick_ButtonCancel:async ()=>{
-		if(!Configs.IS_THIRD_PARTY)
-			navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
-		else navigateTo('Third Party Dashboard', {}, 'SAME_WINDOW');
+		if(Configs.IS_THIRD_PARTY)
+			navigateTo('Third Party Dashboard', {}, 'SAME_WINDOW');
+		else navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
 	},
 	onClick_BUTTON_ADD_YES:async ()=>{
 		await closeModal(MODAL_ADD_NEXT.name)
-		navigateTo("Manage Company", {}, 'SAME_WINDOW');
-		
+		navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+
 	},
 	onClick_BUTTON_ADD_NO:async ()=>{
 		await closeModal(MODAL_ADD_NEXT.name)
 		if(!Configs.IS_THIRD_PARTY)
 			navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
 		else navigateTo('Third Party Dashboard', {}, 'SAME_WINDOW');
-			//removeValue(Configs.editCompanyFlag);
-			//removeValue(Configs.fromCompany);
-		
+		//removeValue(Configs.editCompanyFlag);
+		//removeValue(Configs.fromCompany);
+
 	},
 	onClick_Save:async ()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
+			if(!(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).find(i=>i["Contact ID"]=== Configs.PRIORITY_CONTACT_ID)) && Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length>0){
+				showModal(Modal_NeedPriorityContact.name);
+				return;
+			}
 			let alertWidget = await GlobalFunctions.manualValidateV2(DefaultCompany,Company_Widgets);
-			let alertBilling = []
+			let alertBilling = [];
+
 			if(OVERWRITE_BILLING_ADDRESS.selectedOptionValue=="true"){
 				//let datastr = "data"
 				alertBilling = await GlobalFunctions.manualValidateV2(Default_COMPANY_BILLING,CompanyBilling_Widgets);
+				const unique_Array = Array.from(new Set(alertBilling));
 				if(alertBilling.length > 0){
-					showAlert(`Billing information is required or invalid. : ${alertBilling.join(',')}`)
+					let text = `Billing information is required or invalid. :: ${unique_Array.join(',')}`;
+					if(Configs.IS_THIRD_PARTY){
+						text = text.replaceAll('company','third party');
+					}
+					showAlert(text)
 					//alertWidget = [...alertWidget,...alertBilling]
 				}
 			}
 			if(alertWidget.length > 0){
-				showAlert(`Company information is required or invalid. : ${ alertWidget.join(',')}`)
+				const unique_Array = Array.from(new Set(alertWidget));
+				let text = `Company information is required or invalid. :: ${ unique_Array.join(',')}`
+				if(Configs.IS_THIRD_PARTY){
+					text = text.replaceAll('company','third party');
+				}
+				showAlert(text);
 			}
 			if(alertWidget.length == 0 && alertBilling.length == 0)
-			showModal(MODAL_SAVE.name);
+				showModal(MODAL_SAVE.name);
 		}
 	},
 
@@ -74,11 +96,7 @@ export default {
 					if(_2_COMPANY_UPDATE.data[0]["RESULT_CODE"] === "DONE"){
 						await showAlert( "Save success","success");
 						await closeModal(MODAL_SAVE.name);
-							if(!Configs.IS_THIRD_PARTY)
-								navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
-							else navigateTo('Third Party Dashboard', {}, 'SAME_WINDOW');
-						
-						//showModal(MODAL_ADD_NEXT.name);
+						showModal(MODAL_continueEditing.name);
 					}else{
 						showAlert( "Save failed: "+(_2_COMPANY_UPDATE.data[0]["RESULT_MESSAGES"]),"error");
 					}
@@ -120,7 +138,8 @@ export default {
 		let changedData = Object.fromEntries(
 			Object.entries({...Company_Widgets,...CompanyBilling_Widgets}).map(([key, value]) => [key, value.data])
 		);
-		
+		changedData.PRIORITY_CONTACT_ID = Configs.PRIORITY_CONTACT_ID??""
+		//return changedData;
 		await storeValue(Configs.newCompanyTempFlag,changedData,true);
 	},
 	onContactPageIndexChange:async ()=>{
@@ -145,15 +164,43 @@ export default {
 				}));
 				storeValue("TABLE_COMPANY_CONTACT",newTable);			
 			}
-			
+
 		}
 	},
-	
+
 	isFormChanges:()=>{
+		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0 && appsmith.URL.queryParams[ Configs.editCompanyFlag]!=undefined)return false;
 		if(appsmith.URL.queryParams[ Configs.editCompanyFlag]==undefined)return false;
-		//let FormChanged = CONTAINER_COMPANY_INFORMATION.hasChanges || CONTAINER_COMPANY_INFO.hasChanges || Form_BillingDetail.hasChanges || Form_RemarkDetail.hasChanges;
-		//let overwriteChange = OVERWRITE_BILLING_ADDRESS.selectedOptionValue != appsmith.store[ Configs.editCompanyFlag].OVERWRITE_BILLING_ADDRESS;
-		//if(FormChanged && overwriteChange) return true;
+		console.log("pass1")
+		if(Object.keys(Company_Widgets).find((key)=>{
+			if(DefaultCompany[key] && DefaultCompany[key].data !== undefined){
+				const widgetData = Company_Widgets[key].data===undefined||Company_Widgets[key].data===null?"":Company_Widgets[key].data.toString();
+				const defaultData = _0_SELECT_FOR_COMPANY_BY_ID.data[0][key]===undefined||_0_SELECT_FOR_COMPANY_BY_ID.data[0][key]===null?
+							"":_0_SELECT_FOR_COMPANY_BY_ID.data[0][key].toString();
+				if(defaultData != widgetData && Company_Widgets[key].isVisible && !Company_Widgets[key].isDisable){
+					console.log(key)
+					return true;
+				}
+			}else return false;
+		})) return true;
+		console.log("pass2")
+		if(!(SELECT_BILLING.data===undefined || SELECT_BILLING.data.length===0)){
+			if(Object.keys(CompanyBilling_Widgets).find((key)=>{
+			if(Default_COMPANY_BILLING[key] && Default_COMPANY_BILLING[key].data !== undefined){
+				const widgetData = CompanyBilling_Widgets[key].data===undefined||CompanyBilling_Widgets[key].data===null?"":CompanyBilling_Widgets[key].data.toString();
+				const defaultData = SELECT_BILLING.data[0][key]===undefined||SELECT_BILLING.data[0][key]===null?"":SELECT_BILLING.data[0][key].toString();
+				if(defaultData != widgetData && CompanyBilling_Widgets[key].isVisible && !CompanyBilling_Widgets[key].isDisable){
+					console.log(key)
+					return true;
+				}
+			}else return false;
+		}))return true;
+		}
+		
+		console.log("pass3")
+		let priorityContactID = Configs.showCompanyContact.find(i=>i["Contact ID"]===Configs.PRIORITY_CONTACT_ID);
+		let priorityContactChange = priorityContactID?priorityContactID.ID!==DefaultCompany.PRIORITY_CONTACT.data:DefaultCompany.PRIORITY_CONTACT.data!=="";
+		if(priorityContactChange) return true;
 		return false;
 	},
 	goToManageCompany:(preferState,editContactID)=>{
@@ -162,8 +209,8 @@ export default {
 		if(appsmith.store[NEWBRANCH])
 			params = {...params,[NEWBRANCH]:appsmith.store[NEWBRANCH]}
 		navigateTo('Manage Company Contact', 
-												 params, 
-												 'SAME_WINDOW');
+							 params, 
+							 'SAME_WINDOW');
 	},
 	onNewContactClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
@@ -173,15 +220,15 @@ export default {
 				await storeValue(Configs.fromCompany, {"COMPANY_NAME":`${COMPANY_NAME_TH.text}/${COMPANY_NAME_EN.text}`,"COMPANY_ID":COMPANY_ID.text});
 				await this.keepChange();
 				this.goToManageCompany(Configs.contactPageState.AddContactTo);
-		})
+			})
 		}
 	},
 	onEditContactClick: async()=>{
 		if(this.isFormChanges()) return showAlert("Please save the company changes before managing contacts.","warning");
 
-			//await storeValue(Configs.fromCompany, {"COMPANY_NAME":`${COMPANY_NAME_TH.text}/${COMPANY_NAME_EN.text}`,"COMPANY_ID":COMPANY_ID.text});
-			await this.keepChange();
-			this.goToManageCompany(Configs.contactPageState.EditContactOf,TABLE_CONTACT.tableData[TABLE_CONTACT.selectedRowIndex]['Contact ID']);
+		//await storeValue(Configs.fromCompany, {"COMPANY_NAME":`${COMPANY_NAME_TH.text}/${COMPANY_NAME_EN.text}`,"COMPANY_ID":COMPANY_ID.text});
+		await this.keepChange();
+		this.goToManageCompany(Configs.contactPageState.EditContactOf,TABLE_CONTACT.tableData[TABLE_CONTACT.selectedRowIndex]['Contact ID']);
 	},
 	onDeleteBuutonClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){

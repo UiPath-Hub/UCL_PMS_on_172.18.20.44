@@ -1,6 +1,6 @@
 export default {
 	userSession:"userSession",
-	permissions:{VIEW:"INVV",EDIT:"INVE"},
+	permissions:{VIEW:"INVV",EDIT:"INVE",SHOW_INVOICE_EXECUTE:"INEX"},
 	forceKick:false,
 	forceLogin:false,
 	errorAlert:"",

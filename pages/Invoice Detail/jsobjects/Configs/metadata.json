@@ -28,6 +28,10 @@
         "value": "\"\""
       },
       {
+        "name": "invoiceIDParameterName",
+        "value": "\"InvoiceNumber\""
+      },
+      {
         "name": "pageName",
         "value": "\"Invoice Detail\""
       },
@@ -37,7 +41,7 @@
       },
       {
         "name": "dateFormat",
-        "value": "\"DD MMMM YYYY\""
+        "value": "\"D MMM YYYY\""
       },
       {
         "name": "INVOICE_ID",
@@ -70,6 +74,26 @@
       {
         "name": "requiredColorPass",
         "value": "\"\""
+      },
+      {
+        "name": "is_draft",
+        "value": "false"
+      },
+      {
+        "name": "edit_item",
+        "value": "false"
+      },
+      {
+        "name": "removeDetails_ID",
+        "value": "[]"
+      },
+      {
+        "name": "editDetails_ID",
+        "value": "[]"
+      },
+      {
+        "name": "undo_stack",
+        "value": "{\n  data: [],\n  type: {\n    \"remove\": 0,\n    \"edit\": 1\n  }\n}"
       }
     ]
   }

@@ -30,4 +30,5 @@ export default {
 	,SUB_INVENTORY:{data:"",regex:"",required:false,color:""}
 	,IMAGE:{data:""}
 	,SUB_INVENT_DETAIL:{data:""}
+	,SUB_INVENT_DETAIL2:{data:""}
 }
