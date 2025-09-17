@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 5,
+  "bottomRow": 6,
   "capSide": 0,
   "capType": "nc",
   "dividerColor": "{{appsmith.theme.colors.backgroundColor}}",

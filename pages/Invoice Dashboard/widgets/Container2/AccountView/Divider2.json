@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 5,
+  "bottomRow": 6,
   "capSide": 0,
   "capType": "nc",
   "dividerColor": "{{appsmith.theme.colors.backgroundColor}}",
@@ -31,7 +31,7 @@
   "rightColumn": 54,
   "strokeStyle": "solid",
   "thickness": 2,
-  "topRow": 1,
+  "topRow": 0,
   "type": "DIVIDER_WIDGET",
   "version": 1,
   "widgetId": "chpr4a73b0",
