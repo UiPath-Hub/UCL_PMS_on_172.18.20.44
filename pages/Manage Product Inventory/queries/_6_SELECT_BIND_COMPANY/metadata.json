@@ -29,7 +29,7 @@
     ],
     "name": "_6_SELECT_BIND_COMPANY",
     "pageId": "Manage Product Inventory",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

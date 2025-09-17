@@ -15,7 +15,16 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
   "errorMessage": "0.00*",
   "iconAlign": "left",
   "inputType": "NUMBER",
@@ -40,6 +49,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
+  "onSubmit": "{{JS.onClick_BUTTON_SEARCH();}}",
   "originalBottomRow": 9,
   "originalTopRow": 5,
   "parentColumnSpace": 16.7841796875,
@@ -48,7 +58,7 @@
   "placeholderText": "Search",
   "regex": "^\\d*(\\.\\d{1,2}){0,1}$",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
+  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
   "rightColumn": 40,
   "shouldAllowAutofill": false,

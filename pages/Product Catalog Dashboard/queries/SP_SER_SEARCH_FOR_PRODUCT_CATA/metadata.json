@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXEC [dbo].[SER_SEARCH_FOR_PRODUCT_CATALOG]\n\t\t@pProductCatalogNo = {{PRODUCT_CATALOG_NUMBER.text!== \"\"?`${PRODUCT_CATALOG_NUMBER.text}`:null}},\n\t\t@pProductName = {{PRODUCT_NAME.text!== \"\"?`${PRODUCT_NAME.text}`:null}},\n\t\t@pProductType = {{TYPE.selectedOptionValue!== \"\"?`${TYPE.selectedOptionValue}`:null}},\n\t\t@pProductCatalogStatus = {{STATUS.selectedOptionValue!== \"\"?`${STATUS.selectedOptionValue}`:null}},\n\t\t@pAvailableUnit = {{AVAILABLE_UNIT.text !== \"\"?AVAILABLE_UNIT.text:null}},\n\t\t@pTotalUnit = {{TOTAL_UNIT.text !== \"\"?TOTAL_UNIT.text:null}},\n\t\t@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\n",
+      "body": "EXEC [dbo].[SER_SEARCH_FOR_PRODUCT_CATALOG]\n\t\t@pProductCatalogNo = {{PRODUCT_CATALOG_NUMBER.text!== \"\"?`${PRODUCT_CATALOG_NUMBER.text}`:null}},\n\t\t@pProductName = {{PRODUCT_NAME.text!== \"\"?`${PRODUCT_NAME.text}`:null}},\n\t\t@pProductType = {{TYPE.selectedOptionValue!== \"\"?`${TYPE.selectedOptionValue}`:null}},\n\t\t@pProductCatalogStatus = {{STATUS.selectedOptionValue!== \"\"?`${STATUS.selectedOptionValue}`:null}},\n\t\t@pAvailableUnit = {{AVAILABLE_UNIT.text !== \"\"?AVAILABLE_UNIT.text:null}},\n\t\t@FLOOR_NO = {{FLOOR.selectedOptionValue !== \"\"?FLOOR.selectedOptionValue:null}},\n\t\t@pTotalUnit = {{TOTAL_UNIT.text !== \"\"?TOTAL_UNIT.text:null}},\n\t\t@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "SP_SER_SEARCH_FOR_PRODUCT_CATA",
     "pageId": "Product Catalog Dashboard",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

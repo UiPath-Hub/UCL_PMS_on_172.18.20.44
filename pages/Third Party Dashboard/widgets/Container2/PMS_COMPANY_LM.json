@@ -46,9 +46,9 @@
   ],
   "columnUpdatedAt": 1753416280875,
   "columnWidthMap": {
-    "COMPANY_CONTACT_ROLE": 137,
+    "COMPANY_CONTACT_ROLE": 143,
     "customColumn2": 161,
-    "customColumn3": 636
+    "customColumn3": 379
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",

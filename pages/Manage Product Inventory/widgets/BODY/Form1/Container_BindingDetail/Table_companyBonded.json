@@ -316,7 +316,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "tableData": "{{_6_SELECT_BIND_COMPANY.data}}",
+  "tableData": "{{_6_SELECT_BIND_COMPANY.data.filter(i=>i.TOTAL_RECORD!==0)}}",
   "textSize": "0.875rem",
   "topRow": 4,
   "totalRecordsCount": 0,

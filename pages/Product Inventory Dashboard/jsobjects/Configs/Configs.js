@@ -1,5 +1,5 @@
 export default {
-	dateFormat:"D MMMM YYYY",
+	dateFormat:"D MMM YYYY",
 	userSession:"userSession",
 	permissions:{VIEW:"PINVV",EDIT:"PINVE"},
 	forceKick:false,

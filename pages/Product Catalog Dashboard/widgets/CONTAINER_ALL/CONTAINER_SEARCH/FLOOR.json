@@ -1,67 +1,65 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 9,
+  "bottomRow": 19,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
-      "key": "onSubmit"
+      "key": "sourceData"
     }
   ],
-  "dynamicTriggerPathList": [
-    {
-      "key": "onSubmit"
-    }
-  ],
-  "iconAlign": "left",
-  "inputType": "TEXT",
+  "dynamicTriggerPathList": [],
   "isDisabled": false,
+  "isFilterable": true,
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "nwk391w658",
-  "label": "Product Name",
+  "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelText": "Floor",
   "labelTextSize": "1rem",
   "labelWidth": "11",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 12,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 20,
-  "mobileTopRow": 5,
+  "mobileBottomRow": 26,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "onSubmit": "{{JS.onSearchClick();}}",
-  "originalBottomRow": 9,
-  "originalTopRow": 5,
-  "parentColumnSpace": 16.7841796875,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 19,
+  "originalTopRow": 15,
+  "parentColumnSpace": 19.5,
   "parentId": "nbbzm7abdu",
   "parentRowSpace": 10,
-  "placeholderText": "Search",
+  "placeholderText": "Select option",
   "renderMode": "CANVAS",
-  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
   "rightColumn": 21,
-  "showStepArrows": false,
-  "topRow": 5,
-  "type": "INPUT_WIDGET_V2",
-  "version": 2,
-  "widgetId": "mgv1v037w1",
-  "widgetName": "PRODUCT_NAME"
+  "serverSideFiltering": false,
+  "sourceData": "{{SP_SELECTDROPDOWN_FLOOR.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
+  "topRow": 15,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "6772u8x0dw",
+  "widgetName": "FLOOR"
 }
