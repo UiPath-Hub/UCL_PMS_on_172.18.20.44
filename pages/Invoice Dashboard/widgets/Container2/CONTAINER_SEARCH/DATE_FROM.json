@@ -24,7 +24,11 @@
       "key": "dateFormat"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onDateSelected"
+    }
+  ],
   "firstDayOfWeek": 0,
   "isDisabled": false,
   "isLoading": false,
@@ -48,6 +52,7 @@
   "mobileRightColumn": 55,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
+  "onDateSelected": "",
   "originalBottomRow": 14,
   "originalTopRow": 10,
   "parentColumnSpace": 16.7841796875,

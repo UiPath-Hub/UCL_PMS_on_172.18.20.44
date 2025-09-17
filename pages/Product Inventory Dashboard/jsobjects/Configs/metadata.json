@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "dateFormat",
-        "value": "\"D MMMM YYYY\""
+        "value": "\"D MMM YYYY\""
       },
       {
         "name": "userSession",

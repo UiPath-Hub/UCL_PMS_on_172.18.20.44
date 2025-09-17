@@ -55,7 +55,7 @@
   "parentRowSpace": 10,
   "placeholderText": "Search",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
+  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "showStepArrows": false,
