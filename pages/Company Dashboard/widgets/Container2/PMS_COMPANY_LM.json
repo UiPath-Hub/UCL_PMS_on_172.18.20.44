@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 109,
+  "bottomRow": 114,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -39,9 +39,10 @@
     "CONTACT_NAME",
     "COMPANY_CONTACT_TELEPHONE",
     "COMPANY_CONTACT_ROLE",
-    "TOTAL_RECORDS"
+    "TOTAL_RECORDS",
+    "IS_THIRD_PARTY"
   ],
-  "columnUpdatedAt": 1753416452529,
+  "columnUpdatedAt": 1758180625144,
   "columnWidthMap": {
     "COMPANY_BUSINESS_TYPE_TH": 381,
     "COMPANY_NAME": 216,
@@ -92,6 +93,9 @@
     },
     {
       "key": "primaryColumns.CONTACT_NAME.computedValue"
+    },
+    {
+      "key": "primaryColumns.IS_THIRD_PARTY.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -121,8 +125,8 @@
   "mobileRightColumn": 13,
   "mobileTopRow": 108,
   "needsErrorInfo": false,
-  "originalBottomRow": 109,
-  "originalTopRow": 59,
+  "originalBottomRow": 114,
+  "originalTopRow": 64,
   "parentColumnSpace": 19.8125,
   "parentId": "wn0r512iqq",
   "parentRowSpace": 10,
@@ -354,6 +358,40 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "IS_THIRD_PARTY": {
+      "alias": "IS_THIRD_PARTY",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "checkbox",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"IS_THIRD_PARTY\"])) : IS_THIRD_PARTY })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "IS_THIRD_PARTY",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "IS_THIRD_PARTY",
+      "notation": "standard",
+      "originalId": "IS_THIRD_PARTY",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "TOTAL_RECORDS": {
       "alias": "TOTAL_RECORDS",
       "allowCellWrapping": false,
@@ -392,7 +430,7 @@
   "searchKey": "",
   "tableData": "{{(SP_SER_SEARCH_FOR_COMPANY.data||Default_Table.resultTable).filter(row=>row.TOTAL_RECORDS!=0)}}",
   "textSize": "0.875rem",
-  "topRow": 59,
+  "topRow": 64,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

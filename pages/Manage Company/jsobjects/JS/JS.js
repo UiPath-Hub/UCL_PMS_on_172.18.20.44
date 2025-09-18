@@ -199,7 +199,7 @@ export default {
 		
 		console.log("pass3")
 		let priorityContactID = Configs.showCompanyContact.find(i=>i["Contact ID"]===Configs.PRIORITY_CONTACT_ID);
-		let priorityContactChange = priorityContactID?priorityContactID.ID!==DefaultCompany.PRIORITY_CONTACT.data:DefaultCompany.PRIORITY_CONTACT.data!=="";
+		let priorityContactChange = priorityContactID?priorityContactID["Contact ID"]!==DefaultCompany.PRIORITY_CONTACT.data:DefaultCompany.PRIORITY_CONTACT.data!=="";
 		if(priorityContactChange) return true;
 		return false;
 	},

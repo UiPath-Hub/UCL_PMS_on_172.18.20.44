@@ -38,7 +38,7 @@ FETCH NEXT FROM contact_list_cursor INTO @COMPANY_CONTACT_ID;
 
 WHILE @@FETCH_STATUS = 0
 BEGIN
-		execute dbo.[UPDATE_CONTACT_PERSON_DETAIL]
+		execute dbo.[UPDATE_CONTACT_PERSON_DETAIL_V2]
 		@COMPANY_CONTACT_ID  = @COMPANY_CONTACT_ID
 		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}
 		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

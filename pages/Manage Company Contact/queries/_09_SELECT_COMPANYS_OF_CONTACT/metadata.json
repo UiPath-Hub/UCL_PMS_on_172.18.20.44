@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[SELECT_COMPANYS_OF_CONTACT] \n   @COMPANY_CONTACT_ID = {{appsmith.URL.queryParams[Configs.editContacePerson]||\"\"}}\n  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}",
+      "body": "EXECUTE [dbo].[SELECT_COMPANYS_OF_CONTACT_V2] \n   @COMPANY_CONTACT_ID = {{appsmith.URL.queryParams[Configs.editContacePerson]||\"\"}}\n  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

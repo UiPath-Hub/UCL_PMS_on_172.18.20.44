@@ -4,7 +4,7 @@
   "animateLoading": true,
   "bottomRow": 5,
   "boxShadow": "none",
-  "defaultOptionValue": "{{DefaultCompany.OVERWRITE_BILLING_ADDRESS.data.toString()}}",
+  "defaultOptionValue": "{{DefaultCompany.OVERWRITE_BILLING_ADDRESS.data.toString()||\"false\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

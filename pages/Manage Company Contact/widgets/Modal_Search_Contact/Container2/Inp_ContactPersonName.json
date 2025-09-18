@@ -15,7 +15,16 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -38,11 +47,12 @@
   "mobileRightColumn": 15,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onSubmit": "{{JS.onClick_Bttn_SearchContactForAdd();}}",
   "parentColumnSpace": 13.53125,
   "parentId": "khi743potm",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
+  "resetOnSubmit": false,
   "responsiveBehavior": "fill",
   "rightColumn": 54,
   "showStepArrows": false,

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "DECLARE @ResultCode NVARCHAR(10),\n\t\t\t@ResultMessages NVARCHAR(MAX);\n\nIF @@TRANCOUNT = 0\nBEGIN TRANSACTION;\n\n\t\texecute dbo.[UPDATE_CONTACT_PERSON_DETAIL]\n\t\t@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}\n\t\t,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}\n\t\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t\t,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}\n\t\t,@IS_DELETE = 1\n\t\t,@ResultCode=@ResultCode OUTPUT\n\t\t,@ResultMessages=@ResultMessages OUTPUT\n\t\t\nIF @ResultCode <> 'DONE' GOTO RETURN_RESULT;\n\nRETURN_RESULT:\nSELECT @ResultCode AS [RESULT_CODE],\n       @ResultMessages AS [RESULT_MESSAGES]\n\nIF @ResultCode = 'DONE'\nCOMMIT TRANSACTION;\nELSE ROLLBACK TRANSACTION;",
+      "body": "DECLARE @ResultCode NVARCHAR(10),\n\t\t\t@ResultMessages NVARCHAR(MAX);\n\nIF @@TRANCOUNT = 0\nBEGIN TRANSACTION;\n\n\t\texecute dbo.[UPDATE_CONTACT_PERSON_DETAIL_V2]\n\t\t@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}\n\t\t,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}\n\t\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t\t,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}\n\t\t,@IS_DELETE = 1\n\t\t,@ResultCode=@ResultCode OUTPUT\n\t\t,@ResultMessages=@ResultMessages OUTPUT\n\t\t\nIF @ResultCode <> 'DONE' GOTO RETURN_RESULT;\n\nRETURN_RESULT:\nSELECT @ResultCode AS [RESULT_CODE],\n       @ResultMessages AS [RESULT_MESSAGES]\n\nIF @ResultCode = 'DONE'\nCOMMIT TRANSACTION;\nELSE ROLLBACK TRANSACTION;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -38,9 +38,10 @@
     "COMPANY_NAME",
     "CONTACT_NAME",
     "COMPANY_CONTACT_TELEPHONE",
-    "COMPANY_CONTACT_ROLE"
+    "COMPANY_CONTACT_ROLE",
+    "IS_THIRD_PARTY"
   ],
-  "columnUpdatedAt": 1756462569092,
+  "columnUpdatedAt": 1758179518826,
   "columnWidthMap": {
     "COMPANY_CONTACT_TELEPHONE": 178,
     "COMPANY_NAME": 271,
@@ -88,6 +89,9 @@
     },
     {
       "key": "primaryColumns.COMPANY_CONTACT_ROLE.computedValue"
+    },
+    {
+      "key": "primaryColumns.IS_THIRD_PARTY.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -271,7 +275,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Company ID",
+      "label": "ID",
       "notation": "standard",
       "originalId": "COMPANY_ID",
       "sticky": "",
@@ -302,7 +306,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Company Name",
+      "label": "Name",
       "notation": "standard",
       "originalId": "COMPANY_NAME",
       "sticky": "",
@@ -337,6 +341,40 @@
       "notation": "standard",
       "originalId": "CONTACT_NAME",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "IS_THIRD_PARTY": {
+      "alias": "IS_THIRD_PARTY",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tb_PMS_COMPANY_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Boolean( currentRow[\"IS_THIRD_PARTY\"]??true)?\"Third party\":\"Company\")) : Boolean( currentRow[\"IS_THIRD_PARTY\"]??true)?\"Third party\":\"Company\" })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "IS_THIRD_PARTY",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Type",
+      "notation": "standard",
+      "originalId": "IS_THIRD_PARTY",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

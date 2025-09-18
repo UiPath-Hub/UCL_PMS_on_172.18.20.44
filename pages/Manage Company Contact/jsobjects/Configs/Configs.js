@@ -3,7 +3,7 @@ export default {
 	editCompany:"editCompany", // COMPANY_ID | null
 	fromCompany:"fromCompany",  // COMPANY_ID | null | TEMP
 	DEFAULT_COMPANY:"DEFAULT_COMPANY",
-	dateFormat:"D MMMM YYYY",
+	dateFormat:"D MMM YYYY",
 	startBody:"LOADING",
 	userSession:"userSession",
 	permissions:{VIEW:"COCOE",EDIT:"COCOE"},

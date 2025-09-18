@@ -35,9 +35,10 @@
   "columnOrder": [
     "TOTAL_RECORDS",
     "Company_Name",
-    "Create_Date"
+    "Create_Date",
+    "Priority_Contact"
   ],
-  "columnUpdatedAt": 1751272077900,
+  "columnUpdatedAt": 1758177592143,
   "columnWidthMap": {
     "Company_Name": 363
   },
@@ -70,6 +71,9 @@
     },
     {
       "key": "primaryColumns.Create_Date.computedValue"
+    },
+    {
+      "key": "primaryColumns.Priority_Contact.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -145,7 +149,7 @@
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table_AllPairedCompany.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Create Date\"]?moment( currentRow[\"Create Date\"]).subtract(7,'hour').format(Configs.dateFormat):\"\")) : currentRow[\"Create Date\"]?moment( currentRow[\"Create Date\"]).subtract(7,'hour').format(Configs.dateFormat):\"\" })()}}",
+      "computedValue": "{{(() => { const tableData = Table_AllPairedCompany.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Create Date\"]?moment( currentRow[\"Create Date\"]).format(Configs.dateFormat):\"\")) : currentRow[\"Create Date\"]?moment( currentRow[\"Create Date\"]).format(Configs.dateFormat):\"\" })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
@@ -165,6 +169,40 @@
       "label": "Create Date",
       "notation": "standard",
       "originalId": "Create Date",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Priority_Contact": {
+      "alias": "Priority Contact",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "checkbox",
+      "computedValue": "{{(() => { const tableData = Table_AllPairedCompany.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Boolean( currentRow[\"Priority Contact\"]??false))) : Boolean( currentRow[\"Priority Contact\"]??false) })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Priority_Contact",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Priority Contact",
+      "notation": "standard",
+      "originalId": "Priority Contact",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
