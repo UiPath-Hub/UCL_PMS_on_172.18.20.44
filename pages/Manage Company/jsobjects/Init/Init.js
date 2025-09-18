@@ -80,7 +80,7 @@ export default {
 			}
 
 			await Promise.all([initDefault(),initExistContact(),_4_CONTACT_TEMP_DELETE.run()])
-			const PRIORITY_CONTACT_ID = Configs.showCompanyContact.find((i)=> i.ID === _0_SELECT_FOR_COMPANY_BY_ID.data[0].PRIORITY_CONTACT);
+			const PRIORITY_CONTACT_ID = Configs.showCompanyContact.find((i)=> i["Contact ID"] === _0_SELECT_FOR_COMPANY_BY_ID.data[0].PRIORITY_CONTACT);
 			if(PRIORITY_CONTACT_ID!==undefined){
 				Configs.PRIORITY_CONTACT_ID = PRIORITY_CONTACT_ID["Contact ID"];
 				JS.sortPriorityContact()

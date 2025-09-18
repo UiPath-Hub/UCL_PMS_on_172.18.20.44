@@ -55,14 +55,14 @@
     "customColumn1",
     "USER_ID"
   ],
-  "columnUpdatedAt": 1757409900419,
+  "columnUpdatedAt": 1758184971456,
   "columnWidthMap": {
     "EditActions1": 101,
-    "INVOICE_QUANTITY": 365,
-    "PRICE_PER_UNIT": 352,
-    "PRODUCT_DESCRIPTION": 469,
-    "TOTAL_PRICE": 373.99999999999994,
-    "UOM": 185
+    "INVOICE_QUANTITY": 200,
+    "PRICE_PER_UNIT": 193,
+    "PRODUCT_DESCRIPTION": 471,
+    "TOTAL_PRICE": 172.99999999999994,
+    "UOM": 93
   },
   "customIsLoading": false,
   "customIsLoadingValue": "",

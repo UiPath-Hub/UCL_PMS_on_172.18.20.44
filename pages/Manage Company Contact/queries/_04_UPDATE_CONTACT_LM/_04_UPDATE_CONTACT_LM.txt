@@ -5,7 +5,7 @@ IF @@TRANCOUNT = 0
 BEGIN TRANSACTION;
 	IF({{this.params.ASSIGN_TO_COMPANY?1:0}}=1)
 	BEGIN
-		execute dbo.[UPDATE_CONTACT_PERSON_DETAIL]
+		execute dbo.[UPDATE_CONTACT_PERSON_DETAIL_V2]
 			@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}
 		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}
 		,@COMPANY_CONTACT_ROLE  = {{COMPANY_CONTACT_ROLE.selectedOptionValue}}
@@ -19,7 +19,7 @@ BEGIN TRANSACTION;
 	
 	IF({{this.params.UPDATE_ASSIGNED?1:0}}=1)
 	BEGIN
-			execute dbo.[UPDATE_CONTACT_PERSON_DETAIL]
+			execute dbo.[UPDATE_CONTACT_PERSON_DETAIL_V2]
 			@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}
 		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}
 		,@COMPANY_CONTACT_ROLE  = {{COMPANY_CONTACT_ROLE.selectedOptionValue}}

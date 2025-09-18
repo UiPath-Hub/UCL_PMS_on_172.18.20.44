@@ -27,7 +27,7 @@ EXECUTE [dbo].[UPDATE_IMAGE]
 if @ResultCode <> 'DONE'
 GOTO OUTPUT;
  
-EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY]
+EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V2]
    @PRODUCT_ID = {{SelectedProduct.PRODUCT_ID.data}}
   ,@INVENTORY_NAME = {{INVENTORY_NAME.text}}
   ,@METER_ID = {{METER_ID.text}}
@@ -51,6 +51,7 @@ EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY]
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@IS_UPDATE = 1
 	,@INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:""}}
+	,@UOM = {{UOM.selectedOptionValue||null}}
 	,@ResultCode = @ResultCode OUTPUT
 	,@ResultMessages = @ResultMessages OUTPUT
 

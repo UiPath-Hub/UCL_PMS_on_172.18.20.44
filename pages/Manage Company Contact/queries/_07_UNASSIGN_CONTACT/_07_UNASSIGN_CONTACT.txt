@@ -4,7 +4,7 @@ DECLARE @ResultCode NVARCHAR(10),
 IF @@TRANCOUNT = 0
 BEGIN TRANSACTION;
 
-		execute dbo.[UPDATE_CONTACT_PERSON_DETAIL]
+		execute dbo.[UPDATE_CONTACT_PERSON_DETAIL_V2]
 		@COMPANY_CONTACT_ID  = {{COMPANY_CONTACT_ID.text}}
 		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompany]}}
 		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
