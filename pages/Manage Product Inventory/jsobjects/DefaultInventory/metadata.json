@@ -128,6 +128,10 @@
         "value": "{\n  data: \"\"\n}"
       },
       {
+        "name": "UOM",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
         "name": "SUB_INVENT_DETAIL",
         "value": "{\n  data: \"\"\n}"
       },
