@@ -1,0 +1,12 @@
+EXEC	[dbo].[SER_SEARCH_FOR_RECEIPT]
+		@RECEIPT_NO = {{RECEIPT_NO.text?RECEIPT_NO.text:null}},
+		@COMPANY_NAME = {{COMPANY_NAME.text?COMPANY_NAME.text:null}},
+		@TYPE = {{TYPE.selectedOptionValue?TYPE.selectedOptionValue:null}},
+		@STATUS = {{STATUS.selectedOptionValue?STATUS.selectedOptionValue:null}},
+		@DATE_FROM = {{DATE_FROM.selectedDate?moment(DATE_FROM.selectedDate).add(7,'hour').startOf('day').format(Configs.SQLDateFormat):null}},
+		@DATE_TO = {{DATE_TO.selectedDate?moment(DATE_TO.selectedDate).add(7,'hour').endOf('day').format(Configs.SQLDateFormat):null}},
+		@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}},
+		@PAGE_INDEX = {{PMS_RECEIPT_LM.pageNo}},
+		@PAGE_SIZE = {{PMS_RECEIPT_LM.pageSize}},
+		@ORDER_BY = {{PMS_RECEIPT_LM.sortOrder?PMS_RECEIPT_LM.sortOrder.column:null}},
+		@SORT_BY = {{PMS_RECEIPT_LM.sortOrder?PMS_RECEIPT_LM.sortOrder.order:null}}

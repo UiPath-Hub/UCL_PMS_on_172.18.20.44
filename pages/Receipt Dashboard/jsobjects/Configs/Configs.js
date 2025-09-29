@@ -4,6 +4,13 @@ export default {
 	forceKick:false,
 	forceLogin:false,
 	errorAlert:"",
-	pageName:"",
-	editMeter:"editMeter"
+	PMS_RECEIPT_LM:[],
+	dateFormat:"D MMM YYYY",
+	editProductCatalog:"editProductCatalog",
+	requiredColorPass:"",
+	requiredColorAlert:"",
+	SQLDateFormat:"YYYY-MM-DD HH:mm",
+	test:()=>{
+		PMS_RECEIPT_LM.pageSize
+	},
 }

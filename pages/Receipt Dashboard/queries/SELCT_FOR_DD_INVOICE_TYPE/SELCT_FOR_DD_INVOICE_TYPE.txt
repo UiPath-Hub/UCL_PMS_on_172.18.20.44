@@ -1,3 +1,0 @@
-EXECUTE [dbo].[SELECT_FOR_DROPDOWN] 
-   @pDropdowntypename={{"INVOICE_TYPE"}}
-

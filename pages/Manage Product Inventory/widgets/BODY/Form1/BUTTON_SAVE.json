@@ -12,6 +12,9 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -20,6 +23,9 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -32,7 +38,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": "{{(Bttn_verify1.text!=\"Pass\")||INVENTORY_NAME.text==\"FREE_SPACE\"}}",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{!Configs.isFreeSpace}}",
   "key": "st8tsne4v5",
   "leftColumn": 1,
   "minWidth": 120,

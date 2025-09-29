@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_c2a26b0c-34f9-4bf7-9732-a4de7223f7e4",
+  "gitSyncId": "68cbc87355eda7018e8c32af_35c2ca0b-11ba-46c6-b73e-c63ab968a6d1",
   "id": "Receipt Dashboard_SP_HANDLE_TOKEN",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
@@ -29,7 +29,7 @@
     ],
     "name": "SP_HANDLE_TOKEN",
     "pageId": "Receipt Dashboard",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

@@ -16,6 +16,9 @@
     },
     {
       "key": "isRequired"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -27,6 +30,9 @@
     },
     {
       "key": "onFilesSelected"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -38,7 +44,7 @@
   "fileDataType": "Base64",
   "files": [],
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{Configs.isFreeSpace}}",
   "isLoading": false,
   "isRequired": "{{DefaultInventory.INVENTORY_PICTURE.required}}",
   "isVisible": true,

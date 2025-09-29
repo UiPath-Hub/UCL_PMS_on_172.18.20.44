@@ -23,14 +23,21 @@ export default {
 			}
 			//load Inventory
 			await SP_SELECTPRODUCTINVENTORY.run();
+			
 			if(SP_SELECTPRODUCTINVENTORY.data && SP_SELECTPRODUCTINVENTORY.data.length>0){
 				let InitializationEntityList = [{ENTITY:DefaultInventory,DATA: SP_SELECTPRODUCTINVENTORY.data[0]}];
 				await GlobalFunctions.initDefault(InitializationEntityList);
-				VerifyButton1.onClick();
+				
 				await _5_SELECT_IMAGE.run();
 				if(_5_SELECT_IMAGE.data && _5_SELECT_IMAGE.data.length>0){
 					DefaultInventory.IMAGE.data = _5_SELECT_IMAGE.data[0].PICTURE_INVENTORY_FILE
 				}
+				if(SP_SELECTPRODUCTINVENTORY.data[0].INVENTORY_ID === SP_SELECTPRODUCTINVENTORY.data[0].PRODUCT_ID){
+					Configs.isFreeSpace = true;
+				}else{
+					VerifyButton1.onClick();
+				}
+				Configs.startQuantity = SP_SELECTPRODUCTINVENTORY.data[0]?.QUANTITY??0;
 				JS.onClick_SelectParentMeter(DefaultInventory.SUB_INVENTORY.data);
 				Configs.startBody="VIEW"
 			}

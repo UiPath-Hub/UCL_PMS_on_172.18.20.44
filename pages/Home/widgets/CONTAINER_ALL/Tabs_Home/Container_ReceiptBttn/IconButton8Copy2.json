@@ -18,7 +18,11 @@
       "key": "iconName"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconName": "document",
   "isDisabled": true,
   "isLoading": false,
@@ -31,6 +35,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Receipt Dashboard', {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 2.12109375,
   "parentId": "uo155p2v3m",
   "parentRowSpace": 10,

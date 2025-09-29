@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_cec47770-7dc9-4b90-a9dc-9f85d50d7e4f",
+  "gitSyncId": "68cbc87355eda7018e8c32af_9a70fbae-5713-49bf-b6f0-d3de1196ac13",
   "id": "Receipt Dashboard_Configs",
   "unpublishedCollection": {
     "name": "Configs",
@@ -28,12 +28,28 @@
         "value": "\"\""
       },
       {
-        "name": "pageName",
+        "name": "PMS_RECEIPT_LM",
+        "value": "[]"
+      },
+      {
+        "name": "dateFormat",
+        "value": "\"D MMM YYYY\""
+      },
+      {
+        "name": "editProductCatalog",
+        "value": "\"editProductCatalog\""
+      },
+      {
+        "name": "requiredColorPass",
         "value": "\"\""
       },
       {
-        "name": "editMeter",
-        "value": "\"editMeter\""
+        "name": "requiredColorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "SQLDateFormat",
+        "value": "\"YYYY-MM-DD HH:mm\""
       }
     ]
   }

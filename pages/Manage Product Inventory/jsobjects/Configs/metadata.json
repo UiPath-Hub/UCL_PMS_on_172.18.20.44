@@ -56,6 +56,14 @@
         "value": "\"D MMMM YYYY\""
       },
       {
+        "name": "isFreeSpace",
+        "value": "false"
+      },
+      {
+        "name": "startQuantity",
+        "value": "0"
+      },
+      {
         "name": "ShowOptionalDetail",
         "value": "appsmith.store[Configs.PageType] === PageTypes.Meter"
       }

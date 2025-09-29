@@ -24,7 +24,7 @@
   "mobileTopRow": 2,
   "needsErrorInfo": false,
   "parentColumnSpace": 6.9375,
-  "parentId": "pun6sgfrwy",
+  "parentId": "6ktog8fgmz",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
@@ -32,6 +32,6 @@
   "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "8uwdeax256",
+  "widgetId": "567so52nae",
   "widgetName": "IconButton2Copy"
 }

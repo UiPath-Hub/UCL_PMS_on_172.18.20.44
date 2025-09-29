@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_e500429f-a00a-4d52-a630-796be26b183d",
+  "gitSyncId": "68cbc87355eda7018e8c32af_8bc9c852-53ef-4647-9f3a-f94698d047b5",
   "id": "Receipt Dashboard_LOGO",
   "pluginId": "mongo-plugin",
   "pluginType": "DB",
@@ -99,6 +99,6 @@
     "name": "LOGO",
     "pageId": "Receipt Dashboard",
     "runBehaviour": "ON_PAGE_LOAD",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }
