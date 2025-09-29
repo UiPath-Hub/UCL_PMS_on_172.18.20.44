@@ -1,7 +1,0 @@
-EXECUTE [dbo].[UPDATE_PMS_COMPANY_PROFILE_LM] 
-   @COMPANY_PROFILE_ID = {{this.params.COMPANY_PROFILE_ID}}
-  ,@pCOMPANY_PROFILE_AGREEMENT_NO = {{this.params.AGREEMENT_ID}}
-  ,@pFORMULA_ID = {{this.params.FORMULA}}
-  ,@pPROFILE_FLOOR_MODIFIER = {{this.params.COMPANY_PROFILE_FLOOR_NO}}
-  ,@pPROFILE_PP_UNIT_MODIFIER = {{this.params.PRICE_PER_UNIT}}
-  ,@pUSER_ID = {{appsmith.store[Configs.userSession].TOKEN}}

@@ -11,5 +11,7 @@ export default {
 	EditInventory:"EditInventory",
 	PageType:"PageType",
 	dateFormat:"D MMMM YYYY",
+	isFreeSpace:false,
+	startQuantity:0,
 	ShowOptionalDetail:appsmith.store[Configs.PageType] === PageTypes.Meter
 }

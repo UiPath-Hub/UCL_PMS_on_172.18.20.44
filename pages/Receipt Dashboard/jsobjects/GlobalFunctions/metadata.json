@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "68cbc87355eda7018e8c32af_6e04f50b-9a4b-42b7-8035-b90c5adc44ba",
+  "id": "Receipt Dashboard_GlobalFunctions",
+  "unpublishedCollection": {
+    "name": "GlobalFunctions",
+    "pageId": "Receipt Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "V",
+        "value": "4"
+      },
+      {
+        "name": "LastChanged",
+        "value": "\"if(!SELECT_FIELDS_VALIDATION.data) before run in init()\""
+      }
+    ]
+  }
+}

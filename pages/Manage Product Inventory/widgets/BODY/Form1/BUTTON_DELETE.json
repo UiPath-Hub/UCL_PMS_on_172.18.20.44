@@ -30,7 +30,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{appsmith.store[\"EditInventory\"] !== undefined}}",
+  "isVisible": "{{appsmith.store[\"EditInventory\"] !== undefined && !Configs.isFreeSpace}}",
   "key": "st8tsne4v5",
   "leftColumn": 9,
   "minWidth": 120,

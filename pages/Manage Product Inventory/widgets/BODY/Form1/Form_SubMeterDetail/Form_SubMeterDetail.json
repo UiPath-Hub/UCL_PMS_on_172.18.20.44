@@ -53,15 +53,22 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{!Configs.isFreeSpace}}",
   "key": "rc9nzlp7uc",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
@@ -72,8 +79,8 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 116,
   "needsErrorInfo": false,
-  "originalBottomRow": 134,
-  "originalTopRow": 115,
+  "originalBottomRow": 133,
+  "originalTopRow": 114,
   "parentColumnSpace": 19.78125,
   "parentId": "kp5xurzpaf",
   "parentRowSpace": 10,

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_c9c34661-191f-42b5-9800-945fa829812c",
+  "gitSyncId": "68cbc87355eda7018e8c32af_a53b8769-605b-4b7e-bc66-5f867d59f24e",
   "id": "Receipt Dashboard_SP_SELECT_FOR_DASHBOARD",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXEC\t[dbo].[SELECT_FOR_DASHBOARD]\n\t\t  @pDashboardName = N'Receipt Dashboard'",
+      "body": "DECLARE @OWNER_ID dbo.NEW_ID = dbo.fn_getPAIRED_OWNER_IDByToken({{appsmith.store[Configs.userSession].TOKEN}})\n\nSELECT *\n  FROM [dbo].[PMS_RECEIPT_DASHBOARD] WHERE OWNER_ID = @OWNER_ID;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,10 +22,14 @@
       "name": "UCL_PMS",
       "pluginId": "mssql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "SP_SELECT_FOR_DASHBOARD",
     "pageId": "Receipt Dashboard",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

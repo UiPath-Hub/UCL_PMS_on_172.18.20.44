@@ -8,6 +8,9 @@
   "dynamicBindingPathList": [
     {
       "key": "buttonColor"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -24,7 +27,7 @@
     }
   ],
   "iconName": "search",
-  "isDisabled": "",
+  "isDisabled": "{{Configs.isFreeSpace}}",
   "isLoading": false,
   "isVisible": true,
   "key": "3rv4og275i",
