@@ -7,12 +7,15 @@ export default {
 			 'INVOICE_TYPE':i.INVOICE_TYPE||"",
 			 'COMPANY_NAME':i.COMPANY_NAME||"",
 			 'STATUS':i.STATUS||"",
-			 'CREATE_DATE':i.CREATE_DATE? moment( i.CREATE_DATE).format(Configs.dateFormat):""
+			 'CREATE_DATE':i.CREATE_DATE? moment( i.CREATE_DATE).format(Configs.dateFormat):"",
+			 'RECEIPT_ID':i.RECEIPT_ID,
+			 'RECEIPT_AMOUNT':i.RECEIPT_AMOUNT,
+			 'PAYMENT_TYPE':i.PAYMENT_TYPE
 			}));
 	},
 	onEditClick:()=>{
-		storeValue(Configs.editProductCatalog, PMS_RECEIPT_LM.selectedRow,true).then(() => {
-			navigateTo('Manage Product Catalog', {}, 'SAME_WINDOW');
+		storeValue("INIT", PMS_RECEIPT_LM.selectedRow,true).then(() => {
+			navigateTo('Receipt Detail', {}, 'SAME_WINDOW');
 		});
 	},
 	onSearchClick:async()=>{

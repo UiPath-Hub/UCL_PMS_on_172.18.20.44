@@ -1,0 +1,83 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowCurrencyChange": "false",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "decimals": 2,
+  "defaultCurrencyCode": "THB",
+  "defaultText": "{{(PMS_RECEIPT_QAS.RECEIPT_AMOUNT.data||0)}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "allowCurrencyChange"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{PMS_RECEIPT_QAS.RECEIPT_AMOUNT.required}}",
+  "isVisible": false,
+  "key": "xhej12u7lf",
+  "label": "Total Paid",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{PMS_RECEIPT_QAS.RECEIPT_AMOUNT.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "10",
+  "leftColumn": 42,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 34,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 36,
+  "needsErrorInfo": false,
+  "originalBottomRow": 141,
+  "originalTopRow": 137,
+  "parentColumnSpace": 17.669921875,
+  "parentId": "sw22mqvfq7",
+  "parentRowSpace": 10,
+  "regex": "{{PMS_RECEIPT_QAS.RECEIPT_AMOUNT.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "showStepArrows": false,
+  "topRow": 10,
+  "type": "CURRENCY_INPUT_WIDGET",
+  "version": 1,
+  "widgetId": "3ljrfb80v5",
+  "widgetName": "RECEIPT_AMOUNT"
+}

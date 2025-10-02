@@ -1,0 +1,10 @@
+DECLARE @i nvarchar(10);
+DECLARE @j nvarchar(500);
+EXECUTE [dbo].[SELECT_FOR_RECEIPT_BY_ID] 
+   @RECEIPT_ID = {{Configs.IDParameterName=='RECEIPT_ID'? appsmith.store.INIT[Configs.IDParameterName]:null}}
+  ,@USER_TOKEN = {{appsmith.store.userSession.TOKEN}}
+  ,@ResultCode = @i
+  ,@ResultMessages = @j
+
+if(@i = 'ERROR')
+throw 90000,'Error',1;

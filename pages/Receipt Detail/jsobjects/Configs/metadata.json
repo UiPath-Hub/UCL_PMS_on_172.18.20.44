@@ -1,0 +1,96 @@
+{
+  "gitSyncId": "68cbc87355eda7018e8c32af_c74f84a0-3959-45f3-953a-11911339ce15",
+  "id": "Receipt Detail_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Receipt Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"INVV\",\n  EDIT: \"INVE\",\n  SHOW_INVOICE_EXECUTE: \"INEX\",\n  SHOW_INVONCE_CN: \"INCN\"\n}"
+      },
+      {
+        "name": "forceKick",
+        "value": "false"
+      },
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "errorAlert",
+        "value": "\"\""
+      },
+      {
+        "name": "IDParameterName",
+        "value": "\"RECEIPT_ID\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"Receipt Detail\""
+      },
+      {
+        "name": "BodyInit",
+        "value": "\"LOADING\""
+      },
+      {
+        "name": "dateFormat",
+        "value": "\"D MMM YYYY\""
+      },
+      {
+        "name": "COMPANY_ID",
+        "value": "\"COMPANY_ID\""
+      },
+      {
+        "name": "COMPANY_CONTACT_ID",
+        "value": "\"COMPANY_CONTACT_ID\""
+      },
+      {
+        "name": "BILLING_INFORMATION_ID",
+        "value": "\"BILLING_INFORMATION_ID\""
+      },
+      {
+        "name": "Invoice_type",
+        "value": "{\n  NON_VAT: \"Non-VAT\",\n  VAT: \"VAT\",\n  currentType: \"\"\n}"
+      },
+      {
+        "name": "items",
+        "value": "null"
+      },
+      {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
+      },
+      {
+        "name": "is_draft",
+        "value": "false"
+      },
+      {
+        "name": "edit_item",
+        "value": "false"
+      },
+      {
+        "name": "removeDetails_ID",
+        "value": "[]"
+      },
+      {
+        "name": "editDetails_ID",
+        "value": "[]"
+      },
+      {
+        "name": "undo_stack",
+        "value": "{\n  data: [],\n  type: {\n    \"remove\": 0,\n    \"edit\": 1\n  }\n}"
+      }
+    ]
+  }
+}

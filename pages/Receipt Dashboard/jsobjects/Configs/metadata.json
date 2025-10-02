@@ -36,8 +36,8 @@
         "value": "\"D MMM YYYY\""
       },
       {
-        "name": "editProductCatalog",
-        "value": "\"editProductCatalog\""
+        "name": "IDParameterName",
+        "value": "\"RECEIPT_ID\""
       },
       {
         "name": "requiredColorPass",

@@ -1,0 +1,15 @@
+declare @newID dbo.NEW_ID = NULL;
+execute [dbo].[UPSERT_INVOICE_DUPLICATE]
+	
+	@INVOICE_DETAIL_ID = {{this.params.INVOICE_DETAIL_ID||null}},
+	@INVOICE_QUANTITY_DETAIL = {{this.params.INVOICE_QUANTITY_DETAIL||null}},
+	@PRODUCT_DESCRIPTION_DETAIL = {{this.params.PRODUCT_DESCRIPTION_DETAIL||null}},
+	@PRICE_PER_UNIT_DETAIL = {{this.params.PRICE_PER_UNIT_DETAIL||null}},
+	@TOTAL_PRICE_DETAIL = {{this.params.TOTAL_PRICE_DETAIL||null}},
+	@UOM_DETAIL ={{this.params.UOM||null}},
+	@DELETE_FLAG_DETAIL = {{this.params.DELETE_FLAG_DETAIL||0}},
+	
+	@TYPE = 'SD',
+	@NEW_INVOICE_ID = @newID output
+
+select @newID as INVOICE_ID

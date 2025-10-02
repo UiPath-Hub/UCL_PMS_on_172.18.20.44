@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 62,
+  "bottomRow": 63,
   "capSide": 0,
   "capType": "nc",
   "dividerColor": "{{appsmith.theme.colors.backgroundColor}}",
@@ -21,7 +21,7 @@
   "mobileTopRow": 54,
   "needsErrorInfo": false,
   "orientation": "horizontal",
-  "originalBottomRow": 62,
+  "originalBottomRow": 63,
   "originalTopRow": 58,
   "parentColumnSpace": 19.65625,
   "parentId": "3a3934w2nx",

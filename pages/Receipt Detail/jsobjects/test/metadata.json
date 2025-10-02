@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "68cbc87355eda7018e8c32af_c3465e6f-44c7-48b3-add8-d79d30d5e065",
+  "id": "Receipt Detail_test",
+  "unpublishedCollection": {
+    "name": "test",
+    "pageId": "Receipt Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
