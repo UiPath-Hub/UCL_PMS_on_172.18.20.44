@@ -37,8 +37,8 @@
     "FLOOR_NO",
     "PRODUCT_NAME_TH",
     "INVENTORY_NAME",
-    "COMPANY_PROFILE_AGREEMENT_NO",
     "PRICE_PER_UNIT",
+    "COMPANY_PROFILE_AGREEMENT_NO",
     "COMPANY_PROFILE_PERIOD_START",
     "COMPANY_PROFILE_PERIOD_END",
     "PRODUCT_TYPE_TH",
@@ -49,7 +49,7 @@
     "INVENTORY_ID",
     "FORMULA"
   ],
-  "columnUpdatedAt": 1751860668040,
+  "columnUpdatedAt": 1759471042597,
   "columnWidthMap": {
     "Base_on": 562,
     "By": 196,
@@ -489,7 +489,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Amount (Baht)",
       "notation": "standard",
       "originalId": "PRICE_PER_UNIT",
