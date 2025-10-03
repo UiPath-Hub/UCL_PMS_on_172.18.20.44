@@ -67,7 +67,7 @@
   "mobileTopRow": 5,
   "needsErrorInfo": false,
   "onTextChanged": "{{resetWidget(RECEIPT_REMARK .widgetName)}}",
-  "originalBottomRow": 35,
+  "originalBottomRow": 16,
   "originalTopRow": 8,
   "parentColumnSpace": 9.96875,
   "parentId": "azwh2urt7h",

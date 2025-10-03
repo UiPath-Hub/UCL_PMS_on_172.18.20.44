@@ -1,5 +1,5 @@
 export default {
-	onBttn_ManageRevisedInvoice:async()=>{
+	/*onBttn_ManageRevisedInvoice:async()=>{
 		if(SELECT_RECEIPT.data[0]?.DUPLICATED_ID){
 			await storeValue("INIT",{INVOICE_ID:SELECT_RECEIPT.data[0].DUPLICATED_ID},true);
 			navigateTo(appsmith.URL.fullPath.replace(Configs.invoiceIDParameterName,"ReferInvoice"),{},"SAME_WINDOW");
@@ -228,10 +228,11 @@ export default {
 	onBttn_DisableSave:()=>{
 		let is_draft = Configs.is_draft??false;
 		return !is_draft
-	},
+	},*/
 	onDocReviewVisible:()=>{
 		return SELECT_RECEIPT.data && SELECT_RECEIPT.data.length>0?(SELECT_RECEIPT.data[0].FILE_DRAFT??SELECT_RECEIPT.data[0].FILE_ORIGINAL)!=null:false
 	},
+	/*
 	onBttn_ChangeStatus_ApproveDisable:()=>{
 		let disableStatus = ["Draft Invoice","Approved","Waiting for Payment","Over Due","Canceled","Payment Completed","Rejected"];
 		return SELECT_RECEIPT.data && SELECT_RECEIPT.data.length>0?disableStatus.includes(SELECT_RECEIPT.data[0].STATUS):true
@@ -247,11 +248,11 @@ export default {
 	onBttn_ChangeStatus_DuplicateInvoiceEnable:()=>{
 		let enableStatus = ["Canceled"];
 		return SELECT_RECEIPT.data && SELECT_RECEIPT.data.length>0?enableStatus.includes(SELECT_RECEIPT.data[0].STATUS):false
-	},
+	},*/
 	onClick_Close:()=>{
 		navigateTo('Receipt Dashboard', {}, 'SAME_WINDOW');
 	},
-	onEditItemClick:async (confirm)=>{
+	/*onEditItemClick:async (confirm)=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
 			if(!confirm)
 				showModal(Modal_ManageItem.name);
