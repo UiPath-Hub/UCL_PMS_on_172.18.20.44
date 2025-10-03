@@ -17,8 +17,8 @@ export default {
 		}
 		
 		await SELECT_INVOICE.run();
-		//await SELECT_RECEIPT_ITEM.run();
-		//Configs.items = SELECT_RECEIPT_ITEM.data;
+		await SELECT_INVOICE_ITEM.run();
+		Configs.invoice_items = SELECT_INVOICE_ITEM.data;
 		//console.log(SELECT_INVOICE.data);
 		
 		let InitializationEntityList = [{ENTITY:PMS_RECEIPT_QAS,DATA: SELECT_RECEIPT.data[0]},

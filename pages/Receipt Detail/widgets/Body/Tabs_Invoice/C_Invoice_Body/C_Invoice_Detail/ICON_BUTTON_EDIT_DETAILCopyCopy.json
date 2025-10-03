@@ -11,18 +11,12 @@
       "key": "isDisabled"
     },
     {
-      "key": "isVisible"
-    },
-    {
       "key": "buttonColor"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
-    },
-    {
-      "key": "isVisible"
     },
     {
       "key": "onClick"
@@ -36,7 +30,7 @@
   "iconName": "undo",
   "isDisabled": "{{Configs.undo_stack.data.length === 0 }}",
   "isLoading": false,
-  "isVisible": "{{Table_PMS_INVOICE_DETAIL_Edit.isVisible}}",
+  "isVisible": false,
   "key": "sjcapm6fvo",
   "leftColumn": 56,
   "minWidth": 50,

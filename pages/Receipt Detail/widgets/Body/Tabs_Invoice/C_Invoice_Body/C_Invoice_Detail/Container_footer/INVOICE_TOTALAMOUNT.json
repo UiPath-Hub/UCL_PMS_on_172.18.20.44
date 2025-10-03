@@ -1,10 +1,10 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-  "allowCurrencyChange": "false",
+  "allowCurrencyChange": false,
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 9,
+  "bottomRow": 4,
   "boxShadow": "none",
   "decimals": 2,
   "defaultCurrencyCode": "THB",
@@ -32,23 +32,27 @@
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
-      "key": "allowCurrencyChange"
-    },
-    {
       "key": "isRequired"
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": "{{PMS_INVOICE_LM.INVOICE_TOTALAMOUNT.required}}",
   "isVisible": true,
   "key": "xhej12u7lf",
-  "label": "Total Paid",
+  "label": "Total Amount",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
@@ -64,8 +68,9 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 36,
   "needsErrorInfo": false,
-  "originalBottomRow": 141,
-  "originalTopRow": 137,
+  "onTextChanged": "{{resetWidget(INVOICE_TOTALAMOUNT .widgetName)}}",
+  "originalBottomRow": 12,
+  "originalTopRow": 8,
   "parentColumnSpace": 17.669921875,
   "parentId": "sw22mqvfq7",
   "parentRowSpace": 10,
@@ -75,9 +80,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "showStepArrows": false,
-  "topRow": 5,
+  "topRow": 0,
   "type": "CURRENCY_INPUT_WIDGET",
   "version": 1,
-  "widgetId": "kq3vm9r5sa",
+  "widgetId": "6ta1zuz6eu",
   "widgetName": "INVOICE_TOTALAMOUNT"
 }

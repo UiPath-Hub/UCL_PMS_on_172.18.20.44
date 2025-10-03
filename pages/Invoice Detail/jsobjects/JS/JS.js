@@ -1,4 +1,15 @@
 export default {
+	prepareReceiptsItems:async ()=>{
+		await _8_SelectAllReceipt.run();
+		if(_8_SelectAllReceipt.data){
+			Configs.receipts_items = _8_SelectAllReceipt.data.map((i)=>({
+				"RECEIPT_NO":i.RECEIPT_NO,
+				"TOTAL_PAID":i.RECEIPT_AMOUNT,
+				"INVOICE_TOTALAMOUNT":PMS_INVOICE_LM.INVOICE_TOTALAMOUNT.data,
+				"DOCUMENT_DATE":i.DOCUMENT_DATE
+			}))
+		}
+	},
 	onBttn_ManageRevisedInvoice:async()=>{
 		if(SELECT_INVOICE.data[0]?.DUPLICATED_ID){
 			await storeValue("INIT",{INVOICE_ID:SELECT_INVOICE.data[0].DUPLICATED_ID},true);

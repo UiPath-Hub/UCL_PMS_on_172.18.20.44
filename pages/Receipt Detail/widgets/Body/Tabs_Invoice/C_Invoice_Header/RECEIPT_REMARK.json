@@ -1,14 +1,11 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-  "allowCurrencyChange": false,
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 16,
   "boxShadow": "none",
-  "decimals": 2,
-  "defaultCurrencyCode": "THB",
-  "defaultText": "{{(PMS_INVOICE_LM.INVOICE_AMOUNT.data||0)}}",
+  "defaultText": "{{PMS_RECEIPT_QAS.RECEIPT_REMARK.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -20,25 +17,25 @@
       "key": "defaultText"
     },
     {
+      "key": "labelTextColor"
+    },
+    {
       "key": "isRequired"
     },
     {
       "key": "regex"
-    },
-    {
-      "key": "labelTextColor"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
-      "key": "isRequired"
+      "key": "onTextChanged"
     },
     {
       "key": "labelTextColor"
     },
     {
-      "key": "onTextChanged"
+      "key": "isRequired"
     }
   ],
   "dynamicTriggerPathList": [
@@ -47,42 +44,45 @@
     }
   ],
   "iconAlign": "left",
+  "inputType": "MULTI_LINE_TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{PMS_INVOICE_LM.INVOICE_AMOUNT.required}}",
+  "isRequired": "{{PMS_RECEIPT_QAS.RECEIPT_REMARK.required}}",
   "isVisible": true,
-  "key": "xhej12u7lf",
-  "label": "Total Amount",
+  "key": "0xq8grjc0h",
+  "label": "Remark",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{PMS_INVOICE_LM.INVOICE_AMOUNT.color}}",
+  "labelTextColor": "{{PMS_RECEIPT_QAS.RECEIPT_REMARK.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "10",
-  "leftColumn": 42,
+  "leftColumn": 2,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 43,
-  "mobileLeftColumn": 34,
-  "mobileRightColumn": 54,
-  "mobileTopRow": 36,
+  "mobileBottomRow": 12,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onTextChanged": "{{resetWidget(INVOICE_AMOUNT .widgetName)}}",
-  "originalBottomRow": 12,
+  "onTextChanged": "{{resetWidget(RECEIPT_REMARK .widgetName)}}",
+  "originalBottomRow": 35,
   "originalTopRow": 8,
-  "parentColumnSpace": 17.669921875,
-  "parentId": "sw22mqvfq7",
+  "parentColumnSpace": 9.96875,
+  "parentId": "azwh2urt7h",
   "parentRowSpace": 10,
-  "regex": "{{PMS_INVOICE_LM.INVOICE_AMOUNT.regex}}",
+  "regex": "{{PMS_RECEIPT_QAS.RECEIPT_REMARK.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 29,
+  "shouldAllowAutofill": false,
+  "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 0,
-  "type": "CURRENCY_INPUT_WIDGET",
-  "version": 1,
-  "widgetId": "6ta1zuz6eu",
-  "widgetName": "INVOICE_AMOUNT"
+  "topRow": 8,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "z0rim4a8u6",
+  "widgetName": "RECEIPT_REMARK"
 }

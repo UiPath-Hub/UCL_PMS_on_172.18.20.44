@@ -1,0 +1,4 @@
+EXEC [dbo].[SELECT_ALL_RECEIPT_BY_INVOICE_ID]
+@INVOICE_ID = {{Configs.INVOICE_ID == "INVOICE_ID"?appsmith.store.INIT[Configs.INVOICE_ID]:null}},
+@INVOICE_NO = {{Configs.INVOICE_ID == "INVOICE_NO"?appsmith.store.INIT[Configs.INVOICE_ID]:null}},
+@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

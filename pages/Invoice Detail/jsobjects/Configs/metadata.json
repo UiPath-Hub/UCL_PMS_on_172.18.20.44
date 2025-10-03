@@ -84,6 +84,10 @@
         "value": "false"
       },
       {
+        "name": "receipts_items",
+        "value": "[]"
+      },
+      {
         "name": "removeDetails_ID",
         "value": "[]"
       },

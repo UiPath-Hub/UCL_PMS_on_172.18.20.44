@@ -152,9 +152,6 @@
     },
     {
       "key": "primaryColumns.EditActions1.isDiscardDisabled"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -166,9 +163,6 @@
     },
     {
       "key": "primaryColumns.EditActions1.isDiscardDisabled"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -179,7 +173,7 @@
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": "{{!Table_PMS_INVOICE_DETAIL_Edit.isVisible}}",
+  "isVisible": true,
   "isVisibleDownload": false,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
@@ -192,7 +186,7 @@
   "mobileLeftColumn": 30,
   "mobileRightColumn": 64,
   "mobileTopRow": 45,
-  "multiRowSelection": false,
+  "multiRowSelection": true,
   "needsErrorInfo": false,
   "originalBottomRow": 75,
   "originalTopRow": 46,
@@ -836,7 +830,7 @@
   "rightColumn": 64,
   "searchKey": "",
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{Configs.items}}",
+  "tableData": "{{Configs.invoice_items}}",
   "textSize": "1rem",
   "topRow": 46,
   "topRowBeforeCollapse": 51,

@@ -1,1 +1,0 @@
-SELECT * FROM dbo.PMS_RECEIPT_DETAIL_LM WHERE RECEIPT_ID = {{appsmith.store.INIT[Configs.IDParameterName]}} and DELETE_FLAG=0

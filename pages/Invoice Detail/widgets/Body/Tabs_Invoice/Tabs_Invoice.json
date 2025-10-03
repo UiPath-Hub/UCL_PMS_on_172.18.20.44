@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "0px",
   "borderWidth": 1,
-  "bottomRow": 191,
+  "bottomRow": 54,
   "boxShadow": "none",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1730,
+      "bottomRow": 1120,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1730,
+      "bottomRow": 1710,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -99,6 +99,51 @@
       "version": 1,
       "widgetId": "hjy06r4zn6",
       "widgetName": "Canvas154"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 360,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "q56cxftjgm",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 1180,
+      "minWidth": 450,
+      "mobileBottomRow": 1181,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1296,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "yzwm3ztm1y",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1296,
+      "tabId": "tabva1cb08ti9",
+      "tabName": "Receipt Detail",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "2gb51w41wl",
+      "widgetName": "Canvas157"
     }
   ],
   "defaultTab": "{{JS.onDocReviewVisible()?\"Preview\":\"Invoice Detail\"}}",
@@ -126,7 +171,7 @@
   "mobileRightColumn": 9,
   "mobileTopRow": 139,
   "needsErrorInfo": false,
-  "originalBottomRow": 191,
+  "originalBottomRow": 54,
   "originalTopRow": 14,
   "parentColumnSpace": 20.25,
   "parentId": "9q6q5ooy24",
@@ -152,6 +197,13 @@
       "label": "Invoice Detail",
       "positioning": "vertical",
       "widgetId": "hjy06r4zn6"
+    },
+    "tabva1cb08ti9": {
+      "id": "tabva1cb08ti9",
+      "index": 2,
+      "isVisible": true,
+      "label": "Receipt Detail",
+      "widgetId": "2gb51w41wl"
     }
   },
   "topRow": 14,

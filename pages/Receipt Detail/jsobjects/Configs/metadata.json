@@ -61,7 +61,11 @@
       },
       {
         "name": "items",
-        "value": "null"
+        "value": "[]"
+      },
+      {
+        "name": "invoice_items",
+        "value": "[]"
       },
       {
         "name": "requiredColorAlert",

@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "68cbc87355eda7018e8c32af_f2be4b18-5782-4f16-9015-7d0f2ee2f3c3",
-  "id": "Receipt Detail_SELECT_RECEIPT_ITEM",
+  "gitSyncId": "68de3fdf55eda7018e8c375b_a11ddfa8-5807-49f4-a2ad-981b191391f5",
+  "id": "Receipt Detail_SELECT_INVOICE_ITEM",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT * FROM dbo.PMS_RECEIPT_DETAIL_LM WHERE RECEIPT_ID = {{appsmith.store.INIT[Configs.IDParameterName]}} and DELETE_FLAG=0",
+      "body": "SELECT * FROM dbo.PMS_INVOICE_DETAIL_LM WHERE INVOICE_ID = {{appsmith.store.INIT?.INVOICE_ID||\"\"}} and DELETE_FLAG=0",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "SELECT_RECEIPT_ITEM",
+    "name": "SELECT_INVOICE_ITEM",
     "pageId": "Receipt Detail",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": true
