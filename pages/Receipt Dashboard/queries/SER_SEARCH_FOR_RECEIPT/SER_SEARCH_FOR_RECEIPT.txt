@@ -1,5 +1,6 @@
 EXEC	[dbo].[SER_SEARCH_FOR_RECEIPT]
 		@RECEIPT_NO = {{RECEIPT_NO.text?RECEIPT_NO.text:null}},
+		@INVOICE_NO = {{INVOICE_NO.text?INVOICE_NO.text:null}},
 		@COMPANY_NAME = {{COMPANY_NAME.text?COMPANY_NAME.text:null}},
 		@TYPE = {{TYPE.selectedOptionValue?TYPE.selectedOptionValue:null}},
 		@STATUS = {{STATUS.selectedOptionValue?STATUS.selectedOptionValue:null}},

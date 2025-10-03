@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "68cbc87355eda7018e8c32af_f00f8fa2-fcae-438b-9b2e-19c65943fdf7",
+  "id": "Receipt Detail_PMS_RECEIPT_QAS_Widgets",
+  "unpublishedCollection": {
+    "name": "PMS_RECEIPT_QAS_Widgets",
+    "pageId": "Receipt Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

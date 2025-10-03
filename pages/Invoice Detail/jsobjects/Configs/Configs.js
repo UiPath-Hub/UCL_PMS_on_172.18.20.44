@@ -18,6 +18,7 @@ export default {
 	requiredColorPass:"",
 	is_draft:false,
 	edit_item:false,
+	receipts_items:[],
 	removeDetails_ID:[],
 	editDetails_ID:[],
 	undo_stack:{data:[],type:{"remove":0,"edit":1}}

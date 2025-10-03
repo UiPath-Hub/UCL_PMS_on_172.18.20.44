@@ -1,0 +1,3 @@
+EXECUTE [dbo].[SER_SEARCH_FOR_COMPANY_V2]
+@pCompanyName = {{INPUT_CompanyName.text == "" || INPUT_CompanyName.text == undefined ? null : INPUT_CompanyName.text}}
+,@USER_TOKEN = {{appsmith.store.userSession.TOKEN}}

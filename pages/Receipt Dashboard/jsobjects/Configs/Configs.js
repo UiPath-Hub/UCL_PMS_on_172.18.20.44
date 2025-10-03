@@ -6,7 +6,7 @@ export default {
 	errorAlert:"",
 	PMS_RECEIPT_LM:[],
 	dateFormat:"D MMM YYYY",
-	editProductCatalog:"editProductCatalog",
+	IDParameterName:"RECEIPT_ID",
 	requiredColorPass:"",
 	requiredColorAlert:"",
 	SQLDateFormat:"YYYY-MM-DD HH:mm",

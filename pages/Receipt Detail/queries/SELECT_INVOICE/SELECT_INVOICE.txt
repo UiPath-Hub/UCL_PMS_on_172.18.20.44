@@ -1,0 +1,3 @@
+EXEC	[dbo].[SELECT_FOR_INVOICE_BY_ID_N_NO]
+@INVOICE_NO = {{appsmith.store.INIT.INVOICE_NO}},
+@USER_TOKEN = {{appsmith.store.userSession.TOKEN}}

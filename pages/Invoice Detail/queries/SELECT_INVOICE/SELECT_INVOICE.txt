@@ -1,10 +1,15 @@
-SELECT TOP 1 invoice.*,
+/*SELECT TOP 1 invoice.*,
 pdf.PDF_INVOICE_DRAFT_FILE as FILE_DRAFT,
 pdf.PDF_INVOICE_FILE as FILE_ORIGINAL 
 FROM dbo.PMS_INVOICE_QAS invoice
 LEFT JOIN dbo.PMS_INVOICE_FILE pdf on invoice.INVOICE_ID = pdf.INVOICE_ID
 WHERE 
-({{Configs.INVOICE_ID == "INVOICE_NO"?1:0}} = 0 or
-{{appsmith.store.INIT[Configs.INVOICE_ID]}} = invoice.INVOICE_NO) AND
-({{Configs.INVOICE_ID == "INVOICE_ID"?1:0}} = 0 or
-{{appsmith.store.INIT[Configs.INVOICE_ID]}} = invoice.INVOICE_ID)
+(Configs.INVOICE_ID == "INVOICE_NO"?1:0 = 0 or
+appsmith.store.INIT[Configs.INVOICE_ID] = invoice.INVOICE_NO) AND
+(Configs.INVOICE_ID == "INVOICE_ID"?1:0 = 0 or
+appsmith.store.INIT[Configs.INVOICE_ID] = invoice.INVOICE_ID)*/
+
+EXEC	[dbo].[SELECT_FOR_INVOICE_BY_ID_N_NO]
+@INVOICE_ID = {{Configs.INVOICE_ID == "INVOICE_ID"?appsmith.store.INIT[Configs.INVOICE_ID]:null}},
+@INVOICE_NO = {{Configs.INVOICE_ID == "INVOICE_NO"?appsmith.store.INIT[Configs.INVOICE_ID]:null}},
+@USER_TOKEN = {{appsmith.store.userSession.TOKEN}}

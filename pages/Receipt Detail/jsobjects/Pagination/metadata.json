@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "68cbc87355eda7018e8c32af_def5b087-a9a3-4c97-a98b-832c3937e6ea",
+  "id": "Receipt Detail_Pagination",
+  "unpublishedCollection": {
+    "name": "Pagination",
+    "pageId": "Receipt Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "vatPageSize",
+        "value": "16"
+      },
+      {
+        "name": "nonvatPageSize",
+        "value": "20"
+      }
+    ]
+  }
+}

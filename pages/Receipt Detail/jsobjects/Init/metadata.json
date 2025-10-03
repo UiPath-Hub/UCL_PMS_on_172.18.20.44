@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "68cbc87355eda7018e8c32af_584cf705-baaf-446e-87e8-bce1b0521346",
+  "id": "Receipt Detail_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Receipt Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", \"YYYY-MM-DD\")"
+      }
+    ]
+  }
+}

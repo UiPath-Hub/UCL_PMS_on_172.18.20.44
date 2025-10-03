@@ -104,6 +104,10 @@
     {
       "id": "Receipt Dashboard",
       "isDefault": false
+    },
+    {
+      "id": "Receipt Detail",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

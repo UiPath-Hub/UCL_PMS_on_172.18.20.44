@@ -59,6 +59,7 @@ export default {
 		if(!await GlobalFunctions.sessionCheck()) return navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true)) return;
 		await this.initDefault();
+		JS.prepareReceiptsItems();
 		Configs.BodyInit = "VIEW"
 		resetWidget(Body.widgetName,true);
 

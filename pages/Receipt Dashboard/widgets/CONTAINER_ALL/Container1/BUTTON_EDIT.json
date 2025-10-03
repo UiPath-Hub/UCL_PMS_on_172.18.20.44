@@ -24,7 +24,7 @@
     }
   ],
   "iconName": "edit",
-  "isDisabled": "{{PMS_RECEIPT_LM.selectedRow==undefined||PMS_RECEIPT_LM.selectedRow[\"Receipt Number\"]==\"\"}}",
+  "isDisabled": "{{!PMS_RECEIPT_LM.selectedRow?.RECEIPT_NO}}",
   "isLoading": false,
   "isVisible": true,
   "key": "sjcapm6fvo",
