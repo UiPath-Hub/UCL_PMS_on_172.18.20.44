@@ -29,7 +29,7 @@
     ],
     "name": "SELECT_INVOICE",
     "pageId": "Receipt Detail",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
