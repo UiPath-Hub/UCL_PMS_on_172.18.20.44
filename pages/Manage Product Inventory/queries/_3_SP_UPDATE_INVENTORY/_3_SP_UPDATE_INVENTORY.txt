@@ -1,33 +1,7 @@
 declare @ResultCode nvarchar(10)
 	,@ResultMessages NVARCHAR(MAX)
-	,@IMAGE_ID nvarchar(20)={{DefaultInventory.INVENTORY_PICTURE.data||null}};
-IF @@TRANCOUNT = 0
-BEGIN TRANSACTION;
-
-if {{this.params.IMAGE_DATA?1:0}} = 1 
-EXECUTE [dbo].[UPDATE_IMAGE] 
-   @BASE64 = {{this.params.IMAGE_DATA}}
-  ,@TABLE_NAME = 'PMS_INVENTORY_PICTURE'
-  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
-  ,@DELETE =0
-  ,@INSERT_IF_NOT_EXIST = 1
-  ,@IMAGE_ID = @IMAGE_ID OUTPUT
-		,@ResultCode=@ResultCode OUTPUT
-		,@ResultMessages=@ResultMessages OUTPUT
-		
-if {{this.params.DELETE_IMAGE?1:0}} = 1 
-EXECUTE [dbo].[UPDATE_IMAGE] 
-  @TABLE_NAME = 'PMS_INVENTORY_PICTURE'
-  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
-  ,@DELETE =1
-  ,@IMAGE_ID = {{this.params.DELETE_IMAGE}}
-		,@ResultCode=@ResultCode OUTPUT
-		,@ResultMessages=@ResultMessages OUTPUT
-
-if @ResultCode <> 'DONE'
-GOTO OUTPUT;
  
-EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V2]
+EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V3]
    @PRODUCT_ID = {{SelectedProduct.PRODUCT_ID.data}}
   ,@INVENTORY_NAME = {{INVENTORY_NAME.text}}
   ,@METER_ID = {{METER_ID.text}}
@@ -47,7 +21,8 @@ EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V2]
 	,@SHARED={{SHARED.isChecked}}
 	,@ACCOUNTING_DESCRIPTION = {{ACCOUNTING_DESCRIPTION.text}}
 	,@SUB_INVENTORY = {{SUB_INVENTORY.text||null}}
-	,@INVENTORY_PICTURE= @IMAGE_ID
+	,@BASE64 = {{this.params.IMAGE_DATA?this.params.IMAGE_DATA:null}}
+	,@DELETE_IMAGE = {{this.params.DELETE_IMAGE?1:0}}
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@IS_UPDATE = 1
 	,@INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:""}}
@@ -55,11 +30,6 @@ EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V2]
 	,@ResultCode = @ResultCode OUTPUT
 	,@ResultMessages = @ResultMessages OUTPUT
 
-OUTPUT:
-if @ResultCode <> 'DONE'
-ROLLBACK TRANSACTION;
-else
-COMMIT TRANSACTION;
 SELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES
 
 

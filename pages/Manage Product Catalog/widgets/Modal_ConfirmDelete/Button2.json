@@ -12,6 +12,11 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -29,7 +34,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{JS.onConfirmDeleteClick();}}",
+  "onClick": "{{JS.onDeleteClick(true);}}",
   "originalBottomRow": 16,
   "originalTopRow": 12,
   "parentId": "1n3rd5jf5r",

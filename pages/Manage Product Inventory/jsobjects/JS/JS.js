@@ -138,11 +138,12 @@ export default {
 		else{
 			//edit
 			let setup = {}
+			
 			if(FP_INVENTORY_PICTURE.files.length>0)
 				setup.IMAGE_DATA = FP_INVENTORY_PICTURE.files[0].data;
-			if(DefaultInventory.IMAGE.data == "" && DefaultInventory.INVENTORY_PICTURE.data != ""){
-				setup.DELETE_IMAGE = DefaultInventory.INVENTORY_PICTURE.data;
-				DefaultInventory.INVENTORY_PICTURE.data = null;
+			if(PV_INVENTORY_PICTURE.image == "" && FP_INVENTORY_PICTURE.files.length === 0){
+				setup.DELETE_IMAGE = "1";
+				//DefaultInventory.INVENTORY_PICTURE.data = null;
 			}
 			await _3_SP_UPDATE_INVENTORY.run(setup);
 

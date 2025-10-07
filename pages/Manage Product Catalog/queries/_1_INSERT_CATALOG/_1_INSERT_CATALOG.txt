@@ -1,25 +1,8 @@
 DECLARE @ResultCode nvarchar(10)
 	,@ResultMessages NVARCHAR(MAX)
 	,@IMAGE_ID nvarchar(20)=NULL;
-IF @@TRANCOUNT = 0
-BEGIN TRANSACTION;
 
-if {{this.params.IMAGE_DATA?0:1}} = 0 
-EXECUTE [dbo].[UPDATE_IMAGE] 
-   @BASE64 = {{this.params.IMAGE_DATA}}
-  ,@TABLE_NAME = 'PMS_CATALOG_PICTURE'
-  ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
-  ,@DELETE =0
-  ,@INSERT_IF_NOT_EXIST = 1
-  ,@IMAGE_ID = @IMAGE_ID OUTPUT
-		,@ResultCode=@ResultCode OUTPUT
-		,@ResultMessages=@ResultMessages OUTPUT
-
-
-if @ResultCode <> 'DONE'
-GOTO OUTPUT;
-
-EXEC	[dbo].[UPDATE_PMS_PRODUCT_CATALOG_LM]
+EXEC	[dbo].[UPDATE_PMS_PRODUCT_CATALOG_LM_V2]
 		@pType = {{PRODUCT_TYPE.selectedOptionValue.toString()}},
 		@pNameEN = {{PRODUCT_NAME_EN.text}},
 		@pNameTH = {{PRODUCT_NAME_TH.text}},
@@ -31,20 +14,12 @@ EXEC	[dbo].[UPDATE_PMS_PRODUCT_CATALOG_LM]
 		@pProductCatalogDetail = {{PRODUCT_DETAIL.text}},
 		@ACCOUNT_CODE = {{ACCOUNT_CODE.text}},
 		@VAT_TYPE = {{VAT_TYPE.selectedOptionValue}},
-		@INVOICE_TYPE = {{INVOICE_TYPE.selectedOptionValue}},
-		@IMAGE_ID = @IMAGE_ID
+		@INVOICE_TYPE = {{INVOICE_TYPE.selectedOptionValue}}
+		,@BASE64 = {{this.params.IMAGE_DATA}}
 		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 		,@INSERT_IF_NOT_EXIST = 1
 		,@PRODUCT_ID = NULL
 		,@ResultCode=@ResultCode OUTPUT
 		,@ResultMessages=@ResultMessages OUTPUT
 		
-if @ResultCode <> 'DONE'
-GOTO OUTPUT;
-		
-OUTPUT:
-if @ResultCode <> 'DONE'
-ROLLBACK TRANSACTION;
-else
-COMMIT TRANSACTION;
 SELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES
