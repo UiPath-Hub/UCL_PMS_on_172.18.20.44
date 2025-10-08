@@ -11,11 +11,17 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -24,7 +30,7 @@
     }
   ],
   "iconName": "cross",
-  "isDisabled": false,
+  "isDisabled": "{{Configs.isFreeSpace}}",
   "isLoading": false,
   "isVisible": true,
   "key": "ek1ey993zr",
