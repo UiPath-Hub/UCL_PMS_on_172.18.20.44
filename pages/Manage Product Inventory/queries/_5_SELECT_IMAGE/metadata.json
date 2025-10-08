@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT TOP 1 PICTURE_INVENTORY_FILE FROM dbo.PMS_INVENTORY_PICTURE WHERE PICTURE_INVENTORY_ID= {{DefaultInventory.INVENTORY_PICTURE.data}}",
+      "body": "IF {{DefaultInventory.INVENTORY_ID.data === DefaultInventory.PRODUCT_ID.data?1:0}} = 1\nSELECT TOP 1 PICTURE_CATALOG_FILE as PICTURE_INVENTORY_FILE FROM dbo.PMS_CATALOG_PICTURE WHERE PICTURE_CATALOG_ID= {{DefaultInventory.PRODUCT_ID.data}}\n\nELSE\nSELECT TOP 1 PICTURE_INVENTORY_FILE FROM dbo.PMS_INVENTORY_PICTURE WHERE PICTURE_INVENTORY_ID= {{DefaultInventory.INVENTORY_PICTURE.data}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

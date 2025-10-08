@@ -71,7 +71,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 32,
   "serverSideFiltering": false,
-  "sourceData": "{{SP_SELECTDROPDOWN_TYPE.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
+  "sourceData": "{{SP_SELECTDROPDOWN_TYPE.data.map( (obj) =>{ return {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } }).filter(i=>i.value!==\"พื้นที่ว่าง/Free Space\")}}",
   "topRow": 10,
   "type": "SELECT_WIDGET",
   "version": 1,
