@@ -29,7 +29,8 @@ export default {
 						newCompanyTempFlag:appsmith.store[this.newCompanyTempFlag],
 						dd:appsmith.store.IS_THIRD_PARTY
 					 }
-	}
+	},
+	loadingProgress:{default:0,current:0,full:7}
 	,test:()=>{
 		return (Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).find(i=>i["Contact ID"]=== Configs.PRIORITY_CONTACT_ID))
 	}

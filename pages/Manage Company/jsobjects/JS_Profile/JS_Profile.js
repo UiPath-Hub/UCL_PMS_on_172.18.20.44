@@ -1,5 +1,5 @@
 export default {
-	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.tableData.reduce((accumulator, currentValue) => {  
+	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {  
 			if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
 				accumulator.id.push(currentValue.INVENTORY_ID)
 				accumulator.sum+=parseFloat( currentValue.QUANTITY)
@@ -33,23 +33,18 @@ export default {
 	},
 	InitModal:async ()=>{
 		this.AddCompanyPipeline = "T1";
-		let timeout1 = setTimeout(()=>NEW_BUTTON_1.setDisabled(false),3000);
-		let timeout2 = setTimeout(()=>NEW_BUTTON_2.setDisabled(false),3000);
+		//let timeout1 = setTimeout(()=>NEW_BUTTON_1.setDisabled(false),3000);
+		//let timeout2 = setTimeout(()=>NEW_BUTTON_2.setDisabled(false),3000);
 
-		NEW_BUTTON_1.setDisabled(true);
-		NEW_BUTTON_2.setDisabled(true);
-		let InitializationEntityList = [{ENTITY:Default_Profile,DATA: {}}];
-		await Promise.all([
-			GlobalFunctions.initDefaultV2(InitializationEntityList),
-		])
+		await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true)]);
+		Object.keys(Default_Profile).forEach(i=>{if(i.data!= undefined) i.data = ""});
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		PRICE_PER_UNIT.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
 		await SP_SER_FOR_INVENTORY.run();
 		NEW_BUTTON_1.setDisabled(false);
 		NEW_BUTTON_2.setDisabled(false);
-		clearTimeout(timeout1);
-		clearTimeout(timeout2);
+		//while(NEW_BUTTON_1.isDisabled)
 
 	},
 	BTTNLinkOnClick:async (LinkTableColumn)=>{

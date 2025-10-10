@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignment": "left",
   "animateLoading": true,
-  "bottomRow": 16,
+  "bottomRow": 20,
   "boxShadow": "none",
   "defaultOptionValue": "{{Default_COMPANY_BILLING.BILLING_BRANCH_TYPE\n.data}}",
   "dynamicBindingPathList": [
@@ -64,7 +64,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 56,
-  "topRow": 12,
+  "topRow": 16,
   "type": "RADIO_GROUP_WIDGET",
   "version": 1,
   "widgetId": "iuyujghffo",

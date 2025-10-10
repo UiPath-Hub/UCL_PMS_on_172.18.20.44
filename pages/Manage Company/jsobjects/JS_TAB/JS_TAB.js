@@ -4,7 +4,7 @@ export default {
 		if(ALL_TAB.selectedTab == "Profile"){
 			//await	Container_LeaseSpace.setVisibility(false);
 			//await Container_Service.setVisibility(false);
-			 SELECT_FORMULAR.run()
+			SELECT_FORMULAR.run()
 			JS_Profile.updateLeadProfileTable();
 			JS_Profile.updateServiceProfileTable();
 			

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 24,
   "boxShadow": "none",
   "defaultText": "{{Default_COMPANY_BILLING.BILLING_CONTACT_EMAIL\n.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 63,
   "shouldAllowAutofill": true,
   "showStepArrows": false,
-  "topRow": 16,
+  "topRow": 20,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "j7tj36etvx",

@@ -138,6 +138,18 @@
       {
         "name": "COMPANY_LANGUAGE_TYPE",
         "value": "{\n  ...COMPANY_LANGUAGE_TYPE,\n  data: COMPANY_LANGUAGE_TYPE.selectedOptionValue\n}"
+      },
+      {
+        "name": "TITLE_PREFIX",
+        "value": "{\n  ...TITLE_PREFIX,\n  data: TITLE_PREFIX.selectedOptionValue\n}"
+      },
+      {
+        "name": "TITLE_PREFIX_OTHER",
+        "value": "{\n  ...TITLE_PREFIX_OTHER,\n  data: TITLE_PREFIX_OTHER.text\n}"
+      },
+      {
+        "name": "SUFFIX",
+        "value": "{\n  ...SUFFIX,\n  data: SUFFIX.selectedOptionValue\n}"
       }
     ]
   }
