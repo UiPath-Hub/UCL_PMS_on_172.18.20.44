@@ -194,7 +194,7 @@ export default {
 
 		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID)])
 		if(SP_SELECT_FOR_PROFILE.data != undefined && SP_SELECT_FOR_PROFILE.data.length != 0){
-			let inventory = SP_SELECT_FOR_PROFILE.data[0]
+			const inventory = {...SP_SELECT_FOR_PROFILE.data[0]}
 			
 			if(inventory["PROFILE_FLOOR_MODIFIER"] === undefined || inventory["PROFILE_FLOOR_MODIFIER"] === null){
 				inventory["PROFILE_FLOOR_MODIFIER"] = inventory["FLOOR_NO"];
@@ -215,9 +215,16 @@ export default {
 			if(inventory["QUANTITY"] === undefined || inventory["QUANTITY"] === null){
 				inventory["QUANTITY"] = inventory["INVENTORY_QUANTITY"];
 			}
+			console.log(inventory);
 			Object.keys(Default_Profile).forEach(i=>{
-				if(Default_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)) Default_Profile[i].data = inventory[i];
-				else Default_Profile[i].data = "";
+				if(Default_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)){ 
+					Default_Profile[i].data = inventory[i];
+					console.log(i+' '+inventory[i] + ' '+Default_Profile[i].data);
+				}
+				else{ 
+					Default_Profile[i].data = "";
+					console.log(i+' null');
+				}
 			});
 			/*let InitializationEntityList = [{ENTITY:Default_Profile,DATA: inventory}];
 			await Promise.all([
