@@ -11,8 +11,7 @@ export default {
 	AddCompanyPipeline:"T1",
 	//GrantROFRTable:[],
 	onModalManageProfileClose:async()=>{
-		await SP_SELECT_ALL_PROFILE_Service.run();
-		await SP_SELECT_ALL_PROFILE_Space.run();
+		await Promise.all([SP_SELECT_ALL_PROFILE_Service.run(),SP_SELECT_ALL_PROFILE_Space.run()]) ;
 		/*JS_TAB.Profile = {LeadData:SP_SELECT_ALL_PROFILE_Space.data.filter((ele)=> ele.TOTAL_RECORDS != 0),
 										ServiceData:SP_SELECT_ALL_PROFILE_Service.data.filter((ele)=> ele.TOTAL_RECORDS != 0)}
 		*/
@@ -215,27 +214,25 @@ export default {
 			if(inventory["QUANTITY"] === undefined || inventory["QUANTITY"] === null){
 				inventory["QUANTITY"] = inventory["INVENTORY_QUANTITY"];
 			}
-			console.log(inventory);
-			Object.keys(Default_Profile).forEach(i=>{
+			/*Object.keys(Default_Profile).forEach(i=>{
 				if(Default_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)){ 
 					Default_Profile[i].data = inventory[i];
-					console.log(i+' '+inventory[i] + ' '+Default_Profile[i].data);
 				}
-				else{ 
+				else{
 					Default_Profile[i].data = "";
-					console.log(i+' null');
 				}
-			});
-			/*let InitializationEntityList = [{ENTITY:Default_Profile,DATA: inventory}];
+			});*/
+			let InitializationEntityList = [{ENTITY:Default_Profile,DATA: inventory}];
 			await Promise.all([
 				GlobalFunctions.initDefaultV2(InitializationEntityList),
-			])*/
+			])
 		}
 
 		JS_Profile.AddCompanyPipeline = "T3";	
 
 		await storeValue(Configs.editCompanyProfileFlag,SP_SELECT_FOR_PROFILE.data[0]);
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
+		resetWidget(Container_Additional.widgetName,true);
 		BTTN_EditProfile.setDisabled(false);
 		BTTN_EditProfileService.setDisabled(false);
 		//Tab_AddCompanyPipeline.setVisibility(true);
