@@ -598,7 +598,7 @@
   "searchKey": "",
   "tableData": "{{(SP_SER_FOR_INVENTORY.data||Default_Table.TABLE_INVENT).filter(row=>row.TOTAL_RECORDS!=0)}}",
   "textSize": "0.875rem",
-  "topRow": 8,
+  "topRow": 7,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

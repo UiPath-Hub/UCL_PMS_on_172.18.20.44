@@ -1,11 +1,12 @@
 export default {
+	ableToDeleteProfile:false,
 	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {  
-			if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
-				accumulator.id.push(currentValue.INVENTORY_ID)
-				accumulator.sum+=parseFloat( currentValue.QUANTITY)
-			}
-			return accumulator; 
-		}, {id:[],sum:0}).sum).toFixed(2).toString()
+		if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
+			accumulator.id.push(currentValue.INVENTORY_ID)
+			accumulator.sum+=parseFloat( currentValue.QUANTITY)
+		}
+		return accumulator; 
+	}, {id:[],sum:0}).sum).toFixed(2).toString()
 	,
 	AddCompanyPipeline:"T1",
 	//GrantROFRTable:[],
@@ -35,9 +36,9 @@ export default {
 		this.AddCompanyPipeline = "T1";
 		//let timeout1 = setTimeout(()=>NEW_BUTTON_1.setDisabled(false),3000);
 		//let timeout2 = setTimeout(()=>NEW_BUTTON_2.setDisabled(false),3000);
-
+		this.ableToDeleteProfile = false;
 		await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true)]);
-		Object.keys(Default_Profile).forEach(i=>{if(i.data!= undefined) i.data = ""});
+		Object.keys(Default_Profile).forEach(i=>{if(Default_Profile[i].data !== undefined) Default_Profile[i].data = ""});
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		PRICE_PER_UNIT.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
@@ -187,19 +188,15 @@ export default {
 		})
 	},*/
 	onBttn_EditProfile:async(selectdRow)=>{
+		this.ableToDeleteProfile = true;
 		BTTN_EditProfile.setDisabled(true);
 		BTTN_EditProfileService.setDisabled(true);
-		let timeout1 = setTimeout(()=>BTTN_EditProfile.setDisabled(false),3000);
-		let timeout2 = setTimeout(()=>BTTN_EditProfileService.setDisabled(false),3000);
-		//await this.InitModal();
-		
 
-		await SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID});
-		
+		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID)])
 		if(SP_SELECT_FOR_PROFILE.data != undefined && SP_SELECT_FOR_PROFILE.data.length != 0){
 			let inventory = SP_SELECT_FOR_PROFILE.data[0]
-			await this.getInvenForProfile(inventory.INVENTORY_ID);
-			if(inventory["PROFILE_FLOOR_MODIFIER"] == undefined){
+			
+			if(inventory["PROFILE_FLOOR_MODIFIER"] === undefined || inventory["PROFILE_FLOOR_MODIFIER"] === null){
 				inventory["PROFILE_FLOOR_MODIFIER"] = inventory["FLOOR_NO"];
 				if(!COMPANY_PROFILE_FLOOR_NO.isDisabled)
 					COMPANY_PROFILE_FLOOR_NO.setDisabled(true);
@@ -207,7 +204,7 @@ export default {
 				if(COMPANY_PROFILE_FLOOR_NO.isDisabled)
 					COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
 			}
-			if(inventory["PROFILE_PP_UNIT_MODIFIER"] == undefined){
+			if(inventory["PROFILE_PP_UNIT_MODIFIER"] === undefined || inventory["PROFILE_PP_UNIT_MODIFIER"] === null){
 				inventory["PROFILE_PP_UNIT_MODIFIER"] = inventory["PRICE_PER_UNIT"];
 				if(!PRICE_PER_UNIT.isDisabled)
 					PRICE_PER_UNIT.setDisabled(true);
@@ -215,10 +212,17 @@ export default {
 				if(PRICE_PER_UNIT.isDisabled)
 					PRICE_PER_UNIT.setDisabled(false);
 			}
-			let InitializationEntityList = [{ENTITY:Default_Profile,DATA: inventory}];
+			if(inventory["QUANTITY"] === undefined || inventory["QUANTITY"] === null){
+				inventory["QUANTITY"] = inventory["INVENTORY_QUANTITY"];
+			}
+			Object.keys(Default_Profile).forEach(i=>{
+				if(Default_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)) Default_Profile[i].data = inventory[i];
+				else Default_Profile[i].data = "";
+			});
+			/*let InitializationEntityList = [{ENTITY:Default_Profile,DATA: inventory}];
 			await Promise.all([
 				GlobalFunctions.initDefaultV2(InitializationEntityList),
-			])	
+			])*/
 		}
 
 		JS_Profile.AddCompanyPipeline = "T3";	
@@ -227,8 +231,6 @@ export default {
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		BTTN_EditProfile.setDisabled(false);
 		BTTN_EditProfileService.setDisabled(false);
-		clearTimeout(timeout1);
-		clearTimeout(timeout2);
 		//Tab_AddCompanyPipeline.setVisibility(true);
 	},
 	getInvenForProfile:async (INVENTORY_ID)=>{

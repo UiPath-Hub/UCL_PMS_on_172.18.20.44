@@ -33,7 +33,7 @@
   ],
   "iconAlign": "left",
   "inputType": "NUMBER",
-  "isDisabled": "{{TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow.PRODUCT_TYPE_TH==\"พื้นที่เช่า\"}}",
+  "isDisabled": "{{Default_InvenForProfile.PRODUCT_TYPE_TH.data==\"พื้นที่เช่า\"}}",
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
