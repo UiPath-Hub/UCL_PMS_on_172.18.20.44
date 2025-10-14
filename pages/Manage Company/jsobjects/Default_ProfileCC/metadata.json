@@ -1,8 +1,8 @@
 {
-  "gitSyncId": "681b74b35165473495a8eb49_d101e1c4-25b3-492d-9a2c-155d36c95755",
-  "id": "Manage Company_Default_Profile",
+  "gitSyncId": "68e5e9a655eda7018e8c4294_b56f3707-7d63-4eaf-a6ec-7ace32ec31ad",
+  "id": "Manage Company_Default_ProfileCC",
   "unpublishedCollection": {
-    "name": "Default_Profile",
+    "name": "Default_ProfileCC",
     "pageId": "Manage Company",
     "pluginId": "js-plugin",
     "pluginType": "JS",

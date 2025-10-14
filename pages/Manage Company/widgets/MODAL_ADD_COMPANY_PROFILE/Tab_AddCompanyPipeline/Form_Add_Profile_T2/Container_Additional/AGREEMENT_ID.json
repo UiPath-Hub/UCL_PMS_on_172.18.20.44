@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 9,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store[ Configs.editCompanyProfileFlag] == undefined?\"\":Default_Profile.COMPANY_PROFILE_AGREEMENT_NO.data))(AGREEMENT_ID.options, AGREEMENT_ID.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store[ Configs.editCompanyProfileFlag] == undefined?\"\":Current_Profile.COMPANY_PROFILE_AGREEMENT_NO.data))(AGREEMENT_ID.options, AGREEMENT_ID.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -41,14 +41,14 @@
   "isDisabled": false,
   "isFilterable": false,
   "isLoading": false,
-  "isRequired": "{{Default_Profile.COMPANY_PROFILE_AGREEMENT_NO.required}}",
+  "isRequired": "{{Current_Profile.COMPANY_PROFILE_AGREEMENT_NO.required}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
   "labelText": "Agreement No.",
-  "labelTextColor": "{{Default_Profile.COMPANY_PROFILE_AGREEMENT_NO.color}}",
+  "labelTextColor": "{{Current_Profile.COMPANY_PROFILE_AGREEMENT_NO.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "11",
   "leftColumn": 0,

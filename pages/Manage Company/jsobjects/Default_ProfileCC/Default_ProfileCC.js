@@ -1,0 +1,15 @@
+export default {
+	COMPANY_PROFILE_ID:{data:"",regex:"",required:false,color:""},
+	COMPANY_ID:{data:"",regex:"",required:false,color:""},
+	COMPANY_PROFILE_AGREEMENT_NO:{data:"",regex:"",required:false,color:""},
+	COMPANY_PROFILE_PERIOD_START:{data:"",regex:"",required:false,color:""},
+	COMPANY_PROFILE_PERIOD_END:{data:"",regex:"",required:false,color:""},
+	FORMULA_ID:{data:"",regex:"",required:false,color:""},
+	STATUS:{data:"",regex:"",required:false,color:""},
+	CREATE_DATE:{data:"",regex:"",required:false,color:""},
+	UPDATE_DATE:{data:"",regex:"",required:false,color:""},
+	INVENTORY_ID:{data:"",regex:"",required:false,color:""},
+	PROFILE_FLOOR_MODIFIER:{data:"",regex:"",required:false,color:""},
+	PROFILE_PP_UNIT_MODIFIER:{data:"",regex:"",required:false,color:""},
+	QUANTITY:{data:"",regex:"",required:false,color:""},
+}

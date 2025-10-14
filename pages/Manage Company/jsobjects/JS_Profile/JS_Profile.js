@@ -37,7 +37,7 @@ export default {
 		//let timeout2 = setTimeout(()=>NEW_BUTTON_2.setDisabled(false),3000);
 		this.ableToDeleteProfile = false;
 		await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true)]);
-		Object.keys(Default_Profile).forEach(i=>{if(Default_Profile[i].data !== undefined) Default_Profile[i].data = ""});
+		Object.keys(Current_Profile).forEach(i=>{if(Current_Profile[i].data !== undefined) Current_Profile[i].data = ""});
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		PRICE_PER_UNIT.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
@@ -54,11 +54,11 @@ export default {
 		reference = await reference.filter((Ref)=>Ref.LinkTableColumn===LinkTableColumn);
 		await Promise.all( reference.map(async (Ref)=>{
 			if(Ref.Widget.isDisabled === true){
-				Default_Profile[Ref.ProfileProp].data = "";
+				Current_Profile[Ref.ProfileProp].data = "";
 				Ref.Widget.setDisabled(false);
 			}else{
 				if( Default_InvenForProfile[Ref.LinkTableColumn] != undefined && _.trim(Default_InvenForProfile[Ref.LinkTableColumn].data) != ""){
-					Default_Profile[Ref.ProfileProp].data = Default_InvenForProfile[Ref.LinkTableColumn].data;
+					Current_Profile[Ref.ProfileProp].data = Default_InvenForProfile[Ref.LinkTableColumn].data;
 					//await resetWidget(Ref.Widget.widgetName);
 				}else{
 					await showAlert("this inventory does not have default value.","error");
@@ -75,11 +75,11 @@ export default {
 		PRICE_PER_UNIT.setValue("");
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setValue("");
-		await Promise.all(Object.keys(Default_Profile).map((key)=>{
+		await Promise.all(Object.keys(Current_Profile).map((key)=>{
 			let strKey = key.toString();
-			if(Default_Profile[strKey].data !== undefined) {
-				Default_Profile[strKey].data="";
-				Default_Profile[strKey].color="";
+			if(Current_Profile[strKey].data !== undefined) {
+				Current_Profile[strKey].data="";
+				Current_Profile[strKey].color="";
 			}
 		}));
 		//await resetWidget(FORMULA.widgetName);
@@ -89,7 +89,7 @@ export default {
 	onDeleteProfile: async()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false))return;
 		let Params = {
-			COMPANY_PROFILE_ID:Default_Profile.COMPANY_PROFILE_ID.data
+			COMPANY_PROFILE_ID:Current_Profile.COMPANY_PROFILE_ID.data
 		}
 
 		//return console.log(Params);
@@ -138,7 +138,7 @@ export default {
 	onUpdateProfileClick:async()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false))return;
 		let Params = {
-			COMPANY_PROFILE_ID:Default_Profile.COMPANY_PROFILE_ID.data,
+			COMPANY_PROFILE_ID:Current_Profile.COMPANY_PROFILE_ID.data,
 			AGREEMENT_ID: AGREEMENT_ID.selectedOptionValue==undefined ||_.trim(AGREEMENT_ID.selectedOptionValue)===""? null : AGREEMENT_ID.selectedOptionValue,
 			FORMULA: FORMULA.selectedOptionValue==undefined ||_.trim(FORMULA.selectedOptionValue)===""? null : FORMULA.selectedOptionValue,
 			INVENTORY_ID: Default_InvenForProfile.INVENTORY_ID.data,
@@ -222,7 +222,7 @@ export default {
 					Default_Profile[i].data = "";
 				}
 			});*/
-			let InitializationEntityList = [{ENTITY:Default_Profile,DATA: inventory}];
+			let InitializationEntityList = [{ENTITY:Current_Profile,DATA: inventory}];
 			await Promise.all([
 				GlobalFunctions.initDefaultV2(InitializationEntityList),
 			])
@@ -265,7 +265,7 @@ export default {
 
 	},
 	onBttn_NextPipeline_T3_Click:async()=>{
-		let alertWidget = await GlobalFunctions.manualValidateV2(Default_Profile,Profile_Widgets);
+		let alertWidget = await GlobalFunctions.manualValidateV2(Current_Profile,Profile_Widgets);
 		if(alertWidget.length > 0){
 			showAlert(`Some field is required or invalid.`)
 		}

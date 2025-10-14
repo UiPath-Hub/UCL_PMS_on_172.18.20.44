@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{Default_Profile.COMPANY_PROFILE_PERIOD_END.data?moment(Default_Profile.COMPANY_PROFILE_PERIOD_END.data).toString():moment().toString()}}",
+  "defaultDate": "{{Current_Profile.COMPANY_PROFILE_PERIOD_END.data?moment(Current_Profile.COMPANY_PROFILE_PERIOD_END.data).toString():moment().toString()}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -59,13 +59,13 @@
   "firstDayOfWeek": 0,
   "isDisabled": "{{AGREEMENT_ID.selectedOptionValue!=\"\"}}",
   "isLoading": false,
-  "isRequired": "{{Default_Profile.COMPANY_PROFILE_PERIOD_END.required}}",
+  "isRequired": "{{Current_Profile.COMPANY_PROFILE_PERIOD_END.required}}",
   "isVisible": true,
   "key": "2w0301iyoz",
   "label": "End Date",
   "labelAlignment": "left",
   "labelPosition": "Left",
-  "labelTextColor": "{{Default_Profile.COMPANY_PROFILE_PERIOD_END.color}}",
+  "labelTextColor": "{{Current_Profile.COMPANY_PROFILE_PERIOD_END.color}}",
   "labelTextSize": "0.875rem",
   "labelWidth": "10",
   "leftColumn": 30,

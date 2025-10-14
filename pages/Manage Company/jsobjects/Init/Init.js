@@ -36,7 +36,7 @@ export default {
 			}
 		}
 
-		let InitializationEntityList = [{ENTITY:Default_Profile,DATA: {}}];
+		let InitializationEntityList = [{ENTITY:Current_Profile,DATA: {}}];
 		await Promise.all([newbranch(),editbranch(),GlobalFunctions.initDefaultV2(InitializationEntityList)]);
 		Configs.loadingProgress.current +=1;
 		
