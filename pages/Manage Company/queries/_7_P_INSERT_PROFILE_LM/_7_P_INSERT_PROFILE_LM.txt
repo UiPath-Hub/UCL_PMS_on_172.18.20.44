@@ -1,7 +1,6 @@
 DECLARE @ResultCode NVARCHAR(10) ,
     @ResultMessages NVARCHAR(MAX);
-IF @@TRANCOUNT = 0
-BEGIN TRANSACTION;
+
 EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM]
    @pCOMPANY_ID = {{COMPANY_ID.text}}
   ,@pCOMPANY_PROFILE_AGREEMENT_NO = {{this.params.AGREEMENT_ID}}
@@ -17,10 +16,5 @@ EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM]
 	,@ResultCode =@ResultCode OUTPUT
 	,@ResultMessages =@ResultMessages OUTPUT
 	
-RETURN_RESULT:
 SELECT @ResultCode AS [RESULT_CODE],
        @ResultMessages AS [RESULT_MESSAGES]
-
-IF @ResultCode = 'DONE'
-COMMIT TRANSACTION;
-ELSE ROLLBACK TRANSACTION;

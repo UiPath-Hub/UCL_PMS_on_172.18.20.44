@@ -8,6 +8,11 @@ export default {
 		return accumulator; 
 	}, {id:[],sum:0}).sum).toFixed(2).toString()
 	,
+	SetDefault:async ()=>{
+		Object.keys(Default_Profile).forEach((i)=>{
+			Current_Profile[i] = {...Default_Profile[i]};
+		});
+	},
 	AddCompanyPipeline:"T1",
 	//GrantROFRTable:[],
 	onModalManageProfileClose:async()=>{
@@ -37,7 +42,7 @@ export default {
 		//let timeout2 = setTimeout(()=>NEW_BUTTON_2.setDisabled(false),3000);
 		this.ableToDeleteProfile = false;
 		await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true)]);
-		Object.keys(Current_Profile).forEach(i=>{if(Current_Profile[i].data !== undefined) Current_Profile[i].data = ""});
+		this.SetDefault();
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		PRICE_PER_UNIT.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
@@ -84,7 +89,7 @@ export default {
 		}));
 		//await resetWidget(FORMULA.widgetName);
 		await resetWidget(Container_Additional.widgetName,true);
-		//return Default_Profile
+		//return Current_Profile
 	},
 	onDeleteProfile: async()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false))return;
@@ -190,6 +195,7 @@ export default {
 		this.ableToDeleteProfile = true;
 		BTTN_EditProfile.setDisabled(true);
 		BTTN_EditProfileService.setDisabled(true);
+		this.SetDefault();
 
 		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID)])
 		if(SP_SELECT_FOR_PROFILE.data != undefined && SP_SELECT_FOR_PROFILE.data.length != 0){
@@ -214,18 +220,18 @@ export default {
 			if(inventory["QUANTITY"] === undefined || inventory["QUANTITY"] === null){
 				inventory["QUANTITY"] = inventory["INVENTORY_QUANTITY"];
 			}
-			/*Object.keys(Default_Profile).forEach(i=>{
-				if(Default_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)){ 
-					Default_Profile[i].data = inventory[i];
+			Object.keys(Current_Profile).forEach(i=>{
+				if(Current_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)){ 
+					Current_Profile[i].data = inventory[i];
 				}
 				else{
-					Default_Profile[i].data = "";
+					Current_Profile[i].data = "";
 				}
-			});*/
-			let InitializationEntityList = [{ENTITY:Current_Profile,DATA: inventory}];
+			});
+			/*let InitializationEntityList = [{ENTITY:Current_Profile,DATA: inventory}];
 			await Promise.all([
 				GlobalFunctions.initDefaultV2(InitializationEntityList),
-			])
+			])*/
 		}
 
 		JS_Profile.AddCompanyPipeline = "T3";	
