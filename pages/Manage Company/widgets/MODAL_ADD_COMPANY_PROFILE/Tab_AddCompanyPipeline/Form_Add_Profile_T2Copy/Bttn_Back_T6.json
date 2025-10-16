@@ -11,17 +11,11 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "onClick"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -32,7 +26,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{appsmith.store[ Configs.editCompanyProfileFlag] == undefined}}",
+  "isVisible": true,
   "key": "6fgfm4o8oh",
   "leftColumn": 0,
   "minWidth": 120,
