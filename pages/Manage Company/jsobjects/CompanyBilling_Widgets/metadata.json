@@ -73,11 +73,11 @@
       },
       {
         "name": "BILLING_COMPANY_BUILDING_NAME_EN",
-        "value": "{\n  ...BILLING_COMPANY_NAME_EN,\n  data: BILLING_COMPANY_NAME_EN.text\n}"
+        "value": "{\n  ...BCOMPANY_BUILDING_NAME_EN,\n  data: BCOMPANY_BUILDING_NAME_EN.text\n}"
       },
       {
         "name": "BILLING_COMPANY_BUILDING_NAME_TH",
-        "value": "{\n  ...BILLING_COMPANY_NAME_TH,\n  data: BILLING_COMPANY_NAME_TH.text\n}"
+        "value": "{\n  ...BCOMPANY_BUILDING_NAME_TH,\n  data: BCOMPANY_BUILDING_NAME_TH.text\n}"
       },
       {
         "name": "BILLING_COMPANY_FLOOR",

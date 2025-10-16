@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 17,
   "boxShadow": "none",
-  "defaultText": "{{(Default_Profile.QUANTITY.data||Default_InvenForProfile.QUANTITY.data)?parseFloat(Default_Profile.QUANTITY.data||Default_InvenForProfile.QUANTITY.data).toFixed(2):\"0.00\"}}",
+  "defaultText": "{{Current_Profile.QUANTITY.data?parseFloat(Current_Profile.QUANTITY.data||0).toFixed(2):parseFloat(Default_InvenForProfile.QUANTITY.data||0).toFixed(2)}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -18,12 +18,27 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
     }
   ],
   "dynamicTriggerPathList": [
@@ -33,16 +48,17 @@
   ],
   "iconAlign": "left",
   "inputType": "NUMBER",
-  "isDisabled": "{{TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow.PRODUCT_TYPE_TH==\"พื้นที่เช่า\"}}",
+  "isDisabled": "{{Default_InvenForProfile.PRODUCT_TYPE_TH.data==\"พื้นที่เช่า\"}}",
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{Current_Profile.QUANTITY.required}}",
   "isVisible": true,
   "key": "a26yk5ycjr",
   "label": "Quantity",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextSize": "0.875rem",
+  "labelTextColor": "{{Current_Profile.QUANTITY.color}}",
+  "labelTextSize": "1rem",
   "labelWidth": "11",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
@@ -57,6 +73,7 @@
   "parentColumnSpace": 13.125,
   "parentId": "uk4994gix9",
   "parentRowSpace": 10,
+  "regex": "{{Current_Profile.QUANTITY.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

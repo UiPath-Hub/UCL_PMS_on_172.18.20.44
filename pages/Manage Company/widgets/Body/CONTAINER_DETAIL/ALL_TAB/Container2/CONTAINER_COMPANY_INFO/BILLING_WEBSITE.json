@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 28,
+  "bottomRow": 32,
   "boxShadow": "none",
   "defaultText": "{{Default_COMPANY_BILLING.\nBILLING_WEBSITE.data}}",
   "dynamicBindingPathList": [
@@ -70,7 +70,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "showStepArrows": false,
-  "topRow": 24,
+  "topRow": 28,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "mc7507uvau",

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 24,
+  "bottomRow": 28,
   "boxShadow": "none",
   "defaultText": "{{Default_COMPANY_BILLING.BILLING_FAX\n.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 63,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 20,
+  "topRow": 24,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "cz748cl9gu",

@@ -10,9 +10,19 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
     }
   ],
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -22,7 +32,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{JS_Profile.ableToDeleteProfile}}",
   "key": "6fgfm4o8oh",
   "leftColumn": 16,
   "minWidth": 120,

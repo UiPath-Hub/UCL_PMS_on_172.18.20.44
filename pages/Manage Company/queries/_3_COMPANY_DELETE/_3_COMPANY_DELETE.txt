@@ -1,63 +1,13 @@
 DECLARE @ResultCode NVARCHAR(10) ,
     @ResultMessages NVARCHAR(MAX);
-IF @@TRANCOUNT = 0
-BEGIN TRANSACTION;
 
-EXEC UPDATE_BILLING_ACCOUNT_INFO 
-	@COMPANY_ID = {{COMPANY_ID.text}},
-	@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}},
-	@DELETE_FLAG = 1,
-	@ResultCode =@ResultCode OUTPUT,
-	@ResultMessages =@ResultMessages OUTPUT;
-SET @ResultMessages='UPDATE_BILLING_ACCOUNT_INFO '+@ResultMessages
-IF @ResultCode <> 'DONE' GOTO RETURN_RESULT;
 
-EXECUTE [dbo].[UPDATE_PMS_COMPANY_LM]
+EXECUTE [dbo].[UPDATE_PMS_COMPANY_LM_V2]
 	@COMPANY_ID= {{COMPANY_ID.text}},
 	@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}},
 	@DELETE_FLAG = 1,
 	@ResultCode =@ResultCode OUTPUT,
 	@ResultMessages =@ResultMessages OUTPUT;
-SET @ResultMessages='UPDATE_PMS_COMPANY_LM '+@ResultMessages
-IF @ResultCode <> 'DONE' GOTO RETURN_RESULT;
 
-
-
-DECLARE @COMPANY_CONTACT_ID dbo.NEW_ID;
-
-DECLARE contact_list_cursor CURSOR FOR
-SELECT DISTINCT PAIRED_CONTACT_ID 
-FROM dbo.PMS_CONTACT_PERSON_DETAIL_LM map
-left join dbo.PMS_COMPANY_CONTACT_LM con on map.PAIRED_CONTACT_ID = con.COMPANY_CONTACT_ID
-WHERE map.PAIRED_COMPANY_ID = {{COMPANY_ID.text}}
-AND con.DELETE_FLAG = 0;
-
-OPEN contact_list_cursor;
-
-FETCH NEXT FROM contact_list_cursor INTO @COMPANY_CONTACT_ID;
-
-WHILE @@FETCH_STATUS = 0
-BEGIN
-		execute dbo.[UPDATE_CONTACT_PERSON_DETAIL_V2]
-		@COMPANY_CONTACT_ID  = @COMPANY_CONTACT_ID
-		,@COMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}
-		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
-		,@IS_DELETE = 1
-		,@FORCE_DELETE=1
-		,@ResultCode=@ResultCode OUTPUT
-		,@ResultMessages=@ResultMessages OUTPUT
-		SET @ResultMessages='UPDATE_CONTACT_PERSON_DETAIL '+@ResultMessages
-		IF @ResultCode <> 'DONE' GOTO CLOSE_CURSOR;
-    FETCH NEXT FROM contact_list_cursor INTO @COMPANY_CONTACT_ID;
-END;
-CLOSE_CURSOR:
-CLOSE contact_list_cursor;
-DEALLOCATE contact_list_cursor;
-
-RETURN_RESULT:
 SELECT @ResultCode AS [RESULT_CODE],
        @ResultMessages AS [RESULT_MESSAGES]
-
-IF @ResultCode = 'DONE'
-COMMIT TRANSACTION;
-ELSE ROLLBACK TRANSACTION;

@@ -428,7 +428,7 @@
   "rightColumn": 64,
   "searchKey": "",
   "serverSidePaginationEnabled": false,
-  "tableData": "{{SP_SER_SEARCH_FOR_PRODUCT_CATA.data.filter(i=>i.TOTAL_RECORD !== 0)}}",
+  "tableData": "{{SP_SER_SEARCH_FOR_PRODUCT_CATA.data.filter(i=>i.TOTAL_RECORDS !== 0)}}",
   "textSize": "1rem",
   "topRow": 64,
   "totalRecordsCount": "",

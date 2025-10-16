@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 13,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Default_Profile.FORMULA_ID.data))(FORMULA.options, FORMULA.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Current_Profile.FORMULA_ID.data))(FORMULA.options, FORMULA.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -41,14 +41,14 @@
   "isDisabled": false,
   "isFilterable": false,
   "isLoading": false,
-  "isRequired": "{{Default_Profile.FORMULA_ID.required}}",
+  "isRequired": "{{Current_Profile.FORMULA_ID.required}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
   "labelText": "Formula",
-  "labelTextColor": "{{Default_Profile.FORMULA_ID.color}}",
+  "labelTextColor": "{{Current_Profile.FORMULA_ID.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "11",
   "leftColumn": 0,

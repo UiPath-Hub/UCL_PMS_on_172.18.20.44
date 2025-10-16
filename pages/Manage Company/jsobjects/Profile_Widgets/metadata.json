@@ -9,35 +9,47 @@
     "variables": [
       {
         "name": "COMPANY_ID",
-        "value": "{\n  ...COMPANY_ID,\n  data: COMPANY_ID.text\n}"
+        "value": "{\n  ...COMPANY_ID,\n  data: COMPANY_ID.text,\n  page: \"T3\"\n}"
       },
       {
         "name": "COMPANY_PROFILE_AGREEMENT_NO",
-        "value": "{\n  ...AGREEMENT_ID,\n  data: AGREEMENT_ID.selectedOptionValue\n}"
+        "value": "{\n  ...AGREEMENT_ID,\n  data: AGREEMENT_ID.selectedOptionValue,\n  page: \"T3\"\n}"
       },
       {
         "name": "COMPANY_PROFILE_PERIOD_START",
-        "value": "{\n  ...COMPANY_PROFILE_PERIOD_START,\n  data: COMPANY_PROFILE_PERIOD_START.selectedDate\n}"
+        "value": "{\n  ...COMPANY_PROFILE_PERIOD_START,\n  data: COMPANY_PROFILE_PERIOD_START.selectedDate,\n  page: \"T3\"\n}"
       },
       {
         "name": "COMPANY_PROFILE_PERIOD_END",
-        "value": "{\n  ...COMPANY_PROFILE_PERIOD_END,\n  data: COMPANY_PROFILE_PERIOD_END.selectedDate\n}"
+        "value": "{\n  ...COMPANY_PROFILE_PERIOD_END,\n  data: COMPANY_PROFILE_PERIOD_END.selectedDate,\n  page: \"T3\"\n}"
       },
       {
         "name": "FORMULA_ID",
-        "value": "{\n  ...FORMULA,\n  data: FORMULA.selectedOptionValue\n}"
+        "value": "{\n  ...FORMULA,\n  data: FORMULA.selectedOptionValue,\n  page: \"T3\"\n}"
       },
       {
         "name": "PROFILE_FLOOR_MODIFIER",
-        "value": "{\n  ...COMPANY_PROFILE_FLOOR_NO,\n  data: COMPANY_PROFILE_FLOOR_NO.text\n}"
+        "value": "{\n  ...COMPANY_PROFILE_FLOOR_NO,\n  data: COMPANY_PROFILE_FLOOR_NO.text,\n  page: \"T3\"\n}"
       },
       {
         "name": "PROFILE_PP_UNIT_MODIFIER",
-        "value": "{\n  ...PRICE_PER_UNIT,\n  data: (PRICE_PER_UNIT.value != undefined ? PRICE_PER_UNIT.value : \"\").toString()\n}"
+        "value": "{\n  ...PRICE_PER_UNIT,\n  data: (PRICE_PER_UNIT.value != undefined ? PRICE_PER_UNIT.value : \"\").toString(),\n  page: \"T3\"\n}"
       },
       {
         "name": "QUANTITY",
-        "value": "{\n  ...QUANTITY,\n  data: QUANTITY.text\n}"
+        "value": "{\n  ...QUANTITY,\n  data: QUANTITY.text,\n  page: \"T3\"\n}"
+      },
+      {
+        "name": "FREQUENCY_TYPE",
+        "value": "{\n  ...FREQUENCY_TYPE,\n  data: FREQUENCY_TYPE.selectedOptionValue,\n  page: \"T6\"\n}"
+      },
+      {
+        "name": "REPEAT_EVERY",
+        "value": "{\n  ...REPEAT_EVERY,\n  data: REPEAT_EVERY.text,\n  page: \"T6\"\n}"
+      },
+      {
+        "name": "FREQUENCY_DATE",
+        "value": "{\n  ...FREQUENCY_DATE,\n  data: FREQUENCY_DATE.selectedDate,\n  page: \"T6\"\n}"
       }
     ]
   }

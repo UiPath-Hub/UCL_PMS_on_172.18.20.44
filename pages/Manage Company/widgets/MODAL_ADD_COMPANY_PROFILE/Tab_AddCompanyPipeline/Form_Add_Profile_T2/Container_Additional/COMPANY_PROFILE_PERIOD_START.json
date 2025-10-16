@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{Default_Profile.COMPANY_PROFILE_PERIOD_START.data?moment(Default_Profile.COMPANY_PROFILE_PERIOD_START.data).toString():moment().toString()}}",
+  "defaultDate": "{{Current_Profile.COMPANY_PROFILE_PERIOD_START.data?moment(Current_Profile.COMPANY_PROFILE_PERIOD_START.data).toString():moment().toString()}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -60,14 +60,14 @@
   "firstDayOfWeek": "0",
   "isDisabled": "{{AGREEMENT_ID.selectedOptionValue!=\"\"}}",
   "isLoading": false,
-  "isRequired": "{{Default_Profile.COMPANY_PROFILE_PERIOD_START.required}}",
+  "isRequired": "{{Current_Profile.COMPANY_PROFILE_PERIOD_START.required}}",
   "isVisible": true,
   "key": "2w0301iyoz",
   "label": "Start Date",
   "labelAlignment": "left",
   "labelPosition": "Left",
-  "labelTextColor": "{{Default_Profile.COMPANY_PROFILE_PERIOD_START.color}}",
-  "labelTextSize": "0.875rem",
+  "labelTextColor": "{{Current_Profile.COMPANY_PROFILE_PERIOD_START.color}}",
+  "labelTextSize": "1rem",
   "labelWidth": "11",
   "leftColumn": 0,
   "maxDate": "2121-12-31T18:29:00.000Z",

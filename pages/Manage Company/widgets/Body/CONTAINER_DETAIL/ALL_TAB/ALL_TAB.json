@@ -347,6 +347,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "tabsObj.taby20jjg0trx.isVisible"
+    },
+    {
+      "key": "onTabSelected"
     }
   ],
   "dynamicTriggerPathList": [

@@ -7,7 +7,6 @@ export default {
 	,AVAILABLE_UNIT:{data:"",regex:"",required:false,color:""}
 	,FLOOR_NO:{data:DefaultInventory.FLOOR_NO.data,regex:"",required:false,color:""}
 	,FREE_UNIT:{data:"",regex:"",required:false,color:""}
-	
 	//View
 	,FLOOR_NO_VIEW:{data:this.FLOOR_NO.data||DefaultInventory.FLOOR_NO.data,regex:this.FLOOR_NO.regex,required:this.FLOOR_NO.required,color:this.FLOOR_NO.color}
 	,PRODUCT_NAME:{data:`${this.PRODUCT_NAME_TH.data}/${this.PRODUCT_NAME_EN.data}`,

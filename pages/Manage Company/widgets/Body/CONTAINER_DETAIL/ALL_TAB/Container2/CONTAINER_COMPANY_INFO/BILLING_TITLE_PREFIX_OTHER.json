@@ -24,10 +24,10 @@
       "key": "regex"
     },
     {
-      "key": "isVisible"
+      "key": "labelTextColor"
     },
     {
-      "key": "labelTextColor"
+      "key": "isDisabled"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -36,19 +36,19 @@
       "key": "isRequired"
     },
     {
-      "key": "isVisible"
+      "key": "labelTextColor"
     },
     {
-      "key": "labelTextColor"
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
-  "isDisabled": false,
+  "isDisabled": "{{!BILLING_TITLE_PREFIX.selectedOptionValue.includes(\"อื่นๆ\")}}",
   "isLoading": false,
   "isRequired": "{{Default_COMPANY_BILLING.\nBILLING_TITLE_PREFIX_OTHER.required}}",
-  "isVisible": "{{BILLING_TITLE_PREFIX.selectedOptionValue.includes(\"อื่นๆ\")}}",
+  "isVisible": true,
   "key": "nwk391w658",
   "label": "อื่นๆ / Other",
   "labelAlignment": "left",

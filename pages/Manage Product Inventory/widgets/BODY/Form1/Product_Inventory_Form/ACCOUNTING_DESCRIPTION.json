@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 69,
+  "bottomRow": 65,
   "boxShadow": "none",
   "defaultText": "{{DefaultInventory.ACCOUNTING_DESCRIPTION.data}}",
   "dynamicBindingPathList": [
@@ -59,7 +59,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 69,
+  "originalBottomRow": 65,
   "originalTopRow": 57,
   "parentColumnSpace": 19.5,
   "parentId": "qpfi71lfb7",

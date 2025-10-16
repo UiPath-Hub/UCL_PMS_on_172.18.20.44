@@ -1,0 +1,89 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 6,
+  "boxShadow": "none",
+  "defaultText": "{{Current_Profile.REPEAT_EVERY.data}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    },
+    {
+      "key": "onBlur"
+    }
+  ],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{Current_Profile.REPEAT_EVERY.required}}",
+  "isVisible": true,
+  "key": "a26yk5ycjr",
+  "label": "Repeat every",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{Current_Profile.REPEAT_EVERY.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "11",
+  "leftColumn": 4,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onBlur": "",
+  "onTextChanged": "{{JS_Profile. REPEAT_EVERY_setValue(REPEAT_EVERY_1)}}",
+  "parentColumnSpace": 13.125,
+  "parentId": "9u28d6zvt5",
+  "parentRowSpace": 10,
+  "regex": "{{Current_Profile.REPEAT_EVERY.regex}}",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 32,
+  "shouldAllowAutofill": false,
+  "showStepArrows": false,
+  "topRow": 2,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "g6p68a4u3a",
+  "widgetName": "REPEAT_EVERY_1"
+}

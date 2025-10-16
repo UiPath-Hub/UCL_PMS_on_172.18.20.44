@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 30,
+  "bottomRowBeforeCollapse": 30,
+  "boxShadow": "none",
+  "buttonColor": "#3b82f6",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "6fgfm4o8oh",
+  "leftColumn": 51,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{JS_Profile.onBttn_NextPipeline_T6_Click()}}",
+  "originalBottomRow": 30,
+  "originalTopRow": 26,
+  "parentId": "sebldqndjh",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "text": "Next",
+  "topRow": 26,
+  "topRowBeforeCollapse": 26,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "b7dwnrhskg",
+  "widgetName": "Bttn_Next_T6"
+}

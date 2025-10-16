@@ -1,0 +1,76 @@
+{
+  "gitSyncId": "681b74b35165473495a8eb49_d101e1c4-25b3-492d-9a2c-155d36c95755",
+  "id": "Manage Company_Current_Profile",
+  "unpublishedCollection": {
+    "name": "Current_Profile",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "COMPANY_PROFILE_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_PROFILE_AGREEMENT_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_PROFILE_PERIOD_START",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_PROFILE_PERIOD_END",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "FORMULA_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "UPDATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVENTORY_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PROFILE_FLOOR_MODIFIER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PROFILE_PP_UNIT_MODIFIER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "QUANTITY",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "FREQUENCY_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "REPEAT_EVERY",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "FREQUENCY_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      }
+    ]
+  }
+}
