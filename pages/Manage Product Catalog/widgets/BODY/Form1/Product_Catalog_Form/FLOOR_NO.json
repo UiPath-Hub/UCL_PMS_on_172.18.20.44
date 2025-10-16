@@ -49,7 +49,7 @@
   "isFilterable": true,
   "isLoading": false,
   "isRequired": "{{PRODUCT_TYPE.selectedOptionValue.includes(\"Leased Space\")||Default_ProductCatalog.FLOOR_NO\n.required}}",
-  "isVisible": "{{PRODUCT_TYPE.selectedOptionValue.includes(\"Leased Space\")}}",
+  "isVisible": "{{[\"พื้นที่เช่า/Leased Space\",\"ระบบปรับอากาศ/VAV\"].includes( PRODUCT_TYPE.selectedOptionValue)}}",
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",

@@ -44,7 +44,7 @@
     }
   ],
   "dynamicTriggerPathList": [],
-  "isDisabled": "{{!_.toLower(PRODUCT_TYPE.text).includes(\"meter\")}}",
+  "isDisabled": "{{[\"Leased Space\",\"VAV\"].includes(SP_SELECTPRODUCTCATALOG.data[0]?.PRODUCT_TYPE_EN) }}",
   "isFilterable": true,
   "isLoading": false,
   "isRequired": "{{_.lowerCase(PRODUCT_TYPE.text).includes(\"meter\")||DefaultInventory.FLOOR_NO.required}}",
