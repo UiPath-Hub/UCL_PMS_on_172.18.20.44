@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 6,
   "boxShadow": "none",
-  "defaultText": "{{Current_Profile.PROFILE_FLOOR_MODIFIER.data}}",
+  "defaultText": "{{Current_Profile.REPEAT_EVERY.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,68 +14,72 @@
       "key": "borderRadius"
     },
     {
-      "key": "validation"
+      "key": "defaultText"
     },
     {
-      "key": "defaultText"
+      "key": "labelTextColor"
     },
     {
       "key": "isRequired"
     },
     {
       "key": "regex"
-    },
-    {
-      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
+      "key": "labelTextColor"
+    },
+    {
       "key": "isRequired"
     },
     {
-      "key": "labelTextColor"
+      "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
-  "iconName": "",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{Current_Profile.PROFILE_FLOOR_MODIFIER.required}}",
+  "isRequired": "{{Current_Profile.REPEAT_EVERY.required}}",
   "isVisible": true,
-  "key": "bbzicbkyvi",
-  "label": "Floor No.",
+  "key": "a26yk5ycjr",
+  "label": "Repeat every",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{Current_Profile.PROFILE_FLOOR_MODIFIER.color}}",
+  "labelTextColor": "{{Current_Profile.REPEAT_EVERY.color}}",
   "labelTextSize": "1rem",
-  "labelWidth": "10",
-  "leftColumn": 30,
+  "labelWidth": "11",
+  "leftColumn": 4,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 53,
-  "mobileLeftColumn": 30,
-  "mobileRightColumn": 50,
-  "mobileTopRow": 46,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "parentColumnSpace": 13.4375,
-  "parentId": "uk4994gix9",
+  "onTextChanged": "{{JS_Profile. REPEAT_EVERY_setValue(REPEAT_EVERY2)}}",
+  "parentColumnSpace": 13.125,
+  "parentId": "4l6l2f50wb",
   "parentRowSpace": 10,
-  "regex": "{{Current_Profile.PROFILE_FLOOR_MODIFIER.regex}}",
+  "regex": "{{Current_Profile.REPEAT_EVERY.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 56,
+  "rightColumn": 32,
+  "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 9,
+  "topRow": 2,
   "type": "INPUT_WIDGET_V2",
-  "validation": "{{COMPANY_PROFILE_FLOOR_NO.text !== \"\"}}",
   "version": 2,
-  "widgetId": "3kkjk82zb3",
-  "widgetName": "COMPANY_PROFILE_FLOOR_NO"
+  "widgetId": "7344hqmhas",
+  "widgetName": "REPEAT_EVERY2"
 }

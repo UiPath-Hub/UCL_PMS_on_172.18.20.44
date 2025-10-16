@@ -24,7 +24,7 @@ export default {
 				if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
 					defaultEntities[keystr].color = Configs.requiredColorAlert;
 				}
-				alert.push(widgetsMap[keystr].label||_.toLower( widgetsMap[keystr].widgetName).replaceAll("_"," "));
+				alert.push(widgetsMap[keystr]);
 			} else {
 				if(defaultEntities[keystr].color!=Configs.requiredColorPass){
 					defaultEntities[keystr].color = Configs.requiredColorPass;

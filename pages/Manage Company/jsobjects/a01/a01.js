@@ -1,5 +1,5 @@
 export default {
 	myVar1: ()=>{
-		return appsmith.store.newCompanyTempFlag
+		return  _.pickBy(Profile_Widgets, function(value, key) {if(value.page === "T3") return value;})
 	}
 }

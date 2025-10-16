@@ -2,12 +2,12 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 24,
+  "bottomRow": 6,
   "boxShadow": "none",
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{Current_Profile.COMPANY_PROFILE_PERIOD_END.data?moment(Current_Profile.COMPANY_PROFILE_PERIOD_END.data).toString():moment().toString()}}",
+  "defaultDate": "{{Current_Profile.FREQUENCY_DATE.data?moment(Current_Profile.FREQUENCY_DATE.data).toString():\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -25,13 +25,7 @@
       "key": "labelTextColor"
     },
     {
-      "key": "isDisabled"
-    },
-    {
       "key": "dateFormat"
-    },
-    {
-      "key": "minDate"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -46,32 +40,32 @@
       "key": "labelTextColor"
     },
     {
-      "key": "isDisabled"
-    },
-    {
       "key": "dateFormat"
     },
     {
-      "key": "minDate"
+      "key": "onDateSelected"
     }
   ],
-  "dynamicTriggerPathList": [],
-  "firstDayOfWeek": 0,
-  "isDisabled": "{{AGREEMENT_ID.selectedOptionValue!=\"\"}}",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onDateSelected"
+    }
+  ],
+  "firstDayOfWeek": "0",
+  "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{Current_Profile.COMPANY_PROFILE_PERIOD_END.required}}",
+  "isRequired": "{{Current_Profile.FREQUENCY_DATE.required}}",
   "isVisible": true,
   "key": "2w0301iyoz",
-  "label": "End Date",
+  "label": "day(s)at",
   "labelAlignment": "left",
   "labelPosition": "Left",
-  "labelTextColor": "{{Current_Profile.COMPANY_PROFILE_PERIOD_END.color}}",
+  "labelTextColor": "{{Current_Profile.FREQUENCY_DATE.color}}",
   "labelTextSize": "1rem",
-  "labelWidth": "10",
-  "leftColumn": 30,
+  "labelWidth": "11",
+  "leftColumn": 33,
   "maxDate": "2121-12-31T18:29:00.000Z",
   "maxDynamicHeight": 9000,
-  "minDate": "{{COMPANY_PROFILE_PERIOD_START.selectedDate?COMPANY_PROFILE_PERIOD_START.selectedDate:\"\"}}",
   "minDynamicHeight": 4,
   "minWidth": 450,
   "mobileBottomRow": 22,
@@ -79,17 +73,18 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
+  "onDateSelected": "{{JS_Profile.FREQUENCY_DATE_setValue(FREQUENCY_DATE1)}}",
   "parentColumnSpace": 12.5,
-  "parentId": "uk4994gix9",
+  "parentId": "9u28d6zvt5",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 61,
   "shortcuts": false,
   "timePrecision": "None",
-  "topRow": 17,
+  "topRow": 2,
   "type": "DATE_PICKER_WIDGET2",
   "version": 2,
-  "widgetId": "pbp2sha6cv",
-  "widgetName": "COMPANY_PROFILE_PERIOD_END"
+  "widgetId": "k56i379pzi",
+  "widgetName": "FREQUENCY_DATE1"
 }

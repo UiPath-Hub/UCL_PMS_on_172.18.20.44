@@ -40,7 +40,7 @@ export default {
 			if(OVERWRITE_BILLING_ADDRESS.selectedOptionValue=="true"){
 				//let datastr = "data"
 				alertBilling = await GlobalFunctions.manualValidateV2(Default_COMPANY_BILLING,CompanyBilling_Widgets);
-				const unique_Array = Array.from(new Set(alertBilling));
+				const unique_Array = Array.from(new Set(alertBilling.map(i=>(i.label ||  _.toLower( i.widgetName).replaceAll("_"," ")))));
 				if(alertBilling.length > 0){
 					let text = `Billing information is required or invalid. :: ${unique_Array.join(',')}`;
 					if(Configs.IS_THIRD_PARTY){
@@ -51,7 +51,7 @@ export default {
 				}
 			}
 			if(alertWidget.length > 0){
-				const unique_Array = Array.from(new Set(alertWidget));
+				const unique_Array = Array.from(new Set(alertWidget.map(i=>(i.label ||  _.toLower( i.widgetName).replaceAll("_"," ")))));
 				let text = `Company information is required or invalid. :: ${ unique_Array.join(',')}`
 				if(Configs.IS_THIRD_PARTY){
 					text = text.replaceAll('company','third party');

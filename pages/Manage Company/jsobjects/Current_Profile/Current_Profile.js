@@ -12,4 +12,7 @@ export default {
 	PROFILE_FLOOR_MODIFIER:{data:"",regex:"",required:false,color:""},
 	PROFILE_PP_UNIT_MODIFIER:{data:"",regex:"",required:false,color:""},
 	QUANTITY:{data:"",regex:"",required:false,color:""},
+	FREQUENCY_TYPE:{data:"",regex:"",required:false,color:"" },
+	REPEAT_EVERY:{data:"",regex:"",required:false,color:"" },
+	FREQUENCY_DATE:{data:"",regex:"",required:false,color:"" },
 }

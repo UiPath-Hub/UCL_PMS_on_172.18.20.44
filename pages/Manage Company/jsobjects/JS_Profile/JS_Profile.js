@@ -1,4 +1,32 @@
 export default {
+	REPEAT_EVERY_setValue:(widget)=>{
+		if(!widget.text)return;
+		if(widget.widgetName === "REPEAT_EVERY"){
+			REPEAT_EVERY_1.setValue(widget.text);
+			REPEAT_EVERY2.setValue(widget.text);
+		}else if(widget.widgetName === "REPEAT_EVERY_1"){
+			REPEAT_EVERY.setValue(widget.text);
+			REPEAT_EVERY2.setValue(widget.text);
+		}else if(widget.widgetName === "REPEAT_EVERY2"){
+			REPEAT_EVERY.setValue(widget.text);
+			REPEAT_EVERY_1.setValue(widget.text);
+		}
+		
+	},
+	FREQUENCY_DATE_setValue:(widget)=>{
+		if(!widget.selectedDate)return;
+		if(widget.widgetName === "FREQUENCY_DATE"){
+			FREQUENCY_DATE1.setValue(widget.selectedDate);
+			FREQUENCY_DATE2.setValue(widget.selectedDate);
+		}else if(widget.widgetName === "FREQUENCY_DATE1"){
+			FREQUENCY_DATE.setValue(widget.selectedDate);
+			FREQUENCY_DATE2.setValue(widget.selectedDate);
+		}else if(widget.widgetName === "FREQUENCY_DATE2"){
+			FREQUENCY_DATE.setValue(widget.selectedDate);
+			FREQUENCY_DATE1.setValue(widget.selectedDate);
+		}
+		
+	},
 	ableToDeleteProfile:false,
 	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {  
 		if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
@@ -20,7 +48,7 @@ export default {
 		/*JS_TAB.Profile = {LeadData:SP_SELECT_ALL_PROFILE_Space.data.filter((ele)=> ele.TOTAL_RECORDS != 0),
 										ServiceData:SP_SELECT_ALL_PROFILE_Service.data.filter((ele)=> ele.TOTAL_RECORDS != 0)}
 		*/
-		removeValue(Configs.editCompanyProfileFlag);
+		await removeValue(Configs.editCompanyProfileFlag);
 		Configs.defaultTap = "Profile"
 
 	},
@@ -49,6 +77,8 @@ export default {
 		await SP_SER_FOR_INVENTORY.run();
 		NEW_BUTTON_1.setDisabled(false);
 		NEW_BUTTON_2.setDisabled(false);
+		resetWidget(Container_Additional.widgetName,true);
+		resetWidget(Schedule_Trigger.widgetName,true);
 		//while(NEW_BUTTON_1.isDisabled)
 
 	},
@@ -195,9 +225,9 @@ export default {
 		this.ableToDeleteProfile = true;
 		BTTN_EditProfile.setDisabled(true);
 		BTTN_EditProfileService.setDisabled(true);
-		this.SetDefault();
+		
 
-		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID)])
+		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID),this.SetDefault()])
 		if(SP_SELECT_FOR_PROFILE.data != undefined && SP_SELECT_FOR_PROFILE.data.length != 0){
 			const inventory = {...SP_SELECT_FOR_PROFILE.data[0]}
 			
@@ -224,9 +254,6 @@ export default {
 				if(Current_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)){ 
 					Current_Profile[i].data = inventory[i];
 				}
-				else{
-					Current_Profile[i].data = "";
-				}
 			});
 			/*let InitializationEntityList = [{ENTITY:Current_Profile,DATA: inventory}];
 			await Promise.all([
@@ -239,6 +266,7 @@ export default {
 		await storeValue(Configs.editCompanyProfileFlag,SP_SELECT_FOR_PROFILE.data[0]);
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		resetWidget(Container_Additional.widgetName,true);
+		resetWidget(Schedule_Trigger.widgetName,true);
 		BTTN_EditProfile.setDisabled(false);
 		BTTN_EditProfileService.setDisabled(false);
 		//Tab_AddCompanyPipeline.setVisibility(true);
@@ -271,9 +299,29 @@ export default {
 
 	},
 	onBttn_NextPipeline_T3_Click:async()=>{
-		let alertWidget = await GlobalFunctions.manualValidateV2(Current_Profile,Profile_Widgets);
+		const page = _.pickBy(Profile_Widgets, function(value, key) {if(value.page === "T3") return value;})
+		let alertWidget = await GlobalFunctions.manualValidateV2(Current_Profile,page);
+		const unique_Array = Array.from(new Set(alertWidget.map(i=>(i.label ||  _.toLower( i.widgetName).replaceAll("_"," ")))));
 		if(alertWidget.length > 0){
-			showAlert(`Some field is required or invalid.`)
+			let text = `Information is required or invalid. :: ${unique_Array.join(',')}`;
+			if(Configs.IS_THIRD_PARTY){
+				text = text.replaceAll('company','third party');
+			}
+			showAlert(text)
+		}
+		if(alertWidget.length == 0)
+			JS_Profile.AddCompanyPipeline = "T6";
+	},
+	onBttn_NextPipeline_T6_Click:async()=>{
+		const page = _.pickBy(Profile_Widgets, function(value, key) {if(value.page === "T6") return value;})
+		let alertWidget = await GlobalFunctions.manualValidateV2(Current_Profile,page);
+		const unique_Array = Array.from(new Set(alertWidget.map(i=>(i.label ||  _.toLower( i.widgetName).replaceAll("_"," ")))));
+		if(alertWidget.length > 0){
+			let text = `Information is required or invalid. :: ${unique_Array.join(',')}`;
+			if(Configs.IS_THIRD_PARTY){
+				text = text.replaceAll('company','third party');
+			}
+			showAlert(text)
 		}
 		if(alertWidget.length == 0)
 			JS_Profile.AddCompanyPipeline = "T4";

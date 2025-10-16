@@ -1,7 +1,7 @@
 DECLARE @ResultCode NVARCHAR(10) ,
     @ResultMessages NVARCHAR(MAX);
 
-EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM]
+EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V2]
 	@COMPANY_PROFILE_ID = {{this.params.COMPANY_PROFILE_ID}}
   ,@pCOMPANY_PROFILE_AGREEMENT_NO = {{this.params.AGREEMENT_ID}}
   ,@pFORMULA_ID = {{this.params.FORMULA}}
@@ -10,7 +10,10 @@ EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM]
   ,@pPROFILE_PP_UNIT_MODIFIER = {{this.params.PRICE_PER_UNIT}}
 	,@COMPANY_PROFILE_PERIOD_START = {{this.params.COMPANY_PROFILE_PERIOD_START}} 
 	,@COMPANY_PROFILE_PERIOD_END = {{this.params.COMPANY_PROFILE_PERIOD_END}} 
-	,@QUANTITY = {{this.params.QUANTITY}}
+	,@QUANTITY = {{this.params.QUANTITY||null}}
+	,@FREQUENCY_TYPE = {{FREQUENCY_TYPE.selectedOptionValue}}
+	,@REPEAT_EVERY = {{REPEAT_EVERY.text||null}}
+	,@FREQUENCY_DATE = {{FREQUENCY_DATE.selectedDate||null}}
 	,@IS_UPDATE = 1
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@ResultCode =@ResultCode OUTPUT
