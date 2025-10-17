@@ -10,7 +10,7 @@ export default {
 	forceKick:false,
 	forceLogin:false,
 	errorAlert:"",
-	pageName:"Manage Company Contact",
+	pageName:"Company Contact",
 	newCompanyTempFlag:"newCompanyTempFlag",
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",

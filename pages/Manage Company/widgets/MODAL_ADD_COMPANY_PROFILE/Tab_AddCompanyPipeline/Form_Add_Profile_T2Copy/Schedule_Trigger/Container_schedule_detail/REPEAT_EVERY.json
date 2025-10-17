@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 6,
+  "bottomRow": 13,
   "boxShadow": "none",
   "defaultText": "{{Current_Profile.REPEAT_EVERY.data}}",
   "dynamicBindingPathList": [
@@ -24,6 +24,9 @@
     },
     {
       "key": "regex"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -35,7 +38,7 @@
       "key": "isRequired"
     },
     {
-      "key": "onTextChanged"
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -45,7 +48,7 @@
   ],
   "iconAlign": "left",
   "inputType": "TEXT",
-  "isDisabled": false,
+  "isDisabled": "{{FREQUENCY_TYPE.selectedOptionLabel == \"One Time\"}}",
   "isLoading": false,
   "isRequired": "{{Current_Profile.REPEAT_EVERY.required}}",
   "isVisible": true,
@@ -57,7 +60,7 @@
   "labelTextColor": "{{Current_Profile.REPEAT_EVERY.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "11",
-  "leftColumn": 4,
+  "leftColumn": 2,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -66,20 +69,22 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onTextChanged": "{{JS_Profile. REPEAT_EVERY_setValue(REPEAT_EVERY2)}}",
+  "onTextChanged": "",
+  "originalBottomRow": 32,
+  "originalTopRow": 28,
   "parentColumnSpace": 13.125,
-  "parentId": "4l6l2f50wb",
+  "parentId": "tu8hz2kn0q",
   "parentRowSpace": 10,
   "regex": "{{Current_Profile.REPEAT_EVERY.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 32,
+  "rightColumn": 30,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 2,
+  "topRow": 6,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "7344hqmhas",
-  "widgetName": "REPEAT_EVERY2"
+  "widgetId": "5xl2bceyqm",
+  "widgetName": "REPEAT_EVERY"
 }

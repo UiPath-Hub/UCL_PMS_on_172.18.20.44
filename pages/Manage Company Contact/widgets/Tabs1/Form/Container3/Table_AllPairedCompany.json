@@ -132,7 +132,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Company Name",
+      "label": "Company/Third party Name",
       "notation": "standard",
       "originalId": "Company Name",
       "sticky": "",
