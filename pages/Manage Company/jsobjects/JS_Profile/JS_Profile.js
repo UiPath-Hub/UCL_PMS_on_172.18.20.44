@@ -1,5 +1,5 @@
 export default {
-	REPEAT_EVERY_setValue:(widget)=>{
+	/*REPEAT_EVERY_setValue:(widget)=>{
 		if(!widget.text)return;
 		if(widget.widgetName === "REPEAT_EVERY"){
 			REPEAT_EVERY_1.setValue(widget.text);
@@ -26,7 +26,7 @@ export default {
 			FREQUENCY_DATE1.setValue(widget.selectedDate);
 		}
 		
-	},
+	},*/
 	ableToDeleteProfile:false,
 	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {  
 		if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
@@ -323,8 +323,8 @@ export default {
 			}
 			showAlert(text)
 		}
-		if(alertWidget.length == 0)
-			JS_Profile.AddCompanyPipeline = "T4";
+		//if(alertWidget.length == 0)
+		//	JS_Profile.AddCompanyPipeline = "T4";
 	},
 	onBttn_NextPipeline_T3_Disable:()=>{
 		const condition1 = TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow == undefined || TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow.INVENTORY_ID.trim() === "";
