@@ -210,6 +210,9 @@
     },
     {
       "key": "tabsObj.tab53i4109ugj.isVisible"
+    },
+    {
+      "key": "tabsObj.tabg5q57z2ysj.isVisible"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -222,6 +225,9 @@
     },
     {
       "key": "tabsObj.tab53i4109ugj.isVisible"
+    },
+    {
+      "key": "tabsObj.tabg5q57z2ysj.isVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -250,7 +256,8 @@
   "tabsObj": {
     "tab1": {
       "id": "tab1",
-      "index": 0,
+      "index": 1,
+      "isDuplicateLabel": false,
       "isVisible": "{{FREQUENCY_TYPE.selectedOptionValue==\"Daily\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
       "label": "Daily",
       "positioning": "vertical",
@@ -258,23 +265,26 @@
     },
     "tab2": {
       "id": "tab2",
-      "index": 1,
-      "isVisible": "{{FREQUENCY_TYPE.selectedOptionValue==\"Monthly\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
+      "index": 2,
+      "isDuplicateLabel": false,
+      "isVisible": "{{FREQUENCY_TYPE.selectedOptionLabel==\"Monthly\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
       "label": "Monthly",
       "positioning": "vertical",
       "widgetId": "8g3kpla75q"
     },
     "tab53i4109ugj": {
       "id": "tab53i4109ugj",
-      "index": 2,
-      "isVisible": "{{FREQUENCY_TYPE.selectedOptionValue==\"Yearly\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
+      "index": 3,
+      "isDuplicateLabel": false,
+      "isVisible": "{{FREQUENCY_TYPE.selectedOptionLabel==\"Yearly\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
       "label": "Yearly",
       "widgetId": "gy5mqhu0mh"
     },
     "tabg5q57z2ysj": {
       "id": "tabg5q57z2ysj",
-      "index": 3,
-      "isVisible": true,
+      "index": 0,
+      "isDuplicateLabel": false,
+      "isVisible": "{{FREQUENCY_TYPE.selectedOptionLabel==\"One Time\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
       "label": "One Time",
       "widgetId": "2cm0etg45u"
     }
