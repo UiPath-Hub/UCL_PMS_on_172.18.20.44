@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "declare @ResultCode nvarchar(10)\n\t,@ResultMessages NVARCHAR(MAX)\n\t,@IMAGE_ID nvarchar(20)={{DefaultInventory.INVENTORY_PICTURE.data||null}};\n \nEXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V3]\n\t@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t,@IS_DELETE = 1\n\t,@INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:\"\"}}\n\t,@ResultCode = @ResultCode OUTPUT\n\t,@ResultMessages = @ResultMessages OUTPUT\n\nSELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES",
+      "body": "declare @ResultCode nvarchar(10)\n\t,@ResultMessages NVARCHAR(MAX)\n\t,@IMAGE_ID nvarchar(20)={{DefaultInventory.INVENTORY_PICTURE.data||null}};\n \nEXECUTE [dbo].[UPDATE_PRODUCT_INVENTORY]\n\t@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t,@IS_DELETE = 1\n\t,@INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:\"\"}}\n\t,@ResultCode = @ResultCode OUTPUT\n\t,@ResultMessages = @ResultMessages OUTPUT\n\nSELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,0 +1,72 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 25,
+  "defaultCheckedState": "{{FLOOR_ENABLE.isDisabled?false:(DefaultInventory.FLOOR_ENABLE.data||false)}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultCheckedState"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultCheckedState"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": "{{Configs.FLOOR_ENABLE_disable}}",
+  "isLoading": false,
+  "isRequired": "{{DefaultInventory.FLOOR_ENABLE.required}}",
+  "isVisible": true,
+  "key": "z40qm5xjui",
+  "label": "Floor Enable",
+  "labelPosition": "Right",
+  "labelTextColor": "{{DefaultInventory.FLOOR_ENABLE.color}}",
+  "leftColumn": 29,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 69,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 65,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 19.3125,
+  "parentId": "qpfi71lfb7",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 34,
+  "topRow": 21,
+  "type": "CHECKBOX_WIDGET",
+  "version": 1,
+  "widgetId": "zec9kl9xx3",
+  "widgetName": "FLOOR_ENABLE"
+}

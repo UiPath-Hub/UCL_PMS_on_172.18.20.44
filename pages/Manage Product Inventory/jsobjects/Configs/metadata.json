@@ -66,6 +66,10 @@
       {
         "name": "ShowOptionalDetail",
         "value": "appsmith.store[Configs.PageType] === PageTypes.Meter"
+      },
+      {
+        "name": "FLOOR_ENABLE_disable",
+        "value": "SP_SELECTPRODUCTCATALOG.data ? [\"Leased Space\"].includes(SP_SELECTPRODUCTCATALOG.data[0]?.PRODUCT_TYPE_EN) : true"
       }
     ]
   }

@@ -2,7 +2,7 @@ declare @ResultCode nvarchar(10)
 	,@ResultMessages NVARCHAR(MAX)
 	,@IMAGE_ID nvarchar(20)={{DefaultInventory.INVENTORY_PICTURE.data||null}};
  
-EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V3]
+EXECUTE [dbo].[UPDATE_PRODUCT_INVENTORY]
 	@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@IS_DELETE = 1
 	,@INVENTORY_ID = {{appsmith.store[Configs.EditInventory]!==undefined?appsmith.store[Configs.EditInventory].INVENTORY_ID:""}}

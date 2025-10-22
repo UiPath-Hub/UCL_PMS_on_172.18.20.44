@@ -32,4 +32,5 @@ export default {
 	,IMAGE:{data:""}
 	,SUB_INVENT_DETAIL:{data:""}
 	,SUB_INVENT_DETAIL2:{data:""}
+	,FLOOR_ENABLE:{data:"",regex:"",required:false,color:""}
 }

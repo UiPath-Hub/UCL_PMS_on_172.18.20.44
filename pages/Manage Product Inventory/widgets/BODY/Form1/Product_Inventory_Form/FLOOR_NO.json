@@ -44,10 +44,10 @@
     }
   ],
   "dynamicTriggerPathList": [],
-  "isDisabled": "{{[\"Leased Space\",\"VAV\"].includes(SP_SELECTPRODUCTCATALOG.data[0]?.PRODUCT_TYPE_EN) }}",
+  "isDisabled": "{{!FLOOR_ENABLE.isChecked}}",
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": "{{_.lowerCase(PRODUCT_TYPE.text).includes(\"meter\")||DefaultInventory.FLOOR_NO.required}}",
+  "isRequired": "{{DefaultInventory.FLOOR_NO.required}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",

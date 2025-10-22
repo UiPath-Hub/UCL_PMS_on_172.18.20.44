@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[SELECT_FOR_PRODUCT_INVENTORY] \n   @INVENTORY_ID = {{appsmith.store.EditInventory===undefined?\"\":appsmith.store.EditInventory.INVENTORY_ID}}",
+      "body": "EXECUTE [dbo].[SELECT_FOR_PRODUCT_INVENTORY_V2]\n   @INVENTORY_ID = {{appsmith.store.EditInventory===undefined?\"\":appsmith.store.EditInventory.INVENTORY_ID}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

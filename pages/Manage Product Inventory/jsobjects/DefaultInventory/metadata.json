@@ -124,12 +124,12 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       },
       {
-        "name": "IMAGE",
-        "value": "{\n  data: \"\"\n}"
-      },
-      {
         "name": "UOM",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "IMAGE",
+        "value": "{\n  data: \"\"\n}"
       },
       {
         "name": "SUB_INVENT_DETAIL",
@@ -138,6 +138,10 @@
       {
         "name": "SUB_INVENT_DETAIL2",
         "value": "{\n  data: \"\"\n}"
+      },
+      {
+        "name": "FLOOR_ENABLE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       }
     ]
   }
