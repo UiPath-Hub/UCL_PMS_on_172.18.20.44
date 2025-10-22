@@ -4,6 +4,17 @@ export default {
 		navigateTo("Invoice Detail",{},"SAME_WINDOW");
 
 	},
+	onBttn_ChangeStatus_ApproveDisable:(invoice_list)=>{
+		invoice_list = Table_PMS_INVOICE_LMEXECUTIVE.selectedRows;
+		let disableStatus = ["Draft Invoice","Approved","Waiting for Payment","Over Due","Canceled","Payment Completed","Rejected"];
+		invoice_list.filter((i)=>disableStatus.includes(i.STATUS));
+		if( invoice_list.length > 0){
+			showAlert(`Unexpected the invoice status ${invoice_list[0].STATUS} with Invoice Number ${invoice_list[0].INVOICE_NO}`)
+			return true
+		}else{
+			return false
+		}
+	},
 	onBttn_APPROVE_INVOICE:async(confirm)=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,true)) return;
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.SHOW_INVOICE_EXECUTE,true)) return;

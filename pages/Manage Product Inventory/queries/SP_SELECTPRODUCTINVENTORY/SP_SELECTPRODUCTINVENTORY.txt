@@ -1,2 +1,2 @@
-EXECUTE [dbo].[SELECT_FOR_PRODUCT_INVENTORY] 
+EXECUTE [dbo].[SELECT_FOR_PRODUCT_INVENTORY_V2]
    @INVENTORY_ID = {{appsmith.store.EditInventory===undefined?"":appsmith.store.EditInventory.INVENTORY_ID}}

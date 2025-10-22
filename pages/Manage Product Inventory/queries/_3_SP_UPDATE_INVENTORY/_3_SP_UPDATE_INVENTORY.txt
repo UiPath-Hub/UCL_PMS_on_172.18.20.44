@@ -1,7 +1,7 @@
 declare @ResultCode nvarchar(10)
 	,@ResultMessages NVARCHAR(MAX)
  
-EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V3]
+EXECUTE [dbo].[UPDATE_PRODUCT_INVENTORY]
    @PRODUCT_ID = {{SelectedProduct.PRODUCT_ID.data}}
   ,@INVENTORY_NAME = {{INVENTORY_NAME.text}}
   ,@METER_ID = {{METER_ID.text}}
@@ -21,6 +21,7 @@ EXECUTE [dbo].[MANAGE_PRODUCT_INVENTORY_V3]
 	,@SHARED={{SHARED.isChecked}}
 	,@ACCOUNTING_DESCRIPTION = {{ACCOUNTING_DESCRIPTION.text}}
 	,@SUB_INVENTORY = {{SUB_INVENTORY.text||null}}
+	,@FLOOR_ENABLE = {{FLOOR_ENABLE.isChecked??0}}
 	,@BASE64 = {{this.params.IMAGE_DATA?this.params.IMAGE_DATA:null}}
 	,@DELETE_IMAGE = {{this.params.DELETE_IMAGE?1:0}}
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

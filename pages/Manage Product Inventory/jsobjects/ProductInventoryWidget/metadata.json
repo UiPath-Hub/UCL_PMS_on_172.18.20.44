@@ -94,6 +94,10 @@
       {
         "name": "SUBMETER_ID",
         "value": "{\n  ...SUB_INVENTORY,\n  data: SUB_INVENTORY.text\n}"
+      },
+      {
+        "name": "FLOOR_ENABLE",
+        "value": "{\n  ...FLOOR_ENABLE,\n  data: FLOOR_ENABLE.isChecked\n}"
       }
     ]
   }

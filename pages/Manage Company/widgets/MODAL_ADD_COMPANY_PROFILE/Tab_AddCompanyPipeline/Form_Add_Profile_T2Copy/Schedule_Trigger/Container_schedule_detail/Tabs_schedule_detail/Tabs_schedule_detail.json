@@ -1,16 +1,16 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-  "animateLoading": true,
+  "animateLoading": false,
   "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": 1,
-  "bottomRow": 24,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "borderWidth": "0",
+  "bottomRow": 5,
+  "boxShadow": "none",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 110,
+      "bottomRow": 10,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -40,7 +40,7 @@
       "mobileTopRow": 0,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "vsi6pe5wh5",
+      "parentId": "8ah5ckixrz",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -51,12 +51,12 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "6b0xmq5mk4",
+      "widgetId": "5fxkpgow7z",
       "widgetName": "Canvas164"
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 110,
+      "bottomRow": 10,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -86,7 +86,7 @@
       "mobileTopRow": 0,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "vsi6pe5wh5",
+      "parentId": "8ah5ckixrz",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -97,12 +97,12 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "9u28d6zvt5",
+      "widgetId": "8g3kpla75q",
       "widgetName": "Canvas165"
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 110,
+      "bottomRow": 10,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -132,7 +132,7 @@
       "mobileTopRow": 1,
       "needsErrorInfo": false,
       "parentColumnSpace": 1,
-      "parentId": "vsi6pe5wh5",
+      "parentId": "8ah5ckixrz",
       "parentRowSpace": 1,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -142,11 +142,56 @@
       "topRow": 1,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "4l6l2f50wb",
+      "widgetId": "gy5mqhu0mh",
       "widgetName": "Canvas166"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 10,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "s8bz2yexv1",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 50,
+      "minWidth": 450,
+      "mobileBottomRow": 51,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 288,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "8ah5ckixrz",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 288,
+      "tabId": "tabg5q57z2ysj",
+      "tabName": "One Time",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "2cm0etg45u",
+      "widgetName": "Canvas168"
     }
   ],
-  "defaultTab": "Daily",
+  "defaultTab": "{{FREQUENCY_TYPE.selectedOptionLabel||\"Daily\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -155,10 +200,36 @@
       "key": "borderRadius"
     },
     {
-      "key": "boxShadow"
+      "key": "defaultTab"
+    },
+    {
+      "key": "tabsObj.tab1.isVisible"
+    },
+    {
+      "key": "tabsObj.tab2.isVisible"
+    },
+    {
+      "key": "tabsObj.tab53i4109ugj.isVisible"
+    },
+    {
+      "key": "tabsObj.tabg5q57z2ysj.isVisible"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "tabsObj.tab1.isVisible"
+    },
+    {
+      "key": "tabsObj.tab2.isVisible"
+    },
+    {
+      "key": "tabsObj.tab53i4109ugj.isVisible"
+    },
+    {
+      "key": "tabsObj.tabg5q57z2ysj.isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
@@ -174,44 +245,53 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "originalBottomRow": 24,
-  "originalTopRow": 9,
-  "parentColumnSpace": 12.5625,
-  "parentId": "od36cye25q",
+  "parentColumnSpace": 4.5,
+  "parentId": "tu8hz2kn0q",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
-  "shouldScrollContents": true,
+  "shouldScrollContents": false,
   "shouldShowTabs": true,
   "tabsObj": {
     "tab1": {
       "id": "tab1",
-      "index": 0,
-      "isVisible": true,
+      "index": 1,
+      "isDuplicateLabel": false,
+      "isVisible": "{{FREQUENCY_TYPE.selectedOptionValue==\"Daily\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
       "label": "Daily",
       "positioning": "vertical",
-      "widgetId": "6b0xmq5mk4"
+      "widgetId": "5fxkpgow7z"
     },
     "tab2": {
       "id": "tab2",
-      "index": 1,
-      "isVisible": true,
+      "index": 2,
+      "isDuplicateLabel": false,
+      "isVisible": "{{FREQUENCY_TYPE.selectedOptionLabel==\"Monthly\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
       "label": "Monthly",
       "positioning": "vertical",
-      "widgetId": "9u28d6zvt5"
+      "widgetId": "8g3kpla75q"
     },
     "tab53i4109ugj": {
       "id": "tab53i4109ugj",
-      "index": 2,
-      "isVisible": true,
+      "index": 3,
+      "isDuplicateLabel": false,
+      "isVisible": "{{FREQUENCY_TYPE.selectedOptionLabel==\"Yearly\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
       "label": "Yearly",
-      "widgetId": "4l6l2f50wb"
+      "widgetId": "gy5mqhu0mh"
+    },
+    "tabg5q57z2ysj": {
+      "id": "tabg5q57z2ysj",
+      "index": 0,
+      "isDuplicateLabel": false,
+      "isVisible": "{{FREQUENCY_TYPE.selectedOptionLabel==\"One Time\"||!Boolean(FREQUENCY_TYPE.selectedOptionValue)}}",
+      "label": "One Time",
+      "widgetId": "2cm0etg45u"
     }
   },
-  "topRow": 9,
+  "topRow": 0,
   "type": "TABS_WIDGET",
   "version": 3,
-  "widgetId": "vsi6pe5wh5",
-  "widgetName": "Tabs1"
+  "widgetId": "8ah5ckixrz",
+  "widgetName": "Tabs_schedule_detail"
 }

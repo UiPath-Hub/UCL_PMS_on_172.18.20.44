@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 6,
+  "bottomRow": 13,
   "boxShadow": "none",
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
@@ -41,9 +41,6 @@
     },
     {
       "key": "dateFormat"
-    },
-    {
-      "key": "onDateSelected"
     }
   ],
   "dynamicTriggerPathList": [
@@ -73,18 +70,20 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "onDateSelected": "{{JS_Profile.FREQUENCY_DATE_setValue(FREQUENCY_DATE)}}",
+  "onDateSelected": "",
+  "originalBottomRow": 32,
+  "originalTopRow": 28,
   "parentColumnSpace": 12.5,
-  "parentId": "6b0xmq5mk4",
+  "parentId": "tu8hz2kn0q",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 61,
+  "rightColumn": 62,
   "shortcuts": false,
   "timePrecision": "None",
-  "topRow": 2,
+  "topRow": 6,
   "type": "DATE_PICKER_WIDGET2",
   "version": 2,
-  "widgetId": "m7nfsv1o8s",
+  "widgetId": "jvsb7m00vu",
   "widgetName": "FREQUENCY_DATE"
 }
