@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 8,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store[ Configs.editCompanyProfileFlag] == undefined?\"\":Current_Profile.FREQUENCY_TYPE.data))(FREQUENCY_TYPE.options, FREQUENCY_TYPE.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Current_Profile.FREQUENCY_TYPE.data))(FREQUENCY_TYPE.options, FREQUENCY_TYPE.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
