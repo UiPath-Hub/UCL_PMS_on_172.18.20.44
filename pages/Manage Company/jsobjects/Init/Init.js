@@ -35,6 +35,10 @@ export default {
 				Configs.loadingProgress.current +=1;
 			}
 		}
+		
+		if(appsmith.URL.queryParams[Configs.editCompanyFlag]==="TEMP"){
+			await navigateTo(appsmith.currentPageName, {...appsmith.URL.queryParams,[Configs.editCompanyFlag]:undefined}, 'SAME_WINDOW');
+		}
 
 		let InitializationEntityList = [{ENTITY: Default_Profile,DATA: {}}];
 		await Promise.all([newbranch(),editbranch(),GlobalFunctions.initDefaultV2(InitializationEntityList)]);
@@ -50,7 +54,7 @@ export default {
 	},
 
 	initDefault:async ()=>{
-		if(appsmith.store[Configs.newCompanyTempFlag] != undefined && appsmith.URL.queryParams[ Configs.editCompanyFlag]==undefined){
+		if(appsmith.store[Configs.newCompanyTempFlag] != undefined && appsmith.URL.queryParams[ Configs.editCompanyFlag]=="TEMP"){
 			//temp and load editing before manage contacts
 			const initContact =async ()=>{
 				//load contact temp

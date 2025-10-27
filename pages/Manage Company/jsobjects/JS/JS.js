@@ -75,7 +75,7 @@ export default {
 	},
 	confirmButtonClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
-			if(appsmith.URL.queryParams[Configs.editCompanyFlag]===undefined){
+			if(appsmith.URL.queryParams[Configs.editCompanyFlag]===undefined||appsmith.URL.queryParams[Configs.editCompanyFlag]==="TEMP"){
 				//add
 				await _1_COMPANY_NEW.run();
 				if(_1_COMPANY_NEW.data != undefined && _1_COMPANY_NEW.data.length === 1){
@@ -143,7 +143,7 @@ export default {
 		await storeValue(Configs.newCompanyTempFlag,changedData,true);
 	},
 	onContactPageIndexChange:async ()=>{
-		if(appsmith.URL.queryParams[Configs.editCompanyFlag]){
+		if(appsmith.URL.queryParams[Configs.editCompanyFlag]&&appsmith.URL.queryParams[Configs.editCompanyFlag]!=="TEMP"){
 			//load LM
 			await _6_SELECT_FOR_CONTACT_BY_COMID.run();
 			if(_6_SELECT_FOR_CONTACT_BY_COMID.data != undefined)
@@ -169,8 +169,8 @@ export default {
 	},
 
 	isFormChanges:()=>{
-		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0 && appsmith.URL.queryParams[ Configs.editCompanyFlag]!=undefined)return false;
-		if(appsmith.URL.queryParams[ Configs.editCompanyFlag]==undefined)return false;
+		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0 && (appsmith.URL.queryParams[Configs.editCompanyFlag]!=undefined &&appsmith.URL.queryParams[Configs.editCompanyFlag]!=="TEMP"))return false;
+		if(appsmith.URL.queryParams[Configs.editCompanyFlag]==undefined ||appsmith.URL.queryParams[Configs.editCompanyFlag]==="TEMP")return false;
 		console.log("pass1")
 		if(Object.keys(Company_Widgets).find((key)=>{
 			if(DefaultCompany[key] && DefaultCompany[key].data !== undefined){
