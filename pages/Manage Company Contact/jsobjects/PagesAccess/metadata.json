@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "68e5e9a655eda7018e8c4294_2c30aa89-139f-481c-aa04-9c3e3388bcce",
+  "id": "Manage Company Contact_PagesAccess",
+  "unpublishedCollection": {
+    "name": "PagesAccess",
+    "pageId": "Manage Company Contact",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

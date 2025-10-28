@@ -5,15 +5,17 @@ export default {
 	},
 	onClick_Bttn_SelectContact:async(ContactID)=>{
 		await closeModal(Modal_Search_Contact.name);
-		await navigateTo("Manage Company Contact", {...appsmith.URL.queryParams,AS:Configs.pageState.AddContactTo,[Configs.editContacePerson]:ContactID}, 'SAME_WINDOW');
-		await Init.pageLoad();
+		await navigateTo(appsmith.currentPageName, {...appsmith.URL.queryParams,AS:Configs.pageState.AddContactTo,[Configs.editContacePerson]:ContactID}, 'SAME_WINDOW');
+		navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+		//await Init.pageLoad();
 	},
 	onClick_Bttn_NewContact:async()=>{
 		await closeModal(Modal_Search_Contact.name);
 		let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
 		//editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
-		await navigateTo("Manage Company Contact", {...appsmith.URL.queryParams,AS:Configs.pageState.NewContactAndBack,[Configs.editCompany]:editCompanyID }, 'SAME_WINDOW');
-		Init.pageLoad();
+		await navigateTo(appsmith.currentPageName, {...appsmith.URL.queryParams,AS:Configs.pageState.NewContactAndBack,[Configs.editContacePerson]:undefined,[Configs.editCompany]:editCompanyID }, 'SAME_WINDOW');
+		navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+		//Init.pageLoad();
 	},
 	onClick_Bttn_SearchContactForAdd:async ()=>{
 		await resetWidget(Table_SearchResults_Contact.widgetName);
@@ -47,7 +49,7 @@ export default {
 		DefaultContact.COMPANY_CONTACT_PROVINCE_TH.data=DefaultAddress.COMPANY_PROVINCE_TH||""
 		await ADDRESSING.initAddress();
 	},
-	saveBttn_click:async ()=>{
+	saveBttn_click:async ()=>{  
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false))return;
 		let ContactID = _.trim(COMPANY_CONTACT_ID.text);
 		if((Configs.pageState.CurrentState == Configs.pageState.ManageContact || Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack) && !ContactID){
@@ -77,7 +79,7 @@ export default {
 					await showAlert("Save success.","success");
 					await closeModal(MODAL_SAVE.name)
 					//go back to dashboard
-					navigateTo("Contact Person Dashboard", {}, 'SAME_WINDOW');
+					navigateTo(appsmith.store.PAGES_QUEUE[0]||"Contact Person Dashboard", {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 
 				}
 				else{
@@ -99,9 +101,10 @@ export default {
 				}
 			}
 			//Go back to Manage Company
-			let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
-					editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
-			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}, 'SAME_WINDOW');
+			/*let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
+					editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;{[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}
+			*/
+			navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 
 		}else if(Configs.pageState.CurrentState==Configs.pageState.EditContactOf){
 			//Update Assigned role of Company/Third Party
@@ -118,17 +121,18 @@ export default {
 				}
 			}
 			//Go back to Manage Company
-			let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
-					editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
-			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}, 'SAME_WINDOW');
+			/*let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
+					editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined; {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}*/
+			navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams}, 'SAME_WINDOW');
 
 		}else showAlert("Missing save method. Please,Contact admin.");
 	},
-	onBttnAddMoreClick:()=>{
-		closeModal(MODAL_ADD_NEXT.name).then(() => {
-			navigateTo("Manage Company Contact", {AS:Configs.pageState.ManageContact}, 'SAME_WINDOW');
-			Init.pageLoad();
-		});
+	onBttnAddMoreClick:async ()=>{
+		await closeModal(MODAL_ADD_NEXT.name)
+		await navigateTo(appsmith.currentPageName, {AS:Configs.pageState.ManageContact}, 'SAME_WINDOW');
+		navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+		//Init.pageLoad();
+		
 	}
 	,
 	onDeleteCompanyContact:async()=>{
@@ -141,7 +145,7 @@ export default {
 				if(_06_DELETE_CONTACT_LM.data[0]["RESULT_CODE"] === 'DONE'){
 					//await showAlert("Delete success.","success");
 					await closeModal(MODAL_DELETE.name);
-					navigateTo('Contact Person Dashboard', {}, 'SAME_WINDOW');
+					navigateTo(appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard', {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 				}
 				else{
 					showAlert("Delete failed."+_06_DELETE_CONTACT_LM.data[0]["RESULT_MESSAGES"],"error");
@@ -155,9 +159,9 @@ export default {
 					//await showAlert("Remove success.","success");
 					await closeModal(MODAL_DELETE.name);
 					//Go back to Manage Company
-					let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
-							editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
-					navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}, 'SAME_WINDOW');					
+					/*let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
+							editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;{[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}*/
+					navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');					
 				}
 				else{
 					showAlert("Delete failed."+_07_UNASSIGN_CONTACT.data[0]["RESULT_MESSAGES"],"error");
@@ -186,19 +190,21 @@ export default {
 	},
 	onCancelClick:async()=>{
 		let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
-		editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
+		//editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
 		if(Configs.pageState.CurrentState==Configs.pageState.AddContactTo || Configs.pageState.CurrentState==Configs.pageState.EditContactOf)
 		{
-			navigateTo('Manage Company', {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}  , 'SAME_WINDOW');
+			/*[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH*/
+			navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company', {...appsmith.URL.queryParams}   , 'SAME_WINDOW');
 
 		}else if(Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack)
 		{
-			await navigateTo("Manage Company Contact", {...appsmith.URL.queryParams,AS:Configs.pageState.AddContactTo}, 'SAME_WINDOW');
-			Init.pageLoad();
+			await navigateTo(appsmith.currentPageName, {...appsmith.URL.queryParams,AS:Configs.pageState.AddContactTo}, 'SAME_WINDOW');
+			navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+			//Init.pageLoad();
 
 		}
-		else navigateTo('Contact Person Dashboard', {}, 'SAME_WINDOW');
+		else navigateTo(appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard', {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 
 	},
-	test:()=>{return appsmith.store[Configs.newCompanyTempFlag]}
+	test:()=>{return appsmith.store.NEWBRANCH}
 }

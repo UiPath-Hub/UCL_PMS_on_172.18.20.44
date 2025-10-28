@@ -24,16 +24,19 @@ export default {
 				Configs.pageState.CurrentState=Configs.pageState.AddContactTo;
 			else if(preferState==Configs.pageState.EditContactOf && appsmith.URL.queryParams.editCompany){
 				Configs.pageState.CurrentState=Configs.pageState.EditContactOf;
-			}else if(preferState==Configs.pageState.NewContactAndBack && Configs.pageState.CurrentState == Configs.pageState.AddContactTo && appsmith.URL.queryParams.editCompany)
+			}else if(preferState==Configs.pageState.NewContactAndBack && appsmith.URL.queryParams.editCompany)
 				Configs.pageState.CurrentState=Configs.pageState.NewContactAndBack;
 			else{
 				
 			}
 		}
-		if(!appsmith.URL.queryParams[Configs.editContacePerson]){
+		//if(!appsmith.URL.queryParams[Configs.editContacePerson]){
 			let key = await Object.keys(DefaultContact);
-			await Promise.all(key.map(field=>DefaultContact[field].data=""))
-		}
+			await Promise.all(key.map(field=>{
+				DefaultContact[field].data = DefaultConstant[field].data
+				DefaultContact[field].color = DefaultConstant[field].color
+			}))
+		//}
 		await this.initDefault();
 		await ADDRESSING.initAddress();		
 		

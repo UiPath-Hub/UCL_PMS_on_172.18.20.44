@@ -15,9 +15,9 @@ export default {
 		else navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
 	},
 	onClick_BUTTON_ADD_YES:async ()=>{
-		await closeModal(MODAL_ADD_NEXT.name)
+		await closeModal(MODAL_ADD_NEXT.name);
+		await navigateTo(appsmith.currentPageName, {}, 'SAME_WINDOW');
 		navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
-
 	},
 	onClick_BUTTON_ADD_NO:async ()=>{
 		await closeModal(MODAL_ADD_NEXT.name)
@@ -75,7 +75,7 @@ export default {
 	},
 	confirmButtonClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
-			if(appsmith.URL.queryParams[Configs.editCompanyFlag]===undefined){
+			if(appsmith.URL.queryParams[Configs.editCompanyFlag]===undefined||appsmith.URL.queryParams[Configs.editCompanyFlag]==="TEMP"){
 				//add
 				await _1_COMPANY_NEW.run();
 				if(_1_COMPANY_NEW.data != undefined && _1_COMPANY_NEW.data.length === 1){
@@ -143,7 +143,7 @@ export default {
 		await storeValue(Configs.newCompanyTempFlag,changedData,true);
 	},
 	onContactPageIndexChange:async ()=>{
-		if(appsmith.URL.queryParams[Configs.editCompanyFlag]){
+		if(appsmith.URL.queryParams[Configs.editCompanyFlag]&&appsmith.URL.queryParams[Configs.editCompanyFlag]!=="TEMP"){
 			//load LM
 			await _6_SELECT_FOR_CONTACT_BY_COMID.run();
 			if(_6_SELECT_FOR_CONTACT_BY_COMID.data != undefined)
@@ -169,8 +169,8 @@ export default {
 	},
 
 	isFormChanges:()=>{
-		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0 && appsmith.URL.queryParams[ Configs.editCompanyFlag]!=undefined)return false;
-		if(appsmith.URL.queryParams[ Configs.editCompanyFlag]==undefined)return false;
+		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0 && (appsmith.URL.queryParams[Configs.editCompanyFlag]!=undefined &&appsmith.URL.queryParams[Configs.editCompanyFlag]!=="TEMP"))return false;
+		if(appsmith.URL.queryParams[Configs.editCompanyFlag]==undefined ||appsmith.URL.queryParams[Configs.editCompanyFlag]==="TEMP")return false;
 		console.log("pass1")
 		if(Object.keys(Company_Widgets).find((key)=>{
 			if(DefaultCompany[key] && DefaultCompany[key].data !== undefined){
@@ -186,17 +186,17 @@ export default {
 		console.log("pass2")
 		if(!(SELECT_BILLING.data===undefined || SELECT_BILLING.data.length===0)){
 			if(Object.keys(CompanyBilling_Widgets).find((key)=>{
-			if(Default_COMPANY_BILLING[key] && Default_COMPANY_BILLING[key].data !== undefined){
-				const widgetData = CompanyBilling_Widgets[key].data===undefined||CompanyBilling_Widgets[key].data===null?"":CompanyBilling_Widgets[key].data.toString();
-				const defaultData = SELECT_BILLING.data[0][key]===undefined||SELECT_BILLING.data[0][key]===null?"":SELECT_BILLING.data[0][key].toString();
-				if(defaultData != widgetData && CompanyBilling_Widgets[key].isVisible && !CompanyBilling_Widgets[key].isDisable){
-					console.log(key)
-					return true;
-				}
-			}else return false;
-		}))return true;
+				if(Default_COMPANY_BILLING[key] && Default_COMPANY_BILLING[key].data !== undefined){
+					const widgetData = CompanyBilling_Widgets[key].data===undefined||CompanyBilling_Widgets[key].data===null?"":CompanyBilling_Widgets[key].data.toString();
+					const defaultData = SELECT_BILLING.data[0][key]===undefined||SELECT_BILLING.data[0][key]===null?"":SELECT_BILLING.data[0][key].toString();
+					if(defaultData != widgetData && CompanyBilling_Widgets[key].isVisible && !CompanyBilling_Widgets[key].isDisable){
+						console.log(key)
+						return true;
+					}
+				}else return false;
+			}))return true;
 		}
-		
+
 		console.log("pass3")
 		let priorityContactID = Configs.showCompanyContact.find(i=>i["Contact ID"]===Configs.PRIORITY_CONTACT_ID);
 		let priorityContactChange = priorityContactID?priorityContactID["Contact ID"]!==DefaultCompany.PRIORITY_CONTACT.data:DefaultCompany.PRIORITY_CONTACT.data!=="";
@@ -216,11 +216,11 @@ export default {
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
 			if(this.isFormChanges()) return showAlert("Please save the company changes before managing contacts.","warning");
 
-			await removeValue(Configs.editCompanyContactFlag).then(async () => {
-				await storeValue(Configs.fromCompany, {"COMPANY_NAME":`${COMPANY_NAME_TH.text}/${COMPANY_NAME_EN.text}`,"COMPANY_ID":COMPANY_ID.text});
-				await this.keepChange();
-				this.goToManageCompany(Configs.contactPageState.AddContactTo);
-			})
+			await removeValue(Configs.editCompanyContactFlag)
+			await storeValue(Configs.fromCompany, {"COMPANY_NAME":`${COMPANY_NAME_TH.text}/${COMPANY_NAME_EN.text}`,"COMPANY_ID":COMPANY_ID.text});
+			await this.keepChange();
+			this.goToManageCompany(Configs.contactPageState.AddContactTo);
+
 		}
 	},
 	onEditContactClick: async()=>{

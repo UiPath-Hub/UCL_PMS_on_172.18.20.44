@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 50,
+  "bottomRow": 52,
   "boxShadow": "none",
   "defaultText": "{{DefaultContact.COMPANY_CONTACT_ADD_NO.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 20,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 46,
+  "topRow": 48,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "1om4su925s",
