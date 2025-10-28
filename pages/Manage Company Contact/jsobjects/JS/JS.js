@@ -206,5 +206,5 @@ export default {
 		else navigateTo(appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard', {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 
 	},
-	test:()=>{return appsmith.store[Configs.newCompanyTempFlag]}
+	test:()=>{return appsmith.store.NEWBRANCH}
 }
