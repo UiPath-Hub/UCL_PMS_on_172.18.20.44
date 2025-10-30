@@ -80,10 +80,12 @@ export default {
 			if(TriggerSync.data && TriggerSync.data.success == true){
 				return true;
 			}else{
-				showAlert("Sync with ERP failure: Could not access UiPath.","error");
+				Configs.syncAlert =  "Could not access UiPath."
+				//showAlert("Sync with ERP failure: Could not access UiPath.","error");
 			}
 		}else{
-			showAlert("Sync with ERP failure: ERP-Sync Service was not available.","error");
+			Configs.syncAlert = "ERP-Sync Service was not available."
+			//showAlert("Sync with ERP failure: ERP-Sync Service was not available.","error");
 		}
 		return false;
 	},
@@ -95,15 +97,14 @@ export default {
 				if(_1_COMPANY_NEW.data != undefined && _1_COMPANY_NEW.data.length === 1){
 					if(_1_COMPANY_NEW.data[0]["RESULT_CODE"] === "DONE"){
 						await showAlert( "Save success","success");
+						await closeModal(MODAL_SAVE.name);
 						await removeValue(Configs.newCompanyTempFlag);
 						if(await this.TriggerSync(_1_COMPANY_NEW.data[0].COMPANY_ID)){
-							await closeModal(MODAL_SAVE.name);
 							showModal(MODAL_ADD_NEXT.name);
 						}else{
 							if(!_1_COMPANY_NEW.data[0].COMPANY_ID) return showAlert("Unknown Company ID","error");
 							await navigateTo(appsmith.currentPageName, {[Configs.editCompanyFlag]:_1_COMPANY_NEW.data[0].COMPANY_ID}, 'SAME_WINDOW');
-							await closeModal(MODAL_SAVE.name);
-							navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+							showModal(MODAL_ALTER_SYNC.name);
 						}
 					}else{
 						showAlert( "Save failed: "+_1_COMPANY_NEW.data[0]["RESULT_MESSAGES"],"error");
@@ -116,9 +117,11 @@ export default {
 				if(_2_COMPANY_UPDATE.data != undefined && _2_COMPANY_UPDATE.data.length === 1){
 					if(_2_COMPANY_UPDATE.data[0]["RESULT_CODE"] === "DONE"){
 						await showAlert( "Save success","success");
+						await closeModal(MODAL_SAVE.name);
 						if(await this.TriggerSync(COMPANY_ID.text)){
-							await closeModal(MODAL_SAVE.name);
-							showModal(MODAL_continueEditing.name);
+							showModal(MODAL_continueEditing.name);				
+						}else{
+							showModal(MODAL_ALTER_SYNC.name);
 						}
 					}else{
 						showAlert( "Save failed: "+(_2_COMPANY_UPDATE.data[0]["RESULT_MESSAGES"]),"error");

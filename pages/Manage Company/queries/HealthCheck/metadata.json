@@ -15,7 +15,7 @@
       "headers": [
         {
           "key": "company_id",
-          "value": ""
+          "value": "{{this.params.COMPANY_ID}}"
         }
       ],
       "httpMethod": "GET",
@@ -37,7 +37,11 @@
       "name": "SyncService",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "headers[0].value"
+      }
+    ],
     "name": "HealthCheck",
     "pageId": "Manage Company",
     "runBehaviour": "MANUAL",
