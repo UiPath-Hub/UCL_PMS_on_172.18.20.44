@@ -21,12 +21,20 @@
         {
           "key": "company_id",
           "value": "{{this.params.COMPANY_ID}}"
+        },
+        {
+          "key": "table_name",
+          "value": "PMS_COMPANY_LM"
+        },
+        {
+          "key": "status",
+          "value": "{{this.params.status}}"
         }
       ],
       "httpMethod": "POST",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/SyncCompany",
+      "path": "/Sync",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -45,6 +53,9 @@
     "dynamicBindingPathList": [
       {
         "key": "headers[0].value"
+      },
+      {
+        "key": "headers[2].value"
       }
     ],
     "name": "TriggerSync",

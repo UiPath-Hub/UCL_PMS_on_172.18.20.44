@@ -92,6 +92,10 @@
         "value": "\"\""
       },
       {
+        "name": "syncErrorEscape",
+        "value": "appsmith.currentPageName"
+      },
+      {
         "name": "syncStatusIconMap",
         "value": "{\n  \"Pending Add\": {\n    status: \"Pending Add\",\n    icon: \"time\",\n    color: \"#eab308\"\n  },\n  \"Pending Edit\": {\n    status: \"Pending Edit\",\n    icon: \"time\",\n    color: \"#eab308\"\n  },\n  \"Pending Delete\": {\n    status: \"Pending Delete\",\n    icon: \"time\",\n    color: \"#eab308\"\n  },\n  \"Not Synced\": {\n    status: \"Not Synced\",\n    icon: \"outdated\",\n    color: \"#ef4444\"\n  },\n  \"Synced\": {\n    status: \"Synced\",\n    icon: \"tick\",\n    color: \"green\"\n  }\n}"
       },

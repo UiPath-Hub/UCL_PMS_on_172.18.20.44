@@ -9,6 +9,9 @@
       "jsArguments": [
         {
           "name": "validateID"
+        },
+        {
+          "name": "status"
         }
       ],
       "paginationType": "NONE",

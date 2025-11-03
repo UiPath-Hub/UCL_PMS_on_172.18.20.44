@@ -57,7 +57,11 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClose"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onClose"
@@ -76,7 +80,7 @@
   "mobileRightColumn": 0,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClose": "{{navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');}}",
+  "onClose": "{{navigateTo(Configs.syncErrorEscape, {}, 'SAME_WINDOW');}}",
   "originalBottomRow": 305,
   "originalTopRow": 85,
   "parentColumnSpace": 1,
