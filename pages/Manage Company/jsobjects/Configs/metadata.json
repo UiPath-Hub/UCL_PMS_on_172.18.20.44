@@ -92,6 +92,10 @@
         "value": "\"\""
       },
       {
+        "name": "syncStatusIconMap",
+        "value": "{\n  \"Pending Add\": {\n    status: \"Pending Add\",\n    icon: \"time\",\n    color: \"#eab308\"\n  },\n  \"Pending Edit\": {\n    status: \"Pending Edit\",\n    icon: \"time\",\n    color: \"#eab308\"\n  },\n  \"Pending Delete\": {\n    status: \"Pending Delete\",\n    icon: \"time\",\n    color: \"#eab308\"\n  },\n  \"Not Synced\": {\n    status: \"Not Synced\",\n    icon: \"outdated\",\n    color: \"#ef4444\"\n  },\n  \"Synced\": {\n    status: \"Synced\",\n    icon: \"tick\",\n    color: \"green\"\n  }\n}"
+      },
+      {
         "name": "IS_THIRD_PARTY",
         "value": "Boolean(_0_SELECT_FOR_COMPANY_BY_ID.data ? _0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY === null ? true : _0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY : appsmith.store.IS_THIRD_PARTY == 0 ? false : true)"
       },
@@ -101,7 +105,7 @@
       },
       {
         "name": "loadingProgress",
-        "value": "{\n  default: 0,\n  current: 0,\n  full: 7\n}"
+        "value": "{\n  default: 0,\n  current: 0,\n  full: 8\n}"
       }
     ]
   }

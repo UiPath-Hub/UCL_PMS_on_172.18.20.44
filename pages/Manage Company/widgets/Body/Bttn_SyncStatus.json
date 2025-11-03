@@ -1,0 +1,64 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 15,
+  "boxShadow": "none",
+  "buttonColor": "{{Object.fromEntries(Object.entries(Configs.syncStatusIconMap).filter(([key, value]) =>value.status === Bttn_SyncStatus.text))[Bttn_SyncStatus.text].color}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "iconName"
+    },
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "iconName"
+    },
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "right",
+  "iconName": "{{Object.fromEntries(Object.entries(Configs.syncStatusIconMap).filter(([key, value]) =>value.status === Bttn_SyncStatus.text))[Bttn_SyncStatus.text].icon}}",
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "93uojy2qf6",
+  "leftColumn": 48,
+  "minWidth": 120,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 11,
+  "needsErrorInfo": false,
+  "originalBottomRow": 15,
+  "originalTopRow": 11,
+  "parentColumnSpace": 19.9375,
+  "parentId": "a2sxnt3mjp",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 55,
+  "text": "{{DefaultCompany.SYNC_STATUS.data||Configs.syncStatusIconMap[\"Not Synced\"].status}}",
+  "tooltip": "EPR Sync Status",
+  "topRow": 11,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "i0xd0z3ezc",
+  "widgetName": "Bttn_SyncStatus"
+}
