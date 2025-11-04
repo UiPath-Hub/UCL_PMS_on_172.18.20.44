@@ -1,3 +1,0 @@
-EXECUTE [dbo].[SELECT_FOR_DROPDOWN] 
-   @pDropdowntypename = 'RPA_SYNC_STATUS'
-

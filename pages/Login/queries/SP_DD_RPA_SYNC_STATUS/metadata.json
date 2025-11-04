@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "68e5e9a655eda7018e8c4294_fe41a08c-448e-4d9f-9e88-18d871ef69ed",
-  "id": "Manage Company_SP_DD_RPA_SYNC_STATUS",
+  "gitSyncId": "68e5e9a655eda7018e8c4294_158e0d33-b164-4851-bb44-074eaf5a9e19",
+  "id": "Login_SP_DD_RPA_SYNC_STATUS",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[SELECT_FOR_DROPDOWN] \n   @pDropdowntypename = 'RPA_SYNC_STATUS'\n\n",
+      "body": "EXECUTE [dbo].[SELECT_FOR_DROPDOWN] \n   @pDropdowntypename = {{Configs.ERPSyncConfig.masterName}}\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,10 +22,14 @@
       "name": "UCL_PMS",
       "pluginId": "mssql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "SP_DD_RPA_SYNC_STATUS",
-    "pageId": "Manage Company",
+    "pageId": "Login",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

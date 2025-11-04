@@ -80,7 +80,7 @@
   "mobileRightColumn": 0,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClose": "{{navigateTo(Configs.syncErrorEscape, {}, 'SAME_WINDOW');}}",
+  "onClose": "{{Configs.syncErrorEscape();}}",
   "originalBottomRow": 305,
   "originalTopRow": 85,
   "parentColumnSpace": 1,

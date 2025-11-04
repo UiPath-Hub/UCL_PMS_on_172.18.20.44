@@ -75,26 +75,18 @@ export default {
 	},
 	TriggerSync:async(validateID,status)=>{
 		await HealthCheck.run({COMPANY_ID:validateID});
-		if(HealthCheck.data && HealthCheck.data.status==="ok" && HealthCheck.data.COMPANY_ID === validateID){
+		if(HealthCheck.data && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_checkReturnName]===appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnOKstatus && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnCompanyIDName] === validateID){
 			await TriggerSync.run({COMPANY_ID:validateID,status:status});
-			if(TriggerSync.data && TriggerSync.data.success == true){
+			if(TriggerSync.data && TriggerSync.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_checkReturnName] == appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_returnOKstatus){
 				return true;
 			}else{
-				Configs.syncAlert =  "Could not access UiPath."
+				///Configs.syncAlert =  "Could not access UiPath."
 				//showAlert("Sync with ERP failure: Could not access UiPath.","error");
 			}
 		}else{
-			Configs.syncAlert = "ERP-Sync Service was not available."
+			//Configs.syncAlert = "ERP-Sync Service was not available."
 			//showAlert("Sync with ERP failure: ERP-Sync Service was not available.","error");
 		}
-		if(status === Configs.syncStatusIconMap["Pending Delete"].status){
-			if(Configs.IS_THIRD_PARTY)
-				Configs.syncErrorEscape = "Third Party Dashboard";
-			else
-				Configs.syncErrorEscape = "Company Dashboard";
-		}
-		Configs.syncErrorEscape = appsmith.URL.fullPath;
-
 		return false;
 	},
 	confirmButtonClick:async()=>{
@@ -106,13 +98,16 @@ export default {
 					if(_1_COMPANY_NEW.data[0]["RESULT_CODE"] === "DONE"){
 						await showAlert( "Save success","success");
 						await removeValue(Configs.newCompanyTempFlag);
-						if(await this.TriggerSync(_1_COMPANY_NEW.data[0].COMPANY_ID,Configs.syncStatusIconMap["Pending Add"].status)){
+						if(await this.TriggerSync(_1_COMPANY_NEW.data[0].COMPANY_ID,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Add"].status)){
 							await closeModal(MODAL_SAVE.name);
 							showModal(MODAL_ADD_NEXT.name);
 						}else{
 							if(!_1_COMPANY_NEW.data[0].COMPANY_ID) return showAlert("Unknown Company ID","error");
 							await closeModal(MODAL_SAVE.name);
-							await navigateTo(appsmith.currentPageName, {[Configs.editCompanyFlag]:_1_COMPANY_NEW.data[0].COMPANY_ID}, 'SAME_WINDOW');
+							Configs.syncErrorEscape = async ()=>{
+								await navigateTo(appsmith.currentPageName, {[Configs.editCompanyFlag]:_1_COMPANY_NEW.data[0].COMPANY_ID}, 'SAME_WINDOW');
+								navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+							}
 							showModal(MODAL_ALTER_SYNC.name);
 						}
 					}else{
@@ -127,9 +122,10 @@ export default {
 					if(_2_COMPANY_UPDATE.data[0]["RESULT_CODE"] === "DONE"){
 						await showAlert( "Save success","success");
 						await closeModal(MODAL_SAVE.name);
-						if(await this.TriggerSync(COMPANY_ID.text,Configs.syncStatusIconMap["Pending Edit"].status)){
-							showModal(MODAL_continueEditing.name);				
+						if(await this.TriggerSync(COMPANY_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
+							showModal(MODAL_continueEditing.name);			
 						}else{
+							Configs.syncErrorEscape = ()=>navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
 							showModal(MODAL_ALTER_SYNC.name);
 						}
 					}else{
@@ -277,9 +273,13 @@ export default {
 				if(_3_COMPANY_DELETE.data[0]["RESULT_CODE"] === "DONE"){
 					//showAlert( "Delete success","success");
 					await closeModal(MODAL_DELETE.name);
-					if(await this.TriggerSync(COMPANY_ID.text,Configs.syncStatusIconMap["Pending Delete"].status)){
+					if(await this.TriggerSync(COMPANY_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status)){
 						this.onClick_ButtonCancel();
 					}else{
+						if(Configs.IS_THIRD_PARTY)
+							Configs.syncErrorEscape = ()=>navigateTo("Third Party Dashboard" , {}, 'SAME_WINDOW'); 
+						else
+							Configs.syncErrorEscape = ()=>navigateTo("Company Dashboard" , {}, 'SAME_WINDOW'); 
 						showModal(MODAL_ALTER_SYNC.name);
 					}
 				}else{

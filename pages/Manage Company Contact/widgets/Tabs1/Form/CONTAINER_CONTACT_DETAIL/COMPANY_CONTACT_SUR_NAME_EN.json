@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 30,
+  "bottomRow": 28,
   "boxShadow": "none",
   "defaultText": "{{DefaultContact.COMPANY_CONTACT_SUR_NAME_EN.data}}",
   "dynamicBindingPathList": [
@@ -78,7 +78,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "กรอกข้อความที่ต้องการแสดงบนเอกสารภาษาอังกฤษ",
-  "topRow": 26,
+  "topRow": 24,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "xgyxk4p12i",

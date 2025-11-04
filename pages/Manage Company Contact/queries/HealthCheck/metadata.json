@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "68e5e9a655eda7018e8c4294_26a04b06-7eaf-403f-85be-873e818f916d",
-  "id": "Manage Company_HealthCheck",
+  "gitSyncId": "68e5e9a655eda7018e8c4294_c59f7b46-aa47-4771-ba6b-9085c0c823f8",
+  "id": "Manage Company Contact_HealthCheck",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -14,14 +14,14 @@
       },
       "headers": [
         {
-          "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_companyID}}",
-          "value": "{{this.params.COMPANY_ID}}"
+          "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_companyContacID}}",
+          "value": "{{this.params.ID}}"
         }
       ],
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/health",
+      "path": "/{{appsmith.store.RPA_SYNC_STATUS.constantKeys.portal_healthCheck}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -42,11 +42,14 @@
         "key": "headers[0].value"
       },
       {
+        "key": "path"
+      },
+      {
         "key": "headers[0].key"
       }
     ],
     "name": "HealthCheck",
-    "pageId": "Manage Company",
+    "pageId": "Manage Company Contact",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }

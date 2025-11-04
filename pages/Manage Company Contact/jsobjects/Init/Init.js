@@ -30,6 +30,7 @@ export default {
 				
 			}
 		}
+
 		//if(!appsmith.URL.queryParams[Configs.editContacePerson]){
 			let key = await Object.keys(DefaultContact);
 			await Promise.all(key.map(field=>{
@@ -37,7 +38,7 @@ export default {
 				DefaultContact[field].color = DefaultConstant[field].color
 			}))
 		//}
-		await this.initDefault();
+		await Promise.all([this.initDefault()]);
 		await ADDRESSING.initAddress();		
 		
 		Configs.startBody="VIEW";

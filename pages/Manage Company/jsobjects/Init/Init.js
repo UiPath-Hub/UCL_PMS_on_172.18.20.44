@@ -22,20 +22,6 @@ export default {
 		await ADDRESSING_BILLING.initAddress();
 		Configs.loadingProgress.current +=1;
 
-		//set default icon of sync status.
-		const setDefaultIconOfSyncStatus=async ()=>{
-			await SP_DD_RPA_SYNC_STATUS.run();	
-			if(SP_DD_RPA_SYNC_STATUS.data && SP_DD_RPA_SYNC_STATUS.data.length > 0){
-				SP_DD_RPA_SYNC_STATUS.data.forEach(e=>{
-					if(Configs.syncStatusIconMap[e.SYSTEM_VALUE]!==undefined || Configs.syncStatusIconMap[e.SYSTEM_VALUE]!== null){
-						Configs.syncStatusIconMap[e.SYSTEM_VALUE].status = e.FIXED_VALUE;
-					}
-				})
-
-			}
-			Configs.loadingProgress.current +=1;
-		}
-
 
 		const newbranch =async ()=>{
 			if(appsmith.URL.queryParams.NEWBRANCH === undefined){
@@ -56,7 +42,7 @@ export default {
 		}
 
 		let InitializationEntityList = [{ENTITY: Default_Profile,DATA: {}}];
-		await Promise.all([newbranch(),editbranch(),GlobalFunctions.initDefaultV2(InitializationEntityList),setDefaultIconOfSyncStatus()]);
+		await Promise.all([newbranch(),editbranch(),GlobalFunctions.initDefaultV2(InitializationEntityList)]);
 		Configs.loadingProgress.current +=1;
 
 		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0 && appsmith.URL.queryParams[ Configs.editCompanyFlag] !== undefined){

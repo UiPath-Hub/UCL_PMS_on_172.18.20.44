@@ -28,4 +28,5 @@ export default {
 	,COMPANY_CONTACT_FLOOR:{data:"",regex:"",required:false,color:""},
 	OTHER:{data:"",regex:"",required:false,color:""},
 	COMPANY_CONTACT_LANGUAGE_TYPE:{data:"",regex:"",required:false,color:""},
+	SYNC_STATUS:{data:"",regex:"",required:false,color:""}
 }

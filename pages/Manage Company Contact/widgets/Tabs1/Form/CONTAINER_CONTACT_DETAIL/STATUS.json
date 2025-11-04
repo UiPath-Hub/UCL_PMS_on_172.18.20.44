@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 14,
+  "bottomRow": 12,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultContact.STATUS.data||\"Active\"))(STATUS.options, STATUS.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -72,7 +72,7 @@
   "rightColumn": 62,
   "serverSideFiltering": false,
   "sourceData": "{{SP_SELECT_FOR_DROPDOWN_S.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
-  "topRow": 10,
+  "topRow": 8,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "847byn7hv6",

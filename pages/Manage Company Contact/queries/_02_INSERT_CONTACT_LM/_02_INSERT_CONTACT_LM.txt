@@ -1,5 +1,6 @@
 DECLARE @ResultCode NVARCHAR(10),
-			@ResultMessages NVARCHAR(MAX);
+			@ResultMessages NVARCHAR(MAX),
+			@INSERTED_COMPANY_CONTACT_ID NVARCHAR(20);
 
 IF @@TRANCOUNT = 0
 BEGIN TRANSACTION;
@@ -38,16 +39,14 @@ BEGIN TRANSACTION;
 	,@COMPANY_ID = {{null /*appsmith.store[Configs.fromCompany].COMPANY_ID*/}}
 	,@INSERT_IF_NOT_EXIST = 1
 	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+	,@INSERTED_COMPANY_CONTACT_ID = @INSERTED_COMPANY_CONTACT_ID OUTPUT
 	,@ResultCode=@ResultCode OUTPUT
 	,@ResultMessages=@ResultMessages OUTPUT
 
-SELECT @ResultCode AS [RESULT_CODE],
-           @ResultMessages AS [RESULT_MESSAGES];
-IF @ResultCode <> 'DONE' GOTO RETURN_RESULT;
-
 RETURN_RESULT:
 SELECT @ResultCode AS [RESULT_CODE],
-       @ResultMessages AS [RESULT_MESSAGES]
+       @ResultMessages AS [RESULT_MESSAGES],
+			 @INSERTED_COMPANY_CONTACT_ID AS [INSERTED_COMPANY_CONTACT_ID];
 
 IF @ResultCode = 'DONE'
 COMMIT TRANSACTION;

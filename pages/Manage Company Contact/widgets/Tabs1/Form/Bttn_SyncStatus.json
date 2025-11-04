@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 15,
+  "bottomRow": 14,
   "boxShadow": "none",
   "buttonColor": "{{_.find(appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap, {\n\t\t\tstatus: Bttn_SyncStatus.text\n\t\t}).color}}",
   "buttonVariant": "SECONDARY",
@@ -46,7 +46,7 @@
   "originalBottomRow": 15,
   "originalTopRow": 11,
   "parentColumnSpace": 19.9375,
-  "parentId": "a2sxnt3mjp",
+  "parentId": "iqo7j1bfm0",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
@@ -54,11 +54,11 @@
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 55,
-  "text": "{{DefaultCompany.SYNC_STATUS.data||appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap[\"Not_Synced\"].status}}",
+  "text": "{{DefaultContact.SYNC_STATUS.data||appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap[\"Not_Synced\"].status}}",
   "tooltip": "EPR Sync Status",
-  "topRow": 11,
+  "topRow": 10,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "i0xd0z3ezc",
+  "widgetId": "zizg211ijt",
   "widgetName": "Bttn_SyncStatus"
 }
