@@ -50,6 +50,10 @@
       {
         "name": "FREQUENCY_DATE",
         "value": "{\n  ...FREQUENCY_DATE,\n  data: FREQUENCY_DATE.selectedDate,\n  page: \"T6\"\n}"
+      },
+      {
+        "name": "INVOICE_GROUP_ID",
+        "value": "{\n  ...INVOICE_GROUP_ID,\n  data: INVOICE_GROUP_ID.text,\n  page: \"3\"\n}"
       }
     ]
   }

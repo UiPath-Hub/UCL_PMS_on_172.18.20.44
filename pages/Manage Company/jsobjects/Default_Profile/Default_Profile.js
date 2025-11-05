@@ -15,4 +15,5 @@ export default {
 	FREQUENCY_TYPE:{data:"",regex:"",required:false,color:"" },
 	REPEAT_EVERY:{data:"",regex:"",required:false,color:"" },
 	FREQUENCY_DATE:{data:"",regex:"",required:false,color:"" },
+	INVOICE_GROUP_ID:{data:"",regex:"",required:false,color:"" },
 }

@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "defaultText": "{{Default_InvenForProfile.START_UNIT.data||\"\"}}",
+  "defaultText": "{{Current_Profile.INVOICE_GROUP_ID.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -15,15 +15,24 @@
     },
     {
       "key": "defaultText"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
-      "key": "isRequired"
+      "key": "labelTextColor"
     },
     {
-      "key": "onTextChanged"
+      "key": "isRequired"
     }
   ],
   "dynamicTriggerPathList": [
@@ -35,39 +44,39 @@
   "inputType": "NUMBER",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "",
+  "isRequired": "{{Current_Profile.INVOICE_GROUP_ID.required}}",
   "isVisible": true,
-  "key": "nwk391w658",
-  "label": "Start Unit ",
+  "key": "a26yk5ycjr",
+  "label": "Invoice group No.",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{Current_Profile.INVOICE_GROUP_ID.color}}",
   "labelTextSize": "1rem",
-  "labelWidth": "8",
-  "leftColumn": 1,
+  "labelWidth": "10",
+  "leftColumn": 30,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 11,
-  "mobileLeftColumn": 2,
-  "mobileRightColumn": 22,
-  "mobileTopRow": 4,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onTextChanged": "{{START_UNIT_Confirm.setValue(Default_InvenForProfile.START_UNIT.data)}}",
-  "originalBottomRow": 11,
-  "originalTopRow": 6,
-  "parentColumnSpace": 19.5,
-  "parentId": "aljqp8sbor",
+  "onTextChanged": "",
+  "parentColumnSpace": 13.125,
+  "parentId": "uk4994gix9",
   "parentRowSpace": 10,
+  "regex": "{{Current_Profile.INVOICE_GROUP_ID.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 30,
+  "rightColumn": 56,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 8,
+  "topRow": 13,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "eiqxbd6zmt",
-  "widgetName": "START_UNIT_Confirm"
+  "widgetId": "07h0bmoz7k",
+  "widgetName": "INVOICE_GROUP_ID"
 }
