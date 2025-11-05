@@ -87,6 +87,7 @@ export default {
 			//Configs.syncAlert = "ERP-Sync Service was not available."
 			//showAlert("Sync with ERP failure: ERP-Sync Service was not available.","error");
 		}
+
 		return false;
 	},
 	confirmButtonClick:async()=>{
