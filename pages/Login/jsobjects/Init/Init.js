@@ -1,5 +1,5 @@
 export default {
-	PageLoad:()=>{
-		
+	PageLoad:async ()=>{
+
 	}
 }

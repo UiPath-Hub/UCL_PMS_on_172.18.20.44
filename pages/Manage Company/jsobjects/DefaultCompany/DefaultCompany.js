@@ -41,6 +41,8 @@ export default {
 	,COMPANY_BUSINESS_DETAIL_EN:{data:"",regex:"",required:false,color:""}
 	,COMPANY_LANGUAGE_TYPE:{data:"TH",regex:"",required:false,color:""}
 	,PRIORITY_CONTACT:{data:"",regex:"",required:false,color:""}
+	,SYNC_STATUS:{data:"",regex:"",required:false,color:""}
+	
 	//interface
 	,PROVINCE_TH:{data:this.COMPANY_PROVINCE_TH.data,
 								regex:"",

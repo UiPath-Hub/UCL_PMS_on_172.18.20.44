@@ -9,7 +9,7 @@ export default {
 		closeModal(MODAL_continueEditing.name);
 		if(!await GlobalFunctions.sessionCheck())return navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true))return;
-		
+
 		Configs.loadingProgress.current = Configs.loadingProgress.default;
 		await SELECT_PROVINCEs.run();
 		Configs.loadingProgress.current +=1;
@@ -21,6 +21,7 @@ export default {
 		Configs.loadingProgress.current +=1;
 		await ADDRESSING_BILLING.initAddress();
 		Configs.loadingProgress.current +=1;
+
 
 		const newbranch =async ()=>{
 			if(appsmith.URL.queryParams.NEWBRANCH === undefined){
@@ -35,7 +36,7 @@ export default {
 				Configs.loadingProgress.current +=1;
 			}
 		}
-		
+
 		if(appsmith.URL.queryParams[Configs.editCompanyFlag]==="TEMP"){
 			await navigateTo(appsmith.currentPageName, {...appsmith.URL.queryParams,[Configs.editCompanyFlag]:undefined}, 'SAME_WINDOW');
 		}
@@ -43,7 +44,7 @@ export default {
 		let InitializationEntityList = [{ENTITY: Default_Profile,DATA: {}}];
 		await Promise.all([newbranch(),editbranch(),GlobalFunctions.initDefaultV2(InitializationEntityList)]);
 		Configs.loadingProgress.current +=1;
-		
+
 		if(Configs.showCompanyContact.filter(i=>i.TOTAL_RECORDS!==0).length===0 && appsmith.URL.queryParams[ Configs.editCompanyFlag] !== undefined){
 			Configs.errorAlert = 'Editing company/third-party data without a valid priority contact person will cause data lost while saving. Please add at least one contact person before editing.'
 			showModal(Modal_ErrorAlert.name);

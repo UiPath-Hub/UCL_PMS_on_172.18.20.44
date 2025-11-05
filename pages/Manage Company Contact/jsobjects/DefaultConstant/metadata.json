@@ -122,6 +122,10 @@
       {
         "name": "COMPANY_CONTACT_LANGUAGE_TYPE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "SYNC_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       }
     ]
   }

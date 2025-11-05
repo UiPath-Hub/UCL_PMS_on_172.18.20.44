@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 65,
+  "bottomRow": 62,
   "boxShadow": "none",
   "defaultText": "{{DefaultContact.COMPANY_CONTACT_POSTAL_CODE.data}}",
   "dynamicBindingPathList": [
@@ -78,7 +78,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "showStepArrows": false,
-  "topRow": 61,
+  "topRow": 58,
   "type": "INPUT_WIDGET_V2",
   "validation": "",
   "version": 2,

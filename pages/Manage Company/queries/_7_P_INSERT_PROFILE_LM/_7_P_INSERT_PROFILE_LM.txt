@@ -11,9 +11,10 @@ EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V2]
 	,@COMPANY_PROFILE_PERIOD_START = {{this.params.COMPANY_PROFILE_PERIOD_START}} 
 	,@COMPANY_PROFILE_PERIOD_END = {{this.params.COMPANY_PROFILE_PERIOD_END}} 
 	,@QUANTITY = {{this.params.QUANTITY||null}}
-	,@FREQUENCY_TYPE = {{FREQUENCY_TYPE.selectedOptionValue}}
+	,@FREQUENCY_TYPE = {{FREQUENCY_TYPE.selectedOptionValue||null}}
 	,@REPEAT_EVERY = {{REPEAT_EVERY.text||null}}
 	,@FREQUENCY_DATE = {{FREQUENCY_DATE.selectedDate||null}}
+	,@INVOICE_GROUP_ID = {{INVOICE_GROUP_ID.text||null}}
 	,@IS_INSERT = 1
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@ResultCode =@ResultCode OUTPUT

@@ -1,4 +1,24 @@
 export default {
+	TriggerSync:async(validateID,status)=>{
+		await HealthCheck.run({ID:validateID});
+		if(HealthCheck.data && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_checkReturnName]===appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnOKstatus && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnContactIDName] === validateID){
+			await TriggerSync.run({ID:validateID,status:status});
+			if(TriggerSync.data && TriggerSync.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_checkReturnName] == appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_returnOKstatus){
+				return true;
+			}else{
+				//error appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
+
+			}
+		}else{
+			//error appsmith.store.RPA_SYNC_STATUS.syncAlert.unhealthy
+		}
+		if(status === appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status){
+			//Configs.syncErrorEscape = appsmith.store.PAGES_QUEUE[0]||"";
+		}else
+			//Configs.syncErrorEscape = appsmith.URL.fullPath;
+
+			return false;
+	},
 	onClick_Bttn_BeginSelectContact:async ()=>{
 		await _08_SEARCH_CONTACT_FOR_ADD.run();
 		await showModal(Modal_Search_Contact.name);
@@ -49,23 +69,40 @@ export default {
 		DefaultContact.COMPANY_CONTACT_PROVINCE_TH.data=DefaultAddress.COMPANY_PROVINCE_TH||""
 		await ADDRESSING.initAddress();
 	},
-	saveBttn_click:async ()=>{  
+	saveBttn_click:async ()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false))return;
 		let ContactID = _.trim(COMPANY_CONTACT_ID.text);
 		if((Configs.pageState.CurrentState == Configs.pageState.ManageContact || Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack) && !ContactID){
 			//insert Contact
 			await _02_INSERT_CONTACT_LM.run()
+			const isBackToAssign = Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack;
 			if( _02_INSERT_CONTACT_LM.data !== undefined && _02_INSERT_CONTACT_LM.data.length > 0){
 				if(_02_INSERT_CONTACT_LM.data[0]["RESULT_CODE"] === 'DONE'){
 					await showAlert("Save success.","success");
-					await closeModal(MODAL_SAVE.name)
-					if(Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack)
-					{
-						if(_02_INSERT_CONTACT_LM.data[0]["RESULT_MESSAGES"])
-						this.onClick_Bttn_SelectContact(_02_INSERT_CONTACT_LM.data[0]["RESULT_MESSAGES"]);						
+
+					if(await this.TriggerSync(_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Add"].status)){
+						await closeModal(MODAL_SAVE.name)
+						if(isBackToAssign)
+						{
+							if(_02_INSERT_CONTACT_LM.data[0]["RESULT_MESSAGES"])
+								this.onClick_Bttn_SelectContact(_02_INSERT_CONTACT_LM.data[0]["RESULT_MESSAGES"]);						
+						}
+						else
+							showModal(MODAL_ADD_NEXT.name);
+					}else{
+						if(!_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID) return showAlert("Unknown Contact ID","error");
+						await closeModal(MODAL_SAVE.name);
+						if(isBackToAssign){
+							Configs.syncErrorEscape =()=> this.onClick_Bttn_SelectContact(_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID);	
+						}else{
+							Configs.syncErrorEscape =async ()=>{
+								//update parameter
+								await navigateTo(appsmith.currentPageName, {[Configs.editContacePerson]:_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID}, 'SAME_WINDOW');
+								return navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+							}
+						}
+						showModal(MODAL_ALTER_SYNC.name);
 					}
-					else
-						showModal(MODAL_ADD_NEXT.name);
 				}
 				else{
 					await showAlert("Save failed."+_02_INSERT_CONTACT_LM.data[0]["RESULT_MESSAGES"],"error");
@@ -78,9 +115,13 @@ export default {
 				if(_04_UPDATE_CONTACT_LM.data[0]["RESULT_CODE"] === 'DONE'){
 					await showAlert("Save success.","success");
 					await closeModal(MODAL_SAVE.name)
-					//go back to dashboard
-					navigateTo(appsmith.store.PAGES_QUEUE[0]||"Contact Person Dashboard", {...appsmith.URL.queryParams}, 'SAME_WINDOW');
-
+					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
+						//go back to dashboard						
+						navigateTo(appsmith.store.PAGES_QUEUE[0]||"Contact Person Dashboard", {...appsmith.URL.queryParams}, 'SAME_WINDOW');
+					}else{
+						Configs.syncErrorEscape = ()=> navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+						showModal(MODAL_ALTER_SYNC.name);
+					}
 				}
 				else{
 					await showAlert("Save failed."+_04_UPDATE_CONTACT_LM.data[0]["RESULT_MESSAGES"],"error");
@@ -94,17 +135,20 @@ export default {
 				if(_04_UPDATE_CONTACT_LM.data[0]["RESULT_CODE"] === 'DONE'){
 					await showAlert("Save success.","success");
 					await closeModal(MODAL_SAVE.name)
+					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
+						//Go back to Manage Company
+						navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+					}else{
+						Configs.syncErrorEscape = ()=> navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+						showModal(MODAL_ALTER_SYNC.name);
+					}
 				}
 				else{
 					await showAlert("Save failed."+_04_UPDATE_CONTACT_LM.data[0]["RESULT_MESSAGES"],"error");
 					return;
 				}
 			}
-			//Go back to Manage Company
-			/*let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
-					editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;{[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}
-			*/
-			navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+
 
 		}else if(Configs.pageState.CurrentState==Configs.pageState.EditContactOf){
 			//Update Assigned role of Company/Third Party
@@ -114,17 +158,19 @@ export default {
 				if(_04_UPDATE_CONTACT_LM.data[0]["RESULT_CODE"] === 'DONE'){
 					await showAlert("Save success.","success");
 					await closeModal(MODAL_SAVE.name)
+					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
+						//Go back to Manage Company
+						navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+					}else{
+						Configs.syncErrorEscape = ()=> navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+						showModal(MODAL_ALTER_SYNC.name);
+					}
 				}
 				else{
 					await showAlert("Save failed."+_04_UPDATE_CONTACT_LM.data[0]["RESULT_MESSAGES"],"error");
 					return;
 				}
 			}
-			//Go back to Manage Company
-			/*let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
-					editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined; {[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}*/
-			navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams}, 'SAME_WINDOW');
-
 		}else showAlert("Missing save method. Please,Contact admin.");
 	},
 	onBttnAddMoreClick:async ()=>{
@@ -132,7 +178,7 @@ export default {
 		await navigateTo(appsmith.currentPageName, {AS:Configs.pageState.ManageContact}, 'SAME_WINDOW');
 		navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
 		//Init.pageLoad();
-		
+
 	}
 	,
 	onDeleteCompanyContact:async()=>{
@@ -145,7 +191,13 @@ export default {
 				if(_06_DELETE_CONTACT_LM.data[0]["RESULT_CODE"] === 'DONE'){
 					//await showAlert("Delete success.","success");
 					await closeModal(MODAL_DELETE.name);
-					navigateTo(appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard', {...appsmith.URL.queryParams}, 'SAME_WINDOW');
+					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status)){
+						navigateTo(appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard', {...appsmith.URL.queryParams}, 'SAME_WINDOW');
+					}else{
+						Configs.syncErrorEscape = ()=> navigateTo(appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard', {...appsmith.URL.queryParams}, 'SAME_WINDOW');
+						showModal(MODAL_ALTER_SYNC.name);
+					}
+
 				}
 				else{
 					showAlert("Delete failed."+_06_DELETE_CONTACT_LM.data[0]["RESULT_MESSAGES"],"error");
@@ -159,9 +211,8 @@ export default {
 					//await showAlert("Remove success.","success");
 					await closeModal(MODAL_DELETE.name);
 					//Go back to Manage Company
-					/*let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
-							editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;{[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH}*/
-					navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');					
+					navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+
 				}
 				else{
 					showAlert("Delete failed."+_07_UNASSIGN_CONTACT.data[0]["RESULT_MESSAGES"],"error");

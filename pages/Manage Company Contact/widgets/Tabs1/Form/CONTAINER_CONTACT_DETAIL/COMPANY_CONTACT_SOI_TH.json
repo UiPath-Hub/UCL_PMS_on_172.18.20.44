@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 56,
+  "bottomRow": 54,
   "boxShadow": "none",
   "defaultText": "{{DefaultContact.COMPANY_CONTACT_SOI_TH.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 62,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 52,
+  "topRow": 50,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "jgzicodqpb",

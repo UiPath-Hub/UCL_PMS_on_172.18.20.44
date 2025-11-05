@@ -15,5 +15,6 @@ export default {
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
 	pageState:{ManageContact:0,AddContactTo:1,EditContactOf:2,NewContactAndBack:3,CurrentState:0},
+	syncErrorEscape:()=> appsmith.currentPageName,
 	test:()=>appsmith.URL.fullPath.substring( appsmith.URL.fullPath.indexOf("?"),appsmith.URL.fullPath.length)
 }

@@ -10,4 +10,5 @@ export default {
 	FREQUENCY_TYPE:{...FREQUENCY_TYPE,data:FREQUENCY_TYPE.selectedOptionValue,page:"T6"},
 	REPEAT_EVERY:{...REPEAT_EVERY,data:REPEAT_EVERY.text ,page:"T6"},
 	FREQUENCY_DATE:{...FREQUENCY_DATE,data:FREQUENCY_DATE.selectedDate ,page:"T6"},
+	INVOICE_GROUP_ID:{...INVOICE_GROUP_ID,data:INVOICE_GROUP_ID.text , page:"3"}
 }

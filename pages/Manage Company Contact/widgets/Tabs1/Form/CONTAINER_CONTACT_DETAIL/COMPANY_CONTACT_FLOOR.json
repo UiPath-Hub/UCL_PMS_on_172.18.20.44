@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 53,
+  "bottomRow": 50,
   "boxShadow": "none",
   "defaultText": "{{DefaultContact.COMPANY_CONTACT_FLOOR.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 30,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 48,
+  "topRow": 46,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "0umidv3n86",

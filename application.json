@@ -34,6 +34,10 @@
       "isDefault": true
     },
     {
+      "id": "Login",
+      "isDefault": false
+    },
+    {
       "id": "Navbar",
       "isDefault": false
     },
@@ -71,10 +75,6 @@
     },
     {
       "id": "Owner Profile",
-      "isDefault": false
-    },
-    {
-      "id": "Login",
       "isDefault": false
     },
     {

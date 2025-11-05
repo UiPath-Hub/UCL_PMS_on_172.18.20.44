@@ -73,6 +73,23 @@ export default {
 		let regex = /^\d+$/;
 		BILLING_TAX_ID.setValue(BILLING_TAX_ID.text.toString().split('').filter((ele)=>regex.test(ele)).join(''))
 	},
+	TriggerSync:async(validateID,status)=>{
+		await HealthCheck.run({COMPANY_ID:validateID});
+		if(HealthCheck.data && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_checkReturnName]===appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnOKstatus && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnCompanyIDName] === validateID){
+			await TriggerSync.run({COMPANY_ID:validateID,status:status});
+			if(TriggerSync.data && TriggerSync.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_checkReturnName] == appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_returnOKstatus){
+				return true;
+			}else{
+				///Configs.syncAlert =  "Could not access UiPath."
+				//showAlert("Sync with ERP failure: Could not access UiPath.","error");
+			}
+		}else{
+			//Configs.syncAlert = "ERP-Sync Service was not available."
+			//showAlert("Sync with ERP failure: ERP-Sync Service was not available.","error");
+		}
+
+		return false;
+	},
 	confirmButtonClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
 			if(appsmith.URL.queryParams[Configs.editCompanyFlag]===undefined||appsmith.URL.queryParams[Configs.editCompanyFlag]==="TEMP"){
@@ -82,8 +99,18 @@ export default {
 					if(_1_COMPANY_NEW.data[0]["RESULT_CODE"] === "DONE"){
 						await showAlert( "Save success","success");
 						await removeValue(Configs.newCompanyTempFlag);
-						await closeModal(MODAL_SAVE.name);
-						showModal(MODAL_ADD_NEXT.name);
+						if(await this.TriggerSync(_1_COMPANY_NEW.data[0].COMPANY_ID,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Add"].status)){
+							await closeModal(MODAL_SAVE.name);
+							showModal(MODAL_ADD_NEXT.name);
+						}else{
+							if(!_1_COMPANY_NEW.data[0].COMPANY_ID) return showAlert("Unknown Company ID","error");
+							await closeModal(MODAL_SAVE.name);
+							Configs.syncErrorEscape = async ()=>{
+								await navigateTo(appsmith.currentPageName, {[Configs.editCompanyFlag]:_1_COMPANY_NEW.data[0].COMPANY_ID}, 'SAME_WINDOW');
+								navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+							}
+							showModal(MODAL_ALTER_SYNC.name);
+						}
 					}else{
 						showAlert( "Save failed: "+_1_COMPANY_NEW.data[0]["RESULT_MESSAGES"],"error");
 					}
@@ -96,7 +123,12 @@ export default {
 					if(_2_COMPANY_UPDATE.data[0]["RESULT_CODE"] === "DONE"){
 						await showAlert( "Save success","success");
 						await closeModal(MODAL_SAVE.name);
-						showModal(MODAL_continueEditing.name);
+						if(await this.TriggerSync(COMPANY_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
+							showModal(MODAL_continueEditing.name);			
+						}else{
+							Configs.syncErrorEscape = ()=>navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
+							showModal(MODAL_ALTER_SYNC.name);
+						}
 					}else{
 						showAlert( "Save failed: "+(_2_COMPANY_UPDATE.data[0]["RESULT_MESSAGES"]),"error");
 					}
@@ -242,9 +274,15 @@ export default {
 				if(_3_COMPANY_DELETE.data[0]["RESULT_CODE"] === "DONE"){
 					//showAlert( "Delete success","success");
 					await closeModal(MODAL_DELETE.name);
-					if(!Configs.IS_THIRD_PARTY)
-						navigateTo('Company Dashboard', {}, 'SAME_WINDOW');
-					else navigateTo('Third Party Dashboard', {}, 'SAME_WINDOW');
+					if(await this.TriggerSync(COMPANY_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status)){
+						this.onClick_ButtonCancel();
+					}else{
+						if(Configs.IS_THIRD_PARTY)
+							Configs.syncErrorEscape = ()=>navigateTo("Third Party Dashboard" , {}, 'SAME_WINDOW'); 
+						else
+							Configs.syncErrorEscape = ()=>navigateTo("Company Dashboard" , {}, 'SAME_WINDOW'); 
+						showModal(MODAL_ALTER_SYNC.name);
+					}
 				}else{
 					showAlert( "Delete failed."+_3_COMPANY_DELETE.data[0]["RESULT_MESSAGES"],"error");
 				}

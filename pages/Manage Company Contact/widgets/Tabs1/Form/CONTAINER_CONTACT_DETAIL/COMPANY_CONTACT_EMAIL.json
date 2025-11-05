@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 38,
+  "bottomRow": 36,
   "boxShadow": "none",
   "defaultText": "{{DefaultContact.COMPANY_CONTACT_EMAIL.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 62,
   "shouldAllowAutofill": true,
   "showStepArrows": false,
-  "topRow": 34,
+  "topRow": 32,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "zvp4grn50s",
