@@ -57,11 +57,7 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [
-    {
-      "key": "onClose"
-    }
-  ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClose"
@@ -80,7 +76,7 @@
   "mobileRightColumn": 0,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onClose": "{{Configs.syncErrorEscape();}}",
+  "onClose": "{{JS.afterSyncErrorNotify();}}",
   "originalBottomRow": 305,
   "originalTopRow": 85,
   "parentColumnSpace": 1,

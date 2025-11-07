@@ -34,14 +34,14 @@
       "httpMethod": "POST",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/Sync",
+      "path": "/{{appsmith.store.RPA_SYNC_STATUS.constantKeys.portal_sync}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
       "queryParameters": [],
-      "timeoutInMillisecond": 10000
+      "timeoutInMillisecond": 1000
     },
     "confirmBeforeExecute": false,
     "datasource": {
@@ -56,6 +56,9 @@
       },
       {
         "key": "headers[2].value"
+      },
+      {
+        "key": "path"
       }
     ],
     "name": "TriggerSync",

@@ -23,7 +23,8 @@ export default {
 			sync_checkReturnName:"success",
 			sync_returnOKstatus:true,
 			healthCheck_returnCompanyIDName:"COMPANY_ID",
-			healthCheck_returnContactIDName:"CONTACT_ID"
+			healthCheck_returnContactIDName:"CONTACT_ID",
+			portal_status:"status"
 		}
 	}
 

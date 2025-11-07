@@ -47,9 +47,10 @@
     "CREATE_DATE",
     "TOTAL_RECORDS",
     "INVENTORY_ID",
-    "FORMULA"
+    "FORMULA",
+    "INVOICE_GROUP_ID"
   ],
-  "columnUpdatedAt": 1751860434710,
+  "columnUpdatedAt": 1762399457677,
   "columnWidthMap": {
     "Agreement_Number": 174,
     "Amount__Baht_": 144,
@@ -129,6 +130,9 @@
     },
     {
       "key": "primaryColumns.FORMULA.computedValue"
+    },
+    {
+      "key": "primaryColumns.INVOICE_GROUP_ID.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -467,6 +471,40 @@
       "label": "Inventory Name",
       "notation": "standard",
       "originalId": "INVENTORY_NAME",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "1rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "INVOICE_GROUP_ID": {
+      "alias": "INVOICE_GROUP_ID",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#ffffff",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_PROFILE_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"INVOICE_GROUP_ID\"])) : INVOICE_GROUP_ID })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "INVOICE_GROUP_ID",
+      "index": 15,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Merge Group",
+      "notation": "standard",
+      "originalId": "INVOICE_GROUP_ID",
       "sticky": "",
       "textColor": "",
       "textSize": "1rem",

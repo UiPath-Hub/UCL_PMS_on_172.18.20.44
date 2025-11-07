@@ -1,5 +1,5 @@
 export default {
-	myVar1: ()=>{
-		return  [appsmith.store.NEWBRANCH,appsmith.URL.queryParams]
+	myVar1:async ()=>{
+		Configs.dynamicFunc = ()=> console.log("test2");
 	}
 }

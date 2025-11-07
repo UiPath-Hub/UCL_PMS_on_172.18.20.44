@@ -28,7 +28,11 @@
       "key": "buttonColor"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconAlign": "left",
   "iconName": "{{_.find(appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap, {\n\t\t\tstatus: Bttn_SyncStatus.text\n\t\t}).icon}}",
   "isDefaultClickDisabled": true,
@@ -43,6 +47,7 @@
   "mobileRightColumn": 55,
   "mobileTopRow": 11,
   "needsErrorInfo": false,
+  "onClick": "",
   "originalBottomRow": 15,
   "originalTopRow": 11,
   "parentColumnSpace": 19.9375,
