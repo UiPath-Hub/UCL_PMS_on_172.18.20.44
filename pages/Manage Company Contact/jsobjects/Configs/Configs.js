@@ -11,6 +11,8 @@ export default {
 	forceLogin:false,
 	errorAlert:"",
 	pageName:"Company Contact",
+	CompanyPageName:'Manage Company',
+	ContactDashboardPageName:'Contact Person Dashboard',
 	newCompanyTempFlag:"newCompanyTempFlag",
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",

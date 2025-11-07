@@ -110,7 +110,11 @@ export default {
 						if(isBackToAssign){
 							Configs.syncedErrorEscape.SelectContact = {trigger: true, ID: _02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID};
 						}else{
-							Configs.syncedErrorEscape.pageName=appsmith.currentPageName;
+							if(appsmith.store.PAGES_QUEUE[0] == Configs.CompanyPageName){
+								Configs.syncedErrorEscape.pageName=appsmith.store.PAGES_QUEUE[0];
+							}else{
+								Configs.syncedErrorEscape.pageName=appsmith.currentPageName;
+							}
 							Configs.syncedErrorEscape.params = {[Configs.editContacePerson]:_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID};
 						}
 						showModal(MODAL_ALTER_SYNC.name);
@@ -131,7 +135,7 @@ export default {
 					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
 						await close();
 						//go back to dashboard						
-						navigateTo(appsmith.store.PAGES_QUEUE[0]||"Contact Person Dashboard", {...appsmith.URL.queryParams}, 'SAME_WINDOW');
+						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.ContactDashboardPageName, {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 					}else{
 						await close();
 						Configs.syncedErrorEscape.pageName= appsmith.URL.fullPath;
@@ -154,7 +158,7 @@ export default {
 					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
 						await close();
 						//Go back to Manage Company
-						navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 					}else{
 						await close();
 						Configs.syncedErrorEscape.pageName= appsmith.URL.fullPath;
@@ -180,7 +184,7 @@ export default {
 					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
 						await close();
 						//Go back to Manage Company
-						navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 					}else{
 						await close();
 						Configs.syncedErrorEscape.pageName= appsmith.URL.fullPath;
@@ -217,10 +221,10 @@ export default {
 					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status)){
 						await close();
 						//go back to dashboard
-						navigateTo(appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard', {...appsmith.URL.queryParams}, 'SAME_WINDOW');
+						navigateTo(appsmith.store.PAGES_QUEUE[0]|| Configs.ContactDashboardPageName, {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 					}else{
 						await close();
-						Configs.syncedErrorEscape.pageName= appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard';
+						Configs.syncedErrorEscape.pageName= appsmith.store.PAGES_QUEUE[0]||Configs.ContactDashboardPageName;
 						Configs.syncedErrorEscape.params =  {...appsmith.URL.queryParams};
 						showModal(MODAL_ALTER_SYNC.name);
 					}
@@ -238,7 +242,7 @@ export default {
 					//await showAlert("Remove success.","success");
 					await closeModal(MODAL_DELETE.name);
 					//Go back to Manage Company
-					navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company',{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+					navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 
 				}
 				else{
@@ -272,7 +276,7 @@ export default {
 		if(Configs.pageState.CurrentState==Configs.pageState.AddContactTo || Configs.pageState.CurrentState==Configs.pageState.EditContactOf)
 		{
 			/*[Configs.editCompany]:editCompanyID,NEWBRANCH:appsmith.store.NEWBRANCH*/
-			navigateTo(appsmith.store.PAGES_QUEUE[0]||'Manage Company', {...appsmith.URL.queryParams}   , 'SAME_WINDOW');
+			navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName, {...appsmith.URL.queryParams}   , 'SAME_WINDOW');
 
 		}else if(Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack)
 		{
@@ -281,7 +285,7 @@ export default {
 			//Init.pageLoad();
 
 		}
-		else navigateTo(appsmith.store.PAGES_QUEUE[0]||'Contact Person Dashboard', {...appsmith.URL.queryParams}, 'SAME_WINDOW');
+		else navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.ContactDashboardPageName, {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 
 	},
 	test:()=>{return appsmith.store.NEWBRANCH}
