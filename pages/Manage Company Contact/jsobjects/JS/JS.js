@@ -112,9 +112,7 @@ export default {
 							Configs.syncedErrorEscape.pageName=appsmith.currentPageName;
 							Configs.syncedErrorEscape.params = {[Configs.editContacePerson]:_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID};
 
-
 						}
-						console.log(Configs.syncedErrorEscape)
 						showModal(MODAL_ALTER_SYNC.name);
 					}
 				}
@@ -160,6 +158,7 @@ export default {
 					}else{
 						await close();
 						Configs.syncedErrorEscape.pageName= appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName;
+						Configs.syncedErrorEscape.params = {...appsmith.URL.queryParams};
 						showModal(MODAL_ALTER_SYNC.name);
 					}
 				}
@@ -186,6 +185,7 @@ export default {
 					}else{
 						await close();
 						Configs.syncedErrorEscape.pageName= appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName;
+						Configs.syncedErrorEscape.params = {...appsmith.URL.queryParams};
 						showModal(MODAL_ALTER_SYNC.name);
 					}
 				}
@@ -237,10 +237,20 @@ export default {
 			await _07_UNASSIGN_CONTACT.run()
 			if( _07_UNASSIGN_CONTACT.data !== undefined && _07_UNASSIGN_CONTACT.data.length > 0){
 				if(_07_UNASSIGN_CONTACT.data[0]["RESULT_CODE"] === 'DONE'){
-					//await showAlert("Remove success.","success");
-					await closeModal(MODAL_DELETE.name);
-					//Go back to Manage Company
-					navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+					const close=async()=> {
+						await closeModal(MODAL_DELETE.name);
+					}
+					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status)){
+						await close();
+						//Go back to Manage Company
+						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
+					}else{
+						await close();
+						Configs.syncedErrorEscape.pageName= appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName;
+						Configs.syncedErrorEscape.params =  {...appsmith.URL.queryParams};
+						showModal(MODAL_ALTER_SYNC.name);
+					}
+					
 
 				}
 				else{

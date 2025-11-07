@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 71,
+  "bottomRow": 69,
   "boxShadow": "none",
   "defaultText": "{{DefaultCompany.COMPANY_ROAD_EN.data}}",
   "dynamicBindingPathList": [
@@ -72,7 +72,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "กรอกข้อความที่ต้องการแสดงในเอกสารภาษาอังกฤษ",
-  "topRow": 67,
+  "topRow": 65,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "ogwg90rbgi",

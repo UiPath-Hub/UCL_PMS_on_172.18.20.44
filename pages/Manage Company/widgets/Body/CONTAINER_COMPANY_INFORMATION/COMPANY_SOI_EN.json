@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 67,
+  "bottomRow": 65,
   "boxShadow": "none",
   "defaultText": "{{DefaultCompany.COMPANY_SOI_EN.data}}",
   "dynamicBindingPathList": [
@@ -72,7 +72,7 @@
   "shouldAllowAutofill": false,
   "showStepArrows": false,
   "tooltip": "กรอกข้อความที่ต้องการแสดงในเอกสารภาษาอังกฤษ",
-  "topRow": 63,
+  "topRow": 61,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "yr47xlw72a",

@@ -34,10 +34,6 @@ export default {
 	},
 	loadingProgress:{default:0,current:0,full:7}
 	,test:()=>{
-		
+		return appsmith.URL.queryParams
 	},
-	dynamicFunc:()=>{console.log("test")},
-	runFunc:()=>{
-		this.dynamicFunc();
-	}
 }
