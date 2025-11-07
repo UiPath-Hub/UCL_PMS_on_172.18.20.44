@@ -16,7 +16,7 @@ export default {
 				navigateTo(pageName,params);
 			}
 		}
-		
+
 	},
 	TriggerSync:async(validateID,status)=>{
 		try{
@@ -88,13 +88,13 @@ export default {
 		if((Configs.pageState.CurrentState == Configs.pageState.ManageContact || Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack) && !ContactID){
 			//insert Contact
 			await _02_INSERT_CONTACT_LM.run()
-			const isBackToAssign = Configs.pageState.CurrentState==Configs.pageState.NewContactAndBack;
+			const isBackToAssign = Configs.pageState.CurrentState===Configs.pageState.NewContactAndBack;
 			if( _02_INSERT_CONTACT_LM.data !== undefined && _02_INSERT_CONTACT_LM.data.length > 0){
 				if(_02_INSERT_CONTACT_LM.data[0]["RESULT_CODE"] === 'DONE'){
 					const close= async()=>{
 						await Promise.all([showAlert("Save success.","success"),closeModal(MODAL_SAVE.name)]) 
 					}
-
+					if(!(_02_INSERT_CONTACT_LM.data!=undefined && _02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID)) return showAlert("Unknown return Contact ID","error");
 					if(await this.TriggerSync(_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Add"].status)){
 						await close();
 						if(isBackToAssign)
@@ -105,18 +105,16 @@ export default {
 						else
 							showModal(MODAL_ADD_NEXT.name);
 					}else{
-						if(!_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID) return showAlert("Unknown Contact ID","error");
 						await close();
 						if(isBackToAssign){
 							Configs.syncedErrorEscape.SelectContact = {trigger: true, ID: _02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID};
 						}else{
-							if(appsmith.store.PAGES_QUEUE[0] == Configs.CompanyPageName){
-								Configs.syncedErrorEscape.pageName=appsmith.store.PAGES_QUEUE[0];
-							}else{
-								Configs.syncedErrorEscape.pageName=appsmith.currentPageName;
-							}
+							Configs.syncedErrorEscape.pageName=appsmith.currentPageName;
 							Configs.syncedErrorEscape.params = {[Configs.editContacePerson]:_02_INSERT_CONTACT_LM.data[0].INSERTED_COMPANY_CONTACT_ID};
+
+
 						}
+						console.log(Configs.syncedErrorEscape)
 						showModal(MODAL_ALTER_SYNC.name);
 					}
 				}
@@ -161,7 +159,7 @@ export default {
 						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 					}else{
 						await close();
-						Configs.syncedErrorEscape.pageName= appsmith.URL.fullPath;
+						Configs.syncedErrorEscape.pageName= appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName;
 						showModal(MODAL_ALTER_SYNC.name);
 					}
 				}
@@ -187,7 +185,7 @@ export default {
 						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 					}else{
 						await close();
-						Configs.syncedErrorEscape.pageName= appsmith.URL.fullPath;
+						Configs.syncedErrorEscape.pageName= appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName;
 						showModal(MODAL_ALTER_SYNC.name);
 					}
 				}
@@ -217,7 +215,7 @@ export default {
 					const close= async()=>{
 						await closeModal(MODAL_DELETE.name);
 					}
-					
+
 					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status)){
 						await close();
 						//go back to dashboard

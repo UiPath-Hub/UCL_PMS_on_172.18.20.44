@@ -18,5 +18,5 @@ export default {
 	requiredColorPass:"",
 	pageState:{ManageContact:0,AddContactTo:1,EditContactOf:2,NewContactAndBack:3,CurrentState:0},
 	syncedErrorEscape:{pageName:appsmith.currentPageName,params:{},SelectContact:{trigger:false}},
-	test:()=>appsmith.URL.fullPath.substring( appsmith.URL.fullPath.indexOf("?"),appsmith.URL.fullPath.length)
+	test:()=>appsmith.store.PAGES_QUEUE[0] == Configs.CompanyPageName
 }
