@@ -16,6 +16,7 @@ export default {
 	newCompanyTempFlag:"newCompanyTempFlag",
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
+	syncdErrorMessage:"",
 	MaxHTTPResquestOfCheckingStatus:3,
 	PollingDelayInMilliseconds:800,
 	pageState:{ManageContact:0,AddContactTo:1,EditContactOf:2,NewContactAndBack:3,CurrentState:0},

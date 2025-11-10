@@ -76,6 +76,10 @@
         "value": "\"\""
       },
       {
+        "name": "syncdErrorMessage",
+        "value": "\"\""
+      },
+      {
         "name": "MaxHTTPResquestOfCheckingStatus",
         "value": "3"
       },

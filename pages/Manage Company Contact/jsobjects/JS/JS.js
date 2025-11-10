@@ -39,22 +39,14 @@ export default {
 	TriggerSync:async(validateID,status)=>{
 		try{
 			// 1. Health Check
-			await HealthCheck.run({COMPANY_ID:validateID});
-			if(HealthCheck.data && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_checkReturnName]===appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnOKstatus && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnCompanyIDName] === validateID){
-
+			await HealthCheck.run({ID:validateID});
+			if(HealthCheck.data && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_checkReturnName]===appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnOKstatus && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnContactIDName] === validateID){
 				// 2. Trigger Sync (ส่ง Transaction เข้าคิว)
 				await TriggerSync.run({COMPANY_ID:validateID,status:status});
-
 				if(TriggerSync.data && TriggerSync.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_checkReturnName] === appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_returnOKstatus){
-
 					const eventID = TriggerSync.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_checkReturnName_ID];
 					let retriesCount = 0;
 					let statusState = this.GETstate.loop;
-
-					// ************************************************
-					// * Start Polling Loop (การตรวจสอบสถานะซ้ำๆ) *
-					// ************************************************
-
 					while (statusState === this.GETstate.loop) {				
 						statusState = await this.getTransactionStatus(retriesCount, eventID);
 						if (statusState === this.GETstate.finish) {
@@ -75,9 +67,11 @@ export default {
 
 				}
 			}
+			Configs.syncdErrorMessage_user = appsmith.store.RPA_SYNC_STATUS.syncAlert.unhealthy
 			return false; // Health check หรือ Trigger Sync ล้มเหลว
 		}catch(err){
 			console.error("TriggerSync failed:", err);
+			Configs.syncdErrorMessage_user = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
 			return false; // Error ระหว่าง Health check หรือ Trigger Sync
 		}
 	},
