@@ -41,7 +41,7 @@ BEGIN TRANSACTION;
   ,@pEXT = {{COMPANY_CONTACT_EXT.text}}
   ,@pMoblie = {{COMPANY_CONTACT_TELEPHONE.text}}
   ,@pEmail= {{COMPANY_CONTACT_EMAIL.text}}
-  ,@pRole= {{this.params.ASSIGN_TO_COMPANY||this.params.UPDATE_ASSIGNED?null: COMPANY_CONTACT_ROLE.selectedOptionValue}}
+  ,@pRole= {{this.params.ASSIGN_TO_COMPANY===1||this.params.UPDATE_ASSIGNED===1?null: COMPANY_CONTACT_ROLE.selectedOptionValue}}
   ,@pAddNo= {{COMPANY_CONTACT_ADD_NO.text}}
 	,@pCOMPANY_CONTACT_FLOOR = {{COMPANY_CONTACT_FLOOR.text}}
   ,@pMoo= {{COMPANY_CONTACT_MOO.text}}
@@ -62,7 +62,7 @@ BEGIN TRANSACTION;
 	
 	,@pCOMPANY_CONTACT_ID = {{COMPANY_CONTACT_ID.text}}
 	,@INSERT_IF_NOT_EXIST = 0
-	,@UPDATE_NULL = {{this.params.UPDATE_NULL?this.params.UPDATE_NULL:1}}
+	,@UPDATE_NULL = {{this.params.UPDATE_NULL!==undefined?this.params.UPDATE_NULL:1}}
 	,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@ResultCode=@ResultCode OUTPUT
 	,@ResultMessages=@ResultMessages OUTPUT
