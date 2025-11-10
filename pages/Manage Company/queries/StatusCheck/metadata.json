@@ -16,14 +16,14 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/{{appsmith.store.RPA_SYNC_STATUS.constantKeys.portal_status}}",
+      "path": "/{{appsmith.store.RPA_SYNC_STATUS.constantKeys.portal_status}}/{{this.params.ID}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
       "queryParameters": [],
-      "timeoutInMillisecond": 1000
+      "timeoutInMillisecond": 500
     },
     "confirmBeforeExecute": false,
     "datasource": {

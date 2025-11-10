@@ -104,6 +104,14 @@
         "value": "\"\""
       },
       {
+        "name": "MaxHTTPResquestOfCheckingStatus",
+        "value": "3"
+      },
+      {
+        "name": "PollingDelayInMilliseconds",
+        "value": "800"
+      },
+      {
         "name": "loadingProgress",
         "value": "{\n  default: 0,\n  current: 0,\n  full: 7\n}"
       }

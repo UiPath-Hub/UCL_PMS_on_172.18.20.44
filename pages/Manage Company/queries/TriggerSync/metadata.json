@@ -41,7 +41,7 @@
         }
       ],
       "queryParameters": [],
-      "timeoutInMillisecond": 1000
+      "timeoutInMillisecond": 500
     },
     "confirmBeforeExecute": false,
     "datasource": {

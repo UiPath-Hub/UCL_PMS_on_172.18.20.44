@@ -6,6 +6,11 @@
     "pageId": "Manage Company",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": []
+    "variables": [
+      {
+        "name": "GETstate",
+        "value": "{\n  loop: 0,\n  finish: 1,\n  failed: 2\n}"
+      }
+    ]
   }
 }

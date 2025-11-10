@@ -30,7 +30,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{closeModal(MODAL_continueEditing.name);}}",
+  "onClick": "{{closeModal(MODAL_continueEditing.name).then(() => {\n  navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');\n});}}",
   "originalBottomRow": 13,
   "originalTopRow": 9,
   "parentId": "0ryyq35upo",

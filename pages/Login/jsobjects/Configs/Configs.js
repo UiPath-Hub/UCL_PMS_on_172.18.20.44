@@ -20,8 +20,12 @@ export default {
 			parameter_tableName:"table_name",
 			healthCheck_returnOKstatus:"ok",
 			healthCheck_checkReturnName:"status",
+			statusCheck_returnOKstatus:'successful',
+			statusCheck_returnFailedStatus:'failed',
+			statusCheck_checkReturnName:"status",
 			sync_checkReturnName:"success",
 			sync_returnOKstatus:true,
+			sync_checkReturnName_ID: "id",
 			healthCheck_returnCompanyIDName:"COMPANY_ID",
 			healthCheck_returnContactIDName:"CONTACT_ID",
 			portal_status:"status"

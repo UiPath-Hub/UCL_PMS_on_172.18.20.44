@@ -87,19 +87,69 @@ export default {
 		if(BILLING_TAX_ID.text == "" || BILLING_TAX_ID.text == undefined)return;
 		let regex = /^\d+$/;
 		BILLING_TAX_ID.setValue(BILLING_TAX_ID.text.toString().split('').filter((ele)=>regex.test(ele)).join(''))
+	}, 
+	
+	GETstate:{loop:0,finish:1,failed:2},
+	delay: (ms) => new Promise(resolve => setTimeout(resolve, ms)),
+
+	getTransactionStatus: async (retriesCount,eventID)=>{
+		if(retriesCount>= Configs.MaxHTTPResquestOfCheckingStatus) return this.GETstate.failed; // ใช้ this.GETstate
+
+		// StatusCheck คือ API call ไปที่ /status/:id
+		await StatusCheck.run({ID:eventID}); 
+
+		// สมมติว่า StatusCheck.data มีโครงสร้างตาม Response ที่ออกแบบไว้
+		if(StatusCheck.data && StatusCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_checkReturnName]=== appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_returnOKstatus){
+			return this.GETstate.finish;
+		}else if(StatusCheck.data && StatusCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_checkReturnName]=== appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_returnFailedStatus){
+			return this.GETstate.failed;
+		}else{
+			return this.GETstate.loop;
+		}
 	},
 	TriggerSync:async(validateID,status)=>{
 		try{
+			// 1. Health Check
 			await HealthCheck.run({COMPANY_ID:validateID});
 			if(HealthCheck.data && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_checkReturnName]===appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnOKstatus && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnCompanyIDName] === validateID){
+
+				// 2. Trigger Sync (ส่ง Transaction เข้าคิว)
 				await TriggerSync.run({COMPANY_ID:validateID,status:status});
-				if(TriggerSync.data && TriggerSync.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_checkReturnName] == appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_returnOKstatus){
-					return true;
+
+				if(TriggerSync.data && TriggerSync.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_checkReturnName] === appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_returnOKstatus){
+
+					const eventID = TriggerSync.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.sync_checkReturnName_ID];
+					let retriesCount = 0;
+					let statusState = this.GETstate.loop;
+
+					// ************************************************
+					// * Start Polling Loop (การตรวจสอบสถานะซ้ำๆ) *
+					// ************************************************
+
+					while (statusState === this.GETstate.loop) {				
+						statusState = await this.getTransactionStatus(retriesCount, eventID);
+						if (statusState === this.GETstate.finish) {
+							return true; // สำเร็จ
+						}
+						if (statusState === this.GETstate.failed) {
+							// ล้มเหลวเนื่องจากสถานะจาก Server หรือจำนวนครั้ง Polling เกิน
+							return false; 
+						}
+						await this.delay(Configs.PollingDelayInMilliseconds); 
+						retriesCount++;
+						// หากยังเป็น this.GETstate.loop จะวนซ้ำ
+					}
+
+					// ในทางทฤษฎีโค้ดไม่ควรมาถึงตรงนี้ แต่ป้องกันไว้
+					if (statusState === this.GETstate.finish) return true;
+					return false; // Fail safe
+
 				}
 			}
-			return false;
+			return false; // Health check หรือ Trigger Sync ล้มเหลว
 		}catch(err){
-			return false;
+			console.error("TriggerSync failed:", err);
+			return false; // Error ระหว่าง Health check หรือ Trigger Sync
 		}
 	},
 	confirmButtonClick:async()=>{

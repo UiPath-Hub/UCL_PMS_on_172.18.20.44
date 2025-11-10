@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 50,
+  "bottomRow": 51,
   "boxShadow": "none",
   "defaultText": "{{DefaultContact.COMPANY_CONTACT_FLOOR.data}}",
   "dynamicBindingPathList": [

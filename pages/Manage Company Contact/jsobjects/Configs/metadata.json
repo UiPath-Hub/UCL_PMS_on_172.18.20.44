@@ -76,6 +76,14 @@
         "value": "\"\""
       },
       {
+        "name": "MaxHTTPResquestOfCheckingStatus",
+        "value": "3"
+      },
+      {
+        "name": "PollingDelayInMilliseconds",
+        "value": "800"
+      },
+      {
         "name": "pageState",
         "value": "{\n  ManageContact: 0,\n  AddContactTo: 1,\n  EditContactOf: 2,\n  NewContactAndBack: 3,\n  CurrentState: 0\n}"
       },

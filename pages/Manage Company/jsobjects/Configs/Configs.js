@@ -23,6 +23,8 @@ export default {
 	syncedErrorEscape:{pageName:appsmith.currentPageName,params:{}},
 	IS_THIRD_PARTY: Boolean(_0_SELECT_FOR_COMPANY_BY_ID.data?_0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY===null?true:_0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY: appsmith.store.IS_THIRD_PARTY==0?false:true),
 	PRIORITY_CONTACT_ID:"",
+	MaxHTTPResquestOfCheckingStatus:3,
+	PollingDelayInMilliseconds:800,
 	showStore:()=>{
 
 		return {editCompanyFlag:appsmith.store[this.editCompanyFlag],

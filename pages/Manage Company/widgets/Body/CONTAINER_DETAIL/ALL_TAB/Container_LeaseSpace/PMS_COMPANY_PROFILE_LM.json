@@ -43,14 +43,14 @@
     "COMPANY_PROFILE_PERIOD_START",
     "COMPANY_PROFILE_PERIOD_END",
     "QUANTITY",
+    "INVOICE_GROUP_ID",
     "STATUS",
     "CREATE_DATE",
     "TOTAL_RECORDS",
     "INVENTORY_ID",
-    "FORMULA",
-    "INVOICE_GROUP_ID"
+    "FORMULA"
   ],
-  "columnUpdatedAt": 1762399457677,
+  "columnUpdatedAt": 1762742838624,
   "columnWidthMap": {
     "Agreement_Number": 174,
     "Amount__Baht_": 144,

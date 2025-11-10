@@ -41,16 +41,16 @@
     "COMPANY_PROFILE_AGREEMENT_NO",
     "COMPANY_PROFILE_PERIOD_START",
     "COMPANY_PROFILE_PERIOD_END",
+    "INVOICE_GROUP_ID",
     "PRODUCT_TYPE_TH",
     "STATUS",
     "CREATE_DATE",
     "TOTAL_RECORDS",
     "QUANTITY",
     "INVENTORY_ID",
-    "FORMULA",
-    "INVOICE_GROUP_ID"
+    "FORMULA"
   ],
-  "columnUpdatedAt": 1762399618822,
+  "columnUpdatedAt": 1762742849252,
   "columnWidthMap": {
     "Base_on": 562,
     "By": 196,
