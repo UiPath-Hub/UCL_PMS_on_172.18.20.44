@@ -2,7 +2,7 @@ export default {
 	userSession:"userSession",
 	ERPSyncConfig:{
 		masterName:"RPA_SYNC_STATUS",
-		syncAlert:{unhealthy:"ERP-Sync Service was not available.",apiError:"RPA access is problematic, data synchronization may have errors."},
+		syncAlert:{unhealthy:"Save success, but the ERP-Sync Service is not available. Data will be on pending status until the service is available.",apiError:"Save success, but the ERP-Sync Service processing is problematic, and data synchronization with UiPath Orchestrator may have errors."},
 		syncErrorEscape:appsmith.currentPageName,
 		syncStatusIconMap:{
 			"Pending Add":{status:"Pending Add",icon:"time",color:"#eab308"},
@@ -20,10 +20,15 @@ export default {
 			parameter_tableName:"table_name",
 			healthCheck_returnOKstatus:"ok",
 			healthCheck_checkReturnName:"status",
+			statusCheck_returnOKstatus:'successful',
+			statusCheck_returnFailedStatus:'failed',
+			statusCheck_checkReturnName:"status",
 			sync_checkReturnName:"success",
 			sync_returnOKstatus:true,
+			sync_checkReturnName_ID: "id",
 			healthCheck_returnCompanyIDName:"COMPANY_ID",
-			healthCheck_returnContactIDName:"CONTACT_ID"
+			healthCheck_returnContactIDName:"CONTACT_ID",
+			portal_status:"status"
 		}
 	}
 

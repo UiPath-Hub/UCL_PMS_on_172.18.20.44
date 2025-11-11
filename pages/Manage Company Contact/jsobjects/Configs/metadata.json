@@ -56,6 +56,14 @@
         "value": "\"Company Contact\""
       },
       {
+        "name": "CompanyPageName",
+        "value": "'Manage Company'"
+      },
+      {
+        "name": "ContactDashboardPageName",
+        "value": "'Contact Person Dashboard'"
+      },
+      {
         "name": "newCompanyTempFlag",
         "value": "\"newCompanyTempFlag\""
       },
@@ -68,8 +76,24 @@
         "value": "\"\""
       },
       {
+        "name": "syncdErrorMessage",
+        "value": "\"\""
+      },
+      {
+        "name": "MaxHTTPResquestOfCheckingStatus",
+        "value": "3"
+      },
+      {
+        "name": "PollingDelayInMilliseconds",
+        "value": "800"
+      },
+      {
         "name": "pageState",
         "value": "{\n  ManageContact: 0,\n  AddContactTo: 1,\n  EditContactOf: 2,\n  NewContactAndBack: 3,\n  CurrentState: 0\n}"
+      },
+      {
+        "name": "syncedErrorEscape",
+        "value": "{\n  pageName: appsmith.currentPageName,\n  params: {},\n  SelectContact: {\n    trigger: false\n  }\n}"
       }
     ]
   }

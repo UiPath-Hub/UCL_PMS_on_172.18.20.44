@@ -43,7 +43,7 @@
   "shouldTruncate": false,
   "text": "{{(HealthCheck.data==undefined||HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_checkReturnName] !=appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnOKstatus) ?appsmith.store.RPA_SYNC_STATUS.syncAlert.unhealthy:appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError}}",
   "textAlign": "LEFT",
-  "textColor": "#b91c1c",
+  "textColor": "#231f20",
   "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

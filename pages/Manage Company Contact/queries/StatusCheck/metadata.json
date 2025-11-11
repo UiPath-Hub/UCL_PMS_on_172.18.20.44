@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "68e5e9a655eda7018e8c4294_26a04b06-7eaf-403f-85be-873e818f916d",
-  "id": "Manage Company_HealthCheck",
+  "gitSyncId": "68e5e9a655eda7018e8c4294_8cb776cf-f111-4f65-9b2c-a899de60dd6c",
+  "id": "Manage Company Contact_StatusCheck",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -12,23 +12,18 @@
       "formData": {
         "apiContentType": "none"
       },
-      "headers": [
-        {
-          "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_companyID}}",
-          "value": "{{this.params.COMPANY_ID}}"
-        }
-      ],
+      "headers": [],
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/{{appsmith.store.RPA_SYNC_STATUS.constantKeys.portal_healthCheck}}",
+      "path": "/{{appsmith.store.RPA_SYNC_STATUS.constantKeys.portal_status}}/{{this.params.ID}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
       "queryParameters": [],
-      "timeoutInMillisecond": 500
+      "timeoutInMillisecond": 1000
     },
     "confirmBeforeExecute": false,
     "datasource": {
@@ -39,18 +34,12 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "headers[0].value"
-      },
-      {
-        "key": "headers[0].key"
-      },
-      {
         "key": "path"
       }
     ],
-    "name": "HealthCheck",
-    "pageId": "Manage Company",
+    "name": "StatusCheck",
+    "pageId": "Manage Company Contact",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

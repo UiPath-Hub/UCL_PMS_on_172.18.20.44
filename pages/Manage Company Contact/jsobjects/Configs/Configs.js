@@ -11,10 +11,15 @@ export default {
 	forceLogin:false,
 	errorAlert:"",
 	pageName:"Company Contact",
+	CompanyPageName:'Manage Company',
+	ContactDashboardPageName:'Contact Person Dashboard',
 	newCompanyTempFlag:"newCompanyTempFlag",
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
+	syncdErrorMessage:"",
+	MaxHTTPResquestOfCheckingStatus:3,
+	PollingDelayInMilliseconds:800,
 	pageState:{ManageContact:0,AddContactTo:1,EditContactOf:2,NewContactAndBack:3,CurrentState:0},
-	syncErrorEscape:()=> appsmith.currentPageName,
-	test:()=>appsmith.URL.fullPath.substring( appsmith.URL.fullPath.indexOf("?"),appsmith.URL.fullPath.length)
+	syncedErrorEscape:{pageName:appsmith.currentPageName,params:{},SelectContact:{trigger:false}},
+	test:()=>appsmith.URL.queryParams
 }

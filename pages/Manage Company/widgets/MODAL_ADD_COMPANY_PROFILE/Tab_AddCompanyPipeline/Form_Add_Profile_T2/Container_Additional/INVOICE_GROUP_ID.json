@@ -47,7 +47,7 @@
   "isRequired": "{{Current_Profile.INVOICE_GROUP_ID.required}}",
   "isVisible": true,
   "key": "a26yk5ycjr",
-  "label": "Invoice group No.",
+  "label": "Merge Group",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
