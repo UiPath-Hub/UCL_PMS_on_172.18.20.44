@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 41,
+  "bottomRow": 43,
   "boxShadow": "none",
   "defaultText": "{{_.trim(DefaultCompany.TAX_ID.data)}}",
   "dynamicBindingPathList": [
@@ -88,7 +88,7 @@
   "shouldAllowAutofill": false,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 37,
+  "topRow": 39,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "4nags414x1",

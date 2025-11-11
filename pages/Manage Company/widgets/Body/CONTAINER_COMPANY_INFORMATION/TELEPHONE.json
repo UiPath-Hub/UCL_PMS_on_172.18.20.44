@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 29,
+  "bottomRow": 31,
   "boxShadow": "none",
   "defaultText": "{{DefaultCompany.TELEPHONE.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 62,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 25,
+  "topRow": 27,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "i2rm4wca5f",
