@@ -54,6 +54,7 @@ export default {
 						}
 						if (statusState === this.GETstate.failed) {
 							// ล้มเหลวเนื่องจากสถานะจาก Server หรือจำนวนครั้ง Polling เกิน
+							Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
 							return false; 
 						}
 						await this.delay(Configs.PollingDelayInMilliseconds); 
@@ -63,6 +64,7 @@ export default {
 
 					// ในทางทฤษฎีโค้ดไม่ควรมาถึงตรงนี้ แต่ป้องกันไว้
 					if (statusState === this.GETstate.finish) return true;
+					Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
 					return false; // Fail safe
 
 				}
@@ -70,8 +72,8 @@ export default {
 			Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.unhealthy
 			return false; // Health check หรือ Trigger Sync ล้มเหลว
 		}catch(err){
-			console.error("TriggerSync failed:", err);
-			Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
+			console.error("Trigger Sync failed:", err);
+			Configs.syncdErrorMessage = Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.unhealthy
 			return false; // Error ระหว่าง Health check หรือ Trigger Sync
 		}
 	},
@@ -283,7 +285,7 @@ export default {
 					const close=async()=> {
 						await closeModal(MODAL_DELETE.name);
 					}
-					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status)){
+					if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
 						await close();
 						//Go back to Manage Company
 						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
