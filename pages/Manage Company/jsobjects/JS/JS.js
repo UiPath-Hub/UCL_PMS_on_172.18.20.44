@@ -133,6 +133,7 @@ export default {
 						}
 						if (statusState === this.GETstate.failed) {
 							// ล้มเหลวเนื่องจากสถานะจาก Server หรือจำนวนครั้ง Polling เกิน
+							Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
 							return false; 
 						}
 						await this.delay(Configs.PollingDelayInMilliseconds); 
@@ -142,13 +143,16 @@ export default {
 
 					// ในทางทฤษฎีโค้ดไม่ควรมาถึงตรงนี้ แต่ป้องกันไว้
 					if (statusState === this.GETstate.finish) return true;
+					Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
 					return false; // Fail safe
 
 				}
 			}
+			Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.unhealthy
 			return false; // Health check หรือ Trigger Sync ล้มเหลว
 		}catch(err){
 			console.error("TriggerSync failed:", err);
+			Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.unhealthy
 			return false; // Error ระหว่าง Health check หรือ Trigger Sync
 		}
 	},

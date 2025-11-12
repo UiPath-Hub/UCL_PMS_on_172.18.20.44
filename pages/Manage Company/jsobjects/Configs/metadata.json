@@ -88,7 +88,7 @@
         "value": "{\n  THIRD_PARTY: 1,\n  COMPANY: 0\n}"
       },
       {
-        "name": "syncAlert",
+        "name": "syncdErrorMessage",
         "value": "\"\""
       },
       {

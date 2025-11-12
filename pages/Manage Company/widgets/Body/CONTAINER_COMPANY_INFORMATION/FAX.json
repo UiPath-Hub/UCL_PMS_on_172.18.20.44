@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 39,
+  "bottomRow": 37,
   "boxShadow": "none",
   "defaultText": "{{DefaultCompany.FAX.data}}",
   "dynamicBindingPathList": [
@@ -71,7 +71,7 @@
   "rightColumn": 62,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 35,
+  "topRow": 33,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "jpfvs6vgm4",
