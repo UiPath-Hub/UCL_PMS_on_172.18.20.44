@@ -98,6 +98,10 @@
       {
         "name": "FLOOR_ENABLE",
         "value": "{\n  ...FLOOR_ENABLE,\n  data: FLOOR_ENABLE.isChecked\n}"
+      },
+      {
+        "name": "UOM",
+        "value": "{\n  ...UOM,\n  data: UOM.selectedOptionValue\n}"
       }
     ]
   }
