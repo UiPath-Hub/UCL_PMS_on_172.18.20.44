@@ -1,6 +1,6 @@
 export default {
 	initDefault:async ()=>{
-		if(appsmith.store[Configs.newCompanyTempFlag] != undefined && appsmith.URL.queryParams[ Configs.editCompanyFlag]==undefined){
+		if(Configs.isTempPage()){
 			//temp and load editing before manage contacts
 			let InitializationEntityList = [{ENTITY:Default_COMPANY_BILLING,DATA:appsmith.store[Configs.newCompanyTempFlag]}];
 			await GlobalFunctions.initDefaultV2(InitializationEntityList);
@@ -14,6 +14,7 @@ export default {
 
 		}else{
 			//New
+			console.log("new billing")
 			let InitializationEntityList = [{ENTITY:Default_COMPANY_BILLING,DATA:{}}];
 			await GlobalFunctions.initDefaultV2(InitializationEntityList);
 			//await SELECT_DISTRICTs_BILLING.run();
