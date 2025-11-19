@@ -55,7 +55,7 @@ export default {
 	},
 
 	initDefault:async ()=>{
-		if(appsmith.store[Configs.newCompanyTempFlag] != undefined && appsmith.URL.queryParams[ Configs.editCompanyFlag]=="TEMP"){
+		if(Configs.isTempPage()){
 			//temp and load editing before manage contacts
 			const initContact =async ()=>{
 				//load contact temp

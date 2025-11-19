@@ -11,6 +11,7 @@ export default {
 	errorAlert:"",
 	pageName:"Manage Company",
 	ROFRInventoryItem:[],
+	isTempPage:()=>Boolean(appsmith.store[Configs.newCompanyTempFlag] != undefined && appsmith.URL.queryParams[ Configs.editCompanyFlag]=="TEMP"),
 	defaultTap:"Company Contact",
 	requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
