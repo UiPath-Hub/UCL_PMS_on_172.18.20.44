@@ -29,7 +29,7 @@
     }
   ],
   "isDefaultClickDisabled": true,
-  "isDisabled": "{{!Boolean(TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow.INVENTORY_ID)}}",
+  "isDisabled": "{{!Boolean(TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow?.INVENTORY_ID)}}",
   "isLoading": false,
   "isVisible": true,
   "key": "6fgfm4o8oh",
