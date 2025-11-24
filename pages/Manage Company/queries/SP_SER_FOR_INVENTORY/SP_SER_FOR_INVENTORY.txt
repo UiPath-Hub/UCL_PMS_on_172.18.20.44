@@ -1,4 +1,4 @@
-EXECUTE  [dbo].[SER_SEARCH_FOR_PRODUCT_INVENTORY_V3_DEV] 
+EXECUTE  [dbo].[SER_SEARCH_FOR_PRODUCT_INVENTORY] 
    @pFloorNo = null
   ,@pInventoryName = {{INVENTORY_NAME.text=="" || INVENTORY_NAME.text == undefined?null:INVENTORY_NAME.text}}
   ,@pProductType ={{INVENTORY_TYPE.selectedOptionValue==""||INVENTORY_TYPE.selectedOptionValue==undefined?null:INVENTORY_TYPE.selectedOptionValue}}

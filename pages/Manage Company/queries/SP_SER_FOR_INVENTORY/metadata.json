@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE  [dbo].[SER_SEARCH_FOR_PRODUCT_INVENTORY_V3_DEV] \n   @pFloorNo = null\n  ,@pInventoryName = {{INVENTORY_NAME.text==\"\" || INVENTORY_NAME.text == undefined?null:INVENTORY_NAME.text}}\n  ,@pProductType ={{INVENTORY_TYPE.selectedOptionValue==\"\"||INVENTORY_TYPE.selectedOptionValue==undefined?null:INVENTORY_TYPE.selectedOptionValue}}\n  ,@pInventoryStatus = 'Active'\n\t,@SHOW_FREESPACE = 0\n\t,@IS_SERVING = null\n\t,@READY_FOR_SERVE = 1\n\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t,@SERVING_FOR_COMPANY = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}\n\t\n\n\n",
+      "body": "EXECUTE  [dbo].[SER_SEARCH_FOR_PRODUCT_INVENTORY] \n   @pFloorNo = null\n  ,@pInventoryName = {{INVENTORY_NAME.text==\"\" || INVENTORY_NAME.text == undefined?null:INVENTORY_NAME.text}}\n  ,@pProductType ={{INVENTORY_TYPE.selectedOptionValue==\"\"||INVENTORY_TYPE.selectedOptionValue==undefined?null:INVENTORY_TYPE.selectedOptionValue}}\n  ,@pInventoryStatus = 'Active'\n\t,@SHOW_FREESPACE = 0\n\t,@IS_SERVING = null\n\t,@READY_FOR_SERVE = 1\n\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t,@SERVING_FOR_COMPANY = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}\n\t\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
