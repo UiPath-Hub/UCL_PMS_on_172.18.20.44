@@ -29,6 +29,10 @@
         {
           "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_status}}",
           "value": "{{this.params.status}}"
+        },
+        {
+          "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_companyID}}",
+          "value": "{{this.params.COMPANY_ID}}"
         }
       ],
       "httpMethod": "POST",
@@ -59,6 +63,9 @@
       },
       {
         "key": "path"
+      },
+      {
+        "key": "headers[3].value"
       }
     ],
     "name": "TriggerSync",
