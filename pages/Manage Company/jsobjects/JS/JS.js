@@ -2,17 +2,19 @@ export default {
 	afterSyncErrorNotify:async ()=>{
 		const pageName = Configs.syncedErrorEscape.pageName;
 		const params = {...Configs.syncedErrorEscape.params};
+		const nextModal = Configs.syncedErrorEscape.nextModal;
 		Configs.syncedErrorEscape.pageName = appsmith.currentPageName;
 		Configs.syncedErrorEscape.params = {};
-
-		if(pageName===appsmith.currentPageName){
+		Configs.syncedErrorEscape.nextModal = "";
+		
+		if( nextModal != undefined){
+			showModal(nextModal);
+		}else if(pageName===appsmith.currentPageName){
 			await navigateTo(appsmith.currentPageName,params);
 			navigateTo(appsmith.URL.fullPath,{});
 		}else{
 			navigateTo(pageName,params);
 		}
-
-
 	},
 	sortPriorityContact:()=>{
 		Configs.showCompanyContact = Configs.showCompanyContact.sort((a, b) => (b["Contact ID"]===Configs.PRIORITY_CONTACT_ID?1:0) - (a["Contact ID"]===Configs.PRIORITY_CONTACT_ID?1:0));
@@ -96,7 +98,12 @@ export default {
 		if(retriesCount>= Configs.MaxHTTPResquestOfCheckingStatus) return this.GETstate.failed; // ใช้ this.GETstate
 
 		// StatusCheck คือ API call ไปที่ /status/:id
-		await StatusCheck.run({ID:eventID}); 
+		try{
+			await StatusCheck.run({ID:eventID}); 
+		}catch(err){
+			console.log(err);
+		}
+		
 
 		// สมมติว่า StatusCheck.data มีโครงสร้างตาม Response ที่ออกแบบไว้
 		if(StatusCheck.data && StatusCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_checkReturnName]=== appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_returnOKstatus){
@@ -172,8 +179,9 @@ export default {
 						}else{
 							if(!_1_COMPANY_NEW.data[0].COMPANY_ID) return showAlert("Unknown Company ID","error");
 							await close();
-							Configs.syncedErrorEscape.pageName = appsmith.currentPageName;
+							//Configs.syncedErrorEscape.pageName = appsmith.currentPageName;
 							Configs.syncedErrorEscape.params = {[Configs.editCompanyFlag]:_1_COMPANY_NEW.data[0].COMPANY_ID}
+							Configs.syncedErrorEscape.nextModal = MODAL_ADD_NEXT.name;
 							showModal(MODAL_ALTER_SYNC.name);
 						}
 					}else{
@@ -196,6 +204,7 @@ export default {
 							await close();
 							Configs.syncedErrorEscape.pageName = appsmith.URL.fullPath;
 							Configs.syncedErrorEscape.params = {}
+							Configs.syncedErrorEscape.nextModal = MODAL_continueEditing.name;
 							showModal(MODAL_ALTER_SYNC.name);
 						}
 					}else{
@@ -354,6 +363,7 @@ export default {
 						if(Configs.IS_THIRD_PARTY){
 							Configs.syncedErrorEscape.pageName = "Third Party Dashboard";
 							Configs.syncedErrorEscape.params = {}
+						
 						}
 						else{
 							Configs.syncedErrorEscape.pageName = "Company Dashboard";

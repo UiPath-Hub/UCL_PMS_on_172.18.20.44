@@ -20,6 +20,6 @@ export default {
 	MaxHTTPResquestOfCheckingStatus:3,
 	PollingDelayInMilliseconds:800,
 	pageState:{ManageContact:0,AddContactTo:1,EditContactOf:2,NewContactAndBack:3,CurrentState:0},
-	syncedErrorEscape:{pageName:appsmith.currentPageName,params:{},SelectContact:{trigger:false}},
+	syncedErrorEscape:{pageName:appsmith.currentPageName,nextModal:"",params:{},SelectContact:{trigger:false}},
 	test:()=>appsmith.URL.queryParams
 }

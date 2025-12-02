@@ -3,10 +3,14 @@ export default {
 		const pageName = Configs.syncedErrorEscape.pageName;
 		const params = {...Configs.syncedErrorEscape.params};
 		const SelectContact = {...Configs.syncedErrorEscape.SelectContact};
+		const nextModal = Configs.syncedErrorEscape.nextModal;
 		Configs.syncedErrorEscape.SelectContact = {trigger: false};
 		Configs.syncedErrorEscape.pageName = appsmith.currentPageName;
 		Configs.syncedErrorEscape.params = {};
-		if(SelectContact != undefined && SelectContact.trigger && SelectContact.ID){
+		Configs.syncedErrorEscape.nextModal ="";
+		if(nextModal != undefined){
+			showModal(nextModal);
+		}else if(SelectContact != undefined && SelectContact.trigger && SelectContact.ID){
 			this.onClick_Bttn_SelectContact(SelectContact.ID);
 		}else{
 			if(pageName===appsmith.currentPageName){
@@ -25,12 +29,18 @@ export default {
 		if(retriesCount>= Configs.MaxHTTPResquestOfCheckingStatus) return this.GETstate.failed; // ใช้ this.GETstate
 
 		// StatusCheck คือ API call ไปที่ /status/:id
-		await StatusCheck.run({ID:eventID}); 
+		try{
+			await StatusCheck.run({ID:eventID}); 
+		}catch(err){
+			console.log(err);
+		}
+		
 
 		// สมมติว่า StatusCheck.data มีโครงสร้างตาม Response ที่ออกแบบไว้
 		if(StatusCheck.data && StatusCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_checkReturnName]=== appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_returnOKstatus){
 			return this.GETstate.finish;
 		}else if(StatusCheck.data && StatusCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_checkReturnName]=== appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_returnFailedStatus){
+			console.log("failed")
 			return this.GETstate.failed;
 		}else{
 			return this.GETstate.loop;
@@ -40,7 +50,7 @@ export default {
 
 		try{
 			// 1. Health Check
-			await HealthCheck.run({ID:validateID});
+			await HealthCheck.run({ID:validateID,COMPANY_ID:appsmith.URL.queryParams[Configs.editCompany]});
 			if(HealthCheck.data && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_checkReturnName]===appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnOKstatus && HealthCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.healthCheck_returnContactIDName] === validateID){
 				// 2. Trigger Sync (ส่ง Transaction เข้าคิว)
 				await TriggerSync.run({ID:validateID,status:status,COMPANY_ID:appsmith.URL.queryParams[Configs.editCompany]});
@@ -56,6 +66,7 @@ export default {
 						if (statusState === this.GETstate.failed) {
 							// ล้มเหลวเนื่องจากสถานะจาก Server หรือจำนวนครั้ง Polling เกิน
 							Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
+							console.log("loop failed")
 							return false; 
 						}
 						await this.delay(Configs.PollingDelayInMilliseconds); 
@@ -65,6 +76,7 @@ export default {
 
 					// ในทางทฤษฎีโค้ดไม่ควรมาถึงตรงนี้ แต่ป้องกันไว้
 					if (statusState === this.GETstate.finish) return true;
+					console.log("final failed")
 					Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
 					return false; // Fail safe
 
