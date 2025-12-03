@@ -19,7 +19,7 @@
         },
         {
           "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_tableName}}",
-          "value": "PMS_COMPANY_CONTACT_LM"
+          "value": "PMS_CONTACT_PERSON_DETAIL_LM"
         },
         {
           "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_companyID}}",
