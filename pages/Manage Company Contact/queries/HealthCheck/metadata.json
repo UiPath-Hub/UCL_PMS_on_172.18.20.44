@@ -16,6 +16,14 @@
         {
           "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_companyContacID}}",
           "value": "{{this.params.ID}}"
+        },
+        {
+          "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_tableName}}",
+          "value": "PMS_CONTACT_PERSON_DETAIL_LM"
+        },
+        {
+          "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_companyID}}",
+          "value": "{{this.params.COMPANY_ID}}"
         }
       ],
       "httpMethod": "GET",
@@ -39,13 +47,22 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "headers[0].value"
-      },
-      {
         "key": "path"
       },
       {
         "key": "headers[0].key"
+      },
+      {
+        "key": "headers[1].key"
+      },
+      {
+        "key": "headers[0].value"
+      },
+      {
+        "key": "headers[2].key"
+      },
+      {
+        "key": "headers[2].value"
       }
     ],
     "name": "HealthCheck",

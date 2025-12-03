@@ -93,7 +93,7 @@
       },
       {
         "name": "syncedErrorEscape",
-        "value": "{\n  pageName: appsmith.currentPageName,\n  params: {}\n}"
+        "value": "{\n  pageName: appsmith.currentPageName,\n  nextModal: \"\",\n  params: {}\n}"
       },
       {
         "name": "IS_THIRD_PARTY",

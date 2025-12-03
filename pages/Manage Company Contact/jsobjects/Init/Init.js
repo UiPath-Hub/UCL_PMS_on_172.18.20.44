@@ -7,6 +7,10 @@ export default {
 		closeModal(Modal_Session_detail.name);
 		closeModal(Modal_ErrorAlert.name);
 		closeModal(MODAL_SAVE.name);
+		closeModal(MODAL_ALTER_SYNC.name);
+		closeModal(MODAL_DELETE.name);
+		closeModal(MODAL_ADD_NEXT.name);
+		closeModal(Modal_Search_Contact.name);
 		setTimeout(CONTAINER_CONTACT_DETAIL.setVisibility(true),true);
 		if(!await GlobalFunctions.sessionCheck())navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true)) navigateTo('Login', {}, 'SAME_WINDOW');
@@ -51,7 +55,7 @@ export default {
 	initDefault:async ()=>{
 		if(appsmith.URL.queryParams[Configs.editContacePerson] !== undefined){
 			
-			await _00_SP_SELECT_FOR_CONTACT.run({COMPANY_CONTACT_ID:appsmith.URL.queryParams[Configs.editContacePerson]})
+			await _00_SP_SELECT_FOR_CONTACT.run({COMPANY_CONTACT_ID:appsmith.URL.queryParams[Configs.editContacePerson],COMPANY_ID:appsmith.URL.queryParams.editCompany})
 			let data = _00_SP_SELECT_FOR_CONTACT.data[0];
 			if(Configs.pageState.CurrentState==Configs.pageState.EditContactOf){
 				await _01_SELECT_CONTACT_PERSON_DE.run();

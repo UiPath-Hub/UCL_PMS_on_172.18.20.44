@@ -21,7 +21,7 @@ export default {
 	contactPageState:{ManageContact:0,AddContactTo:1,EditContactOf:2,NewContactAndBack:3,CurrentState:0},
 	companyPageState:{THIRD_PARTY:1,COMPANY:0},
 	syncdErrorMessage:"",
-	syncedErrorEscape:{pageName:appsmith.currentPageName,params:{}},
+	syncedErrorEscape:{pageName:appsmith.currentPageName,nextModal:"",params:{}},
 	IS_THIRD_PARTY: Boolean(_0_SELECT_FOR_COMPANY_BY_ID.data?_0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY===null?true:_0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY: appsmith.store.IS_THIRD_PARTY==0?false:true),
 	PRIORITY_CONTACT_ID:"",
 	MaxHTTPResquestOfCheckingStatus:3,

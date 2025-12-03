@@ -16,6 +16,10 @@
         {
           "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_companyID}}",
           "value": "{{this.params.COMPANY_ID}}"
+        },
+        {
+          "key": "{{appsmith.store.RPA_SYNC_STATUS.constantKeys.parameter_tableName}}",
+          "value": "PMS_COMPANY_LM"
         }
       ],
       "httpMethod": "GET",
@@ -46,6 +50,9 @@
       },
       {
         "key": "path"
+      },
+      {
+        "key": "headers[1].key"
       }
     ],
     "name": "HealthCheck",
