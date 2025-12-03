@@ -4,7 +4,7 @@
   "animateLoading": true,
   "bottomRow": 9,
   "boxShadow": "none",
-  "defaultOptionValue": "{{DefaultCompany.COMPANY_LANGUAGE_TYPE.data}}",
+  "defaultOptionValue": "{{DefaultCompany.COMPANY_LANGUAGE_TYPE.data||\"TH\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
