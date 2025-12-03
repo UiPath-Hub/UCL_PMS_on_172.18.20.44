@@ -7,6 +7,8 @@ export default {
 		closeModal(Modal_ErrorAlert.name);
 		closeModal(Modal_NeedPriorityContact.name);
 		closeModal(MODAL_continueEditing.name);
+		closeModal(MODAL_ADD_NEXT.name);
+		closeModal(MODAL_ALTER_SYNC.name);
 		if(!await GlobalFunctions.sessionCheck())return navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true))return;
 
