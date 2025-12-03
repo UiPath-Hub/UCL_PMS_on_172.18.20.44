@@ -38,9 +38,10 @@
     "Email",
     "TOTAL_RECORDS",
     "Telephone",
+    "ID",
     "customColumn1"
   ],
-  "columnUpdatedAt": 1764754502283,
+  "columnUpdatedAt": 1764754985326,
   "columnWidthMap": {
     "Contact_Name": 310,
     "Email": 227,
@@ -100,6 +101,9 @@
     },
     {
       "key": "primaryColumns.Telephone.computedValue"
+    },
+    {
+      "key": "primaryColumns.ID.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -233,6 +237,40 @@
       "notation": "standard",
       "originalId": "Email",
       "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "ID": {
+      "alias": "ID",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = TABLE_CONTACT.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ID\"])) : ID })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ID",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "ID",
+      "notation": "standard",
+      "originalId": "ID",
+      "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
