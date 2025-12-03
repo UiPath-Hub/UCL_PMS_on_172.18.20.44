@@ -101,10 +101,8 @@ export default {
 	onClick_Bttn_NewContact:async()=>{
 		await closeModal(Modal_Search_Contact.name);
 		let editCompanyID = appsmith.URL.queryParams[Configs.editCompany];
-		//editCompanyID = editCompanyID?editCompanyID!="TEMP"?editCompanyID:undefined:undefined;
 		await navigateTo(appsmith.currentPageName, {...appsmith.URL.queryParams,AS:Configs.pageState.NewContactAndBack,[Configs.editContacePerson]:undefined,[Configs.editCompany]:editCompanyID }, 'SAME_WINDOW');
 		navigateTo(appsmith.URL.fullPath, {}, 'SAME_WINDOW');
-		//Init.pageLoad();
 	},
 	onClick_Bttn_SearchContactForAdd:async ()=>{
 		await resetWidget(Table_SearchResults_Contact.widgetName);
@@ -171,21 +169,13 @@ export default {
 					const close= async()=>{
 						await Promise.all([showAlert("Save success.","success"),closeModal(MODAL_SAVE.name)]) 
 					}
-					if(appsmith.URL.queryParams[Configs.editCompany] != undefined){
-						if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
-							await close();
-							//go back to dashboard						
-							navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.ContactDashboardPageName, {...appsmith.URL.queryParams}, 'SAME_WINDOW');
-						}else{
-							await close();
-							Configs.syncedErrorEscape.pageName= appsmith.URL.fullPath;
-							showModal(MODAL_ALTER_SYNC.name);
-						}
-					}else{
-						await close();
-						//go back to dashboard						
+					const onSuccessAll = async()=>{
+						//go back to dashboard
 						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.ContactDashboardPageName, {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 					}
+					await close();
+					//go back to dashboard	
+					await onSuccessAll();	
 
 				}
 				else{
@@ -205,7 +195,7 @@ export default {
 						//Go back to Manage Company
 						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 					}
-					if(appsmith.URL.queryParams[Configs.editCompany] != undefined){
+					if(appsmith.URL.queryParams[Configs.editCompany] != undefined && appsmith.URL.queryParams[Configs.editCompany]!="TEMP"){
 						if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
 							await close();
 							await onSuccessAll();
@@ -241,7 +231,7 @@ export default {
 						//Go back to Manage Company
 						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 					}
-					if(appsmith.URL.queryParams[Configs.editCompany] != undefined){
+					if(appsmith.URL.queryParams[Configs.editCompany] != undefined && appsmith.URL.queryParams[Configs.editCompany]!="TEMP"){
 						if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
 							await close();
 							await onSuccessAll();
@@ -304,7 +294,7 @@ export default {
 						//Go back to Manage Company
 						navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.CompanyPageName,{...appsmith.URL.queryParams} , 'SAME_WINDOW');
 					}
-					if(appsmith.URL.queryParams[Configs.editCompany] != undefined){
+					if(appsmith.URL.queryParams[Configs.editCompany] != undefined && appsmith.URL.queryParams[Configs.editCompany]!="TEMP"){
 						if(await this.TriggerSync(COMPANY_CONTACT_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
 							await close();
 							await onSuccessAll();
