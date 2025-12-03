@@ -18,6 +18,9 @@
     },
     {
       "key": "buttonColor"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -26,6 +29,9 @@
     },
     {
       "key": "buttonColor"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -34,7 +40,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{appsmith.URL.queryParams.editCompany!= undefined}}",
   "key": "93uojy2qf6",
   "leftColumn": 48,
   "minWidth": 120,

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[SELECT_COMPANY_CONTACT_BY_ID] \n   @COMPANY_CONTACT_ID = {{this.params.COMPANY_CONTACT_ID}}\n\n\n",
+      "body": "EXECUTE [dbo].[SELECT_COMPANY_CONTACT_BY_ID] \n   @COMPANY_CONTACT_ID = {{this.params.COMPANY_CONTACT_ID}},\n@COMPANY_ID = {{this.params.COMPANY_ID}}\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

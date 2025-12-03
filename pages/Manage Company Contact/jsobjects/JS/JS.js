@@ -66,7 +66,6 @@ export default {
 						if (statusState === this.GETstate.failed) {
 							// ล้มเหลวเนื่องจากสถานะจาก Server หรือจำนวนครั้ง Polling เกิน
 							Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
-							console.log("loop failed")
 							return false; 
 						}
 						await this.delay(Configs.PollingDelayInMilliseconds); 
@@ -76,7 +75,6 @@ export default {
 
 					// ในทางทฤษฎีโค้ดไม่ควรมาถึงตรงนี้ แต่ป้องกันไว้
 					if (statusState === this.GETstate.finish) return true;
-					console.log("final failed")
 					Configs.syncdErrorMessage = appsmith.store.RPA_SYNC_STATUS.syncAlert.apiError
 					return false; // Fail safe
 
