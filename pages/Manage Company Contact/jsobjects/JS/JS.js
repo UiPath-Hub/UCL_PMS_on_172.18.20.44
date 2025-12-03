@@ -8,7 +8,7 @@ export default {
 		Configs.syncedErrorEscape.pageName = appsmith.currentPageName;
 		Configs.syncedErrorEscape.params = {};
 		Configs.syncedErrorEscape.nextModal ="";
-		if(nextModal != undefined){
+		if(nextModal != "" && nextModal != undefined){
 			showModal(nextModal);
 		}else if(SelectContact != undefined && SelectContact.trigger && SelectContact.ID){
 			this.onClick_Bttn_SelectContact(SelectContact.ID);
@@ -363,5 +363,5 @@ export default {
 		else navigateTo(appsmith.store.PAGES_QUEUE[0]||Configs.ContactDashboardPageName, {...appsmith.URL.queryParams}, 'SAME_WINDOW');
 
 	},
-	test:()=>{return appsmith.store.NEWBRANCH}
+	test:()=>{return Configs.syncedErrorEscape.nextModal != ""}
 }

@@ -7,7 +7,7 @@ export default {
 		Configs.syncedErrorEscape.params = {};
 		Configs.syncedErrorEscape.nextModal = "";
 		
-		if( nextModal != undefined){
+		if( nextModal != "" && nextModal != undefined){
 			showModal(nextModal);
 		}else if(pageName===appsmith.currentPageName){
 			await navigateTo(appsmith.currentPageName,params);
