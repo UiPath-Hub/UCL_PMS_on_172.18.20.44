@@ -6,6 +6,15 @@
     "pageId": "Manage Company",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": []
+    "variables": [
+      {
+        "name": "ConfirmMethod",
+        "value": "{\n  NEW: \"NEW\",\n  EDIT: \"EDIT\"\n}"
+      },
+      {
+        "name": "editRemarkKey",
+        "value": "\"editRemarkKey\""
+      }
+    ]
   }
 }

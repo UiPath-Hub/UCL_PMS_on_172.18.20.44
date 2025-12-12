@@ -1,0 +1,2 @@
+delete dbo.PMS_COMPANY_BILLING_REMARK_TBL_TEMP 
+					where [USER_TOKEN] = {{appsmith.store[Configs.userSession].TOKEN}};

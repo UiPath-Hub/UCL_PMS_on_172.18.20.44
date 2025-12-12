@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 44,
+  "bottomRowBeforeCollapse": 14,
+  "boxShadow": "none",
+  "buttonColor": "#ef4444",
+  "buttonVariant": "PRIMARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "trash",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{appsmith.store[JS_BILLING.editRemarkKey]!== undefined}}",
+  "key": "sjcapm6fvo",
+  "leftColumn": 46,
+  "minWidth": 50,
+  "mobileBottomRow": 93,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 39,
+  "mobileTopRow": 89,
+  "needsErrorInfo": false,
+  "onClick": "{{JS_BILLING.onDeleteRemark()}}",
+  "originalBottomRow": 44,
+  "originalTopRow": 40,
+  "parentColumnSpace": 19.8125,
+  "parentId": "eyoz9odsk8",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 48,
+  "tooltip": "Delete",
+  "topRow": 40,
+  "topRowBeforeCollapse": 10,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "mwwzx6kv0z",
+  "widgetName": "BTTN_DELETE_Remark"
+}

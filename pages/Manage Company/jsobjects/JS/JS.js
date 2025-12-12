@@ -165,38 +165,38 @@ export default {
 	},
 	confirmButtonClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
-			if(appsmith.URL.queryParams[Configs.editCompanyFlag]===undefined||appsmith.URL.queryParams[Configs.editCompanyFlag]==="TEMP"){
+			if(Configs.isNewCompany()){
 				//add
-				await _1_COMPANY_NEW.run();
-				if(_1_COMPANY_NEW.data != undefined && _1_COMPANY_NEW.data.length === 1){
-					if(_1_COMPANY_NEW.data[0]["RESULT_CODE"] === "DONE"){
+				await _01_COMPANY_NEW.run();
+				if(_01_COMPANY_NEW.data != undefined && _01_COMPANY_NEW.data.length === 1){
+					if(_01_COMPANY_NEW.data[0]["RESULT_CODE"] === "DONE"){
 						const close = async ()=>{
 							await Promise.all([removeValue(Configs.newCompanyTempFlag),closeModal(MODAL_SAVE.name),showAlert( "Save success","success")]) ;
 						}
-						if(await this.TriggerSync(_1_COMPANY_NEW.data[0].COMPANY_ID,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Add"].status)){
+						if(await this.TriggerSync(_01_COMPANY_NEW.data[0].COMPANY_ID,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Add"].status)){
 							await close();
 							showModal(MODAL_ADD_NEXT.name);
 						}else{
-							if(!_1_COMPANY_NEW.data[0].COMPANY_ID) return showAlert("Unknown Company ID","error");
+							if(!_01_COMPANY_NEW.data[0].COMPANY_ID) return showAlert("Unknown Company ID","error");
 							await close();
 							//Configs.syncedErrorEscape.pageName = appsmith.currentPageName;
-							Configs.syncedErrorEscape.params = {[Configs.editCompanyFlag]:_1_COMPANY_NEW.data[0].COMPANY_ID}
+							Configs.syncedErrorEscape.params = {[Configs.editCompanyFlag]:_01_COMPANY_NEW.data[0].COMPANY_ID}
 							Configs.syncedErrorEscape.nextModal = MODAL_ADD_NEXT.name;
 							showModal(MODAL_ALTER_SYNC.name);
 						}
 					}else{
-						showAlert( "Save failed: "+_1_COMPANY_NEW.data[0]["RESULT_MESSAGES"],"error");
+						showAlert( "Save failed: "+_01_COMPANY_NEW.data[0]["RESULT_MESSAGES"],"error");
 					}
 				}else showAlert( "Unknown result code","error");
 
 			}else{
 				//edit
-				await _2_COMPANY_UPDATE.run()
-				if(_2_COMPANY_UPDATE.data != undefined && _2_COMPANY_UPDATE.data.length === 1){
+				await _02_COMPANY_UPDATE.run()
+				if(_02_COMPANY_UPDATE.data != undefined && _02_COMPANY_UPDATE.data.length === 1){
 					const close=async ()=>{
 						await Promise.all([showAlert( "Save success","success"),closeModal(MODAL_SAVE.name)]);
 					}
-					if(_2_COMPANY_UPDATE.data[0]["RESULT_CODE"] === "DONE"){
+					if(_02_COMPANY_UPDATE.data[0]["RESULT_CODE"] === "DONE"){
 						if(await this.TriggerSync(COMPANY_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Edit"].status)){
 							await close();
 							showModal(MODAL_continueEditing.name);			
@@ -208,7 +208,7 @@ export default {
 							showModal(MODAL_ALTER_SYNC.name);
 						}
 					}else{
-						showAlert( "Save failed: "+(_2_COMPANY_UPDATE.data[0]["RESULT_MESSAGES"]),"error");
+						showAlert( "Save failed: "+(_02_COMPANY_UPDATE.data[0]["RESULT_MESSAGES"]),"error");
 					}
 				}else showAlert( "Unknown result code","error");
 			}
@@ -223,30 +223,8 @@ export default {
 		}
 	},
 	keepChange:async ()=>{
-		/*let datastr="data";
-		let changedData = {
-			...CONTAINER_COMPANY_INFORMATION[datastr],
-			...CONTAINER_COMPANY_INFO[datastr],
-			...Form_RemarkDetail[datastr],
-			...Form_BillingDetail[datastr],
-			"OVERWRITE_BILLING_ADDRESS":OVERWRITE_BILLING_ADDRESS.selectedOptionValue,
-			"COMPANY_PROVINCE_TH":PROVINCE_TH.selectedOptionValue,
-			"COMPANY_DISTRICT_TH":DISTRICT_TH.selectedOptionValue,
-			"COMPANY_SUB_DISTRICT_TH":SUB_DISTRICT_TH .selectedOptionValue,
-			"COMPANY_BUSINESS_TYPE_TH":await COMPANY_BUSINESS_TYPE.selectedOptionValue.split("/")[0]||"",
-			"COMPANY_BUSINESS_TYPE_EN":await COMPANY_BUSINESS_TYPE.selectedOptionValue.split("/")[1]||"",
-			"COMPANY_POSTAL_CODE":POSTAL_CODE.text,
-			"BILLING_COMPANY_SUB_DISTRICT_TH":BILLING_SUB_DISTRICT_TH.selectedOptionValue,
-			"BILLING_COMPANY_DISTRICT_TH":BILLING_DISTRICT_TH.selectedOptionValue,
-			"BILLING_COMPANY_PROVINCE_TH":BILLING_PROVINCE_TH.selectedOptionValue,
-			"BILLING_COMPANY_POSTAL_CODE":BILLING_POSTAL_CODE.text,
-			"BILLING_COMPANY_BUILDING_NAME_EN":BCOMPANY_BUILDING_NAME_EN.text,
-			"BILLING_COMPANY_BUILDING_NAME_TH":BCOMPANY_BUILDING_NAME_TH.text,
-			"BILLING_COMPANY_BUSINESS_TYPE_TH":await BILLING_COMPANY_BUSINESS_TYPE.selectedOptionValue.split("/")[0]||"",
-			"BILLING_COMPANY_BUSINESS_TYPE_EN":await BILLING_COMPANY_BUSINESS_TYPE.selectedOptionValue.split("/")[1]||""
-		}*/
 		let changedData = Object.fromEntries(
-			Object.entries({...Company_Widgets,...CompanyBilling_Widgets}).map(([key, value]) => [key, value.data])
+			Object.entries({...Company_Widgets,...CompanyBilling_Widgets}).map(([key, value]) => [key,value.data])
 		);
 		changedData.PRIORITY_CONTACT_ID = Configs.PRIORITY_CONTACT_ID??""
 		//return changedData;
@@ -255,21 +233,21 @@ export default {
 	onContactPageIndexChange:async ()=>{
 		if(appsmith.URL.queryParams[Configs.editCompanyFlag]&&appsmith.URL.queryParams[Configs.editCompanyFlag]!=="TEMP"){
 			//load LM
-			await _6_SELECT_FOR_CONTACT_BY_COMID.run();
-			if(_6_SELECT_FOR_CONTACT_BY_COMID.data != undefined)
+			await _06_SELECT_FOR_CONTACT_BY_COMI.run();
+			if(_06_SELECT_FOR_CONTACT_BY_COMI.data != undefined)
 			{
 				let newTable = [];
-				await Promise.all( _6_SELECT_FOR_CONTACT_BY_COMID.data.map(async (ele)=>{
+				await Promise.all( _06_SELECT_FOR_CONTACT_BY_COMI.data.map(async (ele)=>{
 					newTable.push(ele);
 				}));
 				storeValue("TABLE_COMPANY_CONTACT",newTable);
 			}
 		}else{
 			//load contact temp
-			await _5_SELECT_ALL_C_CONTACT_TEMP.run();
-			if(_5_SELECT_ALL_C_CONTACT_TEMP.data != undefined){
+			await _05_SELECT_ALL_C_CONTACT_TEMP.run();
+			if(_05_SELECT_ALL_C_CONTACT_TEMP.data != undefined){
 				let newTable = [];
-				await Promise.all(_5_SELECT_ALL_C_CONTACT_TEMP.data.map(async (ele)=>{
+				await Promise.all(_05_SELECT_ALL_C_CONTACT_TEMP.data.map(async (ele)=>{
 					newTable.push(ele);
 				}));
 				storeValue("TABLE_COMPANY_CONTACT",newTable);			
@@ -285,8 +263,8 @@ export default {
 		if(Object.keys(Company_Widgets).find((key)=>{
 			if(DefaultCompany[key] && DefaultCompany[key].data !== undefined){
 				const widgetData = Company_Widgets[key].data===undefined||Company_Widgets[key].data===null?"":Company_Widgets[key].data.toString();
-				const defaultData = _0_SELECT_FOR_COMPANY_BY_ID.data[0][key]===undefined||_0_SELECT_FOR_COMPANY_BY_ID.data[0][key]===null?
-							"":_0_SELECT_FOR_COMPANY_BY_ID.data[0][key].toString();
+				const defaultData = _00_SELECT_FOR_COMPANY_BY_ID.data[0][key]===undefined||_00_SELECT_FOR_COMPANY_BY_ID.data[0][key]===null?
+							"":_00_SELECT_FOR_COMPANY_BY_ID.data[0][key].toString();
 				if(defaultData != widgetData && Company_Widgets[key].isVisible && !Company_Widgets[key].isDisable){
 					console.log(key)
 					return true;
@@ -322,6 +300,7 @@ export default {
 							 params, 
 							 'SAME_WINDOW');
 	},
+
 	onNewContactClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
 			if(this.isFormChanges()) return showAlert("Please save the company changes before managing contacts.","warning");
@@ -347,12 +326,12 @@ export default {
 	},
 	confirmDeleteCompanyClick:async()=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){
-			await _3_COMPANY_DELETE.run();
-			if(_3_COMPANY_DELETE.data != undefined && _3_COMPANY_DELETE.data.length === 1){
+			await _03_COMPANY_DELETE.run();
+			if(_03_COMPANY_DELETE.data != undefined && _03_COMPANY_DELETE.data.length === 1){
 				const close=async ()=>{
 					await closeModal(MODAL_DELETE.name);
 				}
-				if(_3_COMPANY_DELETE.data[0]["RESULT_CODE"] === "DONE"){
+				if(_03_COMPANY_DELETE.data[0]["RESULT_CODE"] === "DONE"){
 					//showAlert( "Delete success","success");
 
 					if(await this.TriggerSync(COMPANY_ID.text,appsmith.store.RPA_SYNC_STATUS.syncStatusIconMap["Pending Delete"].status)){
@@ -372,7 +351,7 @@ export default {
 						showModal(MODAL_ALTER_SYNC.name);
 					}
 				}else{
-					showAlert( "Delete failed."+_3_COMPANY_DELETE.data[0]["RESULT_MESSAGES"],"error");
+					showAlert( "Delete failed."+_03_COMPANY_DELETE.data[0]["RESULT_MESSAGES"],"error");
 				}
 			}else showAlert( "Unknown result code","error");
 		}

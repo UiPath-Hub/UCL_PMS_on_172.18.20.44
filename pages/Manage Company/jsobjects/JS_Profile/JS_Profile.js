@@ -128,8 +128,8 @@ export default {
 		}
 
 		//return console.log(Params);
-		await _9_P_DELETE_PROFILE_LM.run(Params)
-		let Result = _9_P_DELETE_PROFILE_LM.data;
+		await _09_P_DELETE_PROFILE_LM.run(Params)
+		let Result = _09_P_DELETE_PROFILE_LM.data;
 		if(Result != undefined && Result.length === 1){
 			if(Result[0]["RESULT_CODE"] === "DONE"){
 				//await showAlert( "Add success","success");
@@ -156,8 +156,8 @@ export default {
 		}
 
 		//return console.log(Params);
-		await _7_P_INSERT_PROFILE_LM.run(Params)
-		let Result = _7_P_INSERT_PROFILE_LM.data;
+		await _07_P_INSERT_PROFILE_LM.run(Params)
+		let Result = _07_P_INSERT_PROFILE_LM.data;
 		if(Result != undefined && Result.length === 1){
 			if(Result[0]["RESULT_CODE"] === "DONE"){
 				await showAlert( "Add success","success");
@@ -184,8 +184,8 @@ export default {
 			QUANTITY: QUANTITY.text
 		}
 		//return console.log(Params);
-		_8_P_UPDATE_PROFILE_LM.run(Params).then(async ()=>{
-			let Result = _8_P_UPDATE_PROFILE_LM.data;
+		_08_P_UPDATE_PROFILE_LM.run(Params).then(async ()=>{
+			let Result = _08_P_UPDATE_PROFILE_LM.data;
 			if(Result != undefined && Result.length === 1){
 				if(Result[0]["RESULT_CODE"] === "DONE"){
 					await showAlert( "Save success","success");

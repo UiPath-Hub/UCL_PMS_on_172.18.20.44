@@ -56,6 +56,14 @@
         "value": "[]"
       },
       {
+        "name": "BILLING_REMARK_TYPE",
+        "value": "{\n  invoice: \"invoice\",\n  receipt: \"receipt\"\n}"
+      },
+      {
+        "name": "INVOICE_REMARK_TYPE",
+        "value": "{\n  GROUP: \"Group ID\",\n  PRODUCT: \"Product Type\"\n}"
+      },
+      {
         "name": "defaultTap",
         "value": "\"Company Contact\""
       },
@@ -74,6 +82,10 @@
       {
         "name": "showCompanyContact",
         "value": "[]"
+      },
+      {
+        "name": "RemarksOfInvoices",
+        "value": "{\n  data: [],\n  column: [{\n    display: \"BILLING_REMARK_ID\",\n    system: \"BILLING_REMARK_ID\"\n  }, {\n    display: \"Invoice Remark Type\",\n    system: \"INVOICE_REMARK_TYPE\"\n  }, {\n    display: \"Product Type Name\",\n    system: \"BILLING_REMARK_PRODUCT_TYPE_NAME\"\n  }, {\n    display: \"Group ID\",\n    system: \"BILLING_REMARK_GROUP_ID\"\n  }, {\n    display: \"Remark Detail\",\n    system: \"BILLING_REMARK_DETAIL\"\n  }],\n  filterData: (currentData, column) => {\n    return currentData.map(row => {\n      let filteredRow = {};\n      column.forEach(col => {\n        if (row[col.system]) filteredRow[col.display] = row[col.system]; else filteredRow[col.display] = \"\";\n      });\n      return filteredRow;\n    });\n  },\n  setDefault: column => {\n    const obj = {};\n    column.forEach(item => {\n      obj[item.display] = \"\";\n    });\n    return [obj];\n  }\n}"
       },
       {
         "name": "dateFormat",
@@ -97,7 +109,7 @@
       },
       {
         "name": "IS_THIRD_PARTY",
-        "value": "Boolean(_0_SELECT_FOR_COMPANY_BY_ID.data ? _0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY === null ? true : _0_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY : appsmith.store.IS_THIRD_PARTY == 0 ? false : true)"
+        "value": "Boolean(_00_SELECT_FOR_COMPANY_BY_ID.data ? _00_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY === null ? true : _00_SELECT_FOR_COMPANY_BY_ID.data[0].IS_THIRD_PARTY : appsmith.store.IS_THIRD_PARTY == 0 ? false : true)"
       },
       {
         "name": "PRIORITY_CONTACT_ID",

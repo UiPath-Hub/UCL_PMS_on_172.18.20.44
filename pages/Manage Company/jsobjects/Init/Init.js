@@ -61,9 +61,9 @@ export default {
 			//temp and load editing before manage contacts
 			const initContact =async ()=>{
 				//load contact temp
-				await _5_SELECT_ALL_C_CONTACT_TEMP.run();
-				if(_5_SELECT_ALL_C_CONTACT_TEMP.data != undefined){
-					Configs.showCompanyContact =_5_SELECT_ALL_C_CONTACT_TEMP.data;
+				await _05_SELECT_ALL_C_CONTACT_TEMP.run();
+				if(_05_SELECT_ALL_C_CONTACT_TEMP.data != undefined){
+					Configs.showCompanyContact =_05_SELECT_ALL_C_CONTACT_TEMP.data;
 
 				}else Configs.showCompanyContact=[]
 				if(appsmith.store[Configs.newCompanyTempFlag].PRIORITY_CONTACT_ID){ 
@@ -82,26 +82,26 @@ export default {
 		}else if(appsmith.URL.queryParams[ Configs.editCompanyFlag] !== undefined){
 			//LM
 			const initDefault =async ()=>{
-				await _0_SELECT_FOR_COMPANY_BY_ID.run()
+				await _00_SELECT_FOR_COMPANY_BY_ID.run()
 				console.log("SP_SELECT_FOR_COMPANY_BY_ID");
-				let InitializationEntityList = [{ENTITY:DefaultCompany,DATA: _0_SELECT_FOR_COMPANY_BY_ID.data[0]}];
+				let InitializationEntityList = [{ENTITY:DefaultCompany,DATA: _00_SELECT_FOR_COMPANY_BY_ID.data[0]}];
 				await GlobalFunctions.initDefaultV2(InitializationEntityList);
 
 			}
 			const initExistContact =async ()=>{
 				//load contact LM
-				await _6_SELECT_FOR_CONTACT_BY_COMID.run();
+				await _06_SELECT_FOR_CONTACT_BY_COMI.run();
 				console.log("SP_SELECT_FOR_CONTACT_BY_COMID")
-				if(_6_SELECT_FOR_CONTACT_BY_COMID.data != undefined)
+				if(_06_SELECT_FOR_CONTACT_BY_COMI.data != undefined)
 				{
-					Configs.showCompanyContact =_6_SELECT_FOR_CONTACT_BY_COMID.data;
+					Configs.showCompanyContact =_06_SELECT_FOR_CONTACT_BY_COMI.data;
 					return;
 				}else Configs.showCompanyContact=[]
 
 			}
 
-			await Promise.all([initDefault(),initExistContact(),_4_CONTACT_TEMP_DELETE.run()])
-			const PRIORITY_CONTACT_ID = Configs.showCompanyContact.find((i)=> i["Contact ID"] === _0_SELECT_FOR_COMPANY_BY_ID.data[0].PRIORITY_CONTACT);
+			await Promise.all([initDefault(),initExistContact(),_04_CONTACT_TEMP_DELETE.run()])
+			const PRIORITY_CONTACT_ID = Configs.showCompanyContact.find((i)=> i["Contact ID"] === _00_SELECT_FOR_COMPANY_BY_ID.data[0].PRIORITY_CONTACT);
 			if(PRIORITY_CONTACT_ID!==undefined){
 				Configs.PRIORITY_CONTACT_ID = PRIORITY_CONTACT_ID["Contact ID"];
 				JS.sortPriorityContact()
@@ -113,7 +113,8 @@ export default {
 			//New
 			let InitializationEntityList = [{ENTITY:DefaultCompany,DATA: {}}];
 			await GlobalFunctions.initDefaultV2(InitializationEntityList);
-			_4_CONTACT_TEMP_DELETE.run();
+			_04_CONTACT_TEMP_DELETE.run();
+			
 		}
 
 		//Configs.showCompanyContact = (appsmith.URL.queryParams[Configs.editCompanyFlag]==undefined?_5_SELECT_ALL_C_CONTACT_TEMP.data:_6_SELECT_FOR_CONTACT_BY_COMID.data!=undefined?_6_SELECT_FOR_CONTACT_BY_COMID.data:Default_Table.TABLE_CONTACT).filter(row=>row.TOTAL_RECORDS!=0)

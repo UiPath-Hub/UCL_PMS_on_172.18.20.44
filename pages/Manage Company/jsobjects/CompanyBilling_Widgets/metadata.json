@@ -132,14 +132,6 @@
         "value": "{\n  ...CREDIT_DAY,\n  data: CREDIT_DAY.text\n}"
       },
       {
-        "name": "REMARK_OF_INVOICE",
-        "value": "{\n  ...REMARK_OF_INVOICE,\n  data: REMARK_OF_INVOICE.text\n}"
-      },
-      {
-        "name": "REMARK_OF_RECEIPT",
-        "value": "{\n  ...REMARK_OF_RECEIPT,\n  data: REMARK_OF_RECEIPT.text\n}"
-      },
-      {
         "name": "COMPANY_GROUP_NUMBER",
         "value": "{\n  ...COMPANY_GROUP_NUMBER,\n  data: COMPANY_GROUP_NUMBER.text\n}"
       }
