@@ -2,20 +2,20 @@ export default {
 	initDefault:async ()=>{
 		if(Configs.isTempPage()){
 			//temp and load editing before manage contacts
-			let InitializationEntityList = [{ENTITY:Default_COMPANY_BILLING,DATA:appsmith.store[Configs.newCompanyTempFlag]}];
+			let InitializationEntityList = [{ENTITY:Default_COMPANY_BILLING,DATA:appsmith.store[Configs.newCompanyTempFlag]},{ENTITY:Current_Remark,DATA:{}},{ENTITY:Default_Remark,DATA:{}}];
 			await GlobalFunctions.initDefaultV2(InitializationEntityList);
 		}else	if(appsmith.URL.queryParams[ Configs.editCompanyFlag] !== undefined){
 			//LM
 			await SELECT_BILLING.run()
 			console.log("SELECT_BILLING")
 			let data = SELECT_BILLING.data[0];
-			let InitializationEntityList = [{ENTITY:Default_COMPANY_BILLING,DATA: data?data:{}}];
+			let InitializationEntityList = [{ENTITY:Default_COMPANY_BILLING,DATA: data?data:{}},{ENTITY:Current_Remark,DATA:{}},{ENTITY:Default_Remark,DATA:{}}];
 			await GlobalFunctions.initDefaultV2(InitializationEntityList);
 
 		}else{
 			//New
 			console.log("new billing")
-			let InitializationEntityList = [{ENTITY:Default_COMPANY_BILLING,DATA:{}},{ENTITY:Default_Remark,DATA:{}}];
+			let InitializationEntityList = [{ENTITY:Default_COMPANY_BILLING,DATA:{}},{ENTITY:Current_Remark,DATA:{}},{ENTITY:Default_Remark,DATA:{}}];
 			await GlobalFunctions.initDefaultV2(InitializationEntityList);
 			_12_DELETE_REMARK_TEMP.run();
 		}
@@ -35,7 +35,7 @@ export default {
 				removeValue(this.editRemarkKey);
 			}
 			if(method === this.ConfirmMethod.EDIT){
-				await storeValue(this.editRemarkKey,editingRow);
+				storeValue(this.editRemarkKey,editingRow);
 				await _15_SELECT_REMARK_BY_ID.run({BILLING_REMARK_ID:editingRow.BILLING_REMARK_ID,IS_TEMP:Configs.isNewCompany()?1:0});
 				let data = _15_SELECT_REMARK_BY_ID.data[0];
 				if(data){
@@ -46,9 +46,15 @@ export default {
 			showModal(MODAL_REMARK_DETAIL.name);
 		}else{
 			//save
+			let alertWidget = await GlobalFunctions.manualValidateV2(Current_Remark,Widgets_Remark);
+			if(alertWidget.length > 0){
+				const unique_Array = Array.from(new Set(alertWidget.map(i=>(i.label ||  _.toLower( i.widgetName).replaceAll("_"," ")))));
+				let text = `Information is required or invalid. :: ${ unique_Array.join(',')}`
+				showAlert(text);
+				return;
+			}
 			const close = async ()=>{
-				this.loadRemarks();
-				await Promise.all([closeModal(MODAL_REMARK_DETAIL.name),showAlert( "Save success","success")]);
+				await Promise.all([this.loadRemarks(),closeModal(MODAL_REMARK_DETAIL.name),showAlert( "Save success","success")]);
 			}
 			if(appsmith.store[this.editRemarkKey] === undefined){
 				//new
@@ -89,8 +95,7 @@ export default {
 	onDeleteRemark:async ()=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false))return;
 		const close = async ()=>{
-			this.loadRemarks();
-			await Promise.all([closeModal(MODAL_REMARK_DETAIL.name),showAlert( "Delete success","success")]);
+			await Promise.all([this.loadRemarks(),closeModal(MODAL_REMARK_DETAIL.name),showAlert( "Delete success","success")]);
 		}
 		await _16_DELETE_REMARK.run({BILLING_REMARK_ID:appsmith.store[this.editRemarkKey].BILLING_REMARK_ID});
 		if(_16_DELETE_REMARK.data != undefined && _16_DELETE_REMARK.data.length === 1){

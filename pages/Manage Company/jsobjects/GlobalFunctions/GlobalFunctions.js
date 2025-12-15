@@ -1,34 +1,17 @@
 export default {
 	V:5,
 	LastChanged:"OnResetObject",
-	OnResetObject:(ob_running, ob_default)=> {
-		// 1. วนซ้ำผ่าน Properties ของ ob_default (ซึ่งก็คือ 'box1', 'box2')
-		for (const key in ob_default) {
-			// ตรวจสอบว่า Property นั้นเป็นของ Object จริงๆ (ไม่ใช่ Property ที่ถูกสืบทอดมา)
-			if (ob_default.hasOwnProperty(key)) {
-				const defaultValue = ob_default[key];
-				const runningValue = ob_running[key];
-
-				// 2. ตรวจสอบว่า Property นั้นเป็น Object หรือไม่ (เช่น box1, box2)
-				if (typeof defaultValue === 'object' && defaultValue !== null) {
-					// ถ้าเป็น Object: ทำการ Deep Copy
-					// 3. วนซ้ำภายใน Object ย่อย (เช่น 'name', 'value' ภายใน box1)
-					for (const subKey in defaultValue) {
-						if (defaultValue.hasOwnProperty(subKey)) {
-							// 4. กำหนดค่าจาก ob_default[key][subKey] ไปที่ ob_running[key][subKey]
-							// **นี่คือส่วนสำคัญที่ทำให้ไม่เปลี่ยน Reference ของ ob_running และ ob_running.box1/box2**
-							if (runningValue && runningValue.hasOwnProperty(subKey)) {
-								runningValue[subKey] = defaultValue[subKey];
-							}
-						}
-					}
-				} else {
-					// ถ้าไม่ใช่ Object (เช่น String, Number, Boolean) ให้กำหนดค่าโดยตรง
-					ob_running[key] = defaultValue;
-				}
-			}
-		}
+	OnResetObject:async (ob_running, ob_default) => {
+    for (const key in ob_default) {
+        if (ob_default[key].data !== undefined && ob_running[key].data !== undefined) {
+            ob_running[key].data = ob_default[key].data;
+        }
+        if (ob_default[key].color !== undefined && ob_running[key].color !== undefined) {
+            ob_running[key].color = ob_default[key].color;
+        }
+    }
 	},
+
 	manualValidateV2:async (defaultEntities,widgetsMap)=>{
 		let alert = [];
 		await Promise.all( Object.keys(defaultEntities).map(async (key)=>{
@@ -99,6 +82,7 @@ export default {
 				DefaultEntity[keystr][attributeType]="";
 			}
 		}))
+
 	},
 	//InitializationDataList = [{ENTITY:Appsmith JS Object, DATA: {propName:any}}]
 	initDefaultV2:async(InitializationDataList)=>{
