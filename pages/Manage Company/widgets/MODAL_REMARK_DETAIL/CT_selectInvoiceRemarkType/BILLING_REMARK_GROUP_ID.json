@@ -45,7 +45,11 @@
       "key": "onTextChanged"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
@@ -69,7 +73,7 @@
   "mobileRightColumn": 54,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "onTextChanged": "{{}}",
+  "onTextChanged": "{{9}}",
   "originalBottomRow": 10,
   "originalTopRow": 4,
   "parentColumnSpace": 13.34375,

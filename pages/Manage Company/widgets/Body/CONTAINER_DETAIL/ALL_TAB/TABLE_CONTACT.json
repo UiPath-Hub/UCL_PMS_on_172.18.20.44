@@ -41,7 +41,7 @@
     "ID",
     "customColumn1"
   ],
-  "columnUpdatedAt": 1764755262541,
+  "columnUpdatedAt": 1765773897281,
   "columnWidthMap": {
     "Contact_Name": 310,
     "Email": 227,
@@ -265,7 +265,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "ID",
       "notation": "standard",
       "originalId": "ID",
