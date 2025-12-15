@@ -10,6 +10,8 @@ export default {
 			
 			//Container_LeaseSpace.setVisibility(true)
 			//Container_Service.setVisibility(true)
+		}else if(ALL_TAB.selectedTab == "Billing Information"){
+			JS_BILLING.loadRemarks();
 		}
 	}
 }

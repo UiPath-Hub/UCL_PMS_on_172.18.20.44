@@ -1,0 +1,4 @@
+--{BILLING_REMARK_ID,IS_TEMP}
+execute [dbo].[SELECT_REMARKS_BY_ID] 
+@BILLING_REMARK_ID = {{this.params.BILLING_REMARK_ID}},
+@IS_TEMP = {{this.params.IS_TEMP||0}}

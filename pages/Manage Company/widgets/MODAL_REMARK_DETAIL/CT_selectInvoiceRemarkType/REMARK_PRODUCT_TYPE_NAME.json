@@ -1,0 +1,89 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "bottomRowBeforeCollapse": 16,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Current_Remark.BILLING_REMARK_PRODUCT_TYPE_ID.data))(REMARK_PRODUCT_TYPE_NAME.options, REMARK_PRODUCT_TYPE_NAME.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": "{{Current_Remark.BILLING_REMARK_PRODUCT_TYPE_NAME.required}}",
+  "isVisible": "{{INVOICE_REMARK_TYPE.selectedOptionValue=== Configs.INVOICE_REMARK_TYPE.PRODUCT}}",
+  "key": "px5nucgps4",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "",
+  "labelTextColor": "{{Current_Remark.BILLING_REMARK_PRODUCT_TYPE_NAME.color}}",
+  "labelTextSize": "1rem",
+  "labelWidth": "0",
+  "leftColumn": 34,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 19,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "optionLabel": "FIXED_VALUE",
+  "optionValue": "ID",
+  "originalBottomRow": 16,
+  "originalTopRow": 10,
+  "parentColumnSpace": 13.34375,
+  "parentId": "udr2hs9y2d",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "serverSideFiltering": false,
+  "shouldScrollContents": true,
+  "sourceData": "{{SP_DD_PRODUCT_TYPE.data.map( (obj) =>{ return  {'ID': obj.MASTER_LIST_ID, 'FIXED_VALUE': obj.FIXED_VALUE }})}}",
+  "topRow": 10,
+  "topRowBeforeCollapse": 10,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "6i1d93xwo9",
+  "widgetName": "REMARK_PRODUCT_TYPE_NAME"
+}

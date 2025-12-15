@@ -1,0 +1,36 @@
+{
+  "gitSyncId": "6916e5434ff85a7b2716e97e_5083c9c3-2cd2-47ae-bd8d-57d657c91e1d",
+  "id": "Manage Company_Widgets_Remark",
+  "unpublishedCollection": {
+    "name": "Widgets_Remark",
+    "pageId": "Manage Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "COMPANY_ID",
+        "value": "{\n  ...COMPANY_ID,\n  data: COMPANY_ID.text || \"TEMP\"\n}"
+      },
+      {
+        "name": "INVOICE_REMARK_TYPE",
+        "value": "{\n  ...INVOICE_REMARK_TYPE,\n  data: INVOICE_REMARK_TYPE.selectedOptionValue || \"\"\n}"
+      },
+      {
+        "name": "BILLING_REMARK_PRODUCT_TYPE_ID",
+        "value": "{\n  ...REMARK_PRODUCT_TYPE_NAME,\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.PRODUCT ? REMARK_PRODUCT_TYPE_NAME.selectedOptionValue : \"\"\n}"
+      },
+      {
+        "name": "BILLING_REMARK_PRODUCT_TYPE_NAME",
+        "value": "{\n  ...REMARK_PRODUCT_TYPE_NAME,\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.PRODUCT ? REMARK_PRODUCT_TYPE_NAME.selectedOptionLabel : \"\"\n}"
+      },
+      {
+        "name": "BILLING_REMARK_GROUP_ID",
+        "value": "{\n  ...BILLING_REMARK_GROUP_ID,\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.GROUP ? BILLING_REMARK_GROUP_ID.text : \"\"\n}"
+      },
+      {
+        "name": "BILLING_REMARK_DETAIL",
+        "value": "{\n  ...BILLING_REMARK_DETAIL,\n  data: BILLING_REMARK_DETAIL.text || \"\"\n}"
+      }
+    ]
+  }
+}

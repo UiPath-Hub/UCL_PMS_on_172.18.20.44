@@ -1,0 +1,16 @@
+--delete temp need @COMPANY_ID = "TEMP" , @USER_TOKEN , @NEWBRANCH
+--{BILLING_REMARK_ID}
+
+DECLARE @ResultCode NVARCHAR(10) ,
+    @ResultMessages NVARCHAR(MAX);
+execute dbo.[UPDATE_REMARK]
+		@BILLING_REMARK_ID  = {{this.params.BILLING_REMARK_ID}}
+		,@COMPANY_ID = {{COMPANY_ID.text||"TEMP"}}
+		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+		,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}
+		,@IS_DELETE = 1
+		,@ResultCode=@ResultCode OUTPUT
+		,@ResultMessages=@ResultMessages OUTPUT
+		
+SELECT @ResultCode AS [RESULT_CODE],
+       @ResultMessages AS [RESULT_MESSAGES]

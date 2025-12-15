@@ -152,14 +152,6 @@
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
       {
-        "name": "REMARK_OF_INVOICE",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
-        "name": "REMARK_OF_RECEIPT",
-        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
-      },
-      {
         "name": "STATUS",
         "value": "{\n  data: \"Active\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
       },
