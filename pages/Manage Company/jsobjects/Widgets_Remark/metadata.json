@@ -17,15 +17,15 @@
       },
       {
         "name": "BILLING_REMARK_PRODUCT_TYPE_ID",
-        "value": "{\n  ...REMARK_PRODUCT_TYPE_NAME,\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.PRODUCT ? REMARK_PRODUCT_TYPE_NAME.selectedOptionValue : \"\"\n}"
+        "value": "{\n  ...REMARK_PRODUCT_TYPE_NAME,\n  label: \"Invoice Remark Product Type\",\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.PRODUCT ? REMARK_PRODUCT_TYPE_NAME.selectedOptionValue : \"\"\n}"
       },
       {
         "name": "BILLING_REMARK_PRODUCT_TYPE_NAME",
-        "value": "{\n  ...REMARK_PRODUCT_TYPE_NAME,\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.PRODUCT ? REMARK_PRODUCT_TYPE_NAME.selectedOptionLabel : \"\"\n}"
+        "value": "{\n  ...REMARK_PRODUCT_TYPE_NAME,\n  label: \"Invoice Remark Product Type\",\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.PRODUCT ? REMARK_PRODUCT_TYPE_NAME.selectedOptionLabel : \"\"\n}"
       },
       {
         "name": "BILLING_REMARK_GROUP_ID",
-        "value": "{\n  ...BILLING_REMARK_GROUP_ID,\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.GROUP ? BILLING_REMARK_GROUP_ID.text : \"\"\n}"
+        "value": "{\n  ...BILLING_REMARK_GROUP_ID,\n  label: \"Invoice Remark Group ID\",\n  data: INVOICE_REMARK_TYPE.selectedOptionValue === Configs.INVOICE_REMARK_TYPE.GROUP ? BILLING_REMARK_GROUP_ID.text : \"\"\n}"
       },
       {
         "name": "BILLING_REMARK_DETAIL",
