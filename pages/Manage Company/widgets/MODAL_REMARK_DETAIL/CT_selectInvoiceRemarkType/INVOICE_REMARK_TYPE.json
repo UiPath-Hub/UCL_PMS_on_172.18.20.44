@@ -47,7 +47,7 @@
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Invoice Remark Type",
-  "labelTextColor": "{{Current_Remark.INVOICE_REMARK_TYPE.color}}",
+  "labelTextColor": "{{Current_Remark.INVOICE_REMARK_TYPE.color!==\"\"?Current_Remark.INVOICE_REMARK_TYPE.color:Current_Remark.BILLING_REMARK_GROUP_ID.color!==\"\"?Current_Remark.BILLING_REMARK_GROUP_ID.color:Current_Remark.BILLING_REMARK_PRODUCT_TYPE_NAME.color!==\"\"?Current_Remark.BILLING_REMARK_PRODUCT_TYPE_NAME.color:\"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "13",
   "leftColumn": 0,
