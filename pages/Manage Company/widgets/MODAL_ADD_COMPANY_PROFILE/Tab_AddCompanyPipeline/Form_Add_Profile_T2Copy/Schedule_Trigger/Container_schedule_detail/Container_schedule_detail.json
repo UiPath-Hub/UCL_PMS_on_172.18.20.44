@@ -36,9 +36,17 @@
   ],
   "containerStyle": "card",
   "displayName": "Container",
-  "dynamicBindingPathList": [],
+  "dynamicBindingPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "hideCard": false,
@@ -46,7 +54,7 @@
   "isCanvas": true,
   "isDeprecated": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{ !(FREQUENCY_TYPE.selectedOptionLabel == null || FREQUENCY_TYPE.selectedOptionLabel == \"\" || FREQUENCY_TYPE.selectedOptionLabel == \"None\")}}",
   "key": "mp7rb53osu",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
