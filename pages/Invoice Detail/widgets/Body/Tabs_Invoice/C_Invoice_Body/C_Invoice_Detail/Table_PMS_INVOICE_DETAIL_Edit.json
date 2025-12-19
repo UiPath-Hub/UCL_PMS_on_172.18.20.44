@@ -34,6 +34,7 @@
     }
   },
   "columnOrder": [
+    "INVENTORY_ID",
     "PRODUCT_DESCRIPTION",
     "INVOICE_QUANTITY",
     "UOM",
@@ -42,7 +43,6 @@
     "INVOICE_DETAIL_ID",
     "INVOICE_ID",
     "PRODUCT_ID",
-    "INVENTORY_ID",
     "INVENTORY_NAME",
     "CHARGE_TYPE",
     "ACCOUNT_CODE",
@@ -55,7 +55,7 @@
     "customColumn1",
     "USER_ID"
   ],
-  "columnUpdatedAt": 1758184971456,
+  "columnUpdatedAt": 1766113967932,
   "columnWidthMap": {
     "EditActions1": 101,
     "INVOICE_QUANTITY": 200,
@@ -362,8 +362,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "INVENTORY_ID",
+      "isVisible": true,
+      "label": "Inventory ID",
       "notation": "standard",
       "originalId": "INVENTORY_ID",
       "sticky": "",

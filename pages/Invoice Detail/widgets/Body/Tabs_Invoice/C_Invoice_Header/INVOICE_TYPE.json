@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 15,
   "boxShadow": "none",
   "defaultText": "{{PMS_INVOICE_LM.INVOICE_TYPE.data}}",
   "dynamicBindingPathList": [
@@ -81,7 +81,7 @@
   "rightColumn": 29,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 8,
+  "topRow": 10,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "1jnxf45nx2",

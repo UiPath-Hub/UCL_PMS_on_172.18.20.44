@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 10,
   "boxShadow": "none",
   "defaultText": "{{PMS_INVOICE_LM.QUOTATION_NO.data}}",
   "dynamicBindingPathList": [
@@ -77,7 +77,7 @@
   "shouldAllowAutofill": false,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 4,
+  "topRow": 5,
   "type": "INPUT_WIDGET_V2",
   "validation": "",
   "version": 2,
