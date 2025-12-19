@@ -33,6 +33,7 @@
     }
   },
   "columnOrder": [
+    "INVENTORY_ID",
     "PRODUCT_DESCRIPTION",
     "INVOICE_QUANTITY",
     "UOM",
@@ -41,7 +42,6 @@
     "INVOICE_DETAIL_ID",
     "INVOICE_ID",
     "PRODUCT_ID",
-    "INVENTORY_ID",
     "INVENTORY_NAME",
     "CHARGE_TYPE",
     "ACCOUNT_CODE",
@@ -54,7 +54,7 @@
     "USER_ID",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1758184972171,
+  "columnUpdatedAt": 1766113942954,
   "columnWidthMap": {
     "INVOICE_QUANTITY": 198,
     "PRICE_PER_UNIT": 190,
@@ -385,8 +385,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "INVENTORY_ID",
+      "isVisible": true,
+      "label": "Inventory ID",
       "notation": "standard",
       "originalId": "INVENTORY_ID",
       "sticky": "",

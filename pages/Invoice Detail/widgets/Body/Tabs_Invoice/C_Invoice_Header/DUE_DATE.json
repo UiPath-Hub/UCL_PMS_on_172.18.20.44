@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 10,
   "boxShadow": "none",
   "defaultText": "{{PMS_INVOICE_LM.DUE_DATE.data?moment(PMS_INVOICE_LM.DUE_DATE.data).format(Configs.dateFormat):\"\"}}",
   "dynamicBindingPathList": [
@@ -80,7 +80,7 @@
   "rightColumn": 61,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 4,
+  "topRow": 5,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "n404r4yktx",

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 4,
+  "bottomRow": 5,
   "boxShadow": "none",
   "defaultText": "{{PMS_INVOICE_LM.CREATE_DATE.data?moment(PMS_INVOICE_LM.CREATE_DATE.data).format(Configs.dateFormat):\"\"}}",
   "dynamicBindingPathList": [

@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "0.375rem",
-  "bottomRow": 19,
+  "bottomRow": 20,
   "boxShadow": "none",
   "defaultText": "{{PMS_INVOICE_LM.INVOICE_REF4.data}}",
   "dynamicBindingPathList": [
