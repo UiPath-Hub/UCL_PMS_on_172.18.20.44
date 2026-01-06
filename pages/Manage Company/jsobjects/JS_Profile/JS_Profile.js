@@ -142,17 +142,22 @@ export default {
 		}
 
 	},
-	onAddProfileClick: async()=>{
+	onAddProfileClick: async(isRenew)=>{
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false))return;
 		let Params = {
 			AGREEMENT_ID: AGREEMENT_ID.selectedOptionValue==undefined ||_.trim(AGREEMENT_ID.selectedOptionValue)===""? null : AGREEMENT_ID.selectedOptionValue,
 			FORMULA: FORMULA.selectedOptionValue==undefined ||_.trim(FORMULA.selectedOptionValue)===""? null : FORMULA.selectedOptionValue,
-			INVENTORY_ID: TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow.INVENTORY_ID,
 			COMPANY_PROFILE_FLOOR_NO: COMPANY_PROFILE_FLOOR_NO.isDisabled?null: COMPANY_PROFILE_FLOOR_NO.text,
 			PRICE_PER_UNIT: PRICE_PER_UNIT.isDisabled?null:PRICE_PER_UNIT.value,
 			COMPANY_PROFILE_PERIOD_START:COMPANY_PROFILE_PERIOD_START.formattedDate?moment(COMPANY_PROFILE_PERIOD_START.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			COMPANY_PROFILE_PERIOD_END:COMPANY_PROFILE_PERIOD_END.formattedDate?moment(COMPANY_PROFILE_PERIOD_END.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			QUANTITY: QUANTITY.text
+		}
+		if(isRenew){
+			Params.RENEW_FROM_ID = Current_Profile.COMPANY_PROFILE_ID.data;
+			Params.INVENTORY_ID = Current_Profile.INVENTORY_ID.data;
+		}else{
+			Params.INVENTORY_ID = TABLE_PMS_PRODUCT_INVERTORY_LM.selectedRow.INVENTORY_ID;
 		}
 
 		//return console.log(Params);
@@ -198,6 +203,7 @@ export default {
 			}
 		})
 	},
+
 	/*Bttn_GrantRight:()=>{
 		if(Table_GrantROFR.tableData != undefined){
 			if(Table_GrantROFR.tableData.filter((data)=>(data.INVENTORY_ID === Select_InventForROFR.selectedOptionValue && data.DIRECTION === SELECT_ROFRDirection.selectedOptionValue)).length > 0){
