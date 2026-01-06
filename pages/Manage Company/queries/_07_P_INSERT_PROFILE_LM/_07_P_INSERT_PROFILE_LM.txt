@@ -15,6 +15,7 @@ EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V2]
 	,@REPEAT_EVERY = {{REPEAT_EVERY.text||null}}
 	,@FREQUENCY_DATE = {{FREQUENCY_DATE.selectedDate||null}}
 	,@INVOICE_GROUP_ID = {{INVOICE_GROUP_ID.text||null}}
+	,@RENEW_FROM_ID = {{this.params.RENEW_FROM_ID??null}}
 	,@IS_INSERT = 1
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@ResultCode =@ResultCode OUTPUT
