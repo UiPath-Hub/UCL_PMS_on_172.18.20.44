@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "Profile",
-        "value": "{\n  LeadData: [],\n  ServiceData: []\n}"
+        "value": "{\n  LeadData: [],\n  ServiceData: [],\n  LogsData: []\n}"
       }
     ]
   }

@@ -79,7 +79,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "onDateSelected": "{{COMPANY_PROFILE_PERIOD_END.setValue(COMPANY_PROFILE_PERIOD_START.selectedDate)}}",
+  "onDateSelected": "{{resetWidget(COMPANY_PROFILE_PERIOD_END.widgetName)}}",
   "parentColumnSpace": 12.5,
   "parentId": "uk4994gix9",
   "parentRowSpace": 10,

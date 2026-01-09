@@ -1,5 +1,5 @@
 export default {
 	myVar1:async ()=>{
-		Configs.dynamicFunc = ()=> console.log("test2");
+		return COMPANY_PROFILE_PERIOD_END.widgetName
 	}
 }
