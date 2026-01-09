@@ -1,0 +1,5 @@
+EXECUTE  [dbo].[SELECT_ALL_COMPANY_PROFILE_LOG_BY_COMID]
+ @pCOMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}
+,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
+
+

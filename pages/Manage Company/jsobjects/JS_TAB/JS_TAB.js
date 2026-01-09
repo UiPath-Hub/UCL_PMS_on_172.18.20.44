@@ -1,5 +1,5 @@
 export default {
-	Profile:{LeadData:[],ServiceData:[]},
+	Profile:{LeadData:[],ServiceData:[],LogsData:[]},
 	onTapChange:async()=>{
 		if(ALL_TAB.selectedTab == "Profile"){
 			//await	Container_LeaseSpace.setVisibility(false);

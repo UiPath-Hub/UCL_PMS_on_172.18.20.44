@@ -44,7 +44,7 @@ export default {
 	AddCompanyPipeline:"T1",
 	//GrantROFRTable:[],
 	onModalManageProfileClose:async()=>{
-		await Promise.all([SP_SELECT_ALL_PROFILE_Service.run(),SP_SELECT_ALL_PROFILE_Space.run()]) ;
+		await Promise.all([SP_SELECT_ALL_PROFILE_Service.run(),SP_SELECT_ALL_PROFILE_Space.run(),SP_SELECT_ALL_PROFILE_LOG.run()]);
 		/*JS_TAB.Profile = {LeadData:SP_SELECT_ALL_PROFILE_Space.data.filter((ele)=> ele.TOTAL_RECORDS != 0),
 										ServiceData:SP_SELECT_ALL_PROFILE_Service.data.filter((ele)=> ele.TOTAL_RECORDS != 0)}
 		*/
@@ -64,6 +64,7 @@ export default {
 		JS_TAB.Profile = {...JS_TAB.Profile,
 											ServiceData:SP_SELECT_ALL_PROFILE_Service.data.filter((ele)=> ele.TOTAL_RECORDS != 0)}
 	},
+	
 	InitModal:async ()=>{
 		this.AddCompanyPipeline = "T1";
 		//let timeout1 = setTimeout(()=>NEW_BUTTON_1.setDisabled(false),3000);
