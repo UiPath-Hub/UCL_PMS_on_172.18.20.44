@@ -230,10 +230,7 @@ export default {
 	},*/
 	onBttn_EditProfile:async(selectdRow)=>{
 		this.ableToDeleteProfile = true;
-		BTTN_EditProfile.setDisabled(true);
-		BTTN_EditProfileService.setDisabled(true);
-		
-
+		await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true),BTTN_EditProfile.setDisabled(true),BTTN_EditProfileService.setDisabled(true)]);
 		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID),this.SetDefault()])
 		if(SP_SELECT_FOR_PROFILE.data != undefined && SP_SELECT_FOR_PROFILE.data.length != 0){
 			const inventory = {...SP_SELECT_FOR_PROFILE.data[0]}
@@ -274,8 +271,7 @@ export default {
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		resetWidget(Container_Additional.widgetName,true);
 		resetWidget(Schedule_Trigger.widgetName,true);
-		BTTN_EditProfile.setDisabled(false);
-		BTTN_EditProfileService.setDisabled(false);
+		await Promise.all([NEW_BUTTON_1.setDisabled(false),BTTN_EditProfileService.setDisabled(false),BTTN_EditProfile.setDisabled(false),NEW_BUTTON_2.setDisabled(false)]);
 		//Tab_AddCompanyPipeline.setVisibility(true);
 	},
 	getInvenForProfile:async (INVENTORY_ID)=>{
