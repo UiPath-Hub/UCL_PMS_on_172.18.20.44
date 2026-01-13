@@ -12,6 +12,10 @@
         "value": "false"
       },
       {
+        "name": "ableToModifyProfile",
+        "value": "true"
+      },
+      {
         "name": "LeadTotalAmount",
         "value": "parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {\n  if (!accumulator.id.includes(currentValue.INVENTORY_ID)) {\n    accumulator.id.push(currentValue.INVENTORY_ID);\n    accumulator.sum += parseFloat(currentValue.QUANTITY);\n  }\n  return accumulator;\n}, {\n  id: [],\n  sum: 0\n}).sum).toFixed(2).toString()"
       },
