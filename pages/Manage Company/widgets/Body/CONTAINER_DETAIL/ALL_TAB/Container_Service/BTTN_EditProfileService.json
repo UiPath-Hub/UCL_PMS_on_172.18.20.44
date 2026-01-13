@@ -24,7 +24,7 @@
     }
   ],
   "iconName": "edit",
-  "isDisabled": "{{!Boolean(PMS_COMPANY_PROFILE_LM_2.selectedRow?.COMPANY_PROFILE_ID)}}",
+  "isDisabled": "{{(!Boolean(PMS_COMPANY_PROFILE_LM_2.selectedRow?.COMPANY_PROFILE_ID))||!JS_Profile. ableToModifyProfile}}",
   "isLoading": false,
   "isVisible": true,
   "key": "sjcapm6fvo",

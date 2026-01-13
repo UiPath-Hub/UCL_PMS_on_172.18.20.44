@@ -28,6 +28,7 @@ export default {
 		
 	},*/
 	ableToDeleteProfile:false,
+	ableToModifyProfile:true,
 	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {  
 		if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
 			accumulator.id.push(currentValue.INVENTORY_ID)
@@ -70,16 +71,16 @@ export default {
 		//let timeout1 = setTimeout(()=>NEW_BUTTON_1.setDisabled(false),3000);
 		//let timeout2 = setTimeout(()=>NEW_BUTTON_2.setDisabled(false),3000);
 		this.ableToDeleteProfile = false;
-		await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true)]);
+		this.ableToModifyProfile = false;
+		//await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true)]);
 		this.SetDefault();
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		PRICE_PER_UNIT.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
 		await SP_SER_FOR_INVENTORY.run();
-		NEW_BUTTON_1.setDisabled(false);
-		NEW_BUTTON_2.setDisabled(false);
 		resetWidget(Container_Additional.widgetName,true);
 		resetWidget(Schedule_Trigger.widgetName,true);
+		this.ableToModifyProfile = true;
 		//while(NEW_BUTTON_1.isDisabled)
 
 	},
@@ -230,10 +231,8 @@ export default {
 	},*/
 	onBttn_EditProfile:async(selectdRow)=>{
 		this.ableToDeleteProfile = true;
-		BTTN_EditProfile.setDisabled(true);
-		BTTN_EditProfileService.setDisabled(true);
-		
-
+		this.ableToModifyProfile = false;
+		//await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true),BTTN_EditProfile.setDisabled(true),BTTN_EditProfileService.setDisabled(true)]);
 		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID),this.SetDefault()])
 		if(SP_SELECT_FOR_PROFILE.data != undefined && SP_SELECT_FOR_PROFILE.data.length != 0){
 			const inventory = {...SP_SELECT_FOR_PROFILE.data[0]}
@@ -274,8 +273,8 @@ export default {
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		resetWidget(Container_Additional.widgetName,true);
 		resetWidget(Schedule_Trigger.widgetName,true);
-		BTTN_EditProfile.setDisabled(false);
-		BTTN_EditProfileService.setDisabled(false);
+		this.ableToModifyProfile = true;
+		//await Promise.all([NEW_BUTTON_1.setDisabled(false),BTTN_EditProfileService.setDisabled(false),BTTN_EditProfile.setDisabled(false),NEW_BUTTON_2.setDisabled(false)]);
 		//Tab_AddCompanyPipeline.setVisibility(true);
 	},
 	getInvenForProfile:async (INVENTORY_ID)=>{

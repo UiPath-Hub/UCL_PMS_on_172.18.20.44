@@ -8,6 +8,14 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -16,7 +24,7 @@
     }
   ],
   "iconName": "plus",
-  "isDisabled": false,
+  "isDisabled": "{{!JS_Profile. ableToModifyProfile}}",
   "isLoading": false,
   "isVisible": true,
   "key": "xfdj83ol9h",
