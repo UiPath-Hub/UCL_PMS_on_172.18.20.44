@@ -234,6 +234,51 @@
       "version": 1,
       "widgetId": "y58di6j2zp",
       "widgetName": "Canvas163"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 340,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "w6i7nv1goh",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 500,
+      "minWidth": 450,
+      "mobileBottomRow": 501,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 860,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "dbgjh5as3o",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 860,
+      "tabId": "tabx0ce43k5ix",
+      "tabName": "T7",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "rsulwsa2uh",
+      "widgetName": "Canvas173"
     }
   ],
   "defaultTab": "{{JS_Profile.AddCompanyPipeline}}",
@@ -267,7 +312,7 @@
   "mobileRightColumn": 44,
   "mobileTopRow": 14,
   "needsErrorInfo": false,
-  "originalBottomRow": 47,
+  "originalBottomRow": 32,
   "originalTopRow": 5,
   "parentColumnSpace": 13.4375,
   "parentId": "uql4tzl9vd",
@@ -319,6 +364,13 @@
       "isVisible": true,
       "label": "T5",
       "widgetId": "tuherwp91y"
+    },
+    "tabx0ce43k5ix": {
+      "id": "tabx0ce43k5ix",
+      "index": 5,
+      "isVisible": true,
+      "label": "T7",
+      "widgetId": "rsulwsa2uh"
     }
   },
   "topRow": 5,

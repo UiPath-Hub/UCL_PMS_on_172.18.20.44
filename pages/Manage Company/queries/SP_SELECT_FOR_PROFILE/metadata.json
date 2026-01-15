@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "\nEXECUTE [dbo].[SELECT_FOR_COMPANY_PROFILE] \n   @COMPANY_PROFILE_ID = {{this.params.COMPANY_PROFILE_ID}}\n\n",
+      "body": "\nEXECUTE [dbo].[SELECT_FOR_COMPANY_PROFILE_V2] \n   @COMPANY_PROFILE_ID = {{this.params.COMPANY_PROFILE_ID}}\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

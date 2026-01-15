@@ -57,7 +57,7 @@
   "mobileTopRow": 143,
   "needsErrorInfo": false,
   "options": "{{SP_DD_BRANCH.data.map((ele)=>({label: ele.FIXED_VALUE,value:ele.SYSTEM_VALUE}))}}",
-  "originalBottomRow": 27,
+  "originalBottomRow": 25,
   "originalTopRow": 21,
   "parentColumnSpace": 19.8125,
   "parentId": "lh5sy4l6w2",

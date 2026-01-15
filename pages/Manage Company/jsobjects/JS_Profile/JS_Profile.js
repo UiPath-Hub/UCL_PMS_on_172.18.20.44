@@ -1,4 +1,6 @@
 export default {
+	PERIOD_END_FOR_CALCULATE_MIN_DATE:"",
+	PERIOD_END_FOR_CALCULATE_MAX_DATE:"",
 	/*REPEAT_EVERY_setValue:(widget)=>{
 		if(!widget.text)return;
 		if(widget.widgetName === "REPEAT_EVERY"){
@@ -11,7 +13,7 @@ export default {
 			REPEAT_EVERY.setValue(widget.text);
 			REPEAT_EVERY_1.setValue(widget.text);
 		}
-		
+
 	},
 	FREQUENCY_DATE_setValue:(widget)=>{
 		if(!widget.selectedDate)return;
@@ -25,7 +27,7 @@ export default {
 			FREQUENCY_DATE.setValue(widget.selectedDate);
 			FREQUENCY_DATE1.setValue(widget.selectedDate);
 		}
-		
+
 	},*/
 	ableToDeleteProfile:false,
 	ableToModifyProfile:true,
@@ -65,7 +67,7 @@ export default {
 		JS_TAB.Profile = {...JS_TAB.Profile,
 											ServiceData:SP_SELECT_ALL_PROFILE_Service.data.filter((ele)=> ele.TOTAL_RECORDS != 0)}
 	},
-	
+
 	InitModal:async ()=>{
 		this.AddCompanyPipeline = "T1";
 		//let timeout1 = setTimeout(()=>NEW_BUTTON_1.setDisabled(false),3000);
@@ -153,7 +155,14 @@ export default {
 			PRICE_PER_UNIT: PRICE_PER_UNIT.isDisabled?null:PRICE_PER_UNIT.value,
 			COMPANY_PROFILE_PERIOD_START:COMPANY_PROFILE_PERIOD_START.formattedDate?moment(COMPANY_PROFILE_PERIOD_START.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			COMPANY_PROFILE_PERIOD_END:COMPANY_PROFILE_PERIOD_END.formattedDate?moment(COMPANY_PROFILE_PERIOD_END.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
-			QUANTITY: QUANTITY.text
+			QUANTITY: QUANTITY.text, 
+			FREQUENCY_TYPE: FREQUENCY_TYPE.selectedOptionValue,
+			REPEAT_EVERY: REPEAT_EVERY.text,
+			FREQUENCY_DATE: FREQUENCY_DATE.formattedDate?moment(FREQUENCY_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
+			INVOICE_GROUP_ID: INVOICE_GROUP_ID.text,
+			PROFILE_PAYMENT_DUE_DATE: PROFILE_PAYMENT_DUE_DATE.formattedDate?moment(PROFILE_PAYMENT_DUE_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
+			PERIOD_START_FOR_CALCULATE: PERIOD_START_FOR_CALCULATE.formattedDate?moment(PERIOD_START_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
+			PERIOD_END_FOR_CALCULATE: PERIOD_END_FOR_CALCULATE.formattedDate?moment(PERIOD_END_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 		}
 		if(isRenew){
 			Params.RENEW_FROM_ID = Current_Profile.COMPANY_PROFILE_ID.data;
@@ -188,7 +197,14 @@ export default {
 			PRICE_PER_UNIT: PRICE_PER_UNIT.isDisabled?null:PRICE_PER_UNIT.value,
 			COMPANY_PROFILE_PERIOD_START:COMPANY_PROFILE_PERIOD_START.formattedDate?moment(COMPANY_PROFILE_PERIOD_START.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			COMPANY_PROFILE_PERIOD_END:COMPANY_PROFILE_PERIOD_END.formattedDate?moment(COMPANY_PROFILE_PERIOD_END.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
-			QUANTITY: QUANTITY.text
+			QUANTITY: QUANTITY.text,
+			FREQUENCY_TYPE: FREQUENCY_TYPE.selectedOptionValue,
+			REPEAT_EVERY: REPEAT_EVERY.text,
+			FREQUENCY_DATE: FREQUENCY_DATE.formattedDate?moment(FREQUENCY_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
+			INVOICE_GROUP_ID: INVOICE_GROUP_ID.text,
+			PROFILE_PAYMENT_DUE_DATE: PROFILE_PAYMENT_DUE_DATE.formattedDate?moment(PROFILE_PAYMENT_DUE_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
+			PERIOD_START_FOR_CALCULATE: PERIOD_START_FOR_CALCULATE.formattedDate?moment(PERIOD_START_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
+			PERIOD_END_FOR_CALCULATE: PERIOD_END_FOR_CALCULATE.formattedDate?moment(PERIOD_END_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 		}
 		//return console.log(Params);
 		_08_P_UPDATE_PROFILE_LM.run(Params).then(async ()=>{
@@ -236,7 +252,7 @@ export default {
 		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID),this.SetDefault()])
 		if(SP_SELECT_FOR_PROFILE.data != undefined && SP_SELECT_FOR_PROFILE.data.length != 0){
 			const inventory = {...SP_SELECT_FOR_PROFILE.data[0]}
-			
+
 			if(inventory["PROFILE_FLOOR_MODIFIER"] === undefined || inventory["PROFILE_FLOOR_MODIFIER"] === null){
 				inventory["PROFILE_FLOOR_MODIFIER"] = inventory["FLOOR_NO"];
 				if(!COMPANY_PROFILE_FLOOR_NO.isDisabled)
@@ -320,6 +336,20 @@ export default {
 	},
 	onBttn_NextPipeline_T6_Click:async()=>{
 		const page = _.pickBy(Profile_Widgets, function(value, key) {if(value.page === "T6") return value;})
+		let alertWidget = await GlobalFunctions.manualValidateV2(Current_Profile,page);
+		const unique_Array = Array.from(new Set(alertWidget.map(i=>(i.label ||  _.toLower( i.widgetName).replaceAll("_"," ")))));
+		if(alertWidget.length > 0){
+			let text = `Information is required or invalid. :: ${unique_Array.join(',')}`;
+			if(Configs.IS_THIRD_PARTY){
+				text = text.replaceAll('company','third party');
+			}
+			showAlert(text)
+		}
+		if(alertWidget.length == 0)
+			JS_Profile.AddCompanyPipeline = "T7";
+	},
+	onBttn_NextPipeline_T7_Click:async()=>{
+		const page = _.pickBy(Profile_Widgets, function(value, key) {if(value.page === "T7") return value;})
 		let alertWidget = await GlobalFunctions.manualValidateV2(Current_Profile,page);
 		const unique_Array = Array.from(new Set(alertWidget.map(i=>(i.label ||  _.toLower( i.widgetName).replaceAll("_"," ")))));
 		if(alertWidget.length > 0){

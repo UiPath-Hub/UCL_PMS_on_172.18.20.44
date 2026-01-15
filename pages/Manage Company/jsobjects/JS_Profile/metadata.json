@@ -8,6 +8,14 @@
     "pluginType": "JS",
     "variables": [
       {
+        "name": "PERIOD_END_FOR_CALCULATE_MIN_DATE",
+        "value": "\"\""
+      },
+      {
+        "name": "PERIOD_END_FOR_CALCULATE_MAX_DATE",
+        "value": "\"\""
+      },
+      {
         "name": "ableToDeleteProfile",
         "value": "false"
       },
