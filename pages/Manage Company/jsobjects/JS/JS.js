@@ -357,6 +357,6 @@ export default {
 		}
 	},
 	test:()=>{
-		return appsmith.store[Configs.editCompanyFlag]
+		return SP_PRODUCT_TYPE_EN_FOR_HIDE_PA.data
 	}
 }
