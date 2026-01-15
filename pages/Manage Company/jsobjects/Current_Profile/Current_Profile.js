@@ -17,4 +17,7 @@ export default {
 	FREQUENCY_DATE:{data:"",regex:"",required:false,color:"" },
 	INVOICE_GROUP_ID:{data:"",regex:"",required:false,color:"" },
 	RENEW_ID:{data:"",regex:"",required:false,color:"" },
+	PROFILE_PAYMENT_DUE_DATE:{data:"",regex:"",required:false,color:"" },
+	PERIOD_START_FOR_CALCULATE:{data:"",regex:"",required:false,color:"" },
+	PERIOD_END_FOR_CALCULATE:{data:"",regex:"",required:false,color:"" },
 }

@@ -53,7 +53,19 @@
       },
       {
         "name": "INVOICE_GROUP_ID",
-        "value": "{\n  ...INVOICE_GROUP_ID,\n  data: INVOICE_GROUP_ID.text,\n  page: \"3\"\n}"
+        "value": "{\n  ...INVOICE_GROUP_ID,\n  data: INVOICE_GROUP_ID.text,\n  page: \"T3\"\n}"
+      },
+      {
+        "name": "PROFILE_PAYMENT_DUE_DATE",
+        "value": "{\n  ...PROFILE_PAYMENT_DUE_DATE,\n  data: PROFILE_PAYMENT_DUE_DATE.selectedDate,\n  page: \"T7\"\n}"
+      },
+      {
+        "name": "PERIOD_START_FOR_CALCULATE",
+        "value": "{\n  ...PERIOD_START_FOR_CALCULATE,\n  data: PERIOD_START_FOR_CALCULATE.selectedDate,\n  page: \"T7\"\n}"
+      },
+      {
+        "name": "PERIOD_END_FOR_CALCULATE",
+        "value": "{\n  ...PERIOD_END_FOR_CALCULATE,\n  data: PERIOD_END_FOR_CALCULATE.selectedDate,\n  page: \"T7\"\n}"
       }
     ]
   }

@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 17,
   "boxShadow": "none",
-  "defaultText": "{{Current_Profile.INVOICE_GROUP_ID.data}}",
+  "defaultText": "{{Current_Profile.INVOICE_GROUP_ID.data||\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

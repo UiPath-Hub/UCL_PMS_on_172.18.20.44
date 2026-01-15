@@ -78,6 +78,18 @@
       {
         "name": "RENEW_ID",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PROFILE_PAYMENT_DUE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PERIOD_START_FOR_CALCULATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PERIOD_END_FOR_CALCULATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       }
     ]
   }

@@ -1,30 +1,21 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 44,
-  "bottomRowBeforeCollapse": 29,
+  "bottomRow": 25,
+  "bottomRowBeforeCollapse": 30,
   "boxShadow": "none",
-  "buttonColor": "#15803d",
+  "buttonColor": "#3b82f6",
   "buttonStyle": "PRIMARY_BUTTON",
   "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
-      "key": "isDisabled"
-    },
-    {
       "key": "onClick"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -32,12 +23,10 @@
       "key": "onClick"
     }
   ],
-  "iconAlign": "left",
-  "iconName": "floppy-disk",
   "isDefaultClickDisabled": true,
-  "isDisabled": "",
+  "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{JS_Profile.AddCompanyPipeline === \"T4\"}}",
+  "isVisible": true,
   "key": "6fgfm4o8oh",
   "leftColumn": 51,
   "minWidth": 120,
@@ -46,21 +35,21 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{appsmith.store[Configs.editCompanyProfileFlag] == undefined? JS_Profile.onAddProfileClick():JS_Profile.onUpdateProfileClick()}}",
-  "originalBottomRow": 44,
-  "originalTopRow": 40,
-  "parentId": "n6q6hthnd1",
+  "onClick": "{{JS_Profile.onBttn_NextPipeline_T7_Click()}}",
+  "originalBottomRow": 30,
+  "originalTopRow": 26,
+  "parentId": "rsulwsa2uh",
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
   "rightColumn": 64,
-  "text": "Confirm",
-  "topRow": 40,
-  "topRowBeforeCollapse": 25,
+  "text": "Next",
+  "topRow": 21,
+  "topRowBeforeCollapse": 26,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "zlxpsxn2wr",
-  "widgetName": "bttn_AddProfile"
+  "widgetId": "dhttpka5mu",
+  "widgetName": "Bttn_Next_T7"
 }
