@@ -345,8 +345,15 @@ export default {
 			}
 			showAlert(text)
 		}
-		if(alertWidget.length == 0)
-			JS_Profile.AddCompanyPipeline = "T7";
+		if(alertWidget.length == 0){
+			await SP_PRODUCT_TYPE_EN_FOR_HIDE_PA.run();
+			if(SP_PRODUCT_TYPE_EN_FOR_HIDE_PA.data.map((i)=>i.SYSTEM_VALUE).includes(Default_InvenForProfile.PRODUCT_TYPE_EN.data)){
+				JS_Profile.AddCompanyPipeline = "T4";
+			}else{
+				JS_Profile.AddCompanyPipeline = "T7";
+			}
+		}
+			
 	},
 	onBttn_NextPipeline_T7_Click:async()=>{
 		const page = _.pickBy(Profile_Widgets, function(value, key) {if(value.page === "T7") return value;})
