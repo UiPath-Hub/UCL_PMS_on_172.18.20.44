@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{Current_Profile.PERIOD_START_FOR_CALCULATE.data?moment(Current_Profile.PERIOD_START_FOR_CALCULATE.data).toString():Current_Profile.COMPANY_PROFILE_PERIOD_START.data||\"\"}}",
+  "defaultDate": "{{Current_Profile.PERIOD_START_FOR_CALCULATE.data?moment(Current_Profile.PERIOD_START_FOR_CALCULATE.data).toString():moment(Current_Profile.COMPANY_PROFILE_PERIOD_START.data)||\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
