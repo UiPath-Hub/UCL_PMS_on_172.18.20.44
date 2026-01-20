@@ -49,7 +49,7 @@ export default {
 		Configs.forceKick=false;
 		Configs.forceLogin=false;
 		await Promise.all([ closeModal(Modal_Session_detail.name),
-											 closeModal(Modal_ErrorAlert.name),
+											 //closeModal(Modal_ErrorAlert.name),
 											 closeModal(MODAL_APPROVE_CONFIRM.name),
 											 closeModal(MODAL_DELETE.name),
 											 closeModal(Modal_ManageItem.name),
