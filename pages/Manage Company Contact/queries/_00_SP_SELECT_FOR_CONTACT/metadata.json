@@ -30,6 +30,6 @@
     "name": "_00_SP_SELECT_FOR_CONTACT",
     "pageId": "Manage Company Contact",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

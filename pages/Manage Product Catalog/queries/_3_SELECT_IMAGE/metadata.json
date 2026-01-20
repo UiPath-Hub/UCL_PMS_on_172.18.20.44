@@ -30,6 +30,6 @@
     "name": "_3_SELECT_IMAGE",
     "pageId": "Manage Product Catalog",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }
