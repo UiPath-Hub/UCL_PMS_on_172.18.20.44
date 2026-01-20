@@ -29,7 +29,7 @@
     ],
     "name": "_00_SP_SELECT_FOR_CONTACT",
     "pageId": "Manage Company Contact",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
