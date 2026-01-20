@@ -48,14 +48,14 @@ export default {
 	pageLoad	:async ()=>{
 		Configs.forceKick=false;
 		Configs.forceLogin=false;
-		/*await Promise.all([ closeModal(Modal_Session_detail.name),
+		await Promise.all([ closeModal(Modal_Session_detail.name),
 											 closeModal(Modal_ErrorAlert.name),
 											 closeModal(MODAL_APPROVE_CONFIRM.name),
 											 closeModal(MODAL_DELETE.name),
 											 closeModal(Modal_ManageItem.name),
 											 closeModal(MODAL_REJECT_CONFIRM.name),
 											 closeModal(Modal_SendToRobot.name),
-											 closeModal(MODAL_DUPLICATE_CONFIRM.name)])*/
+											 closeModal(MODAL_DUPLICATE_CONFIRM.name)])
 		if(!await GlobalFunctions.sessionCheck()) return navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true)) return;
 		await this.initDefault();
