@@ -249,7 +249,8 @@ export default {
 		this.ableToDeleteProfile = true;
 		this.ableToModifyProfile = false;
 		//await Promise.all([NEW_BUTTON_1.setDisabled(true),NEW_BUTTON_2.setDisabled(true),BTTN_EditProfile.setDisabled(true),BTTN_EditProfileService.setDisabled(true)]);
-		await Promise.all([SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID}),this.getInvenForProfile(selectdRow.INVENTORY_ID),this.SetDefault()])
+		await Promise.all([this.getInvenForProfile(selectdRow.INVENTORY_ID),this.SetDefault()])
+		await SP_SELECT_FOR_PROFILE.run({COMPANY_PROFILE_ID:selectdRow.COMPANY_PROFILE_ID});
 		if(SP_SELECT_FOR_PROFILE.data != undefined && SP_SELECT_FOR_PROFILE.data.length != 0){
 			const inventory = {...SP_SELECT_FOR_PROFILE.data[0]}
 
