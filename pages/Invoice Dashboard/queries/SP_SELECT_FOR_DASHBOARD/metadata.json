@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "SP_SELECT_FOR_DASHBOARD",
     "pageId": "Invoice Dashboard",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }
