@@ -29,7 +29,7 @@
     ],
     "name": "SP_HANDLE_TOKEN",
     "pageId": "Invoice Dashboard",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
