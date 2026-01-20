@@ -25,7 +25,7 @@
     "fullyQualifiedName": "Init.pageLoad",
     "name": "pageLoad",
     "pageId": "Invoice Detail",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }
