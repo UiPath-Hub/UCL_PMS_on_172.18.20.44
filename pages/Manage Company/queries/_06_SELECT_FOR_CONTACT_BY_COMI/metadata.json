@@ -29,7 +29,7 @@
     ],
     "name": "_06_SELECT_FOR_CONTACT_BY_COMI",
     "pageId": "Manage Company",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
