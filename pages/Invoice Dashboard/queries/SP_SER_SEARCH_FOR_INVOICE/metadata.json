@@ -29,7 +29,7 @@
     ],
     "name": "SP_SER_SEARCH_FOR_INVOICE",
     "pageId": "Invoice Dashboard",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }
