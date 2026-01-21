@@ -48,9 +48,8 @@ export default {
 	pageLoad	:async ()=>{
 		Configs.forceKick=false;
 		Configs.forceLogin=false;
-		await closeModal(Modal_ErrorAlert.name)
 		await Promise.all([ closeModal(Modal_Session_detail.name),
-											 //,
+											 closeModal(Modal_ErrorAlert.name),
 											 closeModal(MODAL_APPROVE_CONFIRM.name),
 											 closeModal(MODAL_DELETE.name),
 											 closeModal(Modal_ManageItem.name),

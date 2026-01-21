@@ -4,6 +4,8 @@ export default {
 	forceKick:false,
 	forceLogin:false,
 	errorAlert:"",
+	requiredColorAlert:"#ef4444",
+	requiredColorPass:"",
 	dateFormat:"D MMM YYYY",
 	pageName:"",
 	INVOICE_ID:"INVOICE_ID",

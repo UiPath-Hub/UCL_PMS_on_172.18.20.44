@@ -1,4 +1,7 @@
 export default {
+	tst:()=>{
+		STATUS.setSelectedOption("");
+	},
 	onEditItemClick:async (selectedRow)=>{
 		await storeValue("INIT",selectedRow);
 		navigateTo("Invoice Detail",{},"SAME_WINDOW");
