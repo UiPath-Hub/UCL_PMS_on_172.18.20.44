@@ -1,0 +1,116 @@
+{
+  "gitSyncId": "68ad481155eda7018e8c1d6a_c03606a7-7a03-49c0-bd1a-9c0c3834e8a7",
+  "id": "Invoice Details_PMS_INVOICE_LM_Widgets",
+  "unpublishedCollection": {
+    "name": "PMS_INVOICE_LM_Widgets",
+    "pageId": "Invoice Details",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "INVOICE_ID",
+        "value": "{\n  data: PMS_INVOICE_LM.INVOICE_ID.data\n}"
+      },
+      {
+        "name": "INVOICE_NO",
+        "value": "{\n  ...INVOICE_NO,\n  data: INVOICE_NO.text\n}"
+      },
+      {
+        "name": "COMPANY_NAME",
+        "value": "{\n  ...COMPANY_NAME,\n  data: COMPANY_NAME.text\n}"
+      },
+      {
+        "name": "COMPANY_FLOOR",
+        "value": "{\n  ...COMPANY_FLOOR,\n  data: COMPANY_FLOOR.text\n}"
+      },
+      {
+        "name": "COMPANY_ADD_NO",
+        "value": "{\n  ...COMPANY_ADD_NO,\n  data: COMPANY_ADD_NO.text\n}"
+      },
+      {
+        "name": "COMPANY_MOO",
+        "value": "{\n  ...COMPANY_MOO,\n  data: COMPANY_MOO.text\n}"
+      },
+      {
+        "name": "COMPANY_SOI",
+        "value": "{\n  ...COMPANY_SOI,\n  data: COMPANY_SOI.text\n}"
+      },
+      {
+        "name": "COMPANY_ROAD",
+        "value": "{\n  ...COMPANY_ROAD,\n  data: COMPANY_ROAD.text\n}"
+      },
+      {
+        "name": "COMPANY_SUB_DISTRICT",
+        "value": "{\n  ...COMPANY_SUB_DISTRICT,\n  data: COMPANY_SUB_DISTRICT.text\n}"
+      },
+      {
+        "name": "COMPANY_DISTRICT",
+        "value": "{\n  ...COMPANY_DISTRICT,\n  data: COMPANY_DISTRICT.text\n}"
+      },
+      {
+        "name": "COMPANY_PROVINCE",
+        "value": "{\n  ...COMPANY_PROVINCE,\n  data: COMPANY_PROVINCE.text\n}"
+      },
+      {
+        "name": "COMPANY_POSTAL_CODE",
+        "value": "{\n  ...COMPANY_POSTAL_CODE,\n  data: COMPANY_POSTAL_CODE.text\n}"
+      },
+      {
+        "name": "TAX_ID",
+        "value": "{\n  ...TAX_ID,\n  data: TAX_ID.text\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_PERSON",
+        "value": "{\n  ...INVOICE_CONTACT_PERSON,\n  data: INVOICE_CONTACT_PERSON.text\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_TELEPHONE",
+        "value": "{\n  ...INVOICE_CONTACT_TELEPHONE,\n  data: INVOICE_CONTACT_TELEPHONE.text\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_EMAIL",
+        "value": "{\n  ...INVOICE_CONTACT_EMAIL,\n  data: INVOICE_CONTACT_EMAIL.text\n}"
+      },
+      {
+        "name": "QUOTATION_NO",
+        "value": "{\n  ...QUOTATION_NO,\n  data: QUOTATION_NO.text\n}"
+      },
+      {
+        "name": "INVOICE_TYPE",
+        "value": "{\n  ...INVOICE_TYPE,\n  data: INVOICE_TYPE.text\n}"
+      },
+      {
+        "name": "INVOICE_AMOUNT",
+        "value": "{\n  ...INVOICE_AMOUNT,\n  data: INVOICE_AMOUNT.value\n}"
+      },
+      {
+        "name": "VAT_TYPE",
+        "value": "{\n  ...VAT_TYPE,\n  data: VAT_TYPE.text\n}"
+      },
+      {
+        "name": "INVOICE_VAT",
+        "value": "{\n  ...INVOICE_VAT,\n  data: INVOICE_VAT.text\n}"
+      },
+      {
+        "name": "INVOICE_TOTALAMOUNT",
+        "value": "{\n  ...INVOICE_TOTALAMOUNT,\n  data: INVOICE_TOTALAMOUNT.text\n}"
+      },
+      {
+        "name": "DUE_DATE",
+        "value": "{\n  ...DUE_DATE,\n  data: DUE_DATE.text\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  ...STATUS,\n  data: STATUS.text\n}"
+      },
+      {
+        "name": "CREDIT_NOTE",
+        "value": "{\n  ...CREDIT_NOTE,\n  data: CREDIT_NOTE.text\n}"
+      },
+      {
+        "name": "REMARK_FOR_REJECT",
+        "value": "{\n  ...REMARK_FOR_REJECT,\n  data: REMARK_FOR_REJECT.text\n}"
+      }
+    ]
+  }
+}
