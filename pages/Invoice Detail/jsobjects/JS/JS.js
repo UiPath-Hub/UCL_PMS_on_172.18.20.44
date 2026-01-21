@@ -260,7 +260,7 @@ export default {
 		return SELECT_INVOICE.data && SELECT_INVOICE.data.length>0?enableStatus.includes(SELECT_INVOICE.data[0].STATUS):false
 	},
 	onClick_Close:()=>{
-		//navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
+		navigateTo('Invoice Dashboard', {}, 'SAME_WINDOW');
 	},
 	onEditItemClick:async (confirm)=>{
 		if(await GlobalFunctions.permissionsCheck(Configs.permissions.EDIT,false)){

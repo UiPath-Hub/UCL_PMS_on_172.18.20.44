@@ -1,23 +1,23 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_27657d63-f1b2-4f5b-866c-bf99846cf33d",
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_d5b373de-2090-40c8-9bb0-9dc38e0efd85",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 1340,
+          "bottomRow": 1730,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
           "leftColumn": 0,
-          "minHeight": 810,
+          "minHeight": 790,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
           "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 79,
+          "snapRows": 77,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 94,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Invoice Detail",
-    "slug": "invoice-detail"
+    "name": "Invoice Dashboard",
+    "slug": "invoice-dashboard"
   }
 }

@@ -4,7 +4,7 @@ export default {
 		if(appsmith.store.INIT===undefined && !appsmith.URL.queryParams[Configs.invoiceIDParameterName]){
 			Configs.forceKick = true;
 			Configs.errorAlert = "Conflict parameter: Unknown selected invoice.";
-			//showModal(Modal_ErrorAlert.name);
+			showModal(Modal_ErrorAlert.name);
 			return;
 		}else{
 			if(appsmith.URL.queryParams[Configs.invoiceIDParameterName]){
@@ -48,9 +48,8 @@ export default {
 	pageLoad	:async ()=>{
 		Configs.forceKick=false;
 		Configs.forceLogin=false;
-		await closeModal(Modal_ErrorAlert.name);
 		await Promise.all([ closeModal(Modal_Session_detail.name),
-											 //,
+											 closeModal(Modal_ErrorAlert.name),
 											 closeModal(MODAL_APPROVE_CONFIRM.name),
 											 closeModal(MODAL_DELETE.name),
 											 closeModal(Modal_ManageItem.name),
