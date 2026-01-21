@@ -59,10 +59,10 @@ export default {
 											 closeModal(MODAL_DUPLICATE_CONFIRM.name)])
 		if(!await GlobalFunctions.sessionCheck()) return navigateTo('Login', {}, 'SAME_WINDOW');
 		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true)) return;
-		await this.initDefault();
-		JS.prepareReceiptsItems();
-		Configs.BodyInit = "VIEW"
-		resetWidget(Body.widgetName,true);
+		//await this.initDefault();
+		//JS.prepareReceiptsItems();
+		//Configs.BodyInit = "VIEW"
+		//resetWidget(Body.widgetName,true);
 
 	},
 }
