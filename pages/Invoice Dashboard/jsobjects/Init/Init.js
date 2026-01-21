@@ -9,7 +9,11 @@ dataDisplayStartTime:moment("2021-01-01",Configs.dateFormat), //moment.tz("Asia/
 		if(await this.sessionCheck()){
 			if(await this.permissionsCheck(Configs.permissions.VIEW,true)){
 				SP_SELECT_FOR_DASHBOARD.run();
-				SP_SER_SEARCH_FOR_INVOICE.run();
+				await SP_SER_SEARCH_FOR_INVOICE.run();
+				if(SP_SER_SEARCH_FOR_INVOICE.data==undefined || SP_SER_SEARCH_FOR_INVOICE.data?.length === 0 || SP_SER_SEARCH_FOR_INVOICE.data[0]?.TOTAL_RECORDS === 0){
+					await STATUS.setSelectedOption("");
+					SP_SER_SEARCH_FOR_INVOICE.run();
+				}
 				//SP_SER_SEARCH_FOR_COMPANY.run();
 			}
 		}else navigateTo('Login', {}, 'SAME_WINDOW');

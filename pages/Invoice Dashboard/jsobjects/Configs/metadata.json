@@ -28,6 +28,14 @@
         "value": "\"\""
       },
       {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
+      },
+      {
         "name": "dateFormat",
         "value": "\"D MMM YYYY\""
       },
