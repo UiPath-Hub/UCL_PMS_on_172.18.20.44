@@ -90,10 +90,6 @@
       "isDefault": false
     },
     {
-      "id": "Invoice Detail",
-      "isDefault": false
-    },
-    {
       "id": "Contact Person Dashboard",
       "isDefault": false
     },
@@ -107,6 +103,10 @@
     },
     {
       "id": "Invoice Dashboard",
+      "isDefault": false
+    },
+    {
+      "id": "Invoice Detail",
       "isDefault": false
     }
   ],
