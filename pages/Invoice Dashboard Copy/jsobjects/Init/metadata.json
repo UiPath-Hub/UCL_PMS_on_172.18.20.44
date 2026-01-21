@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_b097a711-fbcb-4fb6-ba7d-d71fe24990d0",
+  "id": "Invoice Dashboard Copy_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Invoice Dashboard Copy",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", Configs.dateFormat)"
+      }
+    ]
+  }
+}

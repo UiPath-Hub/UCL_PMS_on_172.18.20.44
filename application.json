@@ -90,11 +90,7 @@
       "isDefault": false
     },
     {
-      "id": "Invoice Dashboard",
-      "isDefault": false
-    },
-    {
-      "id": "Invoice Details",
+      "id": "Invoice Detail",
       "isDefault": false
     },
     {
@@ -107,6 +103,10 @@
     },
     {
       "id": "Receipt Detail",
+      "isDefault": false
+    },
+    {
+      "id": "Invoice Dashboard Copy",
       "isDefault": false
     }
   ],

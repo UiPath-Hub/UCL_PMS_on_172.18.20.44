@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_38684c3c-8d4f-414c-b365-dc7a623585e8",
+  "id": "Invoice Dashboard Copy_Pagination",
+  "unpublishedCollection": {
+    "name": "Pagination",
+    "pageId": "Invoice Dashboard Copy",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "pageSize",
+        "value": "10"
+      }
+    ]
+  }
+}

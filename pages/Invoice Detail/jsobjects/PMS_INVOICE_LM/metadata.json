@@ -1,0 +1,216 @@
+{
+  "gitSyncId": "66de956ac05adf72589749ca_32790129-e32f-473a-88ff-88ae7a72d7ac",
+  "id": "Invoice Detail_PMS_INVOICE_LM",
+  "unpublishedCollection": {
+    "name": "PMS_INVOICE_LM",
+    "pageId": "Invoice Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "INVOICE_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "OWNER_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "OWNER_ERP_BRANCH",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_NAME",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_FLOOR",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_ADD_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_MOO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_SOI",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_ROAD",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_SUB_DISTRICT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_DISTRICT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_PROVINCE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_POSTAL_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "TAX_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_CONTACT_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_PERSON",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_TELEPHONE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_CONTACT_EMAIL",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "QUOTATION_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "QUOTATION_NO",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BRANCH_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "BRANCH_NUMBER",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REFERENCE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_PROJECT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_AMOUNT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "VAT_TYPE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_VAT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_TOTALAMOUNT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREDIT_DAY",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "DOCUMENT_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREDIT_START_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "DUE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REMARK_FORM_API",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REF1",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REF2",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REF3",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "INVOICE_REF4",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "DELETE_FLAG",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "UPDATE_DATE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "USER_ID",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "COMPANY_CODE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "PDF_DRAFT_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "PDF_APPROVE_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "PDF_SEND_FINISH_STATUS",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "CREDIT_NOTE",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      },
+      {
+        "name": "REMARK_FOR_REJECT",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: \"\",\n  color: \"\"\n}"
+      }
+    ]
+  }
+}
