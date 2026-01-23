@@ -71,7 +71,7 @@
   "leftColumn": 33,
   "maxDate": "{{JS_Profile.PERIOD_END_FOR_CALCULATE_MAX_DATE||moment(Current_Profile.COMPANY_PROFILE_PERIOD_END.data)}}",
   "maxDynamicHeight": 9000,
-  "minDate": "{{JS_Profile.PERIOD_END_FOR_CALCULATE_MIN_DATE||moment(Current_Profile.PERIOD_START_FOR_CALCULATE.data)||moment(Current_Profile.COMPANY_PROFILE_PERIOD_START.data)}}",
+  "minDate": "{{JS_Profile.PERIOD_END_FOR_CALCULATE_MIN_DATE||Current_Profile.PERIOD_START_FOR_CALCULATE.data?moment(Current_Profile.PERIOD_START_FOR_CALCULATE.data):\"\"||Current_Profile.COMPANY_PROFILE_PERIOD_START.data?moment(Current_Profile.COMPANY_PROFILE_PERIOD_START.data):\"\"}}",
   "minDynamicHeight": 4,
   "minWidth": 450,
   "mobileBottomRow": 11,

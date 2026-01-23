@@ -20,6 +20,7 @@ export default {
 	requiredColorPass:"",
 	startBody:"LOADING",
 	showCompanyContact:[],
+	disableProfileQuantityInput:Default_InvenForProfile.PRODUCT_TYPE_TH.data=="พื้นที่เช่า",
 	RemarksOfInvoices:{data:[],
 										 column:[{display:"BILLING_REMARK_ID",system:"BILLING_REMARK_ID"},{display:"Invoice Remark Type",system:"INVOICE_REMARK_TYPE"},{display:"Product Type Name",system:"BILLING_REMARK_PRODUCT_TYPE_NAME"},{display:"Group ID",system:"BILLING_REMARK_GROUP_ID"},{display:"Remark Detail",system:"BILLING_REMARK_DETAIL"}],
 										 filterData:(currentData,column)=>{
