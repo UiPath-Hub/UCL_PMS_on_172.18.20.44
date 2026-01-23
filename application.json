@@ -82,15 +82,15 @@
       "isDefault": false
     },
     {
-      "id": "Meter Record",
-      "isDefault": false
-    },
-    {
-      "id": "Meter Record Detail",
-      "isDefault": false
-    },
-    {
       "id": "Contact Person Dashboard",
+      "isDefault": false
+    },
+    {
+      "id": "Invoice Dashboard",
+      "isDefault": false
+    },
+    {
+      "id": "Invoice Detail",
       "isDefault": false
     },
     {
@@ -102,11 +102,11 @@
       "isDefault": false
     },
     {
-      "id": "Invoice Dashboard",
+      "id": "Meter Record",
       "isDefault": false
     },
     {
-      "id": "Invoice Detail",
+      "id": "Meter Record Detail",
       "isDefault": false
     }
   ],

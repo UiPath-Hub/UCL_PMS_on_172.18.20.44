@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "SP_SELECT_FOR_DASHBOARD",
     "pageId": "Meter Record",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }
