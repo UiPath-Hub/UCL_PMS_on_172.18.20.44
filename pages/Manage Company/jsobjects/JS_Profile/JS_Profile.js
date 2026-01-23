@@ -31,7 +31,7 @@ export default {
 	},*/
 	ableToDeleteProfile:false,
 	ableToModifyProfile:true,
-	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {  
+	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {
 		if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
 			accumulator.id.push(currentValue.INVENTORY_ID)
 			accumulator.sum+=parseFloat( currentValue.QUANTITY)

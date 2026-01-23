@@ -42,6 +42,7 @@
     "PRODUCT_NAME_TH",
     "COMPANY_PROFILE_PERIOD_START",
     "COMPANY_PROFILE_PERIOD_END",
+    "DISPLAY_QUANTITY",
     "QUANTITY",
     "INVOICE_GROUP_ID",
     "STATUS",
@@ -50,7 +51,7 @@
     "INVENTORY_ID",
     "FORMULA"
   ],
-  "columnUpdatedAt": 1768460992942,
+  "columnUpdatedAt": 1769155635896,
   "columnWidthMap": {
     "Agreement_Number": 174,
     "Amount__Baht_": 144,
@@ -133,6 +134,9 @@
     },
     {
       "key": "primaryColumns.INVOICE_GROUP_ID.computedValue"
+    },
+    {
+      "key": "primaryColumns.DISPLAY_QUANTITY.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -335,6 +339,40 @@
       "label": "Create Date",
       "notation": "standard",
       "originalId": "CREATE_DATE",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "1rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "DISPLAY_QUANTITY": {
+      "alias": "DISPLAY_QUANTITY",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#ffffff",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_PROFILE_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"DISPLAY_QUANTITY\"]? parseFloat(currentRow[\"DISPLAY_QUANTITY\"]).toFixed(2):\"\" )) : currentRow[\"DISPLAY_QUANTITY\"]? parseFloat(currentRow[\"DISPLAY_QUANTITY\"]).toFixed(2):\"\"  })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "DISPLAY_QUANTITY",
+      "index": 16,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Quantity",
+      "notation": "standard",
+      "originalId": "DISPLAY_QUANTITY",
       "sticky": "",
       "textColor": "",
       "textSize": "1rem",
@@ -637,8 +675,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Quantity",
+      "isVisible": false,
+      "label": "QUANTITY",
       "notation": "standard",
       "originalId": "QUANTITY",
       "sticky": "",
