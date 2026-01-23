@@ -54,7 +54,7 @@
   "labelTextColor": "{{Current_Profile.INVOICE_GROUP_ID.color}}",
   "labelTextSize": "1rem",
   "labelWidth": "10",
-  "leftColumn": 30,
+  "leftColumn": 33,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,

@@ -160,7 +160,7 @@
   "isLoading": false,
   "isSortable": true,
   "isVisible": "{{[appsmith.store.userSession.PERMISSIONS][0].includes(Configs.permissions.SHOW_INVOICE_EXECUTE)}}",
-  "isVisibleDownload": false,
+  "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
   "isVisibleSearch": false,

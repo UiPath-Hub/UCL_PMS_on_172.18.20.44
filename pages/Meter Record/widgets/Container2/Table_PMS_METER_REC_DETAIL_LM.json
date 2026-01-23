@@ -140,7 +140,7 @@
   "isLoading": false,
   "isSortable": false,
   "isVisible": true,
-  "isVisibleDownload": false,
+  "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
   "isVisibleSearch": false,

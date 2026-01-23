@@ -84,6 +84,10 @@
         "value": "[]"
       },
       {
+        "name": "disableProfileQuantityInput",
+        "value": "Default_InvenForProfile.PRODUCT_TYPE_TH.data == \"พื้นที่เช่า\""
+      },
+      {
         "name": "RemarksOfInvoices",
         "value": "{\n  data: [],\n  column: [{\n    display: \"BILLING_REMARK_ID\",\n    system: \"BILLING_REMARK_ID\"\n  }, {\n    display: \"Invoice Remark Type\",\n    system: \"INVOICE_REMARK_TYPE\"\n  }, {\n    display: \"Product Type Name\",\n    system: \"BILLING_REMARK_PRODUCT_TYPE_NAME\"\n  }, {\n    display: \"Group ID\",\n    system: \"BILLING_REMARK_GROUP_ID\"\n  }, {\n    display: \"Remark Detail\",\n    system: \"BILLING_REMARK_DETAIL\"\n  }],\n  filterData: (currentData, column) => {\n    return currentData.map(row => {\n      let filteredRow = {};\n      column.forEach(col => {\n        if (row[col.system]) filteredRow[col.display] = row[col.system]; else filteredRow[col.display] = \"\";\n      });\n      return filteredRow;\n    });\n  },\n  setDefault: column => {\n    const obj = {};\n    column.forEach(item => {\n      obj[item.display] = \"\";\n    });\n    return [obj];\n  }\n}"
       },

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE  [dbo].[SELECT_ALL_COMPANY_PROFILE_BY_COMID] \n @pCOMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}\n,@pTYPE = 'SER'\n,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\n\n",
+      "body": "EXECUTE  [dbo].[SELECT_ALL_COMPANY_PROFILE_BY_COMID_V2] \n @pCOMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}\n,@pTYPE = 'SER'\n,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\n\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

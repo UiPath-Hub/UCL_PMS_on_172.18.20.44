@@ -31,7 +31,7 @@ export default {
 	},*/
 	ableToDeleteProfile:false,
 	ableToModifyProfile:true,
-	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {  
+	LeadTotalAmount:parseFloat(PMS_COMPANY_PROFILE_LM.processedTableData.reduce((accumulator, currentValue) => {
 		if(!accumulator.id.includes(currentValue.INVENTORY_ID)){   
 			accumulator.id.push(currentValue.INVENTORY_ID)
 			accumulator.sum+=parseFloat( currentValue.QUANTITY)
@@ -79,6 +79,7 @@ export default {
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		PRICE_PER_UNIT.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
+		QUANTITY.setDisabled(false);
 		await SP_SER_FOR_INVENTORY.run();
 		resetWidget(Container_Additional.widgetName,true);
 		resetWidget(Schedule_Trigger.widgetName,true);
@@ -88,7 +89,8 @@ export default {
 	},
 	BTTNLinkOnClick:async (LinkTableColumn)=>{
 		let reference = [{LinkTableColumn:"PRICE_PER_UNIT",ProfileProp:"PROFILE_PP_UNIT_MODIFIER", Widget: PRICE_PER_UNIT},
-										 {LinkTableColumn:"FLOOR_NO",ProfileProp:"PROFILE_FLOOR_MODIFIER", Widget:COMPANY_PROFILE_FLOOR_NO}
+										 {LinkTableColumn:"FLOOR_NO",ProfileProp:"PROFILE_FLOOR_MODIFIER", Widget:COMPANY_PROFILE_FLOOR_NO},
+										 {LinkTableColumn:"QUANTITY",ProfileProp:"QUANTITY", Widget:QUANTITY}
 										];
 		reference = await reference.filter((Ref)=>Ref.LinkTableColumn===LinkTableColumn);
 		await Promise.all( reference.map(async (Ref)=>{
@@ -114,7 +116,14 @@ export default {
 		PRICE_PER_UNIT.setValue("");
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setValue("");
-		await Promise.all(Object.keys(Current_Profile).map((key)=>{
+		if(Configs.disableProfileQuantityInput){
+			QUANTITY.setDisabled(true);
+		}else{
+			QUANTITY.setDisabled(false);
+			QUANTITY.setValue("");
+		}
+		
+		await Promise.all(Object.keys(Current_Profile).map(async (key)=>{
 			let strKey = key.toString();
 			if(Current_Profile[strKey].data !== undefined) {
 				Current_Profile[strKey].data="";
@@ -155,7 +164,7 @@ export default {
 			PRICE_PER_UNIT: PRICE_PER_UNIT.isDisabled?null:PRICE_PER_UNIT.value,
 			COMPANY_PROFILE_PERIOD_START:COMPANY_PROFILE_PERIOD_START.formattedDate?moment(COMPANY_PROFILE_PERIOD_START.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			COMPANY_PROFILE_PERIOD_END:COMPANY_PROFILE_PERIOD_END.formattedDate?moment(COMPANY_PROFILE_PERIOD_END.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
-			QUANTITY: QUANTITY.text, 
+			QUANTITY: QUANTITY.isDisabled?null:QUANTITY.text, 
 			FREQUENCY_TYPE: FREQUENCY_TYPE.selectedOptionValue,
 			REPEAT_EVERY: REPEAT_EVERY.text,
 			FREQUENCY_DATE: FREQUENCY_DATE.formattedDate?moment(FREQUENCY_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
@@ -197,7 +206,7 @@ export default {
 			PRICE_PER_UNIT: PRICE_PER_UNIT.isDisabled?null:PRICE_PER_UNIT.value,
 			COMPANY_PROFILE_PERIOD_START:COMPANY_PROFILE_PERIOD_START.formattedDate?moment(COMPANY_PROFILE_PERIOD_START.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			COMPANY_PROFILE_PERIOD_END:COMPANY_PROFILE_PERIOD_END.formattedDate?moment(COMPANY_PROFILE_PERIOD_END.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
-			QUANTITY: QUANTITY.text,
+			QUANTITY: QUANTITY.isDisabled?null:QUANTITY.text, 
 			FREQUENCY_TYPE: FREQUENCY_TYPE.selectedOptionValue,
 			REPEAT_EVERY: REPEAT_EVERY.text,
 			FREQUENCY_DATE: FREQUENCY_DATE.formattedDate?moment(FREQUENCY_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
@@ -272,6 +281,8 @@ export default {
 			}
 			if(inventory["QUANTITY"] === undefined || inventory["QUANTITY"] === null){
 				inventory["QUANTITY"] = inventory["INVENTORY_QUANTITY"];
+				if(!QUANTITY.isDisabled)
+					QUANTITY.setDisabled(true);
 			}
 			Object.keys(Current_Profile).forEach(i=>{
 				if(Current_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)){ 
