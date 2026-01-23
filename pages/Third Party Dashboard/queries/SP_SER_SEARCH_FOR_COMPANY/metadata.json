@@ -29,7 +29,7 @@
     ],
     "name": "SP_SER_SEARCH_FOR_COMPANY",
     "pageId": "Third Party Dashboard",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

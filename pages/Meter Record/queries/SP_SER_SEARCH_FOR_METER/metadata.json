@@ -29,7 +29,7 @@
     ],
     "name": "SP_SER_SEARCH_FOR_METER",
     "pageId": "Meter Record",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

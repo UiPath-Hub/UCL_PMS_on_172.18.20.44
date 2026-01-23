@@ -7,8 +7,9 @@ dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangko
 		closeModal(Modal_ErrorAlert.name);
 		if(await this.sessionCheck()){
 			if(await this.permissionsCheck(Configs.permissions.VIEW,true)){
-				SP_SELECT_FOR_DASHBOARD.run();
-				SP_SER_SEARCH_FOR_COMPANY.run();
+				//use on page load in query.
+				//SP_SELECT_FOR_DASHBOARD.run();
+				//SP_SER_SEARCH_FOR_COMPANY.run();
 				
 			}
 		}else navigateTo('Login', {}, 'SAME_WINDOW');
