@@ -50,7 +50,7 @@
   "mobileTopRow": 18,
   "needsErrorInfo": false,
   "onClick": "{{JS_Profile.onAddProfileClick(true)}}",
-  "originalBottomRow": 44,
+  "originalBottomRow": 40,
   "originalTopRow": 40,
   "parentId": "n6q6hthnd1",
   "placement": "CENTER",
