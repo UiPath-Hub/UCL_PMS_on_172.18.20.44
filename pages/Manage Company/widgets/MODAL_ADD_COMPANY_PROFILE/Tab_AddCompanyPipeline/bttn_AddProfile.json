@@ -47,7 +47,7 @@
   "mobileTopRow": 18,
   "needsErrorInfo": false,
   "onClick": "{{appsmith.store[Configs.editCompanyProfileFlag] == undefined? JS_Profile.onAddProfileClick():JS_Profile.onUpdateProfileClick()}}",
-  "originalBottomRow": 44,
+  "originalBottomRow": 40,
   "originalTopRow": 40,
   "parentId": "n6q6hthnd1",
   "placement": "CENTER",
