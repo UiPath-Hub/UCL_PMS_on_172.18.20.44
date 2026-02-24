@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "66de956ac05adf72589749ca_5112194c-1a53-4480-9147-f9488804a1d5",
-  "id": "Manage Company_SP_SELECT_FOR_PROFILE",
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_e7403644-75ae-44e8-9daa-5a71061b5fca",
+  "id": "Manage Company_SP_DD_PAYMENT_FREQUENCY_TYPE",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "\nEXECUTE [dbo].[SELECT_FOR_COMPANY_PROFILE_V3] \n   @COMPANY_PROFILE_ID = {{this.params.COMPANY_PROFILE_ID}}\n\n",
+      "body": "EXECUTE [dbo].[SELECT_FOR_DROPDOWN] \n   @pDropdowntypename={{Dropdown.PAYMENT_FREQUENCY_TYPE}}",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "name": "SP_SELECT_FOR_PROFILE",
+    "name": "SP_DD_PAYMENT_FREQUENCY_TYPE",
     "pageId": "Manage Company",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

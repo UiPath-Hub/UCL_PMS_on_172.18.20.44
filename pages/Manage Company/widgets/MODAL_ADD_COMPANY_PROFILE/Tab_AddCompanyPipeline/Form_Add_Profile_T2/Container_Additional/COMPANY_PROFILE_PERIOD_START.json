@@ -79,6 +79,8 @@
   "mobileTopRow": 15,
   "needsErrorInfo": false,
   "onDateSelected": "{{resetWidget(COMPANY_PROFILE_PERIOD_END.widgetName)}}",
+  "originalBottomRow": 29,
+  "originalTopRow": 22,
   "parentColumnSpace": 12.5,
   "parentId": "uk4994gix9",
   "parentRowSpace": 10,

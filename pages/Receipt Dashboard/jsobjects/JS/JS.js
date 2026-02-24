@@ -13,12 +13,16 @@ export default {
 			 'PAYMENT_TYPE':i.PAYMENT_TYPE
 			}));
 	},
-	onEditClick:()=>{
+	onEditClick:async()=>{
+		if(!await GlobalFunctions.sessionCheck())return navigateTo('Login', {}, 'SAME_WINDOW');
+		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true))return;
 		storeValue("INIT", PMS_RECEIPT_LM.selectedRow,true).then(() => {
 			navigateTo('Receipt Detail', {}, 'SAME_WINDOW');
 		});
 	},
 	onSearchClick:async()=>{
+		if(!await GlobalFunctions.sessionCheck())return navigateTo('Login', {}, 'SAME_WINDOW');
+		if(!await GlobalFunctions.permissionsCheck(Configs.permissions.VIEW,true))return;
 		await resetWidget(PMS_RECEIPT_LM.widgetName,false);
 		SP_SELECT_FOR_DASHBOARD.run();
 		this.prepareTable();

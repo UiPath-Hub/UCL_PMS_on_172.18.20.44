@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 40,
+  "bottomRow": 44,
   "bottomRowBeforeCollapse": 29,
   "boxShadow": "none",
   "buttonColor": "#15803d",
@@ -47,7 +47,7 @@
   "mobileTopRow": 18,
   "needsErrorInfo": false,
   "onClick": "{{appsmith.store[Configs.editCompanyProfileFlag] == undefined? JS_Profile.onAddProfileClick():JS_Profile.onUpdateProfileClick()}}",
-  "originalBottomRow": 40,
+  "originalBottomRow": 44,
   "originalTopRow": 40,
   "parentId": "n6q6hthnd1",
   "placement": "CENTER",

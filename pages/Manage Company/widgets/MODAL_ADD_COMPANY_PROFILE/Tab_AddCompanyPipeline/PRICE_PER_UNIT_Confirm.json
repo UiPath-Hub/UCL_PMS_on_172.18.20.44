@@ -8,7 +8,7 @@
   "boxShadow": "none",
   "decimals": 2,
   "defaultCurrencyCode": "THB",
-  "defaultText": "{{PRICE_PER_UNIT.value ||\"\"}}",
+  "defaultText": "{{PRICE_PER_UNIT.value ||\"0\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
