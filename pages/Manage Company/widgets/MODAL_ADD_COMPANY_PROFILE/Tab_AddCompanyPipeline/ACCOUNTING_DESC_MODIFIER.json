@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 41,
+  "bottomRow": 19,
   "boxShadow": "none",
-  "defaultText": "{{_.trim(DefaultCompany.TAX_ID.data)}}",
+  "defaultText": "{{Current_Profile.ACCOUNTING_DESC_MODIFIER.data}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -17,80 +17,69 @@
       "key": "defaultText"
     },
     {
-      "key": "isRequired"
+      "key": "labelTextColor"
     },
     {
-      "key": "labelTextColor"
+      "key": "isRequired"
     },
     {
       "key": "regex"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
-    {
-      "key": "isRequired"
-    },
     {
       "key": "labelTextColor"
     },
     {
-      "key": "onTextChanged"
+      "key": "isRequired"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "onTextChanged"
-    },
-    {
-      "key": "onBlur"
     }
   ],
-  "errorMessage": "err",
   "iconAlign": "left",
-  "inputType": "TEXT",
+  "inputType": "MULTI_LINE_TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{DefaultCompany.TAX_ID.required}}",
+  "isRequired": "{{Current_Profile.ACCOUNTING_DESC_MODIFIER.required}}",
   "isVisible": true,
-  "key": "nwk391w658",
-  "label": "Tax ID",
+  "key": "a26yk5ycjr",
+  "label": "Accounting Description",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{DefaultCompany.TAX_ID\n.color}}",
+  "labelTextColor": "{{Current_Profile.ACCOUNTING_DESC_MODIFIER.color}}",
   "labelTextSize": "1rem",
-  "labelWidth": "11",
-  "leftColumn": 34,
-  "maxChars": "13",
+  "labelWidth": "10",
+  "leftColumn": 4,
+  "maxChars": "255",
   "maxDynamicHeight": 9000,
-  "maxNum": "",
   "minDynamicHeight": 4,
-  "minNum": "",
   "minWidth": 450,
-  "mobileBottomRow": 11,
-  "mobileLeftColumn": 2,
-  "mobileRightColumn": 22,
-  "mobileTopRow": 4,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 16,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onBlur": "",
-  "onTextChanged": "{{VerifyButton3.setInit();}}",
-  "originalBottomRow": 47,
-  "originalTopRow": 43,
-  "parentColumnSpace": 19.5,
-  "parentId": "lh5sy4l6w2",
+  "onTextChanged": "",
+  "originalBottomRow": 19,
+  "originalTopRow": 11,
+  "parentColumnSpace": 13.125,
+  "parentId": "rsulwsa2uh",
   "parentRowSpace": 10,
-  "regex": "{{DefaultCompany.TAX_ID.regex}}",
+  "regex": "{{Current_Profile.ACCOUNTING_DESC_MODIFIER.regex}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
-  "rightColumn": 58,
+  "rightColumn": 55,
   "shouldAllowAutofill": false,
-  "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 37,
+  "topRow": 11,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
-  "widgetId": "4nags414x1",
-  "widgetName": "TAX_ID"
+  "widgetId": "g6moqi358a",
+  "widgetName": "ACCOUNTING_DESC_MODIFIER"
 }

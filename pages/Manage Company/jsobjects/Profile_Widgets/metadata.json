@@ -66,6 +66,14 @@
       {
         "name": "PERIOD_END_FOR_CALCULATE",
         "value": "{\n  ...PERIOD_END_FOR_CALCULATE,\n  data: PERIOD_END_FOR_CALCULATE.selectedDate,\n  page: \"T7\"\n}"
+      },
+      {
+        "name": "ACCOUNTING_DESC_MODIFIER",
+        "value": "{\n  ...ACCOUNTING_DESC_MODIFIER,\n  data: ACCOUNTING_DESC_MODIFIER.text,\n  page: \"T7\"\n}"
+      },
+      {
+        "name": "PAYMENT_FREQUENCY_TYPE",
+        "value": "{\n  ...PAYMENT_FREQUENCY_TYPE,\n  data: PAYMENT_FREQUENCY_TYPE.selectedOptionValue,\n  page: \"T7\"\n}"
       }
     ]
   }

@@ -3,6 +3,8 @@ export default {
 		STATUS.setSelectedOption("");
 	},
 	onEditItemClick:async (selectedRow)=>{
+		if(!await Init.sessionCheck()) navigateTo('Login', {}, 'SAME_WINDOW');
+		if(!await Init.permissionsCheck(Configs.permissions.VIEW,true)) return;
 		await storeValue("INIT",selectedRow);
 		navigateTo("Invoice Detail",{},"SAME_WINDOW");
 
@@ -43,7 +45,7 @@ export default {
 			await showModal(MODAL_APPROVE_CONFIRM.name);
 		}
 	},
-	onBttn_ChangeStatus_ApproveDisable:()=>{
+	/*onBttn_ChangeStatus_ApproveDisable:()=>{
 		return Table_PMS_INVOICE_LMEXECUTIVE.selectedRows.find(i=>Configs.bttnAPPROVE_disableStatus.includes(i.STATUS))
-	},
+	},*/
 }

@@ -1,7 +1,7 @@
 DECLARE @ResultCode NVARCHAR(10) ,
     @ResultMessages NVARCHAR(MAX);
 
-EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V3]
+EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V5]
    @pCOMPANY_ID = {{COMPANY_ID.text}}
   ,@pCOMPANY_PROFILE_AGREEMENT_NO = {{this.params.AGREEMENT_ID}}
   ,@pFORMULA_ID = {{this.params.FORMULA}}
@@ -18,6 +18,8 @@ EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V3]
 		,@PERIOD_END_FOR_CALCULATE = {{this.params.PERIOD_END_FOR_CALCULATE||null}}
 		,@PERIOD_START_FOR_CALCULATE = {{this.params.PERIOD_START_FOR_CALCULATE||null}}
 		,@PROFILE_PAYMENT_DUE_DATE = {{this.params.PROFILE_PAYMENT_DUE_DATE||null}}
+		,@ACCOUNTING_DESC_MODIFIER = {{this.params.ACCOUNTING_DESC_MODIFIER||null}}
+		,@PAYMENT_FREQUENCY_TYPE = {{this.params.PAYMENT_FREQUENCY_TYPE||null}}
 	,@RENEW_FROM_ID = {{this.params.RENEW_FROM_ID??null}}
 	,@IS_INSERT = 1
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

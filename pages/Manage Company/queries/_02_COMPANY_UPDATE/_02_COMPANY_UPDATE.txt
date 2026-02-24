@@ -2,7 +2,7 @@ DECLARE @ResultCode NVARCHAR(10) ,
     @ResultMessages NVARCHAR(MAX);
 
 EXECUTE [dbo].[UPDATE_PMS_COMPANY_LM]
-   @pCOMPANY_TYPE = {{COMPANY_TYPE_NAME.selectedOptionValue}}
+   @pCOMPANY_TYPE = {{ACCOUNTING_DESCRIPTION_MODIFIE.selectedOptionValue}}
   ,@pCOMPANY_NAME_TH = {{COMPANY_NAME_TH.text}}
   ,@pCOMPANY_NAME_EN = {{COMPANY_NAME_EN.text}}
   ,@pSHOP_NAME = {{SHOP_NAME.text}}

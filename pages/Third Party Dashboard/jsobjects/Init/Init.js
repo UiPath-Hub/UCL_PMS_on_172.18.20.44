@@ -5,11 +5,8 @@ dataDisplayStartTime:moment("2021-01-01","YYYY-MM-DD"), //moment.tz("Asia/Bangko
 		Configs.forceLogin=false;
 		closeModal(Modal_Session_detail.name);
 		closeModal(Modal_ErrorAlert.name);
-		if(await this.sessionCheck()){
-			if(await this.permissionsCheck(Configs.permissions.VIEW,true)){
-
-			}
-		}else navigateTo('Login', {}, 'SAME_WINDOW');
+		if(!await this.sessionCheck()) navigateTo('Login', {}, 'SAME_WINDOW');
+		if(!await this.permissionsCheck(Configs.permissions.VIEW,true)) return;
 	},
 	sessionCheck:async ()=>{
 		if(appsmith.store["userSession"] && appsmith.store["userSession"].EMAIL== appsmith.user.email){

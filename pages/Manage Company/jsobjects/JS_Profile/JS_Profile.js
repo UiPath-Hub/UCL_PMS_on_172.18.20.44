@@ -80,6 +80,7 @@ export default {
 		PRICE_PER_UNIT.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
 		QUANTITY.setDisabled(false);
+		ACCOUNTING_DESC_MODIFIER.setDisabled(false);
 		await SP_SER_FOR_INVENTORY.run();
 		resetWidget(Container_Additional.widgetName,true);
 		resetWidget(Schedule_Trigger.widgetName,true);
@@ -90,7 +91,8 @@ export default {
 	BTTNLinkOnClick:async (LinkTableColumn)=>{
 		let reference = [{LinkTableColumn:"PRICE_PER_UNIT",ProfileProp:"PROFILE_PP_UNIT_MODIFIER", Widget: PRICE_PER_UNIT},
 										 {LinkTableColumn:"FLOOR_NO",ProfileProp:"PROFILE_FLOOR_MODIFIER", Widget:COMPANY_PROFILE_FLOOR_NO},
-										 {LinkTableColumn:"QUANTITY",ProfileProp:"QUANTITY", Widget:QUANTITY}
+										 {LinkTableColumn:"QUANTITY",ProfileProp:"QUANTITY", Widget:QUANTITY},
+										 {LinkTableColumn:"ACCOUNTING_DESCRIPTION",ProfileProp:"ACCOUNTING_DESC_MODIFIER", Widget:ACCOUNTING_DESC_MODIFIER},
 										];
 		reference = await reference.filter((Ref)=>Ref.LinkTableColumn===LinkTableColumn);
 		await Promise.all( reference.map(async (Ref)=>{
@@ -116,6 +118,8 @@ export default {
 		PRICE_PER_UNIT.setValue("");
 		COMPANY_PROFILE_FLOOR_NO.setDisabled(false);
 		COMPANY_PROFILE_FLOOR_NO.setValue("");
+		ACCOUNTING_DESC_MODIFIER.setDisabled(false);
+		ACCOUNTING_DESC_MODIFIER.setValue("");
 		if(Configs.disableProfileQuantityInput){
 			QUANTITY.setDisabled(true);
 		}else{
@@ -172,6 +176,8 @@ export default {
 			PROFILE_PAYMENT_DUE_DATE: PROFILE_PAYMENT_DUE_DATE.formattedDate?moment(PROFILE_PAYMENT_DUE_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			PERIOD_START_FOR_CALCULATE: PERIOD_START_FOR_CALCULATE.formattedDate?moment(PERIOD_START_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			PERIOD_END_FOR_CALCULATE: PERIOD_END_FOR_CALCULATE.formattedDate?moment(PERIOD_END_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
+			ACCOUNTING_DESC_MODIFIER: ACCOUNTING_DESC_MODIFIER.isDisabled?null: ACCOUNTING_DESC_MODIFIER.text,
+			PAYMENT_FREQUENCY_TYPE:PAYMENT_FREQUENCY_TYPE.selectedOptionValue
 		}
 		if(isRenew){
 			Params.RENEW_FROM_ID = Current_Profile.COMPANY_PROFILE_ID.data;
@@ -214,6 +220,8 @@ export default {
 			PROFILE_PAYMENT_DUE_DATE: PROFILE_PAYMENT_DUE_DATE.formattedDate?moment(PROFILE_PAYMENT_DUE_DATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			PERIOD_START_FOR_CALCULATE: PERIOD_START_FOR_CALCULATE.formattedDate?moment(PERIOD_START_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			PERIOD_END_FOR_CALCULATE: PERIOD_END_FOR_CALCULATE.formattedDate?moment(PERIOD_END_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
+			ACCOUNTING_DESC_MODIFIER: ACCOUNTING_DESC_MODIFIER.isDisabled?null: ACCOUNTING_DESC_MODIFIER.text,
+			PAYMENT_FREQUENCY_TYPE:PAYMENT_FREQUENCY_TYPE.selectedOptionValue
 		}
 		//return console.log(Params);
 		_08_P_UPDATE_PROFILE_LM.run(Params).then(async ()=>{
@@ -284,6 +292,11 @@ export default {
 				if(!QUANTITY.isDisabled)
 					QUANTITY.setDisabled(true);
 			}
+			if(inventory["ACCOUNTING_DESC_MODIFIER"] === undefined || inventory["ACCOUNTING_DESC_MODIFIER"] === null){
+				inventory["ACCOUNTING_DESC_MODIFIER"] = inventory["ACCOUNTING_DESCRIPTION"];
+				if(!ACCOUNTING_DESC_MODIFIER.isDisabled)
+					ACCOUNTING_DESC_MODIFIER.setDisabled(true);
+			}
 			Object.keys(Current_Profile).forEach(i=>{
 				if(Current_Profile[i].data!== undefined && (inventory[i] !== undefined && inventory[i] !== null)){ 
 					Current_Profile[i].data = inventory[i];
@@ -333,7 +346,7 @@ export default {
 
 	},
 	onBttn_NextPipeline_T3_Click:async()=>{
-		const page = _.pickBy(Profile_Widgets, function(value, key) {if(value.page === "T3") return value;})
+		const page = _.pickBy(Profile_Widgets, function(value, key) {console.log(key); if(value.page === "T3") return value;})
 		let alertWidget = await GlobalFunctions.manualValidateV2(Current_Profile,page);
 		const unique_Array = Array.from(new Set(alertWidget.map(i=>(i.label ||  _.toLower( i.widgetName).replaceAll("_"," ")))));
 		if(alertWidget.length > 0){
