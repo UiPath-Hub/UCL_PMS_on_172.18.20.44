@@ -49,9 +49,10 @@
     "QUANTITY",
     "TOTAL_RECORDS",
     "INVENTORY_ID",
-    "FORMULA"
+    "FORMULA",
+    "PROFILE_REMARK"
   ],
-  "columnUpdatedAt": 1771916433055,
+  "columnUpdatedAt": 1771993687205,
   "columnWidthMap": {
     "Base_on": 562,
     "By": 196,
@@ -61,7 +62,7 @@
     "Detail": 278,
     "Email": 229,
     "Floor": 83,
-    "INVENTORY_NAME": 208,
+    "INVENTORY_NAME": 398,
     "Inspection_by": 267,
     "Inspection_date": 161,
     "Inspection_status": 290,
@@ -145,6 +146,9 @@
     },
     {
       "key": "primaryColumns.DISPLAY_QUANTITY.computedValue"
+    },
+    {
+      "key": "primaryColumns.PROFILE_REMARK.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -635,6 +639,40 @@
       "notation": "standard",
       "originalId": "PRODUCT_TYPE_TH",
       "sticky": "",
+      "textSize": "1rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "PROFILE_REMARK": {
+      "alias": "PROFILE_REMARK",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#ffffff",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_PROFILE_LM_2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"PROFILE_REMARK\"])) : PROFILE_REMARK })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "PROFILE_REMARK",
+      "index": 16,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Remark",
+      "notation": "standard",
+      "originalId": "PROFILE_REMARK",
+      "sticky": "",
+      "textColor": "",
       "textSize": "1rem",
       "thousandSeparator": true,
       "validation": {},

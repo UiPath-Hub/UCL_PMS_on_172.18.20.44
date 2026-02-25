@@ -1,4 +1,4 @@
-EXECUTE  [dbo].[SELECT_ALL_COMPANY_PROFILE_BY_COMID_V2] 
+EXECUTE  [dbo].[SELECT_ALL_COMPANY_PROFILE_BY_COMID_V3] 
  @pCOMPANY_ID = {{appsmith.URL.queryParams[Configs.editCompanyFlag]}}
 ,@pTYPE = 'SER'
 ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}

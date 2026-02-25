@@ -74,6 +74,10 @@
       {
         "name": "PAYMENT_FREQUENCY_TYPE",
         "value": "{\n  ...PAYMENT_FREQUENCY_TYPE,\n  data: PAYMENT_FREQUENCY_TYPE.selectedOptionValue,\n  page: \"T7\"\n}"
+      },
+      {
+        "name": "PROFILE_REMARK",
+        "value": "{\n  ...PROFILE_REMARK,\n  data: PROFILE_REMARK.text,\n  page: \"T7\"\n}"
       }
     ]
   }

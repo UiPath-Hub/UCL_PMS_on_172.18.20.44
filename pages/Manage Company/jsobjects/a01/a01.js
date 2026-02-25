@@ -1,5 +1,5 @@
 export default {
 	myVar1:async ()=>{
-		return "ACCOUNTING_DESCRIPTION_MODIFIER".length
+		return Current_Profile.RENEW_ID.data === ""
 	}
 }
