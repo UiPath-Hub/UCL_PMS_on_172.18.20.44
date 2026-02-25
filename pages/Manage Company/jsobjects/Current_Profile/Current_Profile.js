@@ -22,4 +22,5 @@ export default {
 	PERIOD_END_FOR_CALCULATE:{data:"",regex:"",required:false,color:"" },
 	ACCOUNTING_DESC_MODIFIER:{data:"",regex:"",required:false,color:"" },
 	PAYMENT_FREQUENCY_TYPE:{data:"",regex:"",required:false,color:"" },
+	PROFILE_REMARK:{data:"",regex:"",required:false,color:"" },
 }

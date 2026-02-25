@@ -20,6 +20,7 @@ EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V5]
 		,@PROFILE_PAYMENT_DUE_DATE = {{this.params.PROFILE_PAYMENT_DUE_DATE||null}}
 		,@ACCOUNTING_DESC_MODIFIER = {{this.params.ACCOUNTING_DESC_MODIFIER||null}}
 		,@PAYMENT_FREQUENCY_TYPE = {{this.params.PAYMENT_FREQUENCY_TYPE||null}}
+		,@PROFILE_REMARK = {{this.params[PROFILE_REMARK.widgetName]||null}}
 	,@IS_UPDATE = 1
   ,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
 	,@ResultCode =@ResultCode OUTPUT

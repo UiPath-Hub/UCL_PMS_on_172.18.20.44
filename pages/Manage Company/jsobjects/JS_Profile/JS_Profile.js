@@ -177,7 +177,8 @@ export default {
 			PERIOD_START_FOR_CALCULATE: PERIOD_START_FOR_CALCULATE.formattedDate?moment(PERIOD_START_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			PERIOD_END_FOR_CALCULATE: PERIOD_END_FOR_CALCULATE.formattedDate?moment(PERIOD_END_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			ACCOUNTING_DESC_MODIFIER: ACCOUNTING_DESC_MODIFIER.isDisabled?null: ACCOUNTING_DESC_MODIFIER.text,
-			PAYMENT_FREQUENCY_TYPE:PAYMENT_FREQUENCY_TYPE.selectedOptionValue
+			PAYMENT_FREQUENCY_TYPE:PAYMENT_FREQUENCY_TYPE.selectedOptionValue,
+			[PROFILE_REMARK.widgetName]:PROFILE_REMARK.text,
 		}
 		if(isRenew){
 			Params.RENEW_FROM_ID = Current_Profile.COMPANY_PROFILE_ID.data;
@@ -221,7 +222,8 @@ export default {
 			PERIOD_START_FOR_CALCULATE: PERIOD_START_FOR_CALCULATE.formattedDate?moment(PERIOD_START_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			PERIOD_END_FOR_CALCULATE: PERIOD_END_FOR_CALCULATE.formattedDate?moment(PERIOD_END_FOR_CALCULATE.formattedDate,Configs.dateFormat).format("YYYY-MM-DD"):undefined,
 			ACCOUNTING_DESC_MODIFIER: ACCOUNTING_DESC_MODIFIER.isDisabled?null: ACCOUNTING_DESC_MODIFIER.text,
-			PAYMENT_FREQUENCY_TYPE:PAYMENT_FREQUENCY_TYPE.selectedOptionValue
+			PAYMENT_FREQUENCY_TYPE:PAYMENT_FREQUENCY_TYPE.selectedOptionValue,
+			[PROFILE_REMARK.widgetName]:PROFILE_REMARK.text,
 		}
 		//return console.log(Params);
 		_08_P_UPDATE_PROFILE_LM.run(Params).then(async ()=>{

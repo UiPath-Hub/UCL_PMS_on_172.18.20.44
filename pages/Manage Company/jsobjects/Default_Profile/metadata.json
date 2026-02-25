@@ -98,6 +98,10 @@
       {
         "name": "PAYMENT_FREQUENCY_TYPE",
         "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
+      },
+      {
+        "name": "PROFILE_REMARK",
+        "value": "{\n  data: \"\",\n  regex: \"\",\n  required: false,\n  color: \"\"\n}"
       }
     ]
   }

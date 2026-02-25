@@ -49,9 +49,10 @@
     "CREATE_DATE",
     "TOTAL_RECORDS",
     "INVENTORY_ID",
-    "FORMULA"
+    "FORMULA",
+    "PROFILE_REMARK"
   ],
-  "columnUpdatedAt": 1771916433046,
+  "columnUpdatedAt": 1771993686098,
   "columnWidthMap": {
     "Agreement_Number": 174,
     "Amount__Baht_": 144,
@@ -63,6 +64,7 @@
     "INVENTORY_NAME": 203,
     "Inventory_Name": 167,
     "Lease_Space_Unit": 161,
+    "PROFILE_REMARK": 225,
     "RegistalationNumber": 180,
     "Registalation_Number": 217,
     "Start_Period": 199,
@@ -137,6 +139,9 @@
     },
     {
       "key": "primaryColumns.DISPLAY_QUANTITY.computedValue"
+    },
+    {
+      "key": "primaryColumns.PROFILE_REMARK.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -645,6 +650,40 @@
       "label": "Product Type",
       "notation": "standard",
       "originalId": "PRODUCT_TYPE_TH",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "1rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "PROFILE_REMARK": {
+      "alias": "PROFILE_REMARK",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#ffffff",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = PMS_COMPANY_PROFILE_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"PROFILE_REMARK\"])) : PROFILE_REMARK })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "PROFILE_REMARK",
+      "index": 16,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Remark",
+      "notation": "standard",
+      "originalId": "PROFILE_REMARK",
       "sticky": "",
       "textColor": "",
       "textSize": "1rem",
