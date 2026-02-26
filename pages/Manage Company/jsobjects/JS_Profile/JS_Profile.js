@@ -316,6 +316,7 @@ export default {
 		await showModal(MODAL_ADD_COMPANY_PROFILE.name);
 		resetWidget(Container_Additional.widgetName,true);
 		resetWidget(Schedule_Trigger.widgetName,true);
+		resetWidget(Tab_AddCompanyPipeline.widgetName,true);
 		this.ableToModifyProfile = true;
 		//await Promise.all([NEW_BUTTON_1.setDisabled(false),BTTN_EditProfileService.setDisabled(false),BTTN_EditProfile.setDisabled(false),NEW_BUTTON_2.setDisabled(false)]);
 		//Tab_AddCompanyPipeline.setVisibility(true);

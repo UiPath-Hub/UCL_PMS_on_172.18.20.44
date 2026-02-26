@@ -1,5 +1,5 @@
 export default {
 	myVar1:async ()=>{
-		return Current_Profile.RENEW_ID.data === ""
+		return Current_Profile.PAYMENT_FREQUENCY_TYPE.data
 	}
 }
