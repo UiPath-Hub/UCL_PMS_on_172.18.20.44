@@ -3,7 +3,7 @@
 
 DECLARE @ResultCode NVARCHAR(10) ,
     @ResultMessages NVARCHAR(MAX);
-execute dbo.[UPDATE_REMARK]
+execute dbo.[UPDATE_REMARK_V1]
 		@COMPANY_ID = {{COMPANY_ID.text||"TEMP"}}
 		,@BILLING_REMARK_TYPE  = {{this.params.BILLING_REMARK_TYPE}}
 		,@INVOICE_REMARK_TYPE= {{this.params.INVOICE_REMARK_TYPE}}
