@@ -41,7 +41,7 @@
     }
   ],
   "iconAlign": "left",
-  "inputType": "NUMBER",
+  "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": "{{Current_Profile.INVOICE_GROUP_ID.required}}",

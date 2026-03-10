@@ -9,7 +9,7 @@ appsmith.store.INIT[Configs.INVOICE_ID] = invoice.INVOICE_NO) AND
 (Configs.INVOICE_ID == "INVOICE_ID"?1:0 = 0 or
 appsmith.store.INIT[Configs.INVOICE_ID] = invoice.INVOICE_ID)*/
 
-EXEC	[dbo].[SELECT_FOR_INVOICE_BY_ID_N_NO]
+EXEC	[dbo].[SELECT_FOR_INVOICE_BY_ID_N_NO_V2]
 @INVOICE_ID = {{Configs.INVOICE_ID == "INVOICE_ID"?appsmith.store.INIT[Configs.INVOICE_ID]:null}},
 @INVOICE_NO = {{Configs.INVOICE_ID == "INVOICE_NO"?appsmith.store.INIT[Configs.INVOICE_ID]:null}},
 @USER_TOKEN = {{appsmith.store.userSession.TOKEN}}

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "--delete temp need @COMPANY_ID = \"TEMP\" , @USER_TOKEN , @NEWBRANCH\n--{BILLING_REMARK_ID}\n\nDECLARE @ResultCode NVARCHAR(10) ,\n    @ResultMessages NVARCHAR(MAX);\nexecute dbo.[UPDATE_REMARK]\n\t\t@BILLING_REMARK_ID  = {{this.params.BILLING_REMARK_ID}}\n\t\t,@COMPANY_ID = {{COMPANY_ID.text||\"TEMP\"}}\n\t\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t\t,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}\n\t\t,@IS_DELETE = 1\n\t\t,@ResultCode=@ResultCode OUTPUT\n\t\t,@ResultMessages=@ResultMessages OUTPUT\n\t\t\nSELECT @ResultCode AS [RESULT_CODE],\n       @ResultMessages AS [RESULT_MESSAGES]",
+      "body": "--delete temp need @COMPANY_ID = \"TEMP\" , @USER_TOKEN , @NEWBRANCH\n--{BILLING_REMARK_ID}\n\nDECLARE @ResultCode NVARCHAR(10) ,\n    @ResultMessages NVARCHAR(MAX);\nexecute dbo.[UPDATE_REMARK_V1]\n\t\t@BILLING_REMARK_ID  = {{this.params.BILLING_REMARK_ID}}\n\t\t,@COMPANY_ID = {{COMPANY_ID.text||\"TEMP\"}}\n\t\t,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}\n\t\t,@NEWBRANCH = {{appsmith.store.NEWBRANCH}}\n\t\t,@IS_DELETE = 1\n\t\t,@ResultCode=@ResultCode OUTPUT\n\t\t,@ResultMessages=@ResultMessages OUTPUT\n\t\t\nSELECT @ResultCode AS [RESULT_CODE],\n       @ResultMessages AS [RESULT_MESSAGES]",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

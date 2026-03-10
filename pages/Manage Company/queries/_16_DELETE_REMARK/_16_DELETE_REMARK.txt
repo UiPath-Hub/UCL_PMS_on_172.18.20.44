@@ -3,7 +3,7 @@
 
 DECLARE @ResultCode NVARCHAR(10) ,
     @ResultMessages NVARCHAR(MAX);
-execute dbo.[UPDATE_REMARK]
+execute dbo.[UPDATE_REMARK_V1]
 		@BILLING_REMARK_ID  = {{this.params.BILLING_REMARK_ID}}
 		,@COMPANY_ID = {{COMPANY_ID.text||"TEMP"}}
 		,@USER_TOKEN = {{appsmith.store[Configs.userSession].TOKEN}}
