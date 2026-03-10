@@ -1,7 +1,7 @@
 DECLARE @ResultCode NVARCHAR(10) ,
     @ResultMessages NVARCHAR(MAX);
 
-EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V5]
+EXECUTE  [dbo].[UPDATE_PMS_PROFILE_LM_V6]
    @pCOMPANY_ID = {{COMPANY_ID.text}}
   ,@pCOMPANY_PROFILE_AGREEMENT_NO = {{this.params.AGREEMENT_ID}}
   ,@pFORMULA_ID = {{this.params.FORMULA}}
