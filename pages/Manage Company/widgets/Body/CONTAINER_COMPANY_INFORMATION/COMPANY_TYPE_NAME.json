@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 17,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany.COMPANY_TYPE_NAME.data.toString()))(ACCOUNTING_DESCRIPTION_MODIFIE.options, ACCOUNTING_DESCRIPTION_MODIFIE.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( DefaultCompany.COMPANY_TYPE_NAME.data.toString()))(COMPANY_TYPE_NAME.options, COMPANY_TYPE_NAME.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -79,5 +79,5 @@
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "xunwhaoy5e",
-  "widgetName": "ACCOUNTING_DESCRIPTION_MODIFIE"
+  "widgetName": "COMPANY_TYPE_NAME"
 }
