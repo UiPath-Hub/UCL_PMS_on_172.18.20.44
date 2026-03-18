@@ -6,7 +6,7 @@ export default {
 		Configs.syncedErrorEscape.pageName = appsmith.currentPageName;
 		Configs.syncedErrorEscape.params = {};
 		Configs.syncedErrorEscape.nextModal = "";
-		
+
 		if( nextModal != "" && nextModal != undefined){
 			showModal(nextModal);
 		}else if(pageName===appsmith.currentPageName){
@@ -90,7 +90,7 @@ export default {
 		let regex = /^\d+$/;
 		BILLING_TAX_ID.setValue(BILLING_TAX_ID.text.toString().split('').filter((ele)=>regex.test(ele)).join(''))
 	}, 
-	
+
 	GETstate:{loop:0,finish:1,failed:2},
 	delay: (ms) => new Promise(resolve => setTimeout(resolve, ms)),
 
@@ -103,7 +103,7 @@ export default {
 		}catch(err){
 			console.log(err);
 		}
-		
+
 
 		// สมมติว่า StatusCheck.data มีโครงสร้างตาม Response ที่ออกแบบไว้
 		if(StatusCheck.data && StatusCheck.data[appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_checkReturnName]=== appsmith.store.RPA_SYNC_STATUS.constantKeys.statusCheck_returnOKstatus){
@@ -262,10 +262,11 @@ export default {
 		console.log("pass1")
 		if(Object.keys(Company_Widgets).find((key)=>{
 			if(DefaultCompany[key] && DefaultCompany[key].data !== undefined){
-				const widgetData = Company_Widgets[key].data===undefined||Company_Widgets[key].data===null?"":Company_Widgets[key].data.toString();
+				
+				const widgetData = Company_Widgets[key]?.data===undefined||Company_Widgets[key]?.data===null?"":Company_Widgets[key].data.toString();
 				const defaultData = _00_SELECT_FOR_COMPANY_BY_ID.data[0][key]===undefined||_00_SELECT_FOR_COMPANY_BY_ID.data[0][key]===null?
 							"":_00_SELECT_FOR_COMPANY_BY_ID.data[0][key].toString();
-				if(defaultData != widgetData && Company_Widgets[key].isVisible && !Company_Widgets[key].isDisable){
+				if(defaultData != widgetData && Company_Widgets[key]?.isVisible && !Company_Widgets[key]?.isDisable){
 					console.log(key)
 					return true;
 				}
@@ -274,10 +275,10 @@ export default {
 		console.log("pass2")
 		if(!(SELECT_BILLING.data===undefined || SELECT_BILLING.data.length===0)){
 			if(Object.keys(CompanyBilling_Widgets).find((key)=>{
-				if(Default_COMPANY_BILLING[key] && Default_COMPANY_BILLING[key].data !== undefined){
-					const widgetData = CompanyBilling_Widgets[key].data===undefined||CompanyBilling_Widgets[key].data===null?"":CompanyBilling_Widgets[key].data.toString();
+				if(Default_COMPANY_BILLING[key] && Default_COMPANY_BILLING[key]?.data !== undefined){
+					const widgetData = CompanyBilling_Widgets[key]?.data===undefined||CompanyBilling_Widgets[key]?.data===null?"":CompanyBilling_Widgets[key].data.toString();
 					const defaultData = SELECT_BILLING.data[0][key]===undefined||SELECT_BILLING.data[0][key]===null?"":SELECT_BILLING.data[0][key].toString();
-					if(defaultData != widgetData && CompanyBilling_Widgets[key].isVisible && !CompanyBilling_Widgets[key].isDisable){
+					if(defaultData != widgetData && CompanyBilling_Widgets[key]?.isVisible && !CompanyBilling_Widgets[key]?.isDisable){
 						console.log(key)
 						return true;
 					}
@@ -287,7 +288,7 @@ export default {
 
 		console.log("pass3")
 		let priorityContactID = Configs.showCompanyContact.find(i=>i["Contact ID"]===Configs.PRIORITY_CONTACT_ID);
-		let priorityContactChange = priorityContactID?priorityContactID["Contact ID"]!==DefaultCompany.PRIORITY_CONTACT.data:DefaultCompany.PRIORITY_CONTACT.data!=="";
+		let priorityContactChange = priorityContactID?priorityContactID["Contact ID"]!==DefaultCompany.PRIORITY_CONTACT?.data:DefaultCompany.PRIORITY_CONTACT?.data!=="";
 		if(priorityContactChange) return true;
 		return false;
 	},
@@ -342,7 +343,7 @@ export default {
 						if(Configs.IS_THIRD_PARTY){
 							Configs.syncedErrorEscape.pageName = "Third Party Dashboard";
 							Configs.syncedErrorEscape.params = {}
-						
+
 						}
 						else{
 							Configs.syncedErrorEscape.pageName = "Company Dashboard";
