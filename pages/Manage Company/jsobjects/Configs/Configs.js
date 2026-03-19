@@ -60,7 +60,7 @@ export default {
 						dd:appsmith.store.IS_THIRD_PARTY
 					 }
 	},
-	loadingProgress:{default:0,current:0,full:7}
+	loadingProgress:{default:0,current:0,full:8}
 	,test:()=>{
 		return appsmith.URL.queryParams
 	},

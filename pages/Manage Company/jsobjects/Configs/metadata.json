@@ -129,7 +129,7 @@
       },
       {
         "name": "loadingProgress",
-        "value": "{\n  default: 0,\n  current: 0,\n  full: 7\n}"
+        "value": "{\n  default: 0,\n  current: 0,\n  full: 8\n}"
       }
     ]
   }
