@@ -35,5 +35,6 @@ export default {
 	COMPANY_LANGUAGE_TYPE:{...COMPANY_LANGUAGE_TYPE,data:COMPANY_LANGUAGE_TYPE.selectedOptionValue},
 	TITLE_PREFIX:{...TITLE_PREFIX,data:TITLE_PREFIX.selectedOptionValue},
 	TITLE_PREFIX_OTHER:{...TITLE_PREFIX_OTHER,data:TITLE_PREFIX_OTHER.text},
-	SUFFIX:{...SUFFIX,data:SUFFIX.selectedOptionValue}
+	SUFFIX:{...SUFFIX,data:SUFFIX.selectedOptionValue},
+	IS_OWNER_PROFILE:{...IS_OWNER_PROFILE,data: IS_OWNER_PROFILE.isSwitchedOn}
 };
