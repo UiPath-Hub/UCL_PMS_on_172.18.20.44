@@ -36,12 +36,12 @@
     "Contact_Name",
     "Role",
     "Email",
-    "TOTAL_RECORDS",
     "Telephone",
+    "TOTAL_RECORDS",
     "ID",
     "customColumn1"
   ],
-  "columnUpdatedAt": 1765773897281,
+  "columnUpdatedAt": 1775119326563,
   "columnWidthMap": {
     "Contact_Name": 310,
     "Email": 227,

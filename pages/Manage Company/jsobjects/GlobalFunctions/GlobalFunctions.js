@@ -26,11 +26,11 @@ export default {
 			log.disable = widgetsMap[keystr].isDisabled;
 			log.visible = widgetsMap[keystr].isVisible;
 			log.data = data;
-			//console.log(log); 
+			if(log.key=='IS_OWNER_PROFILE') console.log(log); 
 			//find widget of the field by get from widget name of widgetMap
 			//let widgetName = widgetsMap[keystr].widgetName;
 			defaultEntities[keystr].data = data
-			if (!widgetsMap[keystr].isValid && !widgetsMap[keystr].isDisabled && widgetsMap[keystr].isVisible) {
+			if (widgetsMap[keystr].isValid === false && !widgetsMap[keystr].isDisabled && widgetsMap[keystr].isVisible) {
 				if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
 					defaultEntities[keystr].color = Configs.requiredColorAlert;
 				}

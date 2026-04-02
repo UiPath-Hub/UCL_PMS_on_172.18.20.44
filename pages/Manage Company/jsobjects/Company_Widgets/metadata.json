@@ -150,6 +150,10 @@
       {
         "name": "SUFFIX",
         "value": "{\n  ...SUFFIX,\n  data: SUFFIX.selectedOptionValue\n}"
+      },
+      {
+        "name": "IS_OWNER_PROFILE",
+        "value": "{\n  ...IS_OWNER_PROFILE,\n  data: IS_OWNER_PROFILE.isSwitchedOn\n}"
       }
     ]
   }
