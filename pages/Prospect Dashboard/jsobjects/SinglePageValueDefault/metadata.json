@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_214eab33-f90c-4d1f-986a-c21aad590c4b",
+  "id": "Prospect Dashboard_SinglePageValueDefault",
+  "unpublishedCollection": {
+    "name": "SinglePageValueDefault",
+    "pageId": "Prospect Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "recentPage",
+        "value": "Configs.pageName"
+      }
+    ]
+  }
+}

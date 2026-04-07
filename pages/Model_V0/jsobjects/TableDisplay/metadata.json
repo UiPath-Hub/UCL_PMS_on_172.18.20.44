@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_bd098024-c714-430f-bb0f-bf246afb97fb",
+  "id": "Model_V0_TableDisplay",
+  "unpublishedCollection": {
+    "name": "TableDisplay",
+    "pageId": "Model_V0",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PMS_PROSPECTS_LM",
+        "value": "{\n  ColumnsMap: [[\"Company Name\", \"COMPANY_NAME\"], [\"Shop Name\", \"SHOP_NAME\"], [\"Status\", \"PROSPECTS_STATUS\"], [\"Prospect Date\", \"CREATE_DATE\"], [\"Contact Person\", \"CONTACT_PERSON\"], [\"Telephone\", \"TELEPHONE\"]],\n  data: [],\n  run: async () => {\n    SELECT_FOR_PROSPECTS_BY_ID.run();\n  }\n}"
+      }
+    ]
+  }
+}

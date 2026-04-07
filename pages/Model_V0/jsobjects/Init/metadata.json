@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_aac55423-3c03-4338-8a87-1a6aaec179d9",
+  "id": "Model_V0_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Model_V0",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "SINGLE_PAGE",
+        "value": "\"SINGLE_PAGE\""
+      },
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "ID",
+        "value": "\"PROSPECTS_ID\""
+      }
+    ]
+  }
+}

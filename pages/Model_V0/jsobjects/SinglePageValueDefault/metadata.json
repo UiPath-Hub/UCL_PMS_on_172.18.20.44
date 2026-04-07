@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_5646111f-d46e-4ca0-9412-8a18f17b42c1",
+  "id": "Model_V0_SinglePageValueDefault",
+  "unpublishedCollection": {
+    "name": "SinglePageValueDefault",
+    "pageId": "Model_V0",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "recentPage",
+        "value": "Configs.pageName"
+      }
+    ]
+  }
+}

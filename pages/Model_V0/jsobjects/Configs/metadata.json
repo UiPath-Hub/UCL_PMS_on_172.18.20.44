@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_db57da0a-b78d-4a46-8574-bad3610e6e17",
+  "id": "Model_V0_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Model_V0",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "pageName",
+        "value": "\"Model\""
+      },
+      {
+        "name": "AllModals",
+        "value": "[Modal_Session_detail.name]"
+      }
+    ]
+  }
+}
