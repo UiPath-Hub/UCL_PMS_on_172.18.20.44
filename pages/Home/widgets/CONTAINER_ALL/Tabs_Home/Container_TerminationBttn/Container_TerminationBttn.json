@@ -81,7 +81,7 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 14,
-  "shouldScrollContents": false,
+  "shouldScrollContents": true,
   "topRow": 48,
   "type": "CONTAINER_WIDGET",
   "version": 1,

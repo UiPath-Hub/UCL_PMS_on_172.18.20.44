@@ -1,10 +1,11 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 17,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
+  "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
     {
       "key": "buttonColor"
@@ -15,9 +16,6 @@
   ],
   "dynamicPropertyPathList": [
     {
-      "key": "iconName"
-    },
-    {
       "key": "onClick"
     }
   ],
@@ -26,28 +24,33 @@
       "key": "onClick"
     }
   ],
-  "iconName": "document",
-  "isDisabled": false,
+  "iconAlign": "left",
+  "isDefaultClickDisabled": true,
+  "isDisabled": true,
   "isLoading": false,
   "isVisible": true,
-  "key": "hbeb2o0ekl",
+  "key": "b5sxvkc4z5",
   "leftColumn": 0,
-  "minWidth": 50,
-  "mobileBottomRow": 4,
-  "mobileLeftColumn": 59,
-  "mobileRightColumn": 63,
-  "mobileTopRow": 0,
+  "minWidth": 120,
+  "mobileBottomRow": 78,
+  "mobileLeftColumn": 30,
+  "mobileRightColumn": 46,
+  "mobileTopRow": 74,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('Receipt Dashboard', {}, 'SAME_WINDOW');}}",
-  "parentColumnSpace": 2.12109375,
-  "parentId": "uo155p2v3m",
+  "onClick": "",
+  "parentColumnSpace": 22.90625,
+  "parentId": "6hd8tput1i",
   "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
   "renderMode": "CANVAS",
+  "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 63,
-  "topRow": 0,
-  "type": "ICON_BUTTON_WIDGET",
+  "rightColumn": 64,
+  "text": "Quotation",
+  "topRow": 13,
+  "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "2unidwp1w5",
-  "widgetName": "IconButton8Copy2"
+  "widgetId": "dd94704xjg",
+  "widgetName": "BT12"
 }

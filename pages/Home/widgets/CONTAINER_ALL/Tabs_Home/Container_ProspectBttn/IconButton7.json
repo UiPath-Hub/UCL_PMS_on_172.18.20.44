@@ -16,11 +16,18 @@
   "dynamicPropertyPathList": [
     {
       "key": "iconName"
+    },
+    {
+      "key": "onClick"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconName": "star",
-  "isDisabled": true,
+  "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "hbeb2o0ekl",
@@ -31,6 +38,7 @@
   "mobileRightColumn": 62,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Prospect Dashboard', {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 2.12109375,
   "parentId": "f8q3c3wr02",
   "parentRowSpace": 10,

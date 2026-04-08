@@ -1,22 +1,20 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "buttonColor": "#3b82f6",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "TERTIARY",
+  "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
     {
       "key": "borderRadius"
     }
   ],
   "dynamicPropertyPathList": [
-    {
-      "key": "iconName"
-    },
-    {
-      "key": "buttonColor"
-    },
     {
       "key": "onClick"
     }
@@ -26,31 +24,33 @@
       "key": "onClick"
     }
   ],
-  "iconName": "cube",
+  "iconAlign": "left",
+  "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "6ood26hglq",
-  "leftColumn": 1,
-  "minWidth": 50,
-  "mobileBottomRow": 57,
-  "mobileLeftColumn": 26,
-  "mobileRightColumn": 30,
-  "mobileTopRow": 53,
+  "key": "b5sxvkc4z5",
+  "leftColumn": 0,
+  "minWidth": 120,
+  "mobileBottomRow": 78,
+  "mobileLeftColumn": 30,
+  "mobileRightColumn": 46,
+  "mobileTopRow": 74,
   "needsErrorInfo": false,
   "onClick": "{{navigateTo('Product Inventory Dashboard', {}, 'SAME_WINDOW');}}",
-  "originalBottomRow": 61,
-  "originalTopRow": 49,
-  "parentColumnSpace": 19.8125,
+  "parentColumnSpace": 22.90625,
   "parentId": "qagka89ofp",
   "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
   "renderMode": "CANVAS",
+  "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 63,
-  "tooltip": "",
-  "topRow": 0,
-  "type": "ICON_BUTTON_WIDGET",
+  "rightColumn": 64,
+  "text": "Product Inventory",
+  "topRow": 13,
+  "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "9lqkt724ir",
-  "widgetName": "InventoryBttn"
+  "widgetId": "jal965udk9",
+  "widgetName": "BT3"
 }
