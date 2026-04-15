@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "PMS_PROSPECTS_LM",
-        "value": "{\n  ColumnsMap: {\n    \"PROSPECTS_ID\": \"Prospective Number\",\n    \"COMPANY_NAME\": \"Company Name\",\n    \"SHOP_NAME\": \"Shop Name\",\n    \"PROSPECTS_STATUS\": \"Status\",\n    \"CREATE_DATE\": \"Prospect Date\",\n    \"CONTACT_PERSON\": \"Contact Person\",\n    \"TELEPHONE\": \"Telephone\"\n  },\n  DataColumns: [\"CREATE_DATE\"],\n  data: [],\n  run: async () => await SELECT_FOR_PROSPECTS.run()\n}"
+        "value": "{\n  ColumnsMap: {\n    \"PROSPECTS_ID\": \"ID\",\n    \"COMPANY_NAME\": \"Company Name\",\n    \"SHOP_NAME\": \"Shop Name\",\n    \"PROSPECTS_STATUS\": \"Status\",\n    \"CREATE_DATE\": \"Prospect Date\",\n    \"CONTACT_PERSON\": \"Contact Person\",\n    \"TELEPHONE\": \"Telephone\"\n  },\n  DataColumns: [\"CREATE_DATE\"],\n  data: [],\n  run: async () => await SELECT_FOR_PROSPECTS.run()\n}"
       }
     ]
   }

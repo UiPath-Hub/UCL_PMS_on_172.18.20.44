@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "EXECUTE [dbo].[USER_SESSION_HANDLER] \n   @EMAIL = {{appsmith.user.email}}\n  ,@TOKEN = {{appsmith.store[Configs.userSession]?appsmith.store[Configs.userSession].TOKEN:\"\"}}\n\t,@RENEW = 0",
+      "body": "EXECUTE [dbo].[USER_SESSION_HANDLER] \n   @EMAIL = {{appsmith.user.email}}\n  ,@TOKEN = {{appsmith.store[Init.userSession]?appsmith.store[Init.userSession].TOKEN:\"\"}}\n\t,@RENEW = 0",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

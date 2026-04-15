@@ -13,7 +13,7 @@
       },
       {
         "name": "recentPage",
-        "value": "Configs.pageName"
+        "value": "[Configs.pageName]"
       }
     ]
   }

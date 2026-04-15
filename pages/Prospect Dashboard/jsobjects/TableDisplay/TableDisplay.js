@@ -1,7 +1,7 @@
 export default {
 	PMS_PROSPECTS_LM:{
 		ColumnsMap:{
-			"PROSPECTS_ID":"Prospective Number",
+			"PROSPECTS_ID":"ID",
 			"COMPANY_NAME": "Company Name",
 			"SHOP_NAME": "Shop Name",
 			"PROSPECTS_STATUS": "Status",

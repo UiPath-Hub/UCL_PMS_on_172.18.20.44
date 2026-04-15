@@ -1,0 +1,32 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_9049a41e-6c59-479e-9eca-74ea387ca7c4",
+  "id": "Prospect Detail_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Prospect Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", Configs.dateFormat)"
+      },
+      {
+        "name": "SINGLE_PAGE",
+        "value": "\"SINGLE_PAGE\""
+      },
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      },
+      {
+        "name": "ID",
+        "value": "\"PROSPECTS_ID\""
+      },
+      {
+        "name": "LoadProgress",
+        "value": "[Init.LoadData, Init.ShowView]"
+      }
+    ]
+  }
+}

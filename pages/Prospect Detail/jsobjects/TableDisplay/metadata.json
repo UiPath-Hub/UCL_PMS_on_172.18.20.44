@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_d2c24f85-6029-4e75-8144-fc0fca1a1ff9",
+  "id": "Prospect Detail_TableDisplay",
+  "unpublishedCollection": {
+    "name": "TableDisplay",
+    "pageId": "Prospect Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PROSPECTS_ACTIONLOGS",
+        "value": "{\n  ColumnsMap: {\n    \"Detail\": \"Detail\",\n    \"Approval By\": \"Approval By\",\n    \"PROSPECTS_STATUS\": \"Status\",\n    \"CREATE_DATE\": \"Create Date\",\n    \"Update Date\": \"Update Date\"\n  },\n  DateColumns: [\"CREATE_DATE\"],\n  data: [],\n  run: async () => await SELECT_FOR_PROSPECTS.run()\n}"
+      }
+    ]
+  }
+}

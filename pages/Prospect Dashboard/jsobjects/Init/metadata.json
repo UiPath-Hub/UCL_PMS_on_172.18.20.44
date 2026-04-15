@@ -18,10 +18,6 @@
       {
         "name": "userSession",
         "value": "\"userSession\""
-      },
-      {
-        "name": "ID",
-        "value": "\"PROSPECTS_ID\""
       }
     ]
   }

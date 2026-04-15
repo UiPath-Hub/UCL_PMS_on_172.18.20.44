@@ -1,0 +1,69 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 57,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "3g1kiq79ra",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Province",
+  "labelTextSize": "1rem",
+  "labelWidth": "12",
+  "leftColumn": 35,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{storeValue('address', JSObject1.data.filter(ele => ele.province == PROVINCE_TH.selectedOptionValue));}}",
+  "optionLabel": "province",
+  "optionValue": "province",
+  "originalBottomRow": 57,
+  "originalTopRow": 53,
+  "parentColumnSpace": 11.4375,
+  "parentId": "xwayffljft",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "serverSideFiltering": false,
+  "sourceData": "{{JSObject1.data.reduce((acc, current) => {\n  const x = acc.find(item => item.province === current.province);\n  if (!x) {\n    return acc.concat([current]);\n  } else {\n    return acc;\n  }\n}, [])}}",
+  "topRow": 53,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "7pfbpal9xq",
+  "widgetName": "PROVINCE_TH"
+}

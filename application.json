@@ -116,6 +116,10 @@
     {
       "id": "Prospect Dashboard",
       "isDefault": false
+    },
+    {
+      "id": "Prospect Detail",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

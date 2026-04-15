@@ -1,0 +1,32 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_7defec1f-ee8c-49ac-8d25-97d573ddcb3d",
+  "id": "Prospect Detail_SinglePageValueDefault",
+  "unpublishedCollection": {
+    "name": "SinglePageValueDefault",
+    "pageId": "Prospect Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "recentPage",
+        "value": "[\"Home\", Configs.pageName]"
+      },
+      {
+        "name": "ProgressbarMax",
+        "value": "100"
+      },
+      {
+        "name": "CurrentProgressbar",
+        "value": "0"
+      },
+      {
+        "name": "BodyInit",
+        "value": "\"Loading\""
+      }
+    ]
+  }
+}

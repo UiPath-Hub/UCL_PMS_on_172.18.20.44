@@ -2,7 +2,6 @@ export default {
 	dataDisplayStartTime:moment("2021-01-01",Configs.dateFormat),
 	SINGLE_PAGE:"SINGLE_PAGE",
 	userSession:"userSession",
-	ID:"PROSPECTS_ID",
 	PageLoad:async ()=>{
 		await storeValue(this.SINGLE_PAGE,{...SinglePageValueDefault});
 		Configs.AllModals.forEach((modalName)=>closeModal(modalName));
@@ -10,9 +9,11 @@ export default {
 		if(!this.permissionsCheck(Configs.permissions.VIEW,true))return;
 		
 		Object.keys(TableDisplay).forEach(async(tableName)=>{
-			JS.loadTable(tableName);
+			await JS.loadTable(tableName);
+			console.log("data",TableDisplay.PMS_PROSPECTS_LM.data);
+			resetWidget(tableName,false);
 		})
-		resetWidget(CONTAINER_SEARCH.widgetName,true);						
+		resetWidget(CONTAINER_SEARCH.widgetName,true);
 	},
 	
 	sessionCheck:async ()=>{

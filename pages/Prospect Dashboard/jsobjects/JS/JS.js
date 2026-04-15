@@ -24,5 +24,10 @@ export default {
 			TableDisplay["PMS_PROSPECTS_LM"].data = []
 		}
 		resetWidget(PMS_PROSPECTS_LM.widgetName);
+	},
+	onEditItemClick:()=>{
+		if(!Init.permissionsCheck(Configs.permissions.VIEW,false))return;
+		if(!Init.permissionsCheck(Configs.permissions.EDIT,false))return;
+		navigateTo('Prospect Detail', {PROSPECTS_ID:PMS_PROSPECTS_LM.selectedRow[TableDisplay.PMS_PROSPECTS_LM.ColumnsMap.PROSPECTS_ID]}, 'SAME_WINDOW');
 	}
 }

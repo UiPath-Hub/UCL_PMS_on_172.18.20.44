@@ -1,0 +1,63 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 42,
+  "defaultSelectedValues": "[\n  \"BLUE\"\n]",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "kwn364lve2",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelText": "Other utility need  ",
+  "labelTextSize": "1rem",
+  "labelWidth": "8",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 42,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 36,
+  "needsErrorInfo": false,
+  "options": [
+    {
+      "label": "Water supply     ",
+      "value": "WATER_SUPPLY"
+    },
+    {
+      "label": "Cooking gas    ",
+      "value": "COOKING_GAS"
+    },
+    {
+      "label": "Air conditions ",
+      "value": "AIR_CONDITIONS"
+    }
+  ],
+  "originalBottomRow": 42,
+  "originalTopRow": 35,
+  "parentColumnSpace": 19.1875,
+  "parentId": "gxo76kmw4r",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 31,
+  "topRow": 35,
+  "type": "CHECKBOX_GROUP_WIDGET",
+  "version": 2,
+  "widgetId": "2xv0cwa0tj",
+  "widgetName": "CHECKBOX_OTHER_UTILITY_NEED"
+}

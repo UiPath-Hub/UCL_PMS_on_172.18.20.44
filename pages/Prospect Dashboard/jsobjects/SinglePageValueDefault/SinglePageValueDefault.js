@@ -1,4 +1,4 @@
 export default {
 	forceLogin:false,
-	recentPage:Configs.pageName
+	recentPage:[Configs.pageName]
 }

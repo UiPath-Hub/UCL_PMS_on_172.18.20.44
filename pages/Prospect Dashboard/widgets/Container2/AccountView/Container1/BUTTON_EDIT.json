@@ -24,7 +24,7 @@
     }
   ],
   "iconName": "edit",
-  "isDisabled": "{{PMS_PROSPECTS_LM.selectedRow===undefined||PMS_PROSPECTS_LM.selectedRow[\"Prospective Number\"]===\"\"||PMS_PROSPECTS_LM.selectedRow[\"Prospective Number\"]==undefined}}",
+  "isDisabled": "{{PMS_PROSPECTS_LM.selectedRow===undefined||PMS_PROSPECTS_LM.selectedRow[TableDisplay.PMS_PROSPECTS_LM.ColumnsMap.PROSPECTS_ID]===\"\"||PMS_PROSPECTS_LM.selectedRow[TableDisplay.PMS_PROSPECTS_LM.ColumnsMap.PROSPECTS_ID]==undefined}}",
   "isLoading": false,
   "isVisible": true,
   "key": "sjcapm6fvo",
