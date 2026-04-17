@@ -1,0 +1,57 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignment": "left",
+  "animateLoading": true,
+  "bottomRow": 197,
+  "boxShadow": "none",
+  "defaultOptionValue": "TH",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isDisabled": false,
+  "isInline": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": false,
+  "key": "mp20v2mm92",
+  "label": "",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 57,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 202,
+  "mobileLeftColumn": 44,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 196,
+  "needsErrorInfo": false,
+  "options": [
+    {
+      "label": "TH",
+      "value": "TH"
+    },
+    {
+      "label": "EN",
+      "value": "EN"
+    }
+  ],
+  "originalBottomRow": 199,
+  "originalTopRow": 195,
+  "parentColumnSpace": 23.53125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "topRow": 193,
+  "type": "RADIO_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "0pvmxpxyvy",
+  "widgetName": "ADDRESS_LANGUAGE"
+}

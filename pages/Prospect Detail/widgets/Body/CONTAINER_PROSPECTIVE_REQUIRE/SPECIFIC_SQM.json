@@ -3,30 +3,51 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 18,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ SPECIFIC_SQM.widgetName]?.data ?? \"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ SPECIFIC_SQM.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Please specific Sqm",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[SPECIFIC_SQM.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 35,
@@ -38,12 +59,13 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 21,
-  "originalTopRow": 16,
+  "originalBottomRow": 18,
+  "originalTopRow": 14,
   "parentColumnSpace": 19.5,
   "parentId": "gxo76kmw4r",
   "parentRowSpace": 10,
   "placeholderText": "",
+  "regex": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[SPECIFIC_SQM.widgetName]?.regex??\"\"}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
@@ -52,7 +74,7 @@
   "shouldScrollContents": true,
   "showStepArrows": false,
   "tooltip": "",
-  "topRow": 16,
+  "topRow": 14,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "lackvp13ng",

@@ -1,5 +1,6 @@
 export default {
 	dateFormat:"D MMM YYYY",
+	sqlDataFormat:"YYYY-MM-DD",
 	tableDataFormat: "D MMMM, yyyy",
 	pageName:"Prospect Detail",
 	AllModals:[Modal_Session_detail.name,Modal_ErrorAlert.name],

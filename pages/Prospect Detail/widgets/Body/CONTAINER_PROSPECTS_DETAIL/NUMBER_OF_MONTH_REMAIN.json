@@ -2,33 +2,52 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 73,
+  "bottomRow": 67,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ NUMBER_OF_MONTH_REMAIN.widgetName]?.data ?? \"\"))(NUMBER_OF_MONTH_REMAIN.options, NUMBER_OF_MONTH_REMAIN.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicTriggerPathList": [],
   "isDisabled": false,
   "isFilterable": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ NUMBER_OF_MONTH_REMAIN.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Number of months remain at present address",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[NUMBER_OF_MONTH_REMAIN.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "17",
   "leftColumn": 2,
@@ -40,9 +59,9 @@
   "mobileRightColumn": 55,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
-  "originalBottomRow": 73,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 71,
   "originalTopRow": 67,
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",
@@ -53,8 +72,8 @@
   "rightColumn": 30,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "[\n\t{\n    \"name\": \"0\",\n    \"code\": \"0\"\n  },\n  {\n    \"name\": \"1\",\n    \"code\": \"1\"\n  },\n  {\n    \"name\": \"2\",\n    \"code\": \"2\"\n  },\n  {\n    \"name\": \"3\",\n    \"code\": \"3\"\n  },\n    {\n    \"name\": \"4\",\n    \"code\": \"4\"\n  },\n    {\n    \"name\": \"5\",\n    \"code\": \"5\"\n  },\n    {\n    \"name\": \"6\",\n    \"code\": \"6\"\n  },\n\t{\n    \"name\": \"7\",\n    \"code\": \"7\"\n  },\n\t{\n    \"name\": \"8\",\n    \"code\": \"8\"\n  },\n\t{\n    \"name\": \"9\",\n    \"code\": \"9\"\n  },\n\t{\n    \"name\": \"10\",\n    \"code\": \"10\"\n  },\n\t{\n    \"name\": \"11\",\n    \"code\": \"11\"\n  },\n\t{\n    \"name\": \"12\",\n    \"code\": \"12\"\n  }\n]",
-  "topRow": 67,
+  "sourceData": "{{SELCT_FOR_DD_NUMBER_OF_MONTH.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
+  "topRow": 63,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "k9mchy0w4r",

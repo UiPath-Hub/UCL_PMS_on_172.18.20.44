@@ -12,6 +12,10 @@
         "value": "\"D MMM YYYY\""
       },
       {
+        "name": "sqlDataFormat",
+        "value": "\"YYYY-MM-DD\""
+      },
+      {
         "name": "tableDataFormat",
         "value": "\"D MMMM, yyyy\""
       },

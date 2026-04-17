@@ -3,29 +3,33 @@ export default {
 	SINGLE_PAGE:"SINGLE_PAGE",
 	userSession:"userSession",
 	ID:"PROSPECTS_ID",
+	WidgetCaches:"WidgetCaches",
 	PageLoad:async ()=>{
-		SinglePageValueDefault.ProgressbarMax = this.LoadProgress.length;
+		SinglePageValueDefault.ProgressbarMax = this.LoadProgress.length+1;
 		SinglePageValueDefault.CurrentProgressbar = 0;
 		await storeValue(this.SINGLE_PAGE,{...SinglePageValueDefault,
-																			 recentPage:(appsmith.store[this.SINGLE_PAGE] && appsmith.store[this.SINGLE_PAGE]?.recentPage)?[...appsmith.store[this.SINGLE_PAGE].recentPage,Configs.pageName]:SinglePageValueDefault.recentPage
+																			 recentPage:(appsmith.store?.[this.SINGLE_PAGE]?.recentPage && _.last(appsmith.store?.[this.SINGLE_PAGE]?.recentPage)!==Configs.pageName)?
+																			 [...appsmith.store[this.SINGLE_PAGE].recentPage,Configs.pageName]:SinglePageValueDefault.recentPage
 																			},false);
+		await resetWidget(Progress1.widgetName);
 		Configs.AllModals.forEach((modalName)=>closeModal(modalName));
 		await this.sessionCheck();
 		if(!this.permissionsCheck(Configs.permissions.VIEW,true))return;
 		let progressIndex = 0;
 		while(progressIndex < this.LoadProgress.length){
-			await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE], CurrentProgressbar: appsmith.store[this.SINGLE_PAGE].CurrentProgressbar+1},false);
 			await this.LoadProgress[progressIndex]();
 
 			//next loop
-			//await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE], CurrentProgressbar: appsmith.store[this.SINGLE_PAGE].CurrentProgressbar+0.5},false);
+			await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE], CurrentProgressbar: appsmith.store[this.SINGLE_PAGE].CurrentProgressbar+1},false);
+			console.log("progress",((appsmith.store[Init.SINGLE_PAGE]?.CurrentProgressbar??0)/appsmith.store[Init.SINGLE_PAGE]?.ProgressbarMax??100)*100);
 			progressIndex++;
 		}
+		await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE], CurrentProgressbar: appsmith.store[this.SINGLE_PAGE].CurrentProgressbar+1},false);
 		
 	},
 
 	//////////////// Register Load functions here! //////////////////////////////
-	LoadProgress:[this.LoadData,this.ShowView],
+	LoadProgress:[this.LoadData,ADDRESSING.initAddress,this.ShowView],
 	LoadData:async()=>{
 		if(appsmith.URL.queryParams[this.ID] != undefined && _.last(appsmith.store[this.SINGLE_PAGE]?.recentPage) === Configs.pageName){
 			let ID = _.trim(appsmith.URL.queryParams[this.ID]);
@@ -36,7 +40,8 @@ export default {
 					let casheData = JSON.parse(JSON.stringify(Widgets.PMS_PROSPECTS_LM));
 					let InitializationDataList = [{ENTITY:casheData, DATA: data[0]}]
 					await GlobalFunctions.initDefaultV2(InitializationDataList);
-					
+					//console.log("cache",casheData);
+					await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE],[this.WidgetCaches]:casheData},false);
 					return true;
 				}else{
 					//Show Invalid ID

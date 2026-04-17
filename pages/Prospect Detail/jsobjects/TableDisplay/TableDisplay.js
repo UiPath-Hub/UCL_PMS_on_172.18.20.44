@@ -9,6 +9,6 @@ export default {
 		},
 		DateColumns:["CREATE_DATE"],
 		data:[],
-		run:async()=> await SELECT_FOR_PROSPECTS.run()
+		//run:async()=> await SELECT_FOR_PROSPECTS.run()
 	}
 }

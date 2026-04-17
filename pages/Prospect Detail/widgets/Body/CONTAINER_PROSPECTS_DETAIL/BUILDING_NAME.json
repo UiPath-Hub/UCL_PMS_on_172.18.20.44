@@ -3,30 +3,51 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 45,
+  "bottomRow": 43,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ BUILDING_NAME.widgetName]?.data ?? \"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ BUILDING_NAME.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Building Name",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[BUILDING_NAME.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 2,
@@ -38,18 +59,19 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 45,
-  "originalTopRow": 41,
+  "originalBottomRow": 43,
+  "originalTopRow": 39,
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
+  "regex": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[BUILDING_NAME.widgetName]?.regex??\"\"}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 41,
+  "topRow": 39,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "ogbmb9tyj2",

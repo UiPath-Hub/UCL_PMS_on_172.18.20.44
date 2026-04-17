@@ -2,15 +2,27 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 19,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ NATIONALITY.widgetName]?.data ?? \"\"))(NATIONALITY.options, NATIONALITY.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -19,19 +31,23 @@
       "key": "sourceData"
     },
     {
-      "key": "optionValue"
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicTriggerPathList": [],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ NATIONALITY.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Nationality",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[NATIONALITY.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 2,
@@ -43,10 +59,10 @@
   "mobileRightColumn": 55,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
-  "originalBottomRow": 21,
-  "originalTopRow": 17,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 17,
+  "originalTopRow": 13,
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
@@ -56,8 +72,8 @@
   "rightColumn": 30,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "[\n  {\n    \"name\": \"ไทย\",\n    \"code\": \"ไทย\"\n  },\n  {\n    \"name\": \"จีน\",\n    \"code\": \"จีน\"\n  },\n  {\n    \"name\": \"อังกฤษ\",\n    \"code\": \"อังกฤษ\"\n  }\n]",
-  "topRow": 15,
+  "sourceData": "{{SELCT_FOR_DD_NATIONALITY.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
+  "topRow": 13,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "r84ih5cbey",

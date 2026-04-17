@@ -3,30 +3,51 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 15,
+  "bottomRow": 13,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ COMPANY_NAME.widgetName]?.data ?? \"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ COMPANY_NAME.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Company Name",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[COMPANY_NAME.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 2,
@@ -38,20 +59,19 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 17,
-  "originalTopRow": 12,
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
+  "regex": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[COMPANY_NAME.widgetName]?.regex??\"\"}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 11,
+  "topRow": 9,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "5mh5isq9wq",
-  "widgetName": "COMPANY_NAME_TH"
+  "widgetName": "COMPANY_NAME"
 }

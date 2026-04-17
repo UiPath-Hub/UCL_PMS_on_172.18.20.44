@@ -2,9 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 61,
+  "bottomRow": 59,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.subdistrict_ConvertToID(appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[  SUB_DISTRICT_TH.widgetName]?.data ?? \"\")))(SUB_DISTRICT_TH.options, SUB_DISTRICT_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -13,13 +13,40 @@
       "key": "borderRadius"
     },
     {
+      "key": "defaultOptionValue"
+    },
+    {
       "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -27,15 +54,16 @@
       "key": "onOptionChange"
     }
   ],
-  "isDisabled": false,
+  "isDisabled": "{{ADDRESSING.DisableWidget}}",
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ SUB_DISTRICT_TH .widgetName]?.required??false}}",
   "isVisible": true,
   "key": "3g1kiq79ra",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Sub District ",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ SUB_DISTRICT_TH.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 35,
@@ -47,11 +75,11 @@
   "mobileRightColumn": 60,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{storeValue('addressPostalCode', appsmith.store.addressDistrict.filter(ele => ele.subdistrict == SUB_DISTRICT_TH.selectedOptionValue));}}",
-  "optionLabel": "subdistrict",
-  "optionValue": "subdistrict",
-  "originalBottomRow": 61,
-  "originalTopRow": 57,
+  "onOptionChange": "",
+  "optionLabel": "{{SUB_DISTRICT_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"SUBDISTRICT_TH\":\"SUBDISTRICT_EN\"))}}",
+  "optionValue": "ID",
+  "originalBottomRow": 79,
+  "originalTopRow": 73,
   "parentColumnSpace": 11.4375,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
@@ -60,10 +88,10 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "serverSideFiltering": false,
-  "sourceData": "{{appsmith.store.addressDistrict}}",
-  "topRow": 57,
+  "sourceData": "{{appsmith.store[ADDRESSING.SUB_DISTRICT_STORE_NAME]}}",
+  "topRow": 55,
   "type": "SELECT_WIDGET",
   "version": 1,
-  "widgetId": "nl65qjrkao",
+  "widgetId": "o4g0hfthrw",
   "widgetName": "SUB_DISTRICT_TH"
 }

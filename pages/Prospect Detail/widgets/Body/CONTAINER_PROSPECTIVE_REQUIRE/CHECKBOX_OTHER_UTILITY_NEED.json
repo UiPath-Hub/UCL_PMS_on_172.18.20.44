@@ -2,28 +2,43 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 42,
-  "defaultSelectedValues": "[\n  \"BLUE\"\n]",
+  "bottomRow": 38,
+  "defaultSelectedValues": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "isDisabled": false,
   "isInline": true,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ CHECKBOX_OTHER_UTILITY_NEED.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "kwn364lve2",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Other utility need  ",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[CHECKBOX_OTHER_UTILITY_NEED.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "8",
   "leftColumn": 2,
@@ -48,14 +63,14 @@
       "value": "AIR_CONDITIONS"
     }
   ],
-  "originalBottomRow": 42,
-  "originalTopRow": 35,
+  "originalBottomRow": 38,
+  "originalTopRow": 33,
   "parentColumnSpace": 19.1875,
   "parentId": "gxo76kmw4r",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 31,
-  "topRow": 35,
+  "topRow": 33,
   "type": "CHECKBOX_GROUP_WIDGET",
   "version": 2,
   "widgetId": "2xv0cwa0tj",

@@ -2,9 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 57,
+  "bottomRow": 55,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.province_ConvertToID(appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[  PROVINCE_TH.widgetName]?.data ?? \"\")))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -14,12 +14,42 @@
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    },
+    {
+      "key": "optionLabel"
+    },
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -27,15 +57,16 @@
       "key": "onOptionChange"
     }
   ],
-  "isDisabled": false,
+  "isDisabled": "{{ADDRESSING.DisableWidget}}",
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ PROVINCE_TH .widgetName]?.required??false}}",
   "isVisible": true,
   "key": "3g1kiq79ra",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Province",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ PROVINCE_TH.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 35,
@@ -47,11 +78,11 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{storeValue('address', JSObject1.data.filter(ele => ele.province == PROVINCE_TH.selectedOptionValue));}}",
-  "optionLabel": "province",
-  "optionValue": "province",
-  "originalBottomRow": 57,
-  "originalTopRow": 53,
+  "onOptionChange": "{{ADDRESSING.onSelectedProvice(ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue));}}",
+  "optionLabel": "{{PROVINCE_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"PROVINCE_TH\":\"PROVINCE_EN\"))}}",
+  "optionValue": "ID",
+  "originalBottomRow": 73,
+  "originalTopRow": 69,
   "parentColumnSpace": 11.4375,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
@@ -60,10 +91,10 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "serverSideFiltering": false,
-  "sourceData": "{{JSObject1.data.reduce((acc, current) => {\n  const x = acc.find(item => item.province === current.province);\n  if (!x) {\n    return acc.concat([current]);\n  } else {\n    return acc;\n  }\n}, [])}}",
-  "topRow": 53,
+  "sourceData": "{{SELECT_PROVINCEs.data}}",
+  "topRow": 51,
   "type": "SELECT_WIDGET",
   "version": 1,
-  "widgetId": "7pfbpal9xq",
+  "widgetId": "rkt3975dke",
   "widgetName": "PROVINCE_TH"
 }

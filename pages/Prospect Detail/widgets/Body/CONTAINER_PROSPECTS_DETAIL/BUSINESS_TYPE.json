@@ -2,33 +2,52 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 19,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ BUSINESS_TYPE.widgetName]?.data ?? \"\"))(BUSINESS_TYPE.options, BUSINESS_TYPE.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicTriggerPathList": [],
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ BUSINESS_TYPE.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Business Type",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[BUSINESS_TYPE.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 35,
@@ -40,10 +59,10 @@
   "mobileRightColumn": 55,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
-  "originalBottomRow": 21,
-  "originalTopRow": 17,
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 17,
+  "originalTopRow": 13,
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
@@ -53,8 +72,8 @@
   "rightColumn": 63,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "[\n  {\n    \"name\": \"ขนส่ง\",\n    \"code\": \"ขนส่ง\"\n  },\n  {\n    \"name\": \"ประกันภัย\",\n    \"code\": \"ประกันภัย\"\n  },\n  {\n    \"name\": \"อาหาร\",\n    \"code\": \"อาหาร\"\n  }\n]",
-  "topRow": 15,
+  "sourceData": "{{SELCT_FOR_DD_COMPANY_BT.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
+  "topRow": 13,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "1j29urvf3e",

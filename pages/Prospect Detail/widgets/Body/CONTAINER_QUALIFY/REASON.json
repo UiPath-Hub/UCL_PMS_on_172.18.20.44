@@ -3,30 +3,51 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 15,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ REASON.widgetName]?.data ?? \"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ REASON.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Reason",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[REASON.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "8",
   "leftColumn": 2,
@@ -43,13 +64,14 @@
   "parentColumnSpace": 19.5,
   "parentId": "z59lu3avk5",
   "parentRowSpace": 10,
+  "regex": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[REASON.widgetName]?.regex??\"\"}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 41,
   "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 11,
+  "topRow": 12,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "bcq23wslbl",

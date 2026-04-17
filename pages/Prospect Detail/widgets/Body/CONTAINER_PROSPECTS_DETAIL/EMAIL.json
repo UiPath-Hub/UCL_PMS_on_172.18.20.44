@@ -3,30 +3,51 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 31,
+  "bottomRow": 29,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultText": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ EMAIL.widgetName]?.data ?? \"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "regex"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "EMAIL",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ EMAIL.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Email",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[EMAIL.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 35,
@@ -38,11 +59,12 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 37,
-  "originalTopRow": 32,
+  "originalBottomRow": 29,
+  "originalTopRow": 25,
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
+  "regex": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[EMAIL.widgetName]?.regex??\"\"}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
@@ -50,7 +72,7 @@
   "shouldAllowAutofill": true,
   "shouldScrollContents": true,
   "showStepArrows": false,
-  "topRow": 27,
+  "topRow": 25,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "uldsqt0n8b",

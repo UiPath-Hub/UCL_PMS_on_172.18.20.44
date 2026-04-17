@@ -1,0 +1,76 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_5d3f0b8f-0486-44d2-9471-e23f44df1c56",
+  "id": "Prospect Detail_ADDRESSING",
+  "unpublishedCollection": {
+    "name": "ADDRESSING",
+    "pageId": "Prospect Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "DisableWidget",
+        "value": "false"
+      },
+      {
+        "name": "LanguageControl",
+        "value": "\"TH\""
+      },
+      {
+        "name": "Language_PROP_NAME",
+        "value": "\"ADDRESSING.LanguageControl\""
+      },
+      {
+        "name": "Language_WIDGET",
+        "value": "{\n  ...ADDRESS_LANGUAGE,\n  data: ADDRESS_LANGUAGE.selectedOptionValue\n}"
+      },
+      {
+        "name": "DEFAULT_ENTITY",
+        "value": "appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches] ?? Widgets.PMS_PROSPECTS_LM"
+      },
+      {
+        "name": "PROVINCE_PROP_NAME",
+        "value": "\"PROVINCE_TH\""
+      },
+      {
+        "name": "DISTRICT_PROP_NAME",
+        "value": "\"DISTRICT_TH\""
+      },
+      {
+        "name": "SUB_DISTRICT_PROP_NAME",
+        "value": "\"SUB_DISTRICT_TH\""
+      },
+      {
+        "name": "POSTAL_CODE_PROP_NAME",
+        "value": "\"POSTAL_CODE\""
+      },
+      {
+        "name": "PROVINCE",
+        "value": "\"PROVINCE\""
+      },
+      {
+        "name": "DISTRICT_STORE_NAME",
+        "value": "\"DISTRICT\""
+      },
+      {
+        "name": "SUB_DISTRICT_STORE_NAME",
+        "value": "\"SUBDISTRICT\""
+      },
+      {
+        "name": "PROVINCE_WIDGET",
+        "value": "PROVINCE_TH"
+      },
+      {
+        "name": "DISTRICT_WIDGET",
+        "value": "DISTRICT_TH"
+      },
+      {
+        "name": "SUB_DISTRICT_WIDGET",
+        "value": "SUB_DISTRICT_TH"
+      },
+      {
+        "name": "POSTAL_CODE_WIDGET",
+        "value": "POSTAL_CODE"
+      }
+    ]
+  }
+}

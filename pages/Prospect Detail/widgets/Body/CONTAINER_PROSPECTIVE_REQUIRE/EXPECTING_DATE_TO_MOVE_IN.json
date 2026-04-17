@@ -2,32 +2,59 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 54,
+  "bottomRow": 50,
   "boxShadow": "none",
   "closeOnSelection": true,
-  "dateFormat": "D MMMM, YYYY",
+  "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "2024-08-08T06:02:57.271Z",
+  "defaultDate": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.data?moment(appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.data):\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "dateFormat"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "dateFormat"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "firstDayOfWeek": 0,
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "tcbyt2u9e6",
   "label": "Expecting date to move in",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[EXPECTING_DATE_TO_MOVE_IN.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelTooltip": "",
   "labelWidth": "12",
@@ -42,8 +69,8 @@
   "mobileRightColumn": 55,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "originalBottomRow": 54,
-  "originalTopRow": 50,
+  "originalBottomRow": 50,
+  "originalTopRow": 46,
   "parentColumnSpace": 16.7841796875,
   "parentId": "gxo76kmw4r",
   "parentRowSpace": 10,
@@ -53,7 +80,7 @@
   "shortcuts": false,
   "shouldScrollContents": true,
   "timePrecision": "None",
-  "topRow": 50,
+  "topRow": 46,
   "type": "DATE_PICKER_WIDGET2",
   "version": 2,
   "widgetId": "fwf6mlo7lr",

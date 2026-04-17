@@ -75,18 +75,24 @@ export default {
 		if(!SELECT_FIELDS_VALIDATION || !Configs.pageName)return showAlert("SELECT_FIELDS_VALIDATION or Configs.pageName not found.","error");
 		//if(SELECT_FIELDS_VALIDATION.data == undefined)
 		await SELECT_FIELDS_VALIDATION.run();
-		let regex = {};
-		let required = {};		
 		if(SELECT_FIELDS_VALIDATION.data && SELECT_FIELDS_VALIDATION.data?.length > 0){
 			const fieldValidate = JSON.parse("{"+_.join(SELECT_FIELDS_VALIDATION.data,",")+"}");
+			console.log("validate",fieldValidate);
 			storeValue(this.fieldValidate,fieldValidate);
 		}
 		await Promise.all(InitializationDataList.map(async (InitializationData)=>{
 			if(!InitializationData.DATA || !InitializationData.ENTITY) return console.error("Invalid InitializationData.");
-			await Promise.all([this.setAttributes(InitializationData.ENTITY,InitializationData.DATA,"data")
-												]);
+			await Promise.all( Object.keys(InitializationData.ENTITY).map(async(key)=>{
+				let keystr= key.toString();
+				if(InitializationData.ENTITY[keystr]?.defaultData !== undefined){
+					if(InitializationData.DATA?.[keystr] !== null && InitializationData.DATA?.[keystr] !== undefined)
+						InitializationData.ENTITY[keystr].data = InitializationData.DATA[keystr];
+					else
+						InitializationData.ENTITY[keystr].data = InitializationData.ENTITY[keystr].defaultData;
+				}
+			}))
 		}));
 
 	}
-	
+
 }

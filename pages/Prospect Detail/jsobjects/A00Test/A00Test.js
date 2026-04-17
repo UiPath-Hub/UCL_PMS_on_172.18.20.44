@@ -1,5 +1,5 @@
 export default {
 	returnn:()=>{
-		return _.last(null)
+		return appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]
 	}
 }

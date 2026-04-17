@@ -2,33 +2,52 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 15,
+  "bottomRow": 14,
   "boxShadow": "none",
-  "defaultOptionValue": "GREEN",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ PERIOD_OF_LEASE.widgetName]?.data.toString() ?? \"\"))(PERIOD_OF_LEASE.options, PERIOD_OF_LEASE.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicTriggerPathList": [],
   "isDisabled": false,
   "isFilterable": false,
   "isLoading": false,
-  "isRequired": false,
+  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ PERIOD_OF_LEASE.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Period of Lease (Year)",
+  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[PERIOD_OF_LEASE.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 2,
@@ -40,8 +59,8 @@
   "mobileRightColumn": 55,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "optionLabel": "name",
-  "optionValue": "code",
+  "optionLabel": "label",
+  "optionValue": "value",
   "originalBottomRow": 14,
   "originalTopRow": 10,
   "parentColumnSpace": 19.5,
@@ -53,8 +72,8 @@
   "rightColumn": 30,
   "serverSideFiltering": false,
   "shouldScrollContents": true,
-  "sourceData": "[\n\t  {\n    \"name\": \"1\",\n    \"code\": \"1\"\n  },\n  {\n    \"name\": \"2\",\n    \"code\": \"2\"\n  },\n  {\n    \"name\": \"3\",\n    \"code\": \"3\"\n  },\n    {\n    \"name\": \"4\",\n    \"code\": \"4\"\n  },\n    {\n    \"name\": \"5\",\n    \"code\": \"5\"\n  },\n    {\n    \"name\": \"6\",\n    \"code\": \"6\"\n  },\n\t{\n    \"name\": \"7\",\n    \"code\": \"7\"\n  },\n\t{\n    \"name\": \"8\",\n    \"code\": \"8\"\n  },\n\t{\n    \"name\": \"9\",\n    \"code\": \"9\"\n  },\n\t{\n    \"name\": \"10\",\n    \"code\": \"10\"\n  },\n\t{\n    \"name\": \"11\",\n    \"code\": \"11\"\n  },\n\t{\n    \"name\": \"12\",\n    \"code\": \"12\"\n  }\n]",
-  "topRow": 11,
+  "sourceData": "{{SELCT_FOR_DD_NUMBER_OF_MONTH.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
+  "topRow": 10,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "5o2e5avlb3",

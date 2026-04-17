@@ -24,8 +24,12 @@
         "value": "\"PROSPECTS_ID\""
       },
       {
+        "name": "WidgetCaches",
+        "value": "\"WidgetCaches\""
+      },
+      {
         "name": "LoadProgress",
-        "value": "[Init.LoadData, Init.ShowView]"
+        "value": "[Init.LoadData, ADDRESSING.initAddress, Init.ShowView]"
       }
     ]
   }
