@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "696f3687314f3f6f4b6b02eb_5d3f0b8f-0486-44d2-9471-e23f44df1c56",
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_4b25e1f1-0274-4199-b755-d73218a1ac3f",
   "id": "Prospect Detail_ADDRESSING",
   "unpublishedCollection": {
     "name": "ADDRESSING",
@@ -20,12 +20,8 @@
         "value": "\"ADDRESSING.LanguageControl\""
       },
       {
-        "name": "Language_WIDGET",
-        "value": "{\n  ...ADDRESS_LANGUAGE,\n  data: ADDRESS_LANGUAGE.selectedOptionValue\n}"
-      },
-      {
         "name": "DEFAULT_ENTITY",
-        "value": "appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches] ?? Widgets.PMS_PROSPECTS_LM"
+        "value": "Widgets_Value.PMS_PROSPECTS_LM"
       },
       {
         "name": "PROVINCE_PROP_NAME",
@@ -44,32 +40,16 @@
         "value": "\"POSTAL_CODE\""
       },
       {
-        "name": "PROVINCE",
-        "value": "\"PROVINCE\""
+        "name": "DISTRICT_STORE",
+        "value": "[{\n  \"ID\": 0,\n  \"DISTRICT_TH\": \"\",\n  \"DISTRICT_EN\": \"\"\n}]"
       },
       {
-        "name": "DISTRICT_STORE_NAME",
-        "value": "\"DISTRICT\""
+        "name": "SUB_DISTRICT_STORE",
+        "value": "[{\n  \"SUBDISTRICT_TH\": \"\",\n  \"SUBDISTRICT_EN\": \"\",\n  \"ID\": 0\n}]"
       },
       {
-        "name": "SUB_DISTRICT_STORE_NAME",
-        "value": "\"SUBDISTRICT\""
-      },
-      {
-        "name": "PROVINCE_WIDGET",
-        "value": "PROVINCE_TH"
-      },
-      {
-        "name": "DISTRICT_WIDGET",
-        "value": "DISTRICT_TH"
-      },
-      {
-        "name": "SUB_DISTRICT_WIDGET",
-        "value": "SUB_DISTRICT_TH"
-      },
-      {
-        "name": "POSTAL_CODE_WIDGET",
-        "value": "POSTAL_CODE"
+        "name": "CACHE_VALUE",
+        "value": "{\n  PROVINCE: \"\",\n  DISTRICT: \"\",\n  SUB_DISTRICT: \"\",\n  POSTAL_CODE: \"\"\n}"
       }
     ]
   }

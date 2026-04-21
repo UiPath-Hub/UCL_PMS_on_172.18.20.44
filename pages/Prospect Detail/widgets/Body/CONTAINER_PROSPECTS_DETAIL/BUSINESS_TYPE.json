@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 17,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ BUSINESS_TYPE.widgetName]?.data ?? \"\"))(BUSINESS_TYPE.options, BUSINESS_TYPE.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Widgets_Value.PMS_PROSPECTS_LM?.[ BUSINESS_TYPE.widgetName]?.data ?? \"\"))(BUSINESS_TYPE.options, BUSINESS_TYPE.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -41,13 +41,13 @@
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ BUSINESS_TYPE.widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.\n[ BUSINESS_TYPE.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Business Type",
-  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[BUSINESS_TYPE.widgetName]?.color ?? \"\"}}",
+  "labelTextColor": "{{Widgets_Value.PMS_PROSPECTS_LM?.[BUSINESS_TYPE.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 35,

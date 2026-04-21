@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.data?moment(appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.data):\"\"}}",
+  "defaultDate": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.data?moment(Widgets_Value.PMS_PROSPECTS_LM?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.data).toString():\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -47,14 +47,14 @@
   "firstDayOfWeek": 0,
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.\n[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "tcbyt2u9e6",
   "label": "Expecting date to move in",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[EXPECTING_DATE_TO_MOVE_IN.widgetName]?.color ?? \"\"}}",
+  "labelTextColor": "{{Widgets_Value.PMS_PROSPECTS_LM?.[EXPECTING_DATE_TO_MOVE_IN.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelTooltip": "",
   "labelWidth": "12",

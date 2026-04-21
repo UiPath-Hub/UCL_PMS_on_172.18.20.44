@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 18,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ AREA_REQUIREMENT.widgetName]?.data ?? \"\"))(AREA_REQUIREMENT.options, AREA_REQUIREMENT.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Widgets_Value.PMS_PROSPECTS_LM?.\n[ AREA_REQUIRED.widgetName]?.data ?? \"\"))(AREA_REQUIRED.options, AREA_REQUIRED.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -41,13 +41,13 @@
   "isDisabled": false,
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ AREA_REQUIREMENT.widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.[ AREA_REQUIRED.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Area Requirement",
-  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[AREA_REQUIREMENT.widgetName]?.color ?? \"\"}}",
+  "labelTextColor": "{{Widgets_Value.PMS_PROSPECTS_LM?.[AREA_REQUIRED.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 2,
@@ -77,5 +77,5 @@
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "w7iglstzvw",
-  "widgetName": "AREA_REQUIREMENT"
+  "widgetName": "AREA_REQUIRED"
 }

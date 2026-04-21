@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 21,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ TITLE_NAME.widgetName]?.data ?? \"\"))(TITLE_NAME.options, TITLE_NAME.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Widgets_Value.PMS_PROSPECTS_LM?.[ TITLE_NAME.widgetName]?.data ?? \"\"))(TITLE_NAME.options, TITLE_NAME.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -41,13 +41,13 @@
   "isDisabled": false,
   "isFilterable": false,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ TITLE_NAME.widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.[ TITLE_NAME.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "72xnnx6qo8",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Name of authorized representative",
-  "labelTextColor": "{{(appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[TITLE_NAME.widgetName]?.color || appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[NAME_OF_AUTHORIZED.widgetName]?.color )?? \"\"}}",
+  "labelTextColor": "{{(Widgets_Value.PMS_PROSPECTS_LM?.[TITLE_NAME.widgetName]?.color || Widgets_Value.PMS_PROSPECTS_LM?.[NAME_OF_AUTHORIZED.widgetName]?.color )?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 2,

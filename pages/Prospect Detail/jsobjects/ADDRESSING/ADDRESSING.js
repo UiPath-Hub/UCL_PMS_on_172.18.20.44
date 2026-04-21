@@ -2,33 +2,51 @@ export default {
 	DisableWidget:false,
 	LanguageControl:"TH",
 	Language_PROP_NAME:"this.LanguageControl",
-	Language_WIDGET:{...ADDRESS_LANGUAGE,data:ADDRESS_LANGUAGE.selectedOptionValue},
+	Language_WIDGET:()=>({...ADDRESS_LANGUAGE,data:ADDRESS_LANGUAGE.selectedOptionValue}),
 	//default prop
-	DEFAULT_ENTITY: appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]??Widgets.PMS_PROSPECTS_LM,
+	DEFAULT_ENTITY: Widgets_Value.PMS_PROSPECTS_LM,
 	SET_ENTITY_VALUE:async (prop,value) => {
 		//normal object
 		//this.DEFAULT_ENTITY[prop].data = value;
-
-		//appsmith store
-		if(appsmith.store[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[prop]){
-			await storeValue(Init.SINGLE_PAGE,{...appsmith.store[Init.SINGLE_PAGE],[Init.WidgetCaches]: {...appsmith.store[Init.SINGLE_PAGE][Init.WidgetCaches], [prop]: {...appsmith.store[Init.SINGLE_PAGE][Init.WidgetCaches][prop],data: value}}},false);
-		}
+		this.CACHE_VALUE[prop] = value;
 	},
 	PROVINCE_PROP_NAME:"PROVINCE_TH",
 	DISTRICT_PROP_NAME:"DISTRICT_TH",
 	SUB_DISTRICT_PROP_NAME:"SUB_DISTRICT_TH",
 	POSTAL_CODE_PROP_NAME:"POSTAL_CODE",
 	//store
-	PROVINCE:"PROVINCE",
-	DISTRICT_STORE_NAME:"DISTRICT",
-	SUB_DISTRICT_STORE_NAME:"SUBDISTRICT",
+	DISTRICT_STORE:[{
+		"ID":0,
+		"DISTRICT_TH":"",
+		"DISTRICT_EN":""
+	}],
+	SUB_DISTRICT_STORE:[
+		{
+			"SUBDISTRICT_TH": "",
+			"SUBDISTRICT_EN": "",
+			"ID": 0
+		}
+	],
 	//reconstruct the widget to handle a function calling of widget. 
-	PROVINCE_WIDGET: PROVINCE_TH,
-	DISTRICT_WIDGET: DISTRICT_TH,
-	SUB_DISTRICT_WIDGET: SUB_DISTRICT_TH,
-	POSTAL_CODE_WIDGET:POSTAL_CODE,
+	PROVINCE_WIDGET: ()=>({...PROVINCE_TH}),
+	DISTRICT_WIDGET: ()=>({...DISTRICT_TH}),
+	SUB_DISTRICT_WIDGET: ()=> ({...SUB_DISTRICT_TH}),
+	POSTAL_CODE_WIDGET: ()=> ({...POSTAL_CODE}),
+	init_DefaultValue:()=>{
+		this.SET_ENTITY_VALUE("PROVINCE",Widgets_Value.PMS_PROSPECTS_LM?.[this.PROVINCE_PROP_NAME]?.data ?? "");
+		this.SET_ENTITY_VALUE("DISTRICT",Widgets_Value.PMS_PROSPECTS_LM?.[this.DISTRICT_PROP_NAME]?.data ?? "");
+		this.SET_ENTITY_VALUE("SUB_DISTRICT",Widgets_Value.PMS_PROSPECTS_LM?.[this.SUB_DISTRICT_PROP_NAME]?.data ?? "");
+		this.SET_ENTITY_VALUE("POSTAL_CODE",Widgets_Value.PMS_PROSPECTS_LM?.[this.POSTAL_CODE_PROP_NAME]?.data ?? "");
 
-	fetchAddressByPostalCode:async function (postalCode,provinePropName,districtPropName,subDistrictPropName, districtStoreName, subDistrictStoreName) {
+	},
+	CACHE_VALUE:{
+		PROVINCE:"",
+		DISTRICT:"",
+		SUB_DISTRICT:"",
+		POSTAL_CODE:""
+	},
+
+	fetchAddressByPostalCode:async function (postalCode,provinePropName,districtPropName,subDistrictPropName) {
 		if (!postalCode || postalCode.length !== 5) return;
 		//console.log("call")
 		//await SELECT_ADDRESS.run({ POSTAL_CODE: postalCode });
@@ -44,56 +62,54 @@ export default {
 		let allSubDistrictOfDistrict = [];
 		let all;
 		// ตั้งค่าค่าดีฟอลต์
-		let firstProvince = provinces[0].PROVINCE_TH
-		let firstDistrict = districts[0].DISTRICT_TH
-		let firstSubdistrict = subdistricts [0].SUBDISTRICT_TH
+		let firstProvince = provinces[0]?.PROVINCE_TH
+		let firstDistrict = districts[0]?.DISTRICT_TH
+		let firstSubdistrict = subdistricts[0]?.SUBDISTRICT_TH
 		if (provinces.length === 1) {
 			//DefaultEntity[provinePropName].data =  firstProvince;
-			await this.SET_ENTITY_VALUE(provinePropName,firstProvince);
+			await this.SET_ENTITY_VALUE("PROVINCE",firstProvince);
 			all = await this.fetchAndStoreAddress({ PROVINCE: firstProvince , DISTINCT:"DISTRICT"});
 			//await SELECT_ADDRESS.run({ PROVINCE: PROVINCE[0].value, DISTINCT:"DISTRICT"});
 			allDistrictOfProvince = all.districts;
 		}
 		if (districts.length === 1) {
 			//DefaultEntity[districtPropName].data = firstDistrict ;
-			await this.SET_ENTITY_VALUE(districtPropName,firstDistrict);
+			await this.SET_ENTITY_VALUE("DISTRICT",firstDistrict);
 			all = await this.fetchAndStoreAddress({ PROVINCE:  firstProvince,DISTRICT:firstDistrict , DISTINCT:"SUBDISTRICT"})
 			//await SELECT_ADDRESS.run({ PROVINCE: PROVINCE[0].value,DISTRICT:DISTRICT[0].value , DISTINCT:"SUBDISTRICT"});
 			allSubDistrictOfDistrict = all.subdistricts;
 		}
 		if (subdistricts.length === 1) {
 			//DefaultEntity[subDistrictPropName].data = firstSubdistrict;
-			await this.SET_ENTITY_VALUE(subDistrictPropName,firstSubdistrict);
+			await this.SET_ENTITY_VALUE("SUB_DISTRICT",firstSubdistrict);
 		}
 
 		let finalDistrict = allDistrictOfProvince.length>0?allDistrictOfProvince:districts;
 		let finalSubDistrict = allSubDistrictOfDistrict.length>0?allSubDistrictOfDistrict:subdistricts;
-		await Promise.all([storeValue(districtStoreName, finalDistrict, false),storeValue(subDistrictStoreName, finalSubDistrict, false)]);
+		this.DISTRICT_STORE = finalDistrict;
+		this.SUB_DISTRICT_STORE = finalSubDistrict;
 		return {finalDistrict,finalSubDistrict}
 	},
 	setDisabledAll:async (value)=>{
 		this.DisableWidget = value;
 	},
 	onChange_POSTAL_CODE: async () => {
-		//await this.SET_ENTITY_VALUE(this.POSTAL_CODE_PROP_NAME,this.POSTAL_CODE_WIDGET.text);
-		if (!this.POSTAL_CODE_WIDGET.text || this.POSTAL_CODE_WIDGET.text.length !== 5) {
+		if (!this.POSTAL_CODE_WIDGET().text || this.POSTAL_CODE_WIDGET().text.length !== 5) {
 			await this.setDisabledAll(false);
 			return;
 		}
 		await this.setDisabledAll(true);
 		await this.fetchAddressByPostalCode(
-			this.POSTAL_CODE_WIDGET.text,
+			this.POSTAL_CODE_WIDGET().text,
 			this.PROVINCE_PROP_NAME, 
 			this.DISTRICT_PROP_NAME, 
-			this.SUB_DISTRICT_PROP_NAME, 
-			this.DISTRICT_STORE_NAME, 
-			this.SUB_DISTRICT_STORE_NAME
+			this.SUB_DISTRICT_PROP_NAME
 		);
 
 		await Promise.all([
-			resetWidget(this.PROVINCE_WIDGET.widgetName),
-			resetWidget(this.DISTRICT_WIDGET.widgetName),
-			resetWidget(this.SUB_DISTRICT_WIDGET.widgetName),
+			resetWidget(this.PROVINCE_WIDGET().widgetName),
+			resetWidget(this.DISTRICT_WIDGET().widgetName),
+			resetWidget(this.SUB_DISTRICT_WIDGET().widgetName),
 		]);
 
 		await this.setDisabledAll(false);
@@ -101,16 +117,16 @@ export default {
 
 	onSelectedProvice:async (selectedPROVINCE)=>{
 		let all = await this.fetchAndStoreAddress({PROVINCE:selectedPROVINCE,DISTINCT:'DISTRICT'});
-		await this.SET_ENTITY_VALUE(this.PROVINCE_PROP_NAME,selectedPROVINCE);
-		await storeValue(this.DISTRICT_STORE_NAME,all.districts,false);
+		await this.SET_ENTITY_VALUE("PROVINCE",selectedPROVINCE);
+		this.DISTRICT_STORE = all.districts;
 		//SELECT_ADDRESS.clear()
 	},
 	onSelectedDistrict:async (selectedPROVINCE,selectedDISTRICT)=>{
 		//console.log("selectDistrict")
 		//this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = selectedDISTRICT;
-		await this.SET_ENTITY_VALUE(this.DISTRICT_PROP_NAME,selectedDISTRICT);
+		await this.SET_ENTITY_VALUE("DISTRICT",selectedDISTRICT);
 		let all = await this.fetchAndStoreAddress({DISTRICT:selectedDISTRICT,PROVINCE:selectedPROVINCE,DISTINCT:'SUBDISTRICT'})
-		await storeValue(this.SUB_DISTRICT_STORE_NAME,all.subdistricts,false);
+		this.SUB_DISTRICT_STORE = all.subdistricts;
 		//SELECT_ADDRESS.clear()
 	},
 	fetchAndStoreAddress: async ({ PROVINCE, DISTRICT, POSTAL_CODE, DISTINCT }) => {
@@ -189,78 +205,64 @@ export default {
 		return SELECT_PROVINCEs.data.find((item)=>item.PROVINCE_TH==dataTH)?.ID ||""
 	},
 	district_ConvertToID:(dataTH)=>{
-		let store = appsmith.store[this.DISTRICT_STORE_NAME];
-		return store.find((item)=>item.DISTRICT_TH==dataTH)?.ID ||""
+		return this.DISTRICT_STORE.find((item)=>item.DISTRICT_TH==dataTH)?.ID ||""
 	},
 	subdistrict_ConvertToID:(dataTH)=>{
-		let store = appsmith.store[this.SUB_DISTRICT_STORE_NAME];
-		return store.find((item)=>item.SUBDISTRICT_TH==dataTH)?.ID ||""
+		return this.SUB_DISTRICT_STORE.find((item)=>item.SUBDISTRICT_TH==dataTH)?.ID ||""
 	},
-	
+
 	province_ConvertToTH:(ID)=>{
 		return SELECT_PROVINCEs.data.find((item)=>item.ID==ID)?.PROVINCE_TH ||""
 	},
 	district_ConvertToTH:(ID)=>{
-		let store = appsmith.store[this.DISTRICT_STORE_NAME];
-		return store.find((item)=>item.ID==ID)?.DISTRICT_TH ||""
+		return this.DISTRICT_STORE.find((item)=>item.ID==ID)?.DISTRICT_TH ||""
 	},
 	subdistrict_ConvertToTH:(ID)=>{
-		let store = appsmith.store[this.SUB_DISTRICT_STORE_NAME];
-		//showAlert(ID)
-		//showAlert(JSON.stringify(store.find((item)=>item.ID==ID)));
-		return store.find((item)=>item.ID==ID)?.SUBDISTRICT_TH ||""
+		return this.SUB_DISTRICT_STORE.find((item)=>item.ID==ID)?.SUBDISTRICT_TH ||""
 	},
-	
+
 	province_ConvertToEN:(ID)=>{
 		return SELECT_PROVINCEs.data.find((item)=>item.ID==ID)?.PROVINCE_EN ||""
 	},
 	district_ConvertToEN:(ID)=>{
-		let store = appsmith.store[this.DISTRICT_STORE_NAME];
-		return store.find((item)=>item.ID==ID)?.DISTRICT_EN ||""
+		return this.DISTRICT_STORE.find((item)=>item.ID==ID)?.DISTRICT_EN ||""
 	},
 	subdistrict_ConvertToEN:(ID)=>{
-		let store = appsmith.store[this.SUB_DISTRICT_STORE_NAME];
-		return store.find((item)=>item.ID==ID)?.SUBDISTRICT_EN ||""
+		return this.SUB_DISTRICT_STORE.find((item)=>item.ID==ID)?.SUBDISTRICT_EN ||""
 	},
-	
+
 	onChangedLanguage:async()=>{
-		let provinceID= this.PROVINCE_WIDGET.selectedOptionValue
-		let districtID = this.DISTRICT_WIDGET.selectedOptionValue
-		let subdistrictID = this.SUB_DISTRICT_WIDGET.selectedOptionValue
+		let provinceID= this.PROVINCE_WIDGET().selectedOptionValue
+		let districtID = this.DISTRICT_WIDGET().selectedOptionValue
+		let subdistrictID = this.SUB_DISTRICT_WIDGET().selectedOptionValue
 		//showAlert(JSON.stringify([provinceID,districtID,subdistrictID]));
-		await this.SET_ENTITY_VALUE(this.PROVINCE_PROP_NAME,await this.province_ConvertToTH (provinceID));
-		await this.SET_ENTITY_VALUE(this.DISTRICT_PROP_NAME,await this.district_ConvertToTH (districtID));
-		await this.SET_ENTITY_VALUE(this.SUB_DISTRICT_PROP_NAME,await this.subdistrict_ConvertToTH (subdistrictID));
-		this.LanguageControl = this.Language_WIDGET.data;
+		await this.SET_ENTITY_VALUE("PROVINCE",await this.province_ConvertToTH (provinceID));
+		await this.SET_ENTITY_VALUE("DISTRICT",await this.district_ConvertToTH (districtID));
+		await this.SET_ENTITY_VALUE("SUB_DISTRICT",await this.subdistrict_ConvertToTH (subdistrictID));
+		this.LanguageControl = this.Language_WIDGET().data;
 		//showAlert(JSON.stringify([this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data ,this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data,this.DEFAULT_ENTITY[this.SUB_DISTRICT_PROP_NAME].data]))
 	},
 	initAddress:async ()=>{
-		//let PROVINCE = [{key:"",value:""}];
-		let INIT_DISTRICT = [{ DISTRICT_TH: "", DISTRICT_EN: "",ID:"" }];
-		let INIT_SUBDISTRICT = [{ SUBDISTRICT_TH: "", SUBDISTRICT_EN: "",ID:""  }];
-
 		if(SELECT_PROVINCEs.data == undefined && !SELECT_PROVINCEs.isLoading)
 			await SELECT_PROVINCEs.run();
 		console.log("SELECT_PROVINCEs");
 
-			let { districts, subdistricts,province} = await this.fetchAndStoreAddress(
-				{PROVINCE:this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data});
-			//convert address data to dropdown value
-			subdistricts = subdistricts.filter((sd)=>sd.DISTRICT_TH==this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data);
-			let findID = districts.find((d)=>d[this.DISTRICT_PROP_NAME]==this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data);
-			//this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = (findID?findID.ID:undefined)||this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data;
-			if(findID?.ID)
-			await this.SET_ENTITY_VALUE(this.DISTRICT_PROP_NAME,findID.ID);
-			storeValue(this.DISTRICT_STORE_NAME, districts.length ? districts : INIT_DISTRICT);
-			storeValue(this.SUB_DISTRICT_STORE_NAME, subdistricts.length ? subdistricts : INIT_SUBDISTRICT);
-			if(this.DEFAULT_ENTITY[this.Language_PROP_NAME])
+		let { districts, subdistricts,province} = await this.fetchAndStoreAddress(
+			{PROVINCE:this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data});
+		//convert address data to dropdown value
+		subdistricts = subdistricts.filter((sd)=>sd.DISTRICT_TH==this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data);
+		let findID = districts.find((d)=>d[this.DISTRICT_PROP_NAME]==this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data);
+		//this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = (findID?findID.ID:undefined)||this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data;
+		if(findID?.ID)
+			await this.SET_ENTITY_VALUE("DISTRICT",findID.ID);
+		if(this.DEFAULT_ENTITY[this.Language_PROP_NAME])
 			this.LanguageControl = this.DEFAULT_ENTITY[this.Language_PROP_NAME].data||this.LanguageControl
-
+		this.init_DefaultValue();
 		console.log("initAddress");
 
 		//SELECT_ADDRESS.clear();
 	},
 	test:async()=>{
-		
+
 	}
 }

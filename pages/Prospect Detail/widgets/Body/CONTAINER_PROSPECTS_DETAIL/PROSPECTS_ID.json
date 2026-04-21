@@ -5,16 +5,13 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 9,
   "boxShadow": "none",
-  "defaultText": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[PROSPECTS_ID.widgetName]?.data ?? \"\"}}",
+  "defaultText": "{{Widgets_Value.PMS_PROSPECTS_LM?.[PROSPECTS_ID.widgetName].data||\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "defaultText"
     },
     {
       "key": "isRequired"
@@ -24,6 +21,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "defaultText"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -40,14 +40,14 @@
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[PROSPECTS_ID.widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.[PROSPECTS_ID.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "Company Registration No.",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[PROSPECTS_ID.widgetName]?.color ?? \"\"}}",
+  "labelTextColor": "{{Widgets_Value.PMS_PROSPECTS_LM?.[PROSPECTS_ID.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 2,
@@ -62,7 +62,7 @@
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
-  "regex": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[PROSPECTS_ID.widgetName]?.regex??\"\"}}",
+  "regex": "{{GlobalFunctions.fieldValidate?.[PROSPECTS_ID.widgetName]?.regex??\"\"}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

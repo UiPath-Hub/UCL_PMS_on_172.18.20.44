@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 21,
   "boxShadow": "none",
-  "defaultText": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ NAME_OF_AUTHORIZED.widgetName]?.data ?? \"\"}}",
+  "defaultText": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ NAME_OF_AUTHORIZED.widgetName]?.data ?? \"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -34,7 +34,7 @@
   "inputType": "TEXT",
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ NAME_OF_AUTHORIZED.widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.\n[ NAME_OF_AUTHORIZED.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "nwk391w658",
   "label": "",
@@ -59,7 +59,7 @@
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
   "placeholderText": "",
-  "regex": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[NAME_OF_AUTHORIZED.widgetName]?.regex??\"\"}}",
+  "regex": "{{GlobalFunctions.fieldValidate?.[NAME_OF_AUTHORIZED.widgetName]?.regex??\"\"}}",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

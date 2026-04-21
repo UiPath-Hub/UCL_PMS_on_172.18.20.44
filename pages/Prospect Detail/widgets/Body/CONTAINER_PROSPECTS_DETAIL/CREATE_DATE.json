@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ CREATE_DATE.widgetName]?.data?moment(appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ CREATE_DATE.widgetName]?.data ):\"\"}}",
+  "defaultDate": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ CREATE_DATE.widgetName]?.data?moment(Widgets_Value.PMS_PROSPECTS_LM?.[ CREATE_DATE.widgetName].data ).toString():\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -19,13 +19,13 @@
       "key": "dateFormat"
     },
     {
-      "key": "defaultDate"
-    },
-    {
       "key": "isRequired"
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "defaultDate"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -47,14 +47,14 @@
   "firstDayOfWeek": 0,
   "isDisabled": false,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ CREATE_DATE.widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.\n[ CREATE_DATE.widgetName]?.required??false}}",
   "isVisible": true,
   "key": "tcbyt2u9e6",
   "label": "Create Date",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelStyle": "",
-  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[CREATE_DATE.widgetName]?.color ?? \"\"}}",
+  "labelTextColor": "{{Widgets_Value.PMS_PROSPECTS_LM?.[CREATE_DATE.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 35,

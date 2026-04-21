@@ -11,7 +11,16 @@
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSelectionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSelectionChange"
+    }
+  ],
   "flexVerticalAlignment": "start",
   "isDisabled": false,
   "isInline": true,
@@ -32,6 +41,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 196,
   "needsErrorInfo": false,
+  "onSelectionChange": "{{ADDRESSING.onChangedLanguage();}}",
   "options": [
     {
       "label": "TH",
@@ -42,8 +52,8 @@
       "value": "EN"
     }
   ],
-  "originalBottomRow": 199,
-  "originalTopRow": 195,
+  "originalBottomRow": 197,
+  "originalTopRow": 193,
   "parentColumnSpace": 23.53125,
   "parentId": "0",
   "parentRowSpace": 10,

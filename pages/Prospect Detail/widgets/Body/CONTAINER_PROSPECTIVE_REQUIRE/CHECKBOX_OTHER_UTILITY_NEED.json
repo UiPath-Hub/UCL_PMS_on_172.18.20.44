@@ -38,7 +38,7 @@
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "Other utility need  ",
-  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[CHECKBOX_OTHER_UTILITY_NEED.widgetName]?.color ?? \"\"}}",
+  "labelTextColor": "{{Widgets_Value.PMS_PROSPECTS_LM?.[CHECKBOX_OTHER_UTILITY_NEED.widgetName]?.color ?? \"\"}}",
   "labelTextSize": "1rem",
   "labelWidth": "8",
   "leftColumn": 2,

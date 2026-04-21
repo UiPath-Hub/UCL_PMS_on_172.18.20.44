@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "696f3687314f3f6f4b6b02eb_d42bd864-a3ae-4b41-8188-3f2f9471e4ed",
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_970c3969-d033-4b30-83a0-1fb059786355",
   "id": "Prospect Detail_ADDRESSING.fetchAddressByPostalCode",
   "pluginId": "js-plugin",
   "pluginType": "JS",
@@ -18,12 +18,6 @@
         },
         {
           "name": "subDistrictPropName"
-        },
-        {
-          "name": "districtStoreName"
-        },
-        {
-          "name": "subDistrictStoreName"
         }
       ],
       "paginationType": "NONE",

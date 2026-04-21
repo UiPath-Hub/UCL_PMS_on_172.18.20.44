@@ -1,7 +1,6 @@
 export default {
 	V:5,
 	LastChanged:"if(!SELECT_FIELDS_VALIDATION.data) before run in init()",
-
 	manualValidate:async (defaultEntities,widgetsMap)=>{
 		let alert = [];
 		await Promise.all( Object.keys(defaultEntities).map(async (key)=>{
@@ -68,7 +67,7 @@ export default {
 		}));
 
 	},
-	fieldValidate:"fieldValidate",
+	fieldValidate:{},
 	initDefaultV2:async(InitializationDataList)=>{
 		//run all default data query before calling
 		//load validation
@@ -76,9 +75,7 @@ export default {
 		//if(SELECT_FIELDS_VALIDATION.data == undefined)
 		await SELECT_FIELDS_VALIDATION.run();
 		if(SELECT_FIELDS_VALIDATION.data && SELECT_FIELDS_VALIDATION.data?.length > 0){
-			const fieldValidate = JSON.parse("{"+_.join(SELECT_FIELDS_VALIDATION.data,",")+"}");
-			console.log("validate",fieldValidate);
-			storeValue(this.fieldValidate,fieldValidate);
+			this.fieldValidate = JSON.parse("{"+_.join(SELECT_FIELDS_VALIDATION.data,",")+"}");
 		}
 		await Promise.all(InitializationDataList.map(async (InitializationData)=>{
 			if(!InitializationData.DATA || !InitializationData.ENTITY) return console.error("Invalid InitializationData.");
@@ -90,6 +87,7 @@ export default {
 					else
 						InitializationData.ENTITY[keystr].data = InitializationData.ENTITY[keystr].defaultData;
 				}
+				if(InitializationData.ENTITY[keystr].color !== undefined) InitializationData.ENTITY[keystr].color = "";
 			}))
 		}));
 

@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 59,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.district_ConvertToID(appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[  DISTRICT_TH.widgetName]?.data ?? \"\")))(DISTRICT_TH.options, DISTRICT_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.district_ConvertToID(ADDRESSING.CACHE_VALUE.DISTRICT)))(DISTRICT_TH.options, DISTRICT_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -19,9 +19,6 @@
       "key": "defaultOptionValue"
     },
     {
-      "key": "labelTextColor"
-    },
-    {
       "key": "isRequired"
     },
     {
@@ -29,6 +26,9 @@
     },
     {
       "key": "isDisabled"
+    },
+    {
+      "key": "labelTextColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -60,13 +60,13 @@
   "isDisabled": "{{ADDRESSING.DisableWidget}}",
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ DISTRICT_TH .widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.\n[ DISTRICT_TH .widgetName]?.required??false}}",
   "isVisible": true,
   "key": "eeyagt6yon",
   "labelAlignment": "left",
   "labelPosition": "Left",
   "labelText": "District",
-  "labelTextColor": "{{appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[ DISTRICT_TH.widgetName]?.color ?? \"\"}}",
+  "labelTextColor": "{{}}",
   "labelTextSize": "1rem",
   "labelWidth": "12",
   "leftColumn": 2,
@@ -81,8 +81,8 @@
   "onOptionChange": "{{ADDRESSING.onSelectedDistrict(ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue), ADDRESSING.district_ConvertToTH(DISTRICT_TH.selectedOptionValue));}}",
   "optionLabel": "{{DISTRICT_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"DISTRICT_TH\":\"DISTRICT_EN\"))}}",
   "optionValue": "ID",
-  "originalBottomRow": 79,
-  "originalTopRow": 73,
+  "originalBottomRow": 59,
+  "originalTopRow": 55,
   "parentColumnSpace": 19.46875,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
@@ -91,7 +91,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 30,
   "serverSideFiltering": false,
-  "sourceData": "{{appsmith.store[ADDRESSING.DISTRICT_STORE_NAME]}}",
+  "sourceData": "{{ADDRESSING.DISTRICT_STORE}}",
   "topRow": 55,
   "type": "SELECT_WIDGET",
   "version": 1,

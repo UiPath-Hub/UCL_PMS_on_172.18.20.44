@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 55,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.province_ConvertToID(appsmith.store?.[Init.SINGLE_PAGE]?.[Init.WidgetCaches]?.[  PROVINCE_TH.widgetName]?.data ?? \"\")))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( ADDRESSING.province_ConvertToID(ADDRESSING.CACHE_VALUE.PROVINCE)))(PROVINCE_TH.options, PROVINCE_TH.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -60,7 +60,7 @@
   "isDisabled": "{{ADDRESSING.DisableWidget}}",
   "isFilterable": true,
   "isLoading": false,
-  "isRequired": "{{appsmith.store[GlobalFunctions.fieldValidate]?.[ PROVINCE_TH .widgetName]?.required??false}}",
+  "isRequired": "{{GlobalFunctions.fieldValidate?.\n[ PROVINCE_TH .widgetName]?.required??false}}",
   "isVisible": true,
   "key": "3g1kiq79ra",
   "labelAlignment": "left",
@@ -81,8 +81,8 @@
   "onOptionChange": "{{ADDRESSING.onSelectedProvice(ADDRESSING.province_ConvertToTH(PROVINCE_TH.selectedOptionValue));}}",
   "optionLabel": "{{PROVINCE_TH.sourceData.map((item) => (ADDRESSING.LanguageControl==\"TH\"? \"PROVINCE_TH\":\"PROVINCE_EN\"))}}",
   "optionValue": "ID",
-  "originalBottomRow": 73,
-  "originalTopRow": 69,
+  "originalBottomRow": 55,
+  "originalTopRow": 51,
   "parentColumnSpace": 11.4375,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
