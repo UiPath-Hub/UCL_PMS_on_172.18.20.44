@@ -1,0 +1,2 @@
+SELECT CONCAT(FIELD_NAME, ':{"regex":"',ISNULL(REGEX,''),'","required":',(CASE REQUIRED WHEN 1 THEN 'true' else 'false' end),'}') FROM dbo.PMS_FIELDS_VALIDATION
+WHERE PAGE_NAME = {{Configs.pageName}}

@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_4185d64b-09be-4392-80f6-e98e98e384b5",
+  "id": "Prospect Detail_GlobalFunctions",
+  "unpublishedCollection": {
+    "name": "GlobalFunctions",
+    "pageId": "Prospect Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "V",
+        "value": "5"
+      },
+      {
+        "name": "LastChanged",
+        "value": "\"if(!SELECT_FIELDS_VALIDATION.data) before run in init()\""
+      },
+      {
+        "name": "fieldValidate",
+        "value": "{}"
+      }
+    ]
+  }
+}

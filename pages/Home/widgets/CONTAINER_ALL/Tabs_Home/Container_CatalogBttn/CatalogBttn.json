@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 13,
   "boxShadow": "none",
   "buttonColor": "#3b82f6",
   "buttonVariant": "TERTIARY",
@@ -13,6 +13,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "iconName"
+    },
+    {
+      "key": "onClick"
     }
   ],
   "dynamicTriggerPathList": [

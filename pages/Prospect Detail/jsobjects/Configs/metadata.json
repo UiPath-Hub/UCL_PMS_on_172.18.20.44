@@ -1,0 +1,44 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_228bf3b2-94b1-46ab-a84d-d8e685c6ab94",
+  "id": "Prospect Detail_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Prospect Detail",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dateFormat",
+        "value": "\"D MMM YYYY\""
+      },
+      {
+        "name": "sqlDataFormat",
+        "value": "\"YYYY-MM-DD\""
+      },
+      {
+        "name": "tableDataFormat",
+        "value": "\"D MMMM, yyyy\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"Prospect Detail\""
+      },
+      {
+        "name": "AllModals",
+        "value": "[Modal_Session_detail.name, Modal_ErrorAlert.name]"
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"PROV\",\n  EDIT: \"PROE\"\n}"
+      },
+      {
+        "name": "requiredColorAlert",
+        "value": "\"#ef4444\""
+      },
+      {
+        "name": "requiredColorPass",
+        "value": "\"\""
+      }
+    ]
+  }
+}

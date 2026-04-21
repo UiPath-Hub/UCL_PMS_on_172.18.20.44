@@ -1,0 +1,6 @@
+
+EXECUTE [dbo].[SELECT_FOR_PROSPECTS_BY_ID] 
+   @PROSPECTS_ID = {{appsmith.store[Init.SINGLE_PAGE]?.PROSPECTS_ID||null}}
+  ,@USER_TOKEN = {{appsmith.store[Init.userSession]?.TOKEN||null}}
+GO
+

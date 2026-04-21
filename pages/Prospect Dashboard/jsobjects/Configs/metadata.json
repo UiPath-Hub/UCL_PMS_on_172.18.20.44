@@ -1,0 +1,32 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_020dea9f-4bdc-428c-b597-a3caae47f272",
+  "id": "Prospect Dashboard_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Prospect Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dateFormat",
+        "value": "\"D MMM YYYY\""
+      },
+      {
+        "name": "tableDataFormat",
+        "value": "\"D MMMM, yyyy\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"Prospect Dashboard\""
+      },
+      {
+        "name": "AllModals",
+        "value": "[Modal_Session_detail.name, Modal_ErrorAlert.name]"
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"PROV\",\n  EDIT: \"PROE\"\n}"
+      }
+    ]
+  }
+}

@@ -108,6 +108,18 @@
     {
       "id": "Meter Record Detail",
       "isDefault": false
+    },
+    {
+      "id": "Model_V0",
+      "isDefault": false
+    },
+    {
+      "id": "Prospect Dashboard",
+      "isDefault": false
+    },
+    {
+      "id": "Prospect Detail",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

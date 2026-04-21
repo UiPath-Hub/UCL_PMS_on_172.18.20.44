@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_bce5c740-5f03-421f-be4a-13cba2c56017",
+  "id": "Prospect Dashboard_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Prospect Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", Configs.dateFormat)"
+      },
+      {
+        "name": "SINGLE_PAGE",
+        "value": "\"SINGLE_PAGE\""
+      },
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      }
+    ]
+  }
+}

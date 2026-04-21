@@ -1,0 +1,88 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 50,
+  "boxShadow": "none",
+  "closeOnSelection": true,
+  "dateFormat": "{{Configs.dateFormat}}",
+  "datePickerType": "DATE_PICKER",
+  "defaultDate": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.data?moment(Widgets_Value.PMS_PROSPECTS_LM?.[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.data).toString():\"\"}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "dateFormat"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "dateFormat"
+    },
+    {
+      "key": "defaultDate"
+    },
+    {
+      "key": "isRequired"
+    },
+    {
+      "key": "labelTextColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "firstDayOfWeek": 0,
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": "{{GlobalFunctions.fieldValidate?.\n[ EXPECTING_DATE_TO_MOVE_IN.widgetName]?.required??false}}",
+  "isVisible": true,
+  "key": "tcbyt2u9e6",
+  "label": "Expecting date to move in",
+  "labelAlignment": "left",
+  "labelPosition": "Left",
+  "labelStyle": "",
+  "labelTextColor": "{{Widgets_Value.PMS_PROSPECTS_LM?.[EXPECTING_DATE_TO_MOVE_IN.widgetName]?.color ?? \"\"}}",
+  "labelTextSize": "1rem",
+  "labelTooltip": "",
+  "labelWidth": "12",
+  "leftColumn": 2,
+  "maxDate": "2121-12-31T18:29:00.000Z",
+  "maxDynamicHeight": 9000,
+  "minDate": "1920-12-31T18:30:00.000Z",
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "originalBottomRow": 50,
+  "originalTopRow": 46,
+  "parentColumnSpace": 16.7841796875,
+  "parentId": "gxo76kmw4r",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "shortcuts": false,
+  "shouldScrollContents": true,
+  "timePrecision": "None",
+  "topRow": 46,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 2,
+  "widgetId": "fwf6mlo7lr",
+  "widgetName": "EXPECTING_DATE_TO_MOVE_IN"
+}
