@@ -4,7 +4,7 @@ declare @ResultCode nvarchar(10)
 EXECUTE [dbo].[UPDATE_PMS_PROSPECT_LM_V0] 
 @PROSPECTS_ID= {{Widgets_Ref.PMS_PROSPECTS_LM.PROSPECTS_ID.widgetData || null}},
 --@IS_UPDATE= 0,
---@IS_DELETE= 1,
+@IS_DELETE= 1,
 --@IS_QUALIFY= 0,
 @ResultCode = @ResultCode OUTPUT,
 @ResultMessages = @ResultMessages OUTPUT

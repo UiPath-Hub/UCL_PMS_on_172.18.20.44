@@ -38,9 +38,10 @@
     "Prospect_Date",
     "Contact_Person",
     "Telephone",
-    "ID"
+    "ID",
+    "Company_Name"
   ],
-  "columnUpdatedAt": 1776848765163,
+  "columnUpdatedAt": 1777284988699,
   "columnWidthMap": {
     "COMPANY_ID": 273,
     "COMPANY_NAME": 344,
@@ -111,6 +112,9 @@
     },
     {
       "key": "primaryColumns.ID.computedValue"
+    },
+    {
+      "key": "primaryColumns.Company_Name.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -156,6 +160,40 @@
   "parentRowSpace": 10,
   "primaryColumnId": "INVOICE_ID",
   "primaryColumns": {
+    "Company_Name": {
+      "alias": "Company Name",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = PMS_PROSPECTS_LM.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Company Name\"])) : Company Name })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "CENTER",
+      "id": "Company_Name",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Company Name",
+      "notation": "standard",
+      "originalId": "Company Name",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "1rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "Contact_Person": {
       "alias": "Contact Person",
       "allowCellWrapping": false,

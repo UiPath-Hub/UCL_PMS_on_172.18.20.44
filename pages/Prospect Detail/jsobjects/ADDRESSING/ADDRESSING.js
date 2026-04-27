@@ -46,7 +46,7 @@ export default {
 		POSTAL_CODE:""
 	},
 
-	fetchAddressByPostalCode:async function (postalCode,provinePropName,districtPropName,subDistrictPropName) {
+	fetchAddressByPostalCode:async function (postalCode) {
 		if (!postalCode || postalCode.length !== 5) return;
 		//console.log("call")
 		//await SELECT_ADDRESS.run({ POSTAL_CODE: postalCode });
@@ -98,12 +98,10 @@ export default {
 			await this.setDisabledAll(false);
 			return;
 		}
+		await this.SET_ENTITY_VALUE("POSTAL_CODE",this.POSTAL_CODE_WIDGET().text);
 		await this.setDisabledAll(true);
 		await this.fetchAddressByPostalCode(
-			this.POSTAL_CODE_WIDGET().text,
-			this.PROVINCE_PROP_NAME, 
-			this.DISTRICT_PROP_NAME, 
-			this.SUB_DISTRICT_PROP_NAME
+			this.POSTAL_CODE_WIDGET().text
 		);
 
 		await Promise.all([
@@ -249,12 +247,8 @@ export default {
 
 		let { districts, subdistricts,province} = await this.fetchAndStoreAddress(
 			{PROVINCE:this.DEFAULT_ENTITY[this.PROVINCE_PROP_NAME].data});
-		//convert address data to dropdown value
-		subdistricts = subdistricts.filter((sd)=>sd.DISTRICT_TH==this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data);
-		let findID = districts.find((d)=>d[this.DISTRICT_PROP_NAME]==this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data);
-		//this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data = (findID?findID.ID:undefined)||this.DEFAULT_ENTITY[this.DISTRICT_PROP_NAME].data;
-		if(findID?.ID)
-			await this.SET_ENTITY_VALUE("DISTRICT",findID.ID);
+		this.DISTRICT_STORE=districts;
+		this.SUB_DISTRICT_STORE=subdistricts;
 		if(this.DEFAULT_ENTITY[this.Language_PROP_NAME])
 			this.LanguageControl = this.DEFAULT_ENTITY[this.Language_PROP_NAME].data||this.LanguageControl
 		this.init_DefaultValue();

@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 69,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Widgets_Value.PMS_PROSPECTS_LM?.\n[ NUMBER_OF_MONTH_REMAIN.widgetName]?.data ?? \"\"))(NUMBER_OF_MONTH_REMAIN.options, NUMBER_OF_MONTH_REMAIN.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Widgets_Value.PMS_PROSPECTS_LM?.\n[ NUMBER_OF_MONTH_REMAIN.widgetName]?.data.toString() ?? \"\"))(NUMBER_OF_MONTH_REMAIN.options, NUMBER_OF_MONTH_REMAIN.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

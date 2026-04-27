@@ -13,6 +13,9 @@
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -21,6 +24,9 @@
     },
     {
       "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -31,7 +37,7 @@
   "iconAlign": "left",
   "iconName": "confirm",
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{!(Widgets_Value.PMS_PROSPECTS_LM?.[\"EDIT_ABLE\"]?.data)??false}}",
   "isLoading": false,
   "isVisible": "{{Widgets_Value.PMS_PROSPECTS_LM?.UI_STATE?.data===0??false}}",
   "key": "st8tsne4v5",

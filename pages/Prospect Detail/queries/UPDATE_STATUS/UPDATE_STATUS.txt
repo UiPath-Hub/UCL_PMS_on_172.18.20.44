@@ -9,7 +9,8 @@ EXECUTE [dbo].[UPDATE_PMS_PROSPECT_LM_V0]
 @USER_TOKEN= {{appsmith.store.userSession.TOKEN || null}},
 --@IS_UPDATE= 0,
 --@IS_DELETE= 0,
-@IS_QUALIFY= 1,
+@IS_CHANGE_STATUS= 1,
+@IS_REJECT = {{this.params.IS_REJECT||0}},
 @ResultCode = @ResultCode OUTPUT,
 @ResultMessages = @ResultMessages OUTPUT
 

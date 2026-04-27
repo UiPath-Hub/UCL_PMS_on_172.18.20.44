@@ -3,7 +3,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 36,
-  "defaultSelectedValues": "",
+  "defaultSelectedValues": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ CHECKBOX_OTHER_UTILITY_NEED.widgetName]?.data ?? \"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -16,6 +16,9 @@
     },
     {
       "key": "labelTextColor"
+    },
+    {
+      "key": "defaultSelectedValues"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

@@ -52,6 +52,6 @@ export default {
 		AIR_CONDITIONS:{defaultData:false,color:""},
 		CHECKBOX_OTHER_UTILITY_NEED:{color:""},
 		UI_STATE:{defaultData:0,color:""},
-		EDIT_ABLE:{defaultData:true,color:""},
+		EDITABLE:{defaultData:true,color:""},
 	}
 }

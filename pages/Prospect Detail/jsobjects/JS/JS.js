@@ -65,19 +65,19 @@ export default {
 	},onDeleteClick:async(confirm)=>{
 		if(!Init.permissionsCheck(Configs.permissions.EDIT,false))return;
 		if(!confirm){
-			showModal(MODAL_SAVE.name);
+			//showModal(MODAL_SAVE.name);
 		}else{
 			await DELETE_PROSPECT.run();
 			if(DELETE_PROSPECT.data != undefined && DELETE_PROSPECT.data.length === 1){
 				const close=async ()=>{
-					await closeModal(MODAL_SAVE.name);
+					//await closeModal(MODAL_SAVE.name);
 					if(appsmith.mode === "EDIT"){
 						showAlert("Edit mode: Navigate to dashboard...");
 					}else
 						this.onClick_Close();
 				}
 				if(DELETE_PROSPECT.data[0]["RESULT_CODE"] === "DONE"){
-					showAlert("Save success","success");
+					showAlert("Delete success","success");
 					close();
 				}else{
 					showAlert( "Delete failed."+DELETE_PROSPECT.data[0]["RESULT_MESSAGES"],"error");
@@ -104,7 +104,7 @@ export default {
 
 			}else if(status==="Disqualify"){
 				if(confirm){
-					queryData=await UPDATE_STATUS.run({STATUS:"Disqualify"});
+					queryData=await UPDATE_STATUS.run({STATUS:"Disqualify",IS_REJECT:1});
 					closeModalName =MODAL_REASON_REJECT.name;
 				}else{
 					showModal(MODAL_REASON_REJECT.name);
@@ -114,7 +114,7 @@ export default {
 
 			}else if(status==="Reject"){
 				if(confirm){
-					queryData=await UPDATE_STATUS.run({STATUS:"Reject"});
+					queryData=await UPDATE_STATUS.run({STATUS:"Reject",IS_REJECT:1});
 					closeModalName =MODAL_REASON_REJECT.name;
 				}else{
 					showModal(MODAL_REASON_REJECT.name);

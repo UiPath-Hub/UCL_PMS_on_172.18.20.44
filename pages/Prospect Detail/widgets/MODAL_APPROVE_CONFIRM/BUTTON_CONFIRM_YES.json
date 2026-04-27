@@ -28,7 +28,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('1.1.Prospects Dashboard', {}, 'SAME_WINDOW');}}",
+  "onClick": "{{JS.onUpdateStatus('Approved', true);}}",
   "parentColumnSpace": 9.4375,
   "parentId": "ps7i62bji9",
   "parentRowSpace": 10,
