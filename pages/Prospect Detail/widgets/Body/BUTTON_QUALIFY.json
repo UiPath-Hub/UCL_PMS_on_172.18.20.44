@@ -37,7 +37,7 @@
   "iconAlign": "left",
   "iconName": "confirm",
   "isDefaultClickDisabled": true,
-  "isDisabled": "{{!(Widgets_Value.PMS_PROSPECTS_LM?.[\"EDIT_ABLE\"]?.data)??false}}",
+  "isDisabled": "{{!(Widgets_Value.PMS_PROSPECTS_LM?.[EDITABLE.widgetName]?.data)??false}}",
   "isLoading": false,
   "isVisible": "{{Widgets_Value.PMS_PROSPECTS_LM?.UI_STATE?.data===0??false}}",
   "key": "st8tsne4v5",
