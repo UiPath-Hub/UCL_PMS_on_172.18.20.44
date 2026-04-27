@@ -38,6 +38,10 @@
       {
         "name": "requiredColorPass",
         "value": "\"\""
+      },
+      {
+        "name": "text_other",
+        "value": "\"อื่นๆ\""
       }
     ]
   }

@@ -7,4 +7,5 @@ export default {
 	permissions:{VIEW:"PROV",EDIT:"PROE"},
 		requiredColorAlert:"#ef4444",
 	requiredColorPass:"",
+	text_other:"อื่นๆ"
 }

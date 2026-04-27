@@ -47,7 +47,7 @@
   "isDisabled": false,
   "isLoading": false,
   "isRequired": "{{GlobalFunctions.fieldValidate?.[ REASON_OTHER_DETAIL.widgetName]?.required??false}}",
-  "isVisible": "{{REASON_REJECT.selectedOptionValue==\"อื่นๆ\"}}",
+  "isVisible": "{{REASON_REJECT.selectedOptionValue==Configs.text_other}}",
   "key": "djd78pj0ed",
   "label": "",
   "labelAlignment": "left",

@@ -22,7 +22,7 @@
   "labelTextSize": "1rem",
   "labelWidth": 8,
   "leftColumn": 0,
-  "marks": "[\n  {\n    \"value\": 0,\n    \"label\": \"Init\"\n  },\n  {\n    \"value\": 1,\n    \"label\": \"Qualified / Disqualified\"\n  },\n  {\n    \"value\": 2,\n    \"label\": \"Approved / Rejected\"\n  },\n\t{\n    \"value\": 3,\n    \"label\": \"Ready for Inquiry\"\n  },\n\t{\n    \"value\": 4,\n    \"label\": \"Unexpected changed\"\n  }\n]",
+  "marks": "[\n  {\n    \"value\": 0,\n    \"label\": \"Init\"\n  },\n  {\n    \"value\": 1,\n    \"label\": \"Qualified\"\n  },\n  {\n    \"value\": 2,\n    \"label\": \"Approved\"\n  },\n\t{\n    \"value\": 3,\n    \"label\": \"Ready for Inquiry\"\n  },\n\t{\n    \"value\": 4,\n    \"label\": \"Unexpected changed\"\n  }\n]",
   "max": "5",
   "min": "0",
   "mobileBottomRow": 217,

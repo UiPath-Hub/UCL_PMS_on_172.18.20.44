@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 15,
   "boxShadow": "none",
-  "defaultText": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ REASON.widgetName]?.data ?? \"\"}}",
+  "defaultText": "{{(Widgets_Value.PMS_PROSPECTS_LM?.[ REASON_REJECT.widgetName]?.data==Configs.text_other?Widgets_Value.PMS_PROSPECTS_LM?.[ REASON_OTHER_DETAIL.widgetName]?.data:Widgets_Value.PMS_PROSPECTS_LM?.[ REASON_REJECT.widgetName]?.data) ?? \"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
