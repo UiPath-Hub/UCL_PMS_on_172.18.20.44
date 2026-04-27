@@ -1,7 +1,7 @@
 export default {
 	PMS_PROSPECTS_LM:{
 		PROSPECTS_ID:{defaultData:"",color:""},
-		COMPANY_NAME:{defaultData:"",color:""},
+		COMPANY_NAME_TH:{defaultData:"",color:""},
 		SHOP_NAME:{defaultData:"",color:""},
 		NATIONALITY:{defaultData:"",color:""},
 		BUSINESS_TYPE:{defaultData:"",color:""},
