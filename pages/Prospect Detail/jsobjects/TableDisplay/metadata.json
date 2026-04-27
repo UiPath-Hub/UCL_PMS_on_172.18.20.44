@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "PROSPECTS_ACTIONLOGS",
-        "value": "{\n  ColumnsMap: {\n    \"Detail\": \"Detail\",\n    \"Approval By\": \"Approval By\",\n    \"PROSPECTS_STATUS\": \"Status\",\n    \"CREATE_DATE\": \"Create Date\",\n    \"Update Date\": \"Update Date\"\n  },\n  DateColumns: [\"CREATE_DATE\"],\n  data: []\n}"
+        "value": "{\n  ColumnsMap: {\n    \"COMPANY_NAME_TH\": \"Detail\",\n    \"USER_NAME\": \"Approval By\",\n    \"PROSPECTS_STATUS\": \"Status\",\n    \"CREATE_DATE\": \"Create Date\",\n    \"UPDATE_DATE\": \"Update Date\"\n  },\n  DateColumns: [\"CREATE_DATE\", \"UPDATE_DATE\"],\n  data: [],\n  run: async () => await SELECT_FOR_LOG.run()\n}"
       }
     ]
   }

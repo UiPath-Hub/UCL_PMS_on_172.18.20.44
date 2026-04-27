@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 38,
+  "bottomRow": 36,
   "defaultSelectedValues": "",
   "dynamicBindingPathList": [
     {
@@ -63,14 +63,14 @@
       "value": "AIR_CONDITIONS"
     }
   ],
-  "originalBottomRow": 38,
-  "originalTopRow": 33,
+  "originalBottomRow": 36,
+  "originalTopRow": 32,
   "parentColumnSpace": 19.1875,
   "parentId": "gxo76kmw4r",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 31,
-  "topRow": 33,
+  "topRow": 32,
   "type": "CHECKBOX_GROUP_WIDGET",
   "version": 2,
   "widgetId": "2xv0cwa0tj",

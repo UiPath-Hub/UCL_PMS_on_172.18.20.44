@@ -1,7 +1,7 @@
 export default {
 	PMS_PROSPECTS_LM:{
 		PROSPECTS_ID:{widget:{...PROSPECTS_ID},widgetData:PROSPECTS_ID.text},
-		COMPANY_NAME:{widget:{...COMPANY_NAME},widgetData:COMPANY_NAME.text},
+		COMPANY_NAME_TH:{widget:{...COMPANY_NAME_TH},widgetData:COMPANY_NAME_TH.text},
 		SHOP_NAME:{widget:{...SHOP_NAME},widgetData:SHOP_NAME.text},
 		NATIONALITY:{widget:{...NATIONALITY},widgetData:NATIONALITY.selectedOptionValue},
 		BUSINESS_TYPE:{widget:{...BUSINESS_TYPE},widgetData:BUSINESS_TYPE.selectedOptionValue},
@@ -50,15 +50,18 @@ export default {
 		PROSPECTS_STATUS:{widget:{},widgetData:""},
 
 		REASON:{widget:{...REASON},widgetData:REASON.text},
-
+		REASON_REJECT:{widget:{...REASON_REJECT },widgetData:REASON_REJECT.selectedOptionLabel},
+		REASON_OTHER_DETAIL:{widget:{...REASON_OTHER_DETAIL},widgetData:REASON_OTHER_DETAIL.text},
 		EXPECTING_DATE_TO_MOVE_IN:{
 			widget:{...EXPECTING_DATE_TO_MOVE_IN},
-			widgetData:moment(EXPECTING_DATE_TO_MOVE_IN.formattedDate,Configs.dateFormat)
-			.format(Configs.sqlDataFormat)
+			widgetData:EXPECTING_DATE_TO_MOVE_IN.formattedDate?moment(EXPECTING_DATE_TO_MOVE_IN.formattedDate,Configs.dateFormat)
+			.format(Configs.sqlDataFormat):""
 		},
 		WATER_SUPPLY:{widget:{...CHECKBOX_OTHER_UTILITY_NEED},widgetData:CHECKBOX_OTHER_UTILITY_NEED.selectedValues.includes("WATER_SUPPLY")},
 		COOKING_GAS:{widget:{...CHECKBOX_OTHER_UTILITY_NEED},widgetData:CHECKBOX_OTHER_UTILITY_NEED.selectedValues.includes("COOKING_GAS")},
 		AIR_CONDITIONS:{widget:{...CHECKBOX_OTHER_UTILITY_NEED},widgetData:CHECKBOX_OTHER_UTILITY_NEED.selectedValues.includes("AIR_CONDITIONS")},
-		CREATE_DATE:{widget:{...CREATE_DATE},widgetData:CREATE_DATE.selectedDate},
+		CREATE_DATE:{widget:{...CREATE_DATE},widgetData:CREATE_DATE.formattedDate?moment(CREATE_DATE.formattedDate,Configs.dateFormat)
+			.format(Configs.sqlDataFormat):""},
+		
 	}
 }

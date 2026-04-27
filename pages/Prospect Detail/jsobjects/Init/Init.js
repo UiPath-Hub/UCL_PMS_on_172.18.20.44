@@ -11,7 +11,10 @@ export default {
 																			 [...appsmith.store[this.SINGLE_PAGE].recentPage,Configs.pageName]:SinglePageValueDefault.recentPage
 																			},false);
 		await resetWidget(Progress1.widgetName);
-		Configs.AllModals.forEach((modalName)=>closeModal(modalName));
+		Configs.AllModals.forEach(async(modalName)=>{
+			await closeModal(modalName);
+			await resetWidget(modalName,true);
+		});
 		await this.sessionCheck();
 		if(!this.permissionsCheck(Configs.permissions.VIEW,true))return;
 		let progressIndex = 0;
@@ -27,7 +30,7 @@ export default {
 	},
 
 	//////////////// Register Load functions here! //////////////////////////////
-	LoadProgress:[this.LoadData,ADDRESSING.initAddress],
+	LoadProgress:[this.LoadData,ADDRESSING.initAddress,this.LoadTableLog],
 	LoadData:async()=>{
 		if(appsmith.URL.queryParams[this.ID] != undefined && _.last(appsmith.store[this.SINGLE_PAGE]?.recentPage) === Configs.pageName){
 			let ID = _.trim(appsmith.URL.queryParams[this.ID]);
@@ -49,6 +52,11 @@ export default {
 		await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE],"forceLogin":false,"errorAlert":`Invalid ${this.ID}, no data.`},false);
 		showModal(Modal_ErrorAlert.name);
 		return false;
+	},
+	LoadTableLog:async ()=>{
+		await JS.loadTable("PROSPECTS_ACTIONLOGS");
+		resetWidget(PROSPECTS_ACTIONLOGS.widgetName);
+		return true;
 	},
 	ShowView:async()=>{
 		await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE], BodyInit: "VIEW"},false);

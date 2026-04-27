@@ -6,4 +6,4 @@ EXECUTE [dbo].[SER_SEARCH_FOR_PROSPECTS]
    ,@PROSPECTS_STATUS = {{PROSPECT_STATUS.selectedOptionValue == "" || PROSPECT_STATUS.selectedOptionValue == undefined ? null : PROSPECT_STATUS.selectedOptionValue}}
    ,@TELEPHONE = {{TELEPHONE.text == "" || TELEPHONE.text == undefined ? null : TELEPHONE.text}}
 	,@DATE_FROM = {{DATE_FROM.selectedDate == "" || DATE_FROM.selectedDate == undefined ? null : moment(DATE_FROM.formattedDate,Configs.dateFormat).startOf('day')}}
-	,@DATE_TO = {{DATE_TO.selectedDate == "" || DATE_TO.selectedDate == undefined ? null : moment(DATE_TO.formattedDate,Configs.dateFormat).endOf('day')}} 
+	,@DATE_TO = {{DATE_TO.selectedDate == "" || DATE_TO.selectedDate == undefined ? null : moment(DATE_TO.formattedDate,Configs.dateFormat).endOf('day')}}

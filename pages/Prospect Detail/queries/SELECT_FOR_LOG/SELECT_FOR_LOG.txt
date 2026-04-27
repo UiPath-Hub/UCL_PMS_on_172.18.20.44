@@ -1,0 +1,2 @@
+EXECUTE [dbo].[SER_SEARCH_FOR_PROSPECTS_LOG] 
+  @USER_TOKEN = {{appsmith.store.userSession.TOKEN}}

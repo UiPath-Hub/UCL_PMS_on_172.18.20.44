@@ -13,7 +13,7 @@
       },
       {
         "name": "recentPage",
-        "value": "[\"Home\", Configs.pageName]"
+        "value": "[\"Home\", \"Prospect Dashboard\", Configs.pageName]"
       },
       {
         "name": "ProgressbarMax",

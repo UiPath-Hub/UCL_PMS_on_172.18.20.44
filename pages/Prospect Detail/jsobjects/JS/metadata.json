@@ -6,6 +6,11 @@
     "pageId": "Prospect Detail",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": []
+    "variables": [
+      {
+        "name": "NextConfirm",
+        "value": "\"NextConfirm\""
+      }
+    ]
   }
 }

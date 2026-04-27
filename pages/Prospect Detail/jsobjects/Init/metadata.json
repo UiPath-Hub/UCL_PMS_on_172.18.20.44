@@ -25,7 +25,7 @@
       },
       {
         "name": "LoadProgress",
-        "value": "[Init.LoadData, ADDRESSING.initAddress]"
+        "value": "[Init.LoadData, ADDRESSING.initAddress, Init.LoadTableLog]"
       }
     ]
   }

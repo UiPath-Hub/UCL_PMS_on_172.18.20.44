@@ -1,14 +1,15 @@
 export default {
 	PROSPECTS_ACTIONLOGS:{
+		//ColumnsMap:{"SQL Column":"Display Column"
 		ColumnsMap:{
-			"Detail":"Detail",
-			"Approval By": "Approval By",
-			"PROSPECTS_STATUS": "Status",
-			"CREATE_DATE": "Create Date",
-			"Update Date": "Update Date"
+			"COMPANY_NAME_TH":"Detail",
+			"USER_NAME":"Approval By",
+			"PROSPECTS_STATUS":"Status",
+			"CREATE_DATE":"Create Date",
+			"UPDATE_DATE":"Update Date"
 		},
-		DateColumns:["CREATE_DATE"],
+		DateColumns:["CREATE_DATE","UPDATE_DATE"],
 		data:[],
-		//run:async()=> await SELECT_FOR_PROSPECTS.run()
+		run:async()=> await SELECT_FOR_LOG.run()
 	}
 }
