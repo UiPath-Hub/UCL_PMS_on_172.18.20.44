@@ -33,15 +33,15 @@
     }
   },
   "columnOrder": [
-    "Company_Name",
     "Shop_Name",
     "Status",
     "Prospect_Date",
     "Contact_Person",
     "Telephone",
-    "ID"
+    "ID",
+    "Company_Name"
   ],
-  "columnUpdatedAt": 1775622496620,
+  "columnUpdatedAt": 1777284988699,
   "columnWidthMap": {
     "COMPANY_ID": 273,
     "COMPANY_NAME": 344,
@@ -96,9 +96,6 @@
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.Company_Name.computedValue"
-    },
-    {
       "key": "primaryColumns.Shop_Name.computedValue"
     },
     {
@@ -115,6 +112,9 @@
     },
     {
       "key": "primaryColumns.ID.computedValue"
+    },
+    {
+      "key": "primaryColumns.Company_Name.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -174,7 +174,7 @@
       "fontStyle": "",
       "horizontalAlignment": "CENTER",
       "id": "Company_Name",
-      "index": 0,
+      "index": 1,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,

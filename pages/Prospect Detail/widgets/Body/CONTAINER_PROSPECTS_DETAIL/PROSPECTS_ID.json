@@ -5,7 +5,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 9,
   "boxShadow": "none",
-  "defaultText": "{{Widgets_Value.PMS_PROSPECTS_LM?.[PROSPECTS_ID.widgetName].data||\"\"}}",
+  "defaultText": "{{Widgets_Value.PMS_PROSPECTS_LM?.[PROSPECTS_ID.widgetName]?.data??\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -38,7 +38,7 @@
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
   "inputType": "TEXT",
-  "isDisabled": false,
+  "isDisabled": true,
   "isLoading": false,
   "isRequired": "{{GlobalFunctions.fieldValidate?.[PROSPECTS_ID.widgetName]?.required??false}}",
   "isVisible": true,

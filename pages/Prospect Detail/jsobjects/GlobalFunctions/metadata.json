@@ -9,11 +9,11 @@
     "variables": [
       {
         "name": "V",
-        "value": "5"
+        "value": "6"
       },
       {
         "name": "LastChanged",
-        "value": "\"if(!SELECT_FIELDS_VALIDATION.data) before run in init()\""
+        "value": "`V5 if(!SELECT_FIELDS_VALIDATION.data) before run in init()\n\tV6 manualValidate: change Widgets-Map structure => Widgets-Ref`"
       },
       {
         "name": "fieldValidate",

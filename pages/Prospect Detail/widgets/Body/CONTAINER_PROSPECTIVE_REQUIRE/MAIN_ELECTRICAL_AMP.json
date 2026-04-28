@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 27,
+  "bottomRow": 26,
   "boxShadow": "none",
   "defaultText": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ MAIN_ELECTRICAL_AMP.widgetName]?.data ?? \"\"}}",
   "dynamicBindingPathList": [
@@ -59,7 +59,7 @@
   "mobileRightColumn": 22,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 27,
+  "originalBottomRow": 26,
   "originalTopRow": 22,
   "parentColumnSpace": 19.5,
   "parentId": "gxo76kmw4r",

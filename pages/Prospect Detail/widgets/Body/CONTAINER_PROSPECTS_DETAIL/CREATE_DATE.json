@@ -7,7 +7,7 @@
   "closeOnSelection": true,
   "dateFormat": "{{Configs.dateFormat}}",
   "datePickerType": "DATE_PICKER",
-  "defaultDate": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ CREATE_DATE.widgetName]?.data?moment(Widgets_Value.PMS_PROSPECTS_LM?.[ CREATE_DATE.widgetName].data ).toString():\"\"}}",
+  "defaultDate": "{{Widgets_Value.PMS_PROSPECTS_LM?.[ CREATE_DATE.widgetName]?.data?moment(Widgets_Value.PMS_PROSPECTS_LM?.[ CREATE_DATE.widgetName]?.data ).toString():\"\"}}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

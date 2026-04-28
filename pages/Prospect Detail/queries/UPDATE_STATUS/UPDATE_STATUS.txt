@@ -1,0 +1,17 @@
+declare @ResultCode nvarchar(10)
+	,@ResultMessages NVARCHAR(MAX)
+
+EXECUTE [dbo].[UPDATE_PMS_PROSPECT_LM_V0] 
+@PROSPECTS_ID= {{Widgets_Ref.PMS_PROSPECTS_LM.PROSPECTS_ID.widgetData || null}},
+@PROSPECTS_STATUS= {{this.params.STATUS || null}},
+@REASON_REJECT= {{Widgets_Ref.PMS_PROSPECTS_LM.REASON_REJECT.widgetData || null}},
+@REASON_OTHER_DETAIL= {{Widgets_Ref.PMS_PROSPECTS_LM.REASON_OTHER_DETAIL.widgetData || null}},
+@USER_TOKEN= {{appsmith.store.userSession.TOKEN || null}},
+--@IS_UPDATE= 0,
+--@IS_DELETE= 0,
+@IS_CHANGE_STATUS= 1,
+@IS_REJECT = {{this.params.IS_REJECT||0}},
+@ResultCode = @ResultCode OUTPUT,
+@ResultMessages = @ResultMessages OUTPUT
+
+SELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES

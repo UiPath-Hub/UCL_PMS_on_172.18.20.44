@@ -8,10 +8,10 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "defaultEntities"
+          "name": "widgetsValue"
         },
         {
-          "name": "widgetsMap"
+          "name": "widgetsRef"
         }
       ],
       "paginationType": "NONE",

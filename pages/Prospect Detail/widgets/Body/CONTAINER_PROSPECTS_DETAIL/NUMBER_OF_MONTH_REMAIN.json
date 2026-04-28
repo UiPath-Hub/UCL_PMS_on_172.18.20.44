@@ -2,9 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 67,
+  "bottomRow": 69,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Widgets_Value.PMS_PROSPECTS_LM?.\n[ NUMBER_OF_MONTH_REMAIN.widgetName]?.data ?? \"\"))(NUMBER_OF_MONTH_REMAIN.options, NUMBER_OF_MONTH_REMAIN.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Widgets_Value.PMS_PROSPECTS_LM?.\n[ NUMBER_OF_MONTH_REMAIN.widgetName]?.data.toString() ?? \"\"))(NUMBER_OF_MONTH_REMAIN.options, NUMBER_OF_MONTH_REMAIN.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -61,8 +61,8 @@
   "needsErrorInfo": false,
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 67,
-  "originalTopRow": 63,
+  "originalBottomRow": 69,
+  "originalTopRow": 65,
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",
   "parentRowSpace": 10,
@@ -73,7 +73,7 @@
   "serverSideFiltering": false,
   "shouldScrollContents": true,
   "sourceData": "{{SELCT_FOR_DD_NUMBER_OF_MONTH.data.map( (obj) =>{ return  {'label': obj.FIXED_VALUE, 'value': obj.SYSTEM_VALUE } })}}",
-  "topRow": 63,
+  "topRow": 65,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "k9mchy0w4r",

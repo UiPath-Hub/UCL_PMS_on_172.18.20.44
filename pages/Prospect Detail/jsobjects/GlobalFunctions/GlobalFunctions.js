@@ -1,37 +1,38 @@
 export default {
-	V:5,
-	LastChanged:"if(!SELECT_FIELDS_VALIDATION.data) before run in init()",
-	manualValidate:async (defaultEntities,widgetsMap)=>{
+	V:6,
+	LastChanged:
+	`V5 if(!SELECT_FIELDS_VALIDATION.data) before run in init()
+	V6 manualValidate: change Widgets-Map structure => Widgets-Ref`,
+	manualValidate:async (widgetsValue,widgetsRef)=>{
 		let alert = [];
-		await Promise.all( Object.keys(defaultEntities).map(async (key)=>{
+		await Promise.all( Object.keys(widgetsValue).map(async (key)=>{
 			let keystr = key.toString();
-			if(!widgetsMap[keystr]) return;
-			if(!widgetsMap[keystr].widgetName)return;
+			if(!widgetsRef[keystr]?.widget?.widgetName)return;
 
-			let data = widgetsMap[keystr].data||"";
+			let data = widgetsRef[keystr].widgetData||"";
 			const log = {};
 			log.key = keystr;
-			log.valid = widgetsMap[keystr].isValid;
-			log.disable = widgetsMap[keystr].isDisabled;
-			log.visible = widgetsMap[keystr].isVisible;
+			log.valid = widgetsRef[keystr].widget.isValid;
+			log.disable = widgetsRef[keystr].widget.isDisabled;
+			log.visible = widgetsRef[keystr].widget.isVisible;
 			log.data = data;
-			console.log(log); 
+			//console.log(log); 
 			//find widget of the field by get from widget name of widgetMap
-			//let widgetName = widgetsMap[keystr].widgetName;
-			defaultEntities[keystr].data = data
-			if (!widgetsMap[keystr].isValid && !widgetsMap[keystr].isDisabled && widgetsMap[keystr].isVisible) {
-				if(defaultEntities[keystr].color!=Configs.requiredColorAlert){
-					defaultEntities[keystr].color = Configs.requiredColorAlert;
+			//let widgetName = widgetsRef[keystr].widget.widgetName;
+			widgetsValue[keystr].data = data
+			if (!widgetsRef[keystr].widget.isValid && !widgetsRef[keystr].widget.isDisabled && widgetsRef[keystr].widget.isVisible) {
+				if(widgetsValue[keystr].color!=Configs.requiredColorAlert){
+					widgetsValue[keystr].color = Configs.requiredColorAlert;
 				}
-				alert.push(keystr);
+				alert.push(widgetsRef[keystr]?.widget?.label || keystr);
 			} else {
-				if(defaultEntities[keystr].color!=Configs.requiredColorPass){
-					defaultEntities[keystr].color = Configs.requiredColorPass;
+				if(widgetsValue[keystr].color!=Configs.requiredColorPass){
+					widgetsValue[keystr].color = Configs.requiredColorPass;
 				}
 			}
 
 		}))
-		console.log(alert)
+		//console.log(alert)
 		return alert;
 	},
 	setAttributes:async (DefaultEntity,defaultData,attributeType)=>{

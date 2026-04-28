@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 21,
+  "bottomRow": 23,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Widgets_Value.PMS_PROSPECTS_LM?.[ TITLE_NAME.widgetName]?.data ?? \"\"))(TITLE_NAME.options, TITLE_NAME.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -61,7 +61,7 @@
   "needsErrorInfo": false,
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 21,
+  "originalBottomRow": 23,
   "originalTopRow": 17,
   "parentColumnSpace": 19.5,
   "parentId": "xwayffljft",

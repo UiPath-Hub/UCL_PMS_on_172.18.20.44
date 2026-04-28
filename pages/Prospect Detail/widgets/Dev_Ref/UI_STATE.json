@@ -1,0 +1,52 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "bottomRow": 16,
+  "defaultValue": "{{Widgets_Value.PMS_PROSPECTS_LM?.[UI_STATE .widgetName]?.data??0}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "defaultValue"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "fjfkqhkhjs",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "UI state",
+  "labelTextSize": "1rem",
+  "labelWidth": 8,
+  "leftColumn": 0,
+  "marks": "[\n  {\n    \"value\": 0,\n    \"label\": \"Init\"\n  },\n  {\n    \"value\": 1,\n    \"label\": \"Qualified\"\n  },\n  {\n    \"value\": 2,\n    \"label\": \"Approved\"\n  },\n\t{\n    \"value\": 3,\n    \"label\": \"Ready for Inquiry\"\n  },\n\t{\n    \"value\": 4,\n    \"label\": \"Unexpected changed\"\n  }\n]",
+  "max": "5",
+  "min": "0",
+  "mobileBottomRow": 217,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 33,
+  "mobileTopRow": 209,
+  "needsErrorInfo": false,
+  "originalBottomRow": 14,
+  "originalTopRow": 6,
+  "parentColumnSpace": 20.25,
+  "parentId": "5njirm3ct0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldScroll": false,
+  "shouldTruncate": false,
+  "showMarksLabel": true,
+  "sliderSize": "m",
+  "step": 1,
+  "tooltipAlwaysOn": false,
+  "topRow": 8,
+  "type": "NUMBER_SLIDER_WIDGET",
+  "version": 1,
+  "widgetId": "nyzt9womr1",
+  "widgetName": "UI_STATE"
+}

@@ -9,15 +9,6 @@
       "jsArguments": [
         {
           "name": "postalCode"
-        },
-        {
-          "name": "provinePropName"
-        },
-        {
-          "name": "districtPropName"
-        },
-        {
-          "name": "subDistrictPropName"
         }
       ],
       "paginationType": "NONE",

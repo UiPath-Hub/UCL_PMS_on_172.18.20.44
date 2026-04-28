@@ -10,11 +10,23 @@
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "iconName"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -25,9 +37,9 @@
   "iconAlign": "left",
   "iconName": "confirm",
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": "{{!(Widgets_Value.PMS_PROSPECTS_LM?.[EDITABLE.widgetName]?.data)??false}}",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{Widgets_Value.PMS_PROSPECTS_LM?.UI_STATE?.data===0??false}}",
   "key": "st8tsne4v5",
   "leftColumn": 8,
   "minWidth": 120,
@@ -36,7 +48,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "",
+  "onClick": "{{JS.onUpdateStatus('Qualify', );}}",
   "originalBottomRow": 14,
   "originalTopRow": 10,
   "parentColumnSpace": 19.5,

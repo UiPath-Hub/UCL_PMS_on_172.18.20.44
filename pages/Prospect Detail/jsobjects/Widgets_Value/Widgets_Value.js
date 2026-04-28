@@ -1,7 +1,7 @@
 export default {
 	PMS_PROSPECTS_LM:{
 		PROSPECTS_ID:{defaultData:"",color:""},
-		COMPANY_NAME:{defaultData:"",color:""},
+		COMPANY_NAME_TH:{defaultData:"",color:""},
 		SHOP_NAME:{defaultData:"",color:""},
 		NATIONALITY:{defaultData:"",color:""},
 		BUSINESS_TYPE:{defaultData:"",color:""},
@@ -43,11 +43,15 @@ export default {
 		OTHER_REQUIREMENTS:{defaultData:"",color:""},
 		PROSPECTS_STATUS:{defaultData:"",color:""},
 		REASON:{defaultData:"",color:""},
+		REASON_REJECT:{defaultData:"",color:""},
+		REASON_OTHER_DETAIL:{defaultData:"",color:""},
 		EXPECTING_DATE_TO_MOVE_IN:{defaultData:"",color:""},
 		CREATE_DATE:{defaultData:"",color:""},
 		WATER_SUPPLY:{defaultData:false,color:""},
 		COOKING_GAS:{defaultData:false,color:""},
 		AIR_CONDITIONS:{defaultData:false,color:""},
-		CHECKBOX_OTHER_UTILITY_NEED:{color:""}
+		CHECKBOX_OTHER_UTILITY_NEED:{color:""},
+		UI_STATE:{defaultData:0,color:""},
+		EDITABLE:{defaultData:true,color:""},
 	}
 }

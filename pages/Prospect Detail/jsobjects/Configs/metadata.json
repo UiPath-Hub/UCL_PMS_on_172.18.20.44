@@ -25,7 +25,7 @@
       },
       {
         "name": "AllModals",
-        "value": "[Modal_Session_detail.name, Modal_ErrorAlert.name]"
+        "value": "[Modal_Session_detail.name, Modal_ErrorAlert.name, MODAL_SAVE.name, MODAL_QUALIFY_CONFIRM.name, MODAL_REASON_REJECT.name, MODAL_APPROVE_CONFIRM.name]"
       },
       {
         "name": "permissions",
@@ -38,6 +38,10 @@
       {
         "name": "requiredColorPass",
         "value": "\"\""
+      },
+      {
+        "name": "text_other",
+        "value": "\"อื่นๆ\""
       }
     ]
   }

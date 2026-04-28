@@ -1,0 +1,35 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_9947c52d-3e4b-4757-afbe-f3bf83695c38",
+  "id": "Prospect Detail_UPDATE_PROSPECT",
+  "pluginId": "mssql-plugin",
+  "pluginType": "DB",
+  "unpublishedAction": {
+    "actionConfiguration": {
+      "body": "declare @ResultCode nvarchar(10)\n\t,@ResultMessages NVARCHAR(MAX)\n\nEXECUTE [dbo].[UPDATE_PMS_PROSPECT_LM_V0] \n@PROSPECTS_ID= {{Widgets_Ref.PMS_PROSPECTS_LM.PROSPECTS_ID.widgetData || null}},\n@COMPANY_NAME_TH = {{Widgets_Ref.PMS_PROSPECTS_LM.COMPANY_NAME_TH.widgetData || null}},\n@SHOP_NAME= {{Widgets_Ref.PMS_PROSPECTS_LM.SHOP_NAME.widgetData || null}},\n@NATIONALITY= {{Widgets_Ref.PMS_PROSPECTS_LM.NATIONALITY.widgetData || null}},\n@BUSINESS_TYPE= {{Widgets_Ref.PMS_PROSPECTS_LM.BUSINESS_TYPE.widgetData || null}},\n@TITLE_NAME= {{Widgets_Ref.PMS_PROSPECTS_LM.TITLE_NAME.widgetData || null}},\n@NAME_OF_AUTHORIZED= {{Widgets_Ref.PMS_PROSPECTS_LM.NAME_OF_AUTHORIZED.widgetData || null}},\n@NUMBER_OF_EMPLOYEES= {{Widgets_Ref.PMS_PROSPECTS_LM.NUMBER_OF_EMPLOYEES.widgetData || null}},\n@WEBSITE= {{Widgets_Ref.PMS_PROSPECTS_LM.WEBSITE.widgetData || null}},\n@TELEPHONE= {{Widgets_Ref.PMS_PROSPECTS_LM.TELEPHONE.widgetData || null}},\n@EMAIL= {{Widgets_Ref.PMS_PROSPECTS_LM.EMAIL.widgetData || null}},\n@BUILDING_NAME= {{Widgets_Ref.PMS_PROSPECTS_LM.BUILDING_NAME.widgetData || null}},\n@FLOOR= {{Widgets_Ref.PMS_PROSPECTS_LM.FLOOR.widgetData || null}},\n@HOUSE_BUILDING_NO= {{Widgets_Ref.PMS_PROSPECTS_LM.HOUSE_BUILDING_NO.widgetData || null}},\n--@SOI_EN= NULL,\n@SOI_TH= {{Widgets_Ref.PMS_PROSPECTS_LM.SOI_TH.widgetData || null}},\n@MOO= {{Widgets_Ref.PMS_PROSPECTS_LM.MOO.widgetData || null}},\n--@ROAD_EN= NULL,\n@ROAD_TH= {{Widgets_Ref.PMS_PROSPECTS_LM.ROAD_TH.widgetData || null}},\n@SUB_DISTRICT_EN= {{Widgets_Ref.PMS_PROSPECTS_LM.SUB_DISTRICT_EN.widgetData || null}},\n@SUB_DISTRICT_TH= {{Widgets_Ref.PMS_PROSPECTS_LM.SUB_DISTRICT_TH.widgetData || null}},\n@DISTRICT_EN= {{Widgets_Ref.PMS_PROSPECTS_LM.DISTRICT_EN.widgetData || null}},\n@DISTRICT_TH= {{Widgets_Ref.PMS_PROSPECTS_LM.DISTRICT_TH.widgetData || null}},\n@PROVINCE_EN= {{Widgets_Ref.PMS_PROSPECTS_LM.PROVINCE_EN.widgetData || null}},\n@PROVINCE_TH= {{Widgets_Ref.PMS_PROSPECTS_LM.PROVINCE_TH.widgetData || null}},\n@POSTAL_CODE= {{Widgets_Ref.PMS_PROSPECTS_LM.POSTAL_CODE.widgetData || null}},\n@CURRENT_SPACE_USAGE= {{Widgets_Ref.PMS_PROSPECTS_LM.CURRENT_SPACE_USAGE.widgetData || null}},\n@REASON_FOR_MOVING= {{Widgets_Ref.PMS_PROSPECTS_LM.REASON_FOR_MOVING.widgetData || null}},\n@NUMBER_OF_MONTH_REMAIN= {{Widgets_Ref.PMS_PROSPECTS_LM.NUMBER_OF_MONTH_REMAIN.widgetData || null}},\n@REQUIREMENT_TYPE= {{Widgets_Ref.PMS_PROSPECTS_LM.REQUIREMENT_TYPE.widgetData || null}},\n@PERIOD_OF_LEASE= {{Widgets_Ref.PMS_PROSPECTS_LM.PERIOD_OF_LEASE.widgetData || null}},\n@FLOOR_REQUIRED= {{Widgets_Ref.PMS_PROSPECTS_LM.FLOOR_REQUIRED.widgetData || null}},\n@AREA_REQUIRED= {{Widgets_Ref.PMS_PROSPECTS_LM.AREA_REQUIRED.widgetData || null}},\n@PARKING_SPACES= {{Widgets_Ref.PMS_PROSPECTS_LM.PARKING_SPACES.widgetData || null}},\n@MOTORCYCLE_SPACES= {{Widgets_Ref.PMS_PROSPECTS_LM.MOTORCYCLE_SPACES.widgetData || null}},\n@MAIN_ELECTRICAL_PHASE= {{Widgets_Ref.PMS_PROSPECTS_LM.MAIN_ELECTRICAL_PHASE.widgetData || null}},\n@MAIN_ELECTRICAL_AMP= {{Widgets_Ref.PMS_PROSPECTS_LM.MAIN_ELECTRICAL_AMP.widgetData || null}},\n@WATER_SUPPLY= {{Widgets_Ref.PMS_PROSPECTS_LM.WATER_SUPPLY.widgetData || null}},\n@COOKING_GAS= {{Widgets_Ref.PMS_PROSPECTS_LM.COOKING_GAS.widgetData || null}},\n@AIR_CONDITIONS= {{Widgets_Ref.PMS_PROSPECTS_LM.AIR_CONDITIONS.widgetData || null}},\n@BTU= {{Widgets_Ref.PMS_PROSPECTS_LM.BTU.widgetData || null}},\n@INTERNET_LINES= {{Widgets_Ref.PMS_PROSPECTS_LM.INTERNET_LINES.widgetData || null}},\n@TELEPHONE_LINES= {{Widgets_Ref.PMS_PROSPECTS_LM.TELEPHONE_LINES.widgetData || null}},\n@FIBER_OPTIC_LINES= {{Widgets_Ref.PMS_PROSPECTS_LM.FIBER_OPTIC_LINES.widgetData || null}},\n@OTHER_REQUIREMENTS= {{Widgets_Ref.PMS_PROSPECTS_LM.OTHER_REQUIREMENTS.widgetData || null}},\n@PROSPECTS_STATUS= {{Widgets_Ref.PMS_PROSPECTS_LM.PROSPECTS_STATUS.widgetData || null}},\n@REASON_REJECT= {{Widgets_Ref.PMS_PROSPECTS_LM.REASON.widgetData || null}},\n@REASON_OTHER_DETAIL= {{Widgets_Ref.PMS_PROSPECTS_LM.REASON_OTHER_DETAIL.widgetData || null}},\n@SPECIFIC_SQM= {{Widgets_Ref.PMS_PROSPECTS_LM.SPECIFIC_SQM.widgetData || null}},\n@EXPECTING_DATE_TO_MOVE_IN= {{Widgets_Ref.PMS_PROSPECTS_LM.EXPECTING_DATE_TO_MOVE_IN.widgetData || \"\"}},\n@CREATE_DATE= {{Widgets_Ref.PMS_PROSPECTS_LM.CREATE_DATE.widgetData || null}},\n@USER_TOKEN= {{appsmith.store.userSession.TOKEN || null}},\n@IS_UPDATE= 1,\n--@IS_DELETE= 0,\n--@IS_QUALIFY= 0,\n@ResultCode = @ResultCode OUTPUT,\n@ResultMessages = @ResultMessages OUTPUT\n\nSELECT @ResultCode AS RESULT_CODE , @ResultMessages as RESULT_MESSAGES\n",
+      "encodeParamsToggle": true,
+      "paginationType": "NONE",
+      "pluginSpecifiedTemplates": [
+        {
+          "value": true
+        }
+      ],
+      "timeoutInMillisecond": 10000
+    },
+    "confirmBeforeExecute": false,
+    "datasource": {
+      "id": "UCL_PMS",
+      "isAutoGenerated": false,
+      "name": "UCL_PMS",
+      "pluginId": "mssql-plugin"
+    },
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
+    "name": "UPDATE_PROSPECT",
+    "pageId": "Prospect Detail",
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": false
+  }
+}
