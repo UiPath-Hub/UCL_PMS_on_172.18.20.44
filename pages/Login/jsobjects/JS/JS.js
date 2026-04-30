@@ -24,7 +24,12 @@ export default {
 				SESSION.PERMISSIONS = SP_HANDLE_TOKEN.data.map((ele)=>ele.PERMISSION_ID);
 				await storeValue(Configs.userSession,SESSION);
 				await this.setDefaultIconOfSyncStatus();
-				navigateTo(SESSION.START_PAGE, {}, 'SAME_WINDOW');
+				if(appsmith.store["REDIRECT_SIGNIN"]){
+					const link = appsmith.store["REDIRECT_SIGNIN"];
+					await removeValue("REDIRECT_SIGNIN");
+					navigateTo(link, {}, 'SAME_WINDOW');
+				}else
+					navigateTo(SESSION.START_PAGE, {}, 'SAME_WINDOW');
 			}
 
 		}else{

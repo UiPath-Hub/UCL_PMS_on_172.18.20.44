@@ -1,0 +1,2 @@
+EXEC [dbo].[SELECT_FOR_USEREMAIL_BY_PERM]
+@PERMISSION_ID = {{Configs.permissions.EXEEMAIL}}

@@ -29,7 +29,7 @@
       },
       {
         "name": "permissions",
-        "value": "{\n  VIEW: \"PROV\",\n  EDIT: \"PROE\"\n}"
+        "value": "{\n  VIEW: \"PROV\",\n  EDIT: \"PROE\",\n  EXEEMAIL: \"PROEXE\"\n}"
       },
       {
         "name": "requiredColorAlert",
@@ -42,6 +42,10 @@
       {
         "name": "text_other",
         "value": "\"อื่นๆ\""
+      },
+      {
+        "name": "mailSubject",
+        "value": "`รายการ Prospect ที่รอการอนุมัติ ${moment().format(\"DDMMYYYY\")} (${moment().format(\"HH:mm\")})`"
       }
     ]
   }

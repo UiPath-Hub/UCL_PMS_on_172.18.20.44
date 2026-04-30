@@ -90,6 +90,7 @@ export default {
 		//"appsmith.store[this.SINGLE_PAGE]?.recentPage===Configs.pageName" use to ensure the Pageload function was already run.
 		if(appsmith.store[this.SINGLE_PAGE]?.recentPage && _.last(appsmith.store[this.SINGLE_PAGE]?.recentPage)===Configs.pageName&&
 			 appsmith.store[this.SINGLE_PAGE]?.forceLogin===true){
+			await storeValue("REDIRECT_SIGNIN",appsmith.URL.fullPath,false);
 			navigateTo('Login', {}, 'SAME_WINDOW');		
 		}
 
