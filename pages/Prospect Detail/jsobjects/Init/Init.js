@@ -15,12 +15,15 @@ export default {
 			await closeModal(modalName);
 			await resetWidget(modalName,true);
 		});
-		await this.sessionCheck();
-		if(!this.permissionsCheck(Configs.permissions.VIEW,true))return;
+		if(!(await this.sessionCheck()))return;
+		if(!(await this.permissionsCheck(Configs.permissions.VIEW,true)))return;
 		let progressIndex = 0;
 		while(progressIndex < this.LoadProgress.length){
-			await this.LoadProgress[progressIndex]();
-
+			let success = await this.LoadProgress[progressIndex]();
+			if(!success){ 
+				showAlert("Failed to load the page");
+				return;
+			}
 			//next loop
 			SinglePageValueDefault.CurrentProgressbar = SinglePageValueDefault.CurrentProgressbar+1
 			progressIndex++;
@@ -85,6 +88,7 @@ export default {
 		}
 		await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE],"forceLogin":true},false);
 		showModal(Modal_Session_detail.name);
+		return false;
 	},
 	on_ModalSessionDetailClose:async()=>{
 		//"appsmith.store[this.SINGLE_PAGE]?.recentPage===Configs.pageName" use to ensure the Pageload function was already run.
