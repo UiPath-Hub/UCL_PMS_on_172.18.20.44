@@ -41,11 +41,15 @@ export default {
 	},
 	on_ModalSessionDetailClose:()=>{
 		//"appsmith.store[this.SINGLE_PAGE]?.recentPage===Configs.pageName" use to ensure the Pageload function was already run.
-		if(appsmith.store[this.SINGLE_PAGE]?.recentPage===Configs.pageName&&appsmith.store[this.SINGLE_PAGE]?.forceLogin===true)navigateTo('Login', {}, 'SAME_WINDOW');
+		if(appsmith.store[this.SINGLE_PAGE]?.recentPage && _.last(appsmith.store[this.SINGLE_PAGE]?.recentPage)===Configs.pageName&&
+			 appsmith.store[this.SINGLE_PAGE]?.forceLogin===true)
+			navigateTo('Login', {}, 'SAME_WINDOW');
 	},
 	on_ModalPermissionDeniedClose:()=>{
 		//"appsmith.store[this.SINGLE_PAGE]?.recentPage===Configs.pageName" use to ensure the Pageload function was already run.
-		if(appsmith.store[this.SINGLE_PAGE]?.recentPage===Configs.pageName&&appsmith.store[this.SINGLE_PAGE]?.forceLogin===true)navigateTo('Login', {}, 'SAME_WINDOW');
+		if(appsmith.store[this.SINGLE_PAGE]?.recentPage && _.last(appsmith.store[this.SINGLE_PAGE]?.recentPage)===Configs.pageName&&
+			 appsmith.store[this.SINGLE_PAGE]?.forceLogin===true)
+			navigateTo('Login', {}, 'SAME_WINDOW');
 	},
 	permissionsCheck:async(Permission,forceKick)=>{
 		let PERMISSIONS = appsmith.store[this.userSession].PERMISSIONS;

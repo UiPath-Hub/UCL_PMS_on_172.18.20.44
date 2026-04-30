@@ -253,8 +253,7 @@ export default {
 			this.LanguageControl = this.DEFAULT_ENTITY[this.Language_PROP_NAME].data||this.LanguageControl
 		this.init_DefaultValue();
 		console.log("initAddress");
-
-		//SELECT_ADDRESS.clear();
+		return true;
 	},
 	test:async()=>{
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>แจ้งเตือนการอนุมัติ Prospect</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6f8; font-family: Arial, Helvetica, sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" style="padding:20px;">
+
+        <!-- Email Container -->
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; border-radius:6px;">
+
+          <!-- Header -->
+          <tr>
+            <td style="padding:20px; background-color:#2f80ed; color:#ffffff; border-radius:6px 6px 0 0;">
+              <h2 style="margin:0; font-size:20px;">แจ้งเตือนระบบ</h2>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:20px; color:#333333; font-size:14px; line-height:1.6;">
+              <p style="margin-top:0;">
+                เรียน ท่านผู้บริหาร
+              </p>
+
+              <p>
+	     ฝ่ายการตลาดได้ทำการ qualify ข้อมูล Prospect เรียบร้อย และขณะนี้อยู่ระหว่างรอการอนุมัติจากท่าน
+              </p>
+
+              <p>
+                กรุณากดที่ลิงก์ด้านล่างเพื่อเข้าสู่ระบบการอนุมัติ Prospect
+              </p>
+
+              <!-- Button -->
+              <p style="text-align:center; margin:30px 0;">
+                <a href="{{appsmith.URL.fullPath}}"
+                   style="background-color:#2f80ed; color:#ffffff; text-decoration:none; padding:12px 24px; border-radius:4px; display:inline-block;">
+                  เข้าสู่ระบบการอนุมัติ
+                </a>
+              </p>
+
+              <p>
+                หากไม่สามารถกดปุ่มได้ กรุณาคัดลอกลิงก์ด้านล่างไปวางในเบราว์เซอร์  
+                <br>
+                <a href="{{appsmith.URL.fullPath}}"
+                   style="color:#2f80ed;">
+                  {{appsmith.URL.fullPath}}
+                </a>
+              </p>
+
+              <p style="margin-top:30px;">
+                ขอแสดงความนับถือ<br>
+                <strong>RPA</strong>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding:15px; background-color:#f1f1f1; color:#777777; font-size:12px; text-align:center; border-radius:0 0 6px 6px;">
+              อีเมลฉบับนี้ถูกส่งจาก RPA กรุณาอย่าตอบกลับ
+            </td>
+          </tr>
+
+        </table>
+        <!-- End Container -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

@@ -93,10 +93,12 @@ export default {
 		if(status){
 			let closeModalName = "";
 			let queryData;
+			let onQualify=false;
 			if(status=== "Qualify"){
 				if(confirm){
 					queryData=await UPDATE_STATUS.run({STATUS:"Qualify"});
-					closeModalName =MODAL_QUALIFY_CONFIRM.name;					
+					closeModalName =MODAL_QUALIFY_CONFIRM.name;
+					onQualify = true;
 				}else{
 					showModal(MODAL_QUALIFY_CONFIRM.name);
 					return;
@@ -144,6 +146,8 @@ export default {
 						this.onClick_Close();
 				}
 				if(queryData[0]["RESULT_CODE"] === "DONE"){
+					if(onQualify)
+						await this.onQualified();
 					showAlert("Update status success","success");
 					close();
 				}else{
@@ -151,6 +155,19 @@ export default {
 
 				}
 			}
+		}
+	},
+	onQualified:async()=>{
+		const data = await SELECT_FOR_PROSP_EXEEMAIL.run();
+		if(data?.length > 0){
+			let emails = _.join(data.map((row)=>row.EMAIL),",");
+			try{
+				await SEND_EMAIL.run({EMAIL:emails});
+				showAlert("Successfully sent the email to executive users.","success");
+			}catch(err){
+				showAlert("Failed to send the email to executive users. : "+SEND_EMAIL.data??(err.message||""),"warning");
+			}
+			
 		}
 	},
 	DEV_changeState:()=>{

@@ -15,12 +15,15 @@ export default {
 			await closeModal(modalName);
 			await resetWidget(modalName,true);
 		});
-		await this.sessionCheck();
-		if(!this.permissionsCheck(Configs.permissions.VIEW,true))return;
+		if(!(await this.sessionCheck()))return;
+		if(!(await this.permissionsCheck(Configs.permissions.VIEW,true)))return;
 		let progressIndex = 0;
 		while(progressIndex < this.LoadProgress.length){
-			await this.LoadProgress[progressIndex]();
-
+			let success = await this.LoadProgress[progressIndex]();
+			if(!success){ 
+				showAlert("Failed to load the page");
+				return;
+			}
 			//next loop
 			SinglePageValueDefault.CurrentProgressbar = SinglePageValueDefault.CurrentProgressbar+1
 			progressIndex++;
@@ -36,11 +39,11 @@ export default {
 			let ID = _.trim(appsmith.URL.queryParams[this.ID]);
 			if(ID !== ""){
 				let data = await SER_SEARCH_FOR_PROSPECTS.run({ID:ID});
-				
+
 				if(data[0].TOTAL_RECORDS === 1){
 					let InitializationDataList = [{ENTITY:Widgets_Value.PMS_PROSPECTS_LM, DATA: data[0]}]
 					await GlobalFunctions.initDefaultV2(InitializationDataList);
-					
+
 					//special field
 					Widgets_Value.PMS_PROSPECTS_LM.CHECKBOX_OTHER_UTILITY_NEED.data = ["WATER_SUPPLY","COOKING_GAS","AIR_CONDITIONS"].filter((fieldName)=>Widgets_Value.PMS_PROSPECTS_LM?.[fieldName]?.data===true);
 					return true;
@@ -76,20 +79,22 @@ export default {
 					SESSION.PERMISSIONS = SP_HANDLE_TOKEN.data.map((ele)=>ele.PERMISSION_ID);
 				}
 				await storeValue(this.userSession,SESSION);
-				//navigateTo('Login', {}, 'SAME_WINDOW');
+				return true;
 			}else{
 				if(SP_HANDLE_TOKEN.data[0].RESULT_CODE){
 					showAlert(SP_HANDLE_TOKEN.data[0].RESULT_CODE,"error");
 				}
-				await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE],"forceLogin":true},false);
-				showModal(Modal_Session_detail.name);
 			}
-		}else navigateTo('Login', {}, 'SAME_WINDOW');
+		}
+		await storeValue(this.SINGLE_PAGE,{...appsmith.store[this.SINGLE_PAGE],"forceLogin":true},false);
+		showModal(Modal_Session_detail.name);
+		return false;
 	},
 	on_ModalSessionDetailClose:async()=>{
 		//"appsmith.store[this.SINGLE_PAGE]?.recentPage===Configs.pageName" use to ensure the Pageload function was already run.
 		if(appsmith.store[this.SINGLE_PAGE]?.recentPage && _.last(appsmith.store[this.SINGLE_PAGE]?.recentPage)===Configs.pageName&&
 			 appsmith.store[this.SINGLE_PAGE]?.forceLogin===true){
+			await storeValue("REDIRECT_SIGNIN",appsmith.URL.fullPath,false);
 			navigateTo('Login', {}, 'SAME_WINDOW');		
 		}
 
