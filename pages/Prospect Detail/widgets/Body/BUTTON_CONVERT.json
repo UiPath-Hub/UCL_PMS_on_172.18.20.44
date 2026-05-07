@@ -28,7 +28,7 @@
   "iconAlign": "left",
   "iconName": "confirm",
   "isDefaultClickDisabled": true,
-  "isDisabled": false,
+  "isDisabled": true,
   "isLoading": false,
   "isVisible": "{{Widgets_Value.PMS_PROSPECTS_LM?.UI_STATE?.data===2??false}}",
   "key": "st8tsne4v5",
