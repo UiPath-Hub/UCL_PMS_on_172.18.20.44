@@ -120,6 +120,10 @@
     {
       "id": "Prospect Detail",
       "isDefault": false
+    },
+    {
+      "id": "Inquiry Dashboard",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

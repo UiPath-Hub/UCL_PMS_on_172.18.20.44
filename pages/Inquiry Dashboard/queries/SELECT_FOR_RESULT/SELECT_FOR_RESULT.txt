@@ -1,0 +1,7 @@
+
+EXECUTE [dbo].[SER_SEARCH_FOR_INQUIRY] 
+   @USER_TOKEN = {{appsmith.store[Init.userSession]?.TOKEN||null}}
+	,@COMPANY_NAME = {{COMPANY_NAME.text == "" || COMPANY_NAME.text == undefined ? null : COMPANY_NAME.text}}
+   ,@PROGRESS = {{PROGRESS.selectedOptionValue == "" || PROGRESS.selectedOptionValue == undefined ? null : PROGRESS.selectedOptionValue}}
+   ,@INQUIRY_ID = {{INQUIRY_NUMBER.text == "" || INQUIRY_NUMBER.text == undefined ? null : INQUIRY_NUMBER.text}}
+	,@DATE = {{DATE.selectedDate == "" || DATE.selectedDate == undefined ? null : moment(DATE.formattedDate,Configs.dateFormat).startOf('day').format("YYYY-MM-DD")}}

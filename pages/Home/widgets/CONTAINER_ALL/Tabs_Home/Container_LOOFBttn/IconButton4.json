@@ -16,11 +16,18 @@
   "dynamicPropertyPathList": [
     {
       "key": "iconName"
+    },
+    {
+      "key": "onClick"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "iconName": "saved",
-  "isDisabled": true,
+  "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "hbeb2o0ekl",
@@ -31,6 +38,7 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Inquiry Dashboard', {}, 'SAME_WINDOW');}}",
   "parentColumnSpace": 2.12109375,
   "parentId": "305rs9r69a",
   "parentRowSpace": 10,

@@ -1,15 +1,12 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 27,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "buttonVariant": "TERTIARY",
+  "buttonColor": "#3b82f6",
+  "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
-    {
-      "key": "buttonColor"
-    },
     {
       "key": "borderRadius"
     }
@@ -25,32 +22,35 @@
     }
   ],
   "iconAlign": "left",
+  "iconName": "search",
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "b5sxvkc4z5",
-  "leftColumn": 0,
+  "key": "st8tsne4v5",
+  "leftColumn": 28,
   "minWidth": 120,
-  "mobileBottomRow": 78,
-  "mobileLeftColumn": 30,
-  "mobileRightColumn": 46,
-  "mobileTopRow": 74,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onClick": "{{navigateTo('Inquiry Dashboard', {}, 'SAME_WINDOW');}}",
-  "parentColumnSpace": 22.90625,
-  "parentId": "305rs9r69a",
+  "onClick": "{{JS.search()}}",
+  "originalBottomRow": 27,
+  "originalTopRow": 23,
+  "parentColumnSpace": 19.5,
+  "parentId": "ju24sgwujk",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 63,
-  "text": "Inquiry",
-  "topRow": 13,
+  "rightColumn": 35,
+  "text": "Search",
+  "topRow": 23,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "y63veunavn",
-  "widgetName": "BT7"
+  "widgetId": "agmov6lbj1",
+  "widgetName": "BUTTON_SEARCH"
 }

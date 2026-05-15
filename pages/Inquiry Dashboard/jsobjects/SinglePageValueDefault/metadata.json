@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_bd22924d-4a11-4cf5-b5f3-c7092bea3cfc",
+  "id": "Inquiry Dashboard_SinglePageValueDefault",
+  "unpublishedCollection": {
+    "name": "SinglePageValueDefault",
+    "pageId": "Inquiry Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "forceLogin",
+        "value": "false"
+      },
+      {
+        "name": "recentPage",
+        "value": "[Configs.pageName]"
+      }
+    ]
+  }
+}

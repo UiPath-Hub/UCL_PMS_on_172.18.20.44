@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_66032ea0-ce3b-4731-be30-04c7748a11c8",
+  "id": "Inquiry Dashboard_TableDisplay",
+  "unpublishedCollection": {
+    "name": "TableDisplay",
+    "pageId": "Inquiry Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "PMS_INQUIRY_HEADER_LM",
+        "value": "{\n  ColumnsMap: {\n    \"INQUIRY_ID\": \"Inquiry Number\",\n    \"CUSTOMER_NAME_TH\": \"Company Name\",\n    \"PROGRESS\": \"Inquiry Progress\",\n    \"CREATE_DATE\": \"Create Date\"\n  },\n  DataColumns: [\"CREATE_DATE\"],\n  data: [],\n  run: async () => await SELECT_FOR_RESULT.run()\n}"
+      }
+    ]
+  }
+}

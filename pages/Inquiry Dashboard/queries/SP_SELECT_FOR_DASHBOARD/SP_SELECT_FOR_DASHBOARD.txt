@@ -1,0 +1,1 @@
+select * from dbo.[PMS_INQUIRY_DASHBOARD]
