@@ -1,0 +1,32 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_5a90a39f-6ebc-4838-997b-a6178f45c739",
+  "id": "Inquiry Dashboard_Configs",
+  "unpublishedCollection": {
+    "name": "Configs",
+    "pageId": "Inquiry Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dateFormat",
+        "value": "\"D MMM YYYY\""
+      },
+      {
+        "name": "tableDataFormat",
+        "value": "\"D MMMM, yyyy\""
+      },
+      {
+        "name": "pageName",
+        "value": "\"Inquiry Dashboard\""
+      },
+      {
+        "name": "AllModals",
+        "value": "[Modal_Session_detail.name, Modal_ErrorAlert.name]"
+      },
+      {
+        "name": "permissions",
+        "value": "{\n  VIEW: \"PROV\",\n  EDIT: \"PROE\"\n}"
+      }
+    ]
+  }
+}

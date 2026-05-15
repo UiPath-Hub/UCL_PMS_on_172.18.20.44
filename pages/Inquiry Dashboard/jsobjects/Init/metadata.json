@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "696f3687314f3f6f4b6b02eb_a9e9d95f-e5a1-4005-982c-627efa6806eb",
+  "id": "Inquiry Dashboard_Init",
+  "unpublishedCollection": {
+    "name": "Init",
+    "pageId": "Inquiry Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "dataDisplayStartTime",
+        "value": "moment(\"2021-01-01\", Configs.dateFormat)"
+      },
+      {
+        "name": "SINGLE_PAGE",
+        "value": "\"SINGLE_PAGE\""
+      },
+      {
+        "name": "userSession",
+        "value": "\"userSession\""
+      }
+    ]
+  }
+}
